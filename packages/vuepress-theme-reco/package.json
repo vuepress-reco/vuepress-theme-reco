@@ -1,0 +1,29 @@
+{
+  "name": "vuepress-theme-reco",
+  "version": "2.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
+  "bugs": {
+    "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recoluan/vuepress-theme-reco-next.git"
+  },
+  "license": "ISC",
+  "author": "reco_luan <recoluan@outlook.com>",
+  "main": "lib/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
