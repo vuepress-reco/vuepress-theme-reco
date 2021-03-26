@@ -10,9 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/recoluan/vuepress-theme-reco-next.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "reco_luan <recoluan@outlook.com>",
-  "main": "lib/index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,7 +22,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "devDependencies": {
     "typescript": "^4.2.3"
