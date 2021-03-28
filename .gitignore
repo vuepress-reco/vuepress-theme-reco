@@ -10,3 +10,4 @@ libs
 dist
 example/.vuepress/.cache
 example/.vuepress/.temp
+tsconfig.tsbuildinfo

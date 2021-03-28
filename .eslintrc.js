@@ -6,8 +6,9 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
-    "plugin:vue/essential"
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "vue-eslint-parser",
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -22,6 +23,7 @@ module.exports = {
     "vue"
   ],
   rules: {
+    "@typescript-eslint/ban-ts-comment": 0,
     "vue/max-attributes-per-line": [2, {
       "singleline": 10,
       "multiline": {
@@ -140,7 +142,7 @@ module.exports = {
     'no-this-before-super': 2,
     'no-throw-literal': 2,
     'no-trailing-spaces': 2,
-    'no-undef': 0,
+    'no-undef': 1,
     'no-undef-init': 2,
     'no-unexpected-multiline': 2,
     'no-unmodified-loop-condition': 2,
@@ -149,10 +151,7 @@ module.exports = {
     }],
     'no-unreachable': 2,
     'no-unsafe-finally': 2,
-    'no-unused-vars': [2, {
-      'vars': 'all',
-      'args': 'none'
-    }],
+    'no-unused-vars': 1,
     'no-useless-call': 2,
     'no-useless-computed-key': 2,
     'no-useless-constructor': 2,

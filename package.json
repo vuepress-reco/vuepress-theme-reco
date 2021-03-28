@@ -11,29 +11,29 @@
     "packages/@vuepress-reco/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "concurrently \"npm run build --prefix packages/@vuepress-reco/core\"",
+    "build": "yarn clean && concurrently \"npm run build --prefix packages/vuepress-theme-reco\" \"npm run build --prefix packages/@vuepress-reco/plugin-blog\" \"yarn copy\"",
+    "clean": "concurrently \"npm run clean --prefix packages/vuepress-theme-reco\" \"npm run clean --prefix packages/@vuepress-reco/plugin-blog\"",
+    "copy": "concurrently \"npm run copy --prefix packages/vuepress-theme-reco\" \"npm run copy --prefix packages/@vuepress-reco/plugin-blog\"",
     "build:example": "vuepress build example",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "commit": "git add . && git-cz",
     "deploy:example": "bash scripts/deploy.sh",
     "start": "vuepress dev example",
-    "eslint-ext": "eslint --ext .js,.vue ./",
-    "eslint-fix": "eslint --fix --ext .js,.vue ./",
+    "lint": "eslint --ext .js,.vue,.ts ./packages",
+    "lint:fix": "eslint --fix ./packages",
     "prevvpublish": "lerna publish --dist-tag next",
-    "publish": "yarn build && lerna publish",
-    "push": "yarn commit && git push",
+    "publish": "yarn build && lerna publish && yarn clean",
     "update": "yarn upgrade-interactive --latest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "yarn lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
-      "eslint --fix --ext .js,.vue ./",
+      "eslint --fix",
       "git add"
     ],
     "package.json": [
@@ -50,11 +50,11 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@types/events": "^3.0.0",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.22",
     "@types/unist": "^2.0.3",
     "@types/vfile": "^4.0.0",
     "@types/vfile-message": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.1.2",
     "concurrently": "^5.3.0",
@@ -70,7 +70,8 @@
     "lint-staged": "^10.2.7",
     "sort-package-json": "^1.44.0",
     "ts-jest": "^26.4.4",
-    "typescript": "4.1.2",
+    "typescript": "4.2.3",
+    "vue-eslint-parser": "^7.6.0",
     "vuepress": "^2.0.0-beta.4"
   },
   "publishConfig": {

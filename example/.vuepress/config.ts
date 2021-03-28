@@ -6,5 +6,5 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: 'vuepress-theme-reco',
   description: 'Just playing around',
   theme: 'reco',
-  debug: true
+  // debug: true
 })

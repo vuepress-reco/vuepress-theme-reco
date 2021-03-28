@@ -1,5 +1,5 @@
 <template>
-  <div>{{b}}</div>
+  <div>{{ b }}</div>
 </template>
 
 <script lang="ts">
@@ -13,4 +13,3 @@ export default defineComponent({
   }
 })
 </script>
-
