@@ -1,7 +1,9 @@
 {
   "npmClient": "yarn",
+  "useWorkspaces": true,
   "packages": [
-    "packages/*"
+    "packages/*",
+    "packages/@vuepress-reco/*"
   ],
   "version": "2.0.0"
 }

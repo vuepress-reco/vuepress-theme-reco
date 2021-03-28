@@ -1,7 +1,12 @@
 {
-  "name": "vuepress-theme-reco",
+  "name": "@vuepress-reco/vuepress-plugin-blog",
   "version": "2.0.0",
-  "description": "> TODO: description",
+  "description": "A simple blog plugin for vuepress-theme-reco.",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "blog"
+  ],
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
@@ -13,7 +18,6 @@
   "license": "MIT",
   "author": "reco_luan <recoluan@outlook.com>",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -28,7 +32,7 @@
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
-  "dependencies": {
-    "@vuepress-reco/vuepress-plugin-blog": "^2.0.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,17 +1,16 @@
 <template>
-  <div>
-    {{a}}
-    <Test />
-  </div>
+  <div>{{b}}</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'test',
   setup () {
-    const a = 123
-    return { a }
+    const b = 'reco'
+    return { b }
   }
 })
 </script>
+
