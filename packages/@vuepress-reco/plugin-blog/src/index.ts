@@ -2,25 +2,24 @@ import type { Plugin } from '@vuepress/core'
 import { createPage } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 
-export type BlogPluginOptions = Record<string, any>;
+export type BlogPluginOptions = Record<string, any>
 
 const blogPlugin: Plugin<BlogPluginOptions> = (options, config) => {
-  const { frontmatters } = options
   return {
     name: '@vuepress-reco/vuepress-plugin-blog',
 
     clientAppEnhanceFiles: path.resolve(__dirname, './clientAppEnhance.js'),
 
-    async onInitialized () {
+    async onInitialized() {
       config.pages.unshift(
         await createPage(config, {
           path: '/category.html',
           frontmatter: {
-            layout: 'Category'
-          }
+            layout: 'Category',
+          },
         })
       )
-    }
+    },
   }
 }
 

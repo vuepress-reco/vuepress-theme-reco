@@ -11,16 +11,18 @@
     "packages/@vuepress-reco/*"
   ],
   "scripts": {
-    "build": "yarn clean && concurrently \"npm run build --prefix packages/vuepress-theme-reco\" \"npm run build --prefix packages/@vuepress-reco/plugin-blog\" \"yarn copy\"",
-    "clean": "concurrently \"npm run clean --prefix packages/vuepress-theme-reco\" \"npm run clean --prefix packages/@vuepress-reco/plugin-blog\"",
-    "copy": "concurrently \"npm run copy --prefix packages/vuepress-theme-reco\" \"npm run copy --prefix packages/@vuepress-reco/plugin-blog\"",
+    "build": "tsc --build",
+    "build: old-api": "yarn clean && concurrently \"npm run build --prefix packages/vuepress-theme-reco\" \"npm run build --prefix packages/@vuepress-reco/plugin-blog\" \"yarn copy\"",
+    "clean": "lerna run clean --stream",
+    "clean: old-api": "concurrently \"npm run clean --prefix packages/vuepress-theme-reco\" \"npm run clean --prefix packages/@vuepress-reco/plugin-blog\"",
+    "copy": "lerna run copy --stream",
+    "copy: old=api": "concurrently \"npm run copy --prefix packages/vuepress-theme-reco\" \"npm run copy --prefix packages/@vuepress-reco/plugin-blog\"",
     "build:example": "vuepress build example",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "commit": "git add . && git-cz",
     "deploy:example": "bash scripts/deploy.sh",
     "start": "vuepress dev example",
-    "lint": "eslint --ext .js,.vue,.ts ./packages",
-    "lint:fix": "eslint --fix ./packages",
+    "lint": "eslint --ext .js,.ts,.vue .",
     "prevvpublish": "lerna publish --dist-tag next",
     "publish": "yarn build && lerna publish && yarn clean",
     "update": "yarn upgrade-interactive --latest"
@@ -32,46 +34,36 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,vue}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "package.json": [
-      "sort-package-json",
-      "git add"
-    ]
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{json,yml,css,scss}": "prettier --write",
+    "package.json": "sort-package-json"
   },
+  "prettier": "prettier-config-vuepress",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@types/events": "^3.0.0",
-    "@types/jest": "^26.0.22",
-    "@types/unist": "^2.0.3",
-    "@types/vfile": "^4.0.0",
-    "@types/vfile-message": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "babel-eslint": "^10.1.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "commitizen": "^4.1.2",
-    "concurrently": "^5.3.0",
+    "concurrently": "^6.0.0",
     "conventional-changelog-cli": "^2.0.34",
     "cpx": "^1.5.0",
     "cz-customizable": "^6.2.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-typescript": "^0.14.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "husky": "^4.2.5",
+    "eslint": "^7.23.0",
+    "eslint-config-vuepress": "^3.2.1",
+    "eslint-config-vuepress-typescript": "^2.2.1",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
     "lint-staged": "^10.2.7",
+    "prettier": "^2.2.1",
+    "prettier-config-vuepress": "^1.2.0",
     "sort-package-json": "^1.44.0",
     "ts-jest": "^26.4.4",
     "typescript": "4.2.3",
-    "vue-eslint-parser": "^7.6.0",
     "vuepress": "^2.0.0-beta.4"
   },
   "publishConfig": {

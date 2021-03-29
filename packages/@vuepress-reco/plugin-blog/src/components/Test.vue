@@ -6,10 +6,10 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'test',
-  setup () {
+  name: 'Test',
+  setup() {
     const b = 'reco'
     return { b }
-  }
+  },
 })
 </script>

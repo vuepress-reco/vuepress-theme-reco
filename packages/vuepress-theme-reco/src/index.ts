@@ -8,7 +8,6 @@ export const defaultTheme: Theme<ThemeConfig> = ({
   return {
     name: 'vuepress-theme-reco',
     layouts: path.resolve(__dirname, './layouts'),
-
     plugins: [
       [
         '@vuepress-reco/blog',
@@ -19,26 +18,26 @@ export const defaultTheme: Theme<ThemeConfig> = ({
               keys: ['tags'],
               path: '/tag/',
               layout: 'Tags',
-              scopeLayout: 'Tag'
+              scopeLayout: 'Tag',
             },
             {
               id: 'categories',
               keys: ['categories'],
               path: '/categories/',
               layout: 'Categories',
-              scopeLayout: 'Category'
+              scopeLayout: 'Category',
             },
             {
               id: 'timeline',
               keys: ['timeline'],
               path: '/timeline/',
               layout: 'TimeLines',
-              scopeLayout: 'TimeLine'
-            }
-          ]
-        }
-      ]
-    ]
+              scopeLayout: 'TimeLine',
+            },
+          ],
+        },
+      ],
+    ],
   }
 }
 

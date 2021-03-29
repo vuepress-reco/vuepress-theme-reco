@@ -1,10 +1,6 @@
-styles/
-images/
 node_modules/
-.cz-config.js
+.temp/
 lib/
-libs/
 dist/
-.eslintrc.js
-commitlint.config.js
-.cz-config.js
+!.vuepress/
+!.*.js
