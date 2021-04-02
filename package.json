@@ -1,30 +1,23 @@
 {
-  "name": "vuepress-theme-reco-next",
-  "version": "2.0.0",
   "private": true,
-  "repository": "git@github.com:recoluan/vuepress-theme-reco-next.git",
-  "license": "MIT",
-  "author": "reco_luan <recoluan@outlook.com>",
-  "main": "index.js",
   "workspaces": [
     "packages/vuepress-theme-reco",
     "packages/@vuepress-reco/*"
   ],
   "scripts": {
-    "build": "tsc --build",
-    "build: old-api": "yarn clean && concurrently \"npm run build --prefix packages/vuepress-theme-reco\" \"npm run build --prefix packages/@vuepress-reco/plugin-blog\" \"yarn copy\"",
+    "build": "yarn clean && tsc --build && yarn copy",
     "clean": "lerna run clean --stream",
-    "clean: old-api": "concurrently \"npm run clean --prefix packages/vuepress-theme-reco\" \"npm run clean --prefix packages/@vuepress-reco/plugin-blog\"",
     "copy": "lerna run copy --stream",
-    "copy: old=api": "concurrently \"npm run copy --prefix packages/vuepress-theme-reco\" \"npm run copy --prefix packages/@vuepress-reco/plugin-blog\"",
+    "bootstrap": "lerna bootstrap",
     "build:example": "vuepress build example",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "commit": "git add . && git-cz",
     "deploy:example": "bash scripts/deploy.sh",
     "start": "vuepress dev example",
+    "start:debug": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "prevvpublish": "lerna publish --dist-tag next",
-    "publish": "yarn build && lerna publish && yarn clean",
+    "publish": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish",
+    "release": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish prerelease --dist-tag next",
     "update": "yarn upgrade-interactive --latest"
   },
   "husky": {
@@ -47,6 +40,10 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
+    "@types/events": "^3.0.0",
+    "@types/jest": "^26.0.22",
+    "@types/unist": "^2.0.3",
+    "@types/vfile": "^4.0.0",
     "commitizen": "^4.1.2",
     "concurrently": "^6.0.0",
     "conventional-changelog-cli": "^2.0.34",
@@ -65,8 +62,5 @@
     "ts-jest": "^26.4.4",
     "typescript": "4.2.3",
     "vuepress": "^2.0.0-beta.4"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

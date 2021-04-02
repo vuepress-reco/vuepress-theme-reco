@@ -1,0 +1,35 @@
+{
+  "name": "@vuepress-reco/type-default",
+  "version": "2.0.0",
+  "description": "It is default type of vuepress-theme-reco.",
+  "keywords": [
+    "vuepress",
+    "reco",
+    "type"
+  ],
+  "author": "reco_luan <recoluan@outlook.com>",
+  "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recoluan/vuepress-theme-reco-next.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build",
+    "build:watch": "tsc --build -w",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+  },
+  "bugs": {
+    "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
+  }
+}

@@ -1,24 +1,24 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import { getRecoConfig, resolveRecoConfigPath } from './utils'
 
-const { type } = getRecoConfig(resolveRecoConfigPath())
-
-export const recoTheme: Theme<ThemeConfig> = ({
+export const defaultTheme: Theme<ThemeConfig> = ({
   themePlugins = {},
   ...localeOptions
 }) => {
   return {
     name: 'vuepress-theme-reco',
-    layouts: path.resolve(process.cwd(), `node_modules/${type}/lib/layouts`),
+    layouts: path.resolve(__dirname, './layouts'),
     plugins: [
       [
         '@vuepress-reco/blog',
         {
           frontmatters: [
             {
+              id: 'tags',
+              keys: ['tags'],
               path: '/tag/',
               layout: 'Tags',
+              scopeLayout: 'Tag',
             },
             {
               id: 'categories',
@@ -41,4 +41,4 @@ export const recoTheme: Theme<ThemeConfig> = ({
   }
 }
 
-export default recoTheme
+export default defaultTheme

@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ a }}
-    <Test />
+    <Content />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    const a = 123
+    const a = 'page'
     return { a }
   },
 })

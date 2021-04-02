@@ -13,7 +13,7 @@ const blogPlugin: Plugin<BlogPluginOptions> = (options, config) => {
     async onInitialized() {
       config.pages.unshift(
         await createPage(config, {
-          path: '/category.html',
+          path: '/category/',
           frontmatter: {
             layout: 'Category',
           },
