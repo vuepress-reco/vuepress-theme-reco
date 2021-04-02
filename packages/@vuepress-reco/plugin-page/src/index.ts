@@ -6,7 +6,7 @@ export type BlogPluginOptions = Record<string, any>
 
 const blogPlugin: Plugin<BlogPluginOptions> = (options, config) => {
   return {
-    name: '@vuepress-reco/vuepress-plugin-blog',
+    name: '@vuepress-reco/vuepress-plugin-page',
 
     clientAppEnhanceFiles: path.resolve(__dirname, './clientAppEnhance.js'),
 

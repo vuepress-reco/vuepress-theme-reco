@@ -45,7 +45,7 @@ module.exports = {
       name: '⚪  chore:    琐事，不属于以上任何类型',
     },
   ],
-  scopes: ['theme-reco', 'plugin-blog', 'example'],
+  scopes: ['theme-reco', 'plugin-page', 'example'],
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
 }

@@ -10,7 +10,7 @@ export const defaultTheme: Theme<ThemeConfig> = ({
     layouts: path.resolve(__dirname, './layouts'),
     plugins: [
       [
-        '@vuepress-reco/blog',
+        '@vuepress-reco/page',
         {
           frontmatters: [
             {
