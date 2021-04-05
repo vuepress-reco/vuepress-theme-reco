@@ -1,3 +1,3 @@
 <template>
-  <div>category</div>
+  <div>tags</div>
 </template>

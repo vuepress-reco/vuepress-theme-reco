@@ -1,7 +1,7 @@
 ---
 title: blog1 in c2
-categories:
+reco-categories:
  - c2
-tags:
+reco-tags:
  - t2
 ---
