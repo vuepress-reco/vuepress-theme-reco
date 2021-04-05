@@ -4,12 +4,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useClassifiable } from '@vuepress-reco/vuepress-plugin-page/lib/client'
+import { usePageData } from '@vuepress-reco/shared'
 
 export default defineComponent({
   setup() {
-    const a = useClassifiable()
-    console.log(111, a)
+    const { classificationPosts } = usePageData()
+    console.log(111, classificationPosts)
   },
 })
 </script>

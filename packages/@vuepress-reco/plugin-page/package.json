@@ -18,6 +18,7 @@
   "license": "MIT",
   "author": "reco_luan <recoluan@outlook.com>",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
