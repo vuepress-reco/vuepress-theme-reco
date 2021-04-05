@@ -1,3 +1,3 @@
 module.exports = {
-  type: '@vuepress-reco/type-default',
+  type: '@vuepress-reco/style-default',
 }

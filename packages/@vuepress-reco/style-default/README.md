@@ -1,11 +1,11 @@
-# `type-default`
+# `style-default`
 
 > TODO: description
 
 ## Usage
 
 ```
-const typeDefault = require('type-default');
+const typeDefault = require('style-default');
 
 // TODO: DEMONSTRATE API
 ```
