@@ -3,6 +3,7 @@
   "references": [
     { "path": "./packages/vuepress-theme-reco/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/plugin-page/tsconfig.build.json" },
+    { "path": "./packages/@vuepress-reco/type-default/tsconfig.build.json" },
   ],
   "files": []
 }

@@ -1,3 +1,8 @@
+const fs = require('fs')
+const path = require('path')
+
+const packages = fs.readdirSync(path.resolve(__dirname, 'packages/@vuepress'))
+
 module.exports = {
   types: [
     {
@@ -45,7 +50,7 @@ module.exports = {
       name: '⚪  chore:    琐事，不属于以上任何类型',
     },
   ],
-  scopes: ['theme-reco', 'plugin-page', 'example'],
+  scopes: ['theme-reco', 'example', ...packages],
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
 }
