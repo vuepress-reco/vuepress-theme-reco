@@ -1,12 +1,10 @@
 import type { Plugin, App } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import type { PagePluginOption } from '../types'
+import type { PagePluginOptions } from '../types'
 import Classifiable from './node/Classifiable'
 
-export type PagePluginOptions = Record<string, any>
-
-const pagePlugin: Plugin<PagePluginOptions> = (
-  options: PagePluginOption[],
+const pagePlugin: Plugin<Record<string, any>> = (
+  options: PagePluginOptions,
   app: App
 ) => {
   const classifiable = new Classifiable(options, app)
@@ -15,7 +13,8 @@ const pagePlugin: Plugin<PagePluginOptions> = (
 
     // define 需要在 onInitialized 生命周期执行后执行，需要使用函数表达式，而不是对象
     define: () => ({
-      PAGE_DATA_OF_EXTEND_PAGES: classifiable.pageDataOfExtendedPages,
+      CLASSIFICATION_PAGINATION_POSTS:
+        classifiable.classificationPaginationPosts,
     }),
 
     clientAppEnhanceFiles: path.resolve(
@@ -25,7 +24,7 @@ const pagePlugin: Plugin<PagePluginOptions> = (
 
     async onInitialized() {
       classifiable.resolveKeyValue()
-      const resolvePages = await Promise.all(classifiable.extendPages)
+      const resolvePages = await Promise.all(classifiable.extendedPages)
       app.pages = [...resolvePages, ...app.pages]
     },
   }

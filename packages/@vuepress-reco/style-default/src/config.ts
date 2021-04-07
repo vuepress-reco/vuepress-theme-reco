@@ -17,7 +17,6 @@ export default {
     {
       path: '/timeline/',
       layout: 'TimeLine',
-      pagination: 10,
     },
   ],
 }

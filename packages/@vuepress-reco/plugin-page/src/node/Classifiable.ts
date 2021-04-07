@@ -1,13 +1,23 @@
 import { createPage } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import { PagePluginOption } from '../../types'
+import { isEmptyPlainObject } from '@vuepress-reco/shared'
+import {
+  ClassificationPaginationPost,
+  ClassificationPageOptions,
+  ClassificationData,
+  PagePluginOptions,
+  FrontmatterKey,
+  PageOptions,
+  ItemKey,
+} from '../../types'
+
 export default class Classifiable {
-  private classificationData: any = {}
-  private frontmatterKeys: string[] = []
-  options: PagePluginOption[]
+  private classificationData: ClassificationData = {}
+  private frontmatterKeys: FrontmatterKey[] = []
+  options: PagePluginOptions
   app: App
 
-  constructor(options: PagePluginOption[], app: App) {
+  constructor(options: PagePluginOptions, app: App) {
     this.options = options
     this.app = app
 
@@ -16,15 +26,21 @@ export default class Classifiable {
 
   // 初始化
   init(): void {
-    this.options.forEach((option: PagePluginOption) => {
-      if (option.type === 'frontmatter') {
-        const { frontmatterKey: key, layout, pagination } = option
-
-        this.frontmatterKeys.push(key as string)
-        this.classificationData[key as string] = {
-          layout,
+    this.options.forEach((option: PageOptions) => {
+      if ((option as ClassificationPageOptions).type === 'frontmatter') {
+        const {
+          frontmatterKey: key,
           pagination,
-          extendPages: [],
+          layout,
+        } = option as ClassificationPageOptions
+
+        this.frontmatterKeys.push(key)
+
+        this.classificationData[key] = {
+          pagination: pagination || 10, // 分页默认为 10
+          extendedPages: [],
+          items: {},
+          layout,
         }
       }
     })
@@ -39,25 +55,25 @@ export default class Classifiable {
         }
       )
 
-      frontmatterRecoKeys.forEach((key: string) => {
+      frontmatterRecoKeys.forEach((key: FrontmatterKey) => {
         const values = page.frontmatter[key] as string[]
-        if (!this.classificationData[key].items) {
+        if (isEmptyPlainObject(this.classificationData[key].items)) {
           this.classificationData[key].items = values.reduce(
             (total, current) => {
               total[current] = {
-                length: 1,
                 pages: [page],
+                length: 1,
               }
               return total
             },
             {}
           )
         } else {
-          values.forEach((value: string) => {
+          values.forEach((value: ItemKey) => {
             if (!this.classificationData[key].items[value]) {
               this.classificationData[key].items[value] = {
-                length: 1,
                 pages: [page],
+                length: 1,
               }
             } else {
               const { pages: p, length } = this.classificationData[key].items[
@@ -83,8 +99,8 @@ export default class Classifiable {
       const { items, layout, pagination } = this.classificationData[key]
       const valuesOfKey = Object.keys(items)
 
-      this.classificationData[key].extendPages = valuesOfKey.reduce(
-        (total: any[], value: string) => {
+      this.classificationData[key].extendedPages = valuesOfKey.reduce(
+        (total: Promise<Page>[], value: string) => {
           const num = items[value].length
           const pageSize = Math.ceil(num / pagination)
 
@@ -102,38 +118,46 @@ export default class Classifiable {
     })
   }
 
-  private resolvePagesByPagePluginOption(
-    option: PagePluginOption
-  ): Promise<Page>[] {
-    const { path, layout, type, frontmatterKey } = option
-    if (type === 'frontmatter') {
-      return this.classificationData[frontmatterKey as string].extendPages
+  // 解析 page 配置
+  private resolvePageOptions(option: PageOptions): Promise<Page>[] {
+    if ((option as ClassificationPageOptions).type === 'frontmatter') {
+      return this.classificationData[
+        (option as ClassificationPageOptions).frontmatterKey
+      ].extendedPages
     } else {
+      const { path, layout } = option
       return [
         createPage(this.app, {
-          path,
           frontmatter: { layout },
+          path,
         }),
       ]
     }
   }
 
-  get extendPages(): any[] {
-    const extendedPages = this.options.reduce((total: any[], option) => {
-      const classificationPages = this.resolvePagesByPagePluginOption(option)
-      return [...total, ...classificationPages]
-    }, [])
+  // 拓展的页面
+  get extendedPages(): Promise<Page>[] {
+    const extendedPages = this.options.reduce(
+      (total: Promise<Page>[], option) => {
+        const classificationPages = this.resolvePageOptions(option)
+        return [...total, ...classificationPages]
+      },
+      []
+    )
 
     return extendedPages
   }
 
-  get pageDataOfExtendedPages(): Record<string, any> {
+  get classificationPaginationPosts(): Record<
+    string,
+    ClassificationPaginationPost
+  > {
     let data = {}
 
     this.frontmatterKeys.forEach((key: string) => {
       const realKey = key.slice(5)
       const { items, pagination } = this.classificationData[key]
-      const valuesOfKey = Object.keys(items)
+      const valuesOfKey = Object.keys(!items)
 
       valuesOfKey.forEach((value: string) => {
         const { length, pages } = items[value]
@@ -141,19 +165,26 @@ export default class Classifiable {
 
         const paginationDataOfValue = Array.from({
           length: pageSize,
-        }).reduce((total: Record<string, any>, current, index) => {
-          const currentPage = index + 1
-          total[`/${realKey}/${value}/${currentPage}/`] = {
-            pageSize: pagination,
-            total: pages.length,
-            currentPage,
-            pages:
-              index < pageSize - 1
-                ? pages.slice(pagination * (pageSize - 1), pagination)
-                : pages.slice(pagination * (pageSize - 1)),
-          }
-          return total
-        }, {})
+        }).reduce(
+          (
+            total: Record<string, ClassificationPaginationPost>,
+            current,
+            index
+          ) => {
+            const currentPage = index + 1
+            total[`/${realKey}/${value}/${currentPage}/`] = {
+              pageSize: pagination,
+              total: pages.length,
+              currentPage,
+              pages:
+                index < pageSize - 1
+                  ? pages.slice(pagination * (pageSize - 1), pagination)
+                  : pages.slice(pagination * (pageSize - 1)),
+            }
+            return total
+          },
+          {}
+        )
 
         data = { ...data, ...paginationDataOfValue }
       })

@@ -266,9 +266,19 @@
         "signature": "d85e3cf0f3b27a3e9c3be609c7f6bf9092dcbaaa718021842222474406c6ed4f",
         "affectsGlobalScope": false
       },
+      "./src/utils/typecheck.ts": {
+        "version": "9a004714d48828def99f9dc70c937c498ca30fd577196b3cd687c1b4996b801b",
+        "signature": "b555b14efdf826383d0057d0e51dcb54ba7cfc35db18be4072b10b1e7456792f",
+        "affectsGlobalScope": false
+      },
+      "./src/utils/index.ts": {
+        "version": "4b69eee1cb13785518fdddc93c91dc275c53c52d3eaa37c5cc3d46495f16210c",
+        "signature": "76256c7817528956cb4a339727b88eea0407f05bc82389f930dd3bafe420f723",
+        "affectsGlobalScope": false
+      },
       "./src/index.ts": {
-        "version": "c03a12491ea715cfbb2fb3bb4886ee53b5060bd438f618b4a5e3674325287d73",
-        "signature": "33c8f325866f6f7d13dcebfbe2740a0c4e9829ba00e49444cffa39235397c3c1",
+        "version": "21824911d12a830ee9838e725eaa85747a8389a262cdcd8072c6a5231076df5e",
+        "signature": "42b66a327b2c844560ccebaef3c7b89e31f78fe2af9d878e2e4742d727ca67ff",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/babel__generator/index.d.ts": {
@@ -1347,7 +1357,11 @@
         "../../../node_modules/vue/dist/vue.d.ts"
       ],
       "./src/index.ts": [
-        "./src/composable/index.ts"
+        "./src/composable/index.ts",
+        "./src/utils/index.ts"
+      ],
+      "./src/utils/index.ts": [
+        "./src/utils/typecheck.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1803,7 +1817,11 @@
         "./src/composable/usepagedata.ts"
       ],
       "./src/index.ts": [
-        "./src/composable/index.ts"
+        "./src/composable/index.ts",
+        "./src/utils/index.ts"
+      ],
+      "./src/utils/index.ts": [
+        "./src/utils/typecheck.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1979,7 +1997,9 @@
       "../../../node_modules/vue/dist/vue.d.ts",
       "./src/composable/index.ts",
       "./src/composable/usepagedata.ts",
-      "./src/index.ts"
+      "./src/index.ts",
+      "./src/utils/index.ts",
+      "./src/utils/typecheck.ts"
     ]
   },
   "version": "4.2.3"

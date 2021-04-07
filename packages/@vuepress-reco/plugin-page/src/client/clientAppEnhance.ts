@@ -1,9 +1,9 @@
 import { defineClientAppEnhance } from '@vuepress/client'
 
-declare const PAGE_DATA_OF_EXTEND_PAGES: Record<string, any>
+declare const CLASSIFICATION_PAGINATION_POSTS: Record<string, any[]>
 
-const pageDataOfExtendedPages = PAGE_DATA_OF_EXTEND_PAGES
+const classificationPaginationPosts = CLASSIFICATION_PAGINATION_POSTS
 
 export default defineClientAppEnhance(async ({ app }) => {
-  app.provide('classificationPosts', pageDataOfExtendedPages)
+  app.provide('classificationPaginationPosts', classificationPaginationPosts)
 })

@@ -1,7 +1,43 @@
-export type PagePluginOption = {
+export type ClassificationPageOptions = {
+  type: 'frontmatter'
+  frontmatterKey: string
   path: string
   layout: string
-  type?: 'frontmatter'
-  frontmatterKey?: string
   pagination?: number
+}
+
+export type OrdinaryPageOptions = {
+  path: string
+  layout: string
+}
+
+export type PageOptions = ClassificationPageOptions | OrdinaryPageOptions
+
+export type PagePluginOptions = Array<PageOptions>
+
+export type ItemKey = string
+
+export type ClassificationData = Record<
+  string,
+  {
+    layout: string
+    pagination: number
+    extendedPages: any[]
+    items: Record<
+      ItemKey,
+      {
+        pages: any[]
+        length: number
+      }
+    >
+  }
+>
+
+export type FrontmatterKey = string
+
+export type ClassificationPaginationPost = {
+  pageSize: number
+  total: number
+  currentPage: number
+  pages: any[]
 }
