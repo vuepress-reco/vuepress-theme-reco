@@ -1,11 +1,11 @@
-# `shared`
+# `core`
 
 > TODO: description
 
 ## Usage
 
 ```
-const shared = require('shared');
+const core = require('core');
 
 // TODO: DEMONSTRATE API
 ```

@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { usePageData } from '@vuepress-reco/shared'
+import { usePageData } from '@vuepress-reco/core'
 
 export default defineComponent({
   setup() {

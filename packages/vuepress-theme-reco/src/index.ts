@@ -2,10 +2,10 @@ import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { getRecoConfig, resolveRecoConfigPath } from './utils'
 
-const { type } = getRecoConfig(resolveRecoConfigPath())
-const typeConfig = require(path.resolve(
+const { style } = getRecoConfig(resolveRecoConfigPath())
+const styleConfig = require(path.resolve(
   process.cwd(),
-  `node_modules/${type}/lib/config.js`
+  `node_modules/${style}/lib/index.js`
 )).default
 
 export const recoTheme: Theme<ThemeConfig> = ({
@@ -14,8 +14,8 @@ export const recoTheme: Theme<ThemeConfig> = ({
 }) => {
   return {
     name: 'vuepress-theme-reco',
-    layouts: path.resolve(process.cwd(), `node_modules/${type}/lib/layouts`),
-    plugins: [['@vuepress-reco/page', typeConfig.pages || [1]]],
+    layouts: path.resolve(process.cwd(), `node_modules/${style}/lib/layouts`),
+    plugins: [['@vuepress-reco/page', styleConfig.pages || []]],
   }
 }
 
