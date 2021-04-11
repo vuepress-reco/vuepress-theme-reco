@@ -32,5 +32,8 @@
   },
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
+  },
+  "dependencies": {
+    "@vuepress-reco/core": "^2.0.0"
   }
 }

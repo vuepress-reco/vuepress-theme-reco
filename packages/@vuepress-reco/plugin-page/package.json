@@ -35,5 +35,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@vuepress-reco/core": "^2.0.0"
   }
 }
