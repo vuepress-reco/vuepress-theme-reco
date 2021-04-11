@@ -20,7 +20,7 @@ export const resolveRecoConfigPath = (
 }
 
 // 获取 reco.config.js 的内容
-export const getRecoConfig = (
+export const resolveRecoConfig = (
   path: string | undefined
 ): Record<string, any> => {
   if (path === undefined) return {}

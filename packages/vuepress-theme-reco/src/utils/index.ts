@@ -1,1 +1,1 @@
-export * from './resolveConfig'
+export * from './resolveRecoConfig'

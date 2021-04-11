@@ -1,4 +1,6 @@
-export default {
+import { defineStyle } from '@vuepress-reco/core'
+
+export default defineStyle({
   pages: [
     {
       type: 'frontmatter',
@@ -19,4 +21,4 @@ export default {
       layout: 'TimeLine',
     },
   ],
-}
+})

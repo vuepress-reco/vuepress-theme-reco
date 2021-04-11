@@ -11,3 +11,5 @@ dist
 example/.vuepress/.cache
 example/.vuepress/.temp
 packages/**/tsconfig.build.tsbuildinfo
+packages/**/tsconfig.cjs.tsbuildinfo
+packages/**/tsconfig.esm.tsbuildinfo
