@@ -28,7 +28,7 @@
     "build": "tsc --build tsconfig.build.json",
     "build:watch": "tsc --build -w tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css}\" lib"
   },
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"

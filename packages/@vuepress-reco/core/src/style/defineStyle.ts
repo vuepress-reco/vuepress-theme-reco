@@ -3,10 +3,11 @@ import { StyleOptions } from '../types/'
 
 export const defineStyle = (options: StyleOptions): Theme<ThemeConfig> => {
   return ({ themePlugins = {}, ...localeOptions }) => {
-    const { pages } = options
+    const { pages, ...otherCustomOptions } = options
 
     return {
       plugins: [['@vuepress-reco/page', pages || []]],
+      ...otherCustomOptions,
     }
   }
 }

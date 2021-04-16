@@ -1,4 +1,5 @@
 import { defineStyle } from '@vuepress-reco/core'
+import { path } from '@vuepress/utils'
 
 export default defineStyle({
   pages: [
@@ -21,4 +22,31 @@ export default defineStyle({
       layout: 'TimeLine',
     },
   ],
+  clientAppEnhanceFiles: path.resolve(
+    __dirname,
+    './client/clientAppEnhance.js'
+  ),
+  onInitialized(app): void {
+    app.options.bundlerConfig = {
+      postcss: {
+        postcssOptions: {
+          plugins: {
+            tailwindcss: {
+              purge: [],
+              darkMode: false, // or 'media' or 'class'
+              theme: {
+                extend: {},
+              },
+              variants: {
+                extend: {},
+              },
+              plugins: [],
+            },
+            autoprefixer: {},
+          },
+        },
+      },
+      ...app.options.bundlerConfig,
+    }
+  },
 })

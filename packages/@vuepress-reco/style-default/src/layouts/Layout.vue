@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-red-500">
     {{ a }}
     <Content />
   </div>

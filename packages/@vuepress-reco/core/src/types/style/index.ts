@@ -17,4 +17,6 @@ export type StylePageOptions = Array<PageOptions>
 
 export type StyleOptions = {
   pages: StylePageOptions
+  onInitialized: (app: any) => void
+  clientAppEnhanceFiles: string
 }
