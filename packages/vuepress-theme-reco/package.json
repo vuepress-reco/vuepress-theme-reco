@@ -29,7 +29,6 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
-    "@vuepress-reco/vuepress-plugin-page": "^2.0.0",
-    "tailwindcss": "^2.1.1"
+    "@vuepress-reco/vuepress-plugin-page": "^2.0.0"
   }
 }

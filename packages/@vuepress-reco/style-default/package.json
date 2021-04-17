@@ -34,6 +34,8 @@
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
   "dependencies": {
-    "@vuepress-reco/core": "^2.0.0"
+    "@tailwindcss/typography": "^0.4.0",
+    "@vuepress-reco/core": "^2.0.0",
+    "tailwindcss": "^2.1.1"
   }
 }

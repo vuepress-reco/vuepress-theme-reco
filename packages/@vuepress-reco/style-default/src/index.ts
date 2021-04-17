@@ -32,7 +32,7 @@ export default defineStyle({
         postcssOptions: {
           plugins: {
             tailwindcss: {
-              purge: [],
+              purge: ['./src/**/*.vue'],
               darkMode: false, // or 'media' or 'class'
               theme: {
                 extend: {},
@@ -40,7 +40,7 @@ export default defineStyle({
               variants: {
                 extend: {},
               },
-              plugins: [],
+              plugins: [require('@tailwindcss/typography')],
             },
             autoprefixer: {},
           },
