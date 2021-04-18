@@ -28,13 +28,12 @@
     "build": "tsc --build tsconfig.build.json",
     "build:watch": "tsc --build -w tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg}\" lib"
   },
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.0",
     "@vuepress-reco/core": "^2.0.0",
     "tailwindcss": "^2.1.1"
   }

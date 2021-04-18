@@ -1,27 +1,9 @@
 import { defineStyle } from '@vuepress-reco/core'
 import { path } from '@vuepress/utils'
+import { pages, tailwindConfig } from './node'
 
 export default defineStyle({
-  pages: [
-    {
-      type: 'frontmatter',
-      frontmatterKey: 'reco-categories',
-      path: '/categories/',
-      layout: 'Categories',
-      pagination: 10,
-    },
-    {
-      type: 'frontmatter',
-      frontmatterKey: 'reco-tags',
-      path: '/tags/',
-      layout: 'Tags',
-      pagination: 10,
-    },
-    {
-      path: '/timeline/',
-      layout: 'TimeLine',
-    },
-  ],
+  pages,
   clientAppEnhanceFiles: path.resolve(
     __dirname,
     './client/clientAppEnhance.js'
@@ -31,17 +13,7 @@ export default defineStyle({
       postcss: {
         postcssOptions: {
           plugins: {
-            tailwindcss: {
-              purge: ['./src/**/*.vue'],
-              darkMode: false, // or 'media' or 'class'
-              theme: {
-                extend: {},
-              },
-              variants: {
-                extend: {},
-              },
-              plugins: [require('@tailwindcss/typography')],
-            },
+            tailwindcss: tailwindConfig,
             autoprefixer: {},
           },
         },
