@@ -13,7 +13,10 @@ export const recoTheme: Theme<ThemeConfig> = ({
 }) => {
   return {
     name: 'vuepress-theme-reco',
-    layouts: path.resolve(process.cwd(), `node_modules/${style}/lib/layouts`),
+    layouts: path.resolve(
+      process.cwd(),
+      `node_modules/${style}/lib/client/layouts`
+    ),
     ...getStyleConfig({ themePlugins, localeOptions }),
   }
 }

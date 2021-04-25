@@ -1,5 +1,5 @@
 import { defineClientAppEnhance } from '@vuepress/client'
-// import './tailwindcss.css'
+import './styles/tailwindcss.css'
 
 export default defineClientAppEnhance(() => {
   // nothing
