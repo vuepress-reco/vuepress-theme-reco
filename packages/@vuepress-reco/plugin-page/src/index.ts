@@ -12,18 +12,21 @@ const pagePlugin: Plugin<Record<string, any>> = (
     name: '@vuepress-reco/vuepress-plugin-page',
 
     // define 需要在 onInitialized 生命周期执行后执行，需要使用函数表达式，而不是对象
-    define: () => ({
-      CLASSIFICATION_PAGINATION_POSTS:
-        classifiable.classificationPaginationPosts,
-    }),
+    define: (app) => {
+      return {
+        CLASSIFICATION_PAGINATION_POSTS:
+          classifiable.classificationPaginationPosts,
+        POSTS: app.pages,
+      }
+    },
 
     clientAppEnhanceFiles: path.resolve(
       __dirname,
       './client/clientAppEnhance.js'
     ),
 
-    async onInitialized() {
-      classifiable.resolveKeyValue()
+    async onInitialized(app) {
+      classifiable.resolveKeyValue(app)
       const resolvePages = await Promise.all(classifiable.extendedPages)
       app.pages = [...resolvePages, ...app.pages]
     },

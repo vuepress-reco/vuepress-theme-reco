@@ -47,15 +47,16 @@ export default class Classifiable {
   }
 
   // 解析 key-value 对应的数量
-  resolveKeyValue(): void {
+  resolveKeyValue(app: App): void {
+    this.app = app
     this.app.pages.forEach((page: Page) => {
-      const frontmatterRecoKeys = Object.keys(page.frontmatter).filter(
+      const classificationKeys = Object.keys(page.frontmatter).filter(
         (key: string) => {
-          return /^reco-.+/.test(key)
+          return this.frontmatterKeys.includes(key)
         }
       )
 
-      frontmatterRecoKeys.forEach((key: FrontmatterKey) => {
+      classificationKeys.forEach((key: FrontmatterKey) => {
         const values = page.frontmatter[key] as string[]
         if (isEmptyPlainObject(this.classificationData[key].items)) {
           this.classificationData[key].items = values.reduce(
@@ -95,7 +96,6 @@ export default class Classifiable {
   // 根据数量转化成 page 信息
   resolvePages(): void {
     this.frontmatterKeys.forEach((key: string) => {
-      const realKey = key.slice(5)
       const { items, layout, pagination } = this.classificationData[key]
       const valuesOfKey = Object.keys(items)
 
@@ -106,7 +106,7 @@ export default class Classifiable {
 
           const pages = Array.from({ length: pageSize }).map((item, index) => {
             return createPage(this.app, {
-              path: `/${realKey}/${value}/${index + 1}/`,
+              path: `/${key}/${value}/${index + 1}/`,
               frontmatter: { layout },
             })
           })
@@ -155,9 +155,8 @@ export default class Classifiable {
     let data = {}
 
     this.frontmatterKeys.forEach((key: string) => {
-      const realKey = key.slice(5)
       const { items, pagination } = this.classificationData[key]
-      const valuesOfKey = Object.keys(!items)
+      const valuesOfKey = Object.keys(items)
 
       valuesOfKey.forEach((value: string) => {
         const { length, pages } = items[value]
@@ -172,7 +171,7 @@ export default class Classifiable {
             index
           ) => {
             const currentPage = index + 1
-            total[`/${realKey}/${value}/${currentPage}/`] = {
+            total[`/${key}/${value}/${currentPage}/`] = {
               pageSize: pagination,
               total: pages.length,
               currentPage,
