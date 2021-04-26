@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin.js')
 
 export const mdStylePlugin = plugin(
-  ({ addComponents, addBase, addUtilities, config }) => {
+  ({ addComponents, addBase, addUtilities, config, theme }) => {
     const buttons = {
       '.btn': {
         padding: '.5rem 1rem',
@@ -22,6 +22,12 @@ export const mdStylePlugin = plugin(
           backgroundColor: '#cc1f1a',
         },
       },
+      '.bg-reco': {
+        'backgroundColor': config('theme.colors.white'),
+        '@media (prefers-color-scheme: dark)': {
+          backgroundColor: config('theme.colors.gray.900'),
+        },
+      },
     }
 
     addComponents(buttons)
@@ -35,6 +41,14 @@ export const mdStylePlugin = plugin(
     addUtilities(newUtilities)
 
     addBase({
+      body: {
+        'backgroundColor': 'white',
+        'color': 'black',
+        '@media (prefers-color-scheme: dark)': {
+          backgroundColor: 'black',
+          color: 'white',
+        },
+      },
       h1: {
         fontSize: config('theme.fontSize.2xl'),
       },

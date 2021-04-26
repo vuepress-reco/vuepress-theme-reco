@@ -11,7 +11,9 @@ export const tailwindConfig = {
       'xl': '1536px',
       '2xl': '1880px',
     },
-    extend: {},
+    extend: {
+      height: (): Record<string, any> => ({ 'screen-3/5': '60vh' }),
+    },
   },
   variants: {
     extend: {},
