@@ -1,14 +1,14 @@
 export const pages = [
   {
     type: 'frontmatter',
-    frontmatterKey: 'reco-categories',
+    frontmatterKey: 'categories',
     path: '/categories/',
     layout: 'Categories',
     pagination: 10,
   },
   {
     type: 'frontmatter',
-    frontmatterKey: 'reco-tags',
+    frontmatterKey: 'tags',
     path: '/tags/',
     layout: 'Tags',
     pagination: 10,

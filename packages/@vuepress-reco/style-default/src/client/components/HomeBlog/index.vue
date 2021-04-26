@@ -1,7 +1,7 @@
 <template>
-  <div class="home-blog-wrapper">
+  <main class="home-blog-wrapper pt-14">
     <div
-      class="hero w-screen hhhhh md:h-screen flex justify-center items-center"
+      class="hero w-screen h-screen-3/5 md:h-screen flex justify-center items-center"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
     >
       <div class="hero-content bg-topaz">
@@ -13,7 +13,7 @@
           }"
           alt="heroImage"
         />
-        <h1 class="text-center mb-6 text-gray-900 dark:text-white">
+        <h1 class="text-center mb-6">
           {{ frontmatter.heroText }}
         </h1>
         <p class="text-center">
@@ -25,7 +25,7 @@
     <div class="prose">
       <Content />
     </div>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
