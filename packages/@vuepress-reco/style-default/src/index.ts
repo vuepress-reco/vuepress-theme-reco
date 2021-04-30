@@ -10,6 +10,8 @@ export default defineStyle({
     './client/clientAppEnhance.js'
   ),
 
+  clientAppSetupFiles: path.resolve(__dirname, './client/clientAppSetup.js'),
+
   onInitialized(app): void {
     app.options.bundlerConfig = {
       postcss: {
@@ -23,4 +25,6 @@ export default defineStyle({
       ...app.options.bundlerConfig,
     }
   },
+
+  plugins: [['@vuepress/theme-data']],
 })
