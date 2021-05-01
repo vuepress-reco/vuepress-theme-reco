@@ -1,30 +1,32 @@
-import { defineStyle } from '@vuepress-reco/core'
+import { defineStyle, StyleOptions } from '@vuepress-reco/core'
 import { path } from '@vuepress/utils'
 import { pages, tailwindConfig } from './node'
 
-export default defineStyle({
-  pages,
+export default defineStyle(
+  (themePlugins = {}, ...localeOptions): StyleOptions => ({
+    pages,
 
-  clientAppEnhanceFiles: path.resolve(
-    __dirname,
-    './client/clientAppEnhance.js'
-  ),
+    clientAppEnhanceFiles: path.resolve(
+      __dirname,
+      './client/clientAppEnhance.js'
+    ),
 
-  clientAppSetupFiles: path.resolve(__dirname, './client/clientAppSetup.js'),
+    clientAppSetupFiles: path.resolve(__dirname, './client/clientAppSetup.js'),
 
-  onInitialized(app): void {
-    app.options.bundlerConfig = {
-      postcss: {
-        postcssOptions: {
-          plugins: {
-            tailwindcss: tailwindConfig,
-            autoprefixer: {},
+    onInitialized(app): void {
+      app.options.bundlerConfig = {
+        postcss: {
+          postcssOptions: {
+            plugins: {
+              tailwindcss: tailwindConfig,
+              autoprefixer: {},
+            },
           },
         },
-      },
-      ...app.options.bundlerConfig,
-    }
-  },
+        ...app.options.bundlerConfig,
+      }
+    },
 
-  plugins: [['@vuepress/theme-data']],
-})
+    plugins: [['@vuepress/theme-data', { themeData: localeOptions }]],
+  })
+)

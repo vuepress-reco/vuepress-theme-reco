@@ -11,7 +11,7 @@ import { useSidebarItems } from '../../composables'
 export default defineComponent({
   setup() {
     const sidebarItems = useSidebarItems()
-    console.log(sidebarItems)
+    console.log(222, sidebarItems.value)
     return {
       sidebarItems,
     }

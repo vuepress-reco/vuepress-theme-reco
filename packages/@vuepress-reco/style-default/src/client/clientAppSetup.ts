@@ -1,10 +1,8 @@
 import { computed, provide } from 'vue'
 import { defineClientAppSetup, usePageFrontmatter } from '@vuepress/client'
-import {
-  resolveSidebarItems,
-  sidebarItemsSymbol,
-  useThemeLocaleData,
-} from './composables'
+import { resolveSidebarItems, sidebarItemsSymbol } from './composables'
+
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 
 import type { DefaultThemeNormalPageFrontmatter } from '../types'
 
