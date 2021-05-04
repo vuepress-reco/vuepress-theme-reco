@@ -124,7 +124,10 @@ export const resolveArraySidebarItems = (
         return useNavLink(item)
       }
       if (!item.isGroup) {
-        return item as ResolvedSidebarItem
+        return {
+          ...item,
+          children: item.children.map(handleChildItem),
+        }
       }
 
       return {

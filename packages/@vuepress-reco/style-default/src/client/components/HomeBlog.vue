@@ -33,13 +33,14 @@ import { defineComponent, computed } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
 
 export default defineComponent({
+  name: 'HomeBlog',
   setup() {
     const frontmatter = usePageFrontmatter()
 
     const bgImage = computed(() => {
       return frontmatter.value.bgImage
         ? frontmatter.value.bgImage
-        : require('../../images/bg.svg').default
+        : require('../images/bg.svg').default
     })
 
     const heroImageStyle = computed(

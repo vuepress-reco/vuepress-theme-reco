@@ -3,7 +3,7 @@ import { path } from '@vuepress/utils'
 import { pages, tailwindConfig } from './node'
 
 export default defineStyle(
-  (themePlugins = {}, ...localeOptions): StyleOptions => ({
+  (themeConfig): StyleOptions => ({
     pages,
 
     clientAppEnhanceFiles: path.resolve(
@@ -27,6 +27,6 @@ export default defineStyle(
       }
     },
 
-    plugins: [['@vuepress/theme-data', { themeData: localeOptions }]],
+    plugins: [['@vuepress/theme-data', { themeData: themeConfig }]],
   })
 )
