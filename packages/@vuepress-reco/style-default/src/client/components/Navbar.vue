@@ -1,7 +1,17 @@
 <template>
-  <header
-    class="navbar-container fixed top-0 right-0 z-10 p-4 w-screen shadow-md leading-6 bg-reco"
-  >
-    navbar
+  <header class="navbar-container">
+    <NavbarLinks />
   </header>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import NavbarLinks from './NavbarLinks'
+
+export default defineComponent({
+  components: { NavbarLinks },
+  setup() {
+    return {}
+  },
+})
+</script>

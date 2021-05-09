@@ -1,0 +1,18 @@
+.arrow {
+  @apply inline-block w-0 h-0 border-4 border-transparent;
+  &.up {
+    border-bottom-color: #9CA3AF;
+  }
+
+  &.down {
+    border-top-color: #9CA3AF;
+  }
+
+  &.right {
+    border-left-color: #9CA3AF;
+  }
+
+  &.left {
+    border-right-color: #9CA3AF;
+  }
+}

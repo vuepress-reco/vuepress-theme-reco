@@ -1,0 +1,29 @@
+.navbar-container {
+  @apply fixed top-0 right-0 z-20 p-4 w-screen shadow-md leading-6 bg-reco;
+  .navbar-links {
+    .navbar-links-item {
+      @apply inline-block px-1;
+      .dropdown-wrapper {
+        @apply relative;
+        .mobile-dropdown-title {
+          @apply hidden;
+        }
+        .nav-dropdown {
+          @apply hidden absolute top-6 bg-white shadow-md px-3 py-2 rounded-md;
+          .dropdown-item {
+            @apply truncate;
+          }
+        }
+        &:hover .nav-dropdown {
+          display: block !important;
+        }
+      }
+      .router-link-active {
+        @apply text-primary-500;
+      }
+    }
+  }
+  .arrow {
+    margin: 0 0 -2px 4px;
+  }
+}

@@ -59,6 +59,20 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       ],
     },
+    navbar: [
+      // NavbarItem
+      {
+        text: 'group',
+        link: '/group/bar.html',
+      },
+      // NavbarGroup
+      {
+        text: 'blogs',
+        children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
+      },
+      // 字符串 - 页面文件路径
+      '/bar/README.md',
+    ],
   },
   // debug: true,
 })
