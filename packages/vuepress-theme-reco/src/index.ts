@@ -7,6 +7,8 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   const getStyleConfig = require(path.resolve(`${stylePath}/lib/index.js`))
     .default
 
+  console.log(555, getStyleConfig(themeConfig))
+
   return {
     name: 'vuepress-theme-reco',
     layouts: path.resolve(

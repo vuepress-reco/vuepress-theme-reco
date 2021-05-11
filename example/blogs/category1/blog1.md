@@ -8,6 +8,16 @@ tags:
 
 ## 快速开始
 
+**js**
+
+```js
+const a = 1
+
+function b () {
+  console.log(123)
+}
+```
+
 **npx**
 
 ```

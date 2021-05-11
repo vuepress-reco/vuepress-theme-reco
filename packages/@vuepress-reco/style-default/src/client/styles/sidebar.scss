@@ -1,7 +1,7 @@
 .sidebar-container {
   .sidebar-item {
     a {
-      @apply block pl-4 py-4;
+      @apply block pl-4 py-2;
       & + ul {
         @apply pl-4;
       }

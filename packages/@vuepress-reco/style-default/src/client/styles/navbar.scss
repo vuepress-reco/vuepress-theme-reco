@@ -2,7 +2,10 @@
   @apply fixed top-0 right-0 z-20 p-4 w-screen shadow-md leading-6 bg-reco;
   .navbar-links {
     .navbar-links-item {
-      @apply inline-block px-1;
+      @apply inline-block;
+      &:not(:first-child) {
+        @apply ml-6;
+      }
       .dropdown-wrapper {
         @apply relative;
         .mobile-dropdown-title {

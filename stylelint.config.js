@@ -8,5 +8,6 @@ module.exports = {
     'named-grid-areas-no-invalid': null,
     'no-irregular-whitespace': false,
     'no-invalid-position-at-import-rule': null,
+    'CssSyntaxError': null,
   },
 }

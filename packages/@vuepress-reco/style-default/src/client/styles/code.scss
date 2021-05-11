@@ -1,0 +1,50 @@
+@import '_variables';
+
+div[class*='language-'] {
+  @apply rounded-md;
+  &::before {
+    @apply absolute z-10 top-1.5 right-3 text-gray-400;
+    font-size: 0.75rem;
+  }
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      @apply hidden;
+    }
+  }
+  &.line-numbers-mode {
+    @apply relative;
+    pre {
+      @apply pl-14 rounded-md;
+    }
+    .line-numbers {
+      @apply absolute top-0 w-12 text-center text-gray-400 py-3.5 leading-normal border-r border-gray-500;
+      br {
+        user-select: none;
+      }
+      .line-number {
+        position: relative;
+        z-index: 3;
+        user-select: none;
+      }
+    }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: $lineNumbersWrapperWidth;
+    //   height: 100%;
+    //   border-radius: 6px 0 0 6px;
+    //   border-right: 1px solid $highlightLineBgColor;
+    // }
+  }
+}
+
+@each $lang in $codeLang {
+  div[class*='language-'].ext-#{$lang} {
+    &:before {
+      content: '' + $lang;
+    }
+  }
+}
