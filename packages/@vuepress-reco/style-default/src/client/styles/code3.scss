@@ -1,0 +1,187 @@
+@import '_variables';
+
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+ code[class*="language-"],
+ pre[class*="language-"] {
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   line-height: 1.5;
+
+   tab-size: 4;
+
+   hyphens: none;
+   @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light;
+   font-family: 'IBM Plex Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;
+ }
+
+ /* Code blocks */
+ pre[class*="language-"] {
+   padding: 1em;
+   margin: .5em 0;
+   overflow: auto;
+  @apply relative pt-16;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+    background: #f95c5b;
+    border-radius: 100%;
+    box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+}
+ }
+
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+   @apply bg-white dark:bg-black rounded-md border border-transparent dark:border-gray-800;
+   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
+ }
+
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+   padding: .1em;
+   border-radius: .3em;
+   white-space: normal;
+ }
+
+ .token.comment,
+ .token.block-comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: #999;
+ }
+
+ .token.punctuation {
+   color: #ccc;
+ }
+
+ .token.tag,
+ .token.attr-name,
+ .token.namespace,
+ .token.deleted {
+   color: #e2777a;
+ }
+
+ .token.function-name {
+   color: #6196cc;
+ }
+
+ .token.boolean,
+ .token.number,
+ .token.function {
+   color: #f08d49;
+ }
+
+ .token.property,
+ .token.class-name,
+ .token.constant,
+ .token.symbol {
+   color: #f8c555;
+ }
+
+ .token.selector,
+ .token.important,
+ .token.atrule,
+ .token.keyword,
+ .token.builtin {
+   color: #cc99cd;
+ }
+
+ .token.string,
+ .token.char,
+ .token.attr-value,
+ .token.regex,
+ .token.variable {
+   color: #7ec699;
+ }
+
+ .token.operator,
+ .token.entity,
+ .token.url {
+   color: #67cdcc;
+ }
+
+ .token.important,
+ .token.bold {
+   font-weight: bold;
+ }
+ .token.italic {
+   font-style: italic;
+ }
+
+ .token.entity {
+   cursor: help;
+ }
+
+ .token.inserted {
+   color: green;
+ }
+
+
+// code-other
+div[class*='language-'] {
+  @apply rounded-md relative;
+  &::before {
+    @apply absolute z-10 top-1.5 right-3 text-gray-400;
+    font-size: 0.75rem;
+  }
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      @apply hidden;
+    }
+  }
+  &.line-numbers-mode {
+    @apply relative;
+    pre {
+      @apply pl-14 rounded-md;
+    }
+    .line-numbers {
+      @apply absolute bottom-0 w-12 text-center text-gray-400 py-3.5 leading-normal border-r border-gray-200 dark:border-gray-800;
+      br {
+        user-select: none;
+      }
+      .line-number {
+        position: relative;
+        z-index: 3;
+        user-select: none;
+      }
+    }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: $lineNumbersWrapperWidth;
+    //   height: 100%;
+    //   border-radius: 6px 0 0 6px;
+    //   border-right: 1px solid $highlightLineBgColor;
+    // }
+  }
+  pre code{
+    @apply font-light;
+  }
+  .token {
+    @apply font-normal;
+    font-family: 'IBM Plex Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;
+  }
+}
+
+@each $lang in $codeLang {
+  div[class*='language-'].ext-#{$lang} {
+    &:before {
+      content: '' + $lang;
+    }
+  }
+}

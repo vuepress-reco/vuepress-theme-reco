@@ -23,7 +23,10 @@ export const tailwindConfig = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderColor: ['dark'],
+      borderWidth: ['dark'],
+    },
   },
   plugins: [mdStylePlugin],
 }
