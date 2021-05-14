@@ -6,28 +6,26 @@
  * @author Rose Pritchard
  */
 
- code[class*="language-"],
- pre[class*="language-"] {
-   text-align: left;
-   white-space: pre;
-   word-spacing: normal;
-   word-break: normal;
-   word-wrap: normal;
-   line-height: 1.5;
+code[class*="language-"],
+pre[class*="language-"] {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5 !important;
+  tab-size: 4;
+  hyphens: none;
+  @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light;
+  font-family: 'IBM Plex Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;
+}
 
-   tab-size: 4;
-
-   hyphens: none;
-   @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light;
-   font-family: 'IBM Plex Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;
- }
-
- /* Code blocks */
- pre[class*="language-"] {
-   padding: 1em;
-   margin: .5em 0;
-   overflow: auto;
-  @apply relative pt-16;
+/* Code blocks */
+pre[class*="language-"] {
+  margin: .5em 0;
+  overflow: auto;
+  @apply relative bg-white dark:bg-black rounded-md border border-transparent dark:border-gray-800 pt-16 pr-6 pl-16 pb-6 rounded-md;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
   &::after {
     content: "";
     position: absolute;
@@ -38,20 +36,16 @@
     background: #f95c5b;
     border-radius: 100%;
     box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+  }
 }
- }
-
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-   @apply bg-white dark:bg-black rounded-md border border-transparent dark:border-gray-800;
-   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
- }
 
  /* Inline code */
  :not(pre) > code[class*="language-"] {
    padding: .1em;
    border-radius: .3em;
    white-space: normal;
+   @apply bg-white dark:bg-black rounded-md border border-transparent dark:border-gray-800 pl-16 rounded-md;;
+   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
  }
 
  .token.comment,
@@ -143,11 +137,9 @@ div[class*='language-'] {
   }
   &.line-numbers-mode {
     @apply relative;
-    pre {
-      @apply pl-14 rounded-md;
-    }
     .line-numbers {
-      @apply absolute bottom-0 w-12 text-center text-gray-400 py-3.5 leading-normal border-r border-gray-200 dark:border-gray-800;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 py-6 leading-normal;
+      font-family: 'IBM Plex Mono',source-code-pro,Menlo,Monaco,Consolas,'Courier New',monospace;
       br {
         user-select: none;
       }

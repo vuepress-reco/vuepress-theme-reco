@@ -12,7 +12,7 @@
           @apply hidden;
         }
         .nav-dropdown {
-          @apply hidden absolute top-6 bg-white shadow-md px-3 py-2 rounded-md;
+          @apply hidden absolute top-2 bg-white shadow-md px-3 py-2 rounded-md;
           .dropdown-item {
             @apply truncate;
           }

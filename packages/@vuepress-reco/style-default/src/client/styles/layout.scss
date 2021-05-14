@@ -20,8 +20,8 @@ body {
   min-height: 100vh;
   line-height: 1.4;
   // font-family: var(--font-family-base);
-  font-size: 16px;
-  font-weight: 400;
+  // font-size: 16px;
+  // font-weight: 400;
   // color: var(--c-text);
   // background-color: var(--c-bg);
   direction: ltr;
@@ -167,7 +167,8 @@ li > ol {
 }
 
 table {
-  @apply w-full;
+  @apply w-full rounded-md;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
 }
 
 tr {
@@ -180,6 +181,9 @@ th {
 
 td, th {
   @apply p-1 py-2;
+  &:not(:last-child) {
+    @apply border-r border-gray-400 border-opacity-20;
+  }
 }
 
 blockquote {
