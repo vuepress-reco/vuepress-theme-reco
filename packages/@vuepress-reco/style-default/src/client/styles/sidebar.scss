@@ -1,9 +1,10 @@
 .sidebar-container {
+  @apply pt-4 w-64 fixed z-10 top-14 bottom-0;
   .sidebar-item {
     a {
       @apply block pl-4 py-2;
       & + ul {
-        @apply pl-4;
+        @apply pl-4 list-none;
       }
       &.router-link-active {
         @apply relative text-primary-500;
@@ -14,9 +15,9 @@
       }
     }
     p.sidebar-heading {
-      @apply block pl-4 py-4;
+      @apply block pl-2 py-2 m-0;
       & + ul {
-        @apply pl-4;
+        @apply pl-4 m-0 list-none;
       }
       &.active {
         @apply text-primary-500;

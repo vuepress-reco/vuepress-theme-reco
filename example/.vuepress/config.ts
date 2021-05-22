@@ -7,6 +7,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   theme: 'reco',
   themeConfig: {
     style: '@vuepress-reco/style-default',
+    logo: '/icon_vuepress_reco.png',
     // sidebar: [
     //   // SidebarItem
     //   {

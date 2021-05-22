@@ -13,7 +13,7 @@
   </RouterLink>
   <a
     v-else
-    class="nav-link external"
+    class="nav-link"
     :href="item.link"
     :rel="linkRel"
     :target="linkTarget"

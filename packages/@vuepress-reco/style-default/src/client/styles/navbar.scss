@@ -1,28 +1,40 @@
 .navbar-container {
-  @apply fixed top-0 right-0 z-20 p-4 w-screen shadow-md leading-6 bg-reco;
-  .navbar-links {
-    .navbar-links-item {
-      @apply inline-block;
-      &:not(:first-child) {
-        @apply ml-6;
-      }
-      .dropdown-wrapper {
-        @apply relative;
-        .mobile-dropdown-title {
-          @apply hidden;
+  @apply fixed top-0 right-0 z-20 p-4 h-14 w-screen shadow-md leading-6 bg-reco;
+  .site-brand {
+    @apply absolute left-4 top-3 text-xl font-semibold;
+    .logo {
+      @apply mr-4 inline-block w-8 h-8 rounded-md align-middle;
+    }
+    .site-name {
+      @apply align-middle;
+    }
+  }
+  .navbar-links-wrapper {
+    @apply absolute right-4;
+    .navbar-links {
+      .navbar-links-item {
+        @apply inline-block;
+        &:not(:first-child) {
+          @apply ml-6;
         }
-        .nav-dropdown {
-          @apply hidden absolute top-2 bg-white shadow-md px-3 py-2 rounded-md;
-          .dropdown-item {
-            @apply truncate;
+        .dropdown-wrapper {
+          @apply relative;
+          .mobile-dropdown-title {
+            @apply hidden;
+          }
+          .nav-dropdown {
+            @apply hidden absolute top-2 bg-white shadow-md px-3 py-2 rounded-md;
+            .dropdown-item {
+              @apply truncate;
+            }
+          }
+          &:hover .nav-dropdown {
+            @apply block #{!important};
           }
         }
-        &:hover .nav-dropdown {
-          display: block !important;
+        .router-link-active {
+          @apply text-primary-500;
         }
-      }
-      .router-link-active {
-        @apply text-primary-500;
       }
     }
   }

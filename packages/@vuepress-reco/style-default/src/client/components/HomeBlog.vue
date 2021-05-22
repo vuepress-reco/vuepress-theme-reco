@@ -1,28 +1,22 @@
 <template>
-  <main class="home-blog-wrapper pt-14">
+  <main class="home-blog-wrapper">
     <div
-      class="hero w-screen h-screen-3/5 md:h-screen flex justify-center items-center"
+      class="hero"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
     >
-      <div class="hero-content bg-topaz">
+      <div class="hero-content">
         <img
-          class="block mx-auto w-32 sm:w-40 md:w-60 mb-16"
           :src="frontmatter.heroImage"
           :style="{
             heroImageStyle,
           }"
           alt="heroImage"
         />
-        <h1 class="text-center mb-6">
-          {{ frontmatter.heroText }}
-        </h1>
-        <p class="text-center">
-          {{ frontmatter.tagline }}
-        </p>
+        <h1>{{ frontmatter.heroText }}</h1>
+        <p>{{ frontmatter.tagline }}</p>
       </div>
     </div>
-    <div class="btn-red">btn</div>
-    <div class="prose">
+    <div class="theme-reco-default-content">
       <Content />
     </div>
   </main>
