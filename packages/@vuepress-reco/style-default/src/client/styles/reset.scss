@@ -94,6 +94,10 @@ textarea {
   @apply no-underline bg-transparent;
 }
 
+button {
+  @apply text-base;
+}
+
 a.header-anchor {
   @apply float-left opacity-0 mt-0.5 mr-1 -ml-3;
 }
