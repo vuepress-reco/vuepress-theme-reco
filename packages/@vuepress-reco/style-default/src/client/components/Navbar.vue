@@ -20,6 +20,7 @@
     <!-- </span> -->
     <div class="navbar-links-wrapper">
       <NavbarLinks />
+      <NavbarSearch />
     </div>
   </header>
 </template>

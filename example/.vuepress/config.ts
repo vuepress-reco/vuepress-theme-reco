@@ -75,5 +75,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       '/bar/README.md',
     ],
   },
+  plugins: ['@vuepress/plugin-search'],
   // debug: true,
 })
