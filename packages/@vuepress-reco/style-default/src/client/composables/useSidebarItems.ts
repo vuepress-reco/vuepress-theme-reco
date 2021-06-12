@@ -1,13 +1,13 @@
 import { inject } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
 import { useRoute } from 'vue-router'
-// import { usePageData } from '@vuepress/client'
 import {
   isArray,
   isPlainObject,
   isString,
   resolveLocalePath,
 } from '@vuepress/shared'
+
 import type {
   DefaultThemeData,
   DefaultThemeNormalPageFrontmatter,
@@ -16,6 +16,7 @@ import type {
   SidebarGroup,
   SidebarItem,
 } from '../../types'
+
 import { useNavLink } from './useNavLink'
 
 export interface NavItem {
@@ -40,9 +41,8 @@ export interface ResolvedSidebarItem extends Partial<NavLink> {
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>
 
-export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
-  'sidebarItems'
-)
+export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
+  Symbol('sidebarItems')
 
 export const useSidebarItems = (): SidebarItemsRef => {
   const sidebarItems = inject(sidebarItemsSymbol)
@@ -118,24 +118,22 @@ export const resolveArraySidebarItems = (
     return childItem
   }
 
-  return sidebarConfig.map(
-    (item): ResolvedSidebarItem => {
-      if (isString(item)) {
-        return useNavLink(item)
-      }
-      if (!item.isGroup) {
-        return {
-          ...item,
-          children: item.children.map(handleChildItem),
-        }
-      }
-
+  return sidebarConfig.map((item): ResolvedSidebarItem => {
+    if (isString(item)) {
+      return useNavLink(item)
+    }
+    if (!item.isGroup) {
       return {
         ...item,
         children: item.children.map(handleChildItem),
       }
     }
-  )
+
+    return {
+      ...item,
+      children: item.children.map(handleChildItem),
+    }
+  })
 }
 
 /**

@@ -4,6 +4,7 @@
     <Sidebar />
     <HomeBlog v-if="frontmatter.home === true" />
     <Page v-else />
+    <PageHeaders />
   </div>
 </template>
 
@@ -13,11 +14,12 @@ import { usePageFrontmatter } from '@vuepress/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
+import PageHeaders from '../components/PageHeaders.vue'
 import HomeBlog from '../components/HomeBlog'
 import Page from '../components/Page'
 
 export default defineComponent({
-  components: { Navbar, Sidebar, HomeBlog, Page },
+  components: { Navbar, Sidebar, PageHeaders, HomeBlog, Page },
 
   setup() {
     const frontmatter = usePageFrontmatter()

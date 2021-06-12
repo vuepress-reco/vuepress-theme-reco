@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@vuepress-reco/core": "^2.0.0",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.17",
     "@vuepress/plugin-prismjs": "^2.0.0-beta.13",
     "tailwindcss": "^2.1.1"
   }

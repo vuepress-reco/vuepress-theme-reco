@@ -1,0 +1,46 @@
+.pageHeader-container {
+  @apply pt-4 w-64 fixed z-10 top-14 bottom-0 right-0;
+  .sidebar-item {
+    a {
+      @apply block pl-4 py-2;
+      & + ul {
+        @apply pl-4 list-none;
+      }
+      &.active {
+        @apply relative text-primary-500;
+        &::before {
+          @apply absolute inset-y-0 left-1.5 m-auto block w-1 h-1 rounded-1/2 bg-primary-600;
+          content: '';
+        }
+      }
+    }
+    p.sidebar-heading {
+      @apply block pl-2 py-2 m-0;
+      & + ul {
+        @apply pl-4 m-0 list-none;
+      }
+      &.active {
+        @apply text-primary-500;
+      }
+    }
+    > a.active::before {
+      @apply left-1 w-1.5 h-1.5;
+    }
+  }
+  > a.sidebar-item {
+    @apply block pl-9 py-4;
+    &.active {
+      @apply relative text-primary-500;
+      &::before {
+        @apply absolute inset-y-0 left-6 m-auto block w-1.5 h-1.5 rounded-1/2 bg-primary-600;
+        content: '';
+      }
+    }
+  }
+  > .sidebar-item {
+    @apply pl-5;
+    > p.sidebar-heading {
+      @apply font-semibold;
+    }
+  }
+}

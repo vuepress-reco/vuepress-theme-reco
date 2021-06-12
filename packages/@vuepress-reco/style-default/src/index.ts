@@ -28,6 +28,7 @@ export default defineStyle(
     },
 
     plugins: [
+      '@vuepress/active-header-links',
       ['@vuepress/theme-data', { themeData: themeConfig }],
       ['@vuepress/prismjs', themeConfig.prismjs !== false],
     ],
