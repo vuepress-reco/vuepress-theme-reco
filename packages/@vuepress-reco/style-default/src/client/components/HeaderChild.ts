@@ -9,7 +9,6 @@ const isActiveItem = (
   route: RouteLocationNormalizedLoaded,
   item: ResolvedSidebarItem
 ): boolean => {
-  console.log(444, route.hash === item.link, item.children)
   if (route.hash === item.link) {
     return true
   }

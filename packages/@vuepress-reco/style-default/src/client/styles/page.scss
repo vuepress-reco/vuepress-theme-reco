@@ -1,3 +1,9 @@
 .page-container {
-  @apply pl-64 mt-24;
+  @apply mt-24;
+  &.show-sidebar {
+    @apply pl-64;
+  }
+  &.show-page-headers {
+    @apply pr-64;
+  }
 }
