@@ -1,9 +1,9 @@
 import { h } from 'vue'
 import { defineClientAppEnhance } from '@vuepress/client'
 import './styles/index.scss'
+import Icon from '../client/components/Icon.vue'
 
 export default defineClientAppEnhance(({ app, router }) => {
-  // eslint-disable-next-line vue/match-component-file-name
   app.component('NavbarSearch', () => {
     const SearchComponent =
       app.component('Docsearch') || app.component('SearchBox')
@@ -12,4 +12,6 @@ export default defineClientAppEnhance(({ app, router }) => {
     }
     return null
   })
+
+  app.component('Icon', () => Icon)
 })

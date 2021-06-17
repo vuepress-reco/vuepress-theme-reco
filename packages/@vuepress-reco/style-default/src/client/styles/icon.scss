@@ -1,0 +1,15 @@
+.icon-container {
+  @apply inline-flex;
+  &.left {
+    @apply flex-row items-center;
+  }
+  &.right {
+    @apply flex-row-reverse items-center;
+  }
+  &.top {
+    @apply flex-col items-center;
+  }
+  &.bottom {
+    @apply flex-col-reverse items-center;
+  }
+}

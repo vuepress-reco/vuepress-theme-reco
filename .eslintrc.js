@@ -3,7 +3,7 @@ module.exports = {
   extends: 'vuepress',
   overrides: [
     {
-      files: ['*.ts', '*.vue'],
+      files: ['*.ts', '*.vue', '*.tsx'],
       extends: 'vuepress-typescript',
       parserOptions: {
         project: ['tsconfig.eslint.json'],
@@ -13,6 +13,13 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-var-requires': 'off',
+        'vue/match-component-file-name': [
+          'error',
+          {
+            extensions: ['tsx', 'vue'],
+            shouldMatchCase: false,
+          },
+        ],
       },
     },
     {
