@@ -1,9 +1,11 @@
 <template>
   <a :class="['icon-container', iconPosition]" :href="link">
-    <svg :width="iconSize" :height="iconSize" :style="{ fill: color }">
+    <svg :width="iconSize" :height="iconSize" :style="{ fill: iconColor }">
       <use :xlink:href="`${iconLink}`" />
     </svg>
-    <span v-if="!!text">{{ text }}</span>
+    <span v-if="!!text" :style="textStyle">
+      <slot>{{ text }}</slot>
+    </span>
   </a>
 </template>
 
@@ -20,9 +22,11 @@ enum EIconPosition {
 type PropsType = {
   icon: string
   iconPosition: keyof typeof EIconPosition
-  iconSize: number
-  color: string
+  iconSize: number | string
+  iconColor: string
   text: string
+  textSize: number | string
+  textColor: string
   link: string
 }
 
@@ -39,16 +43,24 @@ export default defineComponent<PropsType>({
       default: 'left',
     },
     iconSize: {
-      type: Number,
-      default: 20,
+      type: [String, Number],
+      default: 14,
     },
-    color: {
+    iconColor: {
       type: String,
-      default: '#000000',
+      default: '#888',
     },
     text: {
       type: String,
       default: '',
+    },
+    textColor: {
+      type: String,
+      default: '#888',
+    },
+    textSize: {
+      type: [String, Number],
+      default: '14',
     },
     link: {
       type: String,
@@ -57,7 +69,7 @@ export default defineComponent<PropsType>({
   },
 
   setup(props) {
-    const { icon } = toRefs(props)
+    const { icon, textColor, textSize } = toRefs(props)
 
     const iconLink = computed(() => {
       const iconLinkArgs = icon.value.split(' ')
@@ -67,7 +79,11 @@ export default defineComponent<PropsType>({
       }#${iconLinkArgs[1]}`
     })
 
-    return { iconLink }
+    const textStyle = computed(() => {
+      return { color: textColor.value, fontSize: `${textSize.value}px` }
+    })
+
+    return { iconLink, textStyle }
   },
 })
 </script>

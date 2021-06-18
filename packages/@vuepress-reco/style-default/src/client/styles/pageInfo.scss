@@ -1,0 +1,15 @@
+.pageinfo-container {
+  @apply flex flex-wrap;
+  .icon-container{
+    a {
+      color: inherit;
+      @apply hover:text-primary-500;
+    }
+    a:not(:last-child) {
+      @apply mr-2;
+    }
+    &:not(:last-child) {
+      @apply mr-5;
+    }
+  }
+}

@@ -1,7 +1,29 @@
 <template>
-  <main class="page-container">
-    <div class="theme-reco-default-content">
-      <Content />
-    </div>
+  <main class="page-container theme-reco-default-content">
+    <h1 v-if="!!title">{{ title }}</h1>
+    <PageInfo />
+    <Content />
   </main>
 </template>
+
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import { usePageData } from '@vuepress/client'
+import PageInfo from './PageInfo'
+
+export default defineComponent({
+  name: 'Page',
+
+  components: { PageInfo },
+
+  setup() {
+    const pageData = usePageData()
+
+    const title = computed(
+      () => pageData?.value?.frontmatter?.title || pageData?.value?.title || ''
+    )
+
+    return { title }
+  },
+})
+</script>
