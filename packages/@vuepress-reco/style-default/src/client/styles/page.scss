@@ -6,4 +6,9 @@
   &.show-page-headers {
     @apply pr-64;
   }
+  .page-title, .pageinfo-container {
+    margin: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }

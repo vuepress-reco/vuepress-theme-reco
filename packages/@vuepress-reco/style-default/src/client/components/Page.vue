@@ -1,8 +1,8 @@
 <template>
-  <main class="page-container theme-reco-default-content">
-    <h1 v-if="!!title">{{ title }}</h1>
+  <main class="page-container">
+    <h1 class="page-title" v-if="!!title">{{ title }}</h1>
     <PageInfo />
-    <Content />
+    <Content class="theme-reco-default-content" />
   </main>
 </template>
 

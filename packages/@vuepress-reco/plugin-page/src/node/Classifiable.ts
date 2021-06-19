@@ -77,9 +77,8 @@ export default class Classifiable {
                 length: 1,
               }
             } else {
-              const { pages: p, length } = this.classificationData[key].items[
-                value
-              ]
+              const { pages: p, length } =
+                this.classificationData[key].items[value]
               this.classificationData[key].items[value] = {
                 length: length + 1,
                 pages: [...p, page],
@@ -175,6 +174,8 @@ export default class Classifiable {
               pageSize: pagination,
               total: pages.length,
               currentPage,
+              currentClassificationKey: key,
+              currentClassificationValue: value,
               pages:
                 index < pageSize - 1
                   ? pages.slice(pagination * (pageSize - 1), pagination)
@@ -190,5 +191,9 @@ export default class Classifiable {
     })
 
     return data
+  }
+
+  get classificationSummary(): ClassificationData {
+    return this.classificationData
   }
 }

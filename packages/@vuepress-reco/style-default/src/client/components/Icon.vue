@@ -3,7 +3,7 @@
     <svg :width="iconSize" :height="iconSize" :style="{ fill: iconColor }">
       <use :xlink:href="`${iconLink}`" />
     </svg>
-    <span v-if="!!text" :style="textStyle">
+    <span v-if="!!text || slots.default" :style="textStyle">
       <slot>{{ text }}</slot>
     </span>
   </a>
@@ -64,11 +64,11 @@ export default defineComponent<PropsType>({
     },
     link: {
       type: String,
-      default: '',
+      default: 'javascript:void(0)',
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const { icon, textColor, textSize } = toRefs(props)
 
     const iconLink = computed(() => {
@@ -83,7 +83,7 @@ export default defineComponent<PropsType>({
       return { color: textColor.value, fontSize: `${textSize.value}px` }
     })
 
-    return { iconLink, textStyle }
+    return { iconLink, textStyle, slots }
   },
 })
 </script>

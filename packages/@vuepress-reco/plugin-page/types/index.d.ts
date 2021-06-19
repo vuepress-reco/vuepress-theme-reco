@@ -39,5 +39,7 @@ export type ClassificationPaginationPost = {
   pageSize: number
   total: number
   currentPage: number
+  currentClassificationKey: string
+  currentClassificationValue: string
   pages: any[]
 }

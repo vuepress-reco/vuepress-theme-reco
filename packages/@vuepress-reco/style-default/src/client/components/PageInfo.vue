@@ -3,14 +3,13 @@
     <Icon v-if="!!author" icon="solid user" :text="author" />
     <Icon v-if="!!date" icon="solid calendar-alt" :text="date" />
     <Icon v-if="!!categories && categories.length > 0" icon="solid th-list">
-      {{ !!categories && categories.length > 0 }}
-      <!-- <a
+      <a
         v-for="(category, index) in categories"
         :key="index"
         :class="['category', { active: currentCategory === category }]"
         :href="`/categories/${category}/1/`"
         >{{ category }}</a
-      > -->
+      >
     </Icon>
     <Icon v-if="!!tags && tags.length > 0" icon="solid tags">
       <a
@@ -69,6 +68,8 @@ export default defineComponent({
         !!(categories.value && categories.value.length > 0) ||
         !!(tags.value && tags.value.length > 0)
     )
+
+    console.log(categories, tags)
 
     return { author, date, categories, tags, showPageInfo }
   },
