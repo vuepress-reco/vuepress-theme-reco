@@ -1,7 +1,7 @@
 <template>
   <main class="page-container">
     <h1 class="page-title" v-if="!!title">{{ title }}</h1>
-    <PageInfo />
+    <PageInfo :page-data="pageData" />
     <Content class="theme-reco-default-content" />
   </main>
 </template>
@@ -23,7 +23,7 @@ export default defineComponent({
       () => pageData?.value?.frontmatter?.title || pageData?.value?.title || ''
     )
 
-    return { title }
+    return { title, pageData }
   },
 })
 </script>

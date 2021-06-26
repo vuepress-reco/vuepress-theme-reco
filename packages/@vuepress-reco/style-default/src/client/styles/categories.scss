@@ -1,0 +1,24 @@
+.categories-container {
+  @apply lg:max-w-screen-md xl:max-w-screen-lg m-auto px-10;
+  .category-list {
+    @apply pl-0 list-none;
+    .category-item {
+      @apply inline-block mr-4 mb-4 bg-white shadow rounded cursor-pointer;
+      .category-link {
+        @apply inline-block px-4 py-1.5;
+        .text {
+          @apply mr-1 text-xs leading-5;
+        }
+        .num {
+          @apply inline-block h-5 px-2 bg-red-300 rounded text-white text-xs leading-5;
+        }
+      }
+      &.active, &:hover {
+        @apply bg-primary-600;
+        .text {
+          @apply text-white;
+        }
+      }
+    }
+  }
+}

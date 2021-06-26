@@ -1,4 +1,4 @@
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import {
   classificationPostsSymbol,
@@ -8,16 +8,18 @@ import {
 
 export function usePageData(): Record<string, any> {
   const { currentRoute } = useRouter()
-  const path = currentRoute.value.path
 
-  const classificationPosts = inject(classificationPostsSymbol)
   const classificationSummary = inject(classificationSummarySymbol)
   const posts = inject(postsSymbol)
+  const cp = inject(classificationPostsSymbol)
 
-  return {
-    classificationPosts:
-      (classificationPosts as Record<string, any>)[path] || [],
-    classificationSummary,
-    posts,
-  }
+  const classificationPosts = computed(() => {
+    return (
+      ((cp as { value: any }).value as Record<string, any>)[
+        currentRoute.value.path
+      ] || []
+    )
+  })
+
+  return { classificationPosts, classificationSummary, posts }
 }

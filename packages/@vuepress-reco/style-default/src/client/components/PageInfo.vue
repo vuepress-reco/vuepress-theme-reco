@@ -24,8 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { usePageData } from '@vuepress/client'
+import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import Icon from './Icon'
 
@@ -35,6 +34,10 @@ export default defineComponent({
   components: { Icon },
 
   props: {
+    pageData: {
+      type: Object,
+      default: () => ({}),
+    },
     currentCategory: {
       type: String,
       default: '',
@@ -45,9 +48,11 @@ export default defineComponent({
     },
   },
 
-  setup() {
-    const pageData = usePageData()
+  setup(props) {
+    const { pageData } = toRefs(props)
     const themeData = useThemeLocaleData()
+
+    console.log(333, pageData)
 
     const author = computed(
       () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
@@ -68,8 +73,6 @@ export default defineComponent({
         !!(categories.value && categories.value.length > 0) ||
         !!(tags.value && tags.value.length > 0)
     )
-
-    console.log(categories, tags)
 
     return { author, date, categories, tags, showPageInfo }
   },
