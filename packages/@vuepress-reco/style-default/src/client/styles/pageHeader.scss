@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .pageHeader-container {
   @apply pt-4 w-64 fixed z-10 top-14 bottom-0 right-0;
   .sidebar-item {
@@ -7,10 +9,12 @@
         @apply pl-4 list-none;
       }
       &.active {
-        @apply relative text-primary-500;
+        @apply relative;
+        color: $accentColor;
         &::before {
-          @apply absolute inset-y-0 left-1.5 m-auto block w-1 h-1 rounded-1/2 bg-primary-600;
+          @apply absolute inset-y-0 left-1.5 m-auto block w-1 h-1 rounded-1/2;
           content: '';
+          background-color: $accentColor;
         }
       }
     }
@@ -20,7 +24,7 @@
         @apply pl-4 m-0 list-none;
       }
       &.active {
-        @apply text-primary-500;
+        color: $accentColor;
       }
     }
     > a.active::before {
@@ -30,10 +34,12 @@
   > a.sidebar-item {
     @apply block pl-9 py-4;
     &.active {
-      @apply relative text-primary-500;
+      @apply relative;
+      color: $accentColor;
       &::before {
-        @apply absolute inset-y-0 left-6 m-auto block w-1.5 h-1.5 rounded-1/2 bg-primary-600;
+        @apply absolute inset-y-0 left-6 m-auto block w-1.5 h-1.5 rounded-1/2;
         content: '';
+        background-color: $accentColor;
       }
     }
   }

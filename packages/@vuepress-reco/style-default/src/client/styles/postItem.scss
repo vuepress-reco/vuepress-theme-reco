@@ -1,3 +1,25 @@
+@import './variables.scss';
+
 .post-item-container {
-  @apply p-6 shadow rounded;
+  @apply mb-4 p-6 shadow rounded;
+  .title {
+    @apply relative mb-2 inline-block;
+    &:after {
+      @apply absolute left-0 -bottom-2 w-full;
+      content: "";
+      height: 2px;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      transition: .3s ease-in-out;
+      background-color: $accentColor;
+    }
+    &:hover a {
+      color: $accentColor;
+    }
+    &:hover:after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
 }

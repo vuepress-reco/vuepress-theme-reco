@@ -34,7 +34,7 @@
           }
         }
         .router-link-active {
-          @apply text-primary-500;
+          color: $accentColor;
         }
       }
     }

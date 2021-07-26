@@ -1,9 +1,13 @@
+@import './variables.scss';
+
 .pageinfo-container {
   @apply flex flex-wrap;
   .icon-container{
     a {
       color: inherit;
-      @apply hover:text-primary-500;
+      &:hover {
+        color: $accentColor;
+      }
     }
     a:not(:last-child) {
       @apply mr-2;

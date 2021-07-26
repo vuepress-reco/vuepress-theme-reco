@@ -98,10 +98,6 @@ button {
   @apply text-base;
 }
 
-a.header-anchor {
-  @apply float-left opacity-0 mt-0.5 mr-1 -ml-3;
-}
-
 a:active,
 a:link,
 a:focus,
@@ -109,9 +105,11 @@ a:visited {
   @apply text-gray-700 dark:text-white;
 }
 
-a.header-anchor:hover,
-a.header-anchor:focus {
-  @apply no-underline;
+a.header-anchor {
+  @apply text-base float-left opacity-0 mt-0.5 mr-1 -ml-3;
+  &:hover, &:focus {
+    @apply no-underline;
+  }
 }
 
 figure {

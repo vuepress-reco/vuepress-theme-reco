@@ -1,14 +1,9 @@
 .page-container {
-  @apply mt-16;
+  @apply mt-16 mx-10;
   &.show-sidebar {
     @apply pl-64;
   }
   &.show-page-headers {
     @apply pr-64;
-  }
-  .page-title, .pageinfo-container {
-    margin: auto;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 }

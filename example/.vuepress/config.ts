@@ -62,6 +62,15 @@ export default defineUserConfig<DefaultThemeOptions>({
       ],
     },
     navbar: [
+      {
+        text: 'Categories',
+        children: [
+          {
+            text: 'group',
+            link: '/group/bar.html',
+          },
+        ],
+      },
       // NavbarItem
       {
         text: 'group',

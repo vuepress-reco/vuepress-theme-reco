@@ -14,12 +14,14 @@ import {
 export default class Classifiable {
   private classificationData: ClassificationData = {}
   private frontmatterKeys: FrontmatterKey[] = []
+  private publishPosts: Array<Page>
   options: PagePluginOptions
   app: App
 
   constructor(options: PagePluginOptions, app: App) {
     this.options = options
     this.app = app
+    this.publishPosts = []
 
     this.init()
   }
@@ -50,6 +52,15 @@ export default class Classifiable {
   resolveKeyValue(app: App): void {
     this.app = app
     this.app.pages.forEach((page: Page) => {
+      if (
+        page?.frontmatter?.home === true ||
+        page?.frontmatter?.publish === false
+      ) {
+        return
+      }
+
+      this.publishPosts.push(page)
+
       const classificationKeys = Object.keys(page.frontmatter).filter(
         (key: string) => {
           return this.frontmatterKeys.includes(key)
@@ -134,17 +145,29 @@ export default class Classifiable {
     }
   }
 
+  getPublishPostsPage(): Array<Promise<Page>> {
+    const pageSize = Math.ceil(this.publishPosts.length / 10)
+
+    const pages = Array.from({ length: pageSize }).map((item, index) => {
+      return createPage(this.app, {
+        path: `/posts/${index + 1}/`,
+        frontmatter: { layout: 'Post' },
+      })
+    })
+
+    return pages
+  }
+
   // 拓展的页面
   get extendedPages(): Promise<Page>[] {
-    const extendedPages = this.options.reduce(
-      (total: Promise<Page>[], option) => {
-        const classificationPages = this.resolvePageOptions(option)
-        return [...total, ...classificationPages]
-      },
-      []
-    )
+    const pages = this.options.reduce((total: Promise<Page>[], option) => {
+      const classificationPages = this.resolvePageOptions(option)
+      return [...total, ...classificationPages]
+    }, [])
 
-    return extendedPages
+    const publishPostsPages = this.getPublishPostsPage()
+
+    return [...pages, ...publishPostsPages]
   }
 
   get classificationPaginationPosts(): Record<

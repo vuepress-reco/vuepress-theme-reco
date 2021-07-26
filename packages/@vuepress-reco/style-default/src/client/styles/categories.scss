@@ -1,5 +1,7 @@
+@import './variables.scss';
+
 .categories-container {
-  @apply lg:max-w-screen-md xl:max-w-screen-lg m-auto px-10;
+  @apply lg:max-w-screen-md xl:max-w-screen-lg mt-16 mx-auto px-10;
   .category-list {
     @apply pl-0 list-none;
     .category-item {
@@ -14,7 +16,7 @@
         }
       }
       &.active, &:hover {
-        @apply bg-primary-600;
+        background-color: $accentColor;
         .text {
           @apply text-white;
         }
