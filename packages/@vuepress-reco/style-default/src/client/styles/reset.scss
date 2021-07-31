@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 *,
 ::before,
 ::after {
@@ -62,7 +64,7 @@ h1 {
 
 h2 {
   @apply text-2xl;
-  border-bottom: 1px solid rgba(200, 200, 200, .12);
+  border-bottom: 1px solid $borderColor;
   line-height: 1.25;
   /* overflow-x: auto; */
 }
@@ -146,7 +148,8 @@ th {
 td, th {
   @apply p-1 py-2;
   &:not(:last-child) {
-    @apply border-r border-gray-400 border-opacity-20;
+    @apply border-r;
+    border-color: $borderColor;
   }
 }
 

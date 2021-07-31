@@ -9,6 +9,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     style: '@vuepress-reco/style-default',
     logo: '/icon_vuepress_reco.png',
     author: 'reco_luan',
+    docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
+    docsBranch: 'main',
+    docsDir: 'example',
+    lastUpdatedText: '',
     // sidebar: [
     //   // SidebarItem
     //   {
@@ -85,6 +89,5 @@ export default defineUserConfig<DefaultThemeOptions>({
       '/bar/README.md',
     ],
   },
-  plugins: ['@vuepress/plugin-search'],
   // debug: true,
 })

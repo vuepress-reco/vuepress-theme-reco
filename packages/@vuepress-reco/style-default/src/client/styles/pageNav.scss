@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.page-nav {
+  @apply pt-4 pb-0;
+  .inner {
+    @apply border-t mt-0 pt-4 overflow-hidden;
+    border-color: $borderColor;
+  }
+  a {
+    @apply font-semibold;
+    color: $accentColor;
+  }
+  .next {
+    @apply float-right;
+  }
+}

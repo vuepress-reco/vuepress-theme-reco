@@ -10,7 +10,7 @@ export const pages = [
     type: 'frontmatter',
     frontmatterKey: 'tags',
     path: '/tags/',
-    layout: 'Tags',
+    layout: 'Categories',
     pagination: 10,
   },
   {

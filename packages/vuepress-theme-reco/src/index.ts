@@ -8,13 +8,23 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     `${stylePath}/lib/index.js`
   )).default
 
+  const styleConfig = getStyleConfig(themeConfig)
+  styleConfig.plugins = [
+    '@vuepress/plugin-git',
+    '@vuepress/plugin-search',
+    '@vuepress/plugin-prismjs',
+    '@vuepress/plugin-docsearch',
+    '@vuepress/active-header-links',
+    ...styleConfig.plugins,
+  ]
+
   return {
     name: 'vuepress-theme-reco',
     layouts: path.resolve(
       process.cwd(),
       `node_modules/${style}/lib/client/layouts`
     ),
-    ...getStyleConfig(themeConfig),
+    ...styleConfig,
   }
 }
 
