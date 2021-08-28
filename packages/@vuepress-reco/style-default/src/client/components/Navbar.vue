@@ -1,24 +1,24 @@
 <template>
-  <header class="navbar-container">
-    <!-- <span> -->
-    <RouterLink class="site-brand" :to="siteBrandLink">
-      <img
-        v-if="siteBrandLogo"
-        class="logo"
-        :src="withBase(siteBrandLogo)"
-        :alt="siteBrandTitle"
-      />
+  <header ref="navbar" class="navbar-container">
+    <span ref="siteBrand" class="site-brand">
+      <RouterLink :to="siteBrandLink">
+        <img
+          v-if="siteBrandLogo"
+          class="logo"
+          :src="withBase(siteBrandLogo)"
+          :alt="siteBrandTitle"
+        />
 
-      <span
-        v-if="siteBrandTitle"
-        class="site-name"
-        :class="{ 'can-hide': siteBrandLogo }"
-      >
-        {{ siteBrandTitle }}
-      </span>
-    </RouterLink>
-    <!-- </span> -->
-    <div class="navbar-links-wrapper">
+        <span
+          v-if="siteBrandTitle"
+          class="site-name"
+          :class="{ 'can-hide': siteBrandLogo }"
+        >
+          {{ siteBrandTitle }}
+        </span>
+      </RouterLink>
+    </span>
+    <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarLinks />
       <NavbarSearch />
     </div>
@@ -26,14 +26,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import NavbarLinks from './NavbarLinks'
 
 export default defineComponent({
   components: { NavbarLinks },
-  setup() {
+  setup(_, ctx) {
     const siteLocale = useSiteLocaleData()
     const routeLocale = useRouteLocale()
     const themeLocale = useThemeLocaleData()
@@ -44,11 +44,44 @@ export default defineComponent({
     const siteBrandLogo = computed(() => themeLocale.value.logo)
     const siteBrandTitle = computed(() => siteLocale.value.title)
 
+    const navbar = ref<HTMLElement | null>(null)
+    const siteBrand = ref<HTMLElement | null>(null)
+    const linksWrapperMaxWidth = ref(0)
+    const linksWrapperStyle = computed(() => {
+      if (!linksWrapperMaxWidth.value) {
+        return {}
+      }
+      return {
+        maxWidth: linksWrapperMaxWidth.value + 'px',
+      }
+    })
+
+    onMounted(() => {
+      // TODO: migrate to css var
+      // refer to _variables.scss
+      const MOBILE_DESKTOP_BREAKPOINT = 719
+      const handleLinksWrapWidth = (): void => {
+        console.log(navbar.value!.offsetWidth, siteBrand.value?.offsetWidth)
+        if (window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT) {
+          linksWrapperMaxWidth.value = 0
+        } else {
+          linksWrapperMaxWidth.value =
+            navbar.value!.offsetWidth - (siteBrand.value?.offsetWidth || 0) - 50
+        }
+      }
+      handleLinksWrapWidth()
+      window.addEventListener('resize', handleLinksWrapWidth, false)
+      window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+    })
+
     return {
       siteBrandLink,
       siteBrandLogo,
       siteBrandTitle,
+      linksWrapperStyle,
       withBase,
+      navbar,
+      siteBrand,
     }
   },
 })

@@ -73,10 +73,9 @@ export default defineComponent<PropsType>({
 
     const iconLink = computed(() => {
       const iconLinkArgs = icon.value.split(' ')
-      return `${
-        require(`@fortawesome/fontawesome-free/sprites/${iconLinkArgs[0]}.svg`)
-          .default
-      }#${iconLinkArgs[1]}`
+      return `${require(`@fortawesome/fontawesome-free/sprites/${iconLinkArgs[0]}.svg`)}#${
+        iconLinkArgs[1]
+      }`
     })
 
     const textStyle = computed(() => {

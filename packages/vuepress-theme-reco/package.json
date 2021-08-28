@@ -29,11 +29,11 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
-    "@vuepress/plugin-docsearch": "^2.0.0-alpha.1",
-    "@vuepress/plugin-git": "2.0.0-beta.22",
-    "@vuepress/plugin-search": "^2.0.0-beta.17",
     "@vuepress-reco/vuepress-plugin-page": "^2.0.0",
-    "@vuepress/plugin-active-header-links": "2.0.0-beta.17",
-    "@vuepress/plugin-prismjs": "^2.0.0-beta.13"
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.23",
+    "@vuepress/plugin-docsearch": "^2.0.0-alpha.1",
+    "@vuepress/plugin-git": "2.0.0-beta.23",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.23",
+    "@vuepress/plugin-search": "^2.0.0-beta.23"
   }
 }
