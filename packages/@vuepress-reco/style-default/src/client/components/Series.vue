@@ -1,7 +1,7 @@
 <template>
-  <aside class="sidebar-container">
+  <aside class="series-container">
     <template v-for="item in sidebarItems" :key="item.link || item.text">
-      <SidebarChild :item="item" />
+      <SeriesItem :item="item" />
     </template>
   </aside>
 </template>
@@ -9,13 +9,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useSidebarItems } from '../composables/'
-import { SidebarChild } from './SidebarChild'
+import { SeriesItem } from './SeriesItem'
 
 export default defineComponent({
-  components: { SidebarChild },
+  components: { SeriesItem },
   setup() {
     const sidebarItems = useSidebarItems()
-    console.log(444, sidebarItems.value)
     return {
       sidebarItems,
     }

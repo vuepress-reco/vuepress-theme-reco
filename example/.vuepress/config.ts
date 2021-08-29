@@ -47,19 +47,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     sidebar: {
       '/group/': [
         {
-          isGroup: true,
           text: 'group',
           children: ['/group/bar.md', '/group/foo.md'],
         },
       ],
       '/blogs/': [
         {
-          isGroup: true,
           text: 'blogs1',
           children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
         },
         {
-          isGroup: true,
           text: 'blogs2',
           children: ['/blogs/category2/blog1.md', '/blogs/category2/blog2.md'],
         },

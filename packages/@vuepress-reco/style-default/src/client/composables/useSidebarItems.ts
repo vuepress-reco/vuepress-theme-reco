@@ -58,7 +58,6 @@ export const resolveSidebarItems = (
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
   const sidebarConfig = frontmatter.sidebar ?? themeLocale.sidebar ?? 'auto'
-  const sidebarDepth = frontmatter.sidebarDepth ?? themeLocale.sidebarDepth ?? 2
 
   // resolve sidebar items according to the config
   if (frontmatter.home || sidebarConfig === false) {
@@ -66,11 +65,11 @@ export const resolveSidebarItems = (
   }
 
   if (isArray(sidebarConfig)) {
-    return resolveArraySidebarItems(sidebarConfig, sidebarDepth)
+    return resolveArraySidebarItems(sidebarConfig)
   }
 
   if (isPlainObject(sidebarConfig)) {
-    return resolveMultiSidebarItems(sidebarConfig, sidebarDepth)
+    return resolveMultiSidebarItems(sidebarConfig)
   }
 
   return []
@@ -80,12 +79,8 @@ export const resolveSidebarItems = (
  * Resolve sidebar items if the config is an array
  */
 export const resolveArraySidebarItems = (
-  sidebarConfig: SidebarConfigArray,
-  sidebarDepth: number
+  sidebarConfig: SidebarConfigArray
 ): ResolvedSidebarItem[] => {
-  // const route = useRoute()
-  // const page = usePageData()
-
   const handleChildItem = (
     item: ResolvedSidebarItem | SidebarGroup | SidebarItem | string
   ): ResolvedSidebarItem => {
@@ -103,30 +98,12 @@ export const resolveArraySidebarItems = (
       }
     }
 
-    // if the sidebar item is current page and children is not set
-    // use headers of current page as children
-    // if (childItem.link === route.path && childItem.children === undefined) {
-    //   return {
-    //     ...childItem,
-    //     children: headersToSidebarItemChildren(
-    //       page.value.headers,
-    //       sidebarDepth
-    //     ),
-    //   }
-    // }
-
     return childItem
   }
 
   return sidebarConfig.map((item): ResolvedSidebarItem => {
     if (isString(item)) {
       return useNavLink(item)
-    }
-    if (!item.isGroup) {
-      return {
-        ...item,
-        children: item.children.map(handleChildItem),
-      }
     }
 
     return {
@@ -140,12 +117,11 @@ export const resolveArraySidebarItems = (
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
  */
 export const resolveMultiSidebarItems = (
-  sidebarConfig: SidebarConfigObject,
-  sidebarDepth: number
+  sidebarConfig: SidebarConfigObject
 ): ResolvedSidebarItem[] => {
   const route = useRoute()
   const sidebarPath = resolveLocalePath(sidebarConfig, route.path)
   const matchedSidebarConfig = sidebarConfig[sidebarPath] ?? []
 
-  return resolveArraySidebarItems(matchedSidebarConfig, sidebarDepth)
+  return resolveArraySidebarItems(matchedSidebarConfig)
 }

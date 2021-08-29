@@ -1,7 +1,7 @@
 <template>
   <aside class="pageHeader-container">
     <template v-for="item in pageHeaders" :key="item.link || item.text">
-      <HeaderChild :item="item" />
+      <SeriesItem :item="item" />
     </template>
   </aside>
 </template>
@@ -9,10 +9,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { usePageHeaders } from '../composables/'
-import { HeaderChild } from './HeaderChild'
+import { SeriesItem } from './SeriesItem'
 
 export default defineComponent({
-  components: { HeaderChild },
+  components: { SeriesItem },
   setup() {
     const pageHeaders = usePageHeaders()
     return {

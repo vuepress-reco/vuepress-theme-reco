@@ -1,0 +1,41 @@
+@import './variables.scss';
+
+.series-container {
+  @apply ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0;
+  .series-group {
+    &:not(:first-of-type) h3.series-heading {
+      @apply border-t;
+    }
+    h3.series-heading {
+      @apply block pt-5 my-4 font-semibold;
+      border-color: $borderColor;
+      & + ul {
+        @apply pl-0 m-0 list-none;
+      }
+      &.active {
+        color: $accentColor;
+      }
+    }
+    ul {
+      @apply pl-4 list-none;
+    }
+  }
+  a.series-item {
+    @apply relative block py-2 transition-all;
+    &::before {
+      @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
+      background-color: $accentColor;
+      content: '';
+    }
+    &:hover {
+      color: $accentColor;
+    }
+    &.router-link-active {
+      @apply pl-4;
+      color: $accentColor;
+      &::before {
+        @apply w-2 h-2 animate-ping;
+      }
+    }
+  }
+}
