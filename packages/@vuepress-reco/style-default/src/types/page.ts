@@ -37,8 +37,7 @@ export interface DefaultThemeNormalPageFrontmatter
   editLink?: boolean
   lastUpdated?: boolean
   contributors?: boolean
-  sidebar?: 'auto' | false | SidebarConfig
-  sidebarDepth?: number
+  series?: false | SidebarConfig
   prev?: string | NavLink
   next?: string | NavLink
 }

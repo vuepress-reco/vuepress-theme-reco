@@ -57,7 +57,7 @@ export const resolveSidebarItems = (
   themeLocale: DefaultThemeData
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
-  const sidebarConfig = frontmatter.sidebar ?? themeLocale.sidebar ?? 'auto'
+  const sidebarConfig = frontmatter.series ?? themeLocale.series ?? 'auto'
 
   // resolve sidebar items according to the config
   if (frontmatter.home || sidebarConfig === false) {

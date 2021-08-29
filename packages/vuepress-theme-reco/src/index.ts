@@ -14,7 +14,12 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     '@vuepress/plugin-search',
     '@vuepress/plugin-prismjs',
     '@vuepress/plugin-docsearch',
-    '@vuepress/active-header-links',
+    [
+      '@vuepress/active-header-links',
+      {
+        headerLinkSelector: 'a.page-header-item',
+      },
+    ],
     ...styleConfig.plugins,
   ]
 

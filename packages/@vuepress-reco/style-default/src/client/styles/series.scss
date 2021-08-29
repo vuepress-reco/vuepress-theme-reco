@@ -5,10 +5,10 @@
   .series-group {
     &:not(:first-of-type) h3.series-heading {
       @apply border-t;
-    }
-    h3.series-heading {
-      @apply block pt-5 my-4 font-semibold;
       border-color: $borderColor;
+    }
+    .series-heading {
+      @apply block pt-5 my-4 font-semibold;
       & + ul {
         @apply pl-0 m-0 list-none;
       }

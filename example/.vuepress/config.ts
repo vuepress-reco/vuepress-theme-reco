@@ -44,7 +44,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     //   // 字符串 - 页面文件路径
     //   '/bar/README.md',
     // ],
-    sidebar: {
+    series: {
       '/group/': [
         {
           text: 'group',

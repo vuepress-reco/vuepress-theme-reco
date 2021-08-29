@@ -1,52 +1,34 @@
 @import './variables.scss';
 
-.pageHeader-container {
-  @apply pt-4 w-64 fixed z-10 top-14 bottom-0 right-0;
-  .sidebar-item {
-    a {
-      @apply block pl-4 py-2;
-      & + ul {
-        @apply pl-4 list-none;
-      }
-      &.active {
-        @apply relative;
-        color: $accentColor;
-        &::before {
-          @apply absolute inset-y-0 left-1.5 m-auto block w-1 h-1 rounded-1/2;
-          content: '';
-          background-color: $accentColor;
-        }
-      }
-    }
-    p.sidebar-heading {
-      @apply block pl-2 py-2 m-0;
-      & + ul {
-        @apply pl-4 m-0 list-none;
-      }
-      &.active {
-        color: $accentColor;
-      }
-    }
-    > a.active::before {
-      @apply left-1 w-1.5 h-1.5;
-    }
-  }
-  > a.sidebar-item {
-    @apply block pl-9 py-4;
+.page-header-container {
+  @apply list-none ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 right-0;
+  .page-header-menu-depth_2 {
+    @apply border-t border-dashed py-2 font-semibold text-sm;
+    border-color: $borderColor;
     &.active {
-      @apply relative;
-      color: $accentColor;
-      &::before {
-        @apply absolute inset-y-0 left-6 m-auto block w-1.5 h-1.5 rounded-1/2;
-        content: '';
-        background-color: $accentColor;
+      a {
+        color: $accentColor;
       }
     }
   }
-  > .sidebar-item {
-    @apply pl-5;
-    > p.sidebar-heading {
-      @apply font-semibold;
+  .page-header-menu-depth_3 {
+    @apply py-1.5 pl-1 relative text-xs transition-all;
+    &::before {
+      @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
+      background-color: $accentColor;
+      content: '';
+    }
+    &:hover {
+      color: $accentColor;
+    }
+    &.active {
+      @apply pl-2;
+      a {
+        color: $accentColor;
+      }
+      &::before {
+        @apply w-1 h-1 animate-ping;
+      }
     }
   }
 }

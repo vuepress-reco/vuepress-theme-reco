@@ -24,76 +24,52 @@ const renderItem = (
   item: ResolvedSidebarItem,
   props: VNode['props']
 ): VNode => {
-  // if the item has link, render it as `<Link>`
-  if (item.link) {
-    return h(Link, {
+  return h(
+    'li',
+    {
       ...props,
+    },
+    h(Link, {
+      class: 'page-header-item',
       item,
     })
-  }
-
-  // if the item only has text, render it as `<p>`
-  return h('p', props, item.text)
+  )
 }
 
-const renderChildren = (
-  item: ResolvedSidebarItem,
-  depth: number
-): VNode | null => {
+const renderChildren = (item: ResolvedSidebarItem): Array<VNode | null> => {
   if (!item.children?.length) {
-    return null
+    return [null]
   }
 
-  return h(
-    'ul',
-    {
-      class: {
-        'sidebar-sub-headers': depth > 0,
-      },
-    },
-    item.children.map((child) =>
-      h(
-        'li',
-        h(HeaderChild, {
-          item: child,
-          depth: depth + 1,
-        })
-      )
-    )
+  return item.children.map((child) =>
+    h(HeaderChild, {
+      item: child,
+    })
   )
 }
 
 export const HeaderChild: FunctionalComponent<{
   item: ResolvedSidebarItem
-  depth?: number
-}> = ({ item, depth = 0 }) => {
+}> = ({ item }) => {
   const route = useRoute()
   const active = isActiveItem(route, item)
 
-  if (item.children) {
+  if (item.children && item.children.length > 0) {
     return [
-      h(
-        'section',
-        {
-          class: 'sidebar-item',
+      renderItem(item, {
+        class: {
+          [`page-header-menu-depth_${item.level || 2}`]: true,
+          active,
         },
-        [
-          renderItem(item, {
-            class: {
-              'sidebar-link': true,
-              active,
-            },
-          }),
-          renderChildren(item, depth),
-        ]
-      ),
+      }),
+      ...renderChildren(item),
     ]
   }
 
   return [
     renderItem(item, {
       class: {
-        'sidebar-link': true,
+        [`page-header-menu-depth_${item.level || 2}`]: true,
         active,
       },
     }),
@@ -106,10 +82,5 @@ HeaderChild.props = {
   item: {
     type: Object,
     required: true,
-  },
-  depth: {
-    type: Number,
-    required: false,
-    default: 0,
   },
 }

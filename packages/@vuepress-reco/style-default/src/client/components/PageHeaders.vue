@@ -1,20 +1,21 @@
 <template>
-  <aside class="pageHeader-container">
+  <ul class="page-header-container">
     <template v-for="item in pageHeaders" :key="item.link || item.text">
-      <SeriesItem :item="item" />
+      <HeaderChild :item="item" />
     </template>
-  </aside>
+  </ul>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { usePageHeaders } from '../composables/'
-import { SeriesItem } from './SeriesItem'
+import { HeaderChild } from './HeaderChild'
 
 export default defineComponent({
-  components: { SeriesItem },
+  components: { HeaderChild },
   setup() {
     const pageHeaders = usePageHeaders()
+    console.log(888, pageHeaders.value)
     return {
       pageHeaders,
     }

@@ -50,6 +50,7 @@ export type SidebarConfigObject = Record<string, SidebarConfigArray>
 export type SidebarConfig = SidebarConfigArray | SidebarConfigObject
 // resolved
 export interface ResolvedSidebarItem extends Partial<NavLink> {
+  level?: number
   isGroup?: boolean
   children?: ResolvedSidebarItem[]
 }
