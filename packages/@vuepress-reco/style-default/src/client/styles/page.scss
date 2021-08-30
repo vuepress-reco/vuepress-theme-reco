@@ -1,9 +1,9 @@
 .page-container {
   @apply mt-16 mx-10;
   &.show-sidebar {
-    @apply pl-64;
+    @apply pl-0 md:pl-64;
   }
   &.show-page-headers {
-    @apply pr-64;
+    @apply pr-0 lg:pr-64;
   }
 }

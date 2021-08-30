@@ -12,6 +12,12 @@ html {
   @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-white font-normal text-sm font-sans;
 }
 
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+
 body {
   @apply m-0 w-full min-h-screen antialiased overflow-x-hidden; // antialiased 字体平滑
   min-width: 320px;

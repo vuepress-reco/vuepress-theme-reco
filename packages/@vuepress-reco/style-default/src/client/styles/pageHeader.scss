@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .page-header-container {
-  @apply list-none ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 right-0;
+  @apply list-none ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 right-0 hidden lg:block;
   .page-header-menu-depth_2 {
     @apply border-t border-dashed py-2 font-semibold text-sm;
     border-color: $borderColor;

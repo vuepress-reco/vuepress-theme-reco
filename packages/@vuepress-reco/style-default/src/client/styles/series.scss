@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .series-container {
-  @apply ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0;
+  @apply ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 hidden md:block;
   .series-group {
     &:not(:first-of-type) h3.series-heading {
       @apply border-t;

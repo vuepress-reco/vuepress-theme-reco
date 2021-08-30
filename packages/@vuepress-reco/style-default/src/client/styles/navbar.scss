@@ -15,7 +15,7 @@
     @apply absolute right-4 top-2;
     white-space: nowrap;
     .navbar-links {
-      @apply inline-block;
+      @apply inline-block hidden md:inline-block;
       .navbar-links-item {
         @apply inline-block;
         &:not(:first-child) {
@@ -23,11 +23,14 @@
         }
         .dropdown-wrapper {
           @apply relative;
+          .dropdown-title {
+            @apply text-gray-700 dark:text-white;
+          }
           .mobile-dropdown-title {
             @apply hidden;
           }
           .nav-dropdown {
-            @apply hidden absolute top-2 bg-white shadow-md px-3 py-2 rounded-md;
+            @apply hidden absolute top-2 bg-white shadow-md px-3 py-2 rounded-md bg-white dark:bg-gray-900;
             .dropdown-item {
               @apply truncate;
             }
@@ -40,6 +43,9 @@
           color: $accentColor;
         }
       }
+    }
+    .search-box input {
+      @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-white;
     }
   }
   .arrow {
