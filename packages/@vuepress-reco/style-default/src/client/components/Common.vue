@@ -2,11 +2,12 @@
   <div
     :class="{
       'common-wrapper': true,
-      'show-sidebar': isShowSidebar,
+      'sidebar-open': isOpenSidebar,
       'show-page-headers': isShowHeaders,
     }"
   >
-    <Navbar />
+    <Navbar @toggleSidebar="toggleSidebar" />
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
     <Series v-if="isShowSidebar" />
     <slot />
     <PageHeaders v-if="isShowHeaders" />
@@ -16,7 +17,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+// import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import Navbar from '../components/Navbar'
 import Series from '../components/Series'
 import PageHeaders from '../components/PageHeaders.vue'
@@ -29,11 +30,18 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter()
-    const { isShowSidebar, isShowHeaders } = useSidebarData()
-    const { classificationPosts } = usePageData()
-    console.log(111, classificationPosts)
+    const { isOpenSidebar, isShowSidebar, isShowHeaders, toggleSidebar } =
+      useSidebarData()
+    // const { classificationPosts } = usePageData()
+    // console.log(111, classificationPosts)
 
-    return { frontmatter, isShowSidebar, isShowHeaders }
+    return {
+      frontmatter,
+      isOpenSidebar,
+      isShowSidebar,
+      isShowHeaders,
+      toggleSidebar,
+    }
   },
 })
 </script>

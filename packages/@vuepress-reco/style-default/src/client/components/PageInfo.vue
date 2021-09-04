@@ -52,8 +52,6 @@ export default defineComponent({
     const { pageData } = toRefs(props)
     const themeData = useThemeLocaleData()
 
-    console.log(333, pageData)
-
     const author = computed(
       () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
     )

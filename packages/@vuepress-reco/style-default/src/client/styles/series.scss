@@ -1,7 +1,9 @@
 @import './variables.scss';
 
 .series-container {
-  @apply ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 hidden md:block;
+  @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-white dark:bg-gray-900;
+  @apply transform -translate-x-full;
+  @apply md:transform md:-translate-x-0 #{!important};
   .series-group {
     &:not(:first-of-type) h3.series-heading {
       @apply border-t;
@@ -21,7 +23,7 @@
     }
   }
   a.series-item {
-    @apply relative block py-2 transition-all;
+    @apply relative block py-1 transition-all;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
       background-color: $accentColor;
@@ -37,5 +39,17 @@
         @apply w-2 h-2 animate-ping;
       }
     }
+  }
+  .navbar-links {
+    @apply block md:hidden;
+  }
+}
+
+.sidebar-open {
+  .series-container {
+    @apply transform -translate-x-0 #{!important};
+  }
+  .sidebar-mask {
+    @apply block fixed z-10 top-0 right-0 bottom-0 left-0 ;
   }
 }

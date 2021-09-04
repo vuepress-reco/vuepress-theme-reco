@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+* {
+  @apply m-0 p-0;
+}
+
 *,
 ::before,
 ::after {

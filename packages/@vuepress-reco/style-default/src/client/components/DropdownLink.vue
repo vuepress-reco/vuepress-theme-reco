@@ -20,57 +20,57 @@
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
-    <!-- Transition will somehow break the Select Languages dropdown -->
-    <!-- So we remove DropdownTransition until we figure out the reason -->
-    <ul v-show="open" class="nav-dropdown">
-      <li
-        v-for="(child, index) in item.children"
-        :key="child.link || index"
-        class="dropdown-item"
-      >
-        <template v-if="child.children">
-          <h4 class="dropdown-subtitle">
-            <Link
-              v-if="child.link"
-              :item="child"
-              @focusout="
-                isLastItemOfArray(child, item.children) &&
-                  child.children.length === 0 &&
-                  (open = false)
-              "
-            />
-
-            <span v-else>{{ child.text }}</span>
-          </h4>
-
-          <ul class="dropdown-subitem-wrapper">
-            <li
-              v-for="grandchild in child.children"
-              :key="grandchild.link"
-              class="dropdown-subitem"
-            >
+    <DropdownTransition>
+      <ul v-show="open" class="nav-dropdown">
+        <li
+          v-for="(child, index) in item.children"
+          :key="child.link || index"
+          class="dropdown-item"
+        >
+          <template v-if="child.children">
+            <h4 class="dropdown-subtitle">
               <Link
-                :item="grandchild"
+                v-if="child.link"
+                :item="child"
                 @focusout="
-                  isLastItemOfArray(grandchild, child.children) &&
-                    isLastItemOfArray(child, item.children) &&
+                  isLastItemOfArray(child, item.children) &&
+                    child.children.length === 0 &&
                     (open = false)
                 "
               />
-            </li>
-          </ul>
-        </template>
 
-        <template v-else>
-          <Link
-            :item="child"
-            @focusout="
-              isLastItemOfArray(child, item.children) && (open = false)
-            "
-          />
-        </template>
-      </li>
-    </ul>
+              <span v-else>{{ child.text }}</span>
+            </h4>
+
+            <ul class="dropdown-subitem-wrapper">
+              <li
+                v-for="grandchild in child.children"
+                :key="grandchild.link"
+                class="dropdown-subitem"
+              >
+                <Link
+                  :item="grandchild"
+                  @focusout="
+                    isLastItemOfArray(grandchild, child.children) &&
+                      isLastItemOfArray(child, item.children) &&
+                      (open = false)
+                  "
+                />
+              </li>
+            </ul>
+          </template>
+
+          <template v-else>
+            <Link
+              :item="child"
+              @focusout="
+                isLastItemOfArray(child, item.children) && (open = false)
+              "
+            />
+          </template>
+        </li>
+      </ul>
+    </DropdownTransition>
   </div>
 </template>
 
@@ -80,12 +80,14 @@ import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavGroup, NavItem } from '../../types'
 import Link from './Link.vue'
+import DropdownTransition from './DropdownTransition.vue'
 
 export default defineComponent({
   name: 'DropdownLink',
 
   components: {
     Link,
+    DropdownTransition,
   },
 
   props: {

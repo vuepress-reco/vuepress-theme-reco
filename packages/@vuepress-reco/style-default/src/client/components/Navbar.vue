@@ -1,5 +1,7 @@
 <template>
   <header ref="navbar" class="navbar-container">
+    <ToggleSidebarButton @toggle="toggleSidebar" />
+
     <span ref="siteBrand" class="site-brand">
       <RouterLink :to="siteBrandLink">
         <img
@@ -30,9 +32,11 @@ import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import NavbarLinks from './NavbarLinks'
+import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 export default defineComponent({
-  components: { NavbarLinks },
+  components: { NavbarLinks, ToggleSidebarButton },
+  emits: ['toggle-sidebar'],
   setup(_, ctx) {
     const siteLocale = useSiteLocaleData()
     const routeLocale = useRouteLocale()
@@ -55,6 +59,10 @@ export default defineComponent({
         maxWidth: linksWrapperMaxWidth.value + 'px',
       }
     })
+
+    const toggleSidebar = (): void => {
+      ctx.emit('toggle-sidebar')
+    }
 
     onMounted(() => {
       // TODO: migrate to css var
@@ -82,6 +90,7 @@ export default defineComponent({
       withBase,
       navbar,
       siteBrand,
+      toggleSidebar,
     }
   },
 })

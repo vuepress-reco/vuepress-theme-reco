@@ -23,7 +23,6 @@ export const usePageHeaders = (): PageHeadersRef => {
 
 export function resolvePageHeaders(): any {
   const page = usePageData()
-  console.log(4444, page)
   // if the sidebar item is current page and children is not set
   // use headers of current page as children
   return headersToSidebarItemChildren(page.value.headers)

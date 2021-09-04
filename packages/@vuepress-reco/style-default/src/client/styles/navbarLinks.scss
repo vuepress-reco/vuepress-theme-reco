@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+.navbar-links {
+  .navbar-links-item {
+    @apply block md:inline-block;
+    &:not(:first-child) {
+      @apply ml-0 md:ml-6;
+    }
+    .arrow {
+      margin: 0 0 -2px 4px;
+    }
+    .dropdown-wrapper {
+      @apply relative;
+      .dropdown-title {
+        @apply text-gray-700 dark:text-white hidden md:block;
+      }
+      .mobile-dropdown-title {
+        @apply text-lg font-semibold text-gray-700 dark:text-white block md:hidden;
+      }
+      .nav-dropdown {
+        @apply px-3 py-1 my-0 rounded-md bg-white dark:bg-gray-900;
+        @apply md:hidden md:absolute md:top-2 md:py-2 md:my-3 md:shadow-md;
+        .dropdown-item {
+          @apply truncate;
+        }
+      }
+      &.open .nav-dropdown {
+        @apply block #{!important};
+      }
+      &:hover .nav-dropdown {
+        @apply md:block #{!important};
+      }
+    }
+    .router-link-active {
+      color: $accentColor;
+    }
+  }
+}
