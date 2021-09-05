@@ -10,11 +10,11 @@
       }
       &.router-link-active {
         @apply relative;
-        color: $accentColor;
+        @apply text-reco-brand;
         &::before {
           @apply absolute inset-y-0 left-1.5 m-auto block w-1 h-1 rounded-1/2;
           content: '';
-          background-color: $accentColor;
+          @apply bg-reco-brand;
         }
       }
     }
@@ -24,7 +24,7 @@
         @apply pl-4 m-0 list-none;
       }
       &.active {
-        color: $accentColor;
+        @apply text-reco-brand;
       }
     }
     > a.router-link-active::before {
@@ -35,10 +35,10 @@
     @apply block pl-9 py-4;
     &.router-link-active {
       @apply relative;
-      color: $accentColor;
+      @apply text-reco-brand;
       &::before {
         @apply absolute inset-y-0 left-6 m-auto block w-1.5 h-1.5 rounded-1/2;
-        background-color: $accentColor;
+        @apply bg-reco-brand;
         content: '';
       }
     }

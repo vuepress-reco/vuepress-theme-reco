@@ -16,7 +16,7 @@
         }
       }
       &.active, &:hover {
-        background-color: $accentColor;
+        @apply bg-reco-brand;
         .text {
           @apply text-white;
         }

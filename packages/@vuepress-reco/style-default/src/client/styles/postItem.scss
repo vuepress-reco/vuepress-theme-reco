@@ -2,21 +2,26 @@
 
 .post-item-container {
   @apply mb-4 p-6 shadow rounded;
+
   .title {
     @apply relative mb-2 inline-block;
+
     &:after {
       @apply absolute left-0 -bottom-2 w-full;
+
       content: "";
       height: 2px;
       visibility: hidden;
       -webkit-transform: scaleX(0);
       transform: scaleX(0);
-      transition: .3s ease-in-out;
-      background-color: $accentColor;
+      transition: 0.3s ease-in-out;
+      @apply bg-reco-brand;
     }
+
     &:hover a {
-      color: $accentColor;
+      @apply text-reco-brand;
     }
+
     &:hover:after {
       visibility: visible;
       transform: scaleX(1);

@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen shadow-md leading-6 bg-reco;
+  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen shadow-md leading-6 bg-reco-bg-light dark:bg-reco-bg-dark;
   .site-brand {
     @apply text-xl font-semibold;
     .logo {

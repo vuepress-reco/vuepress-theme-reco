@@ -13,7 +13,7 @@
 html {
   font-size: 16px !important;
   -webkit-text-size-adjust: 100%;
-  @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-white font-normal text-sm font-sans;
+  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-gray-700 dark:text-white font-normal text-sm font-sans;
 }
 
 @media screen and (max-width: 640px) {
@@ -73,10 +73,8 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl;
-  border-bottom: 1px solid $borderColor;
-  line-height: 1.25;
-  /* overflow-x: auto; */
+  @apply leading-tight text-2xl;
+  @apply border-b border-solid border-reco-border-light dark:border-reco-border-dark;
 }
 
 h3 {
@@ -158,8 +156,7 @@ th {
 td, th {
   @apply p-1 py-2;
   &:not(:last-child) {
-    @apply border-r;
-    border-color: $borderColor;
+    @apply border-r border-reco-border-light dark:border-reco-border-dark;
   }
 }
 
@@ -249,10 +246,10 @@ li svg {
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 5px;
-  background-color: $accentColor;
+  @apply bg-reco-brand;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
   width: 5px;
-  background-color: $accentColor;
+  @apply bg-reco-brand;
 }

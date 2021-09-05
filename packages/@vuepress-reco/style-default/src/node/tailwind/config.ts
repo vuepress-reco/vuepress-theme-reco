@@ -1,5 +1,6 @@
 import { mdStylePlugin } from './plugin-md-style'
-const colors = require('tailwindcss/colors')
+import { colors as customColors } from './custom-colors'
+// const colors = require('tailwindcss/colors')
 
 export const tailwindConfig = {
   purge: ['./src/**/*.vue'],
@@ -7,9 +8,7 @@ export const tailwindConfig = {
   theme: {
     extend: {
       height: (): Record<string, any> => ({ 'screen-3/5': '60vh' }),
-      colors: {
-        primary: colors.green,
-      },
+      colors: customColors,
       borderRadius: {
         '1/2': '50%',
       },

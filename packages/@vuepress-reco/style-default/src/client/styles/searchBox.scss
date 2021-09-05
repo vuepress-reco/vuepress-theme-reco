@@ -1,3 +1,3 @@
 .search-box input {
-  @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-white #{!important};
+  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-reco-text-light dark:text-reco-text-dark #{!important};
 }

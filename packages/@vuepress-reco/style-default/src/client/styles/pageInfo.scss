@@ -6,7 +6,7 @@
     a {
       color: inherit;
       &:hover {
-        color: $accentColor;
+        @apply text-reco-brand;
       }
     }
     a:not(:last-child) {

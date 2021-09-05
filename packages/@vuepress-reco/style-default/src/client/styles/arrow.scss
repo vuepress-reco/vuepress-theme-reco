@@ -1,18 +1,19 @@
 .arrow {
   @apply inline-block w-0 h-0 border-4 border-transparent;
+
   &.up {
-    border-bottom-color: #9CA3AF;
+    border-bottom-color: #ccc;
   }
 
   &.down {
-    border-top-color: #9CA3AF;
+    border-top-color: #ccc;
   }
 
   &.right {
-    border-left-color: #9CA3AF;
+    border-left-color: #ccc;
   }
 
   &.left {
-    border-right-color: #9CA3AF;
+    border-right-color: #ccc;
   }
 }

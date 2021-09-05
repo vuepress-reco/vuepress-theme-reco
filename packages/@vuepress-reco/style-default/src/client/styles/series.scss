@@ -1,14 +1,13 @@
 @import './variables.scss';
 
 .series-container {
-  @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-white dark:bg-gray-900 border-r overflow-y-auto;
+  @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-reco-bg-light dark:bg-reco-bg-dark overflow-y-auto;
   @apply transform -translate-x-full;
   @apply md:transform md:-translate-x-0 #{!important};
-  border-color: $borderColor;
+  @apply border-r border-reco-border-light dark:border-reco-border-dark;
   .series-group {
     &:not(:first-of-type) h3.series-heading {
-      @apply border-t;
-      border-color: $borderColor;
+      @apply border-t border-reco-border-light dark:border-reco-border-dark;
     }
     .series-heading {
       @apply block pt-5 my-4 font-semibold;
@@ -16,7 +15,7 @@
         @apply pl-0 m-0 list-none;
       }
       &.active {
-        color: $accentColor;
+        @apply text-reco-brand;
       }
     }
     ul {
@@ -27,15 +26,15 @@
     @apply relative block py-1 transition-all;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
-      background-color: $accentColor;
+      @apply bg-reco-brand;
       content: '';
     }
     &:hover {
-      color: $accentColor;
+      @apply text-reco-brand;
     }
     &.router-link-active {
       @apply pl-4;
-      color: $accentColor;
+      @apply text-reco-brand;
       &::before {
         @apply w-2 h-2 animate-ping;
       }

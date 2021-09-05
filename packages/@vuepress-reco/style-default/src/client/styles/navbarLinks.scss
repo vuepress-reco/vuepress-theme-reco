@@ -18,7 +18,7 @@
         @apply text-lg font-semibold text-gray-700 dark:text-white block md:hidden;
       }
       .nav-dropdown {
-        @apply px-3 py-1 my-0 rounded-md bg-white dark:bg-gray-900;
+        @apply px-3 py-1 my-0 rounded-md bg-reco-bg-light dark:bg-reco-bg-dark;
         @apply md:hidden md:absolute md:top-2 md:py-2 md:my-3 md:shadow-md;
         .dropdown-item {
           @apply truncate;
@@ -32,7 +32,7 @@
       }
     }
     .router-link-active {
-      color: $accentColor;
+      @apply text-reco-brand;
     }
   }
 }

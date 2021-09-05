@@ -18,7 +18,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  @apply relative my-2 overflow-hidden bg-white dark:bg-black rounded-md border border-transparent dark:border-gray-800 pt-16 pr-6 pl-16 pb-6 rounded-md;
+  @apply relative my-2 overflow-hidden bg-reco-bg-code dark:bg-reco-bg-code-dark rounded-md border border-transparent dark:border-gray-800 pt-16 pr-6 pl-16 pb-6 rounded-md;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
   &::after {
     @apply absolute top-4 left-4 w-3 h-3 rounded-full;

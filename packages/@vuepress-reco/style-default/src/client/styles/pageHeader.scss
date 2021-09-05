@@ -3,11 +3,11 @@
 .page-header-container {
   @apply list-none ml-10 pr-6 pt-4 w-64 fixed z-10 top-14 bottom-0 right-0 hidden lg:block;
   .page-header-menu-depth_2 {
-    @apply border-t border-dashed py-2 font-semibold text-sm;
-    border-color: $borderColor;
+    @apply py-2 font-semibold text-sm;
+    @apply border-t border-dashed border-reco-border-light dark:border-reco-border-dark;
     &.active {
       a {
-        color: $accentColor;
+        @apply text-reco-brand;
       }
     }
   }
@@ -15,16 +15,16 @@
     @apply py-1.5 pl-1 relative text-xs transition-all;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
-      background-color: $accentColor;
+      @apply bg-reco-brand;
       content: '';
     }
     &:hover {
-      color: $accentColor;
+      @apply text-reco-brand;
     }
     &.active {
       @apply pl-2;
       a {
-        color: $accentColor;
+        @apply text-reco-brand;
       }
       &::before {
         @apply w-1 h-1 animate-ping;
