@@ -3,12 +3,13 @@
     :class="{
       'common-wrapper': true,
       'sidebar-open': isOpenSidebar,
+      'no-sidebar': !isShowSidebar,
       'show-page-headers': isShowHeaders,
     }"
   >
     <Navbar @toggleSidebar="toggleSidebar" />
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
-    <Series v-if="isShowSidebar" />
+    <Series />
     <slot />
     <PageHeaders v-if="isShowHeaders" />
   </div>

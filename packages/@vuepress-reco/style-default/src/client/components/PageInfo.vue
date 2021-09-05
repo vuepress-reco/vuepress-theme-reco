@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showPageInfo" class="pageinfo-container">
+  <div v-if="showPageInfo" class="page-info">
     <Icon v-if="!!author" icon="solid user" :text="author" />
     <Icon v-if="!!date" icon="solid calendar-alt" :text="date" />
     <Icon v-if="!!categories && categories.length > 0" icon="solid th-list">

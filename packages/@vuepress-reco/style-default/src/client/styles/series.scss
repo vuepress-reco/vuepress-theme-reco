@@ -1,9 +1,10 @@
 @import './variables.scss';
 
 .series-container {
-  @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-white dark:bg-gray-900;
+  @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-white dark:bg-gray-900 border-r overflow-y-auto;
   @apply transform -translate-x-full;
   @apply md:transform md:-translate-x-0 #{!important};
+  border-color: $borderColor;
   .series-group {
     &:not(:first-of-type) h3.series-heading {
       @apply border-t;
@@ -51,5 +52,11 @@
   }
   .sidebar-mask {
     @apply block fixed z-10 top-0 right-0 bottom-0 left-0 ;
+  }
+}
+
+.no-sidebar {
+  .series-container {
+    @apply md:hidden;
   }
 }

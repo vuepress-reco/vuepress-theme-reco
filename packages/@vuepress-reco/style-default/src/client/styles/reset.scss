@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  @apply m-0 w-full min-h-screen antialiased overflow-x-hidden; // antialiased 字体平滑
+  @apply m-0 w-full antialiased overflow-x-hidden; // antialiased 字体平滑
   min-width: 320px;
   direction: ltr;
   text-rendering: optimizeLegibility; // 像素较小时字体会拼接在一起
@@ -237,10 +237,22 @@ li svg {
   transform: translateY(-10%);
 }
 
-.theme-reco-default-content {
-  @apply lg:max-w-screen-md xl:max-w-screen-lg m-auto px-10;
-  border-top: 1px solid transparent;
-  code {
-    @apply px-2 py-0.5 bg-gray-100 rounded-md font-mono ;
-  }
+/************** 滚动条 **************/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  // background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: $accentColor;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: $accentColor;
 }

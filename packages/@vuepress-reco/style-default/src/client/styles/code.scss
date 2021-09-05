@@ -128,8 +128,8 @@ div[class*='language-'] {
       }
     }
   }
-  pre code{
-    @apply font-mono font-normal bg-transparent p-0 leading-6;
+  pre code {
+    @apply font-mono font-normal bg-transparent p-0 leading-6 #{!important};
   }
 }
 

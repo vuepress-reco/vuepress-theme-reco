@@ -1,8 +1,10 @@
 <template>
   <main class="page-container">
-    <h1 class="page-title" v-if="!!title">{{ title }}</h1>
+    <h1 v-if="!!title" class="page-title">{{ title }}</h1>
     <PageInfo :page-data="pageData" />
-    <Content class="theme-reco-default-content" />
+    <div class="theme-reco-default-content">
+      <Content />
+    </div>
     <PageMeta />
     <PageNav />
   </main>

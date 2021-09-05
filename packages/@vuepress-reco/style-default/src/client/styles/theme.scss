@@ -1,0 +1,9 @@
+.theme-container {
+  .theme-reco-default-content, .page-title, .page-info, .page-meta, .page-nav {
+    @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-10;
+    border-top: 1px solid transparent;
+    &.theme-reco-default-content code {
+      @apply px-2 py-0.5 bg-gray-100 rounded-md font-mono ;
+    }
+  }
+}
