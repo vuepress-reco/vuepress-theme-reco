@@ -1,9 +1,9 @@
 .page-container {
-  @apply mt-16;
+  @apply mt-24;
   &.show-sidebar {
     @apply pl-0 md:pl-72;
   }
   &.show-page-headers {
-    @apply pr-0 lg:pr-64;
+    @apply pr-0 lg:pr-56;
   }
 }

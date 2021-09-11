@@ -3,7 +3,7 @@
 .page-nav {
   @apply pt-4 pb-0;
   .inner {
-    @apply border-t border-reco-border-light dark:border-reco-border-dark mt-0 pt-4 overflow-hidden;
+    @apply border-t border-solid border-reco-border-light dark:border-reco-border-dark mt-0 pt-4 overflow-hidden;
   }
   a {
     @apply font-semibold;

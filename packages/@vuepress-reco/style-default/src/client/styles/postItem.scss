@@ -1,7 +1,9 @@
 @import './variables.scss';
 
 .post-item-container {
-  @apply mb-4 p-6 shadow rounded;
+  @apply mb-8 p-6 rounded shadow-light;
+  @apply dark:shadow-dark;
+  @apply hover:shadow-light-heavier dark:hover:shadow-dark-heavier;
 
   .title {
     @apply relative mb-2 inline-block;
@@ -26,5 +28,9 @@
       visibility: visible;
       transform: scaleX(1);
     }
+  }
+
+  .page-info {
+    @apply mt-2;
   }
 }

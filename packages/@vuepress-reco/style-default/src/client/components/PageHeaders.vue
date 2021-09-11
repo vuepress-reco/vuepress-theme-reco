@@ -1,9 +1,12 @@
 <template>
-  <ul class="page-header-container">
-    <template v-for="item in pageHeaders" :key="item.link || item.text">
-      <HeaderChild :item="item" />
-    </template>
-  </ul>
+  <div class="page-header-container">
+    <h5 class="tip">ON THIS PAGE</h5>
+    <ul>
+      <template v-for="item in pageHeaders" :key="item.link || item.text">
+        <HeaderChild :item="item" />
+      </template>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">

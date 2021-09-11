@@ -1,24 +1,29 @@
 @import './variables.scss';
 
 .categories-container {
-  @apply lg:max-w-screen-md xl:max-w-screen-lg mt-16 mx-auto px-10;
+  @apply lg:max-w-screen-md xl:max-w-screen-lg mt-24 mx-auto px-10;
   .category-list {
     @apply pl-0 list-none;
     .category-item {
-      @apply inline-block mr-4 mb-4 bg-white shadow rounded cursor-pointer;
+      @apply inline-block mr-4 mb-4 dark:bg-reco-bg-dark rounded cursor-pointer border-reco-brand border-2 border-solid;
       .category-link {
         @apply inline-block px-4 py-1.5;
         .text {
-          @apply mr-1 text-xs leading-5;
+          @apply mr-1 text-xs leading-5 text-reco-text-light dark:text-white;
         }
         .num {
-          @apply inline-block h-5 px-2 bg-red-300 rounded text-white text-xs leading-5;
+          @apply inline-block h-5 px-2 bg-reco-brand rounded text-white text-xs leading-5;
         }
       }
       &.active, &:hover {
-        @apply bg-reco-brand;
-        .text {
-          @apply text-white;
+        @apply bg-reco-brand-light;
+        .category-link {
+          .text {
+            @apply text-white;
+          }
+          .num {
+            @apply text-white;
+          }
         }
       }
     }

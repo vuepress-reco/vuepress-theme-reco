@@ -4,13 +4,18 @@
   @apply pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 block bg-reco-bg-light dark:bg-reco-bg-dark overflow-y-auto;
   @apply transform -translate-x-full;
   @apply md:transform md:-translate-x-0 #{!important};
-  @apply border-r border-reco-border-light dark:border-reco-border-dark;
+  @apply border-r border-solid border-reco-border-light dark:border-reco-border-dark;
   .series-group {
-    &:not(:first-of-type) h3.series-heading {
-      @apply border-t border-reco-border-light dark:border-reco-border-dark;
+    &:not(:first-of-type) h5.series-heading {
+      @apply relative;
+      &::before {
+        @apply absolute left-0 bottom-10 block w-full border-t border-solid border-reco-border-light;
+        @apply dark:border-reco-border-dark;
+        content: '';
+      }
     }
     .series-heading {
-      @apply block pt-5 my-4 font-semibold;
+      @apply mb-4 font-extrabold;
       & + ul {
         @apply pl-0 m-0 list-none;
       }
@@ -23,7 +28,7 @@
     }
   }
   a.series-item {
-    @apply relative block py-1 transition-all;
+    @apply relative block py-0.5 transition-all;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
       @apply bg-reco-brand;
@@ -36,7 +41,7 @@
       @apply pl-4;
       @apply text-reco-brand;
       &::before {
-        @apply w-2 h-2 animate-ping;
+        @apply w-1.5 h-1.5 animate-ping;
       }
     }
   }

@@ -7,7 +7,7 @@
 *,
 ::before,
 ::after {
-  @apply box-border border-0 border-solid border-gray-200;
+  @apply box-border border-0 border-gray-200;
 }
 
 html {
@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply my-4 mx-0 leading-5;
+  @apply -mt-12 mb-8 mx-0 pt-20 leading-5 z-negative-10;
 }
 
 h1,
@@ -65,16 +65,23 @@ h5:hover .header-anchor,
 h5:focus .header-anchor,
 h6:hover .header-anchor,
 h6:focus .header-anchor {
-  @apply opacity-100;
+  @apply opacity-100 text-reco-brand;
 }
 
 h1 {
-  @apply mt-6 text-3xl md:text-4xl;
+  @apply text-3xl;
 }
 
 h2 {
   @apply leading-tight text-2xl;
-  @apply border-b border-solid border-reco-border-light dark:border-reco-border-dark;
+  &:not(:first-of-type) {
+    @apply -mt-4 relative;
+    &::before {
+      @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-light;
+      @apply dark:border-reco-border-dark;
+      content: ' ';
+    }
+  }
 }
 
 h3 {
@@ -83,6 +90,14 @@ h3 {
 
 h4 {
   @apply text-lg;
+}
+
+h5 {
+  @apply text-base;
+}
+
+h6 {
+  @apply text-sm;
 }
 
 p,
@@ -141,28 +156,31 @@ li > ol {
 }
 
 table {
-  @apply w-full rounded-md;
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
-}
+  @apply w-full rounded-md overflow-x-auto;
+  border-collapse: collapse;
 
-tr {
-  @apply border-b border-gray-400 border-opacity-20;
-}
+  tr {
+    @apply border-2 border-solid border-reco-border-light;
+    @apply dark:border-reco-border-dark;
+  }
 
-th {
-  @apply text-left font-semibold;
-}
+  th {
+    @apply text-left font-semibold bg-reco-bg-light-light;
+    @apply dark:bg-reco-bg-dark-light;
+  }
 
-td, th {
-  @apply p-1 py-2;
-  &:not(:last-child) {
-    @apply border-r border-reco-border-light dark:border-reco-border-dark;
+  td, th {
+    @apply px-2 py-3;
+    &:not(:last-child) {
+      @apply border-r-2 border-reco-border-light;
+      @apply dark:border-reco-border-dark;
+    }
   }
 }
 
 blockquote {
-  border-left: 0.2rem solid #dfe2e5;
-  @apply bg-gray-400 bg-opacity-10 text-base py-1 pb-4 my-4 mx-0;
+  @apply bg-gray-400 bg-opacity-10 text-base py-1 pb-4 my-4 mx-0 border-l border-solid;
+  border-color: #dfe2e5;
 }
 
 kbd {
@@ -222,7 +240,7 @@ form {
 // .inline-icon-btn {
 //   @apply text-primary-deep;
 //   @apply inline-block rounded p-0.5 text-2xl align-middle;
-//   @apply border border-primary border-opacity-20 border-solid;
+//   @apply border border-primary border-opacity-20;
 // }
 
 p > img {

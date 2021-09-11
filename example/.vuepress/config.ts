@@ -7,7 +7,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   theme: 'reco',
   themeConfig: {
     style: '@vuepress-reco/style-default',
-    logo: '/icon_vuepress_reco.png',
+    logo: '/logo.png',
     author: 'reco_luan',
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
     docsBranch: 'main',

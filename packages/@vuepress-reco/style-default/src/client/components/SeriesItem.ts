@@ -56,7 +56,7 @@ const renderItem = (
   }
 
   // if the item only has text, render it as `<p>`
-  return h('h3', props, item.text)
+  return h('h5', props, item.text)
 }
 
 const renderChildren = (item: ResolvedSidebarItem): VNode | null => {

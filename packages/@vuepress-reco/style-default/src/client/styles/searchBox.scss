@@ -1,3 +1,23 @@
-.search-box input {
-  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-reco-text-light dark:text-reco-text-dark #{!important};
+.search-box {
+  input {
+    @apply bg-reco-bg-light text-reco-text-light border-2 border-solid border-reco-border-light focus:border-reco-brand #{!important};
+    @apply dark:bg-reco-bg-dark dark:text-reco-text-dark dark:border-reco-border-dark #{!important};
+  }
+  .suggestions {
+    @apply bg-reco-bg-light text-reco-text-light border-2 border-solid border-reco-border-light #{!important};
+    @apply dark:bg-reco-bg-dark dark:text-reco-text-dark dark:border-reco-border-dark #{!important};
+    .suggestion {
+      a {
+        @apply text-reco-text-light;
+        @apply dark:text-reco-text-dark;
+      }
+      &.focus {
+        @apply bg-reco-bg-light-light;
+        @apply dark:bg-reco-bg-dark-light;
+        a {
+          @apply text-reco-brand;
+        }
+      }
+    }
+  }
 }
