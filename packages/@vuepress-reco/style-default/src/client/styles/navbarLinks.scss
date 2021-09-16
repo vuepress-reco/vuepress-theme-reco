@@ -2,26 +2,50 @@
 
 .navbar-links {
   .navbar-links-item {
-    @apply block md:inline-block;
+    @apply block md:inline-block py-1.5;
+    @apply md:py-0;
     &:not(:first-child) {
       @apply ml-0 md:ml-6;
     }
+    > a.nav-link {
+      @apply text-base font-semibold;
+      @apply md:text-base;
+    }
     .arrow {
-      margin: 0 0 -2px 4px;
+      @apply ml-1;
     }
     .dropdown-wrapper {
       @apply relative;
       .dropdown-title {
         @apply text-gray-700 dark:text-white hidden md:block;
+        .title {
+          @apply font-semibold;
+        }
       }
       .mobile-dropdown-title {
-        @apply text-lg font-semibold text-gray-700 dark:text-white block md:hidden;
+        @apply text-base font-semibold text-reco-text-light dark:text-reco-text-dark dark:text-white block md:hidden;
       }
       .nav-dropdown {
-        @apply px-3 py-1 my-0 rounded-md bg-reco-bg-light dark:bg-reco-bg-dark;
-        @apply md:hidden md:absolute md:top-2 md:py-2 md:my-3 md:shadow-md;
+        @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-light dark:bg-reco-bg-dark list-none;
+        @apply md:px-3 md:hidden md:absolute md:top-2 md:py-2 md:my-3 md:shadow-md;
         .dropdown-item {
-          @apply truncate;
+          @apply relative;
+          &:not(:first-of-type)::before {
+            @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-light;
+            @apply md:border-t;
+            @apply dark:border-reco-border-dark;
+            content: '';
+          }
+          .dropdown-subtitle {
+            @apply my-1 py-0;
+          }
+          .dropdown-subitem-wrapper {
+            @apply list-none pl-3;
+            @apply md:pl-0;
+          }
+          a.nav-link {
+            @apply text-sm;
+          }
         }
       }
       &.open .nav-dropdown {

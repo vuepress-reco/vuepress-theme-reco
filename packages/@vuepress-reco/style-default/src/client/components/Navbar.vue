@@ -20,6 +20,7 @@
         </span>
       </RouterLink>
     </span>
+
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarLinks />
       <NavbarSearch />
@@ -69,7 +70,6 @@ export default defineComponent({
       // refer to _variables.scss
       const MOBILE_DESKTOP_BREAKPOINT = 719
       const handleLinksWrapWidth = (): void => {
-        console.log(navbar.value!.offsetWidth, siteBrand.value?.offsetWidth)
         if (window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT) {
           linksWrapperMaxWidth.value = 0
         } else {

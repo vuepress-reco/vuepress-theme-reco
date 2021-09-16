@@ -28,7 +28,7 @@
           class="dropdown-item"
         >
           <template v-if="child.children">
-            <h4 class="dropdown-subtitle">
+            <h5 class="dropdown-subtitle">
               <Link
                 v-if="child.link"
                 :item="child"
@@ -40,7 +40,7 @@
               />
 
               <span v-else>{{ child.text }}</span>
-            </h4>
+            </h5>
 
             <ul class="dropdown-subitem-wrapper">
               <li

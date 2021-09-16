@@ -69,7 +69,7 @@ h6:focus .header-anchor {
 }
 
 h1 {
-  @apply text-3xl;
+  @apply text-3xl -mt-20;
 }
 
 h2 {
@@ -196,10 +196,6 @@ form {
   @apply m-0;
 }
 
-.theme.sidebar-open .sidebar-mask {
-  @apply block;
-}
-
 .theme.no-navbar > h1,
 .theme.no-navbar > h2,
 .theme.no-navbar > h3,
@@ -221,10 +217,6 @@ form {
   .theme.no-sidebar main {
     @apply ml-0;
   }
-}
-
-.sidebar-mask {
-  @apply fixed z-10 hidden w-screen h-screen;
 }
 
 // .icon-btn {

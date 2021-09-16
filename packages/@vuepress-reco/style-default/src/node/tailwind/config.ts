@@ -13,6 +13,9 @@ export const tailwindConfig = {
       borderRadius: {
         '1/2': '50%',
       },
+      borderWidth: {
+        6: '6px',
+      },
       // boxShadow 不支持嵌套
       boxShadow: {
         light: '0 1px 8px 0 rgba(0, 0, 0, 0.1)',

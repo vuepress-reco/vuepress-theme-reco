@@ -16,7 +16,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePageFrontmatter } from '@vuepress/client'
 // import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import Navbar from '../components/Navbar'
@@ -35,6 +36,18 @@ export default defineComponent({
       useSidebarData()
     // const { classificationPosts } = usePageData()
     // console.log(111, classificationPosts)
+
+    // close sidebar after navigation
+    let unregisterRouterHook
+    onMounted(() => {
+      const router = useRouter()
+      unregisterRouterHook = router.afterEach(() => {
+        toggleSidebar(false)
+      })
+    })
+    onUnmounted(() => {
+      unregisterRouterHook()
+    })
 
     return {
       frontmatter,

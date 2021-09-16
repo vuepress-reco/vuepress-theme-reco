@@ -18,7 +18,7 @@ export default defineComponent({
   components: { HeaderChild },
   setup() {
     const pageHeaders = usePageHeaders()
-    console.log(888, pageHeaders.value)
+    // console.log(888, pageHeaders.value)
     return {
       pageHeaders,
     }

@@ -69,21 +69,43 @@ export default defineUserConfig<DefaultThemeOptions>({
           {
             text: 'group',
             link: '/group/bar.html',
+            children: [
+              {
+                text: 'group1',
+                link: '/group/bar.html',
+              },
+              {
+                text: 'group2',
+                link: '/group/bar1.html',
+              },
+            ],
+          },
+          {
+            text: 'group',
+            link: '/group/bar.html',
+            children: [
+              {
+                text: 'group1',
+                link: '/group/bar.html',
+              },
+              {
+                text: 'group2',
+                link: '/group/bar1.html',
+              },
+            ],
           },
         ],
       },
       // NavbarItem
       {
-        text: 'group',
+        text: 'Group',
         link: '/group/bar.html',
       },
       // NavbarGroup
       {
-        text: 'blogs',
+        text: 'Blogs',
         children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
       },
-      // 字符串 - 页面文件路径
-      '/bar/README.md',
     ],
   },
   // debug: true,

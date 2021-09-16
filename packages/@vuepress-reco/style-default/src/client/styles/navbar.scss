@@ -1,13 +1,16 @@
 @import './variables.scss';
 
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen leading-6 bg-reco-bg-light bg-opacity-98 shadow-light;
+  @apply fixed top-0 right-0 z-30 px-8 py-3 h-14 w-screen leading-6 bg-reco-bg-light bg-opacity-98 shadow-light;
   @apply dark:bg-reco-bg-dark dark:shadow-dark;
   // backdrop-filter: saturate(180%) blur(20px);
   // background-color: hsla(0,0%,100%,.8);
   // box-shadow: 0 6px 24px rgb(31 35 41 / 8%);
+  .toggle-sidebar-button {
+    @apply align-middle;
+  }
   .site-brand {
-    @apply text-xl font-semibold;
+    @apply align-middle text-xl font-semibold;
     .logo {
       @apply mr-4 inline-block w-8 h-8 rounded-md align-middle;
     }
