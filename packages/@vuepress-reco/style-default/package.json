@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/style-default",
-  "version": "2.0.0",
+  "version": "2.0.1-alpha.1",
   "description": "It is default type of vuepress-theme-reco.",
   "keywords": [
     "vuepress",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "@vuepress-reco/core": "^2.0.0",
+    "@vuepress-reco/core": "^2.0.1-alpha.1",
     "tailwindcss": "^2.1.1"
   }
 }
