@@ -28,6 +28,9 @@
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-page": "^2.0.0",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.23",

@@ -33,6 +33,9 @@
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@vuepress-reco/core": "^2.0.0",
