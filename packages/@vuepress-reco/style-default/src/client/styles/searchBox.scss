@@ -21,3 +21,10 @@
     }
   }
 }
+
+#docsearch-container {
+  @apply inline-block align-middle;
+  button {
+    @apply h-8 px-1.5;
+  }
+}

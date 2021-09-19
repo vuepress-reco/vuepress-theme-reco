@@ -13,7 +13,6 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     '@vuepress/plugin-git',
     '@vuepress/plugin-search',
     '@vuepress/plugin-prismjs',
-    '@vuepress/plugin-docsearch',
     [
       '@vuepress/active-header-links',
       {
