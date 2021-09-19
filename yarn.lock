@@ -2,112 +2,6 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.0.0-alpha.44":
-  version "1.0.0-alpha.44"
-  resolved "https://registry.nlark.com/@algolia/autocomplete-core/download/@algolia/autocomplete-core-1.0.0-alpha.44.tgz?cache=0&sync_timestamp=1631525168348&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40algolia%2Fautocomplete-core%2Fdownload%2F%40algolia%2Fautocomplete-core-1.0.0-alpha.44.tgz#e626dba45f5f3950d6beb0ab055395ef0f7e8bb2"
-  dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
-
-"@algolia/autocomplete-preset-algolia@1.0.0-alpha.44":
-  version "1.0.0-alpha.44"
-  resolved "https://registry.nlark.com/@algolia/autocomplete-preset-algolia/download/@algolia/autocomplete-preset-algolia-1.0.0-alpha.44.tgz?cache=0&sync_timestamp=1631525168964&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40algolia%2Fautocomplete-preset-algolia%2Fdownload%2F%40algolia%2Fautocomplete-preset-algolia-1.0.0-alpha.44.tgz#0ea0b255d0be10fbe262e281472dd6e4619b62ba"
-  dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
-
-"@algolia/autocomplete-shared@1.0.0-alpha.44":
-  version "1.0.0-alpha.44"
-  resolved "https://registry.nlark.com/@algolia/autocomplete-shared/download/@algolia/autocomplete-shared-1.0.0-alpha.44.tgz?cache=0&sync_timestamp=1631525169348&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40algolia%2Fautocomplete-shared%2Fdownload%2F%40algolia%2Fautocomplete-shared-1.0.0-alpha.44.tgz#db13902ad1667e455711b77d08cae1a0feafaa48"
-
-"@algolia/cache-browser-local-storage@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/cache-browser-local-storage/download/@algolia/cache-browser-local-storage-4.10.3.tgz#3bf81e0f66a4a1079a75914a987eb1ef432c7c68"
-  dependencies:
-    "@algolia/cache-common" "4.10.3"
-
-"@algolia/cache-common@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/cache-common/download/@algolia/cache-common-4.10.3.tgz#311b2b5ae06d55300f4230944c99bc39ad15847d"
-
-"@algolia/cache-in-memory@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/cache-in-memory/download/@algolia/cache-in-memory-4.10.3.tgz#697e4994538426272ea29ccf2b32b46ea4c48862"
-  dependencies:
-    "@algolia/cache-common" "4.10.3"
-
-"@algolia/client-account@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/client-account/download/@algolia/client-account-4.10.3.tgz#f2cbefb1abce74c341115607d6af199df1b056ae"
-  dependencies:
-    "@algolia/client-common" "4.10.3"
-    "@algolia/client-search" "4.10.3"
-    "@algolia/transporter" "4.10.3"
-
-"@algolia/client-analytics@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/client-analytics/download/@algolia/client-analytics-4.10.3.tgz#43d934ef8df0cf551c78e6b2e9f2452e7fb27d93"
-  dependencies:
-    "@algolia/client-common" "4.10.3"
-    "@algolia/client-search" "4.10.3"
-    "@algolia/requester-common" "4.10.3"
-    "@algolia/transporter" "4.10.3"
-
-"@algolia/client-common@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/client-common/download/@algolia/client-common-4.10.3.tgz#c4257dd5c57c5c8ec4bd48a7b1897573e372d403"
-  dependencies:
-    "@algolia/requester-common" "4.10.3"
-    "@algolia/transporter" "4.10.3"
-
-"@algolia/client-personalization@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/client-personalization/download/@algolia/client-personalization-4.10.3.tgz#58c800f90ab8ab4aa29abdf29a97e89e6bda419e"
-  dependencies:
-    "@algolia/client-common" "4.10.3"
-    "@algolia/requester-common" "4.10.3"
-    "@algolia/transporter" "4.10.3"
-
-"@algolia/client-search@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/client-search/download/@algolia/client-search-4.10.3.tgz#aa6b02c2d528cb264830f276739b7f68b58988ef"
-  dependencies:
-    "@algolia/client-common" "4.10.3"
-    "@algolia/requester-common" "4.10.3"
-    "@algolia/transporter" "4.10.3"
-
-"@algolia/logger-common@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/logger-common/download/@algolia/logger-common-4.10.3.tgz#6773d2e38581bf9ac57e2dda02f0c4f1bc72ce94"
-
-"@algolia/logger-console@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/logger-console/download/@algolia/logger-console-4.10.3.tgz#bd8bdc1f9dba89db37be25d673ac1f2e68de7913"
-  dependencies:
-    "@algolia/logger-common" "4.10.3"
-
-"@algolia/requester-browser-xhr@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/requester-browser-xhr/download/@algolia/requester-browser-xhr-4.10.3.tgz#81ae8f6caf562a28f96102f03da7f4b19bba568c"
-  dependencies:
-    "@algolia/requester-common" "4.10.3"
-
-"@algolia/requester-common@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/requester-common/download/@algolia/requester-common-4.10.3.tgz#c3112393cff97be79863bc28de76f9c69b2f5a95"
-
-"@algolia/requester-node-http@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/requester-node-http/download/@algolia/requester-node-http-4.10.3.tgz#75ea7805ac0ba25a1124989d8632ef39c31441c1"
-  dependencies:
-    "@algolia/requester-common" "4.10.3"
-
-"@algolia/transporter@4.10.3":
-  version "4.10.3"
-  resolved "https://registry.nlark.com/@algolia/transporter/download/@algolia/transporter-4.10.3.tgz#0aeee752923957cffe63e4cf1c7a22ca48d96dde"
-  dependencies:
-    "@algolia/cache-common" "4.10.3"
-    "@algolia/logger-common" "4.10.3"
-    "@algolia/requester-common" "4.10.3"
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.nlark.com/@babel/code-frame/download/@babel/code-frame-7.12.11.tgz?cache=0&sync_timestamp=1623280639364&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -528,26 +422,6 @@
   resolved "https://registry.nlark.com/@commitlint/types/download/@commitlint/types-13.1.0.tgz?cache=0&sync_timestamp=1627109754540&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40commitlint%2Ftypes%2Fdownload%2F%40commitlint%2Ftypes-13.1.0.tgz#12cfb6e932372b1816af8900e2d10694add28191"
   dependencies:
     chalk "^4.0.0"
-
-"@docsearch/css@3.0.0-alpha.34":
-  version "3.0.0-alpha.34"
-  resolved "https://registry.nlark.com/@docsearch/css/download/@docsearch/css-3.0.0-alpha.34.tgz#5d5c39955956e237884a9997eb29e28c8adc99fa"
-
-"@docsearch/js@3.0.0-alpha.34":
-  version "3.0.0-alpha.34"
-  resolved "https://registry.nlark.com/@docsearch/js/download/@docsearch/js-3.0.0-alpha.34.tgz#5c83a21b6f04bfb11fbf1d2a5175e6aa1365230f"
-  dependencies:
-    "@docsearch/react" "3.0.0-alpha.34"
-    preact "^10.0.0"
-
-"@docsearch/react@3.0.0-alpha.34":
-  version "3.0.0-alpha.34"
-  resolved "https://registry.nlark.com/@docsearch/react/download/@docsearch/react-3.0.0-alpha.34.tgz#fb7e31e31593c26dadb607b9451d274b84b0b05a"
-  dependencies:
-    "@algolia/autocomplete-core" "1.0.0-alpha.44"
-    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.44"
-    "@docsearch/css" "3.0.0-alpha.34"
-    algoliasearch "^4.0.0"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -1769,10 +1643,6 @@
   version "2.3.2"
   resolved "https://registry.nlark.com/@types/prettier/download/@types/prettier-2.3.2.tgz?cache=0&sync_timestamp=1625678317403&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fprettier%2Fdownload%2F%40types%2Fprettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
 
-"@types/prop-types@*":
-  version "15.7.4"
-  resolved "https://registry.nlark.com/@types/prop-types/download/@types/prop-types-15.7.4.tgz?cache=0&sync_timestamp=1625678050061&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fprop-types%2Fdownload%2F%40types%2Fprop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
-
 "@types/qs@*":
   version "6.9.7"
   resolved "https://registry.nlark.com/@types/qs/download/@types/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
@@ -1781,21 +1651,9 @@
   version "1.2.4"
   resolved "https://registry.nlark.com/@types/range-parser/download/@types/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
 
-"@types/react@^17.0.18":
-  version "17.0.21"
-  resolved "https://registry.nlark.com/@types/react/download/@types/react-17.0.21.tgz?cache=0&sync_timestamp=1631653726686&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-17.0.21.tgz#069c43177cd419afaab5ce26bb4e9056549f7ea6"
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
 "@types/retry@^0.12.0":
   version "0.12.1"
   resolved "https://registry.nlark.com/@types/retry/download/@types/retry-0.12.1.tgz?cache=0&sync_timestamp=1625682262514&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fretry%2Fdownload%2F%40types%2Fretry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
-
-"@types/scheduler@*":
-  version "0.16.2"
-  resolved "https://registry.nlark.com/@types/scheduler/download/@types/scheduler-0.16.2.tgz?cache=0&sync_timestamp=1625590450398&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fscheduler%2Fdownload%2F%40types%2Fscheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
 
 "@types/serve-static@*":
   version "1.13.10"
@@ -2093,22 +1951,6 @@
     "@vuepress/utils" "2.0.0-beta.25"
     markdown-it "^12.2.0"
     markdown-it-container "^3.0.0"
-
-"@vuepress/plugin-docsearch@^2.0.0-alpha.26":
-  version "2.0.0-beta.26"
-  resolved "https://registry.nlark.com/@vuepress/plugin-docsearch/download/@vuepress/plugin-docsearch-2.0.0-beta.26.tgz#11e4a44daadddd8e735fb54307d87d6d37167b44"
-  dependencies:
-    "@docsearch/css" "3.0.0-alpha.34"
-    "@docsearch/js" "3.0.0-alpha.34"
-    "@docsearch/react" "3.0.0-alpha.34"
-    "@types/react" "^17.0.18"
-    "@vuepress/client" "2.0.0-beta.26"
-    "@vuepress/core" "2.0.0-beta.26"
-    "@vuepress/shared" "2.0.0-beta.25"
-    "@vuepress/utils" "2.0.0-beta.25"
-    preact "^10.5.14"
-    vue "^3.2.3"
-    vue-router "^4.0.10"
 
 "@vuepress/plugin-git@2.0.0-beta.26":
   version "2.0.0-beta.26"
@@ -2450,25 +2292,6 @@ ajv@^8.0.1:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
-
-algoliasearch@^4.0.0:
-  version "4.10.3"
-  resolved "https://registry.nlark.com/algoliasearch/download/algoliasearch-4.10.3.tgz?cache=0&sync_timestamp=1625470428512&other_urls=https%3A%2F%2Fregistry.nlark.com%2Falgoliasearch%2Fdownload%2Falgoliasearch-4.10.3.tgz#22df4bb02fbf13a765b18b85df8745ee9c04f00a"
-  dependencies:
-    "@algolia/cache-browser-local-storage" "4.10.3"
-    "@algolia/cache-common" "4.10.3"
-    "@algolia/cache-in-memory" "4.10.3"
-    "@algolia/client-account" "4.10.3"
-    "@algolia/client-analytics" "4.10.3"
-    "@algolia/client-common" "4.10.3"
-    "@algolia/client-personalization" "4.10.3"
-    "@algolia/client-search" "4.10.3"
-    "@algolia/logger-common" "4.10.3"
-    "@algolia/logger-console" "4.10.3"
-    "@algolia/requester-browser-xhr" "4.10.3"
-    "@algolia/requester-common" "4.10.3"
-    "@algolia/requester-node-http" "4.10.3"
-    "@algolia/transporter" "4.10.3"
 
 ansi-colors@^4.1.1:
   version "4.1.1"
@@ -3749,10 +3572,6 @@ cssstyle@^2.3.0:
 csstype@^2.6.8:
   version "2.6.18"
   resolved "https://registry.nlark.com/csstype/download/csstype-2.6.18.tgz?cache=0&sync_timestamp=1631540782346&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcsstype%2Fdownload%2Fcsstype-2.6.18.tgz#980a8b53085f34af313410af064f2bd241784218"
-
-csstype@^3.0.2:
-  version "3.0.8"
-  resolved "https://registry.nlark.com/csstype/download/csstype-3.0.8.tgz?cache=0&sync_timestamp=1618818393132&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcsstype%2Fdownload%2Fcsstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
 
 cz-conventional-changelog@3.2.0:
   version "3.2.0"
@@ -8397,10 +8216,6 @@ postcss@^8.1.10, postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.15, postcss@^8.3.6
     colorette "^1.2.2"
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
-
-preact@^10.0.0, preact@^10.5.14:
-  version "10.5.14"
-  resolved "https://registry.nlark.com/preact/download/preact-10.5.14.tgz#0b14a2eefba3c10a57116b90d1a65f5f00cd2701"
 
 prelude-ls@^1.2.1:
   version "1.2.1"
