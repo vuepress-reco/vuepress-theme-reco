@@ -63,6 +63,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       ],
     },
     navbar: [
+      { text: 'Home', link: '/' },
+      { text: 'Cat', link: '/categories/cat1/1/' },
       {
         text: 'Categories',
         children: [

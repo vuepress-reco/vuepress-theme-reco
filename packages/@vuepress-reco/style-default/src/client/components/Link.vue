@@ -1,16 +1,16 @@
 <template>
-  <RouterLink
+  <a
     v-if="isRouterLink"
     class="nav-link"
     :class="{ 'router-link-active': isActiveInSubpath }"
-    :to="item.link"
+    :href="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
   >
     <slot name="before" />
     {{ item.text }}
     <slot name="after" />
-  </RouterLink>
+  </a>
   <a
     v-else
     class="nav-link"

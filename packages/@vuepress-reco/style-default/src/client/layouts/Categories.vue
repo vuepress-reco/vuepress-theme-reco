@@ -12,13 +12,13 @@
             },
           ]"
         >
-          <RouterLink
+          <a
             class="category-link"
-            :to="`/${classificationPosts.currentClassificationKey}/${label}/1/`"
+            :href="`/${classificationPosts.currentClassificationKey}/${label}/1.html`"
           >
             <span class="text">{{ label }}</span>
             <span class="num">{{ length }}</span>
-          </RouterLink>
+          </a>
         </li>
       </ul>
 
@@ -47,7 +47,7 @@ export default defineComponent({
     console.log('classificationSummary', classificationSummary.value)
 
     const classificationList = computed(() => {
-      const { items } =
+      const { items = [] } =
         classificationSummary.value[
           classificationPosts.value.currentClassificationKey
         ]

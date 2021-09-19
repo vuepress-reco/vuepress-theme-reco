@@ -17,7 +17,7 @@ export function usePageData(): Record<string, any> {
     return (
       ((cp as { value: any }).value as Record<string, any>)[
         currentRoute.value.path
-      ] || []
+      ] || {}
     )
   })
 

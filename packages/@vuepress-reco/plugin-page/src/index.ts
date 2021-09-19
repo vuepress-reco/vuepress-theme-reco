@@ -29,7 +29,7 @@ const pagePlugin: Plugin<Record<string, any>> = (
     async onInitialized(app) {
       classifiable.resolveKeyValue(app)
       const resolvePages = await Promise.all(classifiable.extendedPages)
-      app.pages = [...resolvePages, ...app.pages]
+      app.pages = [...app.pages, ...resolvePages]
     },
   }
 }
