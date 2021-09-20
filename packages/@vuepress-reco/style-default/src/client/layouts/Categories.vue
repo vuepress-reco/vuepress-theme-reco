@@ -12,13 +12,13 @@
             },
           ]"
         >
-          <a
+          <RouterLink
             class="category-link"
-            :href="`/${classificationPosts.currentClassificationKey}/${label}/1.html`"
+            :to="`/${classificationPosts.currentClassificationKey}/${label}/1/`"
           >
             <span class="text">{{ label }}</span>
             <span class="num">{{ length }}</span>
-          </a>
+          </RouterLink>
         </li>
       </ul>
 
@@ -43,23 +43,22 @@ export default defineComponent({
 
   setup() {
     const { classificationPosts, classificationSummary } = usePageData()
-    console.log('classificationPosts', classificationPosts.value)
-    console.log('classificationSummary', classificationSummary.value)
 
     const classificationList = computed(() => {
-      const { items = [] } =
-        classificationSummary.value[
-          classificationPosts.value.currentClassificationKey
-        ]
+      let list = []
+      const currentClassificationKey = classificationPosts.value.currentClassificationKey
 
-      const list = Object.keys(items).map((item) => {
-        return { label: item, length: items[item].length }
-      })
+      if (currentClassificationKey) {
+        const { items = [] } =
+          classificationSummary.value[currentClassificationKey]
+
+        list = Object.keys(items).map((item) => {
+          return { label: item, length: items[item].length }
+        })
+      }
 
       return list
     })
-
-    console.log('classificationList', classificationList.value)
 
     return {
       classificationList,

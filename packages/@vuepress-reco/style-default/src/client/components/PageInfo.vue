@@ -3,21 +3,21 @@
     <Icon v-if="!!author" icon="solid user" :text="author" />
     <Icon v-if="!!date" icon="solid calendar-alt" :text="date" />
     <Icon v-if="!!categories && categories.length > 0" icon="solid th-list">
-      <a
+      <RouterLink
         v-for="(category, index) in categories"
         :key="index"
         :class="['category', { active: currentCategory === category }]"
-        :href="`/categories/${category}/1/`"
-        >{{ category }}</a
+        :to="`/categories/${category}/1/`"
+        >{{ category }}</RouterLink
       >
     </Icon>
     <Icon v-if="!!tags && tags.length > 0" icon="solid tags">
-      <a
+      <RouterLink
         v-for="(tag, index) in tags"
         :key="index"
         :class="['tag', { active: currentTag === tag }]"
-        :href="`/tags/${tag}/1/`"
-        >{{ tag }}</a
+        :to="`/tags/${tag}/1/`"
+        >{{ tag }}</RouterLink
       >
     </Icon>
   </div>

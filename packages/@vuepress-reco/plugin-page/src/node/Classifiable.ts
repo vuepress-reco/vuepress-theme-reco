@@ -116,7 +116,7 @@ export default class Classifiable {
 
           const pages = Array.from({ length: pageSize }).map((item, index) => {
             return createPage(this.app, {
-              path: `/${key}/${value}/${index + 1}.html`,
+              path: `/${key}/${value}/${index + 1}/`,
               frontmatter: { layout },
             })
           })
@@ -150,7 +150,7 @@ export default class Classifiable {
 
     const pages = Array.from({ length: pageSize }).map((item, index) => {
       return createPage(this.app, {
-        path: `/posts/${index + 1}.html`,
+        path: `/posts/${index + 1}/`,
         frontmatter: { layout: 'Post' },
       })
     })
@@ -193,7 +193,7 @@ export default class Classifiable {
             index
           ) => {
             const currentPage = index + 1
-            total[`/${key}/${value}/${currentPage}.html`] = {
+            total[`/${key}/${value}/${currentPage}/`] = {
               pageSize: pagination,
               total: pages.length,
               currentPage,
