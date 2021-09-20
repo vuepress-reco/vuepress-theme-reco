@@ -61,3 +61,23 @@ theme-cli init
 
 <img width="800" alt="dark_category" src="https://user-images.githubusercontent.com/18067907/134000365-a24344c3-05ed-4bbb-abae-41653be9c4c0.png">
 
+## 待办
+
+### 功能
+
+- [ ] 加密功能
+- [ ] loading 功能
+- [ ] 内置 1.x 原有插件
+- [ ] 1.x reco 官方插件同步升级
+- [ ] 提供自定义任意页面的 API
+- [ ] 允许本地自定义 style（风格）代码
+- [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格均采用 css + taiwindcss 方案）
+- [ ] 按照文件夹自动进行分类，只允许自定义 tag，根据 tag 生成神经网络图（参考 obsidian）
+
+### 优化
+
+- [ ] 完善文档
+- [ ] PWA 样式优化
+- [ ] 侧边栏样式优化
+- [ ] 去除 scss，采用 css + taiwindcss 方案
+- [ ] 将通用功能全部下沉至 vuepress-theme-reco，精简 style（风格）代码
