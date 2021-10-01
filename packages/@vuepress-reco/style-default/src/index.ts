@@ -17,10 +17,11 @@ export default defineStyle(
       app.options.bundlerConfig = {
         postcss: {
           postcssOptions: {
-            plugins: {
-              tailwindcss: tailwindConfig,
-              autoprefixer: {},
-            },
+            plugins: [
+              ['tailwindcss', tailwindConfig],
+              ['autoprefixer', {}],
+              ['postcss-nested']
+            ]
           },
         },
         ...app.options.bundlerConfig,

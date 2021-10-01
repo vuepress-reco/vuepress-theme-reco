@@ -8159,6 +8159,11 @@ postcss-nested@5.0.6:
   dependencies:
     postcss-selector-parser "^6.0.6"
 
+postcss-nesting@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.nlark.com/postcss-nesting/download/postcss-nesting-8.0.1.tgz?cache=0&sync_timestamp=1619923629010&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-nesting%2Fdownload%2Fpostcss-nesting-8.0.1.tgz#4a8ab3c540a0f138fd3f5d2ee65e4a24d1888024"
+  integrity sha1-SoqzxUCg8Tj9P10u5l5KJNGIgCQ=
+
 postcss-resolve-nested-selector@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/postcss-resolve-nested-selector/download/postcss-resolve-nested-selector-0.1.1.tgz#29ccbc7c37dedfac304e9fff0bf1596b3f6a0e4e"
