@@ -31,6 +31,7 @@ export default defineStyle(
       ['@vuepress/theme-data', { themeData: themeConfig }],
       ['@vuepress/prismjs', themeConfig.prismjs !== false],
       ['@vuepress/back-to-top', themeConfig.backToTop !== false],
+      ['@vuepress/nprogress', themeConfig.nprogress !== false],
     ],
   })
 )

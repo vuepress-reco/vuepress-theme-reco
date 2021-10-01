@@ -1969,7 +1969,7 @@
     medium-zoom "^1.0.6"
     vue "^3.2.3"
 
-"@vuepress/plugin-nprogress@2.0.0-beta.26":
+"@vuepress/plugin-nprogress@2.0.0-beta.26", "@vuepress/plugin-nprogress@^2.0.0-beta.26":
   version "2.0.0-beta.26"
   resolved "https://registry.nlark.com/@vuepress/plugin-nprogress/download/@vuepress/plugin-nprogress-2.0.0-beta.26.tgz#63f0a0158b14c7d700f3da29f3a30427856b5d18"
   dependencies:
