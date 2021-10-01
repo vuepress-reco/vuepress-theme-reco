@@ -39,6 +39,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@vuepress-reco/core": "^2.0.1-alpha.1",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.26",
     "tailwindcss": "^2.1.1"
   }
 }
