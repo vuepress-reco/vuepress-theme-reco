@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 .page-nav {
   @apply pt-4 pb-0;
   .inner {

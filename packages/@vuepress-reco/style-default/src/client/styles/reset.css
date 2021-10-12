@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 * {
   @apply m-0 p-0;
 }
@@ -23,10 +21,12 @@ html {
 }
 
 body {
-  @apply m-0 w-full antialiased overflow-x-hidden; // antialiased 字体平滑
+  /* antialiased 字体平滑 */
+  @apply m-0 w-full antialiased overflow-x-hidden;
   min-width: 320px;
   direction: ltr;
-  text-rendering: optimizeLegibility; // 像素较小时字体会拼接在一起
+  /* 像素较小时字体会拼接在一起 */
+  text-rendering: optimizeLegibility;
 }
 
 main {
@@ -219,21 +219,21 @@ form {
   }
 }
 
-// .icon-btn {
-//   @apply inline-block cursor-pointer select-none;
-//   @apply opacity-75 transition duration-200 ease-in-out align-middle rounded p-2;
-//   @apply hover:(opacity-100 bg-gray-400 bg-opacity-10);
-// }
+/* .icon-btn {
+  @apply inline-block cursor-pointer select-none;
+  @apply opacity-75 transition duration-200 ease-in-out align-middle rounded p-2;
+  @apply hover:(opacity-100 bg-gray-400 bg-opacity-10);
+} */
 
 .icon-btn.disabled {
   @apply opacity-25 pointer-events-none;
 }
 
-// .inline-icon-btn {
-//   @apply text-primary-deep;
-//   @apply inline-block rounded p-0.5 text-2xl align-middle;
-//   @apply border border-primary border-opacity-20;
-// }
+/* .inline-icon-btn {
+  @apply text-primary-deep;
+  @apply inline-block rounded p-0.5 text-2xl align-middle;
+  @apply border border-primary border-opacity-20;
+} */
 
 p > img {
   @apply rounded-2xl;
@@ -250,9 +250,9 @@ li svg {
   height: 5px;
 }
 
-::-webkit-scrollbar-track-piece {
-  // background-color: rgba(0, 0, 0, 0.2);
-}
+/* ::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+} */
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 5px;

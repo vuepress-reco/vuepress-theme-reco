@@ -4,7 +4,7 @@
       class="hero"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
     >
-      <div class="hero-content">
+      <div class="hero-content icon-blue">
         <img
           :src="frontmatter.heroImage"
           :style="{

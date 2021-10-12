@@ -8077,6 +8077,13 @@ postcss-csso@^5.0.1:
   dependencies:
     csso "^4.0.2"
 
+postcss-each@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/postcss-each/download/postcss-each-1.1.0.tgz#8bb074d130d41eb21679d11aa87204726f5cad88"
+  integrity sha1-i7B00TDUHrIWedEaqHIEcm9crYg=
+  dependencies:
+    postcss-simple-vars "^6.0.0"
+
 postcss-html@^0.36.0:
   version "0.36.0"
   resolved "https://registry.npm.taobao.org/postcss-html/download/postcss-html-0.36.0.tgz#b40913f94eaacc2453fd30a1327ad6ee1f88b204"
@@ -8153,16 +8160,11 @@ postcss-modules@^4.0.0:
     postcss-modules-values "^4.0.0"
     string-hash "^1.1.1"
 
-postcss-nested@5.0.6:
+postcss-nested@5.0.6, postcss-nested@^5.0.6:
   version "5.0.6"
   resolved "https://registry.nlark.com/postcss-nested/download/postcss-nested-5.0.6.tgz?cache=0&sync_timestamp=1627468122159&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-nested%2Fdownload%2Fpostcss-nested-5.0.6.tgz#466343f7fc8d3d46af3e7dba3fcd47d052a945bc"
   dependencies:
     postcss-selector-parser "^6.0.6"
-
-postcss-nesting@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.nlark.com/postcss-nesting/download/postcss-nesting-8.0.1.tgz?cache=0&sync_timestamp=1619923629010&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-nesting%2Fdownload%2Fpostcss-nesting-8.0.1.tgz#4a8ab3c540a0f138fd3f5d2ee65e4a24d1888024"
-  integrity sha1-SoqzxUCg8Tj9P10u5l5KJNGIgCQ=
 
 postcss-resolve-nested-selector@^0.1.1:
   version "0.1.1"
@@ -8193,6 +8195,11 @@ postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
+
+postcss-simple-vars@^6.0.0:
+  version "6.0.3"
+  resolved "https://registry.npm.taobao.org/postcss-simple-vars/download/postcss-simple-vars-6.0.3.tgz#e66516c7fe980da3498f4a8ad400b9c53861806c"
+  integrity sha1-5mUWx/6YDaNJj0qK1AC5xThhgGw=
 
 postcss-syntax@^0.36.2:
   version "0.36.2"

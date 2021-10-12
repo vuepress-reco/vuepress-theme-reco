@@ -1,9 +1,7 @@
-@import './variables.scss';
-
 .series-container {
   @apply transition-all pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 bg-reco-bg-light dark:bg-reco-bg-dark overflow-y-auto;
   @apply transform -translate-x-full;
-  @apply md:transform md:translate-x-0 #{!important};
+  @apply md:transform md:translate-x-0 !important;
   @apply border-r border-solid border-reco-border-light dark:border-reco-border-dark;
   .series-group {
     &:not(:first-of-type) h5.series-heading {
@@ -64,7 +62,7 @@
 
 .sidebar-open {
   .series-container {
-    @apply transform translate-x-0 #{!important};
+    @apply transform translate-x-0 !important;
   }
   .sidebar-mask {
     @apply block fixed z-10 top-0 right-0 bottom-0 left-0 ;

@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 .navbar-links {
   .navbar-links-item {
     @apply block md:inline-block py-1.5;
@@ -49,10 +47,10 @@
         }
       }
       &.open .nav-dropdown {
-        @apply block #{!important};
+        @apply block !important;
       }
       &:hover .nav-dropdown {
-        @apply md:block #{!important};
+        @apply md:block !important;
       }
     }
     .router-link-active {

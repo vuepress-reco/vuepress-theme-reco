@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 .page-header-container {
   @apply ml-10 pl-6 pr-10 pt-4 w-56 fixed z-10 top-32 bottom-0 right-0 hidden lg:block;
 

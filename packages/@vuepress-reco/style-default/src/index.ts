@@ -20,7 +20,8 @@ export default defineStyle(
             plugins: [
               ['tailwindcss', tailwindConfig],
               ['autoprefixer', {}],
-              ['postcss-nested']
+              ['postcss-nested'],
+              ['postcss-each']
             ]
           },
         },

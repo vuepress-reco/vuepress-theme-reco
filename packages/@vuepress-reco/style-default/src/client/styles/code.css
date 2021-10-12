@@ -1,5 +1,3 @@
-@import '_variables';
-
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -103,7 +101,7 @@ pre[class*="language-"] {
  }
 
 
-// code-other
+/* code-other */
 div[class*='language-'] {
   @apply relative;
   &::before {
@@ -129,14 +127,12 @@ div[class*='language-'] {
     }
   }
   pre code {
-    @apply font-mono font-normal bg-transparent p-0 leading-6 #{!important};
+    @apply font-mono font-normal bg-transparent p-0 leading-6 !important;
   }
 }
 
-@each $lang in $codeLang {
-  div[class*='language-'].ext-#{$lang} {
-    &:before {
-      content: '' + $lang;
-    }
+@each $lang in bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
+  div.language-$(lang)::before {
+    content: '$(lang)';
   }
 }

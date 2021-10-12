@@ -1,6 +1,6 @@
 import { h } from 'vue'
 import { defineClientAppEnhance } from '@vuepress/client'
-import './styles/index.scss'
+import './styles/index.css'
 import Icon from '../client/components/Icon.vue'
 
 export default defineClientAppEnhance(({ app, router }) => {

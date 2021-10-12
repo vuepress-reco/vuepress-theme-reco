@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 .sidebar-container {
   @apply pt-4 w-64 fixed z-10 top-14 bottom-0;
   .sidebar-item {

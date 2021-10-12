@@ -1,5 +1,3 @@
-@import './variables.scss';
-
 .categories-container {
   @apply lg:max-w-screen-md xl:max-w-screen-lg mt-24 mx-auto px-10;
   .category-list {
