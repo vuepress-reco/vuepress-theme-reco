@@ -80,5 +80,5 @@ theme-cli init
 - [ ] 完善文档
 - [ ] PWA 样式优化
 - [ ] 侧边栏样式优化
-- [ ] 去除 scss，采用 css + taiwindcss 方案
+- [x] 去除 scss，采用 css + postcss 方案
 - [ ] 将通用功能全部下沉至 vuepress-theme-reco，精简 style（风格）代码
