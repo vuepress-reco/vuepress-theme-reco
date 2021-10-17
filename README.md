@@ -69,10 +69,15 @@ theme-cli init
 - [ ] loading 功能
 - [ ] 自定义首页功能
 - [ ] 增加 icon 功能
-- [ ] 内置 1.x 原有插件，1.x reco 官方插件同步升级（done: nprogress, back-to-top, todo: container, comment, 公告, 代码预览）
+- [x] nprogress 插件
+- [x] back-to-top 插件
+- [x] comment 插件
+- [ ] container 插件
+- [ ] 公告 插件
+- [ ] 代码预览 插件
 - [ ] 提供自定义任意页面的 API
 - [ ] 允许本地自定义 style（风格）代码
-- [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格均采用 css + taiwindcss 方案）
+- [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格和插件均采用 css + taiwindcss 方案）
 - [ ] 按照文件夹自动进行分类，只允许自定义 tag，根据 tag 生成神经网络图（参考 obsidian）
 
 ### 优化
