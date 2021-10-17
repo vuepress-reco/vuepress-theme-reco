@@ -5,6 +5,7 @@
     { "path": "./packages/vuepress-theme-reco/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/plugin-page/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/style-default/tsconfig.build.json" },
+    { "path": "./packages/@vuepress-reco/plugin-comments/tsconfig.build.json" },
   ],
   "files": []
 }

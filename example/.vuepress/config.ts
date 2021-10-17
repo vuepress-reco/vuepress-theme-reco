@@ -109,6 +109,24 @@ export default defineUserConfig<DefaultThemeOptions>({
         children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
       },
     ],
+    // valine 设置
+    // valineConfig: {
+    //   appId: 'jvc9s4BkJYQNOcpsbVTPMePe-gzGzoHsz',
+    //   appKey: 'Js91M9DfM9vPwVaUj7xdkbxh',
+    //   placeholder: '填写邮箱可以收到回复提醒哦！',
+    //   verify: true, // 验证码服务
+    //   // notify: true, //
+    //   recordIP: true,
+    //   showComment: false
+    // },
+    vssueConfig: {
+      admins: ['recoluan'],
+      platform: 'github',
+      owner: 'vuepress-reco',
+      repo: 'vuepress-reco.github.io',
+      clientId: '4d81cea3b3d8aac8e88e',
+      clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
+    },
   },
   // debug: true,
 })

@@ -34,6 +34,7 @@ export default defineStyle(
       ['@vuepress/prismjs', themeConfig.prismjs !== false],
       ['@vuepress/back-to-top', themeConfig.backToTop !== false],
       ['@vuepress/nprogress', themeConfig.nprogress !== false],
+      ['@vuepress-reco/vuepress-plugin-comments', themeConfig.comments !== false]
     ],
   })
 )

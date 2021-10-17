@@ -7,11 +7,13 @@
     </div>
     <PageMeta />
     <PageNav />
+
+    <Comments />
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, h } from 'vue'
 import { usePageData } from '@vuepress/client'
 import PageInfo from './PageInfo'
 import PageNav from './PageNav'

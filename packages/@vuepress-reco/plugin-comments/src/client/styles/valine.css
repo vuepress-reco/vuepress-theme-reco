@@ -1,0 +1,86 @@
+.reco-valine-wrapper #valine.v {
+  .vbtn{
+    @apply text-reco-brand border-2 border-solid border-reco-brand;
+    &:hover {
+      @apply text-white bg-reco-brand-light;
+    }
+  }
+  .vwrap {
+    @apply bg-reco-bg-code border-2 border-solid border-reco-border-light;
+    @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+    .vheader .vinput {
+      @apply border-0 border-b rounded-none border-dashed border-reco-border-light;
+      @apply dark:border-reco-border-dark;
+      &:focus {
+        @apply border-reco-brand;
+      }
+      &:-internal-autofill-selected {
+        @apply bg-reco-bg-light-light;
+        @apply dark:bg-reco-bg-dark-light;
+      }
+    }
+  }
+  .vicon.actived {
+    @apply fill-current text-reco-brand;
+  }
+  .vinfo {
+    @apply pl-2;
+  }
+  .vcard {
+    .vquote {
+      @apply ml-0 border-l-0;
+    }
+    .vimg {
+      @apply p-0 w-11 h-11 rounded border-2 border-reco-brand-light;
+    }
+    .vhead .vnick {
+      @apply text-reco-brand;
+      &::before {
+        @apply bg-reco-brand;
+      }
+    }
+  }
+  .vh {
+    @apply border-b-0;
+    .vhead .vsys {
+      @apply text-reco-brand-light bg-reco-bg-code;
+      @apply dark:bg-reco-bg-code-dark;
+    }
+    .vmeta {
+      @apply mb-4;
+      .vat {
+        @apply mr-1.5 text-reco-brand border rounded border-solid border-reco-brand px-1.5 py-0;
+        &:hover {
+          @apply text-white bg-reco-brand-light;
+        }
+      }
+    }
+    .vcontent {
+      @apply mx-1.5 my-0 px-2.5 py-0.5 bg-reco-bg-code rounded;
+      @apply dark:bg-reco-bg-code-dark;
+      p .at {
+        @apply text-reco-brand;
+      }
+      &.expand::before {
+        @apply z-10;
+        /* background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff); */
+      }
+      &.expand::after {
+        @apply text-reco-brand;
+      }
+    }
+  }
+  .info {
+    @apply pr-2.5;
+  }
+  code, pre, .vbtn {
+    @apply text-reco-text-light bg-reco-bg-light;
+    @apply dark:text-reco-text-dark dark:bg-reco-bg-dark;
+  }
+  a {
+    @apply text-reco-brand;
+    &::before {
+      @apply bg-reco-brand;
+    }
+  }
+}
