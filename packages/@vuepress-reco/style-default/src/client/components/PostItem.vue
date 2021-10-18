@@ -4,7 +4,7 @@
       <RouterLink :to="data.path">{{ data.title }}</RouterLink>
     </div>
     <div class="abstract" v-html="data.excerpt"></div>
-    <PageInfo :page-data="data"> </PageInfo>
+    <PageInfo :page-data="data" :hide-valine-views="true"> </PageInfo>
   </div>
 </template>
 

@@ -117,16 +117,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     //   verify: true, // 验证码服务
     //   // notify: true, //
     //   recordIP: true,
-    //   showComment: false
+    //   // hideComments: true
     // },
-    vssueConfig: {
-      admins: ['recoluan'],
-      platform: 'github',
-      owner: 'vuepress-reco',
-      repo: 'vuepress-reco.github.io',
-      clientId: '4d81cea3b3d8aac8e88e',
-      clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
-    },
+    // vssueConfig: {
+    //   admins: ['recoluan'],
+    //   platform: 'github',
+    //   owner: 'vuepress-reco',
+    //   repo: 'vuepress-reco.github.io',
+    //   clientId: '4d81cea3b3d8aac8e88e',
+    //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
+    // },
   },
   // debug: true,
 })

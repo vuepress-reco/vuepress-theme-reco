@@ -1,4 +1,4 @@
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, toRefs } from 'vue'
 import { useComment } from '../composables'
 import Valine from './Valine'
 import Vssue from './Vssue'
@@ -6,13 +6,14 @@ import Vssue from './Vssue'
 export default defineComponent({
   components: { Valine, Vssue },
   props: {
-    isShowComments: {
+    hideComments: {
       type: Boolean,
       default: true
     }
   },
-  setup() {
+  setup(props) {
     const { solution, options } = useComment()
+    const { hideComments } = toRefs(props)
     const componentName = solution.value === 'valine'
       ? Valine
       : solution.value === 'vssue'
@@ -20,7 +21,8 @@ export default defineComponent({
       : ''
 
     return () => (componentName ? h(componentName, {
-      options: options.value
+      options: options.value,
+      style: `display: ${hideComments.value ? 'none' : 'block'}`
     }) : null)
   }
 })

@@ -8,13 +8,14 @@
     <PageMeta />
     <PageNav />
 
-    <Comments />
+    <Comments :hide-comments="shouldHideComments" />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, h } from 'vue'
 import { usePageData } from '@vuepress/client'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import PageInfo from './PageInfo'
 import PageNav from './PageNav'
 import PageMeta from './PageMeta'
@@ -26,12 +27,24 @@ export default defineComponent({
 
   setup() {
     const pageData = usePageData()
+    const { options } = useComment()
 
     const title = computed(
-      () => pageData?.value?.frontmatter?.title || pageData?.value?.title || ''
+      () => pageData?.value?.frontmatter?.title
+        || pageData?.value?.title
+        || ''
     )
 
-    return { title, pageData }
+    // 是否显示评论
+    const shouldHideComments = computed(() => {
+      const { hideComments: hideCommentsInSinglePage } = pageData?.value?.frontmatter
+      const { hideComments: hideCommentsInAllPage } = options.value
+
+      return hideCommentsInSinglePage === true
+        || (hideCommentsInSinglePage !== true && hideCommentsInAllPage ===true)
+    })
+
+    return { title, pageData, shouldHideComments }
   },
 })
 </script>
