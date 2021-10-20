@@ -6,7 +6,8 @@
     >
       <div class="hero-content icon-blue">
         <img
-          :src="frontmatter.heroImage"
+          v-if="heroImage"
+          :src="heroImage"
           :style="{
             heroImageStyle,
           }"
@@ -24,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from '@vuepress/client'
 
 export default defineComponent({
   name: 'HomeBlog',
@@ -33,15 +34,21 @@ export default defineComponent({
 
     const bgImage = computed(() => {
       return frontmatter.value.bgImage
-        ? frontmatter.value.bgImage
-        : require('../images/bg.svg').default
+        ? withBase(frontmatter.value.bgImage)
+        : require('../images/bg.svg')
+    })
+
+    const heroImage = computed(() => {
+      return frontmatter.value.heroImage
+        ? withBase(frontmatter.value.heroImage)
+        : null
     })
 
     const heroImageStyle = computed(
       () => frontmatter.value.heroImageStyle || {}
     )
 
-    return { frontmatter, bgImage, heroImageStyle }
+    return { frontmatter, bgImage, heroImage, heroImageStyle }
   },
 })
 </script>

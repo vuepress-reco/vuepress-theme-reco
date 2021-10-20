@@ -2,6 +2,7 @@ import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
 
 export default defineUserConfig<DefaultThemeOptions>({
+  base: '/reco/',
   title: 'vuepress-theme-reco',
   description: 'Just playing around',
   theme: 'reco',
