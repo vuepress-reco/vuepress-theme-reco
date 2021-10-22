@@ -7,14 +7,11 @@ export function useComment() {
   const solution = computed(() => {
     return themeLocal.value.valineConfig
       ? 'valine'
-      : themeLocal.value.vssueConfig
-      ? 'vssue'
       : ''
   })
 
   const options = computed(() => {
     return themeLocal.value.valineConfig
-      || themeLocal.value.vssueConfig
       || {}
   })
 

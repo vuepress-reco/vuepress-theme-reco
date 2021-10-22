@@ -1,10 +1,9 @@
 import { defineComponent, h, toRefs } from 'vue'
 import { useComment } from '../composables'
 import Valine from './Valine'
-import Vssue from './Vssue'
 
 export default defineComponent({
-  components: { Valine, Vssue },
+  components: { Valine },
   props: {
     hideComments: {
       type: Boolean,
@@ -14,10 +13,9 @@ export default defineComponent({
   setup(props) {
     const { solution, options } = useComment()
     const { hideComments } = toRefs(props)
+
     const componentName = solution.value === 'valine'
       ? Valine
-      : solution.value === 'vssue'
-      ? Vssue
       : ''
 
     return () => (componentName ? h(componentName, {

@@ -58,7 +58,8 @@ export default defineComponent({
 
   setup(props) {
     const { pageData, hideValineViews } = toRefs(props)
-    const { options } = useComment()
+    const { solution, options } = useComment()
+    console.log(solution.value, '-', options.value)
     const themeData = useThemeLocaleData()
 
     const author = computed(
@@ -82,10 +83,10 @@ export default defineComponent({
     )
 
     const showValineViews = computed(() => {
-      return (options.value && options.value.visitor != false) && !hideValineViews.value
+      return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
     })
 
-    return { author, date, categories, tags, showPageInfo, showValineViews }
+    return { author, date, categories, tags, showPageInfo, solution, showValineViews }
   },
 })
 </script>
