@@ -33,10 +33,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
-import PostList from '../components/PostList'
+import { defineComponent, computed } from 'vue'
 import Common from '../components/Common'
+import PostList from '../components/PostList'
 
 export default defineComponent({
   components: { Common, PostList },
@@ -46,7 +46,8 @@ export default defineComponent({
 
     const classificationList = computed(() => {
       let list = []
-      const currentClassificationKey = classificationPosts.value.currentClassificationKey
+      const currentClassificationKey =
+        classificationPosts.value.currentClassificationKey
 
       if (currentClassificationKey) {
         const { items = [] } =

@@ -33,6 +33,8 @@ module.exports = {
     },
   ],
   rules: {
-    'no-undef': [false, ['defineEmits', 'defineProps']],
+    'no-undef': [2, { 'defineEmits': false, 'defineProps': false, 'describe': false, 'it': false }],
+    'import/no-extraneous-dependencies': 'off',
+    'vue/no-v-html': 0,
   },
 }

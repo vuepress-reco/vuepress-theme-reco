@@ -1,5 +1,5 @@
-import { computed } from 'vue'
 import { defineClientAppEnhance } from '@vuepress/client'
+import { computed } from 'vue'
 import {
   classificationPostsSymbol,
   classificationSummarySymbol,

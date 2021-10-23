@@ -14,19 +14,19 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import type { ComputedRef } from 'vue'
 import {
   usePageData,
   usePageFrontmatter,
   useSiteLocaleData,
 } from '@vuepress/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { computed, defineComponent } from 'vue'
+import type { ComputedRef } from 'vue'
 import type {
   DefaultThemePageData,
   DefaultThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
 } from '../../types'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { resolveEditLink } from '../utils'
 import Link from './Link.vue'
 

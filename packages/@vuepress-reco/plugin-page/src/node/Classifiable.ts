@@ -1,6 +1,6 @@
+import { isEmptyPlainObject } from '@vuepress-reco/core'
 import { createPage } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import { isEmptyPlainObject } from '@vuepress-reco/core'
 import {
   ClassificationPaginationPost,
   ClassificationPageOptions,

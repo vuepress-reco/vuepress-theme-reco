@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-const pluginComments = require('..');
+const pluginComments = () => 'needs tests'
 
 describe('plugin-comments', () => {
-    it('needs tests');
-});
+  it(pluginComments(), 'needs tests')
+})

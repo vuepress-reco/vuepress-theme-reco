@@ -13,12 +13,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, h } from 'vue'
-import { usePageData } from '@vuepress/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import { usePageData } from '@vuepress/client'
+import { defineComponent, computed } from 'vue'
 import PageInfo from './PageInfo'
-import PageNav from './PageNav'
 import PageMeta from './PageMeta'
+import PageNav from './PageNav'
 
 export default defineComponent({
   name: 'Page',
@@ -30,18 +30,19 @@ export default defineComponent({
     const { options } = useComment()
 
     const title = computed(
-      () => pageData?.value?.frontmatter?.title
-        || pageData?.value?.title
-        || ''
+      () => pageData?.value?.frontmatter?.title || pageData?.value?.title || ''
     )
 
     // 是否显示评论
     const shouldHideComments = computed(() => {
-      const { hideComments: hideCommentsInSinglePage } = pageData?.value?.frontmatter
+      const { hideComments: hideCommentsInSinglePage } =
+        pageData?.value?.frontmatter
       const { hideComments: hideCommentsInAllPage } = options.value
 
-      return hideCommentsInSinglePage === true
-        || (hideCommentsInSinglePage !== true && hideCommentsInAllPage ===true)
+      return (
+        hideCommentsInSinglePage === true ||
+        (hideCommentsInSinglePage !== true && hideCommentsInAllPage === true)
+      )
     })
 
     return { title, pageData, shouldHideComments }

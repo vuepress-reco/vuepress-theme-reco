@@ -16,13 +16,13 @@
 </template>
 
 <script lang="ts">
+import { usePageFrontmatter } from '@vuepress/client'
 import { defineComponent, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { usePageFrontmatter } from '@vuepress/client'
 // import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import Navbar from '../components/Navbar'
-import Series from '../components/Series'
 import PageHeaders from '../components/PageHeaders.vue'
+import Series from '../components/Series'
 import { useSidebarData } from '../composables'
 
 export default defineComponent({

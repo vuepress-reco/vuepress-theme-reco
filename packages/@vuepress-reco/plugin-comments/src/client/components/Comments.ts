@@ -7,20 +7,21 @@ export default defineComponent({
   props: {
     hideComments: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   setup(props) {
     const { solution, options } = useComment()
     const { hideComments } = toRefs(props)
 
-    const componentName = solution.value === 'valine'
-      ? Valine
-      : ''
+    const componentName = solution.value === 'valine' ? Valine : ''
 
-    return () => (componentName ? h(componentName, {
-      options: options.value,
-      style: `display: ${hideComments.value ? 'none' : 'block'}`
-    }) : null)
-  }
+    return () =>
+      componentName
+        ? h(componentName, {
+            options: options.value,
+            style: `display: ${hideComments.value ? 'none' : 'block'}`,
+          })
+        : null
+  },
 })

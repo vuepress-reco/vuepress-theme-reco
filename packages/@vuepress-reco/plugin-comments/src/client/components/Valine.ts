@@ -14,17 +14,17 @@ export default defineComponent({
   props: {
     options: {
       type: Object,
-      default () {
+      default() {
         return {}
-      }
-    }
+      },
+    },
   },
 
   setup(props: Tprops) {
     const route = useRoute()
     const { options } = toRefs(props)
 
-    const initValine = () => {
+    const initValine = (): unknown => {
       const Valine = require('valine')
 
       const valineOptions = {
@@ -36,10 +36,10 @@ export default defineComponent({
         visitor: true,
         recordIP: false,
         path: window.location.pathname,
-        ...options.value
+        ...options.value,
       }
 
-      new Valine(valineOptions)
+      return new Valine(valineOptions)
     }
 
     onMounted(() => {
@@ -55,10 +55,15 @@ export default defineComponent({
       }
     })
 
-    return () => h('div', {
-      class: 'reco-valine-wrapper'
-    }, h('div', {
-      id: 'valine'
-    }))
-  }
+    return () =>
+      h(
+        'div',
+        {
+          class: 'reco-valine-wrapper',
+        },
+        h('div', {
+          id: 'valine',
+        })
+      )
+  },
 })

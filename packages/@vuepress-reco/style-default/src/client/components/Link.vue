@@ -28,11 +28,11 @@
 </template>
 
 <script lang="ts">
+import { useSiteData } from '@vuepress/client'
+import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import { computed, defineComponent, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSiteData } from '@vuepress/client'
-import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import type { NavLink } from '../../types'
 
 export default defineComponent({

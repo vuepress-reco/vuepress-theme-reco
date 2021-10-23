@@ -1,15 +1,13 @@
-import { computed, provide } from 'vue'
 import { defineClientAppSetup, usePageFrontmatter } from '@vuepress/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { computed, provide } from 'vue'
+import type { DefaultThemeNormalPageFrontmatter } from '../types'
 import {
   resolveSidebarItems,
   sidebarItemsSymbol,
   resolvePageHeaders,
   pageHeadersSymbol,
 } from './composables'
-
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
-
-import type { DefaultThemeNormalPageFrontmatter } from '../types'
 
 export default defineClientAppSetup(() => {
   // we need to access sidebar items in multiple components

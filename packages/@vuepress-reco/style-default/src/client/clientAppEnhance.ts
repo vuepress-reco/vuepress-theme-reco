@@ -1,5 +1,5 @@
-import { h } from 'vue'
 import { defineClientAppEnhance } from '@vuepress/client'
+import { h } from 'vue'
 import './styles/index.css'
 import Icon from '../client/components/Icon.vue'
 

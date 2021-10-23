@@ -1,5 +1,5 @@
-export type valineOption = Record<string, unknown>
+export type ValineOption = Record<string, unknown>
 
-export type vssueOption = Record<string, unknown>
+export type VssueOption = Record<string, unknown>
 
-export type CommentsPluginOptions = valineOption | vssueOption
+export type CommentsPluginOptions = ValineOption | VssueOption

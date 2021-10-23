@@ -13,14 +13,14 @@
 </template>
 
 <script lang="ts">
+import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { isString } from '@vuepress/shared'
 import { computed, defineComponent } from 'vue'
 import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
-import { isString } from '@vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { resolveRepoType } from '../utils'
 import DropdownLink from './DropdownLink.vue'
 import Link from './Link.vue'

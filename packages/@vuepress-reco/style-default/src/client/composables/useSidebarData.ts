@@ -1,5 +1,5 @@
-import { ref, computed } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
+import { ref, computed } from 'vue'
 import { useSidebarItems, usePageHeaders } from './index'
 
 export const useSidebarData: () => any = () => {

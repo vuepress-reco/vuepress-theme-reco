@@ -29,9 +29,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { defineComponent, computed, ref, onMounted } from 'vue'
 import NavbarLinks from './NavbarLinks'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 

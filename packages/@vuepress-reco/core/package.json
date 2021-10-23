@@ -29,6 +29,10 @@
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
+  "dependencies": {
+    "vue": "^3.2.11",
+    "vue-router": "^4.0.11"
+  },
   "publishConfig": {
     "access": "public"
   }

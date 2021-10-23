@@ -18,23 +18,23 @@ export default defineUserConfig<DefaultThemeOptions>({
       '/docs/theme-reco/': [
         {
           text: 'module one',
-          children: ['home', 'theme']
+          children: ['home', 'theme'],
         },
         {
           text: 'module two',
-          children: ['api', 'plugin']
-        }
-      ]
+          children: ['api', 'plugin'],
+        },
+      ],
     },
-    navbar:
-    [
+    navbar: [
       { text: 'Home', link: '/' },
       { text: '指南', link: '/docs/guide' },
-      { text: '风格',
+      {
+        text: '风格',
         children: [
           { text: '默认风格 API', link: '/docs/reference/style-default-api' },
-          { text: '风格开发 API', link: '/docs/reference/style-dev-api' }
-        ]
+          { text: '风格开发 API', link: '/docs/reference/style-dev-api' },
+        ],
       },
     ],
     // valineConfig 配置与 1.x 一致

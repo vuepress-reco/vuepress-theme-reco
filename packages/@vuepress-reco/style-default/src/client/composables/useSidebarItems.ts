@@ -1,13 +1,12 @@
-import { inject } from 'vue'
-import type { ComputedRef, InjectionKey } from 'vue'
-import { useRoute } from 'vue-router'
 import {
   isArray,
   isPlainObject,
   isString,
   resolveLocalePath,
 } from '@vuepress/shared'
-
+import { inject } from 'vue'
+import type { ComputedRef, InjectionKey } from 'vue'
+import { useRoute } from 'vue-router'
 import type {
   DefaultThemeData,
   DefaultThemeNormalPageFrontmatter,
@@ -16,7 +15,6 @@ import type {
   SidebarGroup,
   SidebarItem,
 } from '../../types'
-
 import { useNavLink } from './useNavLink'
 
 export interface NavItem {

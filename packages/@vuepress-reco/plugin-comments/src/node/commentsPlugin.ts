@@ -1,5 +1,5 @@
-import { path } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
+import { path } from '@vuepress/utils'
 
 const commentsPlugin: Plugin<Record<string, any>> = () => {
   return {
@@ -8,7 +8,7 @@ const commentsPlugin: Plugin<Record<string, any>> = () => {
     clientAppEnhanceFiles: path.resolve(
       __dirname,
       '../client/clientAppEnhance.js'
-    )
+    ),
   }
 }
 

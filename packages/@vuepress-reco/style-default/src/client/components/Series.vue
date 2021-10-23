@@ -10,8 +10,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useSidebarItems } from '../composables/'
-import { SeriesItem } from './SeriesItem'
 import NavbarLinks from './NavbarLinks'
+import { SeriesItem } from './SeriesItem'
 
 export default defineComponent({
   components: { SeriesItem, NavbarLinks },

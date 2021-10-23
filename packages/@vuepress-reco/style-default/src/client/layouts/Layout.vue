@@ -23,12 +23,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
-import { useSidebarData, useScrollPromise } from '../composables'
+import { defineComponent } from 'vue'
 import Common from '../components/Common'
 import HomeBlog from '../components/HomeBlog'
 import Page from '../components/Page'
+import { useSidebarData, useScrollPromise } from '../composables'
 
 export default defineComponent({
   components: { HomeBlog, Page, Common },
@@ -43,7 +43,14 @@ export default defineComponent({
     const onBeforeEnter = scrollPromise.resolve
     const onBeforeLeave = scrollPromise.pending
 
-    return { page, frontmatter, isShowSidebar, isShowHeaders, onBeforeEnter, onBeforeLeave }
+    return {
+      page,
+      frontmatter,
+      isShowSidebar,
+      isShowHeaders,
+      onBeforeEnter,
+      onBeforeLeave,
+    }
   },
 })
 </script>

@@ -3,7 +3,7 @@
     <Icon v-if="!!author" icon="solid user" :text="author" />
     <Icon v-if="!!date" icon="solid calendar-alt" :text="date" />
     <Icon v-if="showValineViews" icon="solid mask">
-      <ValineViews :numStyle="{}" />
+      <ValineViews :num-style="{}" />
     </Icon>
     <Icon v-if="!!categories && categories.length > 0" icon="solid th-list">
       <RouterLink
@@ -27,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, toRefs } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { defineComponent, computed, toRefs } from 'vue'
 import Icon from './Icon'
 
 export default defineComponent({
@@ -52,8 +52,8 @@ export default defineComponent({
     },
     hideValineViews: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   setup(props) {
@@ -83,10 +83,22 @@ export default defineComponent({
     )
 
     const showValineViews = computed(() => {
-      return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
+      return (
+        solution.value === 'valine' &&
+        options.value.visitor !== false &&
+        !hideValineViews.value
+      )
     })
 
-    return { author, date, categories, tags, showPageInfo, solution, showValineViews }
+    return {
+      author,
+      date,
+      categories,
+      tags,
+      showPageInfo,
+      solution,
+      showValineViews,
+    }
   },
 })
 </script>

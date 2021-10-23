@@ -1,18 +1,18 @@
-import { computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { computed, Ref, ComputedRef } from 'vue'
 
-export function useComment() {
+export function useComment(): {
+  solution: Ref<string>
+  options: ComputedRef<Record<string, unknown>>
+} {
   const themeLocal = useThemeLocaleData()
 
-  const solution = computed(() => {
-    return themeLocal.value.valineConfig
-      ? 'valine'
-      : ''
+  const solution: Ref<string> = computed(() => {
+    return themeLocal.value.valineConfig ? 'valine' : ''
   })
 
-  const options = computed(() => {
-    return themeLocal.value.valineConfig
-      || {}
+  const options: ComputedRef<Record<string, unknown>> = computed(() => {
+    return themeLocal.value.valineConfig || {}
   })
 
   return { solution, options }

@@ -79,8 +79,8 @@ import { computed, defineComponent, ref, toRefs, watch } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavGroup, NavItem } from '../../types'
-import Link from './Link.vue'
 import DropdownTransition from './DropdownTransition.vue'
+import Link from './Link.vue'
 
 export default defineComponent({
   name: 'DropdownLink',
