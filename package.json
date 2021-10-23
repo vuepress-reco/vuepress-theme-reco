@@ -14,7 +14,7 @@
     "commit": "git add . && git-cz",
     "copy": "lerna run copy --stream",
     "copy-watch": "lerna run copy --parallel -- --watch",
-    "deploy:docs": "bash scripts/docs-deploy.sh",
+    "docs:deploy": "bash scripts/docs-deploy.sh",
     "dev": "yarn copy-watch & yarn build --watch & yarn dev:example",
     "dev:example": "vuepress dev example",
     "dev:docs": "vuepress dev docs",
