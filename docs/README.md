@@ -22,30 +22,27 @@ features:
   details: 吸引更多的朋友参与到开发中来，继续强大功能。
 ---
 
-# vuepress-theme-reco-demo
-
-Blog demo for vuepress-theme-reco
-
-## Experience
+## 快速开始
 
 **npx**
 
-```
+```bash
+# 初始化，并选择 2.x
 npx @vuepress-reco/theme-cli init
 ```
 
 **npm**
 
 ```bash
-# 初始化
-npm install @vuepress-reco/theme-cli -g
+# 初始化，并选择 2.x
+npm install @vuepress-reco/theme-cli@1.0.7 -g
 theme-cli init
 ```
 
 **yarn**
 
 ```bash
-# 初始化
-yarn global add @vuepress-reco/theme-cli
+# 初始化，并选择 2.x
+yarn global add @vuepress-reco/theme-cli@1.0.7
 theme-cli init
 ```

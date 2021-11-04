@@ -15,6 +15,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     lastUpdatedText: '最后更新时间',
     // series 为原 sidebar
     series: {
+      '/docs/guide/': ['introduce', 'architecture', 'getting-started'], // README.md 无法展示，没有对 '' 进行处理
       '/docs/theme-reco/': [
         {
           text: 'module one',
@@ -29,11 +30,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar:
     [
       { text: 'Home', link: '/' },
-      { text: '指南', link: '/docs/guide' },
+      { text: '指南', link: '/docs/guide/introduce' },
+      { text: '参考',
+        children: [
+          { text: 'plugin-page', link: '' },
+          { text: '风格开发 API', link: '/docs/styles/style-dev-api' }
+        ]
+      },
       { text: '风格',
         children: [
-          { text: '默认风格 API', link: '/docs/reference/style-default-api' },
-          { text: '风格开发 API', link: '/docs/reference/style-dev-api' }
+          { text: '默认风格 API', link: '/docs/styles/style-default-api' },
         ]
       },
     ],
