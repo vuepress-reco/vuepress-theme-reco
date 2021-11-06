@@ -17,7 +17,7 @@
     "deploy:docs": "bash scripts/docs-deploy.sh",
     "dev": "yarn copy-watch & yarn build --watch & yarn dev:example",
     "dev:example": "vuepress dev example",
-    "dev:docs": "vuepress dev docs",
+    "dev:docs": "yarn copy-watch & yarn build --watch & vuepress dev docs",
     "start:debug": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
     "publish": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish",

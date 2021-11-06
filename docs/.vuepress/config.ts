@@ -21,7 +21,8 @@ export default defineUserConfig<DefaultThemeOptions>({
           { text: '风格开发 API', link: '/docs/style-dev-api/' },
           { text: '默认风格 API', link: '/docs/style-default-api/introduce' }
         ]
-      }
+      },
+      { text: '留言板', link: '/docs/message-board' },
     ],
     series: {
       // todo README.md 无法展示，没有对 '' 进行处理
@@ -34,19 +35,25 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: '高级',
           children: [ 'home', 'series', 'comments' ]
+        },
+        {
+          text: '版本',
+          children: [
+            { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/' },
+            { text: '1.x', link: 'https://vuepress-theme-reco.recoluan.com/views/1.x/' },
+          ],
         }
       ]
     },
-    // valineConfig 配置与 1.x 一致
-    // valineConfig: {
-    //   appId: 'jvc9s4BkJYQNOcpsbVTPMePe-gzGzoHsz',
-    //   appKey: 'Js91M9DfM9vPwVaUj7xdkbxh',
-    //   placeholder: '填写邮箱可以收到回复提醒哦！',
-    //   verify: true, // 验证码服务
-    //   // notify: true,
-    //   recordIP: true,
-    //   // hideComments: true // 隐藏评论
-    // },
+    valineConfig: {
+      appId: 'jvc9s4BkJYQNOcpsbVTPMePe-gzGzoHsz',
+      appKey: 'Js91M9DfM9vPwVaUj7xdkbxh',
+      placeholder: '填写邮箱可以收到回复提醒哦！',
+      verify: true, // 验证码服务
+      // notify: true,
+      recordIP: true,
+      hideComments: true // 隐藏评论
+    },
   },
   // debug: true,
 })

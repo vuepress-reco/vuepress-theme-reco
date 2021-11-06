@@ -40,8 +40,10 @@ export default defineComponent({
       const { hideComments: hideCommentsInSinglePage } = pageData?.value?.frontmatter
       const { hideComments: hideCommentsInAllPage } = options.value
 
+      console.log(hideCommentsInSinglePage, hideCommentsInAllPage)
+
       return hideCommentsInSinglePage === true
-        || (hideCommentsInSinglePage !== true && hideCommentsInAllPage ===true)
+        || (hideCommentsInSinglePage !== false && hideCommentsInAllPage === true)
     })
 
     return { title, pageData, shouldHideComments }

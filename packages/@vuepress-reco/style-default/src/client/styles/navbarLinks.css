@@ -15,13 +15,13 @@
     .dropdown-wrapper {
       @apply relative;
       .dropdown-title {
-        @apply text-gray-700 dark:text-white hidden md:block;
+        @apply text-reco-text-light dark:text-reco-text-dark hidden md:block;
         .title {
           @apply font-semibold;
         }
       }
       .mobile-dropdown-title {
-        @apply text-base font-semibold text-reco-text-light dark:text-reco-text-dark dark:text-white block md:hidden;
+        @apply text-base font-semibold text-reco-text-light dark:text-reco-text-dark block md:hidden;
       }
       .nav-dropdown {
         @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-light dark:bg-reco-bg-dark list-none;
@@ -30,7 +30,8 @@
           @apply relative;
           &:not(:first-of-type)::before {
             @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-light;
-            @apply md:border-t;
+            /* 待确定 */
+            /* @apply md:border-t; */
             @apply dark:border-reco-border-dark;
             content: '';
           }

@@ -11,7 +11,7 @@
 html {
   font-size: 16px !important;
   -webkit-text-size-adjust: 100%;
-  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-gray-700 dark:text-white font-normal text-sm font-sans;
+  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-reco-text-light dark:text-reco-text-dark font-normal text-sm font-sans;
 }
 
 @media screen and (max-width: 640px) {
@@ -127,7 +127,7 @@ a:active,
 a:link,
 a:focus,
 a:visited {
-  @apply text-gray-700 dark:text-white;
+  @apply text-reco-text-light dark:text-reco-text-dark;
 }
 
 a.header-anchor {

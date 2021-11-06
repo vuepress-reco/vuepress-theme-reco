@@ -7,7 +7,7 @@
       .category-link {
         @apply inline-block px-4 py-1.5;
         .text {
-          @apply mr-1 text-xs leading-5 text-reco-text-light dark:text-white;
+          @apply mr-1 text-xs leading-5 text-reco-text-light dark:text-reco-text-dark;
         }
         .num {
           @apply inline-block h-5 px-2 bg-reco-brand rounded text-white text-xs leading-5;

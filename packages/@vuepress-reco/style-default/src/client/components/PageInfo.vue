@@ -59,14 +59,16 @@ export default defineComponent({
   setup(props) {
     const { pageData, hideValineViews } = toRefs(props)
     const { solution, options } = useComment()
-    console.log(solution.value, '-', options.value)
     const themeData = useThemeLocaleData()
 
     const author = computed(
       () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
     )
 
-    const date = computed(() => pageData?.value?.frontmatter?.date || '')
+    const date = computed(() => {
+      const d = pageData?.value?.frontmatter?.date
+      return d ? new Date(d).toLocaleString() : ''
+    })
 
     const categories = computed(
       () => pageData?.value?.frontmatter?.categories || []

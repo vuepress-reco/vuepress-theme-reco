@@ -26,7 +26,7 @@
     }
   }
   a.series-item {
-    @apply relative block py-0.5 transition-all;
+    @apply relative block py-0.5 transition-all leading-7;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
       @apply bg-reco-brand;
@@ -44,7 +44,7 @@
     }
   }
   .navbar-links {
-    @apply block relative;
+    @apply block relative mb-8;
     @apply md:hidden;
     &::after {
       @apply absolute left-0 -bottom-4 block border-t border-solid border-reco-border-light w-full;
