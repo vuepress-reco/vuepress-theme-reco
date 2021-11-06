@@ -22,6 +22,13 @@ export default defineUserConfig<DefaultThemeOptions>({
           { text: '默认风格 API', link: '/docs/style-default-api/introduce' }
         ]
       },
+      {
+        text: '版本',
+        children: [
+          { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/' },
+          { text: '1.x', link: 'https://vuepress-theme-reco.recoluan.com/views/1.x/' },
+        ],
+      },
       { text: '留言板', link: '/docs/message-board' },
     ],
     series: {
@@ -35,13 +42,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: '高级',
           children: [ 'home', 'series', 'comments' ]
-        },
-        {
-          text: '版本',
-          children: [
-            { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/' },
-            { text: '1.x', link: 'https://vuepress-theme-reco.recoluan.com/views/1.x/' },
-          ],
         }
       ]
     },
