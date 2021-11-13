@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, toRefs, watch, h } from 'vue'
+import { defineComponent, onMounted, toRefs, h } from 'vue'
 import { useRoute } from 'vue-router'
 import '../styles/valine.css'
 
@@ -46,19 +46,25 @@ export default defineComponent({
       initValine()
     })
 
-    watch(route, (to, from) => {
-      if (to.path !== from.path) {
-        // 切换页面时刷新评论
-        setTimeout(() => {
-          initValine()
-        }, 300)
-      }
-    })
+    return { initValine }
+  },
 
+  render() {
     return () => h('div', {
       class: 'reco-valine-wrapper'
     }, h('div', {
       id: 'valine'
     }))
+  },
+
+  watch: {
+    '$route' (from, to) {
+      if (to.path !== from.path) {
+        // 切换页面时刷新评论
+        setTimeout(() => {
+          this.initValine()
+        }, 300)
+      }
+    }
   }
 })

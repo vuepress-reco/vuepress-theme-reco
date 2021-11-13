@@ -1,4 +1,4 @@
-import { defineComponent, toRefs, h } from 'vue'
+import { defineComponent, toRefs, h, watch } from 'vue'
 import { useSiteData } from '@vuepress/client'
 import { useRoute } from 'vue-router'
 
@@ -16,8 +16,7 @@ export default defineComponent({
 
   setup(props) {
     const siteDate = useSiteData()
-    const { path } = useRoute()
-    console.log(path)
+    const route = useRoute()
     const { idVal, numStyle, flagTitle } = toRefs(props)
 
     const getIdVal = (path) => {
@@ -25,13 +24,12 @@ export default defineComponent({
     }
 
     return () => h('span', {
-      id: getIdVal(idVal.value || path),
+      id: getIdVal(idVal.value || route.path),
       class: 'leancloud-visitors',
       'data-flag-title': flagTitle.value
     }, h('a', {
       class: 'leancloud-visitors-count',
       style: numStyle.value
     }))
-    // return () => h('span', '123')
   }
 })

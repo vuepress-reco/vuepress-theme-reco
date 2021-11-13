@@ -13,8 +13,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, h } from 'vue'
+import { defineComponent, computed, h, watch } from 'vue'
 import { usePageData } from '@vuepress/client'
+import { useRoute } from 'vue-router'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import PageInfo from './PageInfo'
 import PageNav from './PageNav'
@@ -28,6 +29,7 @@ export default defineComponent({
   setup() {
     const pageData = usePageData()
     const { options } = useComment()
+    const route = useRoute()
 
     const title = computed(
       () => pageData?.value?.frontmatter?.title
@@ -39,8 +41,6 @@ export default defineComponent({
     const shouldHideComments = computed(() => {
       const { hideComments: hideCommentsInSinglePage } = pageData?.value?.frontmatter
       const { hideComments: hideCommentsInAllPage } = options.value
-
-      console.log(hideCommentsInSinglePage, hideCommentsInAllPage)
 
       return hideCommentsInSinglePage === true
         || (hideCommentsInSinglePage !== false && hideCommentsInAllPage === true)
