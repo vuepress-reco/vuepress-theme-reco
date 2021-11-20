@@ -52,12 +52,29 @@ const border = {
   },
 }
 
+// 自定义容器
+const container = {
+  info: {
+    border: 'rgb(97, 106, 229)',
+    bg: 'rgba(97, 106, 229, 0.1)'
+  },
+  warning: {
+    border: 'rgb(251, 155, 95)',
+    bg: 'rgba(251, 155, 95, 0.1)'
+  },
+  danger: {
+    border: 'rgb(242, 109, 109)',
+    bg: 'rgba(242, 109, 109, 0.1)'
+  }
+}
+
 const colors = {
   reco: {
     brand,
     bg,
     text,
     border,
+    container
   },
 }
 

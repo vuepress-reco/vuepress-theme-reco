@@ -1,5 +1,6 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
+import { resolveContainer } from './client/utils'
 
 export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   const { style } = themeConfig
@@ -19,6 +20,10 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
         headerLinkSelector: 'a.page-header-item',
       },
     ],
+    ['@vuepress/plugin-container', { type: 'tip', render: resolveContainer }],
+    ['@vuepress/plugin-container', { type: 'info', render: resolveContainer }],
+    ['@vuepress/plugin-container', { type: 'warning', render: resolveContainer }],
+    ['@vuepress/plugin-container', { type: 'danger', render: resolveContainer }],
     ...styleConfig.plugins,
   ]
 

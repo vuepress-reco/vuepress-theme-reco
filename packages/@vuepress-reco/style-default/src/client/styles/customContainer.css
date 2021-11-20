@@ -1,0 +1,33 @@
+.custom-container {
+  @apply relative my-4 pl-12 pr-4 break-all;
+  svg {
+    @apply absolute top-5 left-4 w-5 font-bold;
+  }
+  .custom-container-title {
+    @apply mb-0 font-bold;
+  }
+  &.tip {
+    @apply rounded border-reco-container-info-border border-2 border-solid bg-reco-container-info-bg;
+    .custom-container-title, svg {
+      @apply text-reco-container-info-border;
+    }
+  }
+  &.info {
+    @apply rounded border-reco-container-info-border border-2 border-solid bg-reco-container-info-bg;
+    .custom-container-title, svg {
+      @apply text-reco-container-info-border;
+    }
+  }
+  &.warning {
+    @apply rounded border-reco-container-warning-border border-2 border-solid bg-reco-container-warning-bg;
+    .custom-container-title, svg {
+      @apply text-reco-container-warning-border;
+    }
+  }
+  &.danger {
+    @apply rounded border-reco-container-danger-border border-2 border-solid bg-reco-container-danger-bg;
+    .custom-container-title, svg {
+      @apply text-reco-container-danger-border;
+    }
+  }
+}

@@ -77,3 +77,25 @@ theme-cli init
 
 <!-- <Contributors user="vuepress-reco" repo="vuepress-theme-reco" :show-title="true"></Contributors>
 <Contributors user="vuepress-reco" repo="vuepress-reco.github.io" :show-title="true"></Contributors> -->
+
+::: tip
+123aa
+:::
+
+::: info CUSTOM_INFO
+123asdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasn
+
+asdnasn
+:::
+
+::: warning
+123asdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasn
+
+asdnasn
+:::
+
+::: danger
+123asdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasnasdnasn
+
+asdnasn
+:::

@@ -50,7 +50,7 @@ export default defineComponent({
   },
 
   render() {
-    return () => h('div', {
+    return h('div', {
       class: 'reco-valine-wrapper'
     }, h('div', {
       id: 'valine'

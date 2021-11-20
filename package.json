@@ -16,7 +16,7 @@
     "copy-watch": "lerna run copy --parallel -- --watch",
     "deploy:docs": "bash scripts/docs-deploy.sh",
     "dev": "yarn copy-watch & yarn build --watch & yarn dev:example",
-    "dev:example": "vuepress dev example",
+    "dev:example": "DEBUG=vuepress* vuepress dev example",
     "dev:docs": "yarn copy-watch & yarn build --watch & vuepress dev docs",
     "start:debug": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
