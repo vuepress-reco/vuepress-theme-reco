@@ -1,6 +1,6 @@
 .custom-container {
   @apply relative my-4 pl-12 pr-4 break-all;
-  svg {
+  > svg {
     @apply absolute top-5 left-4 w-5 font-bold;
   }
   .custom-container-title {

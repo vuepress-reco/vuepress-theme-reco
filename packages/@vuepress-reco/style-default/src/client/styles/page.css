@@ -1,5 +1,8 @@
 .page-container {
   @apply mt-24;
+  .page-info {
+    @apply mb-4;
+  }
   &.show-sidebar {
     @apply pl-0 md:pl-72;
   }

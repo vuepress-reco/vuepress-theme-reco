@@ -131,7 +131,7 @@ div[class*='language-'] {
   }
 }
 
-@each $lang in bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
+@each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
   div.language-$(lang)::before {
     content: '$(lang)';
   }

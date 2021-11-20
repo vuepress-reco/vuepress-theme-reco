@@ -3,7 +3,7 @@ title: 首页
 date: 2021-11-06 23:36:01
 ---
 
-```yml
+```yaml
 ---
 home: true                          # 首页标识
 heroImage: /logo.png                # 首页 logo

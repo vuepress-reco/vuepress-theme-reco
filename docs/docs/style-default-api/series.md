@@ -12,7 +12,7 @@ date: 2021-11-06 23:36:01
 
 **普通**
 
-```js
+``` js
 // .vuepress/config.js
 
 module.exports = {

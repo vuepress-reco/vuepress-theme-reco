@@ -11,4 +11,6 @@ In the past, theme `reco` has been supported by many friends, I am very honored,
 
 I hope the theme can be more out of the box, open and flexible, and inherit "simple" concept, give back to all friends. Come and tell me what you want it to be!
 
-**提示**：此版本仅为尝鲜版本，功能不完整，且 UI 及功能在 latest 版本之前均为做出较大，谨慎用于生产环境。
+::: warning
+此版本仅为尝鲜版本，功能不完整，且 UI 及功能在 latest 版本之前均为做出较大，谨慎用于生产环境。
+:::
