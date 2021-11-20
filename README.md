@@ -72,7 +72,7 @@ theme-cli init
 - [x] nprogress 插件
 - [x] back-to-top 插件
 - [x] comment 插件（目前仅支持 valine，vssue 还没有支持 Vue3）
-- [ ] container 插件
+- [x] container 插件
 - [ ] 公告 插件
 - [ ] 代码预览 插件
 - [ ] 提供自定义任意页面的 API
