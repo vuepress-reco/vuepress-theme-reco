@@ -1,6 +1,5 @@
 <template>
   <main class="home-blog-wrapper">
-    <!-- hero -->
     <div
       class="hero"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
@@ -18,20 +17,6 @@
         <p>{{ frontmatter.tagline }}</p>
       </div>
     </div>
-
-    <!-- blog -->
-    <div class="home-blog-wrapper">
-      <div class="blog-list">
-        <PostList
-          :data="posts"
-          :total="posts.length"
-          :page-size="10"
-          :current-page="1"
-        />
-      </div>
-    </div>
-
-    <!-- content -->
     <div class="theme-reco-default-content">
       <Content />
     </div>
@@ -40,20 +25,16 @@
 </template>
 
 <script lang="ts">
-import Footer from './Footer'
-import PostList from './PostList'
 import { defineComponent, computed } from 'vue'
 import { usePageFrontmatter, withBase } from '@vuepress/client'
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import Footer from "./Footer";
 
 export default defineComponent({
   name: 'HomeBlog',
 
-  components: { Footer, PostList },
+  components: { Footer },
 
   setup() {
-    const { posts } = usePageData()
-    console.log(posts)
     const frontmatter = usePageFrontmatter()
 
     const bgImage = computed(() => {
@@ -72,7 +53,7 @@ export default defineComponent({
       () => frontmatter.value.heroImageStyle || {}
     )
 
-    return { frontmatter, bgImage, heroImage, heroImageStyle, posts }
+    return { frontmatter, bgImage, heroImage, heroImageStyle }
   },
 })
 </script>

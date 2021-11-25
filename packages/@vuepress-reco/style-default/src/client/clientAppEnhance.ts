@@ -1,7 +1,7 @@
 import { h } from 'vue'
 import { defineClientAppEnhance } from '@vuepress/client'
 import './styles/index.css'
-import Icon from '../client/components/Icon.vue'
+import Xicons from './components/Xicons.vue'
 
 export default defineClientAppEnhance(({ app, router }) => {
   // 默认安装 SearchBox，如果需要使用 algolia，需要自行安装
@@ -14,5 +14,5 @@ export default defineClientAppEnhance(({ app, router }) => {
     return null
   })
 
-  app.component('Icon', () => Icon)
+  app.component('Xicons', Xicons)
 })

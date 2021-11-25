@@ -11,7 +11,7 @@
     </span>
     <span>
       <Xicons :icon="Time">
-        <a v-if="themeLocal.startYear && themeLocal.startYear != (new Date().getFullYear())">{{themeLocal.startYear}}</a>
+        <a v-if="themeLocal.startYear && themeLocal.startYear != (new Date().getFullYear())">{{themeLocal.startYear}} - </a>
         {{new Date().getFullYear()}}
       </Xicons>
     </span>
@@ -34,22 +34,19 @@ import { defineComponent, computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import packageInfo from '../../../package.json'
 import { VisualRecognition, ManageProtection, User, Time, View } from '@vicons/carbon'
-import Xicons from "./Xicons";
 
 export default defineComponent({
-
-  components: { Xicons },
+  name: 'Footer',
 
   setup (props, ctx) {
     const themeLocal = useThemeLocaleData()
-    console.log(111, themeLocal.value)
     const { version } = packageInfo
     const showAccessNumber = computed(() => {
       const { valineConfig } = themeLocal.value
 
       return valineConfig.visitor != false
     })
-    console.log(showAccessNumber.value)
+
     return { version, themeLocal, showAccessNumber, VisualRecognition, ManageProtection, User, Time, View }
   },
 })

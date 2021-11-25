@@ -4,7 +4,7 @@
   @apply hover:shadow-light-heavier dark:hover:shadow-dark-heavier;
 
   .title {
-    @apply relative mb-2 inline-block;
+    @apply relative mb-2 inline-block text-lg font-medium;
 
     &:after {
       @apply absolute left-0 -bottom-2 w-full;

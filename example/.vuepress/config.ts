@@ -129,7 +129,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
     // },
     record: 'xxxx',
-    cyberSecurityRecord: 'xxx'
+    cyberSecurityRecord: 'xxx',
+    startYear: '2018'
   },
   // debug: true,
 })

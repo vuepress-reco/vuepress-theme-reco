@@ -17,7 +17,7 @@ const pagePlugin: Plugin<Record<string, any>> = (
         CLASSIFICATION_PAGINATION_POSTS:
           classifiable.classificationPaginationPosts,
         CLASSIFICATION_SUMMARY: classifiable.classificationSummary,
-        POSTS: app.pages,
+        POSTS: classifiable.posts,
       }
     },
 

@@ -54,7 +54,8 @@ export default class Classifiable {
     this.app.pages.forEach((page: Page) => {
       if (
         page?.frontmatter?.home === true ||
-        page?.frontmatter?.publish === false
+        page?.frontmatter?.publish === false ||
+        page?.title === ''
       ) {
         return
       }
@@ -218,5 +219,9 @@ export default class Classifiable {
 
   get classificationSummary(): ClassificationData {
     return this.classificationData
+  }
+
+  get posts() {
+    return this.publishPosts
   }
 }

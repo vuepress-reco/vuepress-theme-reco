@@ -2,7 +2,7 @@
   <div v-if="showPageInfo" class="page-info">
     <Xicons v-if="!!author" :icon="User" :text="author" />
     <Xicons v-if="!!date" :icon="Time" :text="date" />
-    <Xicons v-if="!!categories && categories.length > 0" :icon="Categories">
+    <Xicons v-if="!!categories && categories.length > 0" :icon="Folders">
       <RouterLink
         v-for="(category, index) in categories"
         :key="index"
@@ -30,14 +30,10 @@
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import Icon from './Icon'
-import Xicons from "./Xicons";
-import { User, Time, View, Categories, TagGroup } from '@vicons/carbon'
+import { User, Time, View, Folders, TagGroup } from '@vicons/carbon'
 
 export default defineComponent({
   name: 'PageInfo',
-
-  components: { Xicons, Icon },
 
   props: {
     pageData: {
@@ -90,7 +86,7 @@ export default defineComponent({
       return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
     })
 
-    return { author, date, categories, tags, showPageInfo, solution, showValineViews, User, Time, View, Categories, TagGroup }
+    return { author, date, categories, tags, showPageInfo, solution, showValineViews, User, Time, View, Folders, TagGroup }
   },
 })
 </script>
