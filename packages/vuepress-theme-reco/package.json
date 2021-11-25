@@ -32,6 +32,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@vicons/carbon": "^0.11.0",
     "@vuepress-reco/style-default": "^2.0.1-alpha.11",
     "@vuepress-reco/vuepress-plugin-page": "^2.0.1-alpha.5",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.26",

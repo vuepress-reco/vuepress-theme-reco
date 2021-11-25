@@ -37,7 +37,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
     "@vuepress-reco/core": "^2.0.1-alpha.1",
     "@vuepress-reco/vuepress-plugin-comments": "^2.0.1-alpha.11",
     "@vuepress/plugin-back-to-top": "^2.0.0-beta.26",

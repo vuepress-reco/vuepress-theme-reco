@@ -2,25 +2,25 @@
   @apply inline-flex;
   &.left {
     @apply flex-row items-center;
-    span {
+    > span {
       @apply ml-1.5;
     }
   }
   &.right {
     @apply flex-row-reverse items-center;
-    span {
+    > span {
       @apply mr-1.5;
     }
   }
   &.top {
     @apply flex-col items-center;
-    span {
+    > span {
       @apply mt-1.5;
     }
   }
   &.bottom {
     @apply flex-col-reverse items-center;
-    span {
+    > span {
       @apply mb-1.5;
     }
   }

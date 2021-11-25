@@ -1,11 +1,8 @@
 <template>
   <div v-if="showPageInfo" class="page-info">
-    <Icon v-if="!!author" icon="solid user" :text="author" />
-    <Icon v-if="!!date" icon="solid calendar-alt" :text="date" />
-    <Icon v-if="showValineViews" icon="solid mask">
-      <ValineViews :numStyle="{}" />
-    </Icon>
-    <Icon v-if="!!categories && categories.length > 0" icon="solid th-list">
+    <Xicons v-if="!!author" :icon="User" :text="author" />
+    <Xicons v-if="!!date" :icon="Time" :text="date" />
+    <Xicons v-if="!!categories && categories.length > 0" :icon="Categories">
       <RouterLink
         v-for="(category, index) in categories"
         :key="index"
@@ -13,8 +10,8 @@
         :to="`/categories/${category}/1/`"
         >{{ category }}</RouterLink
       >
-    </Icon>
-    <Icon v-if="!!tags && tags.length > 0" icon="solid tags">
+    </Xicons>
+    <Xicons v-if="!!tags && tags.length > 0" :icon="TagGroup">
       <RouterLink
         v-for="(tag, index) in tags"
         :key="index"
@@ -22,7 +19,10 @@
         :to="`/tags/${tag}/1/`"
         >{{ tag }}</RouterLink
       >
-    </Icon>
+    </Xicons>
+    <Xicons v-if="showValineViews" :icon="View">
+      <ValineViews :numStyle="{}" />
+    </Xicons>
   </div>
 </template>
 
@@ -31,11 +31,13 @@ import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import Icon from './Icon'
+import Xicons from "./Xicons";
+import { User, Time, View, Categories, TagGroup } from '@vicons/carbon'
 
 export default defineComponent({
   name: 'PageInfo',
 
-  components: { Icon },
+  components: { Xicons, Icon },
 
   props: {
     pageData: {
@@ -88,7 +90,7 @@ export default defineComponent({
       return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
     })
 
-    return { author, date, categories, tags, showPageInfo, solution, showValineViews }
+    return { author, date, categories, tags, showPageInfo, solution, showValineViews, User, Time, View, Categories, TagGroup }
   },
 })
 </script>

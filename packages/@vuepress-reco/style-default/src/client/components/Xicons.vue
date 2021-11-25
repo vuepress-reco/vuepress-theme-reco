@@ -1,8 +1,7 @@
 <template>
   <a :class="['icon-container', iconPosition]" :href="link">
-    <svg :width="iconSize" :height="iconSize" :style="{ fill: iconColor }">
-      <use :xlink:href="`${iconLink}`" />
-    </svg>
+    <component :style="iconStyle" :is="icon" />
+
     <span v-if="!!text || slots.default" :style="textStyle">
       <slot>{{ text }}</slot>
     </span>
@@ -11,6 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
+import type { Component } from 'vue'
 
 enum EIconPosition {
   left = 'left',
@@ -20,7 +20,7 @@ enum EIconPosition {
 }
 
 type PropsType = {
-  icon: string
+  icon: Component
   iconPosition: keyof typeof EIconPosition
   iconSize: number | string
   iconColor: string
@@ -31,12 +31,12 @@ type PropsType = {
 }
 
 export default defineComponent<PropsType>({
-  name: 'Icon',
+  name: 'Xicons',
 
   props: {
     icon: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => {},
     },
     iconPosition: {
       type: String,
@@ -44,11 +44,11 @@ export default defineComponent<PropsType>({
     },
     iconSize: {
       type: [String, Number],
-      default: 14,
+      default: 18,
     },
     iconColor: {
       type: String,
-      default: '#888',
+      default: 'inherit',
     },
     text: {
       type: String,
@@ -56,7 +56,7 @@ export default defineComponent<PropsType>({
     },
     textColor: {
       type: String,
-      default: '#888',
+      default: 'inherit',
     },
     textSize: {
       type: [String, Number],
@@ -69,20 +69,17 @@ export default defineComponent<PropsType>({
   },
 
   setup(props, { slots }) {
-    const { icon, textColor, textSize } = toRefs(props)
+    const { icon, iconSize, iconColor, textColor, textSize } = toRefs(props)
 
-    const iconLink = computed(() => {
-      const iconLinkArgs = icon.value.split(' ')
-      return `${require(`@fortawesome/fontawesome-free/sprites/${iconLinkArgs[0]}.svg`)}#${
-        iconLinkArgs[1]
-      }`
+    const iconStyle = computed(() => {
+      return { color: iconColor.value, width: `${iconSize.value}px`, height: `${iconSize.value}px`, fontSize: `${iconSize.value}px` }
     })
 
     const textStyle = computed(() => {
       return { color: textColor.value, fontSize: `${textSize.value}px` }
     })
 
-    return { iconLink, textStyle, slots }
+    return { icon, iconStyle, textStyle, slots }
   },
 })
 </script>

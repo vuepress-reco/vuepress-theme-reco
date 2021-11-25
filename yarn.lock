@@ -444,10 +444,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fortawesome/fontawesome-free@^5.15.3":
-  version "5.15.4"
-  resolved "https://registry.nlark.com/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
-
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.nlark.com/@humanwhocodes/config-array/download/@humanwhocodes/config-array-0.5.0.tgz?cache=0&sync_timestamp=1625263739099&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40humanwhocodes%2Fconfig-array%2Fdownload%2F%40humanwhocodes%2Fconfig-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -1847,6 +1843,16 @@
   dependencies:
     "@typescript-eslint/types" "4.31.1"
     eslint-visitor-keys "^2.0.0"
+
+"@vicons/carbon@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.npmjs.org/@vicons/carbon/-/carbon-0.11.0.tgz#510e01e883a73b1d4343a3eb1d10141446463abe"
+  integrity sha512-+Wkl8wOP1GR7jS+OKcsJ58NnZr4i+BZhbpLRtgpZQui1zFpYjoWinwvYKLjGKJ/oiR10Q237cBDjGwmMSzXqTg==
+
+"@vicons/fluent@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.npmjs.org/@vicons/fluent/-/fluent-0.11.0.tgz#84f3cda255539cb96f45c89c1601e2892d79826f"
+  integrity sha512-5sbdKLijk5/PBtsapDjBodskSCrfOsqOlpCbXQ33pZmY0VZ62N46Yq6SFJXHyUgFhjvReRrFe4wCGVAktchHFg==
 
 "@vue/compiler-core@3.2.12":
   version "3.2.12"
