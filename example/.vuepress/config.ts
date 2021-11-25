@@ -128,6 +128,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     //   clientId: '4d81cea3b3d8aac8e88e',
     //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
     // },
+    record: 'xxxx',
+    cyberSecurityRecord: 'xxx'
   },
   // debug: true,
 })

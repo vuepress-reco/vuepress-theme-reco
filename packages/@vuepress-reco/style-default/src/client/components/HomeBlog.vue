@@ -20,15 +20,20 @@
     <div class="theme-reco-default-content">
       <Content />
     </div>
+    <Footer />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { usePageFrontmatter, withBase } from '@vuepress/client'
+import Footer from "./Footer";
 
 export default defineComponent({
   name: 'HomeBlog',
+
+  components: { Footer },
+
   setup() {
     const frontmatter = usePageFrontmatter()
 
