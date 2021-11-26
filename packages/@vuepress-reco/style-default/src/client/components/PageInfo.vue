@@ -1,8 +1,8 @@
 <template>
   <div v-if="showPageInfo" class="page-info">
     <Xicons v-if="!!author" :icon="User" :text="author" />
-    <Xicons v-if="!!date" :icon="Time" :text="date" />
-    <Xicons v-if="!!categories && categories.length > 0" :icon="Folders">
+    <Xicons v-if="!!date" :icon="Clock" :text="date" />
+    <Xicons v-if="!!categories && categories.length > 0" :icon="Folder">
       <RouterLink
         v-for="(category, index) in categories"
         :key="index"
@@ -11,7 +11,7 @@
         >{{ category }}</RouterLink
       >
     </Xicons>
-    <Xicons v-if="!!tags && tags.length > 0" :icon="TagGroup">
+    <Xicons v-if="!!tags && tags.length > 0" :icon="Tag">
       <RouterLink
         v-for="(tag, index) in tags"
         :key="index"
@@ -20,7 +20,7 @@
         >{{ tag }}</RouterLink
       >
     </Xicons>
-    <Xicons v-if="showValineViews" :icon="View">
+    <Xicons v-if="showValineViews" :icon="Eye">
       <ValineViews :numStyle="{}" />
     </Xicons>
   </div>
@@ -30,7 +30,7 @@
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import { User, Time, View, Folders, TagGroup } from '@vicons/carbon'
+import { Tag, User, Folder, Eye, Clock } from '@vicons/tabler'
 
 export default defineComponent({
   name: 'PageInfo',
@@ -86,7 +86,7 @@ export default defineComponent({
       return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
     })
 
-    return { author, date, categories, tags, showPageInfo, solution, showValineViews, User, Time, View, Folders, TagGroup }
+    return { author, date, categories, tags, showPageInfo, solution, showValineViews, User, Folder, Tag, Eye, Clock }
   },
 })
 </script>

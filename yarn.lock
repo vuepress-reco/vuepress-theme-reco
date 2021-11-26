@@ -1849,10 +1849,10 @@
   resolved "https://registry.npmjs.org/@vicons/carbon/-/carbon-0.11.0.tgz#510e01e883a73b1d4343a3eb1d10141446463abe"
   integrity sha512-+Wkl8wOP1GR7jS+OKcsJ58NnZr4i+BZhbpLRtgpZQui1zFpYjoWinwvYKLjGKJ/oiR10Q237cBDjGwmMSzXqTg==
 
-"@vicons/fluent@^0.11.0":
+"@vicons/tabler@^0.11.0":
   version "0.11.0"
-  resolved "https://registry.npmjs.org/@vicons/fluent/-/fluent-0.11.0.tgz#84f3cda255539cb96f45c89c1601e2892d79826f"
-  integrity sha512-5sbdKLijk5/PBtsapDjBodskSCrfOsqOlpCbXQ33pZmY0VZ62N46Yq6SFJXHyUgFhjvReRrFe4wCGVAktchHFg==
+  resolved "https://registry.npmjs.org/@vicons/tabler/-/tabler-0.11.0.tgz#9eb0579c00caa3040c2c1cf9e5c0c76ba1204fb3"
+  integrity sha512-ijVUphdgqTde22/4+hlZ9j2AQutpxd3piOW4cWovcnS/ELlMc/4di2/0SDxsJ6282VdZoE9Xv0dI1iSr0XKPEg==
 
 "@vue/compiler-core@3.2.12":
   version "3.2.12"
