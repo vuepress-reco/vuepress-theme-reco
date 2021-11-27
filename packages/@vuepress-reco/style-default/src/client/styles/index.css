@@ -9,11 +9,13 @@
 @import 'navbar.css';
 @import 'navbarLinks.css';
 @import 'nprogress.css';
+@import 'pagation.css';
 @import 'page.css';
 @import 'pageHeader.css';
 @import 'pageInfo.css';
 @import 'pageMeta.css';
 @import 'pageNav.css';
+@import 'personalInfo.css';
 @import 'postItem.css';
 @import 'reset.css';
 @import 'searchBox.css';

@@ -34,7 +34,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg}\" lib"
   },
   "dependencies": {
-    "valine": "^1.4.14"
+    "valine": "1.4.14"
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco-next/issues"

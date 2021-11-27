@@ -28,21 +28,34 @@
         :page-size="classificationPosts.pageSize"
         :current-page="classificationPosts.currentPage"
       />
+
+      <Pagation
+        v-if="classificationPosts.total > 10"
+        :currentPage="classificationPosts.currentPage"
+        :total="classificationPosts.total"
+        @change="handlePagation"
+      />
     </Common>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import PostList from '../components/PostList'
 import Common from '../components/Common'
+import Pagation from '../components/Pagation'
 
 export default defineComponent({
-  components: { Common, PostList },
+  components: { Common, PostList, Pagation },
 
   setup() {
-    const { classificationPosts, classificationSummary } = usePageData()
+    const {
+      classificationPosts,
+      classificationSummary
+    } = usePageData()
+    const router = useRouter()
 
     const classificationList = computed(() => {
       let list = []
@@ -60,9 +73,19 @@ export default defineComponent({
       return list
     })
 
+    const handlePagation = (page) => {
+      const {
+        currentClassificationKey,
+        currentClassificationValue
+      } = classificationPosts.value
+
+      router.push(`/${currentClassificationKey}/${currentClassificationValue}/${page}/`)
+    }
+
     return {
       classificationList,
       classificationPosts,
+      handlePagation
     }
   },
 })

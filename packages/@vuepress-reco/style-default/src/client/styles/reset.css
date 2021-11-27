@@ -172,7 +172,7 @@ table {
   td, th {
     @apply px-2 py-3;
     &:not(:last-child) {
-      @apply border-r-2 border-reco-border-light;
+      @apply border-r-2 border-reco-border-light border-solid;
       @apply dark:border-reco-border-dark;
     }
   }

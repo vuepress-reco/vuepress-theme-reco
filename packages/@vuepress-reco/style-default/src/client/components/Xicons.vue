@@ -1,6 +1,6 @@
 <template>
   <a :class="['icon-container', iconPosition]" :href="link">
-    <component :style="iconStyle" :is="icon" />
+    <component :style="iconStyle" :is="icons[icon]" />
 
     <span v-if="!!text || slots.default" :style="textStyle">
       <slot>{{ text }}</slot>
@@ -11,6 +11,7 @@
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
 import type { Component } from 'vue'
+import * as icons from '@vicons/tabler'
 
 enum EIconPosition {
   left = 'left',
@@ -35,8 +36,8 @@ export default defineComponent<PropsType>({
 
   props: {
     icon: {
-      type: Object,
-      default: () => {},
+      type: String,
+      default: 'Alien',
     },
     iconPosition: {
       type: String,
@@ -79,7 +80,7 @@ export default defineComponent<PropsType>({
       return { color: textColor.value, fontSize: `${textSize.value}px` }
     })
 
-    return { icon, iconStyle, textStyle, slots }
+    return { icon, iconStyle, textStyle, slots, icons }
   },
 })
 </script>

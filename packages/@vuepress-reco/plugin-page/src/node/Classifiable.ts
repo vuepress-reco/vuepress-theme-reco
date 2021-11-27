@@ -11,6 +11,20 @@ import {
   ItemKey,
 } from '../../types'
 
+// 获取时间的数字类型
+export function getTimeNum (date) {
+  const dateNum = !date ? 0 : new Date(date).getTime()
+  return dateNum
+}
+
+// 比对时间
+export function compareDate (a, b) {
+  const aDateNum = getTimeNum(a.frontmatter.date)
+  const bDateNum = getTimeNum(b.frontmatter.date)
+  if (aDateNum === 0 || bDateNum === 0) return 0
+  return bDateNum - aDateNum
+}
+
 export default class Classifiable {
   private classificationData: ClassificationData = {}
   private frontmatterKeys: FrontmatterKey[] = []
@@ -51,7 +65,33 @@ export default class Classifiable {
   // 解析 key-value 对应的数量
   resolveKeyValue(app: App): void {
     this.app = app
-    this.app.pages.forEach((page: Page) => {
+
+    const publishPosts = this.app.pages
+      .filter((page: Page) => {
+        return !(
+          page?.frontmatter?.home === true
+            || page?.frontmatter?.publish === false
+            || page?.title === ''
+        )
+      })
+      .sort((prev, next) => {
+        const prevSticky = prev.frontmatter.sticky as number
+        const nextSticky = next.frontmatter.sticky as number
+
+        if (prevSticky && nextSticky) {
+          return prevSticky == nextSticky ? compareDate(prev, next) : (prevSticky - nextSticky)
+        } else if (prevSticky && !nextSticky) {
+          return -1
+        } else if (!prevSticky && nextSticky) {
+          return 1
+        }
+
+        return compareDate(prev, next)
+      })
+
+    this.publishPosts = publishPosts
+
+    publishPosts.forEach((page: Page) => {
       if (
         page?.frontmatter?.home === true ||
         page?.frontmatter?.publish === false ||
@@ -60,7 +100,6 @@ export default class Classifiable {
         return
       }
 
-      this.publishPosts.push(page)
 
       const classificationKeys = Object.keys(page.frontmatter).filter(
         (key: string) => {
@@ -194,6 +233,7 @@ export default class Classifiable {
             index
           ) => {
             const currentPage = index + 1
+
             total[`/${key}/${value}/${currentPage}/`] = {
               pageSize: pagination,
               total: pages.length,
@@ -202,8 +242,8 @@ export default class Classifiable {
               currentClassificationValue: value,
               pages:
                 index < pageSize - 1
-                  ? pages.slice(pagination * (pageSize - 1), pagination)
-                  : pages.slice(pagination * (pageSize - 1)),
+                  ? pages.slice(pagination * index, pagination)
+                  : pages.slice(pagination * index)
             }
             return total
           },

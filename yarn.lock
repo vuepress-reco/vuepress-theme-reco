@@ -1844,11 +1844,6 @@
     "@typescript-eslint/types" "4.31.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vicons/carbon@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.npmjs.org/@vicons/carbon/-/carbon-0.11.0.tgz#510e01e883a73b1d4343a3eb1d10141446463abe"
-  integrity sha512-+Wkl8wOP1GR7jS+OKcsJ58NnZr4i+BZhbpLRtgpZQui1zFpYjoWinwvYKLjGKJ/oiR10Q237cBDjGwmMSzXqTg==
-
 "@vicons/tabler@^0.11.0":
   version "0.11.0"
   resolved "https://registry.npmjs.org/@vicons/tabler/-/tabler-0.11.0.tgz#9eb0579c00caa3040c2c1cf9e5c0c76ba1204fb3"
@@ -10675,10 +10670,10 @@ validate-npm-package-name@^3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-valine@^1.4.14:
+valine@1.4.14:
   version "1.4.14"
-  resolved "https://registry.npm.taobao.org/valine/download/valine-1.4.14.tgz#771d103c0b87cb7aa2f0b6a4ad65cae795c92f3b"
-  integrity sha1-dx0QPAuHy3qi8LakrWXK55XJLzs=
+  resolved "https://registry.npmjs.org/valine/-/valine-1.4.14.tgz#771d103c0b87cb7aa2f0b6a4ad65cae795c92f3b"
+  integrity sha512-1gVRXZUDqzTt2I43xivOotXchGdYCCW+Av+laXImzcUVI3DrGR4AQbh3LbDsFpZq+N26u+p+qzB9mjliLYO3YQ==
   dependencies:
     balajs "^1.0.7"
     balalaika "^1.0.1"

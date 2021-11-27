@@ -9,6 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     style: '@vuepress-reco/style-default',
     logo: '/logo.png',
+    authorAvatar: '/logo.png',
     author: 'reco_luan',
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
     docsBranch: 'main',
@@ -56,10 +57,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           text: 'blogs1',
           children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
-        },
-        {
-          text: 'blogs2',
-          children: ['/blogs/category2/blog1.md', '/blogs/category2/blog2.md'],
         },
       ],
     },
@@ -130,7 +127,15 @@ export default defineUserConfig<DefaultThemeOptions>({
     // },
     record: 'xxxx',
     cyberSecurityRecord: 'xxx',
-    startYear: '2018'
+    startYear: '2018',
+    socialLinks: [
+      { icon: 'BrandGithub', link: 'https://github.com/recoluan' },
+      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
+      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
+      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
+      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
+      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    ]
   },
   // debug: true,
 })

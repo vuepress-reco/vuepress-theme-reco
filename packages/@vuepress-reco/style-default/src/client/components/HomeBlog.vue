@@ -1,7 +1,7 @@
 <template>
   <main class="home-blog-wrapper">
     <!-- hero -->
-    <div
+    <section
       class="hero"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
     >
@@ -17,24 +17,49 @@
         <h1>{{ frontmatter.heroText }}</h1>
         <p>{{ frontmatter.tagline }}</p>
       </div>
-    </div>
+    </section>
 
     <!-- blog -->
-    <div class="home-blog-wrapper">
-      <div class="blog-list">
+    <section class="home-blog-content">
+      <section class="blog-list">
         <PostList
-          :data="posts"
+          :data="postsOfCurrentPage"
           :total="posts.length"
           :page-size="10"
-          :current-page="1"
+          :current-page="currentPage"
         />
-      </div>
-    </div>
+        <Pagation
+          :currentPage="currentPage"
+          :total="posts.length"
+          @change="handlePagation"
+        />
+      </section>
+      <section class="info-wrapper">
+        <PersonalInfo />
+
+        <h4 class="module-title"><Xicons icon="Folder" text="Categories" /></h4>
+        <ul class="category-wrapper">
+          <li class="category-item" v-for="(value, key, index) in categories" :key="index">
+            <router-link class="category-link" :to="`/categories/${key}/1/`">
+              <span class="text">{{ key }}</span>
+              <span class="num">{{ value.length }}</span>
+            </router-link>
+          </li>
+        </ul>
+
+        <h4 class="module-title"><Xicons icon="Tag" text="Tags" /></h4>
+        <ul class="tag-wrapper">
+          <li class="tag-item" v-for="(value, key, index) in categories" :key="index" :style="{ borderColor: createOneColor() }">
+            <router-link class="tag-link" :to="`/tags/${key}/1/`">{{ key }}</router-link>
+          </li>
+        </ul>
+      </section>
+    </section>
 
     <!-- content -->
-    <div class="theme-reco-default-content">
+    <section class="theme-reco-default-content">
       <Content />
-    </div>
+    </section>
     <Footer />
   </main>
 </template>
@@ -42,18 +67,39 @@
 <script lang="ts">
 import Footer from './Footer'
 import PostList from './PostList'
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, ref, onMounted } from 'vue'
 import { usePageFrontmatter, withBase } from '@vuepress/client'
+import PersonalInfo from './PersonalInfo.vue'
+import Pagation from './Pagation.vue'
+import { createOneColor } from '../utils'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 
 export default defineComponent({
   name: 'HomeBlog',
 
-  components: { Footer, PostList },
+  components: { Footer, PostList, PersonalInfo, Pagation },
 
   setup() {
-    const { posts } = usePageData()
-    console.log(posts)
+    const { posts, classificationSummary } = usePageData()
+    const currentPage = ref(1)
+    const perPage = 10
+    const heroHeight = ref(0)
+
+    const postsOfCurrentPage = computed(() => {
+      const start = (currentPage.value - 1) * perPage
+      const end = currentPage.value * perPage
+
+      return posts.value.slice(start, end)
+    })
+
+    const categories = computed(() => {
+      return classificationSummary.value.categories.items
+    })
+
+    const tags = computed(() => {
+      return classificationSummary.value.tags.items
+    })
+
     const frontmatter = usePageFrontmatter()
 
     const bgImage = computed(() => {
@@ -72,7 +118,18 @@ export default defineComponent({
       () => frontmatter.value.heroImageStyle || {}
     )
 
-    return { frontmatter, bgImage, heroImage, heroImageStyle, posts }
+    const handlePagation = (page) => {
+      currentPage.value = page
+      setTimeout(() => {
+        window.scrollTo(0, heroHeight.value)
+      }, 100)
+    }
+
+    onMounted(() => {
+      heroHeight.value = document.querySelector('.hero').clientHeight
+    })
+
+    return { frontmatter, bgImage, heroImage, heroImageStyle, posts, postsOfCurrentPage, createOneColor, categories, tags, currentPage, handlePagation }
   },
 })
 </script>
