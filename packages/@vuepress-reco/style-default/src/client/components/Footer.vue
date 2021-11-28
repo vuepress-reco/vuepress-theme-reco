@@ -49,6 +49,8 @@ export default defineComponent({
     const showAccessNumber = computed(() => {
       const { valineConfig } = themeLocal.value
 
+      if (!valineConfig) return false
+
       return valineConfig.visitor != false
     })
 
