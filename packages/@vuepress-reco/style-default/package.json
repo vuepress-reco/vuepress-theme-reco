@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/style-default",
-  "version": "2.0.1-alpha.12",
+  "version": "2.0.1-alpha.13",
   "description": "It is default type of vuepress-theme-reco.",
   "keywords": [
     "vuepress",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@vuepress-reco/core": "^2.0.1-alpha.1",
-    "@vuepress-reco/vuepress-plugin-comments": "^2.0.1-alpha.12",
+    "@vuepress-reco/vuepress-plugin-comments": "^2.0.1-alpha.13",
     "@vuepress/plugin-back-to-top": "^2.0.0-beta.26",
     "@vuepress/plugin-nprogress": "^2.0.0-beta.26",
     "postcss-each": "^1.1.0",
