@@ -29,6 +29,9 @@
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
+  "dependencies": {
+    "@vuepress/core": "2.0.0-beta.27"
+  },
   "publishConfig": {
     "access": "public"
   }

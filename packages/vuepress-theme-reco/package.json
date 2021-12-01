@@ -35,11 +35,12 @@
     "@vicons/tabler": "^0.11.0",
     "@vuepress-reco/style-default": "^2.0.1-alpha.13",
     "@vuepress-reco/vuepress-plugin-page": "^2.0.1-alpha.13",
-    "@vuepress/plugin-active-header-links": "2.0.0-beta.26",
+    "@vuepress/plugin-active-header-links": "2.0.0-beta.27",
     "@vuepress/plugin-container": "^2.0.0-beta.27",
-    "@vuepress/plugin-git": "2.0.0-beta.26",
-    "@vuepress/plugin-prismjs": "^2.0.0-beta.26",
-    "@vuepress/plugin-search": "^2.0.0-beta.26"
+    "@vuepress/plugin-git": "2.0.0-beta.27",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.27",
+    "@vuepress/plugin-search": "^2.0.0-beta.27",
+    "@vuepress/utils": "^2.0.0-beta.27"
   },
   "devDependencies": {
     "eslint-config-vuepress": "^3.2.1",

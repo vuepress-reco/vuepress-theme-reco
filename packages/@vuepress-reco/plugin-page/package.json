@@ -37,6 +37,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/core": "^2.0.1-alpha.1"
+    "@vuepress-reco/core": "^2.0.1-alpha.1",
+    "@vuepress/client": "2.0.0-beta.27",
+    "@vuepress/core": "2.0.0-beta.27",
+    "@vuepress/utils": "2.0.0-beta.27"
   }
 }
