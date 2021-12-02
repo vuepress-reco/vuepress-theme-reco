@@ -1,10 +1,7 @@
 <template>
   <main class="home-blog-wrapper">
     <!-- hero -->
-    <section
-      class="hero"
-      :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
-    >
+    <section class="hero" :style="{ ...bgImageStyle }">
       <div class="hero-content icon-blue">
         <img
           v-if="heroImage"
@@ -102,10 +99,16 @@ export default defineComponent({
 
     const frontmatter = usePageFrontmatter()
 
-    const bgImage = computed(() => {
-      return frontmatter.value.bgImage
-        ? withBase(frontmatter.value.bgImage)
-        : require('../images/bg.svg')
+    const bgImageStyle = computed(() => {
+      const { bgImageStyle, bgImage } = frontmatter.value
+      const url = bgImage ? withBase(bgImage) : require('../images/bg.svg')
+      const initBgImageStyle = {
+        textAlign: 'center',
+        overflow: 'hidden',
+        background: `url(${url}) center/cover no-repeat`
+      }
+
+      return bgImageStyle ? { ...initBgImageStyle, ...bgImageStyle } : initBgImageStyle
     })
 
     const heroImage = computed(() => {
@@ -129,7 +132,7 @@ export default defineComponent({
       heroHeight.value = document.querySelector('.hero').clientHeight
     })
 
-    return { frontmatter, bgImage, heroImage, heroImageStyle, posts, postsOfCurrentPage, createOneColor, categories, tags, currentPage, handlePagation }
+    return { frontmatter, bgImageStyle, heroImage, heroImageStyle, posts, postsOfCurrentPage, createOneColor, categories, tags, currentPage, handlePagation }
   },
 })
 </script>

@@ -7,6 +7,9 @@
       @apply dark:bg-reco-bg-code-dark;
     }
   }
+  .theme-reco-default-content {
+    @apply mb-16;
+  }
   .theme-reco-default-content h1 {
     /* @apply -mt-8; */
     @apply hidden;

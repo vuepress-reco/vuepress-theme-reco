@@ -2312,7 +2312,7 @@
     vue "^3.2.20"
     vue-router "^4.0.12"
 
-"@vuepress/plugin-palette@2.0.0-beta.27":
+"@vuepress/plugin-palette@2.0.0-beta.27", "@vuepress/plugin-palette@^2.0.0-beta.27":
   version "2.0.0-beta.27"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-palette/download/@vuepress/plugin-palette-2.0.0-beta.27.tgz#f8503df7c9c24f11783deffe7c1d294cd9568efe"
   integrity sha1-+FA998nCTxF4Pe/+fB0pTNlWjv4=

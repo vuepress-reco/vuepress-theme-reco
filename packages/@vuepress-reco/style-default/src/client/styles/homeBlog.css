@@ -15,7 +15,7 @@
     }
   }
   .home-blog-content {
-    @apply flex items-start mx-auto mt-4 px-4 max-w-screen-lg;
+    @apply flex items-start mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
     .blog-list {
       @apply flex-auto;
     }

@@ -1,0 +1,5 @@
+body {
+  color: red;
+  font-size: 29px;
+  @apply text-reco-brand;
+}

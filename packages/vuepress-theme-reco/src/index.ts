@@ -13,13 +13,14 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   styleConfig.plugins = [
     '@vuepress/plugin-git',
     '@vuepress/plugin-search',
+    '@vuepress/plugin-palette',
     '@vuepress/plugin-prismjs',
-    [
-      '@vuepress/active-header-links',
-      {
+    ['@vuepress/plugin-palette', {
+      preset: 'css',
+    }],
+    ['@vuepress/active-header-links', {
         headerLinkSelector: 'a.page-header-item',
-      },
-    ],
+    }],
     ['@vuepress/plugin-container', { type: 'tip', render: resolveContainer }],
     ['@vuepress/plugin-container', { type: 'info', render: resolveContainer }],
     ['@vuepress/plugin-container', { type: 'warning', render: resolveContainer }],

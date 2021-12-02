@@ -1,15 +1,19 @@
 ---
 home: true
-heroImage: /logo.png
-heroImageStyle: {
-  maxWidth: '200px',
-  width: '100%',
-  display: block,
-  margin: '0 auto 2rem',
-  borderRadius: '1rem',
+# heroImage: /logo.png
+# heroImageStyle: {
+#   maxWidth: '200px',
+#   width: '100%',
+#   display: block,
+#   margin: '0 auto 2rem',
+#   borderRadius: '1rem',
+# }
+bgImage: '/banner_2.jpg'
+bgImageStyle: {
+  height: '450px'
 }
-heroText: vuepress-theme-reco-next
-tagline: 继承 reco 主题的小梦想，来做件大事情。
+heroText: 午后南杂
+tagline: Enjoy when you can, and endure when you must.
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
