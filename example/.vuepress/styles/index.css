@@ -1,5 +1,3 @@
-body {
-  color: red;
-  font-size: 29px;
+.site-name {
   @apply text-reco-brand;
 }
