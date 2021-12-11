@@ -28,7 +28,7 @@
 
       <h4 class="module-title"><Xicons icon="Tag" text="Tags" /></h4>
       <ul class="tag-wrapper">
-        <li class="tag-item" v-for="(value, key, index) in categories" :key="index" :style="{ borderColor: createOneColor() }">
+        <li class="tag-item" v-for="(value, key, index) in tags" :key="index" :style="{ borderColor: createOneColor() }">
           <router-link class="tag-link" :to="`/tags/${key}/1/`">{{ key }}</router-link>
         </li>
       </ul>

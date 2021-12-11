@@ -27,7 +27,7 @@ const pagePlugin: Plugin<Record<string, any>> = (
     ),
 
     async onInitialized(app) {
-      classifiable.resolveKeyValue(app)
+      classifiable.resolveKeyValue()
       const resolvePages = await Promise.all(classifiable.extendedPages)
       app.pages = [...app.pages, ...resolvePages]
     },

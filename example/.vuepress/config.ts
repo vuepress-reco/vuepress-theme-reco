@@ -87,7 +87,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
       { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
     ],
-    homeElements: ['Banner', 'Blog', 'Footer']
+    homeElements: ['Banner', 'Blog', 'Footer'],
+    autoSetCategory: true
   },
   // debug: true,
 })

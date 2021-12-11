@@ -63,16 +63,20 @@ export default class Classifiable {
   }
 
   // 解析 key-value 对应的数量
-  resolveKeyValue(app: App): void {
-    this.app = app
-
+  resolveKeyValue(): void {
+    const { autoSetCategory } = this.app.options.themeConfig
     const publishPosts = this.app.pages
       .filter((page: Page) => {
-        return !(
+        const publishFlag = !(
           page?.frontmatter?.home === true
             || page?.frontmatter?.publish === false
-            || page?.title === ''
-        )
+            || page?.title === '')
+
+        if (autoSetCategory && publishFlag) {
+          this.setCategory(page)
+        }
+
+        return publishFlag
       })
       .sort((prev, next) => {
         const prevSticky = prev.frontmatter.sticky as number
@@ -183,6 +187,15 @@ export default class Classifiable {
         }),
       ]
     }
+  }
+
+  // 设置类别
+  private setCategory(page) {
+    const blogCategray = ((page.filePath || '') as string).match(/.+\/blogs\/(.+)\/.+\.md$/)
+    if (blogCategray) page.frontmatter.categories = [blogCategray[1]]
+
+    const docCategray = ((page.filePath || '') as string).match(/.+\/docs\/(.+)\/.+\.md$/)
+    if (docCategray) page.frontmatter.categories = [docCategray[1]]
   }
 
   getPublishPostsPage(): Array<Promise<Page>> {
