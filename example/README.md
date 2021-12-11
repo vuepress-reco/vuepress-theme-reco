@@ -8,15 +8,22 @@ home: true
 #   margin: '0 auto 2rem',
 #   borderRadius: '1rem',
 # }
-bgImage: '/banner_2.jpg'
-bgImageStyle: {
-  height: '450px'
-}
-heroText: 午后南杂
-tagline: Enjoy when you can, and endure when you must.
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
+banner:
+  heroText: 午后南杂
+  tagline: Enjoy when you can, and endure when you must.
+  heroImage: /logo.png
+  heroImageStyle:
+    maxWidth: 200px
+    width: 100%
+    display: block
+    margin: 0 auto 2rem
+    borderRadius: 1rem
+  bgImage: /banner_2.jpg
+  bgImageStyle:
+    height: 450px
 features:
 - title: 过去
   details: 开发一款看着开心、写着顺手的 vuepress 博客主题。

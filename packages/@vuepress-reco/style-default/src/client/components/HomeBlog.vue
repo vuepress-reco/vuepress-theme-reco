@@ -62,7 +62,7 @@
 </template>
 
 <script lang="ts">
-import Footer from './Footer'
+import Footer from './Home/index'
 import PostList from './PostList'
 import { defineComponent, computed, ref, onMounted } from 'vue'
 import { usePageFrontmatter, withBase } from '@vuepress/client'

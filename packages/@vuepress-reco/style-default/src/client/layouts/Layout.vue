@@ -1,7 +1,7 @@
 <template>
   <div class="theme-container">
     <Common>
-      <HomeBlog v-if="frontmatter.home === true" />
+      <Home v-if="frontmatter.home === true" />
 
       <Transition
         v-else
@@ -28,10 +28,11 @@ import { usePageFrontmatter, usePageData } from '@vuepress/client'
 import { useSidebarData, useScrollPromise } from '../composables'
 import Common from '../components/Common'
 import HomeBlog from '../components/HomeBlog'
+import Home from '../components/Home/index'
 import Page from '../components/Page'
 
 export default defineComponent({
-  components: { HomeBlog, Page, Common },
+  components: { Home, HomeBlog, Page, Common },
 
   setup() {
     const page = usePageData()

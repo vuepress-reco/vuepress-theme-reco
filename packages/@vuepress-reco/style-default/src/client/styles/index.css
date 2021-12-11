@@ -3,8 +3,7 @@
 @import 'categories.css';
 @import 'code.css';
 @import 'customContainer.css';
-@import 'footer.css';
-@import 'homeBlog.css';
+@import 'home/index.css';
 @import 'icon.css';
 @import 'navbar.css';
 @import 'navbarLinks.css';

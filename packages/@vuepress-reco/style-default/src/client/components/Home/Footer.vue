@@ -38,7 +38,7 @@
 <script>
 import { defineComponent, computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
-import packageInfo from '../../../package.json'
+import packageInfo from '../../../../package.json'
 
 export default defineComponent({
   name: 'Footer',
