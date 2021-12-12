@@ -16,11 +16,12 @@
 import { computed, defineComponent } from 'vue'
 import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
+import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { isString } from '@vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { resolveRepoType } from '../utils'
 import DropdownLink from './DropdownLink.vue'
 import Link from './Link.vue'
@@ -145,7 +146,43 @@ const resolveNavbarItem = (
 
 const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const themeLocale = useThemeLocaleData()
-  return computed(() => (themeLocale.value.navbar || []).map(resolveNavbarItem))
+  const { classificationSummary } = usePageData()
+
+  const parseCategories = computed(() => {
+    const {
+      categories: { items: categories },
+      tags: { items: tags }
+    } = classificationSummary.value
+
+    return [
+      {
+        text: 'Categories',
+        children: Object.keys(categories || {}).map(c => ({
+          text: c,
+          link: `/categories/${c}/1/`,
+        }))
+      },
+      {
+        text: 'Tags',
+        children: Object.keys(tags || {}).map(t => ({
+          text: t,
+          link: `/tags/${t}/1/`,
+        }))
+      },
+    ]
+  })
+
+  return computed(() => {
+    let navItems = themeLocale.value.navbar || []
+    if (themeLocale.value.autoAddCategoryToNavbar === true) {
+      navItems = [
+        { text: 'Home', link: '/' },
+        ...parseCategories.value,
+        ...navItems
+      ]
+    }
+    return navItems.map(resolveNavbarItem)
+  })
 }
 
 export default defineComponent({

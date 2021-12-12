@@ -30,47 +30,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       ],
     },
     navbar: [
-      { text: 'Home', link: '/' },
-      { text: 'Cat', link: '/categories/cat1/1/' },
-      {
-        text: 'Categories',
-        children: [
-          {
-            text: 'group',
-            link: '/group/bar.html',
-            children: [
-              {
-                text: 'group1',
-                link: '/group/bar.html',
-              },
-              {
-                text: 'group2',
-                link: '/group/bar1.html',
-              },
-            ],
-          },
-          {
-            text: 'group',
-            link: '/group/bar.html',
-            children: [
-              {
-                text: 'group1',
-                link: '/group/bar.html',
-              },
-              {
-                text: 'group2',
-                link: '/group/bar1.html',
-              },
-            ],
-          },
-        ],
-      },
-      // NavbarItem
-      {
-        text: 'Group',
-        link: '/group/bar.html',
-      },
-      // NavbarGroup
       {
         text: 'Blogs',
         children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
@@ -88,7 +47,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
     ],
     homeElements: ['Banner', 'Blog', 'Footer'],
-    autoSetCategory: true
+    autoSetCategory: true,
+    autoAddCategoryToNavbar: true
   },
   // debug: true,
 })
