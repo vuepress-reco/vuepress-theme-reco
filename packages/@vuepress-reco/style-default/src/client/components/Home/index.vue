@@ -5,11 +5,6 @@
       :is="elementsMap[key]"
       :key="key"
     />
-
-    <!-- content -->
-    <section class="theme-reco-default-content">
-      <Content />
-    </section>
   </div>
 </template>
 
@@ -18,11 +13,13 @@ import { usePageFrontmatter } from '@vuepress/client'
 import { useThemeLocaleData } from '../../composables'
 import Banner from './Banner'
 import Blog from './Blog'
+import MdContent from './MdContent'
 import Footer from './Footer'
 
 const elementsMap = {
   Banner,
   Blog,
+  MdContent,
   Footer
 }
 

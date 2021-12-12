@@ -1,5 +1,9 @@
 ---
 home: true
+modules:
+  - Banner
+  - MdContent
+  - Footer
 heroImage: /logo.png
 heroImageStyle: {
   maxWidth: '200px',
