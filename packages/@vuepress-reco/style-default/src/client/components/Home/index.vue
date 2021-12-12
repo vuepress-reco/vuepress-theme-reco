@@ -5,6 +5,11 @@
       :is="elementsMap[key]"
       :key="key"
     />
+
+    <!-- content -->
+    <section class="theme-reco-default-content">
+      <Content />
+    </section>
   </div>
 </template>
 
