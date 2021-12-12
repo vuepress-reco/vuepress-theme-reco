@@ -41,7 +41,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
         {
           text: '高级',
-          children: [ 'home', 'series', 'comments' ]
+          children: [ 'home', 'series', 'comments', 'auto-set-category' ]
         }
       ]
     },

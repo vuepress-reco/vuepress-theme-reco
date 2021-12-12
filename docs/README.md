@@ -4,16 +4,16 @@ modules:
   - Banner
   - MdContent
   - Footer
-heroImage: /logo.png
-heroImageStyle: {
-  maxWidth: '200px',
-  width: '100%',
-  display: block,
-  margin: '0 auto 2rem',
-  borderRadius: '1rem',
-}
-heroText: vuepress-theme-reco
-tagline: 一款 vuepress 主题集成方案。
+banner:
+  heroImage: /logo.png
+  heroImageStyle:
+    maxWidth: '200px'
+    width: '100%'
+    display: block
+    margin: '0 auto 2rem'
+    borderRadius: '1rem'
+  heroText: vuepress-theme-reco
+  tagline: 一款 vuepress 主题集成方案。
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
