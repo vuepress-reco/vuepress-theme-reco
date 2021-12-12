@@ -30,13 +30,15 @@
 <script>
 import { defineComponent, computed } from 'vue'
 import { createOneColor } from '../utils'
-import { withBase } from '@vuepress/client'
+import { withBase, usePageFrontmatter } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 
 export default defineComponent({
   setup (props, ctx) {
     const themeLocal = useThemeLocaleData()
-    const socialLinks = computed(() => (themeLocal.value.socialLinks || []).map(item => {
+    const frontmatter = usePageFrontmatter()
+
+    const socialLinks = computed(() => (frontmatter.value?.blog?.socialLinks || []).map(item => {
       if (!item.color) item.color = createOneColor()
       return item
     }))

@@ -35,18 +35,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
       },
     ],
-    record: 'xxxx',
-    cyberSecurityRecord: 'xxx',
-    startYear: '2018',
-    socialLinks: [
-      { icon: 'BrandGithub', link: 'https://github.com/recoluan' },
-      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
-      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
-      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
-      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' },
-      { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
-    ],
-    homeElements: ['Banner', 'Blog', 'Footer'],
     autoSetCategory: true,
     autoAddCategoryToNavbar: true
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="home-wrapper">
     <component
-      v-for="key in (themeLocal.homeElements || ['Banner', 'Blog', 'Footer'])"
+      v-for="key in (frontmatter.modules || ['Banner', 'Blog', 'Footer'])"
       :is="elementsMap[key]"
       :key="key"
     />
@@ -22,5 +22,4 @@ const elementsMap = {
 }
 
 const frontmatter = usePageFrontmatter()
-const themeLocal = useThemeLocaleData()
 </script>

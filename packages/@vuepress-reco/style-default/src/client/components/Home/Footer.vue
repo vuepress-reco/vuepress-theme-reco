@@ -7,17 +7,17 @@
         :text="`vuepress-theme-reco@${version}`"
       />
     </span>
-    <span v-if="themeLocal.record">
+    <span v-if="frontmatter?.footer?.record">
       <Xicons
         icon="ShieldCheck"
-        :link="themeLocal.recordLink || '#'"
-        :text="themeLocal.record"
+        :link="frontmatter?.footer?.recordLink || '#'"
+        :text="frontmatter?.footer?.record"
       />
     </span>
     <span>
       <Xicons icon="Copyright">
         <a v-if="themeLocal.author">{{themeLocal.author}}</a>&nbsp;&nbsp;
-        <a v-if="themeLocal.startYear && themeLocal.startYear != (new Date().getFullYear())">{{themeLocal.startYear}} - </a>
+        <a v-if="frontmatter?.footer?.startYear && frontmatter?.footer?.startYear != (new Date().getFullYear())">{{frontmatter?.footer?.startYear}} - </a>
         {{new Date().getFullYear()}}
       </Xicons>
     </span>
@@ -26,35 +26,30 @@
         <ValineViews idVal="/" :numStyle="{}" />
       </Xicons>
     </span>
-    <p class="cyber-security" v-if="themeLocal.cyberSecurityRecord">
+    <p class="cyber-security" v-if="frontmatter?.footer?.cyberSecurityRecord">
       <img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt="">
-      <a :href="themeLocal.cyberSecurityLink || '#'">{{ themeLocal.cyberSecurityRecord }}</a>
+      <a :href="frontmatter?.footer?.cyberSecurityLink || '#'">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
     </p>
 
     <Comments :hide-comments="true" />
   </div>
 </template>
 
-<script>
+<script setup>
 import { defineComponent, computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { usePageFrontmatter } from '@vuepress/client'
 import packageInfo from '../../../../package.json'
 
-export default defineComponent({
-  name: 'Footer',
+const themeLocal = useThemeLocaleData()
+const frontmatter = usePageFrontmatter()
 
-  setup (props, ctx) {
-    const themeLocal = useThemeLocaleData()
-    const { version } = packageInfo
-    const showAccessNumber = computed(() => {
-      const { valineConfig } = themeLocal.value
+const { version } = packageInfo
+const showAccessNumber = computed(() => {
+  const { valineConfig } = themeLocal.value
 
-      if (!valineConfig) return false
+  if (!valineConfig) return false
 
-      return valineConfig.visitor != false
-    })
-
-    return { version, themeLocal, showAccessNumber }
-  },
+  return valineConfig.visitor != false
 })
 </script>

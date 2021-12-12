@@ -38,11 +38,12 @@
 
 <script setup lang="ts">
 import { computed, ref, onMounted } from "vue";
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { withBase } from '@vuepress/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { createOneColor } from '../../utils'
 import PostList from '../PostList'
 import Pagation from '../Pagation'
+import PersonalInfo from '../PersonalInfo'
 
 const { posts, classificationSummary } = usePageData()
 
