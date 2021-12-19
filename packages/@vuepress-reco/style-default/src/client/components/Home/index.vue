@@ -12,12 +12,14 @@
 import { usePageFrontmatter } from '@vuepress/client'
 import { useThemeLocaleData } from '../../composables'
 import Banner from './Banner'
+import BannerBrand from './BannerBrand'
 import Blog from './Blog'
 import MdContent from './MdContent'
 import Footer from './Footer'
 
 const elementsMap = {
   Banner,
+  BannerBrand,
   Blog,
   MdContent,
   Footer

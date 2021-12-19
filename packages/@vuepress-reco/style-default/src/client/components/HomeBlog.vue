@@ -2,7 +2,7 @@
   <main class="home-blog-wrapper">
     <!-- hero -->
     <section class="hero" :style="{ ...bgImageStyle }">
-      <div class="hero-content icon-blue">
+      <div class="hero-content">
         <img
           v-if="heroImage"
           :src="heroImage"

@@ -1,0 +1,37 @@
+.banner-brand-wrapper {
+  @apply w-screen flex justify-center items-center;
+  @apply md:h-screen;
+  .hero-content {
+    @apply block;
+    @apply md:max-w-3xl md:flex md:flex-row-reverse;
+    .hero-text {
+      @apply box-border mb-16 px-6;
+      h1 {
+        @apply mb-6 text-4xl;
+        @apply md:text-6xl;
+      }
+      .btn-group {
+        @apply list-none mt-8 pl-0;
+        li {
+          @apply inline-block;
+          a {
+            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-light cursor-pointer text-white font-semibold;
+            @apply dark:text-reco-text-dark;
+          }
+          @apply hover:border-reco-brand;
+          &.plain a {
+            @apply bg-reco-bg-light text-reco-text-light;
+            @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
+          }
+          &:not(:first-child) {
+            @apply ml-4;
+          }
+        }
+      }
+    }
+    img {
+      @apply block mx-auto mt-32 mb-16 w-40;
+      @apply md:mt-0 sm:w-40 md:w-60 md:ml-16;
+    }
+  }
+}

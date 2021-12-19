@@ -4,22 +4,26 @@ isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
 modules:
-  - Banner
+  - BannerBrand
   - Blog
+  - MdContent
   - Footer
-banner:
-  heroText: 午后南杂
-  tagline: Enjoy when you can, and endure when you must.
-  # heroImage: /logo.png
+bannerBrand:
+  heroText: vuepress-reco
+  tagline: 一款 vuepress 主题容器，集成多种主题底层功能，快速生成主题风格。主题 2.0 的默认风格是原主题 1.0 迁移而来，更多风格正在路上，敬请期待。
+  heroImage: /logo.png
   heroImageStyle:
     maxWidth: 200px
     width: 100%
     display: block
     margin: 0 auto 2rem
     borderRadius: 1rem
-  bgImage: /banner_2.jpg
-  bgImageStyle:
-    height: 450px
+  # bgImage: /banner_2.jpg
+  # bgImageStyle:
+  #   height: 450px
+  buttons:
+    - { text: Guide, link: '/blogs/category1/blog2' }
+    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain' }
 blog:
   socialLinks:
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
@@ -37,6 +41,8 @@ features:
 - title: 未来
   details: 吸引更多的朋友参与到开发中来，继续强大功能。
 ---
+
+[asd](https://abc)
 
 ## 快速开始
 

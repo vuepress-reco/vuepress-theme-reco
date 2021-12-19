@@ -4,7 +4,7 @@
       class="hero"
       :style="{ background: `url(${bgImage}) center/cover no-repeat` }"
     >
-      <div class="hero-content icon-blue">
+      <div class="hero-content">
         <img
           v-if="heroImage"
           :src="heroImage"

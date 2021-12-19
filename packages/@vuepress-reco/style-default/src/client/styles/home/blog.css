@@ -1,10 +1,12 @@
 .home-blog-content {
-  @apply flex items-start mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+  @apply block items-start mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+  @apply md:flex;
   .blog-list {
     @apply flex-auto;
   }
   .info-wrapper {
-    @apply sticky top-20 ml-4 mb-8 p-6 rounded shadow-light;
+    @apply sticky top-20 mb-8 p-6 rounded shadow-light;
+    @apply md:ml-4;
     @apply dark:shadow-dark;
     @apply hover:shadow-light-heavier dark:hover:shadow-dark-heavier;
     flex: 0 0 300px;
@@ -52,5 +54,8 @@
         }
       }
     }
+  }
+  .pagation-container {
+    @apply my-8;
   }
 }
