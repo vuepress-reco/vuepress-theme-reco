@@ -47,10 +47,8 @@
     "@vuepress/plugin-theme-data": "^2.0.0-beta.27",
     "@vuepress/shared": "2.0.0-beta.27",
     "@vuepress/utils": "2.0.0-beta.27",
-    "tailwindcss": "^2.1.1"
-  },
-  "devDependencies": {
     "postcss-each": "^1.1.0",
-    "postcss-nested": "^5.0.6"
+    "postcss-nested": "^5.0.6",
+    "tailwindcss": "^2.1.1"
   }
 }
