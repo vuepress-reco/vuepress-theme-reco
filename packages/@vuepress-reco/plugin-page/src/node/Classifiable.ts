@@ -1,6 +1,6 @@
 import { createPage } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import { isEmptyPlainObject } from '@vuepress-reco/core'
+import { isEmptyPlainObject, convertToPinyin } from '@vuepress-reco/core'
 import {
   ClassificationPaginationPost,
   ClassificationPageOptions,
@@ -64,6 +64,11 @@ export default class Classifiable {
 
   // 解析 key-value 对应的数量
   resolveKeyValue(): void {
+    this.app.pages = this.app.pages.map((page: Page) => {
+      page.path = convertToPinyin(decodeURIComponent(page.path))
+      return page
+    })
+
     const { autoSetCategory } = this.app.options.themeConfig
     const publishPosts = this.app.pages
       .filter((page: Page) => {
@@ -116,9 +121,10 @@ export default class Classifiable {
         if (isEmptyPlainObject(this.classificationData[key].items)) {
           this.classificationData[key].items = values.reduce(
             (total, current) => {
-              total[current] = {
+              total[convertToPinyin(current)] = {
                 pages: [page],
                 length: 1,
+                label: current
               }
               return total
             },
@@ -126,17 +132,19 @@ export default class Classifiable {
           )
         } else {
           values.forEach((value: ItemKey) => {
-            if (!this.classificationData[key].items[value]) {
-              this.classificationData[key].items[value] = {
+            if (!this.classificationData[key].items[convertToPinyin(value)]) {
+              this.classificationData[key].items[convertToPinyin(value)] = {
                 pages: [page],
                 length: 1,
+                label: value
               }
             } else {
-              const { pages: p, length } =
-                this.classificationData[key].items[value]
-              this.classificationData[key].items[value] = {
+              const { pages: p, length, } =
+                this.classificationData[key].items[convertToPinyin(value)]
+              this.classificationData[key].items[convertToPinyin(value)] = {
                 length: length + 1,
                 pages: [...p, page],
+                label: value
               }
             }
           })
@@ -155,12 +163,12 @@ export default class Classifiable {
 
       this.classificationData[key].extendedPages = valuesOfKey.reduce(
         (total: Promise<Page>[], value: string) => {
-          const num = items[value].length
+          const num = items[convertToPinyin(value)].length
           const pageSize = Math.ceil(num / pagination)
 
           const pages = Array.from({ length: pageSize }).map((item, index) => {
             return createPage(this.app, {
-              path: `/${key}/${value}/${index + 1}/`,
+              path: `/${key}/${convertToPinyin(value)}/${index + 1}/`,
               frontmatter: { layout },
             })
           })
@@ -183,7 +191,7 @@ export default class Classifiable {
       return [
         createPage(this.app, {
           frontmatter: { layout },
-          path,
+          path: convertToPinyin(path),
         }),
       ]
     }
@@ -247,7 +255,7 @@ export default class Classifiable {
           ) => {
             const currentPage = index + 1
 
-            total[`/${key}/${value}/${currentPage}/`] = {
+            total[`/${key}/${convertToPinyin(value)}/${currentPage}/`] = {
               pageSize: pagination,
               total: pages.length,
               currentPage,

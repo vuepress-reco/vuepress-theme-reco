@@ -3,7 +3,7 @@
   @apply md:h-screen;
   .hero-content {
     @apply block;
-    @apply md:max-w-3xl md:flex md:flex-row-reverse;
+    @apply md:max-w-3xl md:flex md:flex-row-reverse md:items-start;
     .hero-text {
       @apply box-border mb-16 px-6;
       h1 {

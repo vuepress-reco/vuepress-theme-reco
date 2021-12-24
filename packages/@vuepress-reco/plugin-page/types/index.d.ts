@@ -27,7 +27,8 @@ export type ClassificationData = Record<
       ItemKey,
       {
         pages: any[]
-        length: number
+        length: number,
+        label: string
       }
     >
   }

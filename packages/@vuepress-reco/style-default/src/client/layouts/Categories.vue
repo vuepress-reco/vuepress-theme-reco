@@ -8,13 +8,13 @@
           :class="[
             'category-item',
             {
-              active: classificationPosts.currentClassificationValue === label,
+              active: classificationPosts.currentClassificationValue === convertToPinyin(label),
             },
           ]"
         >
           <RouterLink
             class="category-link"
-            :to="`/${classificationPosts.currentClassificationKey}/${label}/1/`"
+            :to="`/${classificationPosts.currentClassificationKey}/${convertToPinyin(label)}/1/`"
           >
             <span class="text">{{ label }}</span>
             <span class="num">{{ length }}</span>
@@ -43,6 +43,7 @@
 import { defineComponent, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { convertToPinyin } from '@vuepress-reco/core'
 import PostList from '../components/PostList'
 import Common from '../components/Common'
 import Pagation from '../components/Pagation'
@@ -57,6 +58,8 @@ export default defineComponent({
     } = usePageData()
     const router = useRouter()
 
+    console.log(123, classificationPosts.value)
+
     const classificationList = computed(() => {
       let list = []
       const currentClassificationKey = classificationPosts.value.currentClassificationKey
@@ -65,9 +68,7 @@ export default defineComponent({
         const { items = [] } =
           classificationSummary.value[currentClassificationKey]
 
-        list = Object.keys(items).map((item) => {
-          return { label: item, length: items[item].length }
-        })
+        list = Object.values(items)
       }
 
       return list
@@ -85,7 +86,8 @@ export default defineComponent({
     return {
       classificationList,
       classificationPosts,
-      handlePagation
+      handlePagation,
+      convertToPinyin
     }
   },
 })

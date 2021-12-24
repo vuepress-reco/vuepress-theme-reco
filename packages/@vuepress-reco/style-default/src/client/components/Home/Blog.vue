@@ -20,7 +20,7 @@
       <ul class="category-wrapper">
         <li class="category-item" v-for="(value, key, index) in categories" :key="index">
           <router-link class="category-link" :to="`/categories/${key}/1/`">
-            <span class="text">{{ key }}</span>
+            <span class="text">{{ value.label }}</span>
             <span class="num">{{ value.length }}</span>
           </router-link>
         </li>
@@ -29,7 +29,7 @@
       <h4 class="module-title"><Xicons icon="Tag" text="Tags" /></h4>
       <ul class="tag-wrapper">
         <li class="tag-item" v-for="(value, key, index) in tags" :key="index" :style="{ borderColor: createOneColor() }">
-          <router-link class="tag-link" :to="`/tags/${key}/1/`">{{ key }}</router-link>
+          <router-link class="tag-link" :to="`/tags/${key}/1/`">{{ value.label }}</router-link>
         </li>
       </ul>
     </section>

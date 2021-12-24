@@ -24,6 +24,9 @@ bannerBrand:
   buttons:
     - { text: Guide, link: '/blogs/category1/blog2' }
     - { text: Plan, link: '/blogs/category1/blog2', type: 'plain' }
+  socialLinks:
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 blog:
   socialLinks:
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }

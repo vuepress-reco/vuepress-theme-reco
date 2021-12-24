@@ -22,6 +22,7 @@ import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { convertToPinyin } from '@vuepress-reco/core'
 import { resolveRepoType } from '../utils'
 import DropdownLink from './DropdownLink.vue'
 import Link from './Link.vue'
@@ -157,16 +158,16 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
     return [
       {
         text: 'Categories',
-        children: Object.keys(categories || {}).map(c => ({
-          text: c,
-          link: `/categories/${c}/1/`,
+        children: Object.values(categories || {}).map(c => ({
+          text: c.label,
+          link: `/categories/${convertToPinyin(c.label)}/1/`,
         }))
       },
       {
         text: 'Tags',
-        children: Object.keys(tags || {}).map(t => ({
-          text: t,
-          link: `/tags/${t}/1/`,
+        children: Object.values(tags || {}).map(t => ({
+          text: t.label,
+          link: `/tags/${convertToPinyin(t.label)}/1/`,
         }))
       },
     ]
