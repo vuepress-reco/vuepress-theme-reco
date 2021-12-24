@@ -5,5 +5,5 @@
     "packages/*",
     "packages/@vuepress-reco/*"
   ],
-  "version": "2.0.1-alpha.18"
+  "version": "2.0.1-alpha.19"
 }
