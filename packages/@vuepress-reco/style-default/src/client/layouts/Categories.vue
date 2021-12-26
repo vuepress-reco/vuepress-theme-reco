@@ -44,9 +44,9 @@ import { defineComponent, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { convertToPinyin } from '@vuepress-reco/core'
-import PostList from '../components/PostList'
-import Common from '../components/Common'
-import Pagation from '../components/Pagation'
+import PostList from '../components/PostList.vue'
+import Common from '../components/Common.vue'
+import Pagation from '../components/Pagation.vue'
 
 export default defineComponent({
   components: { Common, PostList, Pagation },

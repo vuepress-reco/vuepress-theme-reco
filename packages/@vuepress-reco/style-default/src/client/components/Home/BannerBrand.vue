@@ -41,13 +41,18 @@ const buttons = computed(() => {
   return frontmatter.value?.bannerBrand?.buttons || []
 })
 
+const heroImageStyle = computed(
+  () => frontmatter.value.bannerBrand.heroImageStyle || {}
+)
+
 const bgImageStyle = computed(() => {
   const { bgImageStyle, bgImage } = frontmatter.value?.bannerBrand || {}
-  const url = bgImage ? withBase(bgImage) : require('../../images/bg.svg')
-  const initBgImageStyle = {
+
+  const initBgImageStyle = bgImage ? {
+    textAlign: 'center',
     overflow: 'hidden',
-    background: `url(${url}) center/cover no-repeat`
-  }
+    background: `url(${withBase(bgImage)}) center/cover no-repeat`
+  } : {}
 
   return bgImageStyle ? { ...initBgImageStyle, ...bgImageStyle } : initBgImageStyle
 })

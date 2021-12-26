@@ -41,9 +41,9 @@ import { computed, ref, onMounted } from "vue";
 import { withBase } from '@vuepress/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { createOneColor } from '../../utils'
-import PostList from '../PostList'
-import Pagation from '../Pagation'
-import PersonalInfo from '../PersonalInfo'
+import PostList from '../PostList.vue'
+import Pagation from '../Pagation.vue'
+import PersonalInfo from '../PersonalInfo.vue'
 
 const { posts, classificationSummary } = usePageData()
 

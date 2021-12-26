@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useSidebarItems } from '../composables/'
-import { SidebarChild } from './SidebarChild'
+import { SidebarChild } from './SidebarChild.vue'
 
 export default defineComponent({
   components: { SidebarChild },

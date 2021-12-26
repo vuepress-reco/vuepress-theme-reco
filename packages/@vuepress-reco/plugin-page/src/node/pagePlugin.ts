@@ -1,14 +1,9 @@
 import type { Plugin, App } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import type { PagePluginOptions } from './types'
-import Classifiable from './node/Classifiable'
+import type { PagePluginOptions } from '../types'
+import Classifiable from './Classifiable'
 
-console.log(111, path.resolve(
-  __dirname,
-  './client/clientAppEnhance.js'
-))
-
-const pagePlugin: Plugin<Record<string, any>> = (
+export const pagePlugin: Plugin<Record<string, any>> = (
   options: PagePluginOptions,
   app: App
 ) => {
@@ -28,7 +23,7 @@ const pagePlugin: Plugin<Record<string, any>> = (
 
     clientAppEnhanceFiles: path.resolve(
       __dirname,
-      './client/clientAppEnhance.js'
+      '../client/clientAppEnhance.js'
     ),
 
     async onInitialized(app) {
@@ -38,5 +33,3 @@ const pagePlugin: Plugin<Record<string, any>> = (
     },
   }
 }
-
-export default pagePlugin

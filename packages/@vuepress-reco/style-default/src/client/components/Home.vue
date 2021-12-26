@@ -27,7 +27,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { usePageFrontmatter, withBase } from '@vuepress/client'
-import Footer from "./Footer";
+import Footer from "./Footer.vue";
 
 export default defineComponent({
   name: 'HomeBlog',

@@ -226,7 +226,7 @@ export interface DefaultThemeLocaleData extends LocaleData {
   backToHome?: string
 
   /**
-   * sr-only message in `<OutboundLink>`
+   * sr-only message in `<ExternalLinkIcon>`
    */
   openInNewWindow?: string
 }

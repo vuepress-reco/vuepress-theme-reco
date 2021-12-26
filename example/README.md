@@ -18,7 +18,7 @@ bannerBrand:
     display: block
     margin: 0 auto 2rem
     borderRadius: 1rem
-  # bgImage: /banner_2.jpg
+  bgImage: /bg.svg
   # bgImageStyle:
   #   height: 450px
   buttons:

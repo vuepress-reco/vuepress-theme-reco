@@ -17,9 +17,9 @@ import { defineComponent, computed, h, watch } from 'vue'
 import { usePageData } from '@vuepress/client'
 import { useRoute } from 'vue-router'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import PageInfo from './PageInfo'
-import PageNav from './PageNav'
-import PageMeta from './PageMeta'
+import PageInfo from './PageInfo.vue'
+import PageNav from './PageNav.vue'
+import PageMeta from './PageMeta.vue'
 
 export default defineComponent({
   name: 'Page',

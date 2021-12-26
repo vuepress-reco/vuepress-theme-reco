@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import PageInfo from './PageInfo'
+import PageInfo from './PageInfo.vue'
 
 export default defineComponent({
   components: { PageInfo },

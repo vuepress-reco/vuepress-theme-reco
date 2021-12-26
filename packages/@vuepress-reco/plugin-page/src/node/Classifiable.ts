@@ -9,7 +9,7 @@ import {
   FrontmatterKey,
   PageOptions,
   ItemKey,
-} from '../../types'
+} from '../types'
 
 // 获取时间的数字类型
 export function getTimeNum (date) {

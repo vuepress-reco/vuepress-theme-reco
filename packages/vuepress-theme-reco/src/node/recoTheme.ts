@@ -1,12 +1,12 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import { resolveContainer } from './client/utils'
+import { resolveContainer } from './resolveContainer'
 
 export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   const { style } = themeConfig
   const stylePath = path.resolve(process.cwd(), `node_modules/${style}`)
   const getStyleConfig = require(path.resolve(
-    `${stylePath}/lib/index.js`
+    `${stylePath}/lib/node/index.js`
   )).default
 
   const styleConfig = getStyleConfig(themeConfig)
@@ -22,6 +22,7 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/plugin-container', { type: 'info', render: resolveContainer }],
     ['@vuepress/plugin-container', { type: 'warning', render: resolveContainer }],
     ['@vuepress/plugin-container', { type: 'danger', render: resolveContainer }],
+    ['@vuepress/plugin-external-link-icon'],
     ...styleConfig.plugins,
   ]
 
@@ -35,4 +36,3 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   }
 }
 
-export default recoTheme

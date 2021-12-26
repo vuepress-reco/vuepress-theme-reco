@@ -11,11 +11,11 @@
 <script setup lang="ts">
 import { usePageFrontmatter } from '@vuepress/client'
 import { useThemeLocaleData } from '../../composables'
-import Banner from './Banner'
-import BannerBrand from './BannerBrand'
-import Blog from './Blog'
-import MdContent from './MdContent'
-import Footer from './Footer'
+import Banner from './Banner.vue'
+import BannerBrand from './BannerBrand.vue'
+import Blog from './Blog.vue'
+import MdContent from './MdContent.vue'
+import Footer from './Footer.vue'
 
 const elementsMap = {
   Banner,

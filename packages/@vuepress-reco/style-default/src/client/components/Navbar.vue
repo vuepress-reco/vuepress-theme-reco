@@ -32,7 +32,7 @@
 import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
-import NavbarLinks from './NavbarLinks'
+import NavbarLinks from './NavbarLinks.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 
 export default defineComponent({

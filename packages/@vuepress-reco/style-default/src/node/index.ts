@@ -1,2 +1,3 @@
-export * from './pages'
-export * from './tailwind'
+import styleDefault from './styleDefault'
+
+export default styleDefault

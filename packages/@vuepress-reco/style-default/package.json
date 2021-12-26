@@ -10,8 +10,8 @@
   "author": "reco_luan <recoluan@outlook.com>",
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -39,15 +39,17 @@
   "dependencies": {
     "@vuepress-reco/core": "^2.0.1-alpha.19",
     "@vuepress-reco/vuepress-plugin-comments": "^2.0.1-alpha.14",
-    "@vuepress/client": "2.0.0-beta.27",
-    "@vuepress/core": "2.0.0-beta.27",
-    "@vuepress/plugin-back-to-top": "^2.0.0-beta.27",
-    "@vuepress/plugin-git": "^2.0.0-beta.27",
-    "@vuepress/plugin-nprogress": "^2.0.0-beta.27",
-    "@vuepress/plugin-theme-data": "^2.0.0-beta.27",
-    "@vuepress/shared": "2.0.0-beta.27",
-    "@vuepress/utils": "2.0.0-beta.27",
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.29",
+    "@vuepress/plugin-git": "^2.0.0-beta.29",
+    "@vuepress/plugin-nprogress": "^2.0.0-beta.29",
+    "@vuepress/plugin-theme-data": "^2.0.0-beta.29",
+    "@vuepress/shared": "2.0.0-beta.28",
+    "@vuepress/utils": "2.0.0-beta.28",
+    "postcss": "8.4.5",
     "postcss-each": "^1.1.0",
+    "postcss-import": "14.0.2",
     "postcss-nested": "^5.0.6",
     "tailwindcss": "^2.1.1"
   }

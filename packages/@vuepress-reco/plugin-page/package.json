@@ -17,8 +17,8 @@
   },
   "license": "MIT",
   "author": "reco_luan <recoluan@outlook.com>",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@vuepress-reco/core": "^2.0.1-alpha.19",
-    "@vuepress/client": "2.0.0-beta.27",
-    "@vuepress/core": "2.0.0-beta.27",
-    "@vuepress/utils": "2.0.0-beta.27"
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/utils": "2.0.0-beta.28"
   }
 }

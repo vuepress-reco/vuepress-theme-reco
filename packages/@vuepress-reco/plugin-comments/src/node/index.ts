@@ -1,4 +1,4 @@
-import commentsPlugin from './commentsPlugin'
+import { commentsPlugin } from './commentsPlugin'
 
 export * from './commentsPlugin'
 

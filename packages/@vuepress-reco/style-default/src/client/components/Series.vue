@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 import { useSidebarItems } from '../composables/'
 import { SeriesItem } from './SeriesItem'
-import NavbarLinks from './NavbarLinks'
+import NavbarLinks from './NavbarLinks.vue'
 
 export default defineComponent({
   components: { SeriesItem, NavbarLinks },

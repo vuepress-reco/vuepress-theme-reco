@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import PostItem from './PostItem'
+import PostItem from './PostItem.vue'
 
 export default defineComponent({
   components: { PostItem },
