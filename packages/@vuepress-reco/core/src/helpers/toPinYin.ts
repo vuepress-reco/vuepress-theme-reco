@@ -17,9 +17,7 @@ export const convertToPinyin = (sourceStr = '') => {
   targetStr = sourceStr.split('').reduce((total, next, index) => {
     if (cnReg.test(next)) {
       const searchResult = searchPinYin(next, PinYin)
-      if (searchResult) {
-        return total += (index > 0 ? `-${searchResult}` : searchResult)
-      }
+      return total += searchResult ? searchResult : ''
     }
     return total += next
   }, '')

@@ -3,11 +3,6 @@ import { path } from '@vuepress/utils'
 import type { PagePluginOptions } from './types'
 import Classifiable from './node/Classifiable'
 
-console.log(111, path.resolve(
-  __dirname,
-  './client/clientAppEnhance.js'
-))
-
 const pagePlugin: Plugin<Record<string, any>> = (
   options: PagePluginOptions,
   app: App

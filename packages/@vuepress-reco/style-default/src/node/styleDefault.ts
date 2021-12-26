@@ -33,7 +33,6 @@ export default defineStyle(
             }
           },
         }
-        console.log(111, app.options.bundlerConfig)
       } else {
         app.options.bundlerConfig = {
           postcss: {
