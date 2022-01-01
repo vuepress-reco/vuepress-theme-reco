@@ -47,7 +47,7 @@ const border = {
     darker: '#dfe2e5',
   },
   dark: {
-    DEFAULT: '#3e4c5a;',
+    DEFAULT: '#3e4c5a',
     darker: '#34404c',
   },
 }
