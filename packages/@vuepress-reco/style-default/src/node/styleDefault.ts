@@ -24,10 +24,10 @@ export default defineStyle(
               postcss: {
                 plugins: [
                   require('postcss-import'),
+                  require('tailwindcss/nesting'),
                   require('tailwindcss')(tailwindConfig),
-                  require('autoprefixer')({}),
-                  require('postcss-nested'),
-                  require('postcss-each')
+                  require('postcss-each'),
+                  require('autoprefixer')({})
                 ]
               }
             }

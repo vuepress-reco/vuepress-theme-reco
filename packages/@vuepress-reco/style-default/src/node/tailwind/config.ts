@@ -3,8 +3,7 @@ import { colors as customColors } from './custom-colors'
 // const colors = require('tailwindcss/colors')
 
 export const tailwindConfig = {
-  purge: ['./src/**/*.vue'],
-  darkMode: 'media', // or 'media' or 'class'
+  prefix: 'reco-',
   theme: {
     extend: {
       backgroundOpacity: {
@@ -28,13 +27,6 @@ export const tailwindConfig = {
       zIndex: {
         'negative-10': -10
       }
-    },
-  },
-  variants: {
-    extend: {
-      borderColor: ['dark'],
-      borderWidth: ['dark'],
-      boxShadow: ['dark'],
     },
   },
   plugins: [mdStylePlugin],
