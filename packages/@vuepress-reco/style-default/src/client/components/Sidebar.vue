@@ -15,7 +15,6 @@ export default defineComponent({
   components: { SidebarChild },
   setup() {
     const sidebarItems = useSidebarItems()
-    console.log(444, sidebarItems.value)
     return {
       sidebarItems,
     }

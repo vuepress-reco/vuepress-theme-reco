@@ -4,7 +4,7 @@ import {
   classificationPostsSymbol,
   classificationSummarySymbol,
   postsSymbol,
-} from './constants'
+} from './composable'
 
 declare const CLASSIFICATION_PAGINATION_POSTS: Record<string, any[]>
 declare const POSTS: Record<string, any[]>

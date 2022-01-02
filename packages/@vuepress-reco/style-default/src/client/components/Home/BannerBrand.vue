@@ -49,7 +49,6 @@ const bgImageStyle = computed(() => {
   const { bgImageStyle, bgImage } = frontmatter.value?.bannerBrand || {}
 
   const initBgImageStyle = bgImage ? {
-    textAlign: 'center',
     overflow: 'hidden',
     background: `url(${withBase(bgImage)}) center/cover no-repeat`
   } : {}

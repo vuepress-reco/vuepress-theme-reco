@@ -58,8 +58,6 @@ export default defineComponent({
     } = usePageData()
     const router = useRouter()
 
-    console.log(123, classificationPosts.value)
-
     const classificationList = computed(() => {
       let list = []
       const currentClassificationKey = classificationPosts.value.currentClassificationKey

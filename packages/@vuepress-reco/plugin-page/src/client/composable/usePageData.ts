@@ -1,17 +1,23 @@
 import { inject, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import {
-  classificationPostsSymbol,
-  classificationSummarySymbol,
-  postsSymbol,
-} from '../constants'
+
+declare const __VUEPRESS_DEV__: boolean
+
+export const classificationPostsSymbol = Symbol(__VUEPRESS_DEV__ ? 'classificationPostsSymbol' : '')
+export const classificationSummarySymbol = Symbol(__VUEPRESS_DEV__ ? 'classificationSummarySymbol' : '')
+export const postsSymbol = Symbol(__VUEPRESS_DEV__ ? 'postsSymbol' : '')
 
 export function usePageData(): Record<string, any> {
-  const { currentRoute } = useRouter()
-
   const classificationSummary = inject(classificationSummarySymbol)
   const posts = inject(postsSymbol)
   const cp = inject(classificationPostsSymbol)
+
+  if (!postsSymbol) {
+    throw new Error('useSiteLocaleData() is called without provider.')
+  }
+
+  const { currentRoute } = useRouter()
+
 
   const classificationPosts = computed(() => {
     return (
