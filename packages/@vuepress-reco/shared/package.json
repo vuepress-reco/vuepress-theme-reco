@@ -1,11 +1,11 @@
 {
-  "name": "@vuepress-reco/core",
+  "name": "@vuepress-reco/shared",
   "version": "2.0.1-alpha.22",
   "description": "> TODO: description",
   "author": "reco_luan <recoluan@outlook.com>",
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/index.d.ts",
   "directories": {

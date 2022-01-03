@@ -1,4 +1,4 @@
-import { defineStyle, StyleOptions } from '@vuepress-reco/core'
+import { defineStyle, StyleOptions } from '@vuepress-reco/shared'
 import { path } from '@vuepress/utils'
 import { pages } from './pages'
 import { tailwindConfig } from './tailwind'

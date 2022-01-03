@@ -1,6 +1,6 @@
 import { createPage } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import { isEmptyPlainObject, convertToPinyin } from '@vuepress-reco/core'
+import { isEmptyPlainObject, convertToPinyin } from '@vuepress-reco/shared'
 import {
   ClassificationPaginationPost,
   ClassificationPageOptions,
