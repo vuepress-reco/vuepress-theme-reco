@@ -30,6 +30,9 @@ export default defineStyle(
                   require('postcss-each')
                 ]
               }
+            },
+            optimizeDeps: {
+              exclude: ['vue']
             }
           },
         }
