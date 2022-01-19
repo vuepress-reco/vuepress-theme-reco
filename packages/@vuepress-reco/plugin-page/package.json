@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@vuepress-reco/shared": "^2.0.1-alpha.25",
-    "@vuepress/client": "2.0.0-beta.32",
-    "@vuepress/core": "2.0.0-beta.32",
-    "@vuepress/utils": "2.0.0-beta.32"
+    "@vuepress/client": "2.0.0-beta.33",
+    "@vuepress/core": "2.0.0-beta.33",
+    "@vuepress/utils": "2.0.0-beta.33"
   }
 }

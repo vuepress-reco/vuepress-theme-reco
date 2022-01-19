@@ -34,10 +34,10 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg}\" lib"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.32",
-    "@vuepress/core": "2.0.0-beta.32",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.32",
-    "@vuepress/utils": "2.0.0-beta.32",
+    "@vuepress/client": "2.0.0-beta.33",
+    "@vuepress/core": "2.0.0-beta.33",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.33",
+    "@vuepress/utils": "2.0.0-beta.33",
     "valine": "1.4.14"
   },
   "bugs": {
