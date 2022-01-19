@@ -40,7 +40,7 @@ export default defineComponent({
     const bgImage = computed(() => {
       return frontmatter.value.bgImage
         ? withBase(frontmatter.value.bgImage)
-        : require('../images/bg.svg')
+        : null
     })
 
     const heroImage = computed(() => {

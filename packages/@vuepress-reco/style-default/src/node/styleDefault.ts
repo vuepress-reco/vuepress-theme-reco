@@ -15,6 +15,7 @@ export default defineStyle(
     clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
 
     onInitialized(app): void {
+      app.options.bundler = '@vuepress/bundler-webpack'
       const { bundler, bundlerConfig } = app.options || {}
       if (bundler === '@vuepress/bundler-vite') {
         app.options.bundlerConfig = {

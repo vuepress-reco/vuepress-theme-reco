@@ -101,7 +101,7 @@ export default defineComponent({
 
     const bgImageStyle = computed(() => {
       const { bgImageStyle, bgImage } = frontmatter.value
-      const url = bgImage ? withBase(bgImage) : require('../images/bg.svg')
+      const url = bgImage ? withBase(bgImage) : null
       const initBgImageStyle = {
         textAlign: 'center',
         overflow: 'hidden',
