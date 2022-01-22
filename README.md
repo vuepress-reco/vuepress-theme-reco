@@ -66,7 +66,7 @@ theme-cli init
 ### 功能
 
 - [ ] 加密功能
-- [ ] loading 功能
+- [ ] ~~loading 功能~~
 - [ ] 自定义首页功能
 - [ ] 增加 icon 功能
 - [x] nprogress 插件
@@ -75,8 +75,8 @@ theme-cli init
 - [x] container 插件
 - [ ] 公告 插件
 - [ ] 代码预览 插件
-- [ ] 提供自定义任意页面的 API
-- [ ] 允许本地自定义 style（风格）代码
+- [ ] ~~提供自定义任意页面的 API~~
+- [ ] ~~允许本地自定义 style（风格）代码~~
 - [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格和插件均采用 css + taiwindcss 方案）
 - [ ] 按照文件夹自动进行分类，只允许自定义 tag，根据 tag 生成神经网络图（参考 obsidian）
 
