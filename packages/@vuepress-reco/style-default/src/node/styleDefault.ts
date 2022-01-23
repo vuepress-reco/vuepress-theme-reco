@@ -12,7 +12,10 @@ export default defineStyle(
       '../client/clientAppEnhance.js'
     ),
 
-    clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
+    clientAppSetupFiles: path.resolve(
+      __dirname,
+      '../client/clientAppSetup.js'
+    ),
 
     onInitialized(app): void {
       app.options.bundler = '@vuepress/bundler-webpack'
