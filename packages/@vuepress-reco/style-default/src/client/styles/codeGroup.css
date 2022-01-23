@@ -1,0 +1,40 @@
+.code-group {
+  @apply relative my-2 overflow-hidden bg-reco-bg-code pt-8 pl-6 pr-2 pb-6 rounded-md border-2 border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  &::after {
+    @apply absolute top-4 left-4 w-3 h-3 rounded-full;
+    content: "";
+    background: #f95c5b;
+    box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+  }
+  .code-group__nav {
+    .code-group__ul {
+      @apply pl-0 list-none;
+      .code-group__li {
+        @apply inline-block mr-4;
+        button {
+          @apply border-b-2 border-solid border-transparent text-reco-text-light font-bold cursor-pointer;
+          @apply dark:text-reco-text-dark;
+          &.code-group__nav-tab-active {
+            @apply border-reco-brand !important;
+          }
+        }
+      }
+    }
+  }
+  .code-group-item {
+    @apply hidden;
+    &.code-group-item__active {
+      @apply block;
+    }
+    pre {
+      @apply mb-0 pl-8 pt-8 pb-4 border-none;
+      &::after {
+        @apply hidden;
+      }
+    }
+    .line-numbers {
+      @apply w-4 pb-4 !important;
+    }
+  }
+}

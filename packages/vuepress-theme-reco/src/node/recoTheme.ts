@@ -23,6 +23,8 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/plugin-container', resolveContainerOptions('warning')],
     ['@vuepress/plugin-container', resolveContainerOptions('danger')],
     ['@vuepress/plugin-container', resolveContainerOptions('details')],
+    ['@vuepress/plugin-container', resolveContainerOptions('code-group')],
+    ['@vuepress/plugin-container', resolveContainerOptions('code-group-item')],
     ['@vuepress/plugin-external-link-icon'],
     ...styleConfig.plugins,
   ]

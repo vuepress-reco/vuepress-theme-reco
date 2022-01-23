@@ -31,29 +31,35 @@ const renderOptionsForDetails = (tokens, idx) => {
   }
 }
 
+export const resolveOptionsForCodeGroup = () => {
+  return {
+    before: () => `<CodeGroup>\n`,
+    after: () => '</CodeGroup>\n',
+  }
+}
+
+export const resolveOptionsForCodeGroupItem = () => {
+  return {
+    before: (info) => `<CodeGroupItem title="${info}">\n`,
+    after: () => '</CodeGroupItem>\n',
+  }
+}
+
 export const resolveContainerOptions = (type) => {
   let render = renderOptions
 
   if (type === 'details') {
     render = renderOptionsForDetails
+    return { type, render }
+  }
+
+  if (type === 'code-group') {
+    return { type, ...resolveOptionsForCodeGroup() }
+  }
+
+  if (type === 'code-group-item') {
+    return { type, ...resolveOptionsForCodeGroupItem() }
   }
 
   return { type, render }
 }
-
-// export const resolveContainerPluginOptionsForDetails = (
-//   themePlugins: DefaultThemePluginsOptions
-// ) {
-//   if (themePlugins?.container?.details === false) {
-//     return false
-//   }
-
-//   return {
-//     type: 'details',
-//     before: (info) =>
-//       `<details class="custom-container details">${
-//         info ? `<summary>${info}</summary>` : ''
-//       }\n`,
-//     after: () => '</details>\n',
-//   }
-// }
