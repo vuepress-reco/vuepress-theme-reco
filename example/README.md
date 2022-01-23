@@ -108,6 +108,10 @@ asdnasn
 asdnasn
 :::
 
+::: details
+  abc
+:::
+
 abc <Badge type="tip" text="v2" vertical="top" />
 
 [123](https://www.baidu.com)

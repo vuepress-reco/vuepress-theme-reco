@@ -1,6 +1,6 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
-import { resolveContainer } from './resolveContainer'
+import { resolveContainerOptions } from './resolveContainer'
 
 export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   const { style } = themeConfig
@@ -18,10 +18,11 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/active-header-links', {
         headerLinkSelector: 'a.page-header-item',
     }],
-    ['@vuepress/plugin-container', { type: 'tip', render: resolveContainer }],
-    ['@vuepress/plugin-container', { type: 'info', render: resolveContainer }],
-    ['@vuepress/plugin-container', { type: 'warning', render: resolveContainer }],
-    ['@vuepress/plugin-container', { type: 'danger', render: resolveContainer }],
+    ['@vuepress/plugin-container', resolveContainerOptions('tip')],
+    ['@vuepress/plugin-container', resolveContainerOptions('info')],
+    ['@vuepress/plugin-container', resolveContainerOptions('warning')],
+    ['@vuepress/plugin-container', resolveContainerOptions('danger')],
+    ['@vuepress/plugin-container', resolveContainerOptions('details')],
     ['@vuepress/plugin-external-link-icon'],
     ...styleConfig.plugins,
   ]
