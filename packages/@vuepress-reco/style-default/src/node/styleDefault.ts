@@ -57,6 +57,13 @@ export default defineStyle(
       }
     },
 
+    extendsPage: (page) => {
+      // save relative file path into page data to generate edit link
+      page.data.filePathRelative = page.filePathRelative
+      // save title into route meta to generate navbar and sidebar
+      page.routeMeta.title = page.title
+    },
+
     plugins: [
       ['@vuepress/theme-data', { themeData: themeConfig }],
       ['@vuepress/back-to-top', themeConfig.backToTop !== false],
