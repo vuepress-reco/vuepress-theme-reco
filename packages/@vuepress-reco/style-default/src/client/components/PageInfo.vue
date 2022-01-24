@@ -30,6 +30,7 @@
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import {toISODate} from "../utils/other";
 
 export default defineComponent({
   name: 'PageInfo',
@@ -64,7 +65,7 @@ export default defineComponent({
 
     const date = computed(() => {
       const d = pageData?.value?.frontmatter?.date
-      return d ? new Date(d).toLocaleString() : ''
+      return d ? toISODate(d) : ''
     })
 
     const categories = computed(
