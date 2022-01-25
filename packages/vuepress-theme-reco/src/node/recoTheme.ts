@@ -26,6 +26,7 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/plugin-container', resolveContainerOptions('code-group')],
     ['@vuepress/plugin-container', resolveContainerOptions('code-group-item')],
     ['@vuepress/plugin-external-link-icon'],
+    ['@vuepress-reco/vuepress-plugin-vue-preview'],
     ...styleConfig.plugins,
   ]
 

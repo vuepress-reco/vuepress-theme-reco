@@ -42,6 +42,27 @@
     semver "^6.3.0"
     source-map "^0.5.0"
 
+"@babel/core@^7.16.12":
+  version "7.16.12"
+  resolved "https://registry.npmmirror.com/@babel/core/download/@babel/core-7.16.12.tgz#5edc53c1b71e54881315923ae2aedea2522bb784"
+  integrity sha512-dK5PtG1uiN2ikk++5OzSYsitZKny4wOCD0nrO4TqnW4BVBTQ2NGS3NgilvT/TEyxTST7LNyWV/T4tXDoD3fOgg==
+  dependencies:
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.16.8"
+    "@babel/helper-compilation-targets" "^7.16.7"
+    "@babel/helper-module-transforms" "^7.16.7"
+    "@babel/helpers" "^7.16.7"
+    "@babel/parser" "^7.16.12"
+    "@babel/template" "^7.16.7"
+    "@babel/traverse" "^7.16.10"
+    "@babel/types" "^7.16.8"
+    convert-source-map "^1.7.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.1.2"
+    semver "^6.3.0"
+    source-map "^0.5.0"
+
 "@babel/generator@^7.16.7", "@babel/generator@^7.16.8":
   version "7.16.8"
   resolved "https://registry.npmjs.org/@babel/generator/-/generator-7.16.8.tgz#359d44d966b8cd059d543250ce79596f792f2ebe"
@@ -112,7 +133,7 @@
     "@babel/traverse" "^7.16.7"
     "@babel/types" "^7.16.7"
 
-"@babel/helper-plugin-utils@^7.0.0", "@babel/helper-plugin-utils@^7.10.4", "@babel/helper-plugin-utils@^7.12.13", "@babel/helper-plugin-utils@^7.14.5", "@babel/helper-plugin-utils@^7.8.0":
+"@babel/helper-plugin-utils@^7.0.0", "@babel/helper-plugin-utils@^7.10.4", "@babel/helper-plugin-utils@^7.12.13", "@babel/helper-plugin-utils@^7.14.5", "@babel/helper-plugin-utils@^7.16.7", "@babel/helper-plugin-utils@^7.8.0":
   version "7.16.7"
   resolved "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.16.7.tgz#aa3a8ab4c3cceff8e65eb9e73d87dc4ff320b2f5"
   integrity sha512-Qg3Nk7ZxpgMrsox6HreY1ZNKdBq7K72tDSliA6dCl5f007jR4ne8iD5UzuNnCJH2xBf2BEEVGr+/OL6Gdp7RxA==
@@ -164,6 +185,11 @@
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.16.8.tgz#61c243a3875f7d0b0962b0543a33ece6ff2f1f17"
   integrity sha512-i7jDUfrVBWc+7OKcBzEe5n7fbv3i2fWtxKzzCvOjnzSxMfWMigAhtfJ7qzZNGFNMsCCd67+uz553dYKWXPvCKw==
 
+"@babel/parser@^7.16.10", "@babel/parser@^7.16.12":
+  version "7.16.12"
+  resolved "https://registry.npmmirror.com/@babel/parser/download/@babel/parser-7.16.12.tgz#9474794f9a650cf5e2f892444227f98e28cdf8b6"
+  integrity sha512-VfaV15po8RiZssrkPweyvbGVSe4x2y+aciFCgn0n0/SJMR22cwofRV1mtnJQYcSB1wUTaA/X1LnA3es66MCO5A==
+
 "@babel/plugin-syntax-async-generators@^7.8.4":
   version "7.8.4"
   resolved "https://registry.npmjs.org/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.8.4.tgz#a983fb1aeb2ec3f6ed042a210f640e90e786fe0d"
@@ -198,6 +224,13 @@
   integrity sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
+
+"@babel/plugin-syntax-jsx@^7.16.7":
+  version "7.16.7"
+  resolved "https://registry.npmmirror.com/@babel/plugin-syntax-jsx/download/@babel/plugin-syntax-jsx-7.16.7.tgz#50b6571d13f764266a113d77c82b4a6508bbe665"
+  integrity sha512-Esxmk7YjA8QysKeT3VhTXvF6y77f/a91SIs4pWb4H2eWGQkCKFgQaG6hdoEVZtGsrAcb2K5BW66XsOErD4WU3Q==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.16.7"
 
 "@babel/plugin-syntax-logical-assignment-operators@^7.8.3":
   version "7.10.4"
@@ -276,6 +309,22 @@
     "@babel/helper-hoist-variables" "^7.16.7"
     "@babel/helper-split-export-declaration" "^7.16.7"
     "@babel/parser" "^7.16.8"
+    "@babel/types" "^7.16.8"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
+"@babel/traverse@^7.16.10":
+  version "7.16.10"
+  resolved "https://registry.npmmirror.com/@babel/traverse/download/@babel/traverse-7.16.10.tgz#448f940defbe95b5a8029975b051f75993e8239f"
+  integrity sha512-yzuaYXoRJBGMlBhsMJoUW7G1UmSb/eXr/JHYM/MsOJgavJibLwASijW7oXBdw3NQ6T0bW7Ty5P/VarOs9cHmqw==
+  dependencies:
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.16.8"
+    "@babel/helper-environment-visitor" "^7.16.7"
+    "@babel/helper-function-name" "^7.16.7"
+    "@babel/helper-hoist-variables" "^7.16.7"
+    "@babel/helper-split-export-declaration" "^7.16.7"
+    "@babel/parser" "^7.16.10"
     "@babel/types" "^7.16.8"
     debug "^4.1.0"
     globals "^11.1.0"
@@ -2149,6 +2198,16 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
+"@vue/compiler-core@3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/compiler-core/download/@vue/compiler-core-3.2.29.tgz#b06097ab8ff0493177c68c5ea5b63d379a061097"
+  integrity sha512-RePZ/J4Ub3sb7atQw6V6Rez+/5LCRHGFlSetT3N4VMrejqJnNPXKUt5AVm/9F5MJriy2w/VudEIvgscCfCWqxw==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/shared" "3.2.29"
+    estree-walker "^2.0.2"
+    source-map "^0.6.1"
+
 "@vue/compiler-dom@3.2.27":
   version "3.2.27"
   resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.27.tgz#a12163e3f3f1d5ff1969253eba4b4ea3e67bbd0f"
@@ -2156,6 +2215,14 @@
   dependencies:
     "@vue/compiler-core" "3.2.27"
     "@vue/shared" "3.2.27"
+
+"@vue/compiler-dom@3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/compiler-dom/download/@vue/compiler-dom-3.2.29.tgz#ad0ead405bd2f2754161335aad9758aa12430715"
+  integrity sha512-y26vK5khdNS9L3ckvkqJk/78qXwWb75Ci8iYLb67AkJuIgyKhIOcR1E8RIt4mswlVCIeI9gQ+fmtdhaiTAtrBQ==
+  dependencies:
+    "@vue/compiler-core" "3.2.29"
+    "@vue/shared" "3.2.29"
 
 "@vue/compiler-sfc@3.2.27", "@vue/compiler-sfc@^3.2.26":
   version "3.2.27"
@@ -2173,6 +2240,22 @@
     postcss "^8.1.10"
     source-map "^0.6.1"
 
+"@vue/compiler-sfc@^3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/compiler-sfc/download/@vue/compiler-sfc-3.2.29.tgz#f76d556cd5fca6a55a3ea84c88db1a2a53a36ead"
+  integrity sha512-X9+0dwsag2u6hSOP/XsMYqFti/edvYvxamgBgCcbSYuXx1xLZN+dS/GvQKM4AgGS4djqo0jQvWfIXdfZ2ET68g==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/compiler-core" "3.2.29"
+    "@vue/compiler-dom" "3.2.29"
+    "@vue/compiler-ssr" "3.2.29"
+    "@vue/reactivity-transform" "3.2.29"
+    "@vue/shared" "3.2.29"
+    estree-walker "^2.0.2"
+    magic-string "^0.25.7"
+    postcss "^8.1.10"
+    source-map "^0.6.1"
+
 "@vue/compiler-ssr@3.2.27":
   version "3.2.27"
   resolved "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.2.27.tgz#49aa3afd1602275aba3c3e331764984111a460bf"
@@ -2180,6 +2263,14 @@
   dependencies:
     "@vue/compiler-dom" "3.2.27"
     "@vue/shared" "3.2.27"
+
+"@vue/compiler-ssr@3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/compiler-ssr/download/@vue/compiler-ssr-3.2.29.tgz#37b15b32dcd2f6b410bb61fca3f37b1a92b7eb1e"
+  integrity sha512-LrvQwXlx66uWsB9/VydaaqEpae9xtmlUkeSKF6aPDbzx8M1h7ukxaPjNCAXuFd3fUHblcri8k42lfimHfzMICA==
+  dependencies:
+    "@vue/compiler-dom" "3.2.29"
+    "@vue/shared" "3.2.29"
 
 "@vue/devtools-api@^6.0.0-beta.18":
   version "6.0.0-beta.21.1"
@@ -2194,6 +2285,17 @@
     "@babel/parser" "^7.16.4"
     "@vue/compiler-core" "3.2.27"
     "@vue/shared" "3.2.27"
+    estree-walker "^2.0.2"
+    magic-string "^0.25.7"
+
+"@vue/reactivity-transform@3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/reactivity-transform/download/@vue/reactivity-transform-3.2.29.tgz#a08d606e10016b7cf588d1a43dae4db2953f9354"
+  integrity sha512-YF6HdOuhdOw6KyRm59+3rML8USb9o8mYM1q+SH0G41K3/q/G7uhPnHGKvspzceD7h9J3VR1waOQ93CUZj7J7OA==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/compiler-core" "3.2.29"
+    "@vue/shared" "3.2.29"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
 
@@ -2233,6 +2335,11 @@
   version "3.2.27"
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.2.27.tgz#d5c6e574ee1afd55043470bf70b15772da4e19a2"
   integrity sha512-rpAn9k6O08Lvo7ekBIAnkOukX/4EsEQLPrRJBKhIEasMsOI5eX0f6mq1sDUSY7cgAqWw2d7QtP74CWxdXoyKxA==
+
+"@vue/shared@3.2.29":
+  version "3.2.29"
+  resolved "https://registry.npmmirror.com/@vue/shared/download/@vue/shared-3.2.29.tgz#07dac7051117236431d2f737d16932aa38bbb925"
+  integrity sha512-BjNpU8OK6Z0LVzGUppEk0CMYm/hKDnZfYdjSmPOs0N+TR1cLKJAkDwW8ASZUvaaSLEi6d3hVM7jnWnX+6yWnHw==
 
 "@vuepress/bundler-vite@2.0.0-beta.33":
   version "2.0.0-beta.33"
@@ -10812,6 +10919,11 @@ sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
+
+slash2@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/slash2/download/slash2-2.0.0.tgz#f4e0a11708b8545b912695981cf7096f52c63487"
+  integrity sha1-9OChFwi4VFuRJpWYHPcJb1LGNIc=
 
 slash@^3.0.0:
   version "3.0.0"
