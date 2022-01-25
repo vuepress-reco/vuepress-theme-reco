@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-reco",
-  "version": "2.0.1-alpha.26",
+  "version": "2.0.1-alpha.27",
   "description": "> TODO: description",
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
   "bugs": {
@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@vicons/tabler": "^0.11.0",
-    "@vuepress-reco/style-default": "^2.0.1-alpha.26",
+    "@vuepress-reco/style-default": "^2.0.1-alpha.27",
     "@vuepress-reco/vuepress-plugin-page": "^2.0.1-alpha.26",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "^2.0.1-alpha.26",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "^2.0.1-alpha.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.33",
     "@vuepress/plugin-container": "^2.0.0-beta.33",
     "@vuepress/plugin-external-link-icon": "^2.0.0-beta.33",
