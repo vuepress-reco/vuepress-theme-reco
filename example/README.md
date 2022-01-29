@@ -125,10 +125,6 @@ const bar = 'bar'
 :::
 ::::
 
-abc <Badge type="tip" text="v2" vertical="top" />
+@[code](./.vuepress/vue-previews/in.vue)
 
-[123](https://www.baidu.com)
-
-@[code](/Users/reco/Desktop/md/demo/index.vue)
-
-@[preview](/Users/reco/Desktop/md/demo/index.vue)
+@[preview-in](@/example/.vuepress/vue-previews/in.vue)

@@ -36,7 +36,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
     autoSetCategory: true,
-    autoAddCategoryToNavbar: true
+    autoAddCategoryToNavbar: true,
+    vuePreviewsDir: './example/.vuepress/vue-previews'
   },
   // debug: true,
 })

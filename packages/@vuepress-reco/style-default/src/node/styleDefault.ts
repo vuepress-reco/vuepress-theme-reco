@@ -68,7 +68,12 @@ export default defineStyle(
       ['@vuepress/theme-data', { themeData: themeConfig }],
       ['@vuepress/back-to-top', themeConfig.backToTop !== false],
       ['@vuepress/nprogress', themeConfig.nprogress !== false],
-      ['@vuepress-reco/vuepress-plugin-comments', themeConfig.comments !== false]
+      ['@vuepress-reco/vuepress-plugin-comments', themeConfig.comments !== false],
+      ['@vuepress/register-components',
+        {
+          componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
+        },
+      ],
     ],
   })
 )

@@ -179,17 +179,16 @@ table {
 }
 
 blockquote {
-  @apply bg-gray-400 bg-opacity-10 text-base py-1 pb-4 my-4 mx-0 border-l border-solid;
-  border-color: #dfe2e5;
+  @apply bg-reco-bg-code text-base p-2 my-4 mx-0 border-l-4 border-solid;
+  @apply dark:bg-reco-bg-code-dark;
+  > p {
+    @apply m-0;
+  }
 }
 
 kbd {
   @apply border border-gray-400 border-b-2 border-opacity-20 rounded;
   @apply bg-gray-400 bg-opacity-5 py-0.5 px-2 text-sm text-center font-mono;
-}
-
-blockquote > p {
-  @apply m-0;
 }
 
 form {

@@ -1,13 +1,12 @@
 import { fs, path } from '@vuepress/utils'
-const { createMarkdown } = require('@vuepress/markdown')
-
-const md = createMarkdown()
-
-const { analyzeDeps } = require('./analyze-deps/index.js')
+import { md } from './md-instance/index.js'
+import { analyzeDeps } from './analyze-deps/index.js'
 
 let hasImportBlockOpen = false
 let importMode = ''
+let componentName = null
 let importBlockIndex = 0
+let resolveFileError = false
 
 const root = process.cwd()
 
@@ -31,28 +30,33 @@ export const mdPluginVueVuePreview = function(md) {
   md.renderer.rules.paragraph_open = function(tokens, idx, options, env, self) {
     const contentToken = tokens[idx + 1]
     const matchImportPattern =
-      contentToken.type === 'inline' && contentToken.content.match(/^@\[(preview)\]\((.+)\)/)
+      contentToken.type === 'inline' && contentToken.content.match(/^@\[(preview)-?(\w+)?\]\((.+)\)/)
 
     if (!matchImportPattern) {
       return self.renderToken(tokens, idx, options)
     }
 
     importMode = matchImportPattern[1]
+    componentName = matchImportPattern[2]
 
     hasImportBlockOpen = true
     importBlockIndex = idx
 
-    const filePath = matchImportPattern[2]
+    const filePath = matchImportPattern[3]
 
     const absoluteFilePath = _getAbsPath(filePath)
 
     if (!fs.existsSync(absoluteFilePath)) {
-      return `<div class="custom-block warning"><p>未找到文件: ${absoluteFilePath}</p></div><!-- `
+      resolveFileError = true
+      return `<div class="custom-container warning"><p>未找到文件: ${absoluteFilePath}</p></div><!-- `
     }
 
     if (!/\.vue$/.test(absoluteFilePath)) {
-      return `<div class="custom-block warning"><p>不支持非 vue 文件: ${filePath}</p></div><!-- `
+      resolveFileError = true
+      return `<div class="custom-container warning"><p>不支持非 vue 文件: ${filePath}</p></div><!-- `
     }
+
+    resolveFileError = false
 
     if (importMode === 'preview') {
       return renderDemoOpen({ filePath, absoluteFilePath })
@@ -61,8 +65,10 @@ export const mdPluginVueVuePreview = function(md) {
 
   // 覆盖块标签-结束标签
   md.renderer.rules.paragraph_close = function(tokens, idx, options, env, self) {
-    if (importMode === 'preview' && hasImportBlockOpen && (importBlockIndex + 2) === idx) {
-      return '--></CodeGroup>'
+    if (hasImportBlockOpen && (importBlockIndex + 2) === idx) {
+      hasImportBlockOpen = false
+
+      return !resolveFileError ? '--></CodeGroup></VuePreview>': ' -->'
     }
     return self.renderToken(tokens, idx, options)
   }
@@ -72,7 +78,7 @@ export const mdPluginVueVuePreview = function(md) {
 }
 
 function renderDemoOpen({ filePath, absoluteFilePath }) {
-  let template = '<CodeGroup>'
+  let template = `<VuePreview component="${componentName}"><CodeGroup>`
 
   const deps = analyzeDeps(absoluteFilePath)
 

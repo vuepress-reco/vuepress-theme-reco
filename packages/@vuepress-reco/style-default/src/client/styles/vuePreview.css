@@ -1,0 +1,17 @@
+.vue-preview-container {
+  @apply relative my-4 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  .preview-container {
+    @apply py-4 border-b border-solid border-reco-border-light;
+    @apply dark:border-reco-border-dark;
+    & > * {
+      @apply mx-auto;
+    }
+  }
+  .code-group {
+    @apply pr-0 py-0 my-0 border-none;
+    &::after {
+      @apply hidden;
+    }
+  }
+}
