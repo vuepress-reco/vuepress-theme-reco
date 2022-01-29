@@ -1,7 +1,7 @@
 <template>
   <div class="vue-preview-container">
-    <div class="preview-container">
-      <component v-if="component" :is="component" />
+    <div class="preview-container" v-if="component !== undefined">
+      <component :is="component" />
     </div>
     <slot></slot>
   </div>
