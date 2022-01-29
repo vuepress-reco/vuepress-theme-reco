@@ -13,7 +13,7 @@ defineProps({
   vertical: {
     type: String,
     required: false,
-    default: top,
+    default: 'top',
   },
 })
 </script>
