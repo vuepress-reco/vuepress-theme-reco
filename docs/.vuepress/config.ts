@@ -14,12 +14,24 @@ export default defineUserConfig<DefaultThemeOptions>({
     docsDir: '/',
     lastUpdatedText: '最后更新时间',
     navbar: [
-      { text: '首页', link: '/' },
       { text: '指南', link: '/docs/guide/introduce' },
       { text: '参考',
         children: [
-          { text: '风格开发 API', link: '/docs/style-dev-api/' },
-          { text: '默认风格 API', link: '/docs/style-default-api/introduce' }
+          {
+            text: '风格',
+            children: [
+              { text: '默认风格配置', link: '/docs/style-default-api/introduce' },
+              { text: '风格开发 API', link: '/docs/style-dev-api/' }
+            ]
+          },
+          {
+            text: '内置插件',
+            children: [
+              { text: 'page', link: '/docs/plugins/page' },
+              { text: 'comments', link: '/docs/plugins/comments' },
+              { text: 'vue-preview', link: '/docs/plugins/vue-previews' }
+            ]
+          }
         ]
       },
       {
@@ -41,7 +53,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
         {
           text: '高级',
-          children: [ 'home', 'series', 'comments', 'auto-set-category' ]
+          children: [ 'home', 'series', 'comments', 'auto-set-category', 'custom-container', 'code-import' ]
         }
       ]
     },
@@ -54,6 +66,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       recordIP: true,
       hideComments: true // 隐藏评论
     },
+    vuePreviewsDir: './docs/.vuepress/vue-previews'
   },
   // debug: true,
 })
