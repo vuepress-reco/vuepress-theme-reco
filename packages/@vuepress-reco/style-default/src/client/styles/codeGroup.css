@@ -29,9 +29,9 @@
     }
     pre {
       @apply mb-0 pl-8 pt-8 pb-4 border-none;
-      &::after {
-        @apply hidden;
-      }
+    }
+    div[class*="language-"]::after {
+      @apply hidden;
     }
     .line-numbers {
       @apply w-4 pb-4 !important;
