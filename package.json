@@ -20,7 +20,6 @@
     "dev:docs": "yarn copy-watch & yarn build --watch & vuepress dev docs",
     "start:debug": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "publish": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish",
     "release": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish prerelease --dist-tag next",
     "update": "yarn upgrade-interactive --latest"
   },
