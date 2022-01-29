@@ -5,7 +5,7 @@
 *,
 ::before,
 ::after {
-  @apply box-border border-0 border-gray-200;
+  @apply box-border border-0 border-gray-200 subpixel-antialiased;
 }
 
 html {

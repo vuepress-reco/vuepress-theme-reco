@@ -3,8 +3,9 @@
     @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
-      @apply px-2 py-0.5 bg-reco-bg-code rounded-md font-mono;
+      @apply px-2 py-0.5 bg-reco-bg-code rounded-md;
       @apply dark:bg-reco-bg-code-dark;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
   }
   .theme-reco-default-content {

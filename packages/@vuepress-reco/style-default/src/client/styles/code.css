@@ -4,6 +4,52 @@
  * @author Rose Pritchard
  */
 
+/* Code blocks */
+div[class*="language-"] {
+  @apply relative overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  &::before {
+    @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
+  }
+  &::after {
+    @apply absolute top-3.5 left-4 w-2.5 h-2.5 rounded-full;
+    content: "";
+    /* background: #f95c5b; */
+    /* box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32; */
+    background: #4954e6;
+    box-shadow: 22px 0 0 0 #4954e6, 44px 0 0 0 #4954e6;
+  }
+  pre[class*="language-"] {
+    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-solid border-reco-border-light;
+    @apply dark:border-reco-border-dark;
+  }
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      @apply hidden;
+    }
+  }
+  &.line-numbers-mode {
+    @apply relative;
+    .line-numbers {
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-normal font-mono bg-reco-bg-code;
+      @apply dark:bg-reco-bg-code-dark;
+      bottom: 1px;
+      left: 1px;
+      br {
+        user-select: none;
+      }
+      .line-number {
+        position: relative;
+        z-index: 3;
+        user-select: none;
+      }
+    }
+  }
+  pre code {
+    @apply bg-transparent p-0 leading-6 !important;
+  }
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   word-spacing: normal;
@@ -12,22 +58,6 @@ pre[class*="language-"] {
   tab-size: 4;
   hyphens: none;
   @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light text-left whitespace-pre leading-normal;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  @apply relative overflow-x-auto my-2 overflow-hidden bg-reco-bg-code pt-16 pr-6 pl-16 pb-6 rounded-md border-2 border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
-}
-
-div[class*="language-"] {
-  @apply relative;
-  &::after {
-    @apply absolute top-4 left-4 w-3 h-3 rounded-full;
-    content: "";
-    background: #f95c5b;
-    box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
-  }
 }
 
  .token.comment,
@@ -104,39 +134,7 @@ div[class*="language-"] {
    color: green;
  }
 
-
 /* code-other */
-div[class*='language-'] {
-  @apply relative;
-  &::before {
-    @apply absolute z-10 top-1.5 right-3 text-gray-400 text-xs;
-  }
-  &:not(.line-numbers-mode) {
-    .line-numbers {
-      @apply hidden;
-    }
-  }
-  &.line-numbers-mode {
-    @apply relative;
-    .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-normal font-mono bg-reco-bg-code;
-      @apply dark:bg-reco-bg-code-dark;
-      bottom: 1px;
-      left: 1px;
-      br {
-        user-select: none;
-      }
-      .line-number {
-        position: relative;
-        z-index: 3;
-        user-select: none;
-      }
-    }
-  }
-  pre code {
-    @apply font-mono font-normal bg-transparent p-0 leading-6 !important;
-  }
-}
 
 @each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
   div.language-$(lang)::before {
