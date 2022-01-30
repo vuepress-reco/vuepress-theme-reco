@@ -65,10 +65,10 @@ theme-cli init
 
 ### 功能
 
-- [ ] 加密功能
+- [ ] ~~加密功能~~
 - [ ] ~~loading 功能~~
 - [x] 自定义首页功能
-- [ ] 增加 icon 功能
+- [ ] ~~增加 icon 功能~~
 - [x] nprogress 插件
 - [x] back-to-top 插件
 - [x] comment 插件（目前仅支持 valine，vssue 还没有支持 Vue3）

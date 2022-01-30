@@ -4,8 +4,8 @@ isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
 modules:
-  # - BannerBrand
-  # - Blog
+  - BannerBrand
+  - Blog
   - MdContent
   - Footer
 bannerBrand:

@@ -37,9 +37,9 @@
           }
           &:not(:first-of-type) {
             .dropdown-subtitle {
-              @apply relative z-40 mt-4;
+              @apply relative z-40 mt-8;
               &::before {
-                @apply absolute left-0 -top-2 block w-full border-t border-solid border-reco-border-light;
+                @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-light;
                 @apply dark:border-reco-border-dark;
                 content: '';
               }

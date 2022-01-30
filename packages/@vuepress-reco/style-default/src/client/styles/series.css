@@ -5,9 +5,9 @@
   @apply border-r border-solid border-reco-border-light dark:border-reco-border-dark;
   .series-group {
     &:not(:first-of-type) h5.series-heading {
-      @apply relative;
+      @apply relative mt-3;
       &::before {
-        @apply absolute left-0 bottom-10 block w-full border-t border-solid border-reco-border-light;
+        @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-light;
         @apply dark:border-reco-border-dark;
         content: '';
       }

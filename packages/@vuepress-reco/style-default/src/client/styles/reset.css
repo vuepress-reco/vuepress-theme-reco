@@ -33,13 +33,16 @@ main {
   @apply block;
 }
 
-h1,
+h1 {
+  @apply -mt-12 mb-8 mx-0 pt-20 leading-5 z-negative-10;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply -mt-12 mb-8 mx-0 pt-20 leading-5 z-negative-10;
+  @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10;
 }
 
 h1,
@@ -74,13 +77,11 @@ h1 {
 
 h2 {
   @apply leading-tight text-2xl;
-  &:not(:first-of-type) {
-    @apply -mt-4 relative;
-    &::before {
-      @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-light;
-      @apply dark:border-reco-border-dark;
-      content: ' ';
-    }
+  /* @apply -mt-4 relative; */
+  &::before {
+    @apply mb-6 block w-full border-t border-solid border-reco-border-light;
+    @apply dark:border-reco-border-dark;
+    content: ' ';
   }
 }
 
