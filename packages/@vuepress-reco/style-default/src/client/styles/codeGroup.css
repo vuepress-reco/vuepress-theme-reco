@@ -1,5 +1,5 @@
 .code-group {
-  @apply relative my-2 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply relative my-4 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
   @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
   .code-group__nav {
     .code-group__ul {
@@ -29,7 +29,7 @@
         @apply hidden;
       }
       pre[class*="language-"] {
-        @apply mb-0 pl-8 pt-0 pb-4 border-t-0 !important;
+        @apply mb-0 pt-0 pb-4 border-t-0 !important;
       }
     }
     .line-numbers {

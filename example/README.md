@@ -4,8 +4,8 @@ isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
 modules:
-  - BannerBrand
-  - Blog
+  # - BannerBrand
+  # - Blog
   - MdContent
   - Footer
 bannerBrand:
@@ -44,6 +44,23 @@ features:
 - title: 未来
   details: 吸引更多的朋友参与到开发中来，继续强大功能。
 ---
+
+:::: code-group
+::: code-group-item FOO
+```js
+const foo = 'foo'
+```
+:::
+::: code-group-item BAR
+```js
+const bar = 'bar'
+```
+:::
+::::
+
+@[code](./.vuepress/vue-previews/in.vue)
+
+@[preview-in](@/example/.vuepress/vue-previews/in.vue)
 
 [asd](https://abc)
 
@@ -111,20 +128,3 @@ asdnasn
 ::: details
 abc
 :::
-
-:::: code-group
-::: code-group-item FOO
-```js
-const foo = 'foo'
-```
-:::
-::: code-group-item BAR
-```js
-const bar = 'bar'
-```
-:::
-::::
-
-@[code](./.vuepress/vue-previews/in.vue)
-
-@[preview-in](@/example/.vuepress/vue-previews/in.vue)

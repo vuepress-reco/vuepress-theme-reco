@@ -6,7 +6,7 @@
 
 /* Code blocks */
 div[class*="language-"] {
-  @apply relative overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply relative my-4 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
   @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
   &::before {
     @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
@@ -16,11 +16,11 @@ div[class*="language-"] {
     content: "";
     /* background: #f95c5b; */
     /* box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32; */
-    background: #4954e6;
-    box-shadow: 22px 0 0 0 #4954e6, 44px 0 0 0 #4954e6;
+    background: #858DE6;
+    box-shadow: 22px 0 0 0 #858DE6, 44px 0 0 0 #858DE6;
   }
   pre[class*="language-"] {
-    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-solid border-reco-border-light;
+    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-solid border-reco-border-light leading-7;
     @apply dark:border-reco-border-dark;
   }
   &:not(.line-numbers-mode) {
@@ -31,10 +31,8 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-normal font-mono bg-reco-bg-code;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
       @apply dark:bg-reco-bg-code-dark;
-      bottom: 1px;
-      left: 1px;
       br {
         user-select: none;
       }
@@ -73,11 +71,15 @@ pre[class*="language-"] {
  }
 
  .token.tag,
- .token.attr-name,
  .token.namespace,
  .token.deleted {
    color: #e2777a;
  }
+
+.token.attr-name {
+  /* color: #e2777a; */
+  color: #cc99cd;
+}
 
  .token.function-name {
    color: #6196cc;
@@ -90,10 +92,12 @@ pre[class*="language-"] {
  }
 
  .token.property,
+ .token.value,
  .token.class-name,
  .token.constant,
  .token.symbol {
-   color: #f8c555;
+  /* color: #f8c555; */
+   color: #8F95DA;
  }
 
  .token.selector,
@@ -101,7 +105,8 @@ pre[class*="language-"] {
  .token.atrule,
  .token.keyword,
  .token.builtin {
-   color: #cc99cd;
+   /* color: #cc99cd; */
+   color: #e2777a;
  }
 
  .token.string,

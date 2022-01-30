@@ -1,5 +1,5 @@
 <template>
-<div style="width: 100px">vue preview</div>
+  <div style="width: 100px">vue preview</div>
 </template>
 
 <script setup>
