@@ -71,7 +71,7 @@
                 }
               }
               &.router-link-active {
-                @apply pl-2 text-reco-brand;
+                @apply pl-2;
                 &::before {
                   @apply w-1 h-1 animate-ping;
                 }
@@ -89,6 +89,10 @@
       &:hover .nav-dropdown {
         @apply md:block !important;
       }
+    }
+    /* 选中高亮，不可以移动 */
+    .router-link-active {
+      @apply text-reco-brand;
     }
   }
 }

@@ -4,7 +4,7 @@
     @apply absolute top-4 left-4 w-7 font-bold;
   }
   .custom-container-title {
-    @apply mb-0 font-bold;
+    @apply mt-3.5 mb-0 font-bold;
   }
   &.tip {
     @apply rounded border-reco-container-info-border border-2 border-solid bg-reco-container-info-bg;
@@ -34,7 +34,7 @@
     @apply py-4 rounded bg-reco-bg-code border-reco-border-light border-2 border-solid;
     @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
     .custom-container-title {
-      @apply list-none;
+      @apply mt-0 list-none cursor-pointer;
       > svg {
         @apply absolute top-3 left-4 w-7 font-bold;
       }

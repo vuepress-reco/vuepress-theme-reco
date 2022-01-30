@@ -80,7 +80,7 @@ const bar = 'bar'
 
 **npx**
 
-```
+```bash
 npx @vuepress-reco/theme-cli init
 ```
 
