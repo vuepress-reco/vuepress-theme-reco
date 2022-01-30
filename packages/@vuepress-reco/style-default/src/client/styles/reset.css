@@ -103,7 +103,7 @@ h6 {
 p,
 ol,
 ul {
-  @apply my-4 leading-7;
+  @apply my-6 leading-8;
 }
 
 a,
@@ -179,7 +179,7 @@ table {
 }
 
 blockquote {
-  @apply bg-reco-bg-code text-base p-2 my-4 mx-0 border-l-4 border-solid;
+  @apply bg-reco-bg-code text-base p-2 my-6 mx-0 border-l-4 border-solid;
   @apply dark:bg-reco-bg-code-dark;
   > p {
     @apply m-0;
