@@ -29,6 +29,7 @@ import type {
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { resolveEditLink } from '../utils'
 import Link from './Link.vue'
+import {toISODate} from "../utils/other";
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocale = useThemeLocaleData()
@@ -86,7 +87,7 @@ const useLastUpdated = (): ComputedRef<null | string> => {
 
     const updatedDate = new Date(page.value.git?.updatedTime)
 
-    return updatedDate.toLocaleString(siteLocale.value.lang)
+    return toISODate(updatedDate)
   })
 }
 
