@@ -3,7 +3,7 @@ import { path } from '@vuepress/utils'
 import { resolveContainerOptions } from './resolveContainer'
 
 export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
-  const { style } = themeConfig
+  const { style = '@vuepress-reco/style-default' } = themeConfig
   const stylePath = path.resolve(process.cwd(), `node_modules/${style}`)
   const getStyleConfig = require(path.resolve(
     `${stylePath}/lib/node/index.js`

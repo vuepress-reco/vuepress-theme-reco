@@ -7,7 +7,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   description: 'Just playing around',
   theme: 'reco',
   themeConfig: {
-    style: '@vuepress-reco/style-default',
     logo: '/hero_black.png',
     authorAvatar: '/logo.png',
     author: 'reco_luan',
