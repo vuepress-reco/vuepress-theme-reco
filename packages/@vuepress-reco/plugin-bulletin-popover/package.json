@@ -1,0 +1,38 @@
+{
+  "name": "@vuepress-reco/vuepress-plugin-bulletin-popover",
+  "version": "2.0.1-alpha.31",
+  "description": "Bulletin popover plugin for vuepress-theme-reco.",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress"
+  ],
+  "author": "reco_luan <recoluan@outlook.com>",
+  "homepage": "https://github.com/vuepress-reco/vuepress-theme-reco-next#readme",
+  "license": "MIT",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco-next.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build tsconfig.build.json",
+    "build:watch": "tsc --build -w tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+  },
+  "bugs": {
+    "url": "https://github.com/vuepress-reco/vuepress-theme-reco-next/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
