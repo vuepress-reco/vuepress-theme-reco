@@ -29,3 +29,31 @@ defineProps({
     <slot>{{ text }}</slot>
   </span>
 </template>
+
+<style>
+.badge {
+  display: inline-block;
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 3px;
+  padding: 0 6px;
+  @apply text-white;
+
+  &.tip {
+    @apply bg-reco-container-info-border;
+  }
+
+  &.warning {
+    @apply bg-reco-container-warning-border;
+  }
+
+  &.danger {
+    @apply bg-reco-container-danger-border;
+  }
+
+  & + & {
+    margin-left: 5px;
+  }
+}
+</style>

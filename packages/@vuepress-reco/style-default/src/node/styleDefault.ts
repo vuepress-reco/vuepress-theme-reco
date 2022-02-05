@@ -1,7 +1,6 @@
 import { defineStyle, StyleOptions } from '@vuepress-reco/shared'
 import { path } from '@vuepress/utils'
 import { pages } from './pages'
-import { tailwindConfig } from './tailwind'
 
 export default defineStyle(
   (themeConfig): StyleOptions => ({
@@ -17,46 +16,6 @@ export default defineStyle(
       '../client/clientAppSetup.js'
     ),
 
-    onInitialized(app): void {
-      app.options.bundler = '@vuepress/bundler-webpack'
-      const { bundler, bundlerConfig } = app.options || {}
-      if (bundler === '@vuepress/bundler-vite') {
-        app.options.bundlerConfig = {
-          viteOptions: {
-            ...(bundlerConfig?.viteOptions || {}),
-            css: {
-              postcss: {
-                plugins: [
-                  require('postcss-import'),
-                  require('tailwindcss')(tailwindConfig),
-                  require('autoprefixer')({}),
-                  require('postcss-nested'),
-                  require('postcss-each')
-                ]
-              }
-            },
-            optimizeDeps: {
-              exclude: ['vue']
-            }
-          },
-        }
-      } else {
-        app.options.bundlerConfig = {
-          postcss: {
-            postcssOptions: {
-              plugins: [
-                ['tailwindcss', tailwindConfig],
-                ['autoprefixer', {}],
-                ['postcss-nested'],
-                ['postcss-each']
-              ]
-            },
-          },
-          ...bundlerConfig,
-        }
-      }
-    },
-
     extendsPage: (page) => {
       // save relative file path into page data to generate edit link
       page.data.filePathRelative = page.filePathRelative
@@ -65,16 +24,9 @@ export default defineStyle(
     },
 
     plugins: [
-      ['@vuepress/theme-data', { themeData: themeConfig }],
-      ['@vuepress/back-to-top', themeConfig.backToTop !== false],
-      ['@vuepress/nprogress', themeConfig.nprogress !== false],
-      ['@vuepress-reco/vuepress-plugin-comments', themeConfig.comments !== false],
+      ['@vuepress/back-to-top'],
+      ['@vuepress-reco/vuepress-plugin-comments'],
       ['@vuepress-reco/vuepress-plugin-bulletin-popover'],
-      ['@vuepress/register-components',
-        {
-          componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
-        },
-      ],
     ],
   })
 )

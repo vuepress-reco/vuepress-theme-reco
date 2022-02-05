@@ -15,8 +15,6 @@
       </i>
     </div>
     <div class="bulletin-content" v-html="bodyNodes"></div>
-    <hr>
-    <div class="bulletin-footer" v-html="footerNodes"></div>
   </div>
 </template>
 
@@ -27,3 +25,46 @@ import { useVisible, useHandleNodes } from './hook'
 const { visible, closeBulletinPopover } = useVisible()
 const { bodyNodes } = useHandleNodes()
 </script>
+
+<style>
+.bulletin-wrapper {
+  @apply fixed top-20 right-4 z-10 box-border rounded-md border-2 border-solid border-reco-brand bg-reco-bg-light;
+  min-height: 200px;
+  max-height: 660px;
+  overflow-y: auto;
+  @apply dark:bg-reco-bg-dark;
+  .bulletin-title {
+    @apply relative box-border m-0 p-1.5 bg-reco-brand text-white;
+    .btn-close {
+      @apply absolute inline-block w-4 h-4 top-0 bottom-0 right-2 my-auto cursor-pointer text-white;
+      width: 22px;
+      height: 22px;
+      svg {
+        @apply fill-current;
+      }
+    }
+  }
+  .bulletin-content {
+    @apply box-border py-6 px-8;
+    .btn-group {
+      @apply text-center;
+    }
+    .btn {
+      @apply inline-block w-14 h-14 text-center rounded-1/2 text-white cursor-pointer bg-reco-brand;
+      line-height: 3.5rem;
+      &:not(:first-child) {
+        @apply ml-2;
+      }
+    }
+    h5 {
+      @apply my-4 pt-0;
+    }
+    img {
+      @apply w-full;
+    }
+    hr {
+      @apply my-8 border-t border-solid border-reco-brand;
+    }
+  }
+}
+</style>

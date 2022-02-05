@@ -1,3 +1,4 @@
+<script lang="ts">
 import { defineComponent, h, onBeforeUpdate, ref } from 'vue'
 import type { Component, VNode } from 'vue'
 
@@ -134,3 +135,26 @@ export default defineComponent({
     }
   },
 })
+</script>
+
+<style>
+.code-group {
+  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  .code-group__nav {
+    .code-group__ul {
+      @apply pl-0 my-0 list-none;
+      .code-group__li {
+        @apply inline-block;
+        button {
+          @apply px-2.5 py-1.5 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer;
+          @apply dark:text-reco-text-dark;
+          &.code-group__nav-tab-active {
+            @apply border-reco-brand !important;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

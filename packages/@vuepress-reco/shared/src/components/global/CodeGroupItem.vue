@@ -29,3 +29,26 @@ defineProps({
     <slot />
   </div>
 </template>
+
+<style>
+.code-group-item {
+  @apply hidden border-t border-solid border-reco-border-light;
+  @apply dark:border-reco-border-dark;
+  margin-top: -1px;
+  &.code-group-item__active {
+    @apply block;
+  }
+  div[class*="language-"] {
+    @apply border-none;
+    &::after {
+      @apply hidden;
+    }
+    pre[class*="language-"] {
+      @apply mb-0 pt-0 pb-4 border-t-0 !important;
+    }
+  }
+  .line-numbers {
+    @apply pb-4 !important;
+  }
+}
+</style>

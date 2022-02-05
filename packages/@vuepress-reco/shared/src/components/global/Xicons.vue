@@ -84,3 +84,33 @@ export default defineComponent<PropsType>({
   },
 })
 </script>
+
+<style>
+.icon-container {
+  @apply inline-flex;
+  &.left {
+    @apply flex-row items-center;
+    > span {
+      @apply ml-1.5;
+    }
+  }
+  &.right {
+    @apply flex-row-reverse items-center;
+    > span {
+      @apply mr-1.5;
+    }
+  }
+  &.top {
+    @apply flex-col items-center;
+    > span {
+      @apply mt-1.5;
+    }
+  }
+  &.bottom {
+    @apply flex-col-reverse items-center;
+    > span {
+      @apply mb-1.5;
+    }
+  }
+}
+</style>

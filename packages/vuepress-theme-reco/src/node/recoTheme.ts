@@ -1,6 +1,7 @@
 import type { Theme, ThemeConfig } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { resolveContainerOptions } from './resolveContainer'
+import { tailwindConfig } from './tailwind'
 
 export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   const { style = '@vuepress-reco/style-default' } = themeConfig
@@ -10,10 +11,13 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
   )).default
 
   const styleConfig = getStyleConfig(themeConfig)
+
   styleConfig.plugins = [
     '@vuepress/plugin-git',
+    ['@vuepress/plugin-theme-data', { themeData: themeConfig }],
     '@vuepress/plugin-search',
     '@vuepress/plugin-palette',
+    '@vuepress/plugin-nprogress',
     '@vuepress/plugin-prismjs',
     ['@vuepress/active-header-links', {
         headerLinkSelector: 'a.page-header-item',
@@ -27,6 +31,16 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/plugin-container', resolveContainerOptions('code-group-item')],
     ['@vuepress/plugin-external-link-icon'],
     ['@vuepress-reco/vuepress-plugin-vue-preview'],
+    ['@vuepress/register-components',
+      {
+        componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
+      },
+    ],
+    ['@vuepress/register-components',
+      {
+        componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
+      },
+    ],
     ...styleConfig.plugins,
   ]
 
@@ -36,6 +50,50 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
       process.cwd(),
       `node_modules/${style}/lib/client/layouts`
     ),
+    onInitialized(app) {
+      // todo @vuepress/bundler-vite 适配问题
+      app.options.bundler = '@vuepress/bundler-webpack'
+
+      const { bundler, bundlerConfig } = app.options || {}
+
+      if (bundler === '@vuepress/bundler-vite') {
+        app.options.bundlerConfig = {
+          viteOptions: {
+            ...(bundlerConfig?.viteOptions || {}),
+            css: {
+              postcss: {
+                plugins: [
+                  require('postcss-import'),
+                  require('tailwindcss')(tailwindConfig),
+                  require('autoprefixer')({}),
+                  require('postcss-nested'),
+                  require('postcss-each')
+                ]
+              }
+            },
+            optimizeDeps: {
+              exclude: ['vue']
+            }
+          },
+        }
+      } else {
+        app.options.bundlerConfig = {
+          postcss: {
+            postcssOptions: {
+              plugins: [
+                ['tailwindcss', tailwindConfig],
+                ['autoprefixer', {}],
+                ['postcss-nested'],
+                ['postcss-each']
+              ]
+            },
+          },
+          ...bundlerConfig,
+        }
+      }
+
+      styleConfig.onInitialized && styleConfig.onInitialized(app)
+    },
     ...styleConfig,
   }
 }

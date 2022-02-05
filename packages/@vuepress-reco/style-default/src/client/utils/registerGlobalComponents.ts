@@ -1,4 +1,4 @@
-import * as GlobalComponents from '../components/global'
+import * as GlobalComponents from '@vuepress-reco/shared/lib/esm/components/global'
 
 export function registerGlobalComponents(app) {
   Object.keys(GlobalComponents).forEach(key => {
