@@ -14,7 +14,6 @@ date: 2021-11-06 23:36:01
 
 ``` js
 // .vuepress/config.js
-
 module.exports = {
   themeConfig: {
     series: {
@@ -28,7 +27,6 @@ module.exports = {
 
 ```js
 // .vuepress/config.js
-
 module.exports = {
   themeConfig: {
     series: {
@@ -42,6 +40,32 @@ module.exports = {
           children: [ 'home', 'series', 'comments' ]
         }
       ]
+    }
+  }
+}
+```
+
+**异常**
+
+::: warning
+如果左侧出现文章的名称显示成了文档的路径，可以把 children 变为完整模式。
+:::
+
+```js
+// 省略模式
+module.exports = {
+  themeConfig: {
+    series: {
+      '/vuepress-theme-reco/': [ 'introduce', 'usage' ]
+    }
+  }
+}
+
+// 完整模式
+module.exports = {
+  themeConfig: {
+    series: {
+      '/vuepress-theme-reco/': [ '/vuepress-theme-reco/introduce', '/vuepress-theme-reco/usage' ]
     }
   }
 }
