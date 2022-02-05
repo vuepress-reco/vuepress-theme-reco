@@ -33,6 +33,11 @@ main {
   @apply block;
 }
 
+hr {
+  @apply my-4 border-t border-solid border-reco-border-light;
+  @apply dark:border-reco-border-dark;
+}
+
 h1 {
   @apply -mt-12 mb-8 mx-0 pt-20 leading-5 z-negative-10;
 }
