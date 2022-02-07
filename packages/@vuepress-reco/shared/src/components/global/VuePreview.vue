@@ -1,6 +1,6 @@
 <template>
   <div class="vue-preview-container">
-    <div class="preview-container" v-if="component !== undefined">
+    <div class="preview-container" v-if="component !== 'undefined'">
       <component :is="component" />
     </div>
     <slot></slot>
@@ -16,7 +16,7 @@ const props = defineProps(['component'])
   @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
   @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
   .preview-container {
-    @apply py-4 border-b border-solid border-reco-border-light;
+    @apply py-4 border-b border-dashed border-reco-border-light;
     @apply dark:border-reco-border-dark;
     & > * {
       @apply mx-auto;

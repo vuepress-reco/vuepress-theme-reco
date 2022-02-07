@@ -76,6 +76,8 @@ const bar = 'bar'
 
 @[preview-in](@/example/.vuepress/vue-previews/in.vue)
 
+@[preview](@/example/.vuepress/vue-previews/in.vue)
+
 [asd](https://abc)
 
 ## 快速开始

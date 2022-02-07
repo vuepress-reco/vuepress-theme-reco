@@ -147,7 +147,7 @@ export default defineComponent({
       .code-group__li {
         @apply inline-block;
         button {
-          @apply px-2.5 py-1.5 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer;
+          @apply px-3 py-2 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer;
           @apply dark:text-reco-text-dark;
           &.code-group__nav-tab-active {
             @apply border-reco-brand !important;

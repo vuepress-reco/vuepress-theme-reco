@@ -32,7 +32,7 @@ defineProps({
 
 <style>
 .code-group-item {
-  @apply hidden border-t border-solid border-reco-border-light;
+  @apply hidden border-t border-dashed border-reco-border-light;
   @apply dark:border-reco-border-dark;
   margin-top: -1px;
   &.code-group-item__active {
