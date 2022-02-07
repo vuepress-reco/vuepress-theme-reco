@@ -61,7 +61,7 @@ theme-cli init
 
 <img width="800" alt="dark_category" src="https://user-images.githubusercontent.com/18067907/134000365-a24344c3-05ed-4bbb-abae-41653be9c4c0.png">
 
-## 待办
+## alpha 版本待办事项
 
 ### 功能
 
