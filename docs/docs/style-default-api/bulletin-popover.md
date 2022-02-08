@@ -44,7 +44,7 @@ date: 2022-02-05 22:17:55
           body: [
             {
               type: 'text',
-              content: `🎉🎉🎉 reco 主题 2.x 已经接近 Beta 版本，在发布 Latest 版本之前不会再有大的更新，
+              content: `🎉🎉🎉 reco 主题 2.x 已经发布 Beta 版本，在发布 Latest 版本之前不会再有大的更新，
               大家可以尽情尝鲜了，并且希望大家在 QQ 群和 GitHub 踊跃反馈使用体验，我会在第一时间响应。`,
               style: 'font-size: 12px;'
             },
