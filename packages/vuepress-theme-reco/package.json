@@ -50,7 +50,7 @@
     "postcss-each": "^1.1.0",
     "postcss-import": "14.0.2",
     "postcss-nested": "^5.0.6",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
     "eslint-config-vuepress": "^3.2.1",

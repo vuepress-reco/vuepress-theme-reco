@@ -26,4 +26,8 @@
   .toggle-sidebar-button {
     @apply inline-block md:hidden;
   }
+  .mode-switch {
+    @apply ml-4 inline-block align-middle;
+    height: 18px;
+  }
 }

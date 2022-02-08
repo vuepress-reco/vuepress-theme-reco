@@ -11,7 +11,6 @@
 html {
   font-size: 16px !important;
   -webkit-text-size-adjust: 100%;
-  @apply bg-reco-bg-light dark:bg-reco-bg-dark text-reco-text-light dark:text-reco-text-dark font-normal text-sm font-sans;
 }
 
 @media screen and (max-width: 640px) {
@@ -22,7 +21,8 @@ html {
 
 body {
   /* antialiased 字体平滑 */
-  @apply m-0 w-full antialiased overflow-x-hidden;
+  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-sm font-sans;
+  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
   min-width: 320px;
   direction: ltr;
   /* 像素较小时字体会拼接在一起 */
@@ -167,12 +167,10 @@ table {
 
   tr {
     @apply border-2 border-solid border-reco-border-light;
-    @apply dark:border-reco-border-dark;
   }
 
   th {
     @apply text-left font-semibold bg-reco-bg-light-light;
-    @apply dark:bg-reco-bg-dark-light;
   }
 
   td, th {
@@ -267,4 +265,12 @@ li svg {
 ::-webkit-scrollbar-thumb:horizontal {
   width: 5px;
   @apply bg-reco-brand;
+}
+
+/* 兼容 */
+table tr {
+  @apply dark:border-reco-border-dark;
+}
+table th {
+  @apply dark:bg-reco-bg-dark-light;
 }

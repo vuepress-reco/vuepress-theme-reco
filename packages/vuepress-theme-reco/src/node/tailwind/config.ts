@@ -4,7 +4,7 @@ import { colors as customColors } from './custom-colors'
 
 export const tailwindConfig = {
   purge: ['./src/**/*.vue'],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       backgroundOpacity: {

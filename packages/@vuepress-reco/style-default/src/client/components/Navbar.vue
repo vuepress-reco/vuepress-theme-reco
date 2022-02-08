@@ -24,7 +24,9 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarLinks />
       <NavbarSearch />
+      <ModeSwitch class="mode-switch" />
     </div>
+
   </header>
 </template>
 
@@ -34,9 +36,10 @@ import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
+import ModeSwitch from './ModeSwitch.vue'
 
 export default defineComponent({
-  components: { NavbarLinks, ToggleSidebarButton },
+  components: { NavbarLinks, ToggleSidebarButton, ModeSwitch },
   emits: ['toggle-sidebar'],
   setup(_, ctx) {
     const siteLocale = useSiteLocaleData()

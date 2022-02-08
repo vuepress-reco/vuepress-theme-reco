@@ -1,0 +1,37 @@
+<template>
+  <Xicons :icon="icon" @click="toggleMode()" />
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+const mode = ref('')
+const icon = computed(() => {
+  return mode.value === 'dark' ? 'Sun' : 'MoonStars'
+})
+
+const toggleMode = (m) => {
+  if (m) {
+    mode.value = m
+  } else {
+    mode.value = mode.value === 'dark' ? 'light' : 'dark'
+  }
+
+  localStorage.theme = mode.value
+
+  if (mode.value === 'dark') {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+}
+
+const initMode = () => {
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    toggleMode('dark')
+  } else {
+    toggleMode('light')
+  }
+}
+
+initMode()
+</script>

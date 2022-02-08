@@ -15,7 +15,7 @@
     .dropdown-wrapper {
       @apply relative;
       .dropdown-title {
-        @apply text-reco-text-light dark:text-reco-text-dark hidden md:block;
+        @apply text-reco-text-light hidden md:block;
         .title {
           @apply font-semibold;
         }
@@ -24,7 +24,7 @@
         @apply text-base font-semibold text-reco-text-light dark:text-reco-text-dark block md:hidden;
       }
       .nav-dropdown {
-        @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-light dark:bg-reco-bg-dark list-none;
+        @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-light list-none;
         @apply md:px-3 md:hidden md:absolute md:top-2 md:py-2 md:my-3 md:shadow-md;
         .dropdown-item {
           @apply relative;
@@ -95,4 +95,12 @@
       @apply text-reco-brand;
     }
   }
+}
+
+/* 兼容 */
+.navbar-links .navbar-links-item .dropdown-wrapper .dropdown-title {
+  @apply dark:text-reco-text-dark;
+}
+.navbar-links .navbar-links-item .dropdown-wrapper .nav-dropdown {
+  @apply dark:bg-reco-bg-dark;
 }

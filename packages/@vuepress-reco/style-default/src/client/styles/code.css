@@ -21,7 +21,6 @@ div[class*="language-"] {
   }
   pre[class*="language-"] {
     @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-solid border-reco-border-light leading-7;
-    @apply dark:border-reco-border-dark;
   }
   &:not(.line-numbers-mode) {
     .line-numbers {
@@ -31,8 +30,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
-      @apply dark:bg-reco-bg-code-dark;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono;
       br {
         user-select: none;
       }
@@ -145,4 +143,9 @@ pre[class*="language-"] {
   div.language-$(lang)::before {
     content: '$(lang)';
   }
+}
+
+/* 兼容 */
+div[class*="language-"] pre[class*="language-"] {
+  @apply dark:border-reco-border-dark;
 }

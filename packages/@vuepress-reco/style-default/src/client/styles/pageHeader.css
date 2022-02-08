@@ -11,7 +11,7 @@
 
     .page-header-menu-depth_2 {
       @apply py-2 font-semibold text-sm;
-      @apply border-t border-dashed border-reco-border-light dark:border-reco-border-dark;
+      @apply border-t border-dashed border-reco-border-light;
       &.active {
         a {
           @apply text-reco-brand;
@@ -40,4 +40,9 @@
       }
     }
   }
+}
+
+/* 兼容 */
+.page-header-container ul .page-header-menu-depth_2 {
+  @apply dark:border-reco-border-dark;
 }

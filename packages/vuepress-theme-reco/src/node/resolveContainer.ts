@@ -23,7 +23,7 @@ const renderOptionsForDetails = (tokens, idx) => {
   const { type, info } = tokens[idx]
   const [customType, title] = info.trim().split(' ')
   if (/container_details_open/g.test(type)) {
-    return `<details class="custom-container ${customType}"><summary class="custom-container-title">${svgMap[customType] || ''} ${ title || customType.toUpperCase() }</summary>`
+    return `<details class="custom-container ${customType}"><summary class="custom-container-title">${ title || customType.toUpperCase() }</summary>`
   }
 
   if (/container_details_close/g.test(type)) {

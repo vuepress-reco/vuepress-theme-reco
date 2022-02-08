@@ -1,7 +1,6 @@
 .search-box {
   input {
     @apply bg-reco-bg-light text-reco-text-light border-2 border-solid !important;
-    @apply dark:bg-reco-bg-dark dark:text-reco-text-dark !important;
     @apply focus:border-reco-brand !important;
     @apply border-reco-border-light !important;
   }
@@ -35,4 +34,9 @@
   button {
     @apply h-8 px-1.5;
   }
+}
+
+/* 兼容 */
+.search-box input {
+  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark !important;
 }

@@ -17,7 +17,6 @@ const props = defineProps(['component'])
   @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
   .preview-container {
     @apply py-4 border-b border-dashed border-reco-border-light;
-    @apply dark:border-reco-border-dark;
     & > * {
       @apply mx-auto;
     }
@@ -28,5 +27,9 @@ const props = defineProps(['component'])
       @apply hidden;
     }
   }
+}
+
+.vue-preview-container .preview-container {
+  @apply dark:border-reco-border-dark;
 }
 </style>
