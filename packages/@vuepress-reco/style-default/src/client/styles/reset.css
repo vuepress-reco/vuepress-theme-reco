@@ -27,6 +27,7 @@ body {
   direction: ltr;
   /* 像素较小时字体会拼接在一起 */
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease
 }
 
 main {

@@ -94,6 +94,8 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
 
       styleConfig.onInitialized && styleConfig.onInitialized(app)
     },
+    templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
+    templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
     ...styleConfig,
   }
 }

@@ -16,7 +16,7 @@ const toggleMode = (m) => {
     mode.value = mode.value === 'dark' ? 'light' : 'dark'
   }
 
-  localStorage.theme = mode.value
+  localStorage['vuepress-reco-color-scheme'] = mode.value
 
   if (mode.value === 'dark') {
     document.documentElement.classList.add('dark')
@@ -26,7 +26,7 @@ const toggleMode = (m) => {
 }
 
 const initMode = () => {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (localStorage['vuepress-reco-color-scheme'] === 'dark' || (!('vuepress-reco-color-scheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     toggleMode('dark')
   } else {
     toggleMode('light')

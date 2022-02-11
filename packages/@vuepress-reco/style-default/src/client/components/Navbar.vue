@@ -24,7 +24,7 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarLinks />
       <NavbarSearch />
-      <ModeSwitch class="mode-switch" />
+      <ToggleDarkModeButton class="btn-toggle-dark-mode" />
     </div>
 
   </header>
@@ -34,12 +34,13 @@
 import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import ToggleDarkModeButton from '@vuepress-reco/shared/lib/esm/components/ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 import ModeSwitch from './ModeSwitch.vue'
 
 export default defineComponent({
-  components: { NavbarLinks, ToggleSidebarButton, ModeSwitch },
+  components: { NavbarLinks, ToggleSidebarButton, ToggleDarkModeButton },
   emits: ['toggle-sidebar'],
   setup(_, ctx) {
     const siteLocale = useSiteLocaleData()

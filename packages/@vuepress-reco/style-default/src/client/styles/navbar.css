@@ -26,7 +26,7 @@
   .toggle-sidebar-button {
     @apply inline-block md:hidden;
   }
-  .mode-switch {
+  .btn-toggle-dark-mode {
     @apply ml-4 inline-block align-middle;
     height: 18px;
   }
