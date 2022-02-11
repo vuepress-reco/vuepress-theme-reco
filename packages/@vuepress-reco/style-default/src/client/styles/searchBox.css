@@ -1,15 +1,15 @@
 .search-box {
   input {
-    @apply bg-reco-bg-light text-reco-text-light border-2 border-solid !important;
+    @apply bg-reco-bg-code text-reco-text-light border-2 border-solid !important;
     @apply focus:border-reco-brand !important;
     @apply border-reco-border-light !important;
   }
   /* dark:border-reco-border-dark !important 会解析异常 */
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     input {
       border-color: #3e4c5a !important;
     }
-  }
+  } */
   .suggestions {
     @apply bg-reco-bg-light text-reco-text-light border-2 border-solid border-reco-border-light !important;
     @apply dark:bg-reco-bg-dark dark:text-reco-text-dark dark:border-reco-border-dark !important;
@@ -38,5 +38,5 @@
 
 /* 兼容 */
 .search-box input {
-  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark !important;
+  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark dark:border-reco-border-dark !important;
 }

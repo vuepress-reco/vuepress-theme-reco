@@ -6,8 +6,14 @@
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
     >
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow down" />
+      <Xicons
+        class="title"
+        :icon="item.icon"
+        :text="item.text"
+        icon-size="20"
+        text-size="14"
+      />
+      <span v-if="!item.icon && item.text" class="arrow down" />
     </button>
 
     <button
@@ -16,8 +22,14 @@
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow" :class="open ? 'down' : 'right'" />
+      <Xicons
+        class="title"
+        :icon="item.icon"
+        :text="item.text"
+        icon-size="20"
+        text-size="14"
+      />
+      <span v-if="!item.icon && item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
     <DropdownTransition>
@@ -38,8 +50,13 @@
                     (open = false)
                 "
               />
-
-              <span v-else>{{ child.text }}</span>
+              <Xicons
+                v-else
+                :icon="child.icon"
+                :text="child.text"
+                icon-size="20"
+                text-size="14"
+              />
             </h5>
 
             <ul class="dropdown-subitem-wrapper">

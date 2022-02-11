@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent, h, onBeforeUpdate, ref } from 'vue'
 import type { Component, VNode } from 'vue'
+import Xicons from './Xicons.vue'
 
 export default defineComponent({
   name: 'CodeGroup',
@@ -124,7 +125,15 @@ export default defineComponent({
                     onClick: () => (activeIndex.value = i),
                     onKeydown: (e) => keyboardHandler(e, i),
                   },
-                  vnode.props.title
+                  h(
+                    Xicons,
+                    {
+                      icon: 'FileCode',
+                      text: vnode.props.title,
+                      'text-size': 12,
+                      'text-size': 12
+                    }
+                  )
                 )
               )
             })
@@ -147,8 +156,10 @@ export default defineComponent({
       .code-group__li {
         @apply inline-block;
         button {
-          @apply px-3 py-2 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer;
-          @apply dark:text-reco-text-dark;
+          @apply px-3.5 py-2.5 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer text-sm;
+          .icon-container {
+            @apply text-reco-text-light align-middle;
+          }
           &.code-group__nav-tab-active {
             @apply border-reco-brand !important;
           }
@@ -157,4 +168,10 @@ export default defineComponent({
     }
   }
 }
+
+/* 兼容 */
+.code-group .code-group__nav .code-group__ul .code-group__li button .icon-container {
+  @apply dark:text-reco-text-dark;
+}
+
 </style>

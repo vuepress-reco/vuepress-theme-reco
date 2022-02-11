@@ -2,11 +2,30 @@ import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
 
 export default defineUserConfig<DefaultThemeOptions>({
-  // base: '/reco/',
-  title: 'vuepress-theme-reco',
-  description: 'Just playing around',
+  locales: {
+    // 键名是该语言所属的子路径
+    // 作为特例，默认语言可以使用 '/' 作为其路径。
+    '/': {
+      lang: 'zh-CN',
+      title: 'vuepress-theme-reco',
+      description: '中文描述',
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'vuepress-theme-reco',
+      description: '英文描述',
+    },
+  },
   theme: 'reco',
   themeConfig: {
+    locales: {
+      '/': {
+        selectLanguageName: '简体中文',
+      },
+      '/en/': {
+        selectLanguageName: 'English',
+      },
+    },
     logo: '/hero_black.png',
     authorAvatar: '/logo.png',
     author: 'reco_luan',
@@ -31,6 +50,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     navbar: [
       {
         text: 'Blogs',
+        icon: 'Language',
         children: [
           {
             text: '是大法师的',

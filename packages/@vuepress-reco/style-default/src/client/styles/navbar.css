@@ -26,8 +26,11 @@
   .toggle-sidebar-button {
     @apply inline-block md:hidden;
   }
+  .search-box, .docsearch-container {
+    @apply align-middle;
+  }
   .btn-toggle-dark-mode {
     @apply ml-4 inline-block align-middle;
-    height: 18px;
+    height: 20px;
   }
 }

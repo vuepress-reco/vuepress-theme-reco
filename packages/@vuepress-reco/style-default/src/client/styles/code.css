@@ -30,7 +30,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
       br {
         user-select: none;
       }
@@ -148,4 +148,7 @@ pre[class*="language-"] {
 /* 兼容 */
 div[class*="language-"] pre[class*="language-"] {
   @apply dark:border-reco-border-dark;
+}
+div[class*="language-"].line-numbers-mode .line-numbers {
+  @apply dark:bg-reco-bg-code-dark;
 }

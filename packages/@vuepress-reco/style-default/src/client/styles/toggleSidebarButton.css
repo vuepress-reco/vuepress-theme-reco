@@ -9,3 +9,8 @@
     }
   }
 }
+
+/* 兼容 */
+.toggle-sidebar-button .icon span {
+  @apply dark:bg-reco-text-dark;
+}

@@ -9,7 +9,7 @@
 
     .meta-item-label {
       font-weight: 500;
-      color: #2c3e50;
+      @apply text-reco-text-light;
     }
   }
 
@@ -21,4 +21,9 @@
   .last-updated {
     float: right;
   }
+}
+
+/* 兼容 */
+.page-meta .meta-item .meta-item-label {
+  @apply dark:text-reco-text-dark;
 }

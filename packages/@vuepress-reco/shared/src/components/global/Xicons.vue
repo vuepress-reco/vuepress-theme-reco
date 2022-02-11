@@ -1,6 +1,6 @@
 <template>
   <a :class="['icon-container', iconPosition]" :href="link">
-    <component :style="iconStyle" :is="icons[icon]" />
+    <component v-if="icon" :style="iconStyle" :is="icons[icon]" />
 
     <span v-if="!!text || slots.default" :style="textStyle">
       <slot>{{ text }}</slot>
@@ -37,7 +37,7 @@ export default defineComponent<PropsType>({
   props: {
     icon: {
       type: String,
-      default: 'Alien',
+      default: '',
     },
     iconPosition: {
       type: String,
@@ -90,8 +90,8 @@ export default defineComponent<PropsType>({
   @apply inline-flex;
   &.left {
     @apply flex-row items-center;
-    > span {
-      @apply ml-1.5;
+    > svg {
+      @apply mr-1.5;
     }
   }
   &.right {

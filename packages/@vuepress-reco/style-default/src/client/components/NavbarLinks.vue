@@ -46,8 +46,8 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     const currentFullPath = router.currentRoute.value.fullPath
 
     const languageDropdown: ResolvedNavbarItem = {
-      text: themeLocale.value.selectLanguageText ?? 'unkown language',
-      ariaLabel: themeLocale.value.selectLanguageAriaLabel ?? 'unkown language',
+      text: '',
+      icon: 'Language',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale =

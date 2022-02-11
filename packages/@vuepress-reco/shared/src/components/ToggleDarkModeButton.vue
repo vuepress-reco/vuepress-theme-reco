@@ -1,5 +1,5 @@
 <template>
-  <Xicons :icon="icon" @click="toggleMode()" />
+  <Xicons :icon="icon" icon-size="20" @click="toggleMode()" />
 </template>
 
 <script setup lang="ts">

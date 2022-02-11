@@ -15,14 +15,20 @@
         @apply md:text-left;
         li {
           @apply inline-block;
-          a {
-            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-light cursor-pointer text-white font-semibold;
+          > a {
+            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-light cursor-pointer font-semibold;
             @apply dark:text-reco-text-dark;
+            .icon-container {
+              @apply text-white;
+            }
           }
           @apply hover:border-reco-brand;
-          &.plain a {
-            @apply bg-reco-bg-light text-reco-text-light;
+          &.plain > a {
+            @apply bg-reco-bg-light;
             @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
+            .icon-container {
+              @apply text-reco-text-light;
+            }
           }
           &:not(:first-child) {
             @apply ml-4;
@@ -35,4 +41,9 @@
       @apply md:mt-0 sm:w-40 md:w-60 md:ml-16;
     }
   }
+}
+
+/* 兼容 */
+.banner-brand-wrapper .hero-content .hero-text .btn-group li > a .icon-container {
+  @apply text-white dark:text-reco-text-dark;
 }

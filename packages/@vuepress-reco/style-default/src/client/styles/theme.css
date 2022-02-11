@@ -1,6 +1,7 @@
 .theme-container {
   .theme-reco-default-content, .page-title, .page-container .page-info, .page-meta, .page-nav, .reco-valine-wrapper, reco-vssue-wrapper {
-    @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-10;
+    @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-4;
+    @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
       @apply px-2 py-0.5 bg-reco-bg-code rounded-md;

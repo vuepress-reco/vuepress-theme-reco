@@ -8,7 +8,12 @@
     v-bind="$attrs"
   >
     <slot name="before" />
-    {{ item.text }}
+    <Xicons
+      :icon="item.icon"
+      :text="item.text"
+      icon-size="20"
+      text-size="14"
+    />
     <slot name="after" />
   </RouterLink>
   <a
@@ -21,7 +26,12 @@
     v-bind="$attrs"
   >
     <slot name="before" />
-    {{ item.text }}
+    <Xicons
+      :icon="item.icon"
+      :text="item.text"
+      icon-size="20"
+      text-size="14"
+    />
     <ExternalLinkIcon v-if="isBlankTarget" />
     <slot name="after" />
   </a>

@@ -1,11 +1,15 @@
 .navbar-links {
+  @apply md:ml-6;
+  .icon-container {
+    @apply align-middle;
+  }
   .navbar-links-item {
-    @apply block md:inline-block py-1.5;
+    @apply block md:inline-block py-1.5 align-middle;
     @apply md:py-0;
     &:not(:first-child) {
       @apply ml-0 md:ml-6;
     }
-    > a.nav-link {
+    > a.nav-link a {
       @apply text-base font-semibold;
       @apply md:text-base;
     }
@@ -14,6 +18,10 @@
     }
     .dropdown-wrapper {
       @apply relative;
+      height: 24px;
+      button {
+        height: 24px;
+      }
       .dropdown-title {
         @apply text-reco-text-light hidden md:block;
         .title {
@@ -21,7 +29,7 @@
         }
       }
       .mobile-dropdown-title {
-        @apply text-base font-semibold text-reco-text-light dark:text-reco-text-dark block md:hidden;
+        @apply text-base font-semibold text-reco-text-light block md:hidden;
       }
       .nav-dropdown {
         @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-light list-none;
@@ -83,6 +91,9 @@
           }
         }
       }
+      &.open {
+        height: auto;
+      }
       &.open .nav-dropdown {
         @apply block !important;
       }
@@ -103,4 +114,7 @@
 }
 .navbar-links .navbar-links-item .dropdown-wrapper .nav-dropdown {
   @apply dark:bg-reco-bg-dark;
+}
+.navbar-links .navbar-links-item .dropdown-wrapper .mobile-dropdown-title {
+  @apply dark:text-reco-text-dark;
 }
