@@ -20,7 +20,7 @@ div[class*="language-"] {
     box-shadow: 22px 0 0 0 #858DE6, 44px 0 0 0 #858DE6;
   }
   pre[class*="language-"] {
-    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-solid border-reco-border-light leading-7;
+    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-dashed border-reco-border-light leading-7;
   }
   &:not(.line-numbers-mode) {
     .line-numbers {

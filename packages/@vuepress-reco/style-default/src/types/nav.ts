@@ -3,7 +3,6 @@
  */
 export interface NavItem {
   text: string
-  icon?: string
   ariaLabel?: string
 }
 
@@ -19,6 +18,7 @@ export interface NavGroup<T> extends NavItem {
  */
 export interface NavLink extends NavItem {
   link: string
+  icon?: string
   rel?: string
   target?: string
 }

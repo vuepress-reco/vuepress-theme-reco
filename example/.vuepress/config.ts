@@ -37,6 +37,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       '/group/': [
         {
           text: 'group',
+          icon: 'Language',
           children: ['/group/bar.md', '/group/foo.md'],
         },
       ],
