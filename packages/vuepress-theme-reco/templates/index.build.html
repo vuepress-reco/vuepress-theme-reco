@@ -17,10 +17,11 @@
     </style>
     <script>
       const userMode = localStorage.getItem('vuepress-reco-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
+      const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (userMode === 'dark' || (typeof userMode !== 'string' && systemDarkMode)) {
+        document.documentElement.classList.toggle('dark', true);
+      }
     </script>
     <!--vuepress-ssr-head-->
     <!--vuepress-ssr-resources-->

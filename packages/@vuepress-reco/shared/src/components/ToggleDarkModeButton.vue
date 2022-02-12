@@ -3,35 +3,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-const mode = ref('')
+import { ref, computed, onMounted, watch } from 'vue'
+const isDarkMode = ref(false)
 const icon = computed(() => {
-  return mode.value === 'dark' ? 'Sun' : 'MoonStars'
+  return isDarkMode.value ? 'Sun' : 'MoonStars'
 })
 
-const toggleMode = (m) => {
-  if (m) {
-    mode.value = m
-  } else {
-    mode.value = mode.value === 'dark' ? 'light' : 'dark'
-  }
-
-  localStorage['vuepress-reco-color-scheme'] = mode.value
-
-  if (mode.value === 'dark') {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+let toggleMode = () => {
+  isDarkMode.value = !isDarkMode.value
 }
 
-const initMode = () => {
-  if (localStorage['vuepress-reco-color-scheme'] === 'dark' || (!('vuepress-reco-color-scheme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    toggleMode('dark')
-  } else {
-    toggleMode('light')
-  }
-}
+onMounted(() => {
+  watch(isDarkMode, (m) => {
+    localStorage['vuepress-reco-color-scheme'] = m ? 'dark' : 'light'
+    document.documentElement.classList.toggle('dark', isDarkMode.value)
+  })
 
-initMode()
+  const initMode = () => {
+    if ('vuepress-reco-color-scheme' in localStorage) {
+      isDarkMode.value = localStorage['vuepress-reco-color-scheme'] === 'dark'
+    } else {
+      isDarkMode.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+  }
+
+  initMode()
+})
 </script>
