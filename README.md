@@ -1,3 +1,5 @@
+> reco 主题 1.0 的代码仓库已经迁移至 [vuepress-theme-reco-1.x](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)
+
 # vuepress-theme-reco-next
 
 🔥 The 2.x of vuepress-theme-reco.
@@ -73,7 +75,7 @@ theme-cli init
 - [x] 公告 插件
 - [x] 代码预览 插件
 - [x] 按照文件夹自动进设置 categories
-- [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格和插件均采用 css + taiwindcss 方案）
+- [ ] ~~提供 tailwind 自定义 config 入口（后续官方所有风格和插件均采用 css + taiwindcss 方案）~~
 - [ ] ~~根据 tag 生成神经网络图（参考 obsidian）~~
 - [ ] ~~加密功能~~
 - [ ] ~~loading 功能~~
@@ -87,4 +89,14 @@ theme-cli init
 - [x] 侧边栏样式优化
 - [x] 去除 scss，采用 css + postcss 方案
 - [x] 将通用功能全部下沉至 vuepress-theme-reco，精简 style（风格）代码
+- [ ] ~~PWA 样式优化~~
+
+## beta 版本待办事项
+
+- [x] 增加 icon 功能
+- [ ] 提供 tailwind 自定义 config 入口（后续官方所有风格和插件均采用 css + taiwindcss 方案）
 - [ ] PWA 样式优化
+- [ ] algolia 搜索样式优化
+- [ ] comment 插件增强
+- [ ] 增加图片适配暗色模式的配置
+- [ ] 对指定文件夹进行功能支持，比如 series、docs、blogs
