@@ -23,7 +23,7 @@ bannerBrand:
   #   height: 450px
   buttons:
     - { text: Guide, link: '/blogs/category1/blog2' }
-    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain' }
+    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain', icon: 'Alien' }
   socialLinks:
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
     - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }

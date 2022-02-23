@@ -16,7 +16,13 @@
 
         <ul class="btn-group" v-if="buttons.length > 0">
           <li v-for="(btn, index) in buttons" :class="btn.type" :key="index">
-            <Link :item="btn" />
+            <Xicons
+              :icon="btn.icon"
+              :text="btn.text"
+              :link="btn.link"
+              icon-size="20"
+              text-size="14"
+            />
           </li>
         </ul>
       </div>
