@@ -2,6 +2,7 @@ import { navbar } from './navbar'
 import { series } from './series'
 import { bulletin } from './bulletin'
 import { valineConfig } from './valineConfig'
+import { kanBanNiangConfig } from './kanBanNiang'
 
 export const themeConfig = {
   style: '@vuepress-reco/style-default',
@@ -15,5 +16,6 @@ export const themeConfig = {
   series,
   valineConfig,
   vuePreviewsDir: './docs/.vuepress/vue-previews',
-  bulletin
+  bulletin,
+  kanBanNiangConfig,
 }

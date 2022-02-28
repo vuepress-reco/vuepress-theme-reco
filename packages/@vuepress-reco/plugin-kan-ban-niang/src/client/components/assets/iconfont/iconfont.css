@@ -1,0 +1,37 @@
+@font-face {font-family: "kbnfont";
+  src: url('iconfont.eot?t=1571966358038'); /* IE9 */
+  src: url('iconfont.eot?t=1571966358038#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAASUAAsAAAAACXgAAARGAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDSAqFbIRZATYCJAMYCw4ABCAFhGEHYxsOCBFVnP/Ifgy4G+yEJjMzM7ug/C7S70MhkDH/eTzfc/NSvn46/dRAFROQDGYxgu3s8Pz/zvvqn4BDiCgOcDDA6QBkMr93LUl1a8wIsyjPljw6yuZ+gGZfMiVZoQz/32Xqfhi7DtbGFgCul05HfEA9vWBeQAKciEUwAhoN2NUtPxP0NBDAKBaZoFW5pgV6IuUkAtDp1KEV9CETMYdJ9FptypUFeqChbxOE8wCm2T9PP/JJDwg0HcqZddtXaouyHvKWZ7Iqo6lJQNyeA4BwHcAAmQBEoCvV1R/MTWWCMX5+g6g6ABM9gfiRJ8ST4En2lldVCMkUHzGpStT4j0eDMKABqEyEaqY14CGdBAE8ISSI4EkQ5auTiQQCb3k1dl2nbVGIsicATSiURDgEIilYoiMqzoC/v8lkiM0ckF66ZlthyYFCnCnuFL7GGSHwXYfimN1GysGJ+8Nhc01MbetYfuBERod2Tr4uw71yiO9EB4TbyfkcZwTkBSFz1oTZJ64rwie5iSmunhNdinuSU3ZwZ+OQm5Ofj3wxxTuqrcWmEnbC+m5Lq5se2y2v/cYL6/Xnzde5FddEh+y0zN0evmBHGIeRYMkFc3bFLd0ZbGTKQtda45ABFaY6jMaJ6enu17A45DTrnB0p8+ZAeA9wn0mHiM2bF7JmV5jdrZSrUX9ni+pSLeF97m4esq/u2LL7RL5bei/Uau5oXm9ntKWYhZe9sC1Xqd86pHxi4/L1xljV83LDL1cKSUSRz+v+h7hCXulXL9uydexMssxGz/e79tO58v/SUm0ahp7PwNwRh7U/Y/8GFPp8afr0xWbzIk1oJlJrVqk8XOFTbMTwESP8DSOgjrgjSpJ4RzVIkiFD6thRaXwytlXKlJrl5DQzZz3Kcuqkpuat5q6SpN0v00jaoF6E0kfLfPxYoFiBBwWi50ebhqIVgh9YtGDLFudTg5XThmYmW8zDmPYxzfS7leDU+y1aFCyKvgAAdQ77waLNHsk2C448mX1iSlUy+0RilR6jlyH470pq4Vfym17PRQDAndtlDgTlQHbJPAtqlBY/NI6CqtjEfKVk1tZ7mH5IVRGAVnGdJASAUV0BHhVfoK+21CE9iUyPTogPAooGhhJAROlYg8vDWjolsVGGs+u5IMUxKgOAdJ8MJr7cIKA9wNApENENrBHqH2v5+oWNbNHdkUvOQ1ehQgn2tH6Q11yMFpKuy2pXXsO+JFVDEuvYPWrzXGgeplj2CgW1/jnt1S4ihkzlTJf885AS01Y5QMvgRLbdOJq0Txo054NOBRUoAvbI6gPxNFYYMyE6Xb594e+7BtaLRKnfIZ/We1A1HuuR2WDKhytVKTN0DOc3r6yFEAYxqGQZufw6IKkpRrb0fQFoYuBqJDY7I5aZsqphdpp8fBWgMZQHayMQI5E0pCUd9FuV3nHGqcO3ilpTFif/lE7ckKXwmyKKFotDxsEBAAA=') format('woff2'),
+  url('iconfont.woff?t=1571966358038') format('woff'),
+  url('iconfont.ttf?t=1571966358038') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1571966358038#kbnfont') format('svg'); /* iOS 4.1- */
+}
+
+.kbnfont {
+  font-family: "kbnfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.kbn-ban-home:before {
+  content: "\e626";
+}
+
+.kbn-ban-message:before {
+  content: "\e601";
+}
+
+.kbn-ban-close:before {
+  content: "\e742";
+}
+
+.kbn-ban-info:before {
+  content: "\e615";
+}
+
+.kbn-ban-theme:before {
+  content: "\e623";
+}
+

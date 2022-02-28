@@ -27,6 +27,7 @@ export default defineStyle(
       ['@vuepress/back-to-top'],
       ['@vuepress-reco/vuepress-plugin-comments'],
       ['@vuepress-reco/vuepress-plugin-bulletin-popover'],
+      ['@vuepress-reco/vuepress-plugin-kan-ban-niang'],
     ],
   })
 )
