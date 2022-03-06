@@ -131,7 +131,7 @@ export default class Classifiable {
             {}
           )
         } else {
-          values.forEach((value: ItemKey) => {
+          values?.forEach((value: ItemKey) => {
             if (!this.classificationData[key].items[convertToPinyin(value)]) {
               this.classificationData[key].items[convertToPinyin(value)] = {
                 pages: [page],
