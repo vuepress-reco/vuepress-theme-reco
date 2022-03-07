@@ -76,7 +76,7 @@
       @apply w-0;
     }
     &:nth-of-type(3) {
-      @apply transform origin-top-left -rotate-45;
+      @apply transform origin-top-left -rotate-45 -translate-x-0.5;
     }
   }
 }
