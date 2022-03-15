@@ -39,12 +39,12 @@ defineProps({
     @apply block;
   }
   div[class*="language-"] {
-    @apply border-none;
+    @apply mt-0 mb-0 border-none;
     &::after {
       @apply hidden;
     }
     pre[class*="language-"] {
-      @apply mb-0 pt-0 pb-4 border-t-0 !important;
+      @apply mt-0 mb-0 py-4 border-t-0 !important;
     }
   }
   .line-numbers {

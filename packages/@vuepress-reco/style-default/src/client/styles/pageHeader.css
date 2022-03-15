@@ -1,5 +1,5 @@
 .page-header-container {
-  @apply ml-10 pl-6 pr-10 pt-4 w-56 fixed z-10 top-32 bottom-16 right-0 hidden overflow-y-auto;
+  @apply ml-10 pl-6 pr-10 pt-4 w-56 fixed z-10 top-16 bottom-16 right-0 hidden overflow-y-auto;
   @apply lg:block;
 
   .tip {
