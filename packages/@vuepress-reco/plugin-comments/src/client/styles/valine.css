@@ -7,16 +7,13 @@
   }
   .vwrap {
     @apply bg-reco-bg-code border-2 border-solid border-reco-border-light;
-    @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
     .vheader .vinput {
       @apply border-0 border-b rounded-none border-dashed border-reco-border-light;
-      @apply dark:border-reco-border-dark;
       &:focus {
         @apply border-reco-brand;
       }
       &:-internal-autofill-selected {
         @apply bg-reco-bg-light-light;
-        @apply dark:bg-reco-bg-dark-light;
       }
     }
   }
@@ -44,7 +41,6 @@
     @apply border-b-0;
     .vhead .vsys {
       @apply text-reco-brand-light bg-reco-bg-code;
-      @apply dark:bg-reco-bg-code-dark;
     }
     .vmeta {
       @apply mb-4;
@@ -57,7 +53,6 @@
     }
     .vcontent {
       @apply mx-1.5 my-0 px-2.5 py-0.5 bg-reco-bg-code rounded;
-      @apply dark:bg-reco-bg-code-dark;
       p .at {
         @apply text-reco-brand;
       }
@@ -83,4 +78,33 @@
       @apply bg-reco-brand;
     }
   }
+}
+
+/* 兼容 */
+.reco-valine-wrapper #valine.v .vwrap {
+  @apply dark:bg-reco-bg-code-dark !important;
+  @apply dark:border-reco-border-dark !important;
+}
+
+.reco-valine-wrapper #valine.v .vwrap .vheader .vinput {
+  @apply dark:border-reco-border-dark;
+}
+
+.reco-valine-wrapper #valine.v .vwrap .vheader .vinput:-internal-autofill-selected {
+  @apply dark:bg-reco-bg-dark-light;
+}
+
+.reco-valine-wrapper #valine.v .vh .vhead .vsys {
+  @apply dark:bg-reco-bg-code-dark;
+}
+
+.reco-valine-wrapper #valine.v .vh .vcontent {
+  @apply dark:bg-reco-bg-code-dark;
+}
+
+.reco-valine-wrapper #valine.v pre,
+.reco-valine-wrapper #valine.v code,
+.reco-valine-wrapper #valine.v .vbtn {
+  @apply dark:text-reco-text-dark;
+  @apply dark:bg-reco-bg-dark;
 }
