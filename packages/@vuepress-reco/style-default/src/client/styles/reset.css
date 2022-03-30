@@ -21,7 +21,7 @@ html {
 
 body {
   /* antialiased 字体平滑 */
-  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-sm font-sans;
+  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-base font-sans;
   @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
   min-width: 320px;
   direction: ltr;

@@ -5,10 +5,13 @@
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
-      <span class="meta-item-label"
-        >{{ themeLocale.lastUpdatedText || 'Last Updated' }}:
-      </span>
-      <span class="meta-item-info">{{ lastUpdated }}</span>
+      <Xicons
+        class="meta-item-label"
+        icon="CalendarTime"
+        :text="`${themeLocale.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
+        icon-size="20"
+        text-size="14"
+      />
     </div>
   </footer>
 </template>
@@ -67,6 +70,8 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
     return {
       text: editLinkText ?? 'Edit this page',
       link: editLink,
+      icon: 'Edit',
+      hideExternalLinkIcon: true
     }
   })
 }

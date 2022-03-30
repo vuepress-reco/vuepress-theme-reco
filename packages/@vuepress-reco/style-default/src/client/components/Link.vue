@@ -32,7 +32,7 @@
       icon-size="20"
       text-size="14"
     />
-    <ExternalLinkIcon v-if="isBlankTarget" />
+    <ExternalLinkIcon v-if="!item.hideExternalLinkIcon && isBlankTarget" />
     <slot name="after" />
   </a>
 </template>
