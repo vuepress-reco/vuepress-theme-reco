@@ -39,7 +39,7 @@
 import { defineComponent, computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { usePageFrontmatter } from '@vuepress/client'
-import packageInfo from '../../../../package.json'
+import packageInfo from 'vuepress-theme-reco/package.json'
 
 const themeLocal = useThemeLocaleData()
 const frontmatter = usePageFrontmatter()
