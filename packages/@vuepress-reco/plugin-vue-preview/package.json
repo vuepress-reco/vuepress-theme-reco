@@ -41,9 +41,9 @@
     "@babel/traverse": "^7.16.10",
     "@babel/types": "^7.16.8",
     "@vue/compiler-sfc": "^3.2.29",
-    "@vuepress/markdown": "2.0.0-beta.33",
-    "@vuepress/plugin-prismjs": "^2.0.0-beta.4",
-    "@vuepress/utils": "2.0.0-beta.33",
+    "@vuepress/markdown": "2.0.0-beta.38",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.38",
+    "@vuepress/utils": "2.0.0-beta.38",
     "enhanced-resolve": "^5.8.3",
     "slash2": "^2.0.0"
   }
