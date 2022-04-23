@@ -17,7 +17,7 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ['@vuepress/plugin-theme-data', { themeData: themeConfig }],
     '@vuepress/plugin-search',
     '@vuepress/plugin-palette',
-    // '@vuepress/plugin-nprogress', // todo 在 vuepress-vite 下出现异常
+    '@vuepress/plugin-nprogress', // todo 在 vuepress-vite 下出现异常
     '@vuepress/plugin-prismjs',
     ['@vuepress/active-header-links', {
         headerLinkSelector: 'a.page-header-item',
@@ -52,7 +52,7 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ),
     onInitialized(app) {
       // todo @vuepress/bundler-vite 适配问题
-      // app.options.bundler = '@vuepress/bundler-webpack'
+      app.options.bundler = '@vuepress/bundler-webpack'
 
       const { bundler, bundlerConfig } = app.options || {}
 
