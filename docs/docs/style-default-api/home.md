@@ -121,3 +121,37 @@ footer: # 底部模块的配置
   startYear: 2018
 ---
 ```
+
+## 自定义首页模块
+
+::: warning
+reco 主题的 css 方案是 postcss + tailwindcss，支持 css 最新嵌套提案（类 scss），为组件书写样式时需注意。
+:::
+
+只要组件在全局注册，即可作为首页的模块被首页使用。
+
+首先可以参考 [注册组件](/docs/style-default-api/register-components.html) 将首页模块组件注册为全局组件，然后在首页的 frontmatter 中去配置（假如自定义的模块组件为 CustomModule）：
+
+```yaml
+---
+home: true
+modules: # 指定首页展示模块
+  - CustomModule
+  - Footer
+customModule: # customModule 模块的配置
+  key: value
+footer: # 底部模块的配置
+  record: 域名备案文案
+  recordLink: 域名备案地址
+  cyberSecurityRecord: 公安备案文案
+  cyberSecurityLink: 公安备案地址
+  startYear: 2018
+---
+```
+
+开发首页模块时，可以通过下面方法去获得 frontmatter 配置：
+
+```js
+import { usePageFrontmatter, withBase } from '@vuepress/client'
+const frontmatter = usePageFrontmatter()
+```

@@ -8,7 +8,7 @@ export const series = {
     },
     {
       text: '高级',
-      children: [ 'home', 'series', 'comments', 'auto-set-category', 'custom-container', 'code-import', 'bulletin-popover' ]
+      children: [ 'home', 'series', 'comments', 'auto-set-category', 'custom-container', 'code-import', 'bulletin-popover', 'register-components' ]
     }
   ],
   '/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],

@@ -67,6 +67,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     autoSetCategory: true,
     autoAddCategoryToNavbar: true,
     vuePreviewsDir: './example/.vuepress/vue-previews',
+    componentsDir: './example/.vuepress/components',
     bulletin: {
       body: [
         {
