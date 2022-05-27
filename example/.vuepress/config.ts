@@ -1,7 +1,7 @@
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
+import recoTheme from 'vuepress-theme-reco'
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
@@ -16,8 +16,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       description: '英文描述',
     },
   },
-  theme: 'reco',
-  themeConfig: {
+  theme: recoTheme({
     locales: {
       '/': {
         selectLanguageName: '简体中文',
@@ -114,6 +113,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         }
       ],
     }
-  },
+  }),
   // debug: true,
 })

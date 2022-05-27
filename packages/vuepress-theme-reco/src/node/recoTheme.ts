@@ -1,9 +1,11 @@
-import type { Theme, ThemeConfig } from '@vuepress/core'
+import type { Theme} from '@vuepress/core'
 import { path } from '@vuepress/utils'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { webpackBundler } from '@vuepress/bundler-webpack'
 import { resolveContainerOptions } from './resolveContainer'
 import { tailwindConfig } from './tailwind'
 
-export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
+export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   const { style = '@vuepress-reco/style-default' } = themeConfig
   const stylePath = path.resolve(process.cwd(), `node_modules/${style}`)
   const getStyleConfig = require(path.resolve(
@@ -52,14 +54,14 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
     ),
     onInitialized(app) {
       // todo @vuepress/bundler-vite 适配问题
-      app.options.bundler = '@vuepress/bundler-webpack'
+      // @ts-ignore
+      app.options.bundler.name = '@vuepress/bundler-webpack'
 
-      const { bundler, bundlerConfig } = app.options || {}
-
-      if (bundler === '@vuepress/bundler-vite') {
-        app.options.bundlerConfig = {
+      // @ts-ignore
+      if (app.options.bundler.name === '@vuepress/bundler-vite') {
+        // @ts-ignore
+        app.options.bundler = viteBundler({
           viteOptions: {
-            ...(bundlerConfig?.viteOptions || {}),
             css: {
               postcss: {
                 plugins: [
@@ -75,9 +77,10 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
               exclude: ['vue']
             }
           },
-        }
+        })
       } else {
-        app.options.bundlerConfig = {
+        // @ts-ignore
+        app.options.bundler = webpackBundler({
           postcss: {
             postcssOptions: {
               plugins: [
@@ -88,8 +91,7 @@ export const recoTheme: Theme<ThemeConfig> = (themeConfig: ThemeConfig) => {
               ]
             },
           },
-          ...bundlerConfig,
-        }
+        })
       }
 
       styleConfig.onInitialized && styleConfig.onInitialized(app)
