@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/shared",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.6",
   "description": "> TODO: description",
   "author": "reco_luan <recoluan@outlook.com>",
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@vicons/tabler": "^0.12.0",
-    "@vuepress/core": "2.0.0-beta.46",
-    "@vuepress-reco/vuepress-plugin-page": ""
+    "@vuepress-reco/vuepress-plugin-page": "",
+    "@vuepress/core": "2.0.0-beta.46"
   },
   "publishConfig": {
     "access": "public"

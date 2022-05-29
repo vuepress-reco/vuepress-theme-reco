@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/style-default",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.6",
   "description": "It is default type of vuepress-theme-reco.",
   "keywords": [
     "vuepress",
@@ -37,9 +37,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/shared": "^2.0.0-beta.4",
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^2.0.0-beta.0",
-    "@vuepress-reco/vuepress-plugin-comments": "^2.0.0-beta.4",
+    "@vuepress-reco/shared": "^2.0.0-beta.6",
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^2.0.0-beta.6",
+    "@vuepress-reco/vuepress-plugin-comments": "^2.0.0-beta.6",
     "@vuepress/bundler-webpack": "2.0.0-beta.46",
     "@vuepress/client": "2.0.0-beta.46",
     "@vuepress/core": "2.0.0-beta.46",
