@@ -1,48 +1,54 @@
-import type { Theme} from '@vuepress/core'
 import { path } from '@vuepress/utils'
+import type { Theme} from '@vuepress/core'
+import { gitPlugin } from '@vuepress/plugin-git'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import { resolveContainerOptions } from './resolveContainer'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { palettePlugin } from '@vuepress/plugin-palette'
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
+import { nprogressPlugin } from '@vuepress/plugin-nprogress'
+import { containerPlugin } from '@vuepress/plugin-container'
+import { themeDataPlugin } from '@vuepress/plugin-theme-data'
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
+import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
+import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+
 import { tailwindConfig } from './tailwind'
+import { resolveContainerOptions } from './resolveContainer'
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   const { style = '@vuepress-reco/style-default' } = themeConfig
   const stylePath = path.resolve(process.cwd(), `node_modules/${style}`)
-  const getStyleConfig = require(path.resolve(
+  const styleConfig = require(path.resolve(
     `${stylePath}/lib/node/index.js`
   )).default
 
-  const styleConfig = getStyleConfig(themeConfig)
-
   styleConfig.plugins = [
-    '@vuepress/plugin-git',
-    ['@vuepress/plugin-theme-data', { themeData: themeConfig }],
-    '@vuepress/plugin-search',
-    '@vuepress/plugin-palette',
-    '@vuepress/plugin-nprogress', // todo 在 vuepress-vite 下出现异常
-    '@vuepress/plugin-prismjs',
-    ['@vuepress/active-header-links', {
-        headerLinkSelector: 'a.page-header-item',
-    }],
-    ['@vuepress/plugin-container', resolveContainerOptions('tip')],
-    ['@vuepress/plugin-container', resolveContainerOptions('info')],
-    ['@vuepress/plugin-container', resolveContainerOptions('warning')],
-    ['@vuepress/plugin-container', resolveContainerOptions('danger')],
-    ['@vuepress/plugin-container', resolveContainerOptions('details')],
-    ['@vuepress/plugin-container', resolveContainerOptions('code-group')],
-    ['@vuepress/plugin-container', resolveContainerOptions('code-group-item')],
-    ['@vuepress/plugin-external-link-icon'],
-    ['@vuepress-reco/vuepress-plugin-vue-preview'],
-    ['@vuepress/register-components',
-      {
-        componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
-      },
-    ],
-    ['@vuepress/register-components',
-      {
-        componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
-      },
-    ],
+    gitPlugin(),
+    themeDataPlugin({ themeData: themeConfig }),
+    searchPlugin(),
+    palettePlugin(),
+    nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
+    prismjsPlugin(),
+    activeHeaderLinksPlugin({
+      headerLinkSelector: 'a.page-header-item',
+    }),
+    containerPlugin(resolveContainerOptions('tip')),
+    containerPlugin(resolveContainerOptions('info')),
+    containerPlugin(resolveContainerOptions('warning')),
+    containerPlugin(resolveContainerOptions('danger')),
+    containerPlugin(resolveContainerOptions('details')),
+    containerPlugin(resolveContainerOptions('code-group')),
+    containerPlugin(resolveContainerOptions('code-group-item')),
+    externalLinkIconPlugin(),
+    vuePreviewPlugin(),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
+    }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
+    }),
     ...styleConfig.plugins,
   ]
 
@@ -53,10 +59,10 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       `node_modules/${style}/lib/client/layouts`
     ),
     onInitialized(app) {
-      // todo @vuepress/bundler-vite 适配问题
-      // @ts-ignore
-      app.options.bundler.name = '@vuepress/bundler-webpack'
+      // todo @vuepress/bundler-webpack 适配问题
+      // app.options.bundler.name = '@vuepress/bundler-webpack'
 
+      // todo 兼容用户的自定义 bundler
       // @ts-ignore
       if (app.options.bundler.name === '@vuepress/bundler-vite') {
         // @ts-ignore

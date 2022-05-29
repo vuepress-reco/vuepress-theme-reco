@@ -150,23 +150,22 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const { classificationSummary } = usePageData()
 
   const parseCategories = computed(() => {
-    const {
-      categories: { items: categories },
-      tags: { items: tags }
-    } = classificationSummary.value
-
     return [
       {
         text: 'Categories',
-        children: Object.values(categories || {}).map(c => ({
+        children: Object.values(classificationSummary.value?.categories?.items || []).map((c) => ({
+          // @ts-ignore
           text: c.label,
+          // @ts-ignore
           link: `/categories/${convertToPinyin(c.label)}/1/`,
         }))
       },
       {
         text: 'Tags',
-        children: Object.values(tags || {}).map(t => ({
+        children: Object.values(classificationSummary.value?.tags.items || []).map(t => ({
+          // @ts-ignore
           text: t.label,
+          // @ts-ignore
           link: `/tags/${convertToPinyin(t.label)}/1/`,
         }))
       },

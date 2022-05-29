@@ -1,8 +1,7 @@
-import { defineClientAppEnhance } from '@vuepress/client'
 import { registerGlobalComponents, resolveSearchComponent } from './utils'
 import './utils/resolveStyles'
 
-export default defineClientAppEnhance(({ app, router }) => {
+export function applyClientEnhance ({ app }) {
   registerGlobalComponents(app)
   resolveSearchComponent(app)
-})
+}

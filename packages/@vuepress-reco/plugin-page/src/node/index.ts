@@ -1,3 +1,5 @@
 import { pagePlugin } from './pagePlugin'
 
-export default pagePlugin
+export * from './pagePlugin'
+
+export { pagePlugin }

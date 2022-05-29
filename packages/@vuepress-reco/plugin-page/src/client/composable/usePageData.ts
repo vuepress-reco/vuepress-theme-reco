@@ -8,9 +8,9 @@ export const classificationSummarySymbol = Symbol(__VUEPRESS_DEV__ ? 'classifica
 export const postsSymbol = Symbol(__VUEPRESS_DEV__ ? 'postsSymbol' : '')
 
 export function usePageData(): Record<string, any> {
-  const classificationSummary = inject(classificationSummarySymbol)
-  const posts = inject(postsSymbol)
-  const cp = inject(classificationPostsSymbol)
+  const classificationSummary = inject(classificationSummarySymbol) || {}
+  const posts = inject(postsSymbol) || {}
+  const cp = inject(classificationPostsSymbol) || {}
 
   if (!postsSymbol) {
     throw new Error('useSiteLocaleData() is called without provider.')

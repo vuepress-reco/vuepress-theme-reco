@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@vicons/tabler": "^0.12.0",
-    "@vuepress/core": "2.0.0-beta.45"
+    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress-reco/vuepress-plugin-page": ""
   },
   "publishConfig": {
     "access": "public"

@@ -52,18 +52,18 @@ const heroHeight = ref(0)
 const perPage = 10
 
 const categories = computed(() => {
-  return classificationSummary.value.categories.items
+  return classificationSummary.value?.categories?.items || []
 })
 
 const tags = computed(() => {
-  return classificationSummary.value.tags.items
+  return classificationSummary.value?.tags?.items || []
 })
 
 const postsOfCurrentPage = computed(() => {
   const start = (currentPage.value - 1) * perPage
   const end = currentPage.value * perPage
 
-  return posts.value.slice(start, end)
+  return (posts.value || []).slice(start, end)
 })
 
 const handlePagation = (page) => {

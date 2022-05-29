@@ -69,7 +69,8 @@ export default class Classifiable {
       return page
     })
 
-    const { autoSetCategory } = this.app.options.themeConfig
+    // @ts-ignore
+    const { autoSetCategory } = this.app.options.theme
     const publishPosts = this.app.pages
       .filter((page: Page) => {
         const publishFlag = !(

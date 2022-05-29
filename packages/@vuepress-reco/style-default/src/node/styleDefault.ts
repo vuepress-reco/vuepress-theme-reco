@@ -1,32 +1,31 @@
-import { defineStyle, StyleOptions } from '@vuepress-reco/shared'
 import { path } from '@vuepress/utils'
+
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
+import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
+import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-popover'
+
 import { pages } from './pages'
 
-export default defineStyle(
-  (themeConfig): StyleOptions => ({
-    pages,
+export default {
+  pages,
 
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      '../client/clientAppEnhance.js'
-    ),
+  clientConfigFile: path.resolve(
+    __dirname,
+    '../client/config.js'
+  ),
 
-    clientAppSetupFiles: path.resolve(
-      __dirname,
-      '../client/clientAppSetup.js'
-    ),
+  extendsPage: (page) => {
+    // save relative file path into page data to generate edit link
+    page.data.filePathRelative = page.filePathRelative
+    // save title into route meta to generate navbar and sidebar
+    page.routeMeta.title = page.title
+  },
 
-    extendsPage: (page) => {
-      // save relative file path into page data to generate edit link
-      page.data.filePathRelative = page.filePathRelative
-      // save title into route meta to generate navbar and sidebar
-      page.routeMeta.title = page.title
-    },
-
-    plugins: [
-      ['@vuepress/back-to-top'],
-      ['@vuepress-reco/vuepress-plugin-comments'],
-      ['@vuepress-reco/vuepress-plugin-bulletin-popover'],
-    ],
-  })
-)
+  plugins: [
+    backToTopPlugin(),
+    bulletinPopoverPlugin(),
+    commentsPlugin(),
+    pagePlugin(pages || []),
+  ],
+}

@@ -1,5 +1,4 @@
-import { computed } from 'vue'
-import { defineClientAppEnhance } from '@vuepress/client'
+import { computed, provide } from 'vue'
 import {
   classificationPostsSymbol,
   classificationSummarySymbol,
@@ -14,14 +13,14 @@ const a = CLASSIFICATION_PAGINATION_POSTS
 const b = POSTS
 const c = CLASSIFICATION_SUMMARY
 
-export default defineClientAppEnhance(async ({ app }) => {
+export async function applyClientSetup () {
   const classificationPosts = computed(() => a)
 
   const posts = computed(() => b)
 
   const classificationSummary = computed(() => c)
 
-  app.provide(classificationPostsSymbol, classificationPosts)
-  app.provide(classificationSummarySymbol, classificationSummary)
-  app.provide(postsSymbol, posts)
-})
+  provide(classificationPostsSymbol, classificationPosts)
+  provide(classificationSummarySymbol, classificationSummary)
+  provide(postsSymbol, posts)
+}

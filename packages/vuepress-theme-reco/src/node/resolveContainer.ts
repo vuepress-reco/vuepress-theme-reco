@@ -1,3 +1,5 @@
+import type { ContainerPluginOptions, MarkdownItContainerRenderFunction } from '@vuepress/plugin-container'
+
 // todo 增加对 detail 和 代码示例的展示
 const svgMap = {
   info: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01"></path><path d="M11 12h1v4h1"></path></g></svg>',
@@ -7,7 +9,7 @@ const svgMap = {
   details: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l5 5l5-5"></path><path d="M7 13l5 5l5-5"></path></g></svg>'
 }
 
-const renderOptions = (tokens, idx) => {
+const renderOptions = (tokens, idx, options, env, self) => {
   const { type, info } = tokens[idx]
   const [customType, title] = info.trim().split(' ')
   if (/container\_\w+\_open/g.test(type)) {
@@ -17,9 +19,11 @@ const renderOptions = (tokens, idx) => {
   if (/container\_\w+\_close/g.test(type)) {
     return '</div>'
   }
+
+  return self.renderToken(tokens, idx, options)
 }
 
-const renderOptionsForDetails = (tokens, idx) => {
+const renderOptionsForDetails = (tokens, idx, options, env, self) => {
   const { type, info } = tokens[idx]
   const [customType, title] = info.trim().split(' ')
   if (/container_details_open/g.test(type)) {
@@ -29,6 +33,8 @@ const renderOptionsForDetails = (tokens, idx) => {
   if (/container_details_close/g.test(type)) {
     return '</details>'
   }
+
+  return self.renderToken(tokens, idx, options)
 }
 
 export const resolveOptionsForCodeGroup = () => {
@@ -45,7 +51,7 @@ export const resolveOptionsForCodeGroupItem = () => {
   }
 }
 
-export const resolveContainerOptions = (type) => {
+export const resolveContainerOptions = (type: string): ContainerPluginOptions => {
   let render = renderOptions
 
   if (type === 'details') {

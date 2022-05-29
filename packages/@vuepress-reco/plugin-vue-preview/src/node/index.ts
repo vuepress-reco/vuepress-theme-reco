@@ -1,3 +1,5 @@
 import { vuePreviewPlugin } from './vuePreviewPlugin'
 
-export default vuePreviewPlugin
+export * from './vuePreviewPlugin'
+
+export { vuePreviewPlugin }

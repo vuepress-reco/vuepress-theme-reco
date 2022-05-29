@@ -1,16 +1,13 @@
-import type { Plugin, App } from '@vuepress/core'
 import { path } from '@vuepress/utils'
+import type { Plugin } from '@vuepress/core'
 
-export const bulletinPopoverPlugin: Plugin<Record<string, any>> = (
-  options,
-  app: App
-) => {
+export const bulletinPopoverPlugin = (): Plugin => {
   return {
     name: '@vuepress-reco/vuepress-plugin-bulletin-popover',
 
-    clientAppRootComponentFiles: path.resolve(
+    clientConfigFile: path.resolve(
       __dirname,
-      '../client/components/Bulletin.vue'
+      '../client/config.js'
     ),
   }
 }

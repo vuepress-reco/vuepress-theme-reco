@@ -1,3 +1,5 @@
 import { bulletinPopoverPlugin } from './bulletinPopoverPlugin'
 
-export default bulletinPopoverPlugin
+export * from './bulletinPopoverPlugin'
+
+export { bulletinPopoverPlugin }
