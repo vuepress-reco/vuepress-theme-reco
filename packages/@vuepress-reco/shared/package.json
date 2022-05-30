@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/esm/types/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
