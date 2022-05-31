@@ -4,12 +4,14 @@ import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 export function useVisible() {
   const themeLocal = useThemeLocaleData()
 
+  const bulletin = computed(() => themeLocal?.value?.bulletin)
+
   const visible = ref(false)
   const bulletinPopoverKey = '__CLOSE_BULLETIN_POPOVER__'
 
   onMounted(() => {
     const closeNote = sessionStorage.getItem(bulletinPopoverKey)
-    visible.value = closeNote !== 'true' && !!themeLocal?.value?.bulletin?.body
+    visible.value = closeNote !== 'true' && !!bulletin?.value?.body
   })
 
   const closeBulletinPopover = () => {
@@ -17,7 +19,7 @@ export function useVisible() {
     sessionStorage.setItem(bulletinPopoverKey, 'true')
   }
 
-  return { visible, closeBulletinPopover }
+  return { visible, bulletin, closeBulletinPopover }
 }
 
 const nodeHandler = {

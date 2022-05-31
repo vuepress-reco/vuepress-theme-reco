@@ -1,11 +1,11 @@
 <template>
-  <div v-if="visible" class="bulletin-wrapper" :style="{ width: bulletin?.value?.width || '300px' }">
+  <div v-if="visible" class="bulletin-wrapper" :style="{ width: bulletin?.width || '300px' }">
     <div class="bulletin-title">
       <Xicons
         icon="Bulb"
         icon-size="28"
         icon-color="#fff"
-        :text="bulletin?.value?.title || '公告'"
+        :text="bulletin?.title || '公告'"
         text-color="#fff"
         text-size="16"
       />
@@ -22,7 +22,7 @@
 import { defineComponent } from 'vue-demi'
 import { useVisible, useHandleNodes } from './hook'
 
-const { visible, closeBulletinPopover } = useVisible()
+const { visible, bulletin, closeBulletinPopover } = useVisible()
 const { bodyNodes } = useHandleNodes()
 </script>
 
