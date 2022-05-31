@@ -37,9 +37,10 @@ date: 2022-02-05 22:17:55
 - 案例：以主题官网为例
   ```js
     // .vuepress/config.js
+    import { recoTheme } from 'vuepress-theme-reco'
+
     module.exports = {
-      theme: 'reco',
-      themeConfig: {
+      theme: recoTheme({
         bulletin: {
           body: [
             {
@@ -80,7 +81,7 @@ date: 2022-02-05 22:17:55
             }
           ],
         }
-      }
+      })
     }
     ```
 

@@ -16,15 +16,16 @@ date: 2021-11-06 23:41:31
 ### Valine
 
 ```javascript
+import { recoTheme } from 'vuepress-theme-reco'
+
 module.exports = {
-  theme: 'reco',
-  themeConfig: {
+  theme: recoTheme({
     valineConfig: {
       appId: '...',// your appId
       appKey: '...', // your appKey
       hideComments: true, // 全局隐藏评论，默认 false
     }
-  }  
+  })
 }
 ```
 

@@ -1,8 +1,15 @@
 export const bulletin = {
+  width: '480px',
   body: [
     {
       type: 'text',
-      content: `🎉🎉🎉 reco 主题 2.x 已经发布 Beta 版本，在发布 Latest 版本之前不会再有大的更新，大家可以尽情尝鲜了，并且希望大家在 QQ 群和 GitHub 踊跃反馈使用体验，我会在第一时间响应。`,
+      content: `
+        <h7>强烈建议大家更新至 2.0.0-beta.8，更新内容如下：</h7>
+        <ul>
+          <li>适配 vuepress BREAKING CHANGES：vuepress 在 2.0.0-beta.39 版本之后，做了大量的 API 调整，针对用户侧，主题和插件由原来的声明式改为函数式；针对开发者侧，对 Enhance 和 Setup 做了调整。</li>
+          <li>将默认 Bundler 改为 vite。</li>
+          <li>升级 Valine 升级至 1.4.8，修复 cdn 加载失败问题。</li>
+        </ul>`,
       style: 'font-size: 12px;'
     },
     {

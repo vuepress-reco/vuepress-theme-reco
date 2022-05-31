@@ -1,6 +1,5 @@
 import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
-import type { DefaultThemeOptions } from 'vuepress'
 import { themeConfig } from './config/index'
 
 export default defineUserConfig({

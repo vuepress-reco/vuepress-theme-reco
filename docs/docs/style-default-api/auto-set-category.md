@@ -24,14 +24,13 @@ date: 2021-12-12 17:58:24
 
 ```ts
 import { defineUserConfig } from 'vuepress'
+import { recoTheme } from 'vuepress-theme-reco'
 import type { DefaultThemeOptions } from 'vuepress'
 
 export default defineUserConfig<DefaultThemeOptions>({
-  theme: 'reco',
-  themeConfig: {
-    style: '@vuepress-reco/style-default',
+  theme: recoTheme({
     autoSetCategory: true,         // 自动设置分类
     autoAddCategoryToNavbar: true  // 自动将首页、分类和标签添加至头部导航条
-  }
+  })
 })
 ```
