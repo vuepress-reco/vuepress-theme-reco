@@ -121,15 +121,17 @@ export default defineComponent({
       () => frontmatter.value.heroImageStyle || {}
     )
 
-    const handlePagation = (page) => {
-      currentPage.value = page
-      setTimeout(() => {
-        window.scrollTo(0, heroHeight.value)
-      }, 100)
-    }
+    let handlePagation = (page) => {}
 
     onMounted(() => {
       heroHeight.value = document.querySelector('.hero').clientHeight
+
+      handlePagation = (page) => {
+        currentPage.value = page
+        setTimeout(() => {
+          window.scrollTo(0, heroHeight.value)
+        }, 100)
+      }
     })
 
     return { frontmatter, bgImageStyle, heroImage, heroImageStyle, posts, postsOfCurrentPage, createOneColor, categories, tags, currentPage, handlePagation }

@@ -66,16 +66,18 @@ const postsOfCurrentPage = computed(() => {
   return (posts.value || []).slice(start, end)
 })
 
-const handlePagation = (page) => {
-  currentPage.value = page
-  setTimeout(() => {
-    window.scrollTo(0, heroHeight.value)
-  }, 100)
-}
+let handlePagation = (page) => {}
 
 onMounted(() => {
   // tip 获取不到 .hero dom
   const hero = document.querySelector('.hero')
   if (hero) heroHeight.value = hero.clientHeight
+
+  handlePagation = (page) => {
+    currentPage.value = page
+    setTimeout(() => {
+      window.scrollTo(0, heroHeight.value)
+    }, 100)
+  }
 })
 </script>
