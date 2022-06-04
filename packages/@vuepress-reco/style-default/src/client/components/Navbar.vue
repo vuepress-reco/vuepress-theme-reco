@@ -34,7 +34,7 @@
 import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
-import ToggleDarkModeButton from '@vuepress-reco/shared/lib/esm/components/ToggleDarkModeButton.vue'
+import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
 import ModeSwitch from './ModeSwitch.vue'
