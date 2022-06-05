@@ -24,28 +24,26 @@ export default defineComponent({
     const route = useRoute()
     const { options } = toRefs(props)
 
-    const initValine = async () => {
-      const { default: Valine } = await import('valine')
-      const valineOptions = {
-        el: '#valine',
-        placeholder: 'just go go',
-        notify: false,
-        verify: false,
-        avatar: 'retro',
-        visitor: true,
-        recordIP: false,
-        path: window.location.pathname,
-        ...options.value
+    onMounted(() => {
+      const initValine = async () => {
+        const { default: Valine } = await import('valine')
+        const valineOptions = {
+          el: '#valine',
+          placeholder: 'just go go',
+          notify: false,
+          verify: false,
+          avatar: 'retro',
+          visitor: true,
+          recordIP: false,
+          path: window.location.pathname,
+          ...options.value
+        }
+
+        new Valine(valineOptions)
       }
 
-      new Valine(valineOptions)
-    }
-
-    onMounted(() => {
       initValine()
     })
-
-    return { initValine }
   },
 
   render() {
@@ -56,14 +54,14 @@ export default defineComponent({
     }))
   },
 
-  watch: {
-    '$route' (from, to) {
-      if (to.path !== from.path) {
-        // 切换页面时刷新评论
-        setTimeout(() => {
-          this.initValine()
-        }, 300)
-      }
-    }
-  }
+  // watch: {
+  //   '$route' (from, to) {
+  //     if (to.path !== from.path) {
+  //       // 切换页面时刷新评论
+  //       setTimeout(() => {
+  //         // this.initValine()
+  //       }, 300)
+  //     }
+  //   }
+  // }
 })
