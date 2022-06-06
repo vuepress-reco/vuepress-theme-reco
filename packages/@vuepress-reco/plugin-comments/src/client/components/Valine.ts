@@ -1,6 +1,7 @@
 import { defineComponent, onMounted, toRefs, h } from 'vue'
 import { useRoute } from 'vue-router'
 import '../styles/valine.css'
+import { Valine } from './reco-valine.js'
 
 type TvalineOptions = Record<string, unknown>
 
@@ -26,7 +27,7 @@ export default defineComponent({
 
     onMounted(() => {
       const initValine = async () => {
-        const { default: Valine } = await import('valine')
+        // @ts-ignore
         const valineOptions = {
           el: '#valine',
           placeholder: 'just go go',
@@ -39,6 +40,7 @@ export default defineComponent({
           ...options.value
         }
 
+        // @ts-ignore
         new Valine(valineOptions)
       }
 
