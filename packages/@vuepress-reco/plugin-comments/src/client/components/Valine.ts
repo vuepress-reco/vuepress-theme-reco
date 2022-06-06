@@ -27,7 +27,7 @@ export default defineComponent({
 
     onMounted(() => {
       const initValine = async () => {
-        const { default: Valine } = await import('valine')
+        const { Valine } = await import('./reco-valine.js')
   
         const valineOptions = {
           el: '#valine',
