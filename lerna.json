@@ -5,5 +5,5 @@
     "packages/*",
     "packages/@vuepress-reco/*"
   ],
-  "version": "2.0.0-beta.14"
+  "version": "2.0.0-beta.15"
 }
