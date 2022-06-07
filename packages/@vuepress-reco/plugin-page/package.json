@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-page",
-  "version": "2.0.0-beta.9",
+  "version": "2.0.0-beta.16",
   "description": "A simple blog plugin for vuepress-theme-reco.",
   "keywords": [
     "vuepress-plugin",
@@ -37,7 +37,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/shared": "^2.0.0-beta.9",
+    "@vuepress-reco/shared": "^2.0.0-beta.16",
     "@vuepress/client": "2.0.0-beta.46",
     "@vuepress/core": "2.0.0-beta.46",
     "@vuepress/utils": "2.0.0-beta.46"
