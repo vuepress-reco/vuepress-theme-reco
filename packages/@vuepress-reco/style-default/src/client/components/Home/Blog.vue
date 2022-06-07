@@ -48,7 +48,7 @@ import PersonalInfo from '../PersonalInfo.vue'
 const { posts, classificationSummary } = usePageData()
 
 const currentPage = ref(1)
-const heroHeight = ref(0)
+const blogContentTop = ref(0)
 const perPage = 10
 
 const categories = computed(() => {
@@ -68,16 +68,19 @@ const postsOfCurrentPage = computed(() => {
 
 let handlePagation = (page) => {}
 
-onMounted(() => {
-  // tip 获取不到 .hero dom
-  const hero = document.querySelector('.hero')
-  if (hero) heroHeight.value = hero.clientHeight
-
+// @ts-ignore
+if (!__VUEPRESS_SSR__) {
   handlePagation = (page) => {
     currentPage.value = page
+
+    if (blogContentTop.value === 0) {
+      const blogContent = document.querySelector('.home-blog-content')
+      if (blogContent) blogContentTop.value = blogContent.getBoundingClientRect().top
+    }
+
     setTimeout(() => {
-      window.scrollTo(0, heroHeight.value)
+      window.scrollTo({ left: 0, top: -blogContentTop.value, behavior: 'smooth' })
     }, 100)
   }
-})
+}
 </script>
