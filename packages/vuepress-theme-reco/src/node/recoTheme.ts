@@ -32,7 +32,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
     prismjsPlugin(),
     activeHeaderLinksPlugin({
-      headerLinkSelector: 'a.page-header-item',
+      headerLinkSelector: 'a.page-catalog-item',
     }),
     containerPlugin(resolveContainerOptions('tip')),
     containerPlugin(resolveContainerOptions('info')),

@@ -13,8 +13,8 @@
         <Page
           :key="page.path"
           :class="{
-            'show-sidebar': isShowSidebar,
-            'show-page-headers': isShowHeaders,
+            'show-series': isShowSidebar,
+            'show-catalog': isShowCatalog,
           }"
         />
       </Transition>
@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { defineComponent } from 'vue'
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
 import { useSidebarData, useScrollPromise } from '../composables'
@@ -31,20 +31,12 @@ import HomeBlog from '../components/HomeBlog.vue'
 import Home from '../components/Home/index.vue'
 import Page from '../components/Page.vue'
 
-export default defineComponent({
-  components: { Home, HomeBlog, Page, Common },
+const page = usePageData()
+const frontmatter = usePageFrontmatter()
+const { isShowSidebar, isShowCatalog } = useSidebarData()
 
-  setup() {
-    const page = usePageData()
-    const frontmatter = usePageFrontmatter()
-    const { isShowSidebar, isShowHeaders } = useSidebarData()
-
-    // handle scrollBehavior with transition
-    const scrollPromise = useScrollPromise()
-    const onBeforeEnter = scrollPromise.resolve
-    const onBeforeLeave = scrollPromise.pending
-
-    return { page, frontmatter, isShowSidebar, isShowHeaders, onBeforeEnter, onBeforeLeave }
-  },
-})
+// handle scrollBehavior with transition
+const scrollPromise = useScrollPromise()
+const onBeforeEnter = scrollPromise.resolve
+const onBeforeLeave = scrollPromise.pending
 </script>

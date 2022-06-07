@@ -30,7 +30,7 @@ const renderItem = (
       ...props,
     },
     h(Link, {
-      class: 'page-header-item',
+      class: 'page-catalog-item',
       item,
     })
   )
@@ -42,13 +42,13 @@ const renderChildren = (item: ResolvedSidebarItem): Array<VNode | null> => {
   }
 
   return item.children.map((child) =>
-    h(HeaderChild, {
+    h(CatalogItem, {
       item: child,
     })
   )
 }
 
-export const HeaderChild: FunctionalComponent<{
+export const CatalogItem: FunctionalComponent<{
   item: ResolvedSidebarItem
 }> = ({ item }) => {
   const route = useRoute()
@@ -58,7 +58,7 @@ export const HeaderChild: FunctionalComponent<{
     return [
       renderItem(item, {
         class: {
-          [`page-header-menu-depth_${item.level || 2}`]: true,
+          [`page-catalog-menu-depth_${item.level || 2}`]: true,
           active,
         },
       }),
@@ -69,16 +69,16 @@ export const HeaderChild: FunctionalComponent<{
   return [
     renderItem(item, {
       class: {
-        [`page-header-menu-depth_${item.level || 2}`]: true,
+        [`page-catalog-menu-depth_${item.level || 2}`]: true,
         active,
       },
     }),
   ]
 }
 
-HeaderChild.displayName = 'HeaderChild'
+CatalogItem.displayName = 'CatalogItem'
 
-HeaderChild.props = {
+CatalogItem.props = {
   item: {
     type: Object,
     required: true,

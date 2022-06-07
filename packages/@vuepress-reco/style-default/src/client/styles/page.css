@@ -3,10 +3,10 @@
   .page-info {
     @apply mb-4;
   }
-  &.show-sidebar {
+  &.show-series {
     @apply pl-0 md:pl-72;
   }
-  &.show-page-headers {
+  &.show-catalog {
     @apply pr-0 lg:pr-56;
   }
 }

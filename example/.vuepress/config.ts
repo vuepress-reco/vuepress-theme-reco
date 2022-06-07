@@ -23,6 +23,22 @@ export default defineUserConfig({
       },
       '/en/': {
         selectLanguageName: 'English',
+        navbar: [
+          {
+            text: 'Blogs',
+            icon: 'Language',
+            children: [
+              {
+                text: '是大法师的',
+                children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
+              },
+              {
+                text: '爽肤水的饭',
+                children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
+              }
+            ],
+          },
+        ],
       },
     },
     logo: '/hero_black.png',
@@ -49,7 +65,7 @@ export default defineUserConfig({
     },
     navbar: [
       {
-        text: 'Blogs',
+        text: '博客',
         icon: 'Language',
         children: [
           {

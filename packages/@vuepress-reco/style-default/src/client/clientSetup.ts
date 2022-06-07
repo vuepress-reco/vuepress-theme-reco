@@ -3,8 +3,8 @@ import { usePageFrontmatter } from '@vuepress/client'
 import {
   resolveSidebarItems,
   sidebarItemsSymbol,
-  resolvePageHeaders,
-  pageHeadersSymbol,
+  resolveCatalog,
+  catalogSymbol,
 } from './composables'
 
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
@@ -21,7 +21,7 @@ export function applyClientSetup() {
   )
   provide(sidebarItemsSymbol, sidebarItems)
 
-  const pageHeaders = computed(() => resolvePageHeaders())
+  const catalog = computed(() => resolveCatalog())
 
-  provide(pageHeadersSymbol, pageHeaders)
+  provide(catalogSymbol, catalog)
 }
