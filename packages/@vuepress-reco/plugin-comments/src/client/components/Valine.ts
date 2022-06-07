@@ -1,4 +1,5 @@
-import { defineComponent, onMounted, toRefs, h } from 'vue'
+import { defineComponent, onMounted, toRefs, h, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import '../styles/valine.css'
 
 type TvalineOptions = Record<string, unknown>
@@ -23,12 +24,13 @@ export default defineComponent({
     //@ts-ignore
     if (__VUEPRESS_SSR__) return
 
+    const router = useRouter()
     const { options } = toRefs(props)
 
     onMounted(() => {
       const initValine = async () => {
         const { Valine } = await import('./reco-valine.js')
-  
+
         const valineOptions = {
           el: '#valine',
           placeholder: 'just go go',
@@ -45,6 +47,10 @@ export default defineComponent({
       }
 
       initValine()
+
+      watch(() => router.currentRoute.value.path,(toPath) => {
+        initValine();
+      },{ immediate: true, deep: true })
     })
   },
 
@@ -54,16 +60,5 @@ export default defineComponent({
     }, h('div', {
       id: 'valine'
     }))
-  },
-
-  // watch: {
-  //   '$route' (from, to) {
-  //     if (to.path !== from.path) {
-  //       // 切换页面时刷新评论
-  //       setTimeout(() => {
-  //         // this.initValine()
-  //       }, 300)
-  //     }
-  //   }
-  // }
+  },    
 })
