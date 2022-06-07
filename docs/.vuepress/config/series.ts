@@ -4,11 +4,11 @@ export const series = {
   '/docs/style-default-api/': [
     {
       text: '基础',
-      children: [ 'introduce', 'usage' ]
+      children: ['introduce', 'usage', 'custom-catalog-title']
     },
     {
       text: '高级',
-      children: [ 'home', 'series', 'comments', 'auto-set-category', 'custom-container', 'code-import', 'bulletin-popover', 'register-components' ]
+      children: ['home', 'series', 'comments', 'auto-set-category', 'custom-container', 'code-import', 'bulletin-popover', 'register-components']
     }
   ],
   '/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],
