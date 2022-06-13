@@ -5,28 +5,25 @@
     "packages/@vuepress-reco/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "tsc --build",
-    "lerna-build": "lerna run build --sort",
-    "build:example": "vuepress build example",
-    "build:docs": "vuepress build docs",
+    "build": "pnpm build:all && pnpm build:copy",
+    "build:all": "pnpm -r --stream build",
+    "build:copy": "pnpm --parallel --stream copy",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
-    "clean": "lerna run clean --stream",
+    "clean": "pnpm --parallel --stream clean",
     "commit": "git add . && git-cz",
-    "copy": "lerna run copy --stream",
-    "copy-watch": "lerna run copy --parallel -- --watch",
-    "deploy:docs": "bash scripts/docs-deploy.sh",
-    "dev": "yarn copy-watch & yarn build --watch & yarn dev:example",
-    "dev:example": "DEBUG=vuepress* vuepress dev example",
-    "dev:docs": "yarn copy-watch & yarn build --watch & vuepress dev docs",
-    "start:debug": "DEBUG=vuepress* vuepress dev example",
+    "dev": "pnpm --watch build & pnpm example:dev",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "bash scripts/docs-deploy.sh",
+    "docs:dev": "pnpm --watch build & vuepress dev docs",
+    "example:build": "vuepress build example",
+    "example:dev": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "release": "yarn lint && yarn clean && yarn copy && yarn build && yarn test && lerna publish prerelease --dist-tag next",
-    "update": "yarn upgrade-interactive --latest"
+    "release": "pnpm lint && pnpm clean && pnpm build && pnpm test && lerna publish prerelease --dist-tag next",
+    "update": "pnpm up --latest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged",
+      "pre-commit": "pnpm lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -42,6 +39,7 @@
     }
   },
   "devDependencies": {
+    "@changesets/cli": "^2.23.0",
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@types/events": "^3.0.0",
