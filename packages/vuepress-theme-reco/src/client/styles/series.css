@@ -1,0 +1,88 @@
+.series-container {
+  @apply transition-all pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 bg-reco-bg-light overflow-y-auto;
+  @apply dark:bg-reco-bg-dark;
+  @apply transform -translate-x-full;
+  @apply md:transform md:translate-x-0 !important;
+  @apply border-r border-solid border-reco-border-light dark:border-reco-border-dark;
+  .series-group {
+    &:not(:first-of-type) h5.series-heading {
+      @apply relative mt-3;
+      &::before {
+        @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-light;
+        @apply dark:border-reco-border-dark;
+        content: '';
+      }
+    }
+    .series-heading {
+      @apply mb-4 font-extrabold;
+      & + ul {
+        @apply pl-0 m-0 list-none;
+      }
+      &.active {
+        @apply text-reco-brand;
+      }
+    }
+    ul {
+      @apply pl-4 list-none;
+    }
+  }
+  a.series-item {
+    @apply relative block py-0.5 transition-all leading-7;
+    &::before {
+      @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
+      @apply bg-reco-brand;
+      content: '';
+    }
+    &:hover {
+      @apply text-reco-brand;
+    }
+    &.router-link-active {
+      @apply pl-4;
+      @apply text-reco-brand;
+      &::before {
+        @apply w-1.5 h-1.5 animate-ping;
+      }
+    }
+  }
+  .navbar-links {
+    @apply block relative mb-8;
+    @apply md:hidden;
+    &::after {
+      @apply absolute left-0 -bottom-4 block border-t border-solid border-reco-border-light w-full;
+      @apply md:border-t-0;
+      @apply dark:border-reco-border-dark;
+      content: '';
+    }
+  }
+}
+
+
+.sidebar-mask {
+  @apply fixed z-10 hidden w-screen h-screen bg-gray-600 bg-opacity-20;
+}
+
+.sidebar-open {
+  .series-container {
+    @apply transform translate-x-0 !important;
+  }
+  .sidebar-mask {
+    @apply block fixed z-10 top-0 right-0 bottom-0 left-0 ;
+  }
+  .toggle-sidebar-button .icon span {
+    &:nth-of-type(1) {
+      @apply transform rotate-45;
+    }
+    &:nth-of-type(2) {
+      @apply w-0;
+    }
+    &:nth-of-type(3) {
+      @apply transform origin-top-left -rotate-45 -translate-x-0.5;
+    }
+  }
+}
+
+.no-sidebar {
+  .series-container {
+    @apply md:hidden;
+  }
+}

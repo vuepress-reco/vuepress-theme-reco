@@ -1,0 +1,23 @@
+.arrow {
+  @apply inline-block w-0 h-0 align-middle border-4 border-solid border-transparent;
+
+  &.up {
+    @apply border-b-6 border-t-0;
+    border-bottom-color: #ccc;
+  }
+
+  &.down {
+    @apply border-t-6 border-b-0;
+    border-top-color: #ccc;
+  }
+
+  &.right {
+    @apply border-l-6 border-r-0;
+    border-left-color: #ccc;
+  }
+
+  &.left {
+    @apply border-r-6 border-l-0;
+    border-right-color: #ccc;
+  }
+}

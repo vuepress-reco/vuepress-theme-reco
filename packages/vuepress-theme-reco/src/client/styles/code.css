@@ -1,0 +1,163 @@
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+/* Code blocks */
+div[class*="language-"] {
+  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  &::before {
+    @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
+  }
+  &::after {
+    @apply absolute top-3.5 left-4 w-2.5 h-2.5 rounded-full;
+    content: "";
+    /* background: #f95c5b; */
+    /* box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32; */
+    background: #858DE6;
+    box-shadow: 22px 0 0 0 #858DE6, 44px 0 0 0 #858DE6;
+  }
+  pre[class*="language-"] {
+    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-dashed border-reco-border-light leading-7;
+  }
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      @apply hidden;
+    }
+  }
+  &.line-numbers-mode {
+    @apply relative;
+    .line-numbers {
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
+      br {
+        user-select: none;
+      }
+      .line-number {
+        position: relative;
+        z-index: 3;
+        user-select: none;
+      }
+    }
+  }
+  pre code {
+    @apply bg-transparent p-0 leading-6 !important;
+  }
+  .highlight-lines {
+    @apply absolute z-10 left-0 right-0 bottom-0 pt-2 pb-6 leading-7 ;
+    .highlight-line {
+      @apply bg-gray-800 bg-opacity-10;
+    }
+  }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+  @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light text-left whitespace-pre leading-normal;
+}
+
+ .token.comment,
+ .token.block-comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: #999;
+ }
+
+ .token.punctuation {
+   color: #ccc;
+ }
+
+ .token.tag,
+ .token.namespace,
+ .token.deleted {
+   color: #e2777a;
+ }
+
+.token.attr-name {
+  /* color: #e2777a; */
+  color: #cc99cd;
+}
+
+ .token.function-name {
+   color: #6196cc;
+ }
+
+ .token.boolean,
+ .token.number,
+ .token.function {
+   color: #f08d49;
+ }
+
+ .token.property,
+ .token.value,
+ .token.class-name,
+ .token.constant,
+ .token.symbol {
+  /* color: #f8c555; */
+   color: #8F95DA;
+ }
+
+ .token.selector,
+ .token.important,
+ .token.atrule,
+ .token.keyword,
+ .token.builtin {
+   /* color: #cc99cd; */
+   color: #e2777a;
+ }
+
+ .token.string,
+ .token.char,
+ .token.attr-value,
+ .token.regex,
+ .token.variable {
+   color: #7ec699;
+ }
+
+ .token.operator,
+ .token.entity,
+ .token.url {
+   color: #67cdcc;
+ }
+
+ .token.important,
+ .token.bold {
+   @apply font-semibold;
+ }
+ .token.italic {
+  font-style: italic;
+ }
+
+ .token.entity {
+   cursor: help;
+ }
+
+ .token.inserted {
+   color: green;
+ }
+
+/* code-other */
+
+@each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
+  div.language-$(lang)::before {
+    content: '$(lang)';
+  }
+}
+
+/* 兼容 */
+div[class*="language-"] pre[class*="language-"] {
+  @apply dark:border-reco-border-dark;
+}
+div[class*="language-"].line-numbers-mode .line-numbers {
+  @apply dark:bg-reco-bg-code-dark;
+}
+div[class*="language-"] .highlight-lines .highlight-line {
+  @apply dark:bg-gray-50 dark:bg-opacity-10;
+}

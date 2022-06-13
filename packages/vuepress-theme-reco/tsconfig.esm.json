@@ -3,7 +3,10 @@
   "compilerOptions": {
     "module": "ES2020",
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "paths": {
+      "@theme/*": ["./src/client/components/*"]
+    },
   },
   "include": ["./src/client", "./src/types"]
 }

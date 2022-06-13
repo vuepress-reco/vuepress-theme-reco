@@ -1,0 +1,36 @@
+.theme-container {
+  .theme-reco-default-content, .page-title, .page-container .page-info, .page-meta, .page-nav, .reco-valine-wrapper, reco-vssue-wrapper {
+    @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-4;
+    @apply md:px-10;
+    border-top: 1px solid transparent;
+    &.theme-reco-default-content code {
+      @apply px-2 py-0.5 bg-reco-bg-code rounded-md;
+      @apply dark:bg-reco-bg-code-dark;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    }
+  }
+  .theme-reco-default-content {
+    @apply mb-16;
+    h1 {
+      /* @apply -mt-8; */
+      @apply hidden;
+    }
+    a {
+      @apply text-reco-brand;
+    }
+  }
+
+  .fade-slide-y-enter-active {
+    transition: all 0.3s ease;
+  }
+
+  .fade-slide-y-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .fade-slide-y-enter-from,
+  .fade-slide-y-leave-to {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}

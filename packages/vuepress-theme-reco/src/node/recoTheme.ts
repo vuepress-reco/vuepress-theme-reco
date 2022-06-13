@@ -1,5 +1,5 @@
-import { path } from '@vuepress/utils'
-import type { Theme} from '@vuepress/core'
+import { path, fs } from '@vuepress/utils'
+import type { Theme, Page } from '@vuepress/core'
 import { gitPlugin } from '@vuepress/plugin-git'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -13,51 +13,21 @@ import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
+import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
+import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-popover'
 
 import { tailwindConfig } from './tailwind'
 import { resolveContainerOptions } from './resolveContainer'
 
+import type { RecoThemePageData } from '../types/page'
+
+import { pages } from './pages'
+
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
-  const { style = '@vuepress-reco/style-default' } = themeConfig
-  const stylePath = path.resolve(process.cwd(), `node_modules/${style}`)
-  const styleConfig = require(path.resolve(
-    `${stylePath}/lib/node/index.js`
-  )).default
-
-  styleConfig.plugins = [
-    gitPlugin(),
-    themeDataPlugin({ themeData: themeConfig }),
-    searchPlugin(),
-    palettePlugin(),
-    nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
-    prismjsPlugin(),
-    activeHeaderLinksPlugin({
-      headerLinkSelector: 'a.page-catalog-item',
-    }),
-    containerPlugin(resolveContainerOptions('tip')),
-    containerPlugin(resolveContainerOptions('info')),
-    containerPlugin(resolveContainerOptions('warning')),
-    containerPlugin(resolveContainerOptions('danger')),
-    containerPlugin(resolveContainerOptions('details')),
-    containerPlugin(resolveContainerOptions('code-group')),
-    containerPlugin(resolveContainerOptions('code-group-item')),
-    externalLinkIconPlugin(),
-    vuePreviewPlugin(),
-    registerComponentsPlugin({
-      componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
-    }),
-    registerComponentsPlugin({
-      componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
-    }),
-    ...styleConfig.plugins,
-  ]
-
   return {
     name: 'vuepress-theme-reco',
-    layouts: path.resolve(
-      process.cwd(),
-      `node_modules/${style}/lib/client/layouts`
-    ),
     onInitialized(app) {
       // todo @vuepress/bundler-webpack 适配问题
       // app.options.bundler.name = '@vuepress/bundler-webpack'
@@ -99,12 +69,64 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
           },
         })
       }
-
-      styleConfig.onInitialized && styleConfig.onInitialized(app)
     },
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
     templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
-    ...styleConfig,
+
+    layouts: path.resolve(__dirname, '../client/layouts'),
+
+    clientConfigFile: path.resolve(
+      __dirname,
+      '../client/config.js'
+    ),
+
+    alias: Object.fromEntries(
+      fs
+        .readdirSync(path.resolve(__dirname, '../client/components'))
+        .filter((file) => file.endsWith('.vue'))
+        .map((file) => [
+          `@theme/${file}`,
+          path.resolve(__dirname, '../client/components', file),
+        ])
+    ),
+
+    extendsPage: (page: Page<Partial<RecoThemePageData>>) => {
+      // save relative file path into page data to generate edit link
+      page.data.filePathRelative = page.filePathRelative
+      // save title into route meta to generate navbar and sidebar
+      page.routeMeta.title = page.title
+    },
+
+    plugins: [
+      bulletinPopoverPlugin(),
+      commentsPlugin(),
+      pagePlugin(pages || []),
+      gitPlugin(),
+      themeDataPlugin({ themeData: themeConfig }),
+      searchPlugin(),
+      palettePlugin(),
+      nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
+      prismjsPlugin(),
+      activeHeaderLinksPlugin({
+        headerLinkSelector: 'a.page-catalog-item',
+      }),
+      containerPlugin(resolveContainerOptions('tip')),
+      containerPlugin(resolveContainerOptions('info')),
+      containerPlugin(resolveContainerOptions('warning')),
+      containerPlugin(resolveContainerOptions('danger')),
+      containerPlugin(resolveContainerOptions('details')),
+      containerPlugin(resolveContainerOptions('code-group')),
+      containerPlugin(resolveContainerOptions('code-group-item')),
+      externalLinkIconPlugin(),
+      vuePreviewPlugin(),
+      registerComponentsPlugin({
+        componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
+      }),
+      registerComponentsPlugin({
+        componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
+      }),
+      backToTopPlugin()
+    ],
   }
 }
 

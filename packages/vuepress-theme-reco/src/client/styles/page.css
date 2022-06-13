@@ -1,0 +1,12 @@
+.page-container {
+  @apply my-24;
+  .page-info {
+    @apply mb-4;
+  }
+  &.show-series {
+    @apply pl-0 md:pl-72;
+  }
+  &.show-catalog {
+    @apply pr-0 lg:pr-56;
+  }
+}

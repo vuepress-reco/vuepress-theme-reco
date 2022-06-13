@@ -1,0 +1,18 @@
+.footer-wrapper {
+  @apply p-6 border-t border-solid border-reco-border-light text-center font-medium;
+  @apply dark:border-reco-border-dark;
+  > span {
+    @apply block ml-4 py-1 text-left;
+    @apply md:inline-block;
+  }
+  .cyber-security {
+    @apply px-4 text-left;
+    @apply md:text-center;
+    img {
+      @apply mr-2 w-4 h-4 align-middle;
+    }
+    a {
+      @apply align-middle;
+    }
+  }
+}

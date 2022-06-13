@@ -1,4 +1,4 @@
-import styleDefault from './styleDefault'
+import { styleDefault } from './styleDefault'
 
 export * from './styleDefault'
 

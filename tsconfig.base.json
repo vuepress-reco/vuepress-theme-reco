@@ -15,6 +15,11 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ES2018",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@theme/*": [
+        "./packages/vuepress-theme-reco/src/client/components/*"
+      ],
+    }
   }
 }

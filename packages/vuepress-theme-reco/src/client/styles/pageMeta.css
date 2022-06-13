@@ -1,0 +1,29 @@
+.page-meta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  .meta-item {
+    cursor: default;
+    margin-top: 0.8rem;
+
+    .meta-item-label {
+      font-weight: 500;
+      @apply text-reco-text-light;
+    }
+  }
+
+  .edit-link {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+
+  .last-updated {
+    float: right;
+  }
+}
+
+/* 兼容 */
+.page-meta .meta-item .meta-item-label {
+  @apply dark:text-reco-text-dark;
+}

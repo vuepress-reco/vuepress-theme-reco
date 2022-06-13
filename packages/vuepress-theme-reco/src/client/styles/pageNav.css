@@ -1,0 +1,18 @@
+.page-nav {
+  @apply pt-4 pb-0;
+  .inner {
+    @apply border-t border-solid border-reco-border-light mt-0 pt-4 overflow-hidden;
+  }
+  a {
+    @apply font-semibold;
+    @apply text-reco-brand;
+  }
+  .next {
+    @apply float-right;
+  }
+}
+
+/* 兼容 */
+.page-nav .inner {
+  @apply dark:border-reco-border-dark ;
+}
