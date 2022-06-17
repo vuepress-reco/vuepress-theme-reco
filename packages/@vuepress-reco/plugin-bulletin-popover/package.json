@@ -34,5 +34,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.46",
+    "@vuepress/core": "2.0.0-beta.46",
+    "@vuepress/plugin-theme-data": "2.0.0-alpha.25",
+    "@vuepress/utils": "2.0.0-beta.46",
+    "vue": "^3.2.37"
   }
 }

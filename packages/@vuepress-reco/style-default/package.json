@@ -37,9 +37,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/shared": "^2.0.0-beta.16",
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^2.0.0-beta.16",
-    "@vuepress-reco/vuepress-plugin-comments": "^2.0.0-beta.16",
+    "@vuepress-reco/shared": "workspace:*",
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "workspace:*",
+    "@vuepress-reco/vuepress-plugin-comments": "workspace:*",
+    "@vuepress-reco/vuepress-plugin-page": "workspace:*",
     "@vuepress/bundler-webpack": "2.0.0-beta.46",
     "@vuepress/client": "2.0.0-beta.46",
     "@vuepress/core": "2.0.0-beta.46",
@@ -47,6 +48,8 @@
     "@vuepress/plugin-git": "^2.0.0-beta.46",
     "@vuepress/plugin-theme-data": "^2.0.0-beta.46",
     "@vuepress/shared": "2.0.0-beta.46",
-    "@vuepress/utils": "2.0.0-beta.46"
+    "@vuepress/utils": "2.0.0-beta.46",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.16"
   }
 }
