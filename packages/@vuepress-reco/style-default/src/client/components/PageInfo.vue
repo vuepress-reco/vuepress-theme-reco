@@ -7,7 +7,7 @@
         v-for="(category, index) in categories"
         :key="index"
         :class="['category', { active: currentCategory === category }]"
-        :to="`/categories/${category}/1/`"
+        :to="`/categories/${convertToPinyin(category)}/1/`"
         >{{ category }}</RouterLink
       >
     </Xicons>
@@ -16,7 +16,7 @@
         v-for="(tag, index) in tags"
         :key="index"
         :class="['tag', { active: currentTag === tag }]"
-        :to="`/tags/${tag}/1/`"
+        :to="`/tags/${convertToPinyin(tag)}/1/`"
         >{{ tag }}</RouterLink
       >
     </Xicons>
@@ -30,7 +30,8 @@
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import {toISODate} from "../utils/other";
+import { toISODate } from '../utils/other'
+import { convertToPinyin } from '@vuepress-reco/shared'
 
 export default defineComponent({
   name: 'PageInfo',
@@ -50,8 +51,8 @@ export default defineComponent({
     },
     hideValineViews: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   setup(props) {
@@ -83,10 +84,23 @@ export default defineComponent({
     )
 
     const showValineViews = computed(() => {
-      return (solution.value === 'valine' && options.value.visitor != false) && !hideValineViews.value
+      return (
+        solution.value === 'valine' &&
+        options.value.visitor != false &&
+        !hideValineViews.value
+      )
     })
 
-    return { author, date, categories, tags, showPageInfo, solution, showValineViews }
+    return {
+      author,
+      date,
+      categories,
+      tags,
+      showPageInfo,
+      solution,
+      showValineViews,
+      convertToPinyin,
+    }
   },
 })
 </script>
