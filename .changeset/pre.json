@@ -1,0 +1,16 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.16",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.16",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.16",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.16",
+    "@vuepress-reco/shared": "2.0.0-beta.16",
+    "@vuepress-reco/style-default": "2.0.0-beta.16",
+    "vuepress-theme-reco": "2.0.0-beta.16"
+  },
+  "changesets": [
+    "rich-queens-deliver"
+  ]
+}
