@@ -5,12 +5,14 @@ export function useComment() {
   const themeLocal = useThemeLocaleData()
 
   const solution = computed(() => {
+    // @ts-ignore
     return themeLocal.value.valineConfig
       ? 'valine'
       : ''
   })
 
   const options = computed(() => {
+    // @ts-ignore
     return themeLocal.value.valineConfig
       || {}
   })
