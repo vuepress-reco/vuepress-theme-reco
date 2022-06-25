@@ -32,7 +32,7 @@
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-page": "^2.0.0-beta.18",
     "@vuepress/core": "2.0.0-beta.48",
-    "vue": "^3.2.35"
+    "vue": "^3.2.36"
   },
   "publishConfig": {
     "access": "public"

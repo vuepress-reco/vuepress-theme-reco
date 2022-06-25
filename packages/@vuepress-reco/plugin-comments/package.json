@@ -39,7 +39,7 @@
     "@vuepress/plugin-theme-data": "2.0.0-beta.48",
     "@vuepress/utils": "2.0.0-beta.48",
     "valine": "1.4.18",
-    "vue": "^3.2.35",
+    "vue": "^3.2.36",
     "vue-router": "^4.0.16"
   },
   "bugs": {
