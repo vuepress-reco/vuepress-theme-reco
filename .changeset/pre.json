@@ -10,6 +10,7 @@
     "vuepress-theme-reco": "2.0.0-beta.18"
   },
   "changesets": [
+    "four-mirrors-shop",
     "rich-queens-deliver",
     "strong-insects-move"
   ]

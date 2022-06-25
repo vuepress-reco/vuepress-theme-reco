@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/shared",
-  "version": "2.0.0-beta.18",
+  "version": "2.0.0-beta.19",
   "description": "> TODO: description",
   "author": "reco_luan <recoluan@outlook.com>",
   "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
@@ -30,7 +30,7 @@
     "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
   },
   "dependencies": {
-    "@vuepress-reco/vuepress-plugin-page": "^2.0.0-beta.18",
+    "@vuepress-reco/vuepress-plugin-page": "^2.0.0-beta.19",
     "@vuepress/core": "2.0.0-beta.48",
     "vue": "^3.2.36"
   },
