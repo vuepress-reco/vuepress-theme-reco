@@ -39,6 +39,6 @@ module.exports = {
     },
   ],
   rules: {
-    'no-undef': [false, ['defineEmits', 'defineProps']],
+    'no-undef': [1, { 'defineEmits': true, 'defineProps': true }],
   },
 }
