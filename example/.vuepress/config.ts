@@ -41,7 +41,7 @@ export default defineUserConfig({
         ],
       },
     },
-    logo: '/hero_black.png',
+    logo: '/logo.png',
     authorAvatar: '/logo.png',
     author: 'reco_luan',
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco-next',
@@ -128,7 +128,8 @@ export default defineUserConfig({
           ]
         }
       ],
-    }
+    },
+    password: ['e10adc3949ba59abbe56e057f20f883e']
   }),
   debug: true,
 })

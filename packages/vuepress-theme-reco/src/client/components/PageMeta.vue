@@ -8,7 +8,7 @@
       <Xicons
         class="meta-item-label"
         icon="CalendarTime"
-        :text="`${themeLocale.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
+        :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
         icon-size="20"
         text-size="14"
       />
@@ -35,13 +35,13 @@ import Link from './Link.vue'
 import {toISODate} from "../utils/other";
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
   const page = usePageData<DefaultThemePageData>()
   const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showEditLink =
-      frontmatter.value.editLink ?? themeLocale.value.editLink ?? true
+      frontmatter.value.editLink ?? themeLocal.value.editLink ?? true
 
     if (!showEditLink) {
       return null
@@ -53,7 +53,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
       docsBranch = 'main',
       docsDir = '',
       editLinkText,
-    } = themeLocale.value
+    } = themeLocal.value
 
     if (!docsRepo) return null
 
@@ -62,7 +62,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
       docsBranch,
       docsDir,
       path: page.value.path,
-      editLinkPattern: themeLocale.value.editLinkPattern,
+      editLinkPattern: themeLocal.value.editLinkPattern,
     })
 
     if (!editLink) return null
@@ -78,13 +78,13 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 
 const useLastUpdated = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData()
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
   const page = usePageData<DefaultThemePageData>()
   const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =
-      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true
+      frontmatter.value.lastUpdated ?? themeLocal.value.lastUpdated ?? true
 
     if (!showLastUpdated) return null
 
@@ -102,12 +102,12 @@ export default defineComponent({
   components: { Link },
 
   setup() {
-    const themeLocale = useThemeLocaleData()
+    const themeLocal = useThemeLocaleData()
     const editNavLink = useEditNavLink()
     const lastUpdated = useLastUpdated()
 
     return {
-      themeLocale,
+      themeLocal,
       editNavLink,
       lastUpdated,
     }

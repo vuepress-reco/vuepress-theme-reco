@@ -14,10 +14,10 @@ import type { DefaultThemeNormalPageFrontmatter } from '../types'
 export function applyClientSetup() {
   // we need to access sidebar items in multiple components
   // so we make it global computed
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
   const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
   const sidebarItems = computed(() =>
-    resolveSidebarItems(frontmatter.value, themeLocale.value)
+    resolveSidebarItems(frontmatter.value, themeLocal.value)
   )
   provide(sidebarItemsSymbol, sidebarItems)
 

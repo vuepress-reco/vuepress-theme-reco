@@ -3,6 +3,8 @@ import type { NavLink, SidebarConfig } from './nav'
 
 export interface RecoThemePageData extends GitPluginPageData {
   filePathRelative: string | null
+  logo?: string
+  password?: string | Array<string>
 }
 
 export interface DefaultThemePageFrontmatter {

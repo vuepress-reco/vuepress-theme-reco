@@ -34,7 +34,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
   const router = useRouter()
   const routeLocale = useRouteLocale()
   const siteLocale = useSiteLocaleData()
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
 
   return computed<ResolvedNavbarItem[]>(() => {
     const localePaths = Object.keys(siteLocale.value.locales)
@@ -53,7 +53,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
         const targetSiteLocale =
           siteLocale.value.locales?.[targetLocalePath] ?? {}
         const targetThemeLocale =
-          themeLocale.value.locales?.[targetLocalePath] ?? {}
+          themeLocal.value.locales?.[targetLocalePath] ?? {}
         const targetLang = `${targetSiteLocale.lang}`
 
         const text = targetThemeLocale.selectLanguageName ?? targetLang
@@ -95,9 +95,9 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
  * Get navbar config of repository link
  */
 const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
 
-  const repo = computed(() => themeLocale.value.repo)
+  const repo = computed(() => themeLocal.value.repo)
   const repoType = computed(() =>
     repo.value ? resolveRepoType(repo.value) : null
   )
@@ -111,7 +111,7 @@ const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
 
   const repoLabel = computed(() => {
     if (!repoLink.value) return null
-    if (themeLocale.value.repoLabel) return themeLocale.value.repoLabel
+    if (themeLocal.value.repoLabel) return themeLocal.value.repoLabel
     if (repoType.value === null) return 'Source'
     return repoType.value
   })
@@ -146,7 +146,7 @@ const resolveNavbarItem = (
 }
 
 const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
-  const themeLocale = useThemeLocaleData()
+  const themeLocal = useThemeLocaleData()
   const { classificationSummary } = usePageData()
 
   const parseCategories = computed(() => {
@@ -173,8 +173,8 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   })
 
   return computed(() => {
-    let navItems = themeLocale.value.navbar || []
-    if (themeLocale.value.autoAddCategoryToNavbar === true) {
+    let navItems = themeLocal.value.navbar || []
+    if (themeLocal.value.autoAddCategoryToNavbar === true) {
       navItems = [
         { text: 'Home', link: '/' },
         ...parseCategories.value,

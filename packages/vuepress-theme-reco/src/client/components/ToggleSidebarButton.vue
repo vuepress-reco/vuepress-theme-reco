@@ -1,7 +1,7 @@
 <template>
   <div
     class="toggle-sidebar-button"
-    :title="themeLocale.toggleSidebar"
+    :title="themeLocal.toggleSidebar"
     aria-expanded="false"
     role="button"
     tabindex="0"
@@ -24,5 +24,5 @@ const toggle = (): void => {
   emits('toggle')
 }
 
-const themeLocale = useThemeLocaleData()
+const themeLocal = useThemeLocaleData()
 </script>

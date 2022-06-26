@@ -11,8 +11,11 @@
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <Series />
-    <slot />
-  
+
+    <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
+
+    <slot v-else />
+
     <Catalog v-if="isShowCatalog" />
   </div>
 </template>
@@ -20,10 +23,12 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
-import Navbar from '../components/Navbar.vue'
-import Series from '../components/Series.vue'
-import Catalog from '../components/Catalog.vue'
-import { useSidebarData } from '../composables'
+import Navbar from '../Navbar.vue'
+import Series from '../Series.vue'
+import Catalog from '../Catalog.vue'
+import Password from '../Password/index.vue'
+import { useSidebarData } from '../../composables'
+import { useSidebar, usePassword } from './hook'
 
 const {
   isOpenSidebar,
@@ -32,17 +37,10 @@ const {
   toggleSidebar
 } = useSidebarData()
 
-// close sidebar after navigation
-let unregisterRouterHook
+const {
+  sitePasswordPass,
+  handlePass
+} = usePassword()
 
-onMounted(() => {
-  const router = useRouter()
-  unregisterRouterHook = router.afterEach(() => {
-    toggleSidebar(false)
-  })
-})
-
-onUnmounted(() => {
-  unregisterRouterHook()
-})
+useSidebar(toggleSidebar)
 </script>

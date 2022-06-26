@@ -2,6 +2,7 @@
 @import 'backToTop.css';
 @import 'categories.css';
 @import 'code.css';
+@import 'common.css';
 @import 'customContainer.css';
 @import 'home/index.css';
 @import 'navbar.css';
@@ -13,6 +14,7 @@
 @import 'pageInfo.css';
 @import 'pageMeta.css';
 @import 'pageNav.css';
+@import 'password.css';
 @import 'personalInfo.css';
 @import 'postItem.css';
 @import 'reset.css';

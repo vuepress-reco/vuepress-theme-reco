@@ -54,10 +54,10 @@ export const useSidebarItems = (): SidebarItemsRef => {
 
 export const resolveSidebarItems = (
   frontmatter: DefaultThemeNormalPageFrontmatter,
-  themeLocale: DefaultThemeData
+  themeLocal: DefaultThemeData
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
-  const sidebarConfig = frontmatter.series ?? themeLocale.series ?? 'auto'
+  const sidebarConfig = frontmatter.series ?? themeLocal.series ?? 'auto'
 
   // resolve sidebar items according to the config
   if (frontmatter.home || sidebarConfig === false) {

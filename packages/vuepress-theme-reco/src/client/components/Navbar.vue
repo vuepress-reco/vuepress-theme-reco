@@ -45,12 +45,12 @@ export default defineComponent({
   setup(_, ctx) {
     const siteLocale = useSiteLocaleData()
     const routeLocale = useRouteLocale()
-    const themeLocale = useThemeLocaleData()
+    const themeLocal = useThemeLocaleData()
 
     const siteBrandLink = computed(
-      () => themeLocale.value.home || routeLocale.value
+      () => themeLocal.value.home || routeLocale.value
     )
-    const siteBrandLogo = computed(() => themeLocale.value.logo)
+    const siteBrandLogo = computed(() => themeLocal.value.logo)
     const siteBrandTitle = computed(() => siteLocale.value.title)
 
     const navbar = ref<HTMLElement | null>(null)
