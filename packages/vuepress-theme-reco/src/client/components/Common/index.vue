@@ -6,17 +6,15 @@
       'no-sidebar': !isShowSidebar,
     }"
   >
-    <Navbar @toggleSidebar="toggleSidebar" />
-
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
-
-    <Series />
-
     <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
-    <slot v-else />
-
-    <Catalog v-if="isShowCatalog" />
+    <div v-else>
+      <Navbar @toggleSidebar="toggleSidebar" />
+      <div class="sidebar-mask" @click="toggleSidebar(false)" />
+      <Series />
+      <slot />
+      <Catalog v-if="isShowCatalog" />
+    </div>
   </div>
 </template>
 

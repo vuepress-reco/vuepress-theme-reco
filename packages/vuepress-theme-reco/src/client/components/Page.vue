@@ -2,7 +2,6 @@
   <main class="page-container">
     <h1 v-if="!!title" class="page-title">{{ title }}</h1>
     <PageInfo :page-data="pageData" />
-    <Password />
     <div class="theme-reco-default-content">
       <Content />
     </div>
@@ -21,13 +20,12 @@ import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/c
 import PageInfo from './PageInfo.vue'
 import PageNav from './PageNav.vue'
 import PageMeta from './PageMeta.vue'
-import Password from './Password/index.vue'
 
 
 export default defineComponent({
   name: 'Page',
 
-  components: { PageInfo, PageNav, PageMeta, Password },
+  components: { PageInfo, PageNav, PageMeta },
 
   setup() {
     const pageData = usePageData()

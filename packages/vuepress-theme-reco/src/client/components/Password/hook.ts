@@ -1,5 +1,5 @@
 import md5 from 'md5'
-import { ref, watch, computed, defineEmits } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useSiteLocaleData } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { RecoThemePageData } from '../../../types'
