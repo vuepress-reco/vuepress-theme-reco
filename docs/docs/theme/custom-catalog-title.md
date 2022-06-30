@@ -1,4 +1,4 @@
-___
+---
 title: 自定义目录标题
 date: 2022-06-07 22:30:37
 ---
@@ -8,6 +8,8 @@ date: 2022-06-07 22:30:37
 ## 配置
 
 ```ts
+// .vuepress/config.ts
+
 import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
 

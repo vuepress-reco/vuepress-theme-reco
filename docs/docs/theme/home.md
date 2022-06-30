@@ -43,7 +43,7 @@ date: 2021-11-06 23:36:01
   - heroImage: 首页 logo
   - heroImageStyle: 首页 logo 样式
   - bgImage: 背景图片
-  - bgImageStyle: 北京图片样式
+  - bgImageStyle: 背景图片样式
   - buttons: 按钮
     - text: 按钮文案
     - link: 按钮地址
@@ -108,7 +108,7 @@ bannerBrand: # bannerBrand 模块的配置
     height: 450px
   buttons:
     - { text: Guide, link: '/docs/guide/introduce' }
-    - { text: Default Style, link: '/docs/style-default-api/introduce', type: 'plain' }
+    - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
 blog: # blog 模块的配置
   socialLinks: # 社交 icon 请到 [Xions](https://www.xicons.org/#/zh-CN) 页面的 tabler 下获取，复制名称即可
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
@@ -130,7 +130,7 @@ reco 主题的 css 方案是 postcss + tailwindcss，支持 css 最新嵌套提�
 
 只要组件在全局注册，即可作为首页的模块被首页使用。
 
-首先可以参考 [注册组件](/docs/style-default-api/register-components.html) 将首页模块组件注册为全局组件，然后在首页的 frontmatter 中去配置（假如自定义的模块组件为 CustomModule）：
+首先可以参考 [注册组件](/docs/theme/register-components.html) 将首页模块组件注册为全局组件，然后在首页的 frontmatter 中去配置（假如自定义的模块组件为 CustomModule）：
 
 ```yaml
 ---

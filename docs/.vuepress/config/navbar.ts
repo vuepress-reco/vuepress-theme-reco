@@ -3,10 +3,10 @@ export const navbar = [
   { text: '参考',
     children: [
       {
-        text: '风格',
+        text: '主题配置',
         children: [
-          { text: '默认风格配置', link: '/docs/style-default-api/introduce' },
-          { text: '风格开发 API', link: '/docs/style-dev-api/' }
+          { text: '基础', link: '/docs/theme/introduce' },
+          { text: '高级', link: '/docs/theme/home' }
         ]
       },
       {

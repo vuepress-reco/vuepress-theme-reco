@@ -18,13 +18,15 @@ yarn add vuepress@next vuepress-theme-reco@next
 `vuepress` 在 `2.0.0-beta.39` 版本之后，将主题的使用从声明式改为函数式，reco 主题在 `2.0.0-beta.16` 进行了适配。
 :::
 
-```js
-// .vuepress/config.js
+```ts
+// .vuepress/config.ts
+
+import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
 
-module.exports = {
+export default defineUserConfig({
   theme: recoTheme({
     // options
   })
-}
+})
 ```

@@ -15,10 +15,13 @@ date: 2021-11-06 23:41:31
 
 ### Valine
 
-```javascript
+```ts
+// .vuepress/config.ts
+
+import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
 
-module.exports = {
+export default defineUserConfig({
   theme: recoTheme({
     valineConfig: {
       appId: '...',// your appId
@@ -26,7 +29,7 @@ module.exports = {
       hideComments: true, // 全局隐藏评论，默认 false
     }
   })
-}
+})
 ```
 
 其他参数参考 [Valine 官网](https://valine.js.org/configuration.html)。

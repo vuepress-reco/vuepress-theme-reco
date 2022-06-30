@@ -15,5 +15,6 @@ export const themeConfig = {
   series,
   valineConfig,
   vuePreviewsDir: './docs/.vuepress/vue-previews',
+  componentsDir: './docs/.vuepress/components',
   bulletin
 }
