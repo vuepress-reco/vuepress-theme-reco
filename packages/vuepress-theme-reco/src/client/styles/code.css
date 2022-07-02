@@ -31,6 +31,7 @@ div[class*="language-"] {
     @apply relative;
     .line-numbers {
       @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
+      counter-reset: line-number;
       br {
         user-select: none;
       }
@@ -38,6 +39,10 @@ div[class*="language-"] {
         position: relative;
         z-index: 3;
         user-select: none;
+        &::before {
+          counter-increment: line-number;
+          content: counter(line-number);
+        }
       }
     }
   }
