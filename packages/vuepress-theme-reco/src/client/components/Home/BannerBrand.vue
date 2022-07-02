@@ -25,6 +25,16 @@
             />
           </li>
         </ul>
+
+        <ul class="social-links" v-if="socialLinks.length > 0">
+          <li
+            class="social-item"
+            v-for="(item, index) in socialLinks"
+            :key="index"
+          >
+            <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -34,6 +44,7 @@
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from '@vuepress/client'
 import Link from '../Link.vue'
+import { createOneColor } from '../../utils'
 
 const frontmatter = usePageFrontmatter()
 
@@ -46,6 +57,12 @@ const heroImage = computed(() => {
 const buttons = computed(() => {
   return frontmatter.value?.bannerBrand?.buttons || []
 })
+
+const socialLinks = computed(() =>
+  (frontmatter.value?.bannerBrand?.socialLinks || []).map(item => {
+    if (!item.color) item.color = createOneColor()
+    return item
+  }))
 
 const heroImageStyle = computed(
   () => frontmatter.value.bannerBrand.heroImageStyle || {}

@@ -29,6 +29,17 @@
           }
         }
       }
+      .social-links {
+        @apply box-border flex flex-wrap p-2 pl-0 text-center;
+        @apply md:text-left;
+        .social-item {
+          @apply text-center list-none transform transition-transform;
+          @apply hover:scale-110;
+          width: 39px;
+          height: 36px;
+          line-height: 36px;
+        }
+      }
     }
     img {
       @apply block mx-auto mt-32 mb-16 w-40;

@@ -4,11 +4,11 @@ isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
 modules:
-  - 'CustomBanner'
+  - BannerBrand
   - Blog
   - MdContent
   - Footer
-customBanner:
+bannerBrand:
   heroText: vuepress-reco
   tagline: 一款 vuepress 主题容器，集成多种主题底层功能，快速生成主题风格。主题 2.0 的默认风格是原主题 1.0 迁移而来，更多风格正在路上，敬请期待。
   heroImage: /logo.png
