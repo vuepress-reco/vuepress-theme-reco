@@ -1,7 +1,7 @@
 import { navbar } from './navbar'
 import { series } from './series'
 import { bulletin } from './bulletin'
-import { valineConfig } from './valineConfig'
+import { commentConfig } from './commentConfig'
 
 export const themeConfig = {
   style: '@vuepress-reco/style-default',
@@ -13,8 +13,8 @@ export const themeConfig = {
   lastUpdatedText: '最后更新时间',
   navbar,
   series,
-  valineConfig,
+  commentConfig,
   vuePreviewsDir: './docs/.vuepress/vue-previews',
   componentsDir: './docs/.vuepress/components',
-  bulletin
+  bulletin,
 }
