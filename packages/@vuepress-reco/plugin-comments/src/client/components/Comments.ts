@@ -1,26 +1,39 @@
 import { defineComponent, h, toRefs } from 'vue'
 import { useComment } from '../composables'
 import Valine from './Valine'
+import Waline from './Waline'
 
 export default defineComponent({
-  components: { Valine },
+  components: { Valine, Waline },
   props: {
     hideComments: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   setup(props) {
     const { solution, options } = useComment()
     const { hideComments } = toRefs(props)
 
-    const componentName = solution.value === 'valine'
-      ? Valine
-      : ''
+    let componentName
+    switch (solution.value) {
+      case 'valine':
+        componentName = Valine
+        break
+      case 'waline':
+        componentName = Waline
+        break
+      default:
+        componentName = ''
+        break
+    }
 
-    return () => (componentName ? h(componentName, {
-      options: options.value,
-      style: `display: ${hideComments.value ? 'none' : 'block'}`
-    }) : null)
-  }
+    return () =>
+      componentName
+        ? h(componentName, {
+            options: options.value,
+            style: `display: ${hideComments.value ? 'none' : 'block'}`,
+          })
+        : null
+  },
 })
