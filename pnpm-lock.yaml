@@ -102,7 +102,7 @@ importers:
 
   packages/@vuepress-reco/plugin-page:
     specifiers:
-      '@vuepress-reco/shared': ^2.0.0-beta.19
+      '@vuepress-reco/shared': workspace:*
       '@vuepress/client': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       '@vuepress/utils': 2.0.0-beta.48
@@ -144,7 +144,7 @@ importers:
 
   packages/@vuepress-reco/shared:
     specifiers:
-      '@vuepress-reco/vuepress-plugin-page': ^2.0.0-beta.19
+      '@vuepress-reco/vuepress-plugin-page': workspace:*
       '@vuepress/core': 2.0.0-beta.48
       vue: ^3.2.36
     dependencies:
@@ -154,12 +154,13 @@ importers:
 
   packages/vuepress-theme-reco:
     specifiers:
+      '@vicons/fa': ^0.12.0
       '@vicons/tabler': ^0.12.0
       '@vuepress-reco/shared': workspace:*
       '@vuepress-reco/vuepress-plugin-bulletin-popover': workspace:*
       '@vuepress-reco/vuepress-plugin-comments': workspace:*
-      '@vuepress-reco/vuepress-plugin-page': ^2.0.0-beta.19
-      '@vuepress-reco/vuepress-plugin-vue-preview': ^2.0.0-beta.19
+      '@vuepress-reco/vuepress-plugin-page': workspace:*
+      '@vuepress-reco/vuepress-plugin-vue-preview': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.48
       '@vuepress/bundler-webpack': 2.0.0-beta.48
       '@vuepress/client': 2.0.0-beta.48
@@ -191,6 +192,7 @@ importers:
       vue: ^3.2.36
       vue-router: ^4.0.16
     dependencies:
+      '@vicons/fa': 0.12.0
       '@vicons/tabler': 0.12.0
       '@vuepress-reco/shared': link:../@vuepress-reco/shared
       '@vuepress-reco/vuepress-plugin-bulletin-popover': link:../@vuepress-reco/plugin-bulletin-popover
@@ -1923,6 +1925,10 @@ packages:
       '@typescript-eslint/types': 5.29.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vicons/fa/0.12.0:
+    resolution: {integrity: sha512-g2PIeJLsTHUjt6bK63LxqC0uYQB7iu+xViJOxvp1s8b9/akpXVPVWjDTTsP980/0KYyMMe4U7F/aUo7wY+MsXA==}
+    dev: false
 
   /@vicons/tabler/0.12.0:
     resolution: {integrity: sha512-3+wUFuxb7e8OzZ8Wryct1pzfA2vyoF4lwW98O9s27ZrfCGaJGNmqG+q8A7vQ92Mf+COCgxpK+rhNPTtTvaU6qw==}

@@ -37,7 +37,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/shared": "^2.0.0-beta.19",
+    "@vuepress-reco/shared": "workspace:*",
     "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/core": "2.0.0-beta.48",
     "@vuepress/utils": "2.0.0-beta.48",
