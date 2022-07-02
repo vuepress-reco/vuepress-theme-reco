@@ -11,7 +11,10 @@
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
 import type { Component } from 'vue'
-import * as icons from '@vicons/tabler'
+import * as tablerIcons from '@vicons/tabler'
+import * as faIcons from '@vicons/fa'
+
+const icons = { ...tablerIcons, ...faIcons }
 
 enum EIconPosition {
   left = 'left',
