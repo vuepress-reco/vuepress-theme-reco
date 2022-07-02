@@ -24,16 +24,38 @@ import { recoTheme } from 'vuepress-theme-reco'
 export default defineUserConfig({
   theme: recoTheme({
     valineConfig: {
-      appId: '...',// your appId
+      appId: '...', // your appId
       appKey: '...', // your appKey
       hideComments: true, // 全局隐藏评论，默认 false
-    }
-  })
+    },
+  }),
 })
 ```
 
 其他参数参考 [Valine 官网](https://valine.js.org/configuration.html)。
 
 ::: tip
-如果 valine 的获取评论的接口报 `404` 错误的话，不用担心，这是因为你还没有添加评论，只要存在1条评论，就不会报错了，这是 `leanCloud` 的请求处理操作而已；
+如果 valine 的获取评论的接口报 `404` 错误的话，不用担心，这是因为你还没有添加评论，只要存在 1 条评论，就不会报错了，这是 `leanCloud` 的请求处理操作而已；
 :::
+
+### Waline
+
+```ts
+// .vuepress/config.ts
+
+import { defineUserConfig } from 'vuepress'
+import { recoTheme } from 'vuepress-theme-reco'
+
+export default defineUserConfig({
+  theme: recoTheme({
+    commentConfig: {
+      type: 'waline',
+      options: {
+        serverUrl: 'your serverUrl',
+      },
+    },
+  }),
+})
+```
+
+使用教程及 options 其它参数参考 [Waline 官网](https://waline.js.org/guide/get-started.html)。

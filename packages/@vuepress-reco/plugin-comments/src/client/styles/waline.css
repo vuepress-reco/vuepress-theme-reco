@@ -1,0 +1,36 @@
+.reco-waline-wrapper {
+  @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-4;
+  @apply md:px-10;
+  border-top: 1px solid transparent;
+}
+
+.reco-waline-wrapper .wl-panel {
+  @apply dark:bg-reco-bg-code-dark !important;
+  @apply dark:border-reco-border-dark !important;
+}
+
+.wl-editor:focus,
+.wl-input:focus {
+  @apply bg-reco-bg-light-light;
+  @apply dark:bg-reco-bg-code-dark !important;
+  @apply dark:border-reco-border-dark !important;
+}
+
+.wl-action:hover,
+.wl-action.actived {
+  @apply text-reco-brand-light;
+}
+
+.wl-btn:hover,
+.wl-btn:active {
+  @apply border-reco-brand text-reco-brand-light;
+}
+
+.wl-btn.primary {
+  @apply border-reco-brand bg-reco-brand;
+}
+
+.wl-btn.primary:hover,
+.wl-btn.primary:active {
+  @apply border-reco-brand bg-reco-brand;
+}
