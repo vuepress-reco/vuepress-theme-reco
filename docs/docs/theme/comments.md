@@ -51,7 +51,7 @@ export default defineUserConfig({
     commentConfig: {
       type: 'waline',
       options: {
-        serverUrl: 'your serverUrl',
+        serverURL: 'your serverURL',
       },
     },
   }),
