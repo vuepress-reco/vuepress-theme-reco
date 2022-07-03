@@ -39,17 +39,17 @@
 import { defineComponent, computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { usePageFrontmatter } from '@vuepress/client'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import packageInfo from 'vuepress-theme-reco/package.json'
 
 const themeLocal = useThemeLocaleData()
 const frontmatter = usePageFrontmatter()
+const { solution, options } = useComment()
 
 const { version } = packageInfo
 const showAccessNumber = computed(() => {
-  const { valineConfig } = themeLocal.value
+ if (solution.value !== 'valine') return false
 
-  if (!valineConfig) return false
-
-  return valineConfig.visitor != false
+  return options.value.visitor != false
 })
 </script>
