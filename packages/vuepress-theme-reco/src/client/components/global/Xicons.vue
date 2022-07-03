@@ -14,7 +14,7 @@ import type { Component } from 'vue'
 import * as tablerIcons from '@vicons/tabler'
 import * as faIcons from '@vicons/fa'
 
-const icons = { ...tablerIcons, ...faIcons }
+const icons = { ...faIcons, ...tablerIcons }
 
 enum EIconPosition {
   left = 'left',
