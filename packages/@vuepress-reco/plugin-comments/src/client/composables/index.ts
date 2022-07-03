@@ -18,7 +18,7 @@ export function useComment() {
 
   const options = computed(() => {
     // @ts-ignore
-    return themeLocal.value.commentConfig.options || {}
+    return themeLocal.value?.commentConfig?.options || {}
   })
 
   return { solution, options }
