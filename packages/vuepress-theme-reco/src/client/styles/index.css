@@ -23,4 +23,5 @@
 @import 'sidebar.css';
 @import 'theme.css';
 @import 'toggleSidebarButton.css';
+@import '404.css';
 /* @import '@vuepress/plugin-palette/style'; */
