@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-beta.20
+
+### Patch Changes
+
+- feat: add validation page
+
 ## 2.0.0-beta.19
 
 ### Patch Changes

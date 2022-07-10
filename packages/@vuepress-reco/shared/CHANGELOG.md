@@ -1,5 +1,13 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.20
+
+### Patch Changes
+
+- feat: add validation page
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.20
+
 ## 2.0.0-beta.19
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.20
+
+### Patch Changes
+
+- feat: add validation page
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.20
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.20
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.20
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.20
+  - @vuepress-reco/shared@2.0.0-beta.20
+
 ## 2.0.0-beta.19
 
 ### Patch Changes
