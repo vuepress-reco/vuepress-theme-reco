@@ -1,4 +1,4 @@
-npm run build:docs
+pnpm docs:build
 
 cd docs/.vuepress/dist
 
