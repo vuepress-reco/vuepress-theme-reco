@@ -1,5 +1,17 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.21
+
+### Patch Changes
+
+- fix: optimize the overall style
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.21
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.21
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.21
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.21
+  - @vuepress-reco/shared@2.0.0-beta.21
+
 ## 2.0.0-beta.20
 
 ### Patch Changes

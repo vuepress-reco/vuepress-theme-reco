@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.21
+
+### Patch Changes
+
+- fix: optimize the overall style
+
 ## 2.0.0-beta.20
 
 ### Patch Changes
