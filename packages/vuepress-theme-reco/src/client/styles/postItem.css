@@ -1,7 +1,6 @@
 .post-item-container {
-  @apply mb-8 p-6 rounded shadow-light;
-  @apply dark:shadow-dark;
-  @apply hover:shadow-light-heavier dark:hover:shadow-dark-heavier;
+  @apply mb-8 p-6 rounded bg-reco-bg-code border border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
 
   .title {
     @apply relative mb-2 inline-block text-lg font-medium;

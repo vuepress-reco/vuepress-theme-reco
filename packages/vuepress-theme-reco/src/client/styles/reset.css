@@ -5,7 +5,7 @@
 *,
 ::before,
 ::after {
-  @apply box-border border-0 border-gray-200 subpixel-antialiased;
+  @apply box-border border-0 border-gray-200 antialiased;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 
 body {
   /* antialiased 字体平滑 */
-  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-base font-sans;
+  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-base font-sans tracking-wider;
   @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
   min-width: 320px;
   direction: ltr;
@@ -109,7 +109,8 @@ h6 {
 
 p,
 ol,
-ul {
+ul,
+table {
   @apply my-6 leading-8;
 }
 
@@ -167,7 +168,7 @@ table {
   border-collapse: collapse;
 
   tr {
-    @apply border-2 border-solid border-reco-border-light;
+    @apply border border-solid border-reco-border-light;
   }
 
   th {
@@ -177,7 +178,7 @@ table {
   td, th {
     @apply px-2 py-3;
     &:not(:last-child) {
-      @apply border-r-2 border-reco-border-light border-solid;
+      @apply border-r border-reco-border-light border-solid;
       @apply dark:border-reco-border-dark;
     }
   }

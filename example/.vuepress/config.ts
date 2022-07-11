@@ -59,7 +59,7 @@ export default defineUserConfig({
       '/blogs/': [
         {
           text: 'blogs1',
-          children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md'],
+          children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md', '/blogs/category1/blog3.md'],
         },
       ],
     },

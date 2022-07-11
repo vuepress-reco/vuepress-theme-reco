@@ -23,10 +23,13 @@ import { recoTheme } from 'vuepress-theme-reco'
 
 export default defineUserConfig({
   theme: recoTheme({
-    valineConfig: {
-      appId: '...', // your appId
-      appKey: '...', // your appKey
-      hideComments: true, // 全局隐藏评论，默认 false
+    commentConfig: {
+      type: 'valine',
+      options: {
+        appId: '...', // your appId
+        appKey: '...', // your appKey
+        hideComments: true, // 全局隐藏评论，默认 false
+      },
     },
   }),
 })

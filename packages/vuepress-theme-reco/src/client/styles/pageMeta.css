@@ -1,25 +1,14 @@
 .page-meta {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  overflow: auto;
-
+  @apply flex flex-wrap py-4 overflow-auto;
+  @apply md:justify-between md:flex-nowrap;
   .meta-item {
-    cursor: default;
-    margin-top: 0.8rem;
-
+    @apply cursor-pointer mt-3.5;
     .meta-item-label {
-      font-weight: 500;
-      @apply text-reco-text-light;
+      @apply font-medium text-reco-text-light;
     }
   }
-
   .edit-link {
-    display: inline-block;
-    margin-right: 0.25rem;
-  }
-
-  .last-updated {
-    float: right;
+    @apply mr-4;
   }
 }
 

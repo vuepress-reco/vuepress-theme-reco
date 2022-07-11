@@ -5,9 +5,9 @@
     @apply flex-auto;
   }
   .info-wrapper {
-    @apply sticky top-20 mb-8 p-6 rounded shadow-light;
+    @apply sticky top-20 mb-8 p-6 rounded bg-reco-bg-code border border-solid border-reco-border-light;
+    @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
     @apply md:ml-4;
-    @apply hover:shadow-light-heavier dark:hover:shadow-dark-heavier;
     flex: 0 0 300px;
     .module-title {
       @apply mt-4 mb-2 pt-0;
@@ -15,7 +15,7 @@
     .category-wrapper {
       @apply list-none pl-0;
       .category-item {
-        @apply mb-4 rounded cursor-pointer border-reco-brand border-2 border-solid;
+        @apply mb-4 rounded cursor-pointer border-reco-brand border border-solid;
         .category-link {
           @apply flex justify-between px-4 py-1.5;
           .text {
@@ -41,7 +41,7 @@
     .tag-wrapper {
       @apply list-none pl-0;
       .tag-item {
-        @apply inline-block mr-2 mb-2 rounded cursor-pointer border-2 border-solid;
+        @apply inline-block mr-2 mb-2 rounded cursor-pointer border border-solid;
         .tag-link {
           @apply flex justify-between px-2 py-0.5 leading-none text-xs;
         }
@@ -61,7 +61,7 @@
 
 /* 兼容 */
 .home-blog-content .info-wrapper {
-  @apply dark:shadow-dark;
+  @apply dark:shadow-dark dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
 }
 .home-blog-content .info-wrapper .category-wrapper .category-item .category-link .text {
   @apply dark:text-reco-text-dark;

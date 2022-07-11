@@ -7,31 +7,31 @@
     @apply mt-3.5 mb-0 font-bold;
   }
   &.tip {
-    @apply rounded border-reco-container-info-border border-2 border-solid bg-reco-container-info-bg;
+    @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
     .custom-container-title, svg {
       @apply text-reco-container-info-border;
     }
   }
   &.info {
-    @apply rounded border-reco-container-info-border border-2 border-solid bg-reco-container-info-bg;
+    @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
     .custom-container-title, svg {
       @apply text-reco-container-info-border;
     }
   }
   &.warning {
-    @apply rounded border-reco-container-warning-border border-2 border-solid bg-reco-container-warning-bg;
+    @apply rounded border-reco-container-warning-border border border-solid bg-reco-container-warning-bg;
     .custom-container-title, svg {
       @apply text-reco-container-warning-border;
     }
   }
   &.danger {
-    @apply rounded border-reco-container-danger-border border-2 border-solid bg-reco-container-danger-bg;
+    @apply rounded border-reco-container-danger-border border border-solid bg-reco-container-danger-bg;
     .custom-container-title, svg {
       @apply text-reco-container-danger-border;
     }
   }
   &.details {
-    @apply pl-6 py-4 rounded bg-reco-bg-code border-reco-border-light border-2 border-solid;
+    @apply pl-6 py-4 rounded bg-reco-bg-code border-reco-border-light border border-solid;
     @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
     .custom-container-title {
       @apply mt-0 cursor-pointer;

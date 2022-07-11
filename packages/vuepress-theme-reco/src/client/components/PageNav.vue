@@ -1,13 +1,13 @@
 <template>
   <nav v-if="prevNavLink || nextNavLink" class="page-nav">
-    <p class="inner">
-      <span v-if="prevNavLink" class="prev">
+    <p class="inner" :class="{ hasPrev: !!prevNavLink, hasNext: !!nextNavLink }">
+      <span v-if="prevNavLink" class="page-nav-item prev" @click="go(prevNavLink.link)">
         ←
-        <Link :item="prevNavLink" />
+        {{prevNavLink.text}}
       </span>
 
-      <span v-if="nextNavLink" class="next">
-        <Link :item="nextNavLink" />
+      <span v-if="nextNavLink" class="page-nav-item next" @click="go(nextNavLink.link)">
+        {{nextNavLink.text}}
         →
       </span>
     </p>
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { usePageFrontmatter } from '@vuepress/client'
 import { isPlainObject, isString } from '@vuepress/shared'
 import type {
@@ -90,6 +90,7 @@ export default defineComponent({
     const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
     const sidebarItems = useSidebarItems()
     const route = useRoute()
+    const router = useRouter()
 
     const prevNavLink = computed(() => {
       const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev)
@@ -109,9 +110,14 @@ export default defineComponent({
       return resolveFromSidebarItems(sidebarItems.value, route.path, 1)
     })
 
+    const go = (link) => {
+      router.push(link)
+    }
+
     return {
       prevNavLink,
       nextNavLink,
+      go
     }
   },
 })

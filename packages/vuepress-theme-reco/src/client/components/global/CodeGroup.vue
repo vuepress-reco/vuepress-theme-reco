@@ -147,7 +147,7 @@ export default defineComponent({
 
 <style>
 .code-group {
-  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border-2 border-solid border-reco-border-light;
+  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border border-solid border-reco-border-light;
   @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
   .code-group__nav {
     .code-group__ul {
