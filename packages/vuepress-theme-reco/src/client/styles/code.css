@@ -30,7 +30,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 font-mono bg-reco-bg-code;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 bg-reco-bg-code;
       counter-reset: line-number;
       br {
         user-select: none;
@@ -64,7 +64,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   tab-size: 4;
   hyphens: none;
-  @apply font-mono text-green-900 dark:text-yellow-50 text-sm font-light text-left whitespace-pre leading-normal;
+  @apply tracking-wide text-green-900 dark:text-yellow-50 text-sm text-left whitespace-pre leading-normal;
 }
 
  .token.comment,

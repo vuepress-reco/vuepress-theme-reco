@@ -1,7 +1,7 @@
 .pagation-container {
   @apply text-center;
   .jump, .jumpinput {
-    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-brand border-2 border-solid max-w-xs text-reco-text-light;
+    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-brand border border-solid max-w-xs text-reco-text-light;
   }
   .jump {
     @apply hover:bg-reco-brand-light hover:text-white;

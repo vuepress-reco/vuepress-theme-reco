@@ -43,7 +43,7 @@
       .tag-item {
         @apply inline-block mr-2 mb-2 rounded cursor-pointer border border-solid;
         .tag-link {
-          @apply flex justify-between px-2 py-0.5 leading-none text-xs;
+          @apply flex justify-between px-2 py-1 leading-none text-xs;
         }
         &:hover {
           @apply bg-reco-brand-light text-white;
@@ -61,7 +61,7 @@
 
 /* 兼容 */
 .home-blog-content .info-wrapper {
-  @apply dark:shadow-dark dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
 }
 .home-blog-content .info-wrapper .category-wrapper .category-item .category-link .text {
   @apply dark:text-reco-text-dark;

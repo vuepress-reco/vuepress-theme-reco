@@ -21,7 +21,7 @@
       color: #555;
       transition: all .3s ease;
   }
-  
+
   hr{
       margin: .825em 0;
       border-color:#f6f6f6;
@@ -56,8 +56,8 @@
       code{
           padding:0;
           background:transparent;
-          white-space: pre-wrap; 
-          word-break: keep-all; 
+          white-space: pre-wrap;
+          word-break: keep-all;
       }
   }
   blockquote{
@@ -252,7 +252,7 @@
           color: #222;
       }
   }
-  ul,ol {    
+  ul,ol {
       padding: 0;
       margin-left: 1.25em;
   }
@@ -330,7 +330,7 @@
               border:1px solid #f5f5f5;
               padding:.125em;
           }
-          
+
           @media screen and (max-width:720px) {
               .vimg {
                   width: 2.5em;
@@ -368,7 +368,7 @@
                   }
               }
           }
-          
+
           .vh {
               overflow: hidden;
               padding-bottom: .5em;
@@ -439,7 +439,7 @@
                   }
               }
           }
-          
+
           .vquote {
               color: #666;
               margin-top: 1em;
@@ -450,7 +450,7 @@
                   height: 2.225em;
               }
           }
-          
+
       }
   }
   .vpage {
@@ -484,18 +484,18 @@
       border-bottom-color: transparent;
       border-radius: 50%;
       animation: spin 1s infinite linear;
-  } 
+  }
 }
 
 .reco-valine-wrapper #valine.v {
   .vbtn{
-    @apply text-reco-brand border-2 border-solid border-reco-brand;
+    @apply text-reco-brand border border-solid border-reco-brand;
     &:hover {
       @apply text-white bg-reco-brand-light;
     }
   }
   .vwrap {
-    @apply bg-reco-bg-code border-2 border-solid border-reco-border-light;
+    @apply bg-reco-bg-code border border-solid border-reco-border-light;
     .vheader .vinput {
       @apply border-0 border-b rounded-none border-dashed border-reco-border-light;
       &:focus {
@@ -517,7 +517,7 @@
       @apply ml-0 border-l-0;
     }
     .vimg {
-      @apply p-0 w-11 h-11 rounded border-2 border-reco-brand-light;
+      @apply p-0 w-11 h-11 rounded border border-reco-brand-light;
     }
     .vhead .vnick {
       @apply text-reco-brand;

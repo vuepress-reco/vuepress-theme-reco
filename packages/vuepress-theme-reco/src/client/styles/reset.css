@@ -27,7 +27,7 @@ body {
   direction: ltr;
   /* 像素较小时字体会拼接在一起 */
   text-rendering: optimizeLegibility;
-  transition: background-color 0.3s ease
+  transition: background-color 0.3s ease;
 }
 
 main {
@@ -192,9 +192,13 @@ blockquote {
   }
 }
 
+pre, code, kbd {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
 kbd {
   @apply border border-gray-400 border-b-2 border-opacity-20 rounded;
-  @apply bg-gray-400 bg-opacity-5 py-0.5 px-2 text-sm text-center font-mono;
+  @apply bg-gray-400 bg-opacity-5 py-0.5 px-2 text-sm text-center;
 }
 
 form {
