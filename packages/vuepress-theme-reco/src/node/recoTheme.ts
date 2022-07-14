@@ -42,9 +42,9 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
               postcss: {
                 plugins: [
                   require('postcss-import'),
+                  require('tailwindcss/nesting'),
                   require('tailwindcss')(tailwindConfig),
                   require('autoprefixer')({}),
-                  require('postcss-nested'),
                   require('postcss-each')
                 ]
               }
@@ -62,7 +62,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
               plugins: [
                 ['tailwindcss', tailwindConfig],
                 ['autoprefixer', {}],
-                ['postcss-nested'],
+                [require('tailwindcss/nesting')],
                 ['postcss-each']
               ]
             },

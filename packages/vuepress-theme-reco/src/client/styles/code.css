@@ -52,7 +52,7 @@ div[class*="language-"] {
   .highlight-lines {
     @apply absolute z-10 left-0 right-0 bottom-0 pt-2 pb-6 leading-7 ;
     .highlight-line {
-      @apply bg-gray-800 bg-opacity-10;
+      @apply bg-gray-800/10;
     }
   }
 }
@@ -64,7 +64,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   tab-size: 4;
   hyphens: none;
-  @apply tracking-wide text-green-900 dark:text-yellow-50 text-sm text-left whitespace-pre leading-normal;
+  @apply tracking-wide text-emerald-900 dark:text-amber-50 text-sm text-left whitespace-pre leading-normal;
 }
 
  .token.comment,
@@ -164,5 +164,5 @@ div[class*="language-"].line-numbers-mode .line-numbers {
   @apply dark:bg-reco-bg-code-dark;
 }
 div[class*="language-"] .highlight-lines .highlight-line {
-  @apply dark:bg-gray-50 dark:bg-opacity-10;
+  @apply dark:bg-gray-50/10;
 }

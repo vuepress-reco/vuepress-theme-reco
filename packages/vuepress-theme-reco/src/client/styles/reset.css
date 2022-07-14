@@ -197,8 +197,8 @@ pre, code, kbd {
 }
 
 kbd {
-  @apply border border-gray-400 border-b-2 border-opacity-20 rounded;
-  @apply bg-gray-400 bg-opacity-5 py-0.5 px-2 text-sm text-center;
+  @apply border border-gray-400/20 border-b-2 rounded;
+  @apply bg-gray-400/5 py-0.5 px-2 text-sm text-center;
 }
 
 form {
@@ -231,7 +231,7 @@ form {
 /* .icon-btn {
   @apply inline-block cursor-pointer select-none;
   @apply opacity-75 transition duration-200 ease-in-out align-middle rounded p-2;
-  @apply hover:(opacity-100 bg-gray-400 bg-opacity-10);
+  @apply hover:(opacity-100 bg-gray-400/10);
 } */
 
 .icon-btn.disabled {
@@ -241,7 +241,7 @@ form {
 /* .inline-icon-btn {
   @apply text-primary-deep;
   @apply inline-block rounded p-0.5 text-2xl align-middle;
-  @apply border border-primary border-opacity-20;
+  @apply border border-primary/20;
 } */
 
 p > img {

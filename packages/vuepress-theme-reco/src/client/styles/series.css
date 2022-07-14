@@ -58,7 +58,7 @@
 
 
 .sidebar-mask {
-  @apply fixed z-10 hidden w-screen h-screen bg-gray-600 bg-opacity-20;
+  @apply fixed z-10 hidden w-screen h-screen bg-gray-600/20;
 }
 
 .sidebar-open {

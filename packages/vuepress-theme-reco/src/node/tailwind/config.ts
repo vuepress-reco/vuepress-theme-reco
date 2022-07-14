@@ -3,7 +3,12 @@ import { colors as customColors } from './custom-colors'
 // const colors = require('tailwindcss/colors')
 
 export const tailwindConfig = {
-  purge: ['./src/**/*.vue'],
+  // tip:delete purge: ['./src/**/*.vue'],
+  content: [
+    // Example content paths...
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
@@ -30,12 +35,16 @@ export const tailwindConfig = {
       }
     },
   },
-  variants: {
-    extend: {
-      borderColor: ['dark'],
-      borderWidth: ['dark'],
-      boxShadow: ['dark'],
-    },
-  },
+  // tip:delete
+  // variants: {
+  //   extend: {
+  //     borderColor: ['dark'],
+  //     borderWidth: ['dark'],
+  //     boxShadow: ['dark'],
+  //   },
+  // },
   plugins: [mdStylePlugin],
+  corePlugins: {
+    preflight: false,
+  },
 }
