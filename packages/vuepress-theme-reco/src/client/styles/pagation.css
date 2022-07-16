@@ -1,12 +1,12 @@
 .pagation-container {
   @apply text-center;
   .jump, .jumpinput {
-    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-brand border border-solid max-w-xs text-reco-text-light;
+    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-brand border border-solid max-w-xs text-reco-text-lightmode;
   }
   .jump {
-    @apply hover:bg-reco-brand-light hover:text-white;
+    @apply hover:bg-reco-brand-lighter hover:text-white;
     &.active {
-      @apply bg-reco-brand-light text-white;
+      @apply bg-reco-brand-lighter text-white;
     }
     .icon-container {
       @apply align-middle;
@@ -15,15 +15,15 @@
   .jumpinput {
     @apply w-16;
     input {
-      @apply outline-none w-full text-reco-text-light;
+      @apply outline-none w-full text-reco-text-lightmode;
     }
   }
 }
 
 /* 兼容 */
 .pagation-container .jump, .pagation-container .jumpinput {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }
 .pagation-container .jumpinput input {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }

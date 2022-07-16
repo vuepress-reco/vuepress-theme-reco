@@ -491,18 +491,18 @@
   .vbtn{
     @apply text-reco-brand border border-solid border-reco-brand;
     &:hover {
-      @apply text-white bg-reco-brand-light;
+      @apply text-white bg-reco-brand-lighter;
     }
   }
   .vwrap {
-    @apply bg-reco-bg-code border border-solid border-reco-border-light;
+    @apply bg-reco-bg-lightmode-code border border-solid border-reco-border-light;
     .vheader .vinput {
       @apply border-0 border-b rounded-none border-dashed border-reco-border-light;
       &:focus {
         @apply border-reco-brand;
       }
       &:-internal-autofill-selected {
-        @apply bg-reco-bg-light-light;
+        @apply bg-reco-bg-lightmode-lighter;
       }
     }
   }
@@ -517,7 +517,7 @@
       @apply ml-0 border-l-0;
     }
     .vimg {
-      @apply p-0 w-11 h-11 rounded border border-reco-brand-light;
+      @apply p-0 w-11 h-11 rounded border border-reco-brand-lighter;
     }
     .vhead .vnick {
       @apply text-reco-brand;
@@ -529,19 +529,19 @@
   .vh {
     @apply border-b-0;
     .vhead .vsys {
-      @apply text-reco-brand-light bg-reco-bg-code;
+      @apply text-reco-brand-lighter bg-reco-bg-lightmode-code;
     }
     .vmeta {
       @apply mb-4;
       .vat {
         @apply mr-1.5 text-reco-brand border rounded border-solid border-reco-brand px-1.5 py-0;
         &:hover {
-          @apply text-white bg-reco-brand-light;
+          @apply text-white bg-reco-brand-lighter;
         }
       }
     }
     .vcontent {
-      @apply mx-1.5 my-0 px-2.5 py-0.5 bg-reco-bg-code rounded;
+      @apply mx-1.5 my-0 px-2.5 py-0.5 bg-reco-bg-lightmode-code rounded;
       p .at {
         @apply text-reco-brand;
       }
@@ -558,7 +558,7 @@
     @apply pr-2.5;
   }
   code, pre, .vbtn {
-    @apply text-reco-text-light bg-reco-bg-light;
+    @apply text-reco-text-lightmode bg-reco-bg-lightmode;
   }
   a {
     @apply text-reco-brand;
@@ -570,7 +570,7 @@
 
 /* 兼容 */
 .reco-valine-wrapper #valine.v .vwrap {
-  @apply dark:bg-reco-bg-code-dark !important;
+  @apply dark:bg-reco-bg-darkmode-code !important;
   @apply dark:border-reco-border-dark !important;
 }
 
@@ -579,30 +579,30 @@
 }
 
 .reco-valine-wrapper #valine.v .vwrap .vheader .vinput:-internal-autofill-selected {
-  @apply dark:bg-reco-bg-dark-light;
+  @apply dark:bg-reco-bg-darkmode-lighter;
 }
 
 .reco-valine-wrapper #valine.v .vh .vhead .vsys {
-  @apply dark:bg-reco-bg-code-dark;
+  @apply dark:bg-reco-bg-darkmode-code;
 }
 
 .reco-valine-wrapper #valine.v .vh .vcontent {
-  @apply dark:bg-reco-bg-code-dark;
+  @apply dark:bg-reco-bg-darkmode-code;
 }
 
 .reco-valine-wrapper #valine.v pre,
 .reco-valine-wrapper #valine.v code,
 .reco-valine-wrapper #valine.v .vbtn {
-  @apply dark:text-reco-text-dark;
-  @apply dark:bg-reco-bg-dark;
+  @apply dark:text-reco-text-darkmode;
+  @apply dark:bg-reco-bg-darkmode;
 }
 
 .reco-valine-wrapper #valine.v a {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }
 
 .reco-valine-wrapper #valine.v * {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }
 
 .dark .reco-valine-wrapper #valine.v .vh .vcontent.expand::before {

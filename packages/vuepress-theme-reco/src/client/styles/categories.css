@@ -3,18 +3,18 @@
   .category-list {
     @apply pl-0 list-none;
     .category-item {
-      @apply inline-block mr-4 mb-4 dark:bg-reco-bg-dark rounded cursor-pointer border-reco-brand border-2 border-solid;
+      @apply inline-block mr-4 mb-4 dark:bg-reco-bg-darkmode rounded cursor-pointer border-reco-brand border-2 border-solid;
       .category-link {
         @apply inline-block px-4 py-1.5;
         .text {
-          @apply mr-1 text-sm leading-5 text-reco-text-light;
+          @apply mr-1 text-sm leading-5 text-reco-text-lightmode;
         }
         .num {
           @apply inline-block h-5 px-2 bg-reco-brand rounded text-white text-xs leading-5;
         }
       }
       &.active, &:hover {
-        @apply bg-reco-brand-light;
+        @apply bg-reco-brand-lighter;
         .category-link {
           .text {
             @apply text-white;
@@ -30,5 +30,5 @@
 
 /* 兼容 */
 .categories-container .category-list .category-item .category-link .text {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }

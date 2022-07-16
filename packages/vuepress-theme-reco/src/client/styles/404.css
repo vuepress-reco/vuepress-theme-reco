@@ -8,8 +8,8 @@
       @apply text-9xl;
     }
     .icon-container {
-      @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-light cursor-pointer font-semibold text-white;
-      @apply dark:text-reco-text-dark;
+      @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-lighter cursor-pointer font-semibold text-white;
+      @apply dark:text-reco-text-darkmode;
     }
   }
   img {

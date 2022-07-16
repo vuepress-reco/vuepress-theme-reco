@@ -44,7 +44,4 @@ export const tailwindConfig = {
   //   },
   // },
   plugins: [mdStylePlugin],
-  corePlugins: {
-    preflight: false,
-  },
 }

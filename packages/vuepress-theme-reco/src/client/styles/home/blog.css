@@ -5,8 +5,8 @@
     @apply flex-auto;
   }
   .info-wrapper {
-    @apply sticky top-20 mb-8 p-6 rounded bg-reco-bg-code border border-solid border-reco-border-light;
-    @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+    @apply sticky top-20 mb-8 p-6 rounded bg-reco-bg-lightmode-code border border-solid border-reco-border-light;
+    @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
     @apply md:ml-4;
     flex: 0 0 300px;
     .module-title {
@@ -19,14 +19,14 @@
         .category-link {
           @apply flex justify-between px-4 py-1.5;
           .text {
-            @apply mr-1 text-xs leading-5 text-reco-text-light;
+            @apply mr-1 text-xs leading-5 text-reco-text-lightmode;
           }
           .num {
             @apply inline-block h-5 px-2 bg-reco-brand rounded text-white text-xs leading-5;
           }
         }
         &:hover {
-          @apply bg-reco-brand-light;
+          @apply bg-reco-brand-lighter;
           .category-link {
             .text {
               @apply text-white;
@@ -46,7 +46,7 @@
           @apply flex justify-between px-2 py-1 leading-none text-xs;
         }
         &:hover {
-          @apply bg-reco-brand-light text-white;
+          @apply bg-reco-brand-lighter text-white;
           .tag-link {
             @apply text-white;
           }
@@ -61,8 +61,8 @@
 
 /* 兼容 */
 .home-blog-content .info-wrapper {
-  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
 }
 .home-blog-content .info-wrapper .category-wrapper .category-item .category-link .text {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }

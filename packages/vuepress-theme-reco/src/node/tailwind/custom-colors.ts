@@ -1,42 +1,36 @@
 // 品牌色
 const brand = {
   DEFAULT: '#4954e6',
-  light: '#616ae5',
+  lighter: '#616ae5',
 }
 
 // 背景色
 const bg = {
-  light: {
+  lightmode: {
     DEFAULT: '#ffffff',
-    light: '#f3f4f5',
-    lighter: '#eeeeee',
+    lighter: '#f3f4f5',
+    lightest: '#eeeeee',
+    code: '#F9FAFB'
   },
-  dark: {
+  darkmode: {
     DEFAULT: '#22272e',
-    light: '#2b313a',
-    lighter: '#262c34',
-  },
-  code: {
-    DEFAULT: '#F9FAFB',
-    dark: '#363b46',
+    lighter: '#2b313a',
+    lightest: '#262c34',
+    code: '#363b46'
   },
 }
 
 // 文本色
 const text = {
-  accent: brand.DEFAULT,
-  quote: '#999999',
-  light: {
+  lightmode: {
     DEFAULT: '#2c3e50',
-    light: '#3a5169',
-    lighter: '#4e6e8e',
-    lightest: '#6a8bad',
+    lighter: '#3a5169',
+    lightesr: '#4e6e8e',
   },
-  dark: {
+  darkmode: {
     DEFAULT: '#adbac7',
-    light: '#96a7b7',
-    lighter: '#8b9eb0',
-    lightest: '#8094a8',
+    lighter: '#96a7b7',
+    lightest: '#8b9eb0',
   },
 }
 

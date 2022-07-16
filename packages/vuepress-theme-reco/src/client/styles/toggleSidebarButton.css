@@ -3,14 +3,10 @@
   .icon {
     @apply w-full;
     span {
-      @apply transition-all origin-top-left duration-300 block mx-auto my-1.5 w-6 bg-reco-text-light dark:bg-reco-text-dark;
+      @apply transition-all origin-top-left duration-300 block mx-auto my-1.5 w-6 bg-reco-text-lightmode;
+      @apply dark:bg-reco-text-darkmode;
       height: 2px;
       border-radius: 2px;
     }
   }
-}
-
-/* 兼容 */
-.toggle-sidebar-button .icon span {
-  @apply dark:bg-reco-text-dark;
 }

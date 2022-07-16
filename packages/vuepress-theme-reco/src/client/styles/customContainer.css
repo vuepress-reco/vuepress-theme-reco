@@ -31,8 +31,8 @@
     }
   }
   &.details {
-    @apply pl-6 py-4 rounded bg-reco-bg-code border-reco-border-light border border-solid;
-    @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+    @apply pl-6 py-4 rounded bg-reco-bg-lightmode-code border-reco-border-light border border-solid;
+    @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
     .custom-container-title {
       @apply mt-0 cursor-pointer;
     }

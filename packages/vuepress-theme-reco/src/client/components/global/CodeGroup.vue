@@ -147,17 +147,17 @@ export default defineComponent({
 
 <style>
 .code-group {
-  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  @apply relative my-6 overflow-hidden bg-reco-bg-lightmode-code rounded-md border border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
   .code-group__nav {
     .code-group__ul {
       @apply pl-0 my-0 list-none;
       .code-group__li {
         @apply inline-block;
         button {
-          @apply px-3.5 py-2.5 border-b-2 border-solid border-transparent text-reco-text-light cursor-pointer text-sm;
+          @apply px-3.5 py-2.5 border-b-2 border-solid border-transparent text-reco-text-lightmode cursor-pointer text-sm;
           .icon-container {
-            @apply text-reco-text-light align-middle;
+            @apply text-reco-text-lightmode align-middle;
           }
           &.code-group__nav-tab-active {
             @apply border-reco-brand !important;
@@ -170,7 +170,7 @@ export default defineComponent({
 
 /* 兼容 */
 .code-group .code-group__nav .code-group__ul .code-group__li button .icon-container {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }
 
 </style>

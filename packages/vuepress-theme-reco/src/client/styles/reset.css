@@ -21,8 +21,8 @@ html {
 
 body {
   /* antialiased 字体平滑 */
-  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-light text-reco-text-light font-normal text-base font-sans tracking-wider;
-  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
+  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-lightmode text-reco-text-lightmode font-normal text-base font-sans tracking-wider;
+  @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode;
   min-width: 320px;
   direction: ltr;
   /* 像素较小时字体会拼接在一起 */
@@ -135,7 +135,7 @@ a:active,
 a:link,
 a:focus,
 a:visited {
-  @apply text-reco-text-light dark:text-reco-text-dark;
+  @apply text-reco-text-lightmode dark:text-reco-text-darkmode;
 }
 
 a.header-anchor {
@@ -172,7 +172,7 @@ table {
   }
 
   th {
-    @apply text-left font-semibold bg-reco-bg-light-light;
+    @apply text-left font-semibold bg-reco-bg-lightmode-lighter;
   }
 
   td, th {
@@ -185,8 +185,8 @@ table {
 }
 
 blockquote {
-  @apply bg-reco-bg-code text-base p-2 my-6 mx-0 border-l-4 border-solid;
-  @apply dark:bg-reco-bg-code-dark;
+  @apply bg-reco-bg-lightmode-code text-base p-2 my-6 mx-0 border-l-4 border-solid;
+  @apply dark:bg-reco-bg-darkmode-code;
   > p {
     @apply m-0;
   }
@@ -278,5 +278,5 @@ table tr {
   @apply dark:border-reco-border-dark;
 }
 table th {
-  @apply dark:bg-reco-bg-dark-light;
+  @apply dark:bg-reco-bg-darkmode-lighter;
 }

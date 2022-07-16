@@ -41,14 +41,6 @@ export const mdStylePlugin = plugin(
     addUtilities(newUtilities)
 
     addBase({
-      body: {
-        'backgroundColor': 'white',
-        'color': 'black',
-        '@media (prefers-color-scheme: dark)': {
-          backgroundColor: 'black',
-          color: 'white',
-        },
-      },
       h1: {
         fontSize: config('theme.fontSize.2xl'),
       },

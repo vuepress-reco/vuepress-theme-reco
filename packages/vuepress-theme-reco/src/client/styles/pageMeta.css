@@ -4,7 +4,7 @@
   .meta-item {
     @apply cursor-pointer mt-3.5;
     .meta-item-label {
-      @apply font-medium text-reco-text-light;
+      @apply font-medium text-reco-text-lightmode;
     }
   }
   .edit-link {
@@ -14,5 +14,5 @@
 
 /* 兼容 */
 .page-meta .meta-item .meta-item-label {
-  @apply dark:text-reco-text-dark;
+  @apply dark:text-reco-text-darkmode;
 }

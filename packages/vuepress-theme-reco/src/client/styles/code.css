@@ -6,8 +6,8 @@
 
 /* Code blocks */
 div[class*="language-"] {
-  @apply relative my-6 overflow-hidden bg-reco-bg-code rounded-md border border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-code-dark dark:border-reco-border-dark;
+  @apply relative my-6 overflow-hidden bg-reco-bg-lightmode-code rounded-md border border-solid border-reco-border-light;
+  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
   &::before {
     @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
   }
@@ -30,7 +30,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 bg-reco-bg-code;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 bg-reco-bg-lightmode-code;
       counter-reset: line-number;
       br {
         user-select: none;
@@ -161,7 +161,7 @@ div[class*="language-"] pre[class*="language-"] {
   @apply dark:border-reco-border-dark;
 }
 div[class*="language-"].line-numbers-mode .line-numbers {
-  @apply dark:bg-reco-bg-code-dark;
+  @apply dark:bg-reco-bg-darkmode-code;
 }
 div[class*="language-"] .highlight-lines .highlight-line {
   @apply dark:bg-gray-50/10;

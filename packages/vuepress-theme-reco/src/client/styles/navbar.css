@@ -1,6 +1,6 @@
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen leading-6 bg-reco-bg-light/60;
-  @apply dark:bg-reco-bg-dark/60;
+  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen leading-6 bg-reco-bg-lightmode/60;
+  @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
   /* 不生效 */
   @apply backdrop-saturate-150 backdrop-blur-xl;

@@ -5,25 +5,25 @@
 }
 
 .reco-waline-wrapper .wl-panel {
-  @apply dark:bg-reco-bg-code-dark !important;
+  @apply dark:bg-reco-bg-darkmode-code !important;
   @apply dark:border-reco-border-dark !important;
 }
 
 .wl-editor:focus,
 .wl-input:focus {
-  @apply bg-reco-bg-light-light;
-  @apply dark:bg-reco-bg-code-dark !important;
+  @apply bg-reco-bg-lightmode-lighter;
+  @apply dark:bg-reco-bg-darkmode-code !important;
   @apply dark:border-reco-border-dark !important;
 }
 
 .wl-action:hover,
 .wl-action.actived {
-  @apply text-reco-brand-light;
+  @apply text-reco-brand-lighter;
 }
 
 .wl-btn:hover,
 .wl-btn:active {
-  @apply border-reco-brand text-reco-brand-light;
+  @apply border-reco-brand text-reco-brand-lighter;
 }
 
 .wl-btn.primary {

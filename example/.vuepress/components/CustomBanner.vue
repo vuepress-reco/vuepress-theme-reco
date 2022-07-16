@@ -83,12 +83,12 @@ const bgImageStyle = computed(() => {
           @apply inline-block;
           @apply hover:border-reco-brand;
           .icon-container {
-            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-light cursor-pointer font-semibold text-white;
-            @apply dark:text-reco-text-dark;
+            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-lighter cursor-pointer font-semibold text-white;
+            @apply dark:text-reco-text-darkmode;
           }
           &.plain .icon-container {
-            @apply bg-reco-bg-light text-reco-text-light;
-            @apply dark:bg-reco-bg-dark dark:text-reco-text-dark;
+            @apply bg-reco-bg-lightmode text-reco-text-lightmode;
+            @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode;
           }
           &:not(:first-child) {
             @apply ml-4;
@@ -105,6 +105,6 @@ const bgImageStyle = computed(() => {
 
 /* 兼容 */
 .custom-banner-wrapper .hero-content .hero-text .btn-group li > a .icon-container {
-  @apply text-white dark:text-reco-text-dark;
+  @apply text-white dark:text-reco-text-darkmode;
 }
 </style>

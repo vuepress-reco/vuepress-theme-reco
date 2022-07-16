@@ -4,8 +4,8 @@
     @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
-      @apply px-2 py-0.5 bg-reco-bg-code rounded-md;
-      @apply dark:bg-reco-bg-code-dark;
+      @apply px-2 py-0.5 bg-reco-bg-lightmode-code rounded-md;
+      @apply dark:bg-reco-bg-darkmode-code;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
   }

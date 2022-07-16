@@ -1,6 +1,6 @@
 .search-box {
   input {
-    @apply bg-transparent text-reco-text-light border border-solid backdrop-saturate-150 backdrop-blur-xl !important;
+    @apply bg-transparent text-reco-text-lightmode border border-solid backdrop-saturate-150 backdrop-blur-xl !important;
     @apply focus:border-reco-brand !important;
     @apply border-reco-border-light !important;
     backdrop-filter: saturate(180%) blur(20px);
@@ -12,13 +12,13 @@
     }
   } */
   .suggestions {
-    @apply bg-reco-bg-light text-reco-text-light border border-solid border-reco-border-light !important;
+    @apply bg-reco-bg-lightmode text-reco-text-lightmode border border-solid border-reco-border-light !important;
     .suggestion {
       a {
-        @apply text-reco-text-light;
+        @apply text-reco-text-lightmode;
       }
       &.focus {
-        @apply bg-reco-bg-light-light;
+        @apply bg-reco-bg-lightmode-lighter;
         a {
           @apply text-reco-brand;
         }
@@ -36,16 +36,16 @@
 
 /* 兼容 */
 .search-box input {
-  @apply dark:text-reco-text-dark dark:border-reco-border-dark dark:focus:border-reco-brand !important;
+  @apply dark:text-reco-text-darkmode dark:border-reco-border-dark dark:focus:border-reco-brand !important;
 }
 .search-box .suggestions {
-  @apply dark:bg-reco-bg-dark dark:text-reco-text-dark dark:border-reco-border-dark !important;
+  @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode dark:border-reco-border-dark !important;
 }
 
 .search-box .suggestions .suggestion a {
-  @apply dark:text-reco-text-dark !important;
+  @apply dark:text-reco-text-darkmode !important;
 }
 
 .search-box .suggestions .suggestion.focus {
-  @apply dark:bg-reco-bg-dark-light !important;
+  @apply dark:bg-reco-bg-darkmode-lighter !important;
 }
