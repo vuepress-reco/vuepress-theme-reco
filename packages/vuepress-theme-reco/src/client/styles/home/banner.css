@@ -5,7 +5,7 @@
       @apply block mx-auto w-32 sm:w-40 md:w-60 mb-16;
     }
     h1 {
-      @apply text-center mb-6;
+      @apply text-center mb-6 !important;
     }
     p {
       @apply text-center;

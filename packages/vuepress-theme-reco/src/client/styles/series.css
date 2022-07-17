@@ -1,5 +1,5 @@
 .series-container {
-  @apply transition-all pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 bg-basic overflow-y-auto;
+  @apply transition-all pr-6 pl-10 pt-6 w-64 fixed z-20 top-14 left-0 bottom-0 bg-basic overflow-y-auto;
   @apply -translate-x-full;
   @apply md:translate-x-0 !important;
   @apply border-r border-solid border-reco-border-lightmode dark:border-reco-border-darkmode;

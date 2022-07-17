@@ -42,10 +42,10 @@ export const mdStylePlugin = plugin(
 
     addUtilities(newUtilities)
 
-    addBase({
-      h1: {
-        fontSize: config('theme.fontSize.2xl'),
-      },
-    })
+    // addBase({
+    //   h1: {
+    //     fontSize: config('theme.fontSize.2xl'),
+    //   },
+    // })
   }
 )

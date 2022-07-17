@@ -34,14 +34,11 @@ main {
 }
 
 hr {
-  @apply my-4 border-t border-solid border-reco-border-lightmode;
-  @apply dark:border-reco-border-darkmode;
+  @apply my-4 border-basic-top;
 }
 
-h1 {
-  @apply -mt-12 mb-8 mx-0 pt-20 leading-5 z-negative-10;
-}
 
+h1,
 h2,
 h3,
 h4,
@@ -49,35 +46,8 @@ h5,
 h6 {
   @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  @apply font-semibold;
-}
-
-h1:hover .header-anchor,
-h1:focus .header-anchor,
-h2:hover .header-anchor,
-h2:focus .header-anchor,
-h3:hover .header-anchor,
-h3:focus .header-anchor,
-h4:hover .header-anchor,
-h4:focus .header-anchor,
-h5:hover .header-anchor,
-h5:focus .header-anchor,
-h6:hover .header-anchor,
-h6:focus .header-anchor {
-  @apply opacity-100 text-reco-brand;
-}
-
 h1 {
-  @apply text-3xl -mt-20;
+  @apply text-3xl -mt-12;
 }
 
 h2 {
@@ -104,6 +74,32 @@ h5 {
 
 h6 {
   @apply text-sm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  @apply font-semibold;
+}
+
+h1:hover .header-anchor,
+h1:focus .header-anchor,
+h2:hover .header-anchor,
+h2:focus .header-anchor,
+h3:hover .header-anchor,
+h3:focus .header-anchor,
+h4:hover .header-anchor,
+h4:focus .header-anchor,
+h5:hover .header-anchor,
+h5:focus .header-anchor,
+h6:hover .header-anchor,
+h6:focus .header-anchor {
+  @apply opacity-100 text-reco-brand;
 }
 
 p,

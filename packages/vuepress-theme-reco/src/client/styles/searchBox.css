@@ -1,6 +1,6 @@
 .search-box {
   input {
-    @apply bg-transparent border-block border-transparent text-basic backdrop-saturate-150 backdrop-blur-xl !important;
+    @apply bg-block border-block border-transparent text-basic backdrop-saturate-150 backdrop-blur-xl !important;
     @apply focus:border-reco-brand !important;
     backdrop-filter: saturate(180%) blur(20px);
   }

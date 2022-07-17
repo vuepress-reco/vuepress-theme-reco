@@ -1,6 +1,6 @@
 /* 仅在需要在 class 属性中使用 tailwind 时才需要下面的引用 */
 
-@tailwind base;
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 

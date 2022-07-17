@@ -5,7 +5,7 @@
     @apply mr-0 mb-20 text-center;
     @apply md:mr-40 md:mb-0;
     h1 {
-      @apply text-9xl;
+      @apply text-9xl !important;
     }
     .icon-container {
       @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-lighter cursor-pointer font-semibold text-white;

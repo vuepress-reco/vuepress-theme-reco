@@ -4,7 +4,7 @@
     @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
-      @apply px-2 py-0.5 bg-block border-block rounded;
+      @apply px-2 py-0.5 bg-block rounded;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
   }
