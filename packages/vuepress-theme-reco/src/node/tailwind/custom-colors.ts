@@ -36,11 +36,11 @@ const text = {
 
 // 边框
 const border = {
-  light: {
+  lightmode: {
     DEFAULT: '#eaecef',
     darker: '#dfe2e5',
   },
-  dark: {
+  darkmode: {
     DEFAULT: '#3e4c5a',
     darker: '#34404c',
   },

@@ -87,8 +87,7 @@ const bgImageStyle = computed(() => {
             @apply dark:text-reco-text-darkmode;
           }
           &.plain .icon-container {
-            @apply bg-reco-bg-lightmode text-reco-text-lightmode;
-            @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode;
+            @apply bg-block;
           }
           &:not(:first-child) {
             @apply ml-4;

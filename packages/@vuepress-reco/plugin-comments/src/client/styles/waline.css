@@ -6,14 +6,14 @@
 
 .reco-waline-wrapper .wl-panel {
   @apply dark:bg-reco-bg-darkmode-code !important;
-  @apply dark:border-reco-border-dark !important;
+  @apply dark:border-reco-border-darkmode !important;
 }
 
 .wl-editor:focus,
 .wl-input:focus {
   @apply bg-reco-bg-lightmode-lighter;
   @apply dark:bg-reco-bg-darkmode-code !important;
-  @apply dark:border-reco-border-dark !important;
+  @apply dark:border-reco-border-darkmode !important;
 }
 
 .wl-action:hover,

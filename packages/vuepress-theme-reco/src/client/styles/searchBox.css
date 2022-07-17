@@ -1,24 +1,18 @@
 .search-box {
   input {
-    @apply bg-transparent text-reco-text-lightmode border border-solid backdrop-saturate-150 backdrop-blur-xl !important;
+    @apply bg-transparent border-block border-transparent text-basic backdrop-saturate-150 backdrop-blur-xl !important;
     @apply focus:border-reco-brand !important;
-    @apply border-reco-border-light !important;
     backdrop-filter: saturate(180%) blur(20px);
   }
-  /* dark:border-reco-border-dark !important 会解析异常 */
-  /* @media (prefers-color-scheme: dark) {
-    input {
-      border-color: #3e4c5a !important;
-    }
-  } */
   .suggestions {
-    @apply bg-reco-bg-lightmode text-reco-text-lightmode border border-solid border-reco-border-light !important;
+    @apply bg-block border-block !important;
     .suggestion {
       a {
-        @apply text-reco-text-lightmode;
+        @apply text-basic;
       }
       &.focus {
         @apply bg-reco-bg-lightmode-lighter;
+        @apply dark:bg-reco-bg-darkmode-lighter !important;
         a {
           @apply text-reco-brand;
         }
@@ -32,20 +26,4 @@
   button {
     @apply h-8 px-1.5;
   }
-}
-
-/* 兼容 */
-.search-box input {
-  @apply dark:text-reco-text-darkmode dark:border-reco-border-dark dark:focus:border-reco-brand !important;
-}
-.search-box .suggestions {
-  @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode dark:border-reco-border-dark !important;
-}
-
-.search-box .suggestions .suggestion a {
-  @apply dark:text-reco-text-darkmode !important;
-}
-
-.search-box .suggestions .suggestion.focus {
-  @apply dark:bg-reco-bg-darkmode-lighter !important;
 }

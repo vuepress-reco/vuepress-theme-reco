@@ -13,10 +13,9 @@ const props = defineProps(['component'])
 
 <style>
 .vue-preview-container {
-  @apply relative my-6 overflow-hidden bg-reco-bg-lightmode-code rounded-md border border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
+  @apply relative my-6 overflow-hidden bg-block border-block;
   .preview-container {
-    @apply py-4 border-b border-dashed border-reco-border-light;
+    @apply py-4 border-b border-dashed border-reco-border-lightmode;
     & > * {
       @apply mx-auto;
     }
@@ -30,6 +29,6 @@ const props = defineProps(['component'])
 }
 
 .vue-preview-container .preview-container {
-  @apply dark:border-reco-border-dark;
+  @apply dark:border-reco-border-darkmode;
 }
 </style>

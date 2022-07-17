@@ -1,15 +1,14 @@
 .series-container {
-  @apply transition-all pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 bg-reco-bg-lightmode overflow-y-auto;
-  @apply dark:bg-reco-bg-darkmode;
+  @apply transition-all pr-6 pl-10 pt-4 w-64 fixed z-20 top-14 left-0 bottom-0 bg-basic overflow-y-auto;
   @apply -translate-x-full;
   @apply md:translate-x-0 !important;
-  @apply border-r border-solid border-reco-border-light dark:border-reco-border-dark;
+  @apply border-r border-solid border-reco-border-lightmode dark:border-reco-border-darkmode;
   .series-group {
     &:not(:first-of-type) h5.series-heading {
       @apply relative mt-3;
       &::before {
-        @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-light;
-        @apply dark:border-reco-border-dark;
+        @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-lightmode;
+        @apply dark:border-reco-border-darkmode;
         content: '';
       }
     }
@@ -48,9 +47,9 @@
     @apply block relative mb-8;
     @apply md:hidden;
     &::after {
-      @apply absolute left-0 -bottom-4 block border-t border-solid border-reco-border-light w-full;
+      @apply absolute left-0 -bottom-4 block border-t border-solid border-reco-border-lightmode w-full;
       @apply md:border-t-0;
-      @apply dark:border-reco-border-dark;
+      @apply dark:border-reco-border-darkmode;
       content: '';
     }
   }

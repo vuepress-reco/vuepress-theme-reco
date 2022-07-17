@@ -32,23 +32,23 @@
         @apply text-base font-semibold text-reco-text-lightmode block md:hidden;
       }
       .nav-dropdown {
-        @apply pl-3 py-1 my-0 rounded-md bg-reco-bg-lightmode list-none;
-        @apply md:px-3 md:hidden md:absolute md:top-3.5 md:py-2 md:my-3 md:border md:border-solid md:border-reco-border-light;
+        @apply pl-3 py-1 my-0 rounded-md bg-block border-block list-none;
+        @apply md:px-3 md:hidden md:absolute md:top-3.5 md:py-2 md:my-3 border-0 md:border;
         .dropdown-item {
           @apply relative;
           &:not(:first-of-type)::before {
-            @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-light;
+            @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-lightmode;
             /* 待确定 */
             /* @apply md:border-t; */
-            @apply dark:border-reco-border-dark;
+            @apply dark:border-reco-border-darkmode;
             content: '';
           }
           &:not(:first-of-type) {
             .dropdown-subtitle {
               @apply relative z-40 mt-8;
               &::before {
-                @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-light;
-                @apply dark:border-reco-border-dark;
+                @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-lightmode;
+                @apply dark:border-reco-border-darkmode;
                 content: '';
               }
             }
@@ -111,9 +111,6 @@
 /* 兼容 */
 .navbar-links .navbar-links-item .dropdown-wrapper .dropdown-title {
   @apply dark:text-reco-text-darkmode;
-}
-.navbar-links .navbar-links-item .dropdown-wrapper .nav-dropdown {
-  @apply dark:bg-reco-bg-darkmode dark:border-reco-border-dark;
 }
 .navbar-links .navbar-links-item .dropdown-wrapper .mobile-dropdown-title {
   @apply dark:text-reco-text-darkmode;

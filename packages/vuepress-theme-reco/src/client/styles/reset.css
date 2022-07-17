@@ -21,8 +21,7 @@ html {
 
 body {
   /* antialiased 字体平滑 */
-  @apply m-0 w-full antialiased overflow-x-hidden bg-reco-bg-lightmode text-reco-text-lightmode font-normal text-base font-sans tracking-wider;
-  @apply dark:bg-reco-bg-darkmode dark:text-reco-text-darkmode;
+  @apply m-0 w-full antialiased overflow-x-hidden bg-basic font-normal text-base font-sans tracking-wider;
   min-width: 320px;
   direction: ltr;
   /* 像素较小时字体会拼接在一起 */
@@ -35,8 +34,8 @@ main {
 }
 
 hr {
-  @apply my-4 border-t border-solid border-reco-border-light;
-  @apply dark:border-reco-border-dark;
+  @apply my-4 border-t border-solid border-reco-border-lightmode;
+  @apply dark:border-reco-border-darkmode;
 }
 
 h1 {
@@ -85,8 +84,8 @@ h2 {
   @apply leading-tight text-2xl;
   /* @apply -mt-4 relative; */
   &::before {
-    @apply mb-6 block w-full border-t border-solid border-reco-border-light;
-    @apply dark:border-reco-border-dark;
+    @apply mb-6 block w-full border-t border-solid border-reco-border-lightmode;
+    @apply dark:border-reco-border-darkmode;
     content: ' ';
   }
 }
@@ -168,25 +167,25 @@ table {
   border-collapse: collapse;
 
   tr {
-    @apply border border-solid border-reco-border-light;
+    @apply border-block;
   }
 
   th {
     @apply text-left font-semibold bg-reco-bg-lightmode-lighter;
+    @apply dark:bg-reco-bg-darkmode-lighter;
   }
 
   td, th {
     @apply px-2 py-3;
     &:not(:last-child) {
-      @apply border-r border-reco-border-light border-solid;
-      @apply dark:border-reco-border-dark;
+      @apply border-r border-reco-border-lightmode border-solid;
+      @apply dark:border-reco-border-darkmode;
     }
   }
 }
 
 blockquote {
-  @apply bg-reco-bg-lightmode-code text-base p-2 my-6 mx-0 border-l-4 border-solid;
-  @apply dark:bg-reco-bg-darkmode-code;
+  @apply bg-block text-base p-2 my-6 mx-0 border-l-4 border-solid;
   > p {
     @apply m-0;
   }
@@ -271,12 +270,4 @@ li svg {
 ::-webkit-scrollbar-thumb:horizontal {
   width: 5px;
   @apply bg-reco-brand;
-}
-
-/* 兼容 */
-table tr {
-  @apply dark:border-reco-border-dark;
-}
-table th {
-  @apply dark:bg-reco-bg-darkmode-lighter;
 }

@@ -1,12 +1,7 @@
 .common-wrapper {
   .password-wrapper {
     &.out {
-      @apply fixed z-50 w-screen h-screen bg-reco-bg-lightmode;
+      @apply fixed z-50 w-screen h-screen;
     }
   }
-}
-
-/* 兼容 */
-.common-wrapper .password-wrapper.out {
-  @apply dark:bg-reco-bg-darkmode;
 }

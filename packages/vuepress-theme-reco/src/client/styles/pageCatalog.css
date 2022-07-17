@@ -11,7 +11,7 @@
 
     .page-catalog-menu-depth_2 {
       @apply py-2 font-semibold text-sm;
-      @apply border-t border-dashed border-reco-border-light;
+      @apply border-t border-dashed border-reco-border-lightmode;
       &.active {
         a {
           @apply text-reco-brand;
@@ -44,5 +44,5 @@
 
 /* 兼容 */
 .page-catalog-container ul .page-catalog-menu-depth_2 {
-  @apply dark:border-reco-border-dark;
+  @apply dark:border-reco-border-darkmode;
 }

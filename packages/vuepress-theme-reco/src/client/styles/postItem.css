@@ -1,6 +1,5 @@
 .post-item-container {
-  @apply mb-8 p-6 rounded bg-reco-bg-lightmode-code border border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
+  @apply mb-8 p-6 bg-block border-block;
 
   .title {
     @apply relative mb-2 inline-block text-lg font-medium;

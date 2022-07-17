@@ -30,7 +30,9 @@ export const mdStylePlugin = plugin(
       },
     }
 
-    addComponents(buttons)
+    addComponents({
+      ...buttons
+    })
 
     const newUtilities = {
       '.hhhhh': {

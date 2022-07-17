@@ -28,11 +28,10 @@ const { bodyNodes } = useHandleNodes()
 
 <style>
 .bulletin-wrapper {
-  @apply fixed top-20 right-4 z-10 box-border rounded-md border-2 border-solid border-reco-brand bg-reco-bg-lightmode;
+  @apply fixed top-20 right-4 z-10 box-border border-primary rounded bg-block;
   min-height: 200px;
   max-height: 660px;
   overflow-y: auto;
-  @apply dark:bg-reco-bg-darkmode;
   .bulletin-title {
     @apply relative box-border m-0 p-1.5 bg-reco-brand text-white;
     .btn-close {

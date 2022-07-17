@@ -1,6 +1,6 @@
 .footer-wrapper {
-  @apply p-6 border-t border-solid border-reco-border-light text-center font-medium;
-  @apply dark:border-reco-border-dark;
+  @apply p-6 border-t border-solid border-reco-border-lightmode text-center font-medium;
+  @apply dark:border-reco-border-darkmode;
   > span {
     @apply block ml-4 py-1 text-left;
     @apply md:inline-block;

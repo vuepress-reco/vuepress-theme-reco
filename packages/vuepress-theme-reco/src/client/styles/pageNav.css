@@ -1,7 +1,7 @@
 .page-nav {
   @apply pt-4 pb-0;
   .inner {
-    @apply border-t border-solid border-reco-border-light mt-0 pt-4 overflow-hidden;
+    @apply border-t border-solid border-reco-border-lightmode mt-0 pt-4 overflow-hidden;
     @apply md:flex md:justify-between;
     &.hasPrev {
       @apply md:justify-start;
@@ -24,7 +24,7 @@
     @apply text-right;
   }
   .page-nav-item {
-    @apply mt-4 p-4 block cursor-pointer border rounded border-solid border-reco-border-light;
+    @apply mt-4 p-4 block cursor-pointer border rounded border-solid border-reco-border-lightmode;
     @apply md:w-2/4;
     @apply hover:border-reco-brand;
   }
@@ -32,8 +32,8 @@
 
 /* 兼容 */
 .page-nav .inner {
-  @apply dark:border-reco-border-dark;
+  @apply dark:border-reco-border-darkmode;
 }
 .page-nav .page-nav-item {
-  @apply dark:border-reco-border-dark;
+  @apply dark:border-reco-border-darkmode;
 }

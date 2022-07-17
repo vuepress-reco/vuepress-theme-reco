@@ -6,8 +6,7 @@
 
 /* Code blocks */
 div[class*="language-"] {
-  @apply relative my-6 overflow-hidden bg-reco-bg-lightmode-code rounded-md border border-solid border-reco-border-light;
-  @apply dark:bg-reco-bg-darkmode-code dark:border-reco-border-dark;
+  @apply relative my-6 overflow-hidden bg-block border-block;
   &::before {
     @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
   }
@@ -20,7 +19,7 @@ div[class*="language-"] {
     box-shadow: 22px 0 0 0 #858DE6, 44px 0 0 0 #858DE6;
   }
   pre[class*="language-"] {
-    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-t border-dashed border-reco-border-light leading-7;
+    @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-basic-top border-dashed leading-7;
   }
   &:not(.line-numbers-mode) {
     .line-numbers {
@@ -30,7 +29,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 bg-reco-bg-lightmode-code;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 pt-2 pb-6 leading-7 bg-block;
       counter-reset: line-number;
       br {
         user-select: none;
@@ -53,6 +52,7 @@ div[class*="language-"] {
     @apply absolute z-10 left-0 right-0 bottom-0 pt-2 pb-6 leading-7 ;
     .highlight-line {
       @apply bg-gray-800/10;
+      @apply dark:bg-gray-50/10;
     }
   }
 }
@@ -154,15 +154,4 @@ pre[class*="language-"] {
   div.language-$(lang)::before {
     content: '$(lang)';
   }
-}
-
-/* 兼容 */
-div[class*="language-"] pre[class*="language-"] {
-  @apply dark:border-reco-border-dark;
-}
-div[class*="language-"].line-numbers-mode .line-numbers {
-  @apply dark:bg-reco-bg-darkmode-code;
-}
-div[class*="language-"] .highlight-lines .highlight-line {
-  @apply dark:bg-gray-50/10;
 }
