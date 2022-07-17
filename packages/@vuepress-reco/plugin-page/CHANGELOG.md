@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.22
+
+### Patch Changes
+
+- update to tailwindcss@3.x
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.22
+
 ## 2.0.0-beta.21
 
 ### Patch Changes

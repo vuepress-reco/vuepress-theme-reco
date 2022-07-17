@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-page",
-  "version": "2.0.0-beta.21",
+  "version": "2.0.0-beta.22",
   "description": "A simple blog plugin for vuepress-theme-reco.",
   "keywords": [
     "vuepress-plugin",
