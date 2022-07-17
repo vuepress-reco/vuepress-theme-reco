@@ -7,32 +7,28 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!-- 请用英文提问，并标记环境和版本号，1.x 相关问题移步 [vuepress-theme-reco](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)！ -->
+<!-- 请用英文提问，并标记环境和版本号，1.x 相关问题移步 [vuepress-theme-reco](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)！ -->
+<!-- 请用英文提问，并标记环境和版本号，1.x 相关问题移步 [vuepress-theme-reco](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)！ -->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+<!-- Please confirm you will submit an issue. -->
+<!-- Issues which contain questions or support requests will be closed. -->
+<!-- (Update "[ ]" to "[x]" to check a box) -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+- [ ] I confirm that this is an issue rather than a question.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+<!-- Please ask questions on WeChat group. -->
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Bug report
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
 
-**Additional context**
-Add any other context about the problem here.
+#### What is actually happening?
+
+
+#### Other relevant information
+
+- Your OS: 
+- Node.js version: 
+- VuePress version: 
+- VuePress-theme-reco version: 
+- Which package manager did you use for the install(npm/cnpm/yarn/pnpm)?
