@@ -24,15 +24,28 @@ const SITE_PASSWORD_PASS = 'SITE_PASSWORD_PASS'
 export function usePassword() {
   const themeLocal = useThemeLocaleData<RecoThemePageData>()
   const sitePasswordPass = ref(true)
-  const sitePasswordPassCache = sessionStorage.getItem(SITE_PASSWORD_PASS)
+  onMounted(() => {
+    let sitePasswordPassCache = 'true'
 
-  if (themeLocal.value.password && sitePasswordPassCache !== 'true') {
-    sitePasswordPass.value = false
-  }
+    // @ts-ignore
+    if (!__VUEPRESS_SSR__) {
+      sitePasswordPassCache = sessionStorage.getItem(SITE_PASSWORD_PASS) as string
+    }
+
+    if (themeLocal.value.password && sitePasswordPassCache !== 'true') {
+      sitePasswordPass.value = false
+    }
+  })
+
+
 
   const handlePass = () => {
     sitePasswordPass.value = true
-    sessionStorage.setItem(SITE_PASSWORD_PASS, 'true')
+
+    // @ts-ignore
+    if (!__VUEPRESS_SSR__) {
+      sessionStorage.setItem(SITE_PASSWORD_PASS, 'true')
+    }
   }
 
   return { sitePasswordPass, handlePass }
