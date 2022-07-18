@@ -1,3 +1,5 @@
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+
 @keyframes spin {
   0% {
       transform: rotate(0deg);

@@ -146,6 +146,8 @@ export default defineComponent({
 </script>
 
 <style>
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+
 .code-group {
   @apply relative my-6 overflow-hidden bg-block border-block;
   .code-group__nav {
