@@ -1,15 +1,11 @@
-import { mdStylePlugin } from './plugin-md-style'
-import { colors as customColors } from './custom-colors'
-// const colors = require('tailwindcss/colors')
+import { colors } from './custom-colors'
 
-export const tailwindConfig = {
-  // tip:delete purge: ['./src/**/*.vue'],
+export const tailwindcssConfig = {
   content: [
-    // Example content paths...
     './public/**/*.html',
     './src/**/*.{js,jsx,ts,tsx,vue}',
   ],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundOpacity: {
@@ -28,20 +24,11 @@ export const tailwindConfig = {
         dark:'0 1px 8px 0 rgba(0, 0, 0, .6)',
         'dark-heavier': '0 2px 16px 0 rgba(0, 0, 0, .7)'
       },
-      colors: customColors,
+      colors,
       height: (): Record<string, any> => ({ 'screen-3/5': '60vh' }),
       zIndex: {
         'negative-10': -10
       }
     },
-  },
-  // tip:delete
-  // variants: {
-  //   extend: {
-  //     borderColor: ['dark'],
-  //     borderWidth: ['dark'],
-  //     boxShadow: ['dark'],
-  //   },
-  // },
-  plugins: [mdStylePlugin],
+  }
 }

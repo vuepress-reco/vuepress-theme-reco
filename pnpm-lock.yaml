@@ -72,12 +72,14 @@ importers:
 
   packages/@vuepress-reco/plugin-bulletin-popover:
     specifiers:
+      '@vuepress-reco/tailwindcss-config': workspace:*
       '@vuepress/client': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       '@vuepress/plugin-theme-data': 2.0.0-beta.48
       '@vuepress/utils': 2.0.0-beta.48
       vue: ^3.2.36
     dependencies:
+      '@vuepress-reco/tailwindcss-config': link:../tailwindcss-config
       '@vuepress/client': 2.0.0-beta.48
       '@vuepress/core': 2.0.0-beta.48
       '@vuepress/plugin-theme-data': 2.0.0-beta.48
@@ -156,11 +158,15 @@ importers:
       '@vuepress/core': 2.0.0-beta.48
       vue: 3.2.37
 
+  packages/@vuepress-reco/tailwindcss-config:
+    specifiers: {}
+
   packages/vuepress-theme-reco:
     specifiers:
       '@vicons/fa': ^0.12.0
       '@vicons/tabler': ^0.12.0
       '@vuepress-reco/shared': workspace:*
+      '@vuepress-reco/tailwindcss-config': workspace:*
       '@vuepress-reco/vuepress-plugin-bulletin-popover': workspace:*
       '@vuepress-reco/vuepress-plugin-comments': workspace:*
       '@vuepress-reco/vuepress-plugin-page': workspace:*
@@ -198,6 +204,7 @@ importers:
       '@vicons/fa': 0.12.0
       '@vicons/tabler': 0.12.0
       '@vuepress-reco/shared': link:../@vuepress-reco/shared
+      '@vuepress-reco/tailwindcss-config': link:../@vuepress-reco/tailwindcss-config
       '@vuepress-reco/vuepress-plugin-bulletin-popover': link:../@vuepress-reco/plugin-bulletin-popover
       '@vuepress-reco/vuepress-plugin-comments': link:../@vuepress-reco/plugin-comments
       '@vuepress-reco/vuepress-plugin-page': link:../@vuepress-reco/plugin-page

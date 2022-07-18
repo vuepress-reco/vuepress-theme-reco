@@ -21,7 +21,7 @@
 @import 'searchBox.css';
 @import 'series.css';
 @import 'sidebar.css';
-@import 'tailwindcss.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
 @import 'theme.css';
 @import 'toggleSidebarButton.css';
 @import '404.css';

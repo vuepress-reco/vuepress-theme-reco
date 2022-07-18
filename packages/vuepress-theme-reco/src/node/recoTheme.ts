@@ -18,7 +18,7 @@ import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
 import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
 import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-popover'
 
-import { tailwindConfig } from './tailwind'
+import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
 import { resolveContainerOptions } from './resolveContainer'
 
 import type { RecoThemePageData } from '../types/page'
@@ -43,7 +43,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
                 plugins: [
                   require('postcss-import'),
                   require('tailwindcss/nesting'),
-                  require('tailwindcss')(tailwindConfig),
+                  require('tailwindcss')(tailwindcssConfig),
                   require('autoprefixer')({}),
                   require('postcss-each')
                 ]
@@ -60,7 +60,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
           postcss: {
             postcssOptions: {
               plugins: [
-                ['tailwindcss', tailwindConfig],
+                ['tailwindcss', tailwindcssConfig],
                 ['autoprefixer', {}],
                 [require('tailwindcss/nesting')],
                 ['postcss-each']

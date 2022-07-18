@@ -2,16 +2,16 @@
   "name": "vuepress-theme-reco",
   "version": "2.0.0-beta.22",
   "description": "> TODO: description",
-  "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
+  "homepage": "https://github.com/recoluan/vuepress-theme-reco#readme",
   "bugs": {
-    "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
+    "url": "https://github.com/recoluan/vuepress-theme-reco/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/recoluan/vuepress-theme-reco-next.git"
+    "url": "git+https://github.com/recoluan/vuepress-theme-reco.git"
   },
   "license": "MIT",
-  "author": "reco_luan <recoluan@outlook.com>",
+  "author": "reco_luan <recoluan@qq.com>",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "directories": {
@@ -36,6 +36,7 @@
     "@vicons/tabler": "^0.12.0",
     "@vicons/fa": "^0.12.0",
     "@vuepress-reco/shared": "workspace:*",
+    "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress-reco/vuepress-plugin-bulletin-popover": "workspace:*",
     "@vuepress-reco/vuepress-plugin-comments": "workspace:*",
     "@vuepress-reco/vuepress-plugin-page": "workspace:*",
