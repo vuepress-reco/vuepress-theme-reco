@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-beta.23
+
+### Patch Changes
+
+- fix build error of tailwindcss
+
 ## 2.0.0-beta.22
 
 ### Patch Changes

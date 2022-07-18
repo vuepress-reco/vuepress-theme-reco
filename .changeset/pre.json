@@ -2,18 +2,20 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.21",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.21",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.21",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.21",
-    "@vuepress-reco/shared": "2.0.0-beta.21",
-    "vuepress-theme-reco": "2.0.0-beta.21"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.22",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.22",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.22",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.22",
+    "@vuepress-reco/shared": "2.0.0-beta.22",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.22",
+    "vuepress-theme-reco": "2.0.0-beta.22"
   },
   "changesets": [
     "chatty-badgers-cheer",
     "four-mirrors-shop",
     "gold-mice-exist",
     "large-eggs-greet",
+    "many-baboons-remain",
     "rich-queens-deliver",
     "strong-insects-move"
   ]

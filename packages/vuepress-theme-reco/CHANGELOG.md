@@ -1,5 +1,18 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.23
+
+### Patch Changes
+
+- fix build error of tailwindcss
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.23
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.23
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.23
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.23
+  - @vuepress-reco/shared@2.0.0-beta.23
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.23
+
 ## 2.0.0-beta.22
 
 ### Patch Changes
