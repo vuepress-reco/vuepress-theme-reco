@@ -7,7 +7,7 @@
     "comment",
     "vuepress"
   ],
-  "author": "reco_luan <recoluan@outlook.com>",
+  "author": "reco_luan <recoluan@qq.com>",
   "homepage": "https://vuepress-theme-reco.recoluan.com",
   "license": "MIT",
   "main": "lib/node/index.js",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco-next.git"
+    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -44,6 +44,6 @@
     "vue-router": "^4.0.16"
   },
   "bugs": {
-    "url": "https://github.com/vuepress-reco/vuepress-theme-reco-next/issues"
+    "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
   }
 }

@@ -40,8 +40,8 @@ export const bulletin = {
       type: 'text',
       content: `
       <ul>
-        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco-next/issues">Issues<a/></li>
-        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco-next/discussions/1">Discussions<a/></li>
+        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/issues">Issues<a/></li>
+        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/discussions/1">Discussions<a/></li>
       </ul>`,
       style: 'font-size: 12px;'
     },

@@ -7,16 +7,16 @@
     "vuepress",
     "blog"
   ],
-  "homepage": "https://github.com/recoluan/vuepress-theme-reco-next#readme",
+  "homepage": "https://github.com/recoluan/vuepress-theme-reco#readme",
   "bugs": {
-    "url": "https://github.com/recoluan/vuepress-theme-reco-next/issues"
+    "url": "https://github.com/recoluan/vuepress-theme-reco/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/recoluan/vuepress-theme-reco-next.git"
+    "url": "git+https://github.com/recoluan/vuepress-theme-reco.git"
   },
   "license": "MIT",
-  "author": "reco_luan <recoluan@outlook.com>",
+  "author": "reco_luan <recoluan@qq.com>",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "directories": {

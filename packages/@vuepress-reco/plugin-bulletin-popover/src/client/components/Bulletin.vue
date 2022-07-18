@@ -27,6 +27,8 @@ const { bodyNodes } = useHandleNodes()
 </script>
 
 <style>
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+
 .bulletin-wrapper {
   @apply fixed top-20 right-4 z-10 box-border border-primary rounded bg-block;
   min-height: 200px;

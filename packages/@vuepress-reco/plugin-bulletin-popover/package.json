@@ -6,8 +6,8 @@
     "vuepress-plugin",
     "vuepress"
   ],
-  "author": "reco_luan <recoluan@outlook.com>",
-  "homepage": "https://github.com/vuepress-reco/vuepress-theme-reco-next#readme",
+  "author": "reco_luan <recoluan@qq.com>",
+  "homepage": "https://github.com/vuepress-reco/vuepress-theme-reco#readme",
   "license": "MIT",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco-next.git"
+    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -30,12 +30,13 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "bugs": {
-    "url": "https://github.com/vuepress-reco/vuepress-theme-reco-next/issues"
+    "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/client": "2.0.0-beta.48",
     "@vuepress/core": "2.0.0-beta.48",
     "@vuepress/plugin-theme-data": "2.0.0-beta.48",

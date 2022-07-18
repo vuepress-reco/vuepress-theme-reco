@@ -1,7 +1,5 @@
 > reco 主题 1.0 的代码仓库已经迁移至 [vuepress-theme-reco-1.x](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)
 
-# vuepress-theme-reco-next
-
 🔥 The 2.x of vuepress-theme-reco.
 
 In the past, theme `reco` has been supported by many friends, I am very honored, it changed my life, and I also made a lot of friends. But I don't think it is professional and flexible, and sometimes some advanced features require certain professionalism. I know that this is not easy for some Non-FE professional friends.
