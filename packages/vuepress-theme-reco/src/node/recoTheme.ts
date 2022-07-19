@@ -103,7 +103,9 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       pagePlugin(pages || []),
       gitPlugin(),
       themeDataPlugin({ themeData: themeConfig }),
-      searchPlugin(),
+      searchPlugin({
+        hotKeys: [{ key: 's', ctrl: true }]
+      }),
       palettePlugin(),
       nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
       prismjsPlugin(),
