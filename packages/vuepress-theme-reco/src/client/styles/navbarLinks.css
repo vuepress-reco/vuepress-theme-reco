@@ -32,7 +32,7 @@
         @apply text-base font-semibold text-reco-text-lightmode block md:hidden;
       }
       .nav-dropdown {
-        @apply pl-3 py-1 my-0 rounded-md bg-block border-block list-none;
+        @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
         @apply md:px-3 md:hidden md:absolute md:top-3.5 md:py-2 md:my-3 border-0 md:border;
         .dropdown-item {
           @apply relative;

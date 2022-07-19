@@ -273,9 +273,9 @@
       width: 100%;
       min-height: 8.75em;
       font-size: .875em;
-      background: transparent;
       resize: vertical;
       transition:all .25s ease;
+      @apply bg-block;
   }
   .vbtn {
       transition-duration: .4s;
@@ -498,13 +498,12 @@
   .vwrap {
     @apply bg-block border-block;
     .vheader .vinput {
-      @apply border-basic-bottom border-dashed;
+      @apply border-basic-bottom border-dashed bg-block;
       &:focus {
         @apply border-reco-brand;
       }
       &:-internal-autofill-selected {
-        @apply bg-reco-bg-lightmode-lighter;
-        @apply dark:bg-reco-bg-darkmode-lighter;
+         @apply bg-basic !important;
       }
     }
   }
