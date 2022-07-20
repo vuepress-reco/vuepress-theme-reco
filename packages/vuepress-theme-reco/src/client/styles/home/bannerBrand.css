@@ -21,7 +21,7 @@
             @apply dark:text-reco-text-darkmode;
           }
           &.plain .icon-container {
-            @apply bg-block;
+            @apply bg-basic;
           }
           &:not(:first-child) {
             @apply ml-4;
@@ -45,9 +45,4 @@
       @apply md:mt-0 sm:w-40 md:w-60 md:ml-16;
     }
   }
-}
-
-/* 兼容 */
-.banner-brand-wrapper .hero-content .hero-text .btn-group li > a .icon-container {
-  @apply text-white dark:text-reco-text-darkmode;
 }

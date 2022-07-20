@@ -37,9 +37,11 @@
     }
     &.router-link-active {
       @apply pl-4;
-      @apply text-reco-brand;
       &::before {
         @apply w-1.5 h-1.5;
+      }
+      a {
+        @apply text-reco-brand;
       }
     }
   }

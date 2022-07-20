@@ -3,7 +3,7 @@
   .category-list {
     @apply pl-0 list-none;
     .category-item {
-      @apply inline-block mr-4 mb-4 bg-block border-block cursor-pointer border-reco-brand border-2;
+      @apply inline-block mr-4 mb-4 bg-basic border-block cursor-pointer border-reco-brand border-2;
       .category-link {
         @apply inline-block px-4 py-1.5;
         .text {
