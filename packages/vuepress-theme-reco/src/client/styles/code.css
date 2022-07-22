@@ -20,6 +20,14 @@ div[class*="language-"] {
   }
   pre[class*="language-"] {
     @apply relative overflow-x-auto mt-9 pt-4 pr-6 pl-16 pb-6 border-basic-top border-dashed leading-7;
+    .code-copy-btn {
+      @apply right-3 text-gray-400 bg-block shadow-md rounded px-2 top-1 hidden !important;
+    }
+  }
+  &:hover {
+    pre[class*="language-"] .code-copy-btn {
+      @apply block !important;
+    }
   }
   &:not(.line-numbers-mode) {
     .line-numbers {

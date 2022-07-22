@@ -40,6 +40,7 @@
     "@vuepress-reco/vuepress-plugin-bulletin-popover": "workspace:*",
     "@vuepress-reco/vuepress-plugin-comments": "workspace:*",
     "@vuepress-reco/vuepress-plugin-page": "workspace:*",
+    "@vuepress-reco/vuepress-plugin-code-copy": "workspace:*",
     "@vuepress-reco/vuepress-plugin-vue-preview": "workspace:*",
     "@vuepress/bundler-vite": "2.0.0-beta.48",
     "@vuepress/bundler-webpack": "2.0.0-beta.48",

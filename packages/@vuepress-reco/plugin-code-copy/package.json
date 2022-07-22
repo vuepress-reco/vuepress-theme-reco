@@ -1,0 +1,45 @@
+{
+  "name": "@vuepress-reco/vuepress-plugin-code-copy",
+  "version": "2.0.0-beta.23",
+  "description": "A simple blog plugin for vuepress-theme-reco.",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "blog"
+  ],
+  "homepage": "https://github.com/recoluan/vuepress-theme-reco#readme",
+  "bugs": {
+    "url": "https://github.com/recoluan/vuepress-theme-reco/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recoluan/vuepress-theme-reco.git"
+  },
+  "license": "MIT",
+  "author": "reco_luan <recoluan@qq.com>",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build tsconfig.build.json",
+    "build:watch": "tsc --build -w tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.48",
+    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
+    "vue-router": "^4.0.16"
+  }
+}

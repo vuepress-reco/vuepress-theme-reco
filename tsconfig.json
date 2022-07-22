@@ -7,6 +7,8 @@
     { "path": "./packages/@vuepress-reco/plugin-comments/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/plugin-vue-preview/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/plugin-bulletin-popover/tsconfig.build.json" },
+    { "path": "./packages/@vuepress-reco/plugin-vue-preview/tsconfig.build.json" },
+    { "path": "./packages/@vuepress-reco/plugin-code-copy/tsconfig.build.json" },
   ],
   "files": []
 }

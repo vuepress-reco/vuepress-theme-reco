@@ -1,24 +1,25 @@
-import { path, fs } from '@vuepress/utils'
-import type { Theme, Page } from '@vuepress/core'
-import { gitPlugin } from '@vuepress/plugin-git'
-import { viteBundler } from '@vuepress/bundler-vite'
-import { webpackBundler } from '@vuepress/bundler-webpack'
-import { searchPlugin } from '@vuepress/plugin-search'
-import { palettePlugin } from '@vuepress/plugin-palette'
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
-import { nprogressPlugin } from '@vuepress/plugin-nprogress'
-import { containerPlugin } from '@vuepress/plugin-container'
-import { themeDataPlugin } from '@vuepress/plugin-theme-data'
-import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
-import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links'
-import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
-import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
-import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
 import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-popover'
-
+import { codeCopyPlugin } from '@vuepress-reco/vuepress-plugin-code-copy'
+import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
+import { containerPlugin } from '@vuepress/plugin-container'
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
+import { gitPlugin } from '@vuepress/plugin-git'
+import { nprogressPlugin } from '@vuepress/plugin-nprogress'
+import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
+import { palettePlugin } from '@vuepress/plugin-palette'
+import { path, fs } from '@vuepress/utils'
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { searchPlugin } from '@vuepress/plugin-search'
 import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
+import { themeDataPlugin } from '@vuepress/plugin-theme-data'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
+import { webpackBundler } from '@vuepress/bundler-webpack'
+import type { Theme, Page } from '@vuepress/core'
+
 import { resolveContainerOptions } from './resolveContainer'
 
 import type { RecoThemePageData } from '../types/page'
@@ -127,7 +128,8 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       registerComponentsPlugin({
         componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
       }),
-      backToTopPlugin()
+      backToTopPlugin(),
+      codeCopyPlugin()
     ],
   }
 }
