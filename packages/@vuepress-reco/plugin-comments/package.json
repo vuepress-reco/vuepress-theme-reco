@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-comments",
-  "version": "2.0.0-beta.23",
+  "version": "2.0.0-beta.24",
   "description": "Comments plugin for vuepress-theme-reco or other vuepress theme.",
   "keywords": [
     "vuepress-theme-reco",

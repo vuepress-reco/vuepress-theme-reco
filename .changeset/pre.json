@@ -2,16 +2,18 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.22",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.22",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.22",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.22",
-    "@vuepress-reco/shared": "2.0.0-beta.22",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.22",
-    "vuepress-theme-reco": "2.0.0-beta.22"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.23",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.23",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.23",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.23",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.23",
+    "@vuepress-reco/shared": "2.0.0-beta.23",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.23",
+    "vuepress-theme-reco": "2.0.0-beta.23"
   },
   "changesets": [
     "chatty-badgers-cheer",
+    "eleven-feet-explode",
     "four-mirrors-shop",
     "gold-mice-exist",
     "large-eggs-greet",

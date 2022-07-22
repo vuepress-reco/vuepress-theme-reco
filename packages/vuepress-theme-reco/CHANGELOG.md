@@ -1,5 +1,22 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.24
+
+### Minor Changes
+
+- feat: add plugin code-copy
+
+### Patch Changes
+
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.24
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.24
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.24
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.24
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.24
+  - @vuepress-reco/shared@2.0.0-beta.24
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.24
+
 ## 2.0.0-beta.23
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-beta.24
+
+### Minor Changes
+
+- feat: add plugin code-copy
+
+### Patch Changes
+
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.24
+
 ## 2.0.0-beta.23
 
 ### Patch Changes
