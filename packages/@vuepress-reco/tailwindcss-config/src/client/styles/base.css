@@ -1,0 +1,217 @@
+/* 仅在需要在 class 属性中使用 tailwind 时才需要下面的引用 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0;
+  }
+
+  *,
+  ::before,
+  ::after {
+    @apply box-border border-0 border-gray-200 antialiased;
+  }
+
+  html {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media screen and (max-width: 640px) {
+    html {
+      font-size: 14px !important;
+    }
+  }
+
+  body {
+    /* antialiased 字体平滑 */
+    @apply m-0 w-full antialiased overflow-x-hidden bg-basic font-normal text-base font-sans tracking-wider;
+    min-width: 320px;
+    direction: ltr;
+    /* 像素较小时字体会拼接在一起 */
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease;
+  }
+
+  main {
+    @apply block;
+  }
+
+  svg {
+    @apply inline-block;
+  }
+  hr {
+    @apply my-4 border-basic-top;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10;
+  }
+  h1 {
+    @apply text-3xl -mt-12;
+  }
+
+  h2 {
+    @apply leading-tight text-2xl;
+    /* @apply -mt-4 relative; */
+    &::before {
+      @apply mb-6 block w-full border-t border-solid border-reco-border-lightmode;
+      @apply dark:border-reco-border-darkmode;
+      content: ' ';
+    }
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  h5 {
+    @apply text-base;
+  }
+
+  h6 {
+    @apply text-sm;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    @apply font-semibold;
+  }
+
+  a:active,
+  a:link,
+  a:focus,
+  a:visited {
+    @apply text-reco-text-lightmode dark:text-reco-text-darkmode;
+  }
+
+  p,
+  ol,
+  ul,
+  table {
+    @apply my-6 leading-8;
+  }
+
+  a,
+  area,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+    @apply no-underline bg-transparent;
+  }
+
+  button {
+    @apply text-base;
+  }
+
+  figure {
+    @apply m-0;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  ul,
+  ol {
+    @apply pl-5;
+  }
+
+  li > ul,
+  li > ol {
+    @apply m-0;
+  }
+
+  table {
+    @apply w-full rounded-md overflow-x-auto;
+    border-collapse: collapse;
+
+    tr {
+      @apply border-block;
+    }
+
+    th {
+      @apply text-left font-semibold bg-reco-bg-lightmode-lighter;
+      @apply dark:bg-reco-bg-darkmode-lighter;
+    }
+
+    td, th {
+      @apply px-2 py-3;
+      &:not(:last-child) {
+        @apply border-r border-reco-border-lightmode border-solid;
+        @apply dark:border-reco-border-darkmode;
+      }
+    }
+  }
+
+  blockquote {
+    @apply bg-block text-base p-2 my-6 mx-0 border-l-4 border-solid;
+    > p {
+      @apply m-0;
+    }
+  }
+
+  pre, code, kbd {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+
+  kbd {
+    @apply border border-gray-400/20 border-b-2 rounded;
+    @apply bg-gray-400/5 py-0.5 px-2 text-sm text-center;
+  }
+
+  form {
+    @apply m-0;
+  }
+
+  p > img {
+    @apply rounded-2xl;
+  }
+
+  li svg {
+    @apply align-middle;
+    transform: translateY(-10%);
+  }
+
+  /************** 滚动条 **************/
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    @apply bg-reco-brand;
+  }
+
+  ::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    @apply bg-reco-brand;
+  }
+}

@@ -1,0 +1,45 @@
+/* 仅在需要在 class 属性中使用 tailwind 时才需要下面的引用 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-basic {
+    @apply text-reco-text-lightmode;
+    @apply dark:text-reco-text-darkmode;
+  }
+}
+
+@layer components {
+  .border-basic {
+    @apply border border-solid border-reco-border-lightmode;
+    @apply dark:border-reco-border-darkmode;
+  }
+  .border-basic-top {
+    @apply border-basic border-0 border-t;
+  }
+  .border-basic-bottom {
+    @apply border-basic border-0 border-b;
+  }
+  .border-primary {
+    @apply border-basic border-reco-brand;
+    @apply dark:border-reco-brand;
+  }
+  .border-block {
+    @apply border-basic rounded;
+  }
+  .border-block-primary {
+    @apply border-primary rounded;
+  }
+}
+
+@layer components {
+  .bg-basic {
+    @apply text-basic bg-reco-bg-lightmode;
+    @apply dark:bg-reco-bg-darkmode;
+  }
+  .bg-block {
+    @apply text-basic bg-reco-bg-lightmode-code;
+    @apply dark:bg-reco-bg-darkmode-code;
+  }
+}
