@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.26
+
+### Patch Changes
+
+- fix: optmize ssr render of dark mode
+
 ## 2.0.0-beta.25
 
 ### Patch Changes

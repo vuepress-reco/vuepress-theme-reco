@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-vue-preview",
-  "version": "2.0.0-beta.25",
+  "version": "2.0.0-beta.26",
   "description": "A vue component preview plugin for vuepress-theme-reco.",
   "keywords": [
     "vuepress-plugin",

@@ -1,5 +1,13 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.26
+
+### Patch Changes
+
+- fix: optmize ssr render of dark mode
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.26
+
 ## 2.0.0-beta.25
 
 ### Patch Changes
