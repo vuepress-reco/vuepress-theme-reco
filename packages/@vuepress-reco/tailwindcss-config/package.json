@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/tailwindcss-config",
-  "version": "2.0.0-beta.24",
+  "version": "2.0.0-beta.25",
   "description": "Tailwindcss config for vuepress-theme-reco.",
   "keywords": [
     "vuepress-theme-reco",

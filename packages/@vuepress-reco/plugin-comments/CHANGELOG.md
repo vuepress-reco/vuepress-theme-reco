@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.25
+
+### Patch Changes
+
+- fix: add autoload dark mode
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.25
+
 ## 2.0.0-beta.24
 
 ### Minor Changes

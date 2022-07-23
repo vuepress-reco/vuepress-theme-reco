@@ -1,5 +1,19 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.25
+
+### Patch Changes
+
+- fix: add autoload dark mode
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.25
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.25
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.25
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.25
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.25
+  - @vuepress-reco/shared@2.0.0-beta.25
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.25
+
 ## 2.0.0-beta.24
 
 ### Minor Changes
