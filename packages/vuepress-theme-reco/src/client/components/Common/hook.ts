@@ -1,6 +1,7 @@
-import { useRouter } from 'vue-router'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
 import { RecoThemePageData } from '../../../types'
 
 export function useSidebar(toggleSidebar) {
@@ -49,4 +50,16 @@ export function usePassword() {
   }
 
   return { sitePasswordPass, handlePass }
+}
+
+export function useInitCodeCopy() {
+  const route = useRoute()
+  const { path } = toRefs(route)
+  const { initCopyBtn } = useInitCopyBtn()
+
+  watch(path, () => {
+    setTimeout(() => {
+      initCopyBtn()
+    }, 1000)
+  })
 }

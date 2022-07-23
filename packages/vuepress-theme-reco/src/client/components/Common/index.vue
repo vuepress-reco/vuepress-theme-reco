@@ -26,7 +26,7 @@ import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
 import Password from '../Password/index.vue'
 import { useSidebarData } from '../../composables'
-import { useSidebar, usePassword } from './hook'
+import { useSidebar, usePassword, useInitCodeCopy } from './hook'
 
 const {
   isOpenSidebar,
@@ -39,6 +39,8 @@ const {
   sitePasswordPass,
   handlePass
 } = usePassword()
+
+useInitCodeCopy()
 
 useSidebar(toggleSidebar)
 </script>

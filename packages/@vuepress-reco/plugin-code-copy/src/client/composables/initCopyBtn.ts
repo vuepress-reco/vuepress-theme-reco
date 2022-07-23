@@ -105,7 +105,6 @@ function handleElement(el: HTMLElement) {
     }
 
     copyToClipboard(text).then(() => {
-
       const copied = el.querySelector<HTMLSpanElement>('.copied') as HTMLSpanElement
       copied.style.display = 'inline-block'
       setTimeout(() => {
