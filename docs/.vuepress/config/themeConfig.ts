@@ -9,7 +9,7 @@ export const themeConfig = {
   author: 'reco_luan',
   docsRepo: 'https://github.com/vuepress-reco/docs-v2',
   docsBranch: 'main',
-  docsDir: '/',
+  docsDir: '/docs',
   lastUpdatedText: '最后更新时间',
   navbar,
   series,

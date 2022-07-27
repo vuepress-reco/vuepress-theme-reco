@@ -1,5 +1,5 @@
 <template>
-  <a :class="['icon-container', iconPosition]" :href="link">
+  <a :class="['icon-container', iconPosition]" :href="link" :target="target">
     <component v-if="icon" :style="iconStyle" :is="icons[icon]" />
 
     <span v-if="!!text || slots.default" :style="textStyle">
@@ -69,6 +69,10 @@ export default defineComponent<PropsType>({
     link: {
       type: String,
       default: 'javascript:void(0)',
+    },
+    target: {
+      type: String,
+      default: '_self',
     },
   },
 
