@@ -59,7 +59,7 @@ div[class*="language-"] {
   .highlight-lines {
     @apply absolute z-10 left-0 right-0 bottom-0 pt-2 pb-6 leading-7 ;
     .highlight-line {
-      @apply bg-gray-800/10;
+      @apply bg-gray-500/10;
       @apply dark:bg-gray-50/10;
     }
   }
