@@ -94,7 +94,7 @@ const bgImageStyle = computed(() => {
   @apply mt-20 text-center;
   @apply md:text-left;
   img {
-    @apply inline-block ml-0 mr-1 my-1 w-auto h-6;
+    @apply inline-block ml-0 mr-1 my-1 w-auto h-6 !important;
   }
 }
 </style>
