@@ -24,7 +24,7 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarSearch />
       <NavbarLinks />
-      <ToggleDarkModeButton class="btn-toggle-dark-mode" />
+      <ToggleDarkModeButton />
     </div>
 
   </header>

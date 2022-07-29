@@ -12,7 +12,7 @@
       @apply text-reco-container-info-border;
     }
     code {
-      @apply mx-1 bg-reco-container-info-border/20 !important;
+      @apply bg-reco-container-info-border/20 !important;
     }
   }
   &.warning {
@@ -21,7 +21,7 @@
       @apply text-reco-container-warning-border;
     }
     code {
-      @apply mx-1 bg-reco-container-warning-border/20 !important;
+      @apply bg-reco-container-warning-border/20 !important;
     }
   }
   &.danger {
@@ -30,7 +30,7 @@
       @apply text-reco-container-danger-border;
     }
     code {
-      @apply mx-1 bg-reco-container-danger-border/20 !important;
+      @apply bg-reco-container-danger-border/20 !important;
     }
   }
   &.details {
@@ -39,7 +39,7 @@
       @apply mt-0 cursor-pointer;
     }
     code {
-      @apply mx-1 bg-black/5 !important;
+      @apply bg-black/5 !important;
       @apply dark:bg-black/20;
     }
   }

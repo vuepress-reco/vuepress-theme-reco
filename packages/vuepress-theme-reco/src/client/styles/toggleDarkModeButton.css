@@ -1,0 +1,4 @@
+.btn-toggle-dark-mode svg{
+  @apply block;
+  margin-top: 2px;
+}

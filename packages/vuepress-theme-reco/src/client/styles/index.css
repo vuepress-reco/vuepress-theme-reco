@@ -22,6 +22,7 @@
 @import 'sidebar.css';
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
 @import 'theme.css';
+@import 'toggleDarkModeButton.css';
 @import 'toggleSidebarButton.css';
 @import '404.css';
 /* @import '@vuepress/plugin-palette/style'; */
