@@ -13,7 +13,7 @@
         icon-size="20"
         text-size="14"
       />
-      <span v-if="!item.icon && item.text" class="arrow down" />
+      <span v-if="item.text" class="arrow down" />
     </button>
 
     <button
@@ -29,7 +29,7 @@
         icon-size="20"
         text-size="14"
       />
-      <span v-if="!item.icon && item.text" class="arrow" :class="open ? 'down' : 'right'" />
+      <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
     <DropdownTransition>
