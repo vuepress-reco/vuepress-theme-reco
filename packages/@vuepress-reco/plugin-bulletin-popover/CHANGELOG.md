@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-beta.29
+
+### Patch Changes
+
+- fix: fix some error
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.29
+
 ## 2.0.0-beta.28
 
 ### Patch Changes
