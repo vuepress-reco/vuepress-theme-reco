@@ -1,8 +1,8 @@
 ---
-title: vue 组件预览插件
+title: vue component preview plugin
 date: 2022-01-29 17:18:23
 ---
 
 ::: warning
-本插件仅适合主题开发者使用，请主题开发者先自行查看源码，开发文档后面补齐。
+This plug-in is only suitable for theme developers, please check the source code by yourself first, and complete the development documents later.
 :::

@@ -1,16 +1,16 @@
 ---
-title: 系列（原左侧边栏）
+title: Series (formerly left sidebar)
 date: 2021-11-06 23:36:01
 ---
 
-在 `vuepress-theme-reco@2.x` 中，`左侧边栏（sideBar）` 被更改为 `系列（series）`，由两部分原因：
+In `vuepress-theme-reco@2.x`, `sidebar` was changed to `series` for two reasons:
 
-1. 在 `vuepress-theme-reco@1.x` 中，侧边栏被拆分为了 `左侧边栏（sidebar）` 和 `右侧边栏（subSidebar）`，多个文档可以通过左侧边栏来聚合在一起，表达它们之间的联系，右侧边栏展示的则是当前页面的目录结构，因为考虑到 `vuepress` 默认主题将他们都放在左侧侧边栏会将其表现的没有重点，但是通过 `sidebar` 和 `subSidebar` 来表示 `左侧边栏` 和 `右侧边栏`，语意化又不太好；
-2. 考虑到需要放在一起的文档一定是一个 “系列” 文档，比如教程、文集等，故采用了 `series`。
+1. In `vuepress-theme-reco@1.x`, the sidebar is split into `left sidebar' and `right sidebar', multiple documents can be aggregated in the left sidebar Together, to express the connection between them, the right sidebar shows the directory structure of the current page, because considering the `vuepress` default theme, putting them all on the left sidebar will make it unfocused, but by `sidebar` and `subSidebar` to represent `left sidebar` and `right sidebar`, the semantics are not very good;
+2. Considering that the documents that need to be put together must be a "series" of documents, such as tutorials, anthologies, etc., `series` is used.
 
-## 配置
+## Configure
 
-**普通**
+**general**
 
 ``` js
 // .vuepress/config.js
@@ -23,7 +23,7 @@ module.exports = {
 }
 ```
 
-**分组**
+**group**
 
 ```js
 // .vuepress/config.js
@@ -32,11 +32,11 @@ module.exports = {
     series: {
       '/vuepress-theme-reco/': [
         {
-          text: '基础',
+          text: 'base',
           children: [ 'introduce', 'usage' ]
         },
         {
-          text: '高级',
+          text: 'advanced',
           children: [ 'home', 'series', 'comments' ]
         }
       ]
@@ -45,14 +45,14 @@ module.exports = {
 }
 ```
 
-**异常**
+**error**
 
 ::: warning
-如果左侧出现文章的名称显示成了文档的路径，可以把 children 变为完整模式。
+If the name of the article on the left shows the path to the document, you can turn children into full mode.
 :::
 
 ```js
-// 省略模式
+// omit mode
 module.exports = {
   themeConfig: {
     series: {
@@ -61,7 +61,7 @@ module.exports = {
   }
 }
 
-// 完整模式
+// full mode
 module.exports = {
   themeConfig: {
     series: {

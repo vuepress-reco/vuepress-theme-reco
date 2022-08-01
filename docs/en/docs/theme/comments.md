@@ -1,15 +1,15 @@
 ---
-title: 评论
+title: Comment
 date: 2021-11-06 23:41:31
 ---
 
-## 介绍
+## Introduction
 
-主题内置评论插件 `@vuepress-reco/vuepress-plugin-comments`，目前仅支持 `Valine`，因为 `Vssue` 还没有适配 `Vue3`；
+The theme built-in comment plugin `@vuepress-reco/vuepress-plugin-comments`, currently only supports `Valine`, because `Vssue` has not yet adapted to `Vue3`;
 
-如果你想默认不加载评论，而只在某些页面显示评论功能，可以在 `valineConfig` 中设置 `hideComments: true`，并在需要展示评论的页面设置 `hideComments: false`。
+If you want to not load comments by default, but only display comments on certain pages, you can set `hideComments: true` in `valineConfig`, and set `hideComments: false` on pages that need to display comments.
 
-如果仅是某篇文章不想设置开启评论功能，可以在 `front-matter` 设置 `hideComments: true`。
+If it is only a certain article that you don't want to enable comments, you can set `hideComments: true` in `front-matter`.
 
 ## Option API
 
@@ -28,17 +28,16 @@ export default defineUserConfig({
       options: {
         appId: '...', // your appId
         appKey: '...', // your appKey
-        hideComments: true, // 全局隐藏评论，默认 false
+        hideComments: true, // hide comments globally, default false
       },
     },
   }),
 })
 ```
 
-其他参数参考 [Valine 官网](https://valine.js.org/configuration.html)。
-
+For other parameters, please refer to [Valine official website](https://valine.js.org/configuration.html).
 ::: tip
-如果 valine 的获取评论的接口报 `404` 错误的话，不用担心，这是因为你还没有添加评论，只要存在 1 条评论，就不会报错了，这是 `leanCloud` 的请求处理操作而已；
+If valine's interface for getting comments reports a `404` error, don't worry, this is because you haven't added a comment, as long as there is 1 comment, no error will be reported, this is just the request processing operation of `leanCloud`;
 :::
 
 ### Waline
@@ -61,4 +60,4 @@ export default defineUserConfig({
 })
 ```
 
-使用教程及 options 其它参数参考 [Waline 官网](https://waline.js.org/guide/get-started.html)。
+Refer to [Waline official website](https://waline.js.org/guide/get-started.html) for the tutorial and other parameters of options.

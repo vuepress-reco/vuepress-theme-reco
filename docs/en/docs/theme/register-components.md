@@ -1,12 +1,12 @@
 ---
-title: 注册组件
+title: Register components
 date: 2022-04-27 00:56:21
 ---
 
 ::: warning
-reco 主题的 css 方案是 postcss + tailwindcss，支持 css 最新嵌套提案（类 scss），为组件书写样式时需注意。
+The css scheme of the reco theme is postcss + tailwindcss, which supports the latest CSS nesting proposal (class scss), and you need to pay attention when writing styles for components.
 :::
 
-主题默认将 `/.vuepress/components` 下面的 `.vue` 组件进行了全局注册，所以需要预览的组件请放在此目录下。
+By default, the theme registers the `.vue` components under `/.vuepress/components` globally, so the components that need to be previewed should be placed in this directory.
 
-如果我们文档项目存放在工程的子目录，比如 `/doc` 文件夹下，我们需要设置 `themeConfig.componentsDir` 为 `./docs/.vuepress/components`。
+If our documentation project is stored in a subdirectory of the project, such as the `/doc` folder, we need to set `themeConfig.componentsDir` to `./docs/.vuepress/components`.

@@ -1,9 +1,9 @@
 ---
-title: 留言板
+title: message board
 date: 2021-11-07 00:30:48
 hideComments: false
 ---
 
 ::: info
-欢迎大家在此留下你的建议和意见，或者在 [GitHub Issue](https://github.com/vuepress-reco/vuepress-theme-reco) 提交你的问题，或来 [GitHub Discussions](https://github.com/vuepress-reco/vuepress-theme-reco/discussions) 进行讨论。
+You are welcome to leave your suggestions and comments here, or submit your questions at [GitHub Issue](https://github.com/vuepress-reco/vuepress-theme-reco), or come to [GitHub Discussions](https://github.com/vuepress-theme-reco://github.com/vuepress-reco/vuepress-theme-reco/discussions) for discussion.
 :::

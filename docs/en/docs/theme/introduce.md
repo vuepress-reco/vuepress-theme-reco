@@ -1,12 +1,12 @@
 ---
-title: 介绍
+title: introduction
 date: 2021-11-06 23:23:32
 ---
 
-欢迎来到 `vuepress-theme-reco@2.x`，如果你正在使用 `vuepress@1.x`，请移步 [vuepress-theme-reco@1.x](https://vuepress-theme-reco.recoluan.com/views/1.x/)。
+Welcome to `vuepress-theme-reco@2.x`, if you are using `vuepress@1.x`, please go to [vuepress-theme-reco@1.x](https://vuepress-theme- reco.recoluan.com/views/1.x/).
 
-该主题有些功能参考了 `vuepress@2.x` 默认主题，但是不再像 `1.x` 和 `2.x` 一样在默认主题上进行魔改了，这是全新的一套方案，比如样式是采用了 `tailwindCSS` 方案，页面扩展能力则是通过插件 `@vuepress-reco/vuepress-plugin-page` 来实现的。
+Some functions of this theme refer to the default theme of `vuepress@2.x`, but it is no longer magically changed on the default theme like `1.x` and `2.x`. This is a new set of solutions, such as The style adopts the `tailwindCSS` scheme, and the page extension capability is realized through the plugin `@vuepress-reco/vuepress-plugin-page`.
 
-而 `vuepress-theme-reco` 也不再是单纯的主题，你必须要认识到这一点，这非常重要。它更像是一种主题组装方案，它提供了一些开箱即用的功能，用于开发者去扩展主题风格，`vuepress-theme-reco` 的默认风格被放在了 `@vuepress-reco/style-default` 中，以后会推出更多的风格。
+And `vuepress-theme-reco` is no longer a pure theme, you have to realize this, this is very important. It is more like a theme assembly solution, which provides some out-of-the-box functions for developers to extend theme styles. The default style of `vuepress-theme-reco` is placed in `@vuepress-reco/ In style-default`, more styles will be introduced in the future.
 
-同时你必须依赖此文档来配置你的工程，不可拿官方默认主题文档来比较，因为仅有少量配置与官方默认主题文档重叠。
+At the same time, you must rely on this document to configure your project. You cannot compare it with the official default theme document, because only a small amount of configuration overlaps with the official default theme document.

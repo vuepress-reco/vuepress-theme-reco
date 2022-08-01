@@ -1,25 +1,25 @@
 ---
-title: 自动设置分类
+title: Automatically set categories
 date: 2021-12-12 17:58:24
 ---
 
-为了节约用户的时间成本，主题可以设置自动为 markdown 文件设置分类，也就是将该文件所在文件夹的名称设置为该文件的 frontmatter 的 categories 的值，但是仅对文档根目录下的 blogs 和 docs 文件夹里的 markdown 文件有效。
+In order to save the user's time and cost, the theme can be set to automatically set the classification for the `markdown` file, that is, the name of the folder where the file is located is set to the value of the `categories` of the `frontmatter` of the file, but only for the `blogs` and `docs` files in the document root directory The `markdown` files in the folder are valid.
 
 ```
 .
 └─ .vuepress
 └─ blogs
-  └─ 分类1
-  └─ 分类2
+  └─ Category 1
+  └─ Category 2
 └─ docs
-  └─ 分类1
-  └─ 分类4
+  └─ Category 3
+  └─ Category 4
 ```
 
-## 配置
+## Configure
 
 ::: warning
-`autoAddCategoryToNavbar` API 后期会做调整，但不会废弃，请谨慎使用。
+The `autoAddCategoryToNavbar` API will be adjusted later, but will not be abandoned, please use it with caution.
 :::
 
 ```ts
@@ -28,8 +28,8 @@ import { recoTheme } from 'vuepress-theme-reco'
 
 export default defineUserConfig({
   theme: recoTheme({
-    autoSetCategory: true,         // 自动设置分类
-    autoAddCategoryToNavbar: true  // 自动将首页、分类和标签添加至头部导航条
+    autoSetCategory: true,         // automatically set categories
+    autoAddCategoryToNavbar: true  // automatically add homepage, categories and tags to the header navigation bar
   })
 })
 ```

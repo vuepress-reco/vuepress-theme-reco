@@ -1,20 +1,20 @@
 ---
-title: 架构
+title: Architecture
 date: 2021-11-05 00:28:46
 ---
 
-## 架构
+## Architecture
 
 ![image](https://user-images.githubusercontent.com/18067907/113588190-64fa0380-9662-11eb-8ed6-b022b5fa43ef.png)
 
-reco 主题 2.0，将不再是一个单纯的主题，更像是一个快速搭建 vuepress 主题的解决方案，或者叫做 `容器`。
+reco theme 2.0, It will no longer be a simple theme, but more like a solution to quickly build a vuepress theme, or `container`。
 
-它依赖 `@vuepress-reco/vuepress-plugin-page` 为主题扩展的页面，同时可以为特定页面注入分类、标签和分页的相关数据，并依赖其他插件默认为主题扩展一些必要功能。
+It relies on `@vuepress-reco/vuepress-plugin-page` to extend the page for the theme, and can inject relevant data of categories, tags and paging for specific pages, and depends on other plugins to extend some necessary functions for the theme by default.
 
-reco 主题 2.0 最核心的功能就是提供了网站风格的插槽，允许通过 `reco.config.js` 指定网站风格和主题的其他配置，reco 主题将会内置一些风格，比如 reco 主题 1.0 的两种风格，并在未来也会拓展更多的风格，同时允许开发者更加轻松地自定义属于自己的风格。
+The core function of reco theme 2.0 is to provide a website style slot, allowing the website style and other configuration of the theme to be specified through `reco.config.js`. The reco theme will have some built-in styles, such as the two styles of reco theme 1.0, and will expand more styles in the future, while allowing developers to customize their own styles more easily.
  
-## 主题风格
+## Theme Style
 
 ![image](https://user-images.githubusercontent.com/18067907/113588226-70e5c580-9662-11eb-84b3-ef64770c512c.png)
 
-开发者可以按照 `风格 package` 的规范，依赖 reco 主题强大的风格插槽，任意扩展页面路由和页面内容，虽然使用同一款主题，但是每个人都可以拥有属于自己的风格。
+Developers can follow the `style package` specification and rely on the powerful style slots of the reco theme to arbitrarily expand page routing and page content. Although they use the same theme, everyone can have their own style.

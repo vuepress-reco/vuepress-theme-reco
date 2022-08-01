@@ -1,21 +1,21 @@
 ---
-title: 快速开始
+title: quick start
 date: 2021-11-05 00:34:35
 ---
 
-## 快速开始
+## Quick Start
 
 **npx**
 
 ```bash
-# 初始化，并选择 2.x
+# Init，and choose 2.x
 npx @vuepress-reco/theme-cli init
 ```
 
 **npm**
 
 ```bash
-# 初始化，并选择 2.x
+# Init，and choose 2.x
 npm install @vuepress-reco/theme-cli@1.0.7 -g
 theme-cli init
 ```
@@ -23,7 +23,7 @@ theme-cli init
 **yarn**
 
 ```bash
-# 初始化，并选择 2.x
+# Init，and choose 2.x
 yarn global add @vuepress-reco/theme-cli@1.0.7
 theme-cli init
 ```

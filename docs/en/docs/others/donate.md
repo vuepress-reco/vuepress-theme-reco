@@ -1,5 +1,5 @@
 ---
-title: 打赏
+title: donate
 isShowComments: false
 ---
 
@@ -8,20 +8,20 @@ isShowComments: false
 <hr />
 
 ::: tip
-`vuepress-theme-reco` 是一款完全免费的开源 `vuepress` 主题。
+`vuepress-theme-reco` is a completely free and open source `vuepress` theme.
 
-开始时的兴趣和后来的责任是我不断更新动力。
+Interest in the beginning and responsibilities later on are my motivation for constant renewal.
 
-得到很多网友的称赞、祝福和贡献，真的非常开心(^▽^)。
+I am really happy to have received praise, blessings and contributions from many netizens (^▽^).
 
-如果你觉得主题还不错，可以为作者贡献一杯奶茶。
+If you think the theme is not bad, you can contribute a cup of milk tea to the author.
 :::
 
 |WeChat|AliPay|
 |-|-|
 |<img style="width: 160px" src="/wechat.png" />|<img style="width: 160px" src="/alipay.png" />|
 
-## 打赏记录
+## Donation Record
 
 <hr/>
 
