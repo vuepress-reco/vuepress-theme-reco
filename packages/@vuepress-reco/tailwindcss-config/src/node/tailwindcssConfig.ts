@@ -28,6 +28,9 @@ export const tailwindcssConfig = {
       height: (): Record<string, any> => ({ 'screen-3/5': '60vh' }),
       zIndex: {
         'negative-10': -10
+      },
+      rotate: {
+        '315': '315deg'
       }
     },
   }

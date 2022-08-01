@@ -1,12 +1,21 @@
 .toggle-sidebar-button {
-  @apply mr-2 inline-block w-8 cursor-pointer;
+  @apply ml-2 mr-2 inline-block w-8 cursor-pointer;
   .icon {
     @apply w-full;
     span {
-      @apply transition-all origin-top-left duration-300 block mx-auto my-1.5 w-6 bg-reco-text-lightmode;
+      @apply transition-all origin-center duration-300 block my-1.5 bg-reco-text-lightmode;
       @apply dark:bg-reco-text-darkmode;
       height: 2px;
       border-radius: 2px;
+      &:nth-of-type(1) {
+        @apply w-5;
+      }
+      &:nth-of-type(2) {
+        @apply w-6;
+      }
+      &:nth-of-type(3) {
+        @apply w-3;
+      }
     }
   }
 }

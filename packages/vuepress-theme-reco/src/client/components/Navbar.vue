@@ -24,7 +24,7 @@
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <NavbarSearch />
       <NavbarLinks />
-      <ToggleDarkModeButton class="btn-toggle-dark-mode" />
+      <ToggleDarkModeButton />
     </div>
 
   </header>
@@ -78,7 +78,7 @@ export default defineComponent({
           linksWrapperMaxWidth.value = 0
         } else {
           linksWrapperMaxWidth.value =
-            navbar.value!.offsetWidth - (siteBrand.value?.offsetWidth || 0) - 50
+            (navbar.value as HTMLElement)?.offsetWidth - (siteBrand.value?.offsetWidth || 0) - 50
         }
       }
       handleLinksWrapWidth()

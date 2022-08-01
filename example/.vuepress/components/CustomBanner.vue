@@ -1,5 +1,5 @@
 <template>
-  <section class="custom-banner-wrapper" :style="{ ...bgImageStyle }">
+  <section class="banner-brand-wrapper" :style="{ ...bgImageStyle }">
     <div class="hero-content">
       <img
         v-if="heroImage"
@@ -11,8 +11,8 @@
       />
 
       <div class="hero-text">
-        <h1 v-if="frontmatter?.customBanner?.heroText">{{ frontmatter?.customBanner?.heroText }}</h1>
-        <p v-if="frontmatter?.customBanner?.tagline">{{ frontmatter?.customBanner?.tagline }}</p>
+        <h1 v-if="frontmatter?.bannerBrand?.heroText">{{ frontmatter?.bannerBrand?.heroText }}</h1>
+        <p v-if="frontmatter?.bannerBrand?.tagline">{{ frontmatter?.bannerBrand?.tagline }}</p>
 
         <ul class="btn-group" v-if="buttons.length > 0">
           <li v-for="(btn, index) in buttons" :class="btn.type" :key="index">
@@ -25,6 +25,16 @@
             />
           </li>
         </ul>
+
+        <ul class="social-links" v-if="socialLinks.length > 0">
+          <li
+            class="social-item"
+            v-for="(item, index) in socialLinks"
+            :key="index"
+          >
+            <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -34,25 +44,32 @@
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from '@vuepress/client'
 import Link from '../Link.vue'
+import { createOneColor } from '../../utils'
 
 const frontmatter = usePageFrontmatter()
 
 const heroImage = computed(() => {
-  return frontmatter.value?.customBanner?.heroImage
-    ? withBase(frontmatter.value?.customBanner?.heroImage)
+  return frontmatter.value?.bannerBrand?.heroImage
+    ? withBase(frontmatter.value?.bannerBrand?.heroImage)
     : null
 })
 
 const buttons = computed(() => {
-  return frontmatter.value?.customBanner?.buttons || []
+  return frontmatter.value?.bannerBrand?.buttons || []
 })
 
+const socialLinks = computed(() =>
+  (frontmatter.value?.bannerBrand?.socialLinks || []).map(item => {
+    if (!item.color) item.color = createOneColor()
+    return item
+  }))
+
 const heroImageStyle = computed(
-  () => frontmatter.value.customBanner.heroImageStyle || {}
+  () => frontmatter.value.bannerBrand.heroImageStyle || {}
 )
 
 const bgImageStyle = computed(() => {
-  const { bgImageStyle, bgImage } = frontmatter.value?.customBanner || {}
+  const { bgImageStyle, bgImage } = frontmatter.value?.bannerBrand || {}
 
   const initBgImageStyle = bgImage ? {
     overflow: 'hidden',
@@ -62,48 +79,3 @@ const bgImageStyle = computed(() => {
   return bgImageStyle ? { ...initBgImageStyle, ...bgImageStyle } : initBgImageStyle
 })
 </script>
-
-<style>
-.custom-banner-wrapper {
-  @apply w-screen flex justify-center items-center;
-  @apply md:h-screen;
-  .hero-content {
-    @apply block;
-    @apply md:max-w-3xl md:flex md:flex-row-reverse md:items-start;
-    .hero-text {
-      @apply box-border mb-16 px-6;
-      h1 {
-        @apply mb-6 text-4xl text-center;
-        @apply md:text-6xl md:text-left;
-      }
-      .btn-group {
-        @apply list-none mt-8 pl-0 text-center;
-        @apply md:text-left;
-        li {
-          @apply inline-block;
-          @apply hover:border-reco-brand;
-          .icon-container {
-            @apply inline-block px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-lighter cursor-pointer font-semibold text-white;
-            @apply dark:text-reco-text-darkmode;
-          }
-          &.plain .icon-container {
-            @apply bg-block;
-          }
-          &:not(:first-child) {
-            @apply ml-4;
-          }
-        }
-      }
-    }
-    img {
-      @apply block mx-auto mt-32 mb-16 w-40;
-      @apply md:mt-0 sm:w-40 md:w-60 md:ml-16;
-    }
-  }
-}
-
-/* 兼容 */
-.custom-banner-wrapper .hero-content .hero-text .btn-group li > a .icon-container {
-  @apply text-white dark:text-reco-text-darkmode;
-}
-</style>

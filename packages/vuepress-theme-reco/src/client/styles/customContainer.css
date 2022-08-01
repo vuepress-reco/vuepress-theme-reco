@@ -6,16 +6,13 @@
   .custom-container-title {
     @apply mt-3.5 mb-0 font-bold;
   }
-  &.tip {
+  &.tip, &.info {
     @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
     .custom-container-title, svg {
       @apply text-reco-container-info-border;
     }
-  }
-  &.info {
-    @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
-    .custom-container-title, svg {
-      @apply text-reco-container-info-border;
+    code {
+      @apply bg-reco-container-info-border/20 !important;
     }
   }
   &.warning {
@@ -23,17 +20,27 @@
     .custom-container-title, svg {
       @apply text-reco-container-warning-border;
     }
+    code {
+      @apply bg-reco-container-warning-border/20 !important;
+    }
   }
   &.danger {
     @apply rounded border-reco-container-danger-border border border-solid bg-reco-container-danger-bg;
     .custom-container-title, svg {
       @apply text-reco-container-danger-border;
     }
+    code {
+      @apply bg-reco-container-danger-border/20 !important;
+    }
   }
   &.details {
     @apply pl-6 py-4 rounded bg-block border-block;
     .custom-container-title {
       @apply mt-0 cursor-pointer;
+    }
+    code {
+      @apply bg-black/5 !important;
+      @apply dark:bg-black/20;
     }
   }
 }

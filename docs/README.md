@@ -1,10 +1,10 @@
 ---
 home: true
 modules:
-  - BannerBrand
+  - CustomBanner
   - MdContent
   - Footer
-bannerBrand:
+customBanner:
   heroImage: /logo.png
   heroImageStyle:
     maxWidth: '200px'
@@ -14,7 +14,7 @@ bannerBrand:
     borderRadius: '1rem'
   bgImage: '/bg.svg'
   heroText: vuepress-reco
-  tagline: 一款 vuepress 主题容器，集成多种主题底层功能，快速生成主题风格。主题 2.0 的默认风格是原主题 1.0 迁移而来，更多风格正在路上，敬请期待。
+  tagline: vuepress-theme-reco 2.0 继续坚持简洁的风格，所有功能开箱即用，首页模块化组装，使用 tailwindcss 书写样式，将 Vite 作为默认编译器。你只需要负责内容创作，其他请交给我。
   buttons:
     - { text: 指南, link: '/docs/guide/introduce' }
     - { text: 主题配置, link: '/docs/theme/introduce', type: 'plain' }

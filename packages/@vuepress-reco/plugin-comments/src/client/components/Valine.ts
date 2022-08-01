@@ -27,9 +27,13 @@ export default defineComponent({
     const router = useRouter()
     const { options } = toRefs(props)
 
-    onMounted(() => {
+    let valineInstance = null
+
+    onMounted(async () => {
+      const { Valine } = await import('./reco-valine.js')
       const initValine = async () => {
-        const { Valine } = await import('./reco-valine.js')
+
+        if (valineInstance) return
 
         const valineOptions = {
           el: '#valine',
@@ -43,7 +47,7 @@ export default defineComponent({
           ...options.value
         }
 
-        new Valine(valineOptions)
+        valineInstance = new Valine(valineOptions)
       }
 
       initValine()
@@ -60,5 +64,5 @@ export default defineComponent({
     }, h('div', {
       id: 'valine'
     }))
-  },    
+  },
 })

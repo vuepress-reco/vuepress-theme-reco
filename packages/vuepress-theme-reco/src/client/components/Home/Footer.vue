@@ -2,8 +2,9 @@
   <div class="footer-wrapper">
     <span>
       <Xicons
-        icon="Alien"
-        link="https://vuepress-theme-reco.recoluan.com"
+        icon="Palette"
+        link="http://v2.vuepress-reco.recoluan.com"
+        target="_blank"
         :text="`vuepress-theme-reco@${version}`"
       />
     </span>

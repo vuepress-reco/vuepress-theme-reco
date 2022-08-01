@@ -19,9 +19,7 @@
   <a
     v-else
     class="nav-link"
-    :href="item.link"
     :rel="linkRel"
-    :target="linkTarget"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
   >
@@ -29,6 +27,8 @@
     <Xicons
       :icon="item.icon"
       :text="item.text"
+      :link="item.link"
+      :target="linkTarget"
       icon-size="20"
       text-size="14"
     />

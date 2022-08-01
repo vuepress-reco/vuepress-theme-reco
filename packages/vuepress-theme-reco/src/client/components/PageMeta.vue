@@ -1,7 +1,15 @@
 <template>
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
-      <Link class="meta-item-label" :item="editNavLink" />
+      <Xicons
+        class="meta-item-label"
+        :icon="editNavLink.icon"
+        :text="editNavLink.text"
+        :link="editNavLink.link"
+        target="_blank"
+        icon-size="20"
+        text-size="14"
+      />
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
@@ -61,7 +69,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
       docsRepo,
       docsBranch,
       docsDir,
-      path: page.value.path,
+      path: page.value.filePathRelative,
       editLinkPattern: themeLocal.value.editLinkPattern,
     })
 

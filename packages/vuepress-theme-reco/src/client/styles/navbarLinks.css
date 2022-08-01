@@ -33,7 +33,7 @@
       }
       .nav-dropdown {
         @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
-        @apply md:px-3 md:hidden md:absolute md:top-3.5 md:py-2 md:my-3 border-0 md:border;
+        @apply md:px-3 md:hidden md:absolute md:top-3.5 md:-right-6 md:py-2 md:my-3 border-0 md:border;
         .dropdown-item {
           @apply relative;
           &:not(:first-of-type)::before {
@@ -54,7 +54,7 @@
             }
           }
           .dropdown-subtitle {
-            @apply my-1 py-0 text-sm font-medium;
+            @apply my-1 py-0 text-sm;
           }
           .dropdown-subitem-wrapper {
             @apply list-none pl-3;

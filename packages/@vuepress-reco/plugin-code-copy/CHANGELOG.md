@@ -1,5 +1,23 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.29
+
+### Patch Changes
+
+- fix: fix some error
+
+## 2.0.0-beta.28
+
+### Patch Changes
+
+- fix: optimize the style
+
+## 2.0.0-beta.27
+
+### Patch Changes
+
+- fix: optmize some error
+
 ## 2.0.0-beta.26
 
 ### Patch Changes
