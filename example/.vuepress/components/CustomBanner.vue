@@ -32,7 +32,7 @@
             v-for="(item, index) in socialLinks"
             :key="index"
           >
-            <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" />
+            <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" target="_blank"/>
           </li>
         </ul>
       </div>
