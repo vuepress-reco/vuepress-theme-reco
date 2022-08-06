@@ -3,22 +3,10 @@
     <Xicons v-if="!!author" icon="User" :text="author" />
     <Xicons v-if="!!date" icon="Clock" :text="date" />
     <Xicons v-if="!!categories && categories.length > 0" icon="Folder">
-      <RouterLink
-        v-for="(category, index) in categories"
-        :key="index"
-        :class="['category', { active: currentCategory === category }]"
-        :to="`/categories/${convertToPinyin(category)}/1/`"
-        >{{ category }}</RouterLink
-      >
+      {{categories.join(' ')}}
     </Xicons>
     <Xicons v-if="!!tags && tags.length > 0" icon="Tag">
-      <RouterLink
-        v-for="(tag, index) in tags"
-        :key="index"
-        :class="['tag', { active: currentTag === tag }]"
-        :to="`/tags/${convertToPinyin(tag)}/1/`"
-        >{{ tag }}</RouterLink
-      >
+      {{tags.join(' ')}}
     </Xicons>
     <Xicons v-if="showValineViews" icon="Eye">
       <ValineViews :numStyle="{}" />
