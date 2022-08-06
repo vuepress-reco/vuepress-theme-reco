@@ -10,15 +10,16 @@
     <slot name="before" />
     <Xicons
       :icon="item.icon"
-      :text="item.text"
       icon-size="20"
-      text-size="14"
     />
+    {{item.text}}
     <slot name="after" />
   </RouterLink>
   <a
     v-else
     class="nav-link"
+    :href="item.link"
+    :target="linkTarget"
     :rel="linkRel"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
@@ -26,12 +27,9 @@
     <slot name="before" />
     <Xicons
       :icon="item.icon"
-      :text="item.text"
-      :link="item.link"
-      :target="linkTarget"
       icon-size="20"
-      text-size="14"
     />
+    {{item.text}}
     <ExternalLinkIcon v-if="!item.hideExternalLinkIcon && isBlankTarget" />
     <slot name="after" />
   </a>

@@ -4,7 +4,7 @@ date: 2022-04-27 00:56:21
 ---
 
 ::: warning
-reco 主题的 css 方案是 postcss + tailwindcss，支持 css 最新嵌套提案（类 scss），为组件书写样式时需注意。
+书写样式请参考 [指南/样式](/docs/guide/style)。
 :::
 
 主题默认将 `/.vuepress/components` 下面的 `.vue` 组件进行了全局注册，所以需要预览的组件请放在此目录下。

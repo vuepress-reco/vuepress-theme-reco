@@ -25,4 +25,4 @@
 @import 'toggleDarkModeButton.css';
 @import 'toggleSidebarButton.css';
 @import '404.css';
-/* @import '@vuepress/plugin-palette/style'; */
+@import '@vuepress/plugin-palette/style';

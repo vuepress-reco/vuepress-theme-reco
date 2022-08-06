@@ -7,12 +7,10 @@
       @click="handleDropdown"
     >
       <Xicons
-        class="title"
         :icon="item.icon"
-        :text="item.text"
         icon-size="20"
-        text-size="14"
       />
+      {{item.text}}
       <span v-if="item.text" class="arrow down" />
     </button>
 
@@ -23,12 +21,10 @@
       @click="open = !open"
     >
       <Xicons
-        class="title"
         :icon="item.icon"
-        :text="item.text"
         icon-size="20"
-        text-size="14"
       />
+      {{item.text}}
       <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
@@ -41,22 +37,11 @@
         >
           <template v-if="child.children">
             <h5 class="dropdown-subtitle">
-              <Link
-                v-if="child.link"
-                :item="child"
-                @focusout="
-                  isLastItemOfArray(child, item.children) &&
-                    child.children.length === 0 &&
-                    (open = false)
-                "
-              />
               <Xicons
-                v-else
                 :icon="child.icon"
-                :text="child.text"
                 icon-size="20"
-                text-size="14"
               />
+              {{child.text}}
             </h5>
 
             <ul class="dropdown-subitem-wrapper">
