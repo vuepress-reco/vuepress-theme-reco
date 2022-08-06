@@ -1,11 +1,12 @@
 <template>
-  <a :class="['icon-container', iconPosition]" :href="link" :target="target">
+  <a v-if="!!text || slots.default" :class="['icon-container', iconPosition]" :href="link" :target="target">
     <component v-if="icon" :style="iconStyle" :is="icons[icon]" />
 
-    <span v-if="!!text || slots.default" :style="textStyle">
+    <span :style="textStyle">
       <slot>{{ text }}</slot>
     </span>
   </a>
+  <component v-else :style="iconStyle" :is="icons[icon]" />
 </template>
 
 <script lang="ts">

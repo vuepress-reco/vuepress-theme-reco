@@ -44,7 +44,7 @@
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from '@vuepress/client'
 import Link from '../Link.vue'
-import { createOneColor } from '../../utils'
+import { createOneColor } from '../../../packages/vuepress-theme-reco/lib/client/utils'
 
 const frontmatter = usePageFrontmatter()
 
