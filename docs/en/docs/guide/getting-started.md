@@ -1,5 +1,5 @@
 ---
-title: quick start
+title: Quick start
 date: 2021-11-05 00:34:35
 ---
 
