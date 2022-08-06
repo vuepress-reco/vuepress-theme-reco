@@ -1,6 +1,6 @@
 export const series = {
   // todo README.md 无法展示，没有对 '' 进行处理
-  '/en/docs/guide/': ['introduce', 'getting-started', 'style'],
+  '/en/docs/guide/': ['introduce', 'getting-started', 'style', 'contribute'],
   '/en/docs/theme/': [
     {
       text: 'Basic',

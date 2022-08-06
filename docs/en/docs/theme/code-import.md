@@ -20,7 +20,7 @@ date: 2022-01-29 16:24:23
 :::tip
 By default, the theme registers the `.vue` components under `/.vuepress/vue-previews` globally, so the components that need to be previewed should be placed in this directory.
 
-If our documentation project is stored in a subdirectory of the project, such as the `/doc` folder, we need to set `themeConfig.vuePreviewsDir` to `./docs/.vuepress/vue-previews`.
+If our documentation project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.vuePreviewsDir` to `./docs/.vuepress/vue-previews`.
 :::
 
 ### vue component preview
