@@ -1,9 +1,9 @@
 ---
-title: 自定义容器
+title: custom container
 date: 2022-01-29 16:19:01
 ---
 
-## 提示相关
+## Tips related
 
 ``` md
 ::: <type> [title]
@@ -11,64 +11,64 @@ date: 2022-01-29 16:19:01
 :::
 ```
 
-`type` 是必需的， `title` 和 `content` 是可选的。
+`type` is required, `title` and `content` are optional.
 
-支持的 `type` 有：
+The supported `type` are:
 
 - `tip`
 - `warning`
 - `danger`
 - `details`
 
-**输入**
+**input**
 
 ``` md
 ::: tip
-这是一个提示
+this is a tip
 :::
 
 ::: info
-这是一个提示
+this is a info
 :::
 
 ::: warning
-这是一个警告
+this is a warning
 :::
 
 ::: danger
-这是一个危险警告
+This is a danger warning
 :::
 
 ::: details
-这是一个 details 标签
+this is a details tag
 :::
 ```
 
-**输出**
+**output**
 
 ::: tip
-这是一个提示
+this is a tip
 :::
 
 ::: info
-这是一个提示
+this is a info
 :::
 
 ::: warning
-这是一个警告
+this is a warning
 :::
 
 ::: danger
-这是一个危险警告
+this is a danger warning
 :::
 
 ::: details
-这是一个 details 标签
+this is a details tag
 :::
 
-## 代码相关
+## Code related
 
-**输入**
+**input**
 
 ````md
 :::: code-group
@@ -85,7 +85,7 @@ const bar = 'bar'
 ::::
 ````
 
-**输出**
+**output**
 
 :::: code-group
 ::: code-group-item FOO

@@ -1,9 +1,9 @@
 ---
-title: 安装和使用
+title: install and use
 date: 2021-11-06 23:32:42
 ---
 
-## 安装
+## Install
 
 ```bash
 npm install vuepress@next vuepress-theme-reco@next --save-dev
@@ -12,10 +12,10 @@ npm install vuepress@next vuepress-theme-reco@next --save-dev
 yarn add vuepress@next vuepress-theme-reco@next
 ```
 
-## 使用 <Badge text="+2.0.0-beta.16" />
+## usage <Badge text="+2.0.0-beta.16" />
 
 :::warning
-`vuepress` 在 `2.0.0-beta.39` 版本之后，将主题的使用从声明式改为函数式，reco 主题在 `2.0.0-beta.16` 进行了适配。
+`vuepress` changed the use of themes from declarative to functional after `2.0-beta.3`, and the reco theme was called in `20.0-beta.16`.
 :::
 
 ```ts

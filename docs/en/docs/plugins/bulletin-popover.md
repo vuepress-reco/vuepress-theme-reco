@@ -1,8 +1,8 @@
 ---
-title: 公告插件
+title: Announcement plugin
 date: 2022-02-05 22:04:43
 ---
 
 ::: warning
-请注意：该插件内部的组件的样式并没有内置，需要手动设置。
+Please note: The styles of the components inside the plugin are not built-in and need to be set manually.
 :::
