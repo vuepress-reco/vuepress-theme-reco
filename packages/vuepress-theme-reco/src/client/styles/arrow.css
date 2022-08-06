@@ -3,11 +3,11 @@
   @apply dark:border-reco-text-darkmode;
 
   &.up {
-    @apply border-l border-t rotate-45;
+    @apply border-l border-t rotate-45 translate-y-0.5;
   }
 
   &.down {
-    @apply border-r border-b rotate-45;
+    @apply border-r border-b rotate-45 -translate-y-0.5;
   }
 
   &.right {
