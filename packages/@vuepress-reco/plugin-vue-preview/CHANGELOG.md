@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-beta.30
+
+### Patch Changes
+
+- optmize style
+
 ## 2.0.0-beta.29
 
 ### Patch Changes
