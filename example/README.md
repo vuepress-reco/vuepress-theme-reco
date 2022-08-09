@@ -152,5 +152,3 @@ asdnasn
 ::: details
 abc`sdfdsf`
 :::
-
-<CustomBanner />
