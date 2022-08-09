@@ -1,8 +1,8 @@
 <template>
-  <a v-if="!!text || slots.default" :class="['icon-container', iconPosition]" :href="link" :target="target">
+  <a v-if="link" :class="['icon-container', iconPosition]" :href="link" :target="target">
     <component v-if="icon" :style="iconStyle" :is="icons[icon]" />
 
-    <span :style="textStyle">
+    <span v-if="text || slots.default" :style="textStyle">
       <slot>{{ text }}</slot>
     </span>
   </a>
