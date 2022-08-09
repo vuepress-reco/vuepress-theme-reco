@@ -139,6 +139,14 @@
     @apply pl-5;
   }
 
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
   li > ul,
   li > ol {
     @apply m-0;
