@@ -19,12 +19,6 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  @media screen and (max-width: 640px) {
-    html {
-      font-size: 14px !important;
-    }
-  }
-
   body {
     /* antialiased 字体平滑 */
     @apply m-0 w-full antialiased overflow-x-hidden bg-basic font-normal text-base font-sans tracking-wider;
