@@ -2,7 +2,7 @@
   <a v-if="link" :class="['icon-container', iconPosition]" :href="link" :target="target">
     <component v-if="icon" :style="iconStyle" :is="icons[icon]" />
 
-    <span v-if="text || slots.default" :style="textStyle">
+    <span v-if="text || slots.default" :style="textStyle" class="icon-text">
       <slot>{{ text }}</slot>
     </span>
   </a>
@@ -98,25 +98,25 @@ export default defineComponent<PropsType>({
   @apply inline-flex;
   &.left {
     @apply flex-row items-center;
-    > svg {
-      @apply mr-1.5;
+    > .icon-text {
+      @apply ml-1.5;
     }
   }
   &.right {
     @apply flex-row-reverse items-center;
-    > span {
+    > .icon-text {
       @apply mr-1.5;
     }
   }
   &.top {
     @apply flex-col items-center;
-    > span {
+    > .icon-text {
       @apply mt-1.5;
     }
   }
   &.bottom {
     @apply flex-col-reverse items-center;
-    > span {
+    > .icon-text {
       @apply mb-1.5;
     }
   }

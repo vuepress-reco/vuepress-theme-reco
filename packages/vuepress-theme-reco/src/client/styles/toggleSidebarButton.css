@@ -8,13 +8,13 @@
       height: 2px;
       border-radius: 2px;
       &:nth-of-type(1) {
-        @apply w-5;
+        @apply w-3;
       }
       &:nth-of-type(2) {
         @apply mx-auto w-6;
       }
       &:nth-of-type(3) {
-        @apply w-3;
+        @apply w-5;
       }
     }
   }

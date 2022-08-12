@@ -20,11 +20,13 @@
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <Xicons
-        :icon="item.icon"
-        icon-size="20"
-      />
-      {{item.text}}
+      <span class="title">
+        <Xicons
+          :icon="item.icon"
+          icon-size="20"
+        />
+        <span>{{item.text}}</span>
+      </span>
       <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 

@@ -1,6 +1,6 @@
 .search-box {
   input {
-    @apply pr-0 rounded-2xl bg-reco-bg-lightmode-code/0 border-block text-basic backdrop-saturate-150 backdrop-blur-xl !important;
+    @apply pr-0 rounded-2xl bg-reco-bg-lightmode-code/0 text-basic backdrop-saturate-150 backdrop-blur-xl !important;
     @apply dark:bg-reco-bg-darkmode-code/0 !important;
     @apply focus:border-reco-brand !important;
     background: url('../assets/search.svg') 0.4rem 0.4rem no-repeat;

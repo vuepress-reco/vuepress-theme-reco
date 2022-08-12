@@ -26,8 +26,8 @@
         @apply md:flex;
       }
       .mobile-dropdown-title {
-        @apply text-sm font-semibold text-reco-text-lightmode flex items-center;
-        @apply md:text-base md:hidden;
+        @apply text-sm font-semibold text-reco-text-lightmode flex items-center justify-between w-full;
+        @apply md:text-base md:hidden md:justify-start md:w-auto;
       }
       .nav-dropdown {
         @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;

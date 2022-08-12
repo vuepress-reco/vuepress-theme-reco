@@ -1,6 +1,7 @@
 .arrow {
   @apply inline-block w-1.5 h-1.5 align-middle border-0 border-solid border-transparent border-reco-text-lightmode;
   @apply dark:border-reco-text-darkmode;
+  border-radius: 1px;
 
   &.up {
     @apply border-l border-t rotate-45 translate-y-0.5;
