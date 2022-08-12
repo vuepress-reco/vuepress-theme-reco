@@ -27,7 +27,7 @@
     "build": "tsc --build tsconfig.build.json",
     "build:watch": "tsc --build -w tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
-    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg}\" lib"
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,png,jpg}\" lib"
   },
   "publishConfig": {
     "access": "public"
