@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.31
+
+### Patch Changes
+
+- refactor: redesign the style of navbar
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.31
+
 ## 2.0.0-beta.30
 
 ### Patch Changes

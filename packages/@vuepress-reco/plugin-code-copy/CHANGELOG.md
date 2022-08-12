@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.31
+
+### Patch Changes
+
+- refactor: redesign the style of navbar
+
 ## 2.0.0-beta.30
 
 ### Patch Changes
