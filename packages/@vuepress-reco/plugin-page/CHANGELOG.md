@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.32
+
+### Patch Changes
+
+- chore(theme-reco): fix copy script
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.32
+
 ## 2.0.0-beta.31
 
 ### Patch Changes

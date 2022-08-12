@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-beta.32
+
+### Patch Changes
+
+- chore(theme-reco): fix copy script
+
 ## 2.0.0-beta.31
 
 ### Patch Changes
