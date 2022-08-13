@@ -51,7 +51,6 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
 
     const languageDropdown: ResolvedNavbarItem = {
       text: selectLanguageText.value,
-      icon: 'Language',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale =

@@ -6,12 +6,9 @@
     :to="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
+    :key="item.link"
   >
     <slot name="before" />
-    <Xicons
-      :icon="item.icon"
-      icon-size="20"
-    />
     {{item.text}}
     <slot name="after" />
   </RouterLink>
@@ -23,12 +20,9 @@
     :rel="linkRel"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
+    :key="item.link"
   >
     <slot name="before" />
-    <Xicons
-      :icon="item.icon"
-      icon-size="20"
-    />
     {{item.text}}
     <ExternalLinkIcon v-if="!item.hideExternalLinkIcon && isBlankTarget" />
     <slot name="after" />

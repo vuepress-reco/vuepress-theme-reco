@@ -10,7 +10,7 @@
       @apply ml-0 md:ml-6;
     }
     > a.nav-link {
-      @apply text-sm font-semibold;
+      @apply inline-block w-full text-sm font-semibold;
     }
     .arrow {
       @apply ml-1;
@@ -86,7 +86,7 @@
             }
           }
           a.nav-link {
-            @apply text-sm;
+            @apply inline-block w-full text-sm;
           }
         }
       }

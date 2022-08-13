@@ -1,8 +1,6 @@
 <template>
   <aside class="series-container">
-    <template v-for="item in sidebarItems" :key="item.link || item.text">
-      <SeriesItem :item="item" />
-    </template>
+    <SeriesItem v-for="item in sidebarItems" :item="item" :key="item.link || item.text" />
   </aside>
 </template>
 
