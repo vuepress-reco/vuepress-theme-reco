@@ -1,5 +1,13 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.33
+
+### Patch Changes
+
+- fix: optimize the style
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.33
+
 ## 2.0.0-beta.32
 
 ### Patch Changes
