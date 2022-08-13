@@ -1,18 +1,25 @@
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute, NavigationHookAfter } from 'vue-router'
 import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
 import { RecoThemePageData } from '../../../types'
+import { useScrollDirection } from '../../composables'
 
-export function useSidebar(toggleSidebar) {
+export function useSidebar(toggleSidebar, toggleMobileMenus) {
 
   // close sidebar after navigation
   let unregisterRouterHook
 
   onMounted(() => {
     const router = useRouter()
-    unregisterRouterHook = router.afterEach(() => {
-      toggleSidebar(false)
+    const { direction } = useScrollDirection()
+    unregisterRouterHook = router.afterEach((to, from) => {
+      if (to.path !== from.path) {
+        toggleSidebar(false)
+        toggleMobileMenus(false)
+
+        direction.value = ''
+      }
     })
   })
 

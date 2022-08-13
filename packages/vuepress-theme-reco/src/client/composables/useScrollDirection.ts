@@ -1,25 +1,44 @@
 import { ref, onMounted } from 'vue'
 import { throttle } from '../utils'
 
-export function useScrollDirection() {
-  let prev = 0, next = 0, time
+const direction = ref('')
 
-  const direction = ref('')
+export function useScrollDirection() {
+  let startY = 0, endY = 0
 
   onMounted(() => {
-    window.addEventListener('scroll', throttle((e: Event) => {
-      prev = next
-      next = window.scrollY
+    window.addEventListener('touchstart', e => {
+      const touch = e.touches[0]
+      startY = Number(touch.pageY)
+    })
 
-      if (next - prev < 0) {
+    window.addEventListener('touchmove', throttle(e => {
+      const touch = e.touches[0]
+      endY = touch.pageY
+
+      if (endY - startY < 0) {
         direction.value = 'top'
-      } else if (next - prev > 0) {
+      } else if (endY - startY > 0) {
         direction.value = 'bottom'
       } else {
         direction.value = ''
       }
-      console.log(direction.value)
+
+      startY = endY
     }, 300))
+
+    // window.addEventListener('touchend', e => {
+    //   const touch = e.touches[0]
+    //   endY = Number(touch.pageY)
+
+    //   if (endY - startY < 0) {
+    //     direction.value = 'top'
+    //   } else if (endY - startY > 0) {
+    //     direction.value = 'bottom'
+    //   } else {
+    //     direction.value = ''
+    //   }
+    // })
   })
 
   return { direction }

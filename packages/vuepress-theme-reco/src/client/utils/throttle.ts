@@ -1,12 +1,12 @@
 export const throttle = (func, wait = 500) => {
   let timer;
 
-  return () => {
+  return (...args) => {
       if (timer) {
           return
       }
       timer = setTimeout(() => {
-          func();
+          func.apply(func, args);
           timer = null
       }, wait)
   }

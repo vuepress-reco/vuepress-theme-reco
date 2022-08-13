@@ -1,5 +1,5 @@
 <template>
-  <header v-if="direction === 'bottom' && sidebarItems.length > 0" ref="navbar" class="navbar-container">
+  <header v-if="direction === 'top' && sidebarItems.length > 0" ref="navbar" class="navbar-container">
     <span class="nav-item"><ToggleSidebarButton @toggle="toggleSidebar" /> Series</span>
   </header>
   <header v-else ref="navbar" class="navbar-container">
@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, onMounted, watch } from 'vue'
+import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'

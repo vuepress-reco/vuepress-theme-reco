@@ -50,5 +50,5 @@ const {
 
 useInitCodeCopy()
 
-useSidebar(toggleSidebar)
+useSidebar(toggleSidebar, toggleMobileMenus)
 </script>
