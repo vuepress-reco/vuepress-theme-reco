@@ -45,6 +45,14 @@ features:
   details: 吸引更多的朋友参与到开发中来，继续强大功能。
 ---
 
+1. asdasd
+2. assda
+3. asdas
+
+- asdasd
+- asasd
+- asasf
+
 ```ts{1,3}
 const a = 1
 a.b = 2
@@ -152,5 +160,3 @@ asdnasn
 ::: details
 abc`sdfdsf`
 :::
-
-<CustomBanner />

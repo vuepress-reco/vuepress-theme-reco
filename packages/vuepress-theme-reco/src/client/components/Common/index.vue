@@ -4,12 +4,14 @@
       'common-wrapper': true,
       'sidebar-open': isOpenSidebar,
       'no-sidebar': !isShowSidebar,
+      'mobile-menus-open': isOpenMobileMenus
     }"
   >
     <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
     <div v-else>
-      <Navbar @toggleSidebar="toggleSidebar" />
+      <Navbar @toggleSidebar="toggleSidebar" @toggleMenus="toggleMobileMenus" />
+      <MobileNavbar />
       <div class="sidebar-mask" @click="toggleSidebar(false)" />
       <Series />
       <slot />
@@ -21,11 +23,12 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
+import MobileNavbar from '../MobileMenus.vue'
 import Navbar from '../Navbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
 import Password from '../Password/index.vue'
-import { useSidebarData } from '../../composables'
+import { useSidebarData, useMobileMenus } from '../../composables'
 import { useSidebar, usePassword, useInitCodeCopy } from './hook'
 
 const {
@@ -36,11 +39,16 @@ const {
 } = useSidebarData()
 
 const {
+  isOpenMobileMenus,
+  toggleMobileMenus
+} = useMobileMenus()
+
+const {
   sitePasswordPass,
   handlePass
 } = usePassword()
 
 useInitCodeCopy()
 
-useSidebar(toggleSidebar)
+useSidebar(toggleSidebar, toggleMobileMenus)
 </script>

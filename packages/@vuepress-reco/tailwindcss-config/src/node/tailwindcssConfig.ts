@@ -30,6 +30,7 @@ export const tailwindcssConfig = {
         'negative-10': -10
       },
       rotate: {
+        '225': '225deg',
         '315': '315deg'
       }
     },

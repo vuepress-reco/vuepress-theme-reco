@@ -1,5 +1,23 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.33
+
+### Patch Changes
+
+- fix: optimize the style
+
+## 2.0.0-beta.32
+
+### Patch Changes
+
+- chore(theme-reco): fix copy script
+
+## 2.0.0-beta.31
+
+### Patch Changes
+
+- refactor: redesign the style of navbar
+
 ## 2.0.0-beta.30
 
 ### Patch Changes

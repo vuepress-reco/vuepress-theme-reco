@@ -1,5 +1,5 @@
 .toggle-sidebar-button {
-  @apply ml-2 mr-2 inline-block w-8 cursor-pointer;
+  @apply ml-2 mr-2 inline-block w-6 cursor-pointer;
   .icon {
     @apply w-full;
     span {
@@ -8,13 +8,13 @@
       height: 2px;
       border-radius: 2px;
       &:nth-of-type(1) {
-        @apply w-5;
+        @apply w-3;
       }
       &:nth-of-type(2) {
-        @apply w-6;
+        @apply mx-auto w-6;
       }
       &:nth-of-type(3) {
-        @apply w-3;
+        @apply w-5;
       }
     }
   }

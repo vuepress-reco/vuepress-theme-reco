@@ -19,7 +19,7 @@ import { useRouter } from 'vue-router'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { isString } from '@vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
-import { useNavLink } from '../composables'
+import { useNavLink } from '../composables/index'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { convertToPinyin } from '@vuepress-reco/shared'
@@ -51,7 +51,6 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
 
     const languageDropdown: ResolvedNavbarItem = {
       text: selectLanguageText.value,
-      icon: 'Language',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale =

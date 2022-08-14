@@ -6,10 +6,6 @@
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
     >
-      <Xicons
-        :icon="item.icon"
-        icon-size="20"
-      />
       {{item.text}}
       <span v-if="item.text" class="arrow down" />
     </button>
@@ -20,11 +16,9 @@
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <Xicons
-        :icon="item.icon"
-        icon-size="20"
-      />
-      {{item.text}}
+      <span class="title">
+        <span>{{item.text}}</span>
+      </span>
       <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
@@ -37,10 +31,6 @@
         >
           <template v-if="child.children">
             <h5 class="dropdown-subtitle">
-              <Xicons
-                :icon="child.icon"
-                icon-size="20"
-              />
               {{child.text}}
             </h5>
 

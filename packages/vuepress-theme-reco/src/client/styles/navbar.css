@@ -1,12 +1,9 @@
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-4 py-3 h-14 w-screen leading-6 bg-reco-bg-lightmode/60;
+  @apply fixed top-0 right-0 z-30 px-6 py-3 h-14 w-screen leading-6 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
-  /* 不生效 */
-  @apply backdrop-saturate-150 backdrop-blur-xl;
-  backdrop-filter: saturate(180%) blur(20px);
-  .toggle-sidebar-button {
-    @apply align-middle;
+  .nav-item {
+    @apply inline-block align-middle;
   }
   .site-brand {
     @apply align-middle text-xl font-semibold;
@@ -23,15 +20,28 @@
     .navbar-links {
       @apply hidden md:inline-block align-middle;
     }
+    .btn-toggle-menus {
+      @apply align-middle;
+    }
   }
   .toggle-sidebar-button {
-    @apply inline-block md:hidden;
+    @apply inline-block align-middle;
+    @apply md:hidden;
   }
   .search-box, .docsearch-container {
     @apply align-middle;
   }
   .btn-toggle-dark-mode {
-    @apply ml-4 inline-block align-middle;
+    @apply ml-4 hidden align-middle;
+    @apply md:inline-block;
     height: 20px;
+  }
+  .btn-toggle-menus {
+    @apply ml-3 inline-block align-middle;
+    @apply md:hidden;
+    height: 20px;
+    svg {
+      @apply block;
+    }
   }
 }

@@ -1,7 +1,7 @@
 .series-container {
-  @apply transition-all pr-6 pl-10 pt-6 w-64 fixed z-50 top-14 left-0 bottom-0 bg-basic overflow-y-auto;
+  @apply transition-all pr-6 pl-10 pt-6 w-64 fixed z-50 top-0 left-0 bottom-0 bg-basic overflow-y-auto;
   @apply -translate-x-full;
-  @apply md:translate-x-0 !important;
+  @apply md:translate-x-0 md:pt-20 md:z-20 !important;
   @apply border-r border-solid border-reco-border-lightmode dark:border-reco-border-darkmode;
   .series-group {
     &:not(:first-of-type) h5.series-heading {
@@ -45,16 +45,6 @@
       }
     }
   }
-  .navbar-links {
-    @apply block relative mb-8;
-    @apply md:hidden;
-    &::after {
-      @apply absolute left-0 -bottom-4 block border-t border-solid border-reco-border-lightmode w-full;
-      @apply md:border-t-0;
-      @apply dark:border-reco-border-darkmode;
-      content: '';
-    }
-  }
 }
 
 
@@ -67,17 +57,17 @@
     @apply translate-x-0 !important;
   }
   .sidebar-mask {
-    @apply block top-14 right-0 bottom-0 left-0;
+    @apply block top-0 right-0 bottom-0 left-0;
   }
   .toggle-sidebar-button .icon span {
     &:nth-of-type(1) {
-      @apply rotate-315 -translate-x-0.5 translate-y-2 w-6;
+      @apply rotate-225 -translate-x-0.5 translate-y-2 w-6;
     }
     &:nth-of-type(2) {
       @apply w-0;
     }
     &:nth-of-type(3) {
-      @apply -rotate-315 -translate-x-0.5 -translate-y-2 w-6;
+      @apply -rotate-225 -translate-x-0.5 -translate-y-2 w-6;
     }
   }
 }

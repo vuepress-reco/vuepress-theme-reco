@@ -13,6 +13,7 @@
         icon="ShieldCheck"
         :link="frontmatter?.footer?.recordLink || '#'"
         :text="frontmatter?.footer?.record"
+        target="_blank"
       />
     </span>
     <span>
@@ -28,7 +29,7 @@
       </Xicons>
     </span>
     <p class="cyber-security" v-if="frontmatter?.footer?.cyberSecurityRecord">
-      <img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt="">
+      <img src="../../assets/cyberSecurityRecord.png" alt="">
       <a :href="frontmatter?.footer?.cyberSecurityLink || '#'">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
     </p>
 

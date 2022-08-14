@@ -5,12 +5,12 @@
     @apply block ml-4 py-1 text-left;
     @apply md:inline-block;
     &:first-of-type {
-      @apply ml-0;
+      @apply md:ml-0;
     }
   }
   .cyber-security {
-    @apply px-4 text-left flex items-center justify-center my-0;
-    @apply md:text-center;
+    @apply px-4 text-left flex items-center justify-start 
+    my-0 md:text-center md:justify-center;
     img {
       @apply mr-2 w-4 h-4 align-middle;
     }
