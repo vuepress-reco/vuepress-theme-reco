@@ -19,6 +19,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import type { Theme, Page } from '@vuepress/core'
+import { mergeViteBundlerConfig, defaultViteBundlerConfig, resolveUserConfig } from './resolveBundlerConfig'
 
 import { resolveContainerOptions } from './resolveContainer'
 
@@ -33,28 +34,13 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       // todo @vuepress/bundler-webpack 适配问题
       // app.options.bundler.name = '@vuepress/bundler-webpack'
 
-      // todo 兼容用户的自定义 bundler
+      const userConfig = resolveUserConfig(themeConfig)
       // @ts-ignore
       if (app.options.bundler.name === '@vuepress/bundler-vite') {
+        const options = defaultViteBundlerConfig()
+        const viteBundlerOptions = mergeViteBundlerConfig(options, userConfig)
         // @ts-ignore
-        app.options.bundler = viteBundler({
-          viteOptions: {
-            css: {
-              postcss: {
-                plugins: [
-                  require('postcss-import'),
-                  require('tailwindcss/nesting'),
-                  require('tailwindcss')(tailwindcssConfig),
-                  require('autoprefixer')({}),
-                  require('postcss-each')
-                ]
-              }
-            },
-            optimizeDeps: {
-              exclude: ['vue']
-            }
-          },
-        })
+        app.options.bundler = viteBundler(viteBundlerOptions)
       } else {
         // @ts-ignore
         app.options.bundler = webpackBundler({
