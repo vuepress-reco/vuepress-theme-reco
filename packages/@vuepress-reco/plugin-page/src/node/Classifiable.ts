@@ -74,9 +74,10 @@ export default class Classifiable {
     const publishPosts = this.app.pages
       .filter((page: Page) => {
         const publishFlag = !(
-          page?.frontmatter?.home === true
+          /.+\/blogs\/(.+)\/.+\.md$/.test((page.filePath || '') as string)
             || page?.frontmatter?.publish === false
-            || page?.title === '')
+            || page?.title === ''
+          )
 
         if (autoSetCategory && publishFlag) {
           this.setCategory(page)
