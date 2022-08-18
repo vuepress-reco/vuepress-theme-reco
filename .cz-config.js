@@ -54,5 +54,5 @@ module.exports = {
   ],
   scopes: ['theme-reco', 'example', ...packages],
   allowCustomScopes: true,
-  allowBreakingChanges: ['feat', 'fix'],
+  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf'],
 }
