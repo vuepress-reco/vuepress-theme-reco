@@ -4,7 +4,7 @@
     @apply align-middle;
   }
   .navbar-links-item {
-    @apply block md:inline-block py-1.5 align-middle;
+    @apply block md:inline-block py-1.5;
     @apply md:py-0;
     &:not(:first-child) {
       @apply ml-0 md:ml-6;
