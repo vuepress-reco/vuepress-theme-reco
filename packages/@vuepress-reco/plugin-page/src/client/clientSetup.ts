@@ -1,26 +1,20 @@
 import { computed, provide } from 'vue'
 import {
-  classificationPostsSymbol,
-  classificationSummarySymbol,
+  categoryPaginationPostsSymbol,
+  categorySummarySymbol,
   postsSymbol,
 } from './composable'
 
-declare const CLASSIFICATION_PAGINATION_POSTS: Record<string, any[]>
+declare const CATEGORY_PAGINATION_POSTS: Record<string, any[]>
 declare const POSTS: Record<string, any[]>
 declare const CLASSIFICATION_SUMMARY: Record<string, any>
 
-const a = CLASSIFICATION_PAGINATION_POSTS
-const b = POSTS
-const c = CLASSIFICATION_SUMMARY
-
 export async function applyClientSetup () {
-  const classificationPosts = computed(() => a)
+  const posts = computed(() => POSTS)
+  const categorySummary = computed(() => CLASSIFICATION_SUMMARY)
+  const categoryPosts = computed(() => CATEGORY_PAGINATION_POSTS)
 
-  const posts = computed(() => b)
-
-  const classificationSummary = computed(() => c)
-
-  provide(classificationPostsSymbol, classificationPosts)
-  provide(classificationSummarySymbol, classificationSummary)
   provide(postsSymbol, posts)
+  provide(categoryPaginationPostsSymbol, categoryPosts)
+  provide(categorySummarySymbol, categorySummary)
 }

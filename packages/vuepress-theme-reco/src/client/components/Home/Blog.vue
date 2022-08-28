@@ -45,18 +45,18 @@ import PostList from '../PostList.vue'
 import Pagation from '../Pagation.vue'
 import PersonalInfo from '../PersonalInfo.vue'
 
-const { posts, classificationSummary } = usePageData()
+const { posts, categorySummary } = usePageData()
 
 const currentPage = ref(1)
 const blogContentTop = ref(0)
 const perPage = 10
 
 const categories = computed(() => {
-  return classificationSummary.value?.categories?.items || []
+  return categorySummary.value?.categories?.items || []
 })
 
 const tags = computed(() => {
-  return classificationSummary.value?.tags?.items || []
+  return categorySummary.value?.tags?.items || []
 })
 
 const postsOfCurrentPage = computed(() => {

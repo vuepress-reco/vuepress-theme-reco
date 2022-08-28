@@ -150,13 +150,13 @@ const resolveNavbarItem = (
 
 const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const themeLocal = useThemeLocaleData()
-  const { classificationSummary } = usePageData()
+  const { categorySummary } = usePageData()
 
   const parseCategories = computed(() => {
     return [
       {
         text: 'Categories',
-        children: Object.values(classificationSummary.value?.categories?.items || []).map((c) => ({
+        children: Object.values(categorySummary.value?.categories?.items || []).map((c) => ({
           // @ts-ignore
           text: c.label,
           // @ts-ignore
@@ -165,7 +165,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
       },
       {
         text: 'Tags',
-        children: Object.values(classificationSummary.value?.tags.items || []).map(t => ({
+        children: Object.values(categorySummary.value?.tags.items || []).map(t => ({
           // @ts-ignore
           text: t.label,
           // @ts-ignore

@@ -79,7 +79,7 @@ export default defineUserConfig({
         ],
       },
     ],
-    autoSetCategory: true,
+    autoSetBlogCategories: true,
     autoAddCategoryToNavbar: true,
     vuePreviewsDir: './example/.vuepress/vue-previews',
     componentsDir: './example/.vuepress/components',

@@ -3,14 +3,14 @@ import { useRouter } from 'vue-router'
 
 declare const __VUEPRESS_DEV__: boolean
 
-export const classificationPostsSymbol = Symbol(__VUEPRESS_DEV__ ? 'classificationPostsSymbol' : '')
-export const classificationSummarySymbol = Symbol(__VUEPRESS_DEV__ ? 'classificationSummarySymbol' : '')
+export const categoryPaginationPostsSymbol = Symbol(__VUEPRESS_DEV__ ? 'categoryPaginationPostsSymbol' : '')
+export const categorySummarySymbol = Symbol(__VUEPRESS_DEV__ ? 'categorySummarySymbol' : '')
 export const postsSymbol = Symbol(__VUEPRESS_DEV__ ? 'postsSymbol' : '')
 
 export function usePageData(): Record<string, any> {
-  const classificationSummary = inject(classificationSummarySymbol) || {}
+  const categorySummary = inject(categorySummarySymbol) || {}
   const posts = inject(postsSymbol) || {}
-  const cp = inject(classificationPostsSymbol) || {}
+  const categoryPaginationPosts = inject(categoryPaginationPostsSymbol) || {}
 
   if (!postsSymbol) {
     throw new Error('useSiteLocaleData() is called without provider.')
@@ -19,13 +19,13 @@ export function usePageData(): Record<string, any> {
   const { currentRoute } = useRouter()
 
 
-  const classificationPosts = computed(() => {
+  const categoryPosts = computed(() => {
     return (
-      ((cp as { value: any }).value as Record<string, any>)[
+      ((categoryPaginationPosts as { value: any }).value as Record<string, any>)[
         currentRoute.value.path
       ] || {}
     )
   })
 
-  return { classificationPosts, classificationSummary, posts }
+  return { categoryPosts, categorySummary, posts }
 }

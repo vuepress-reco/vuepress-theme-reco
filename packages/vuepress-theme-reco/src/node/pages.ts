@@ -1,13 +1,13 @@
 export const pages = [
   {
-    type: 'frontmatter',
+    type: 'category',
     frontmatterKey: 'categories',
     path: '/categories/',
     layout: 'Categories',
     pagination: 10,
   },
   {
-    type: 'frontmatter',
+    type: 'category',
     frontmatterKey: 'tags',
     path: '/tags/',
     layout: 'Categories',

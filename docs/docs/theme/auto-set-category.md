@@ -28,7 +28,7 @@ import { recoTheme } from 'vuepress-theme-reco'
 
 export default defineUserConfig({
   theme: recoTheme({
-    autoSetCategory: true,         // 自动设置分类
+    autoSetBlogCategories: true,         // 自动设置分类
     autoAddCategoryToNavbar: true  // 自动将首页、分类和标签添加至头部导航条
   })
 })

@@ -3,18 +3,18 @@
     <Common>
       <ul class="category-list">
         <li
-          v-for="({ label, length }, index) in classificationList"
+          v-for="({ label, length }, index) in categoryList"
           :key="index"
           :class="[
             'category-item',
             {
-              active: classificationPosts.currentClassificationValue === convertToPinyin(label),
+              active: categoryPosts.currentCategoryValue === convertToPinyin(label),
             },
           ]"
         >
           <RouterLink
             class="category-link"
-            :to="`/${classificationPosts.currentClassificationKey}/${convertToPinyin(label)}/1/`"
+            :to="`/${categoryPosts.currentCategoryKey}/${convertToPinyin(label)}/1/`"
           >
             <span class="text">{{ label }}</span>
             <span class="num">{{ length }}</span>
@@ -23,16 +23,16 @@
       </ul>
 
       <PostList
-        :data="classificationPosts.pages"
-        :total="classificationPosts.total"
-        :page-size="classificationPosts.pageSize"
-        :current-page="classificationPosts.currentPage"
+        :data="categoryPosts.pages"
+        :total="categoryPostsPage"
+        :page-size="categoryPosts.pageSize"
+        :current-page="categoryPosts.currentPage"
       />
 
       <Pagation
-        v-if="classificationPosts.total > 10"
-        :currentPage="classificationPosts.currentPage"
-        :total="classificationPosts.total"
+        v-if="categoryPosts.totalPage > 10"
+        :currentPage="categoryPosts.currentPage"
+        :total="categoryPosts.totalPage"
         @change="handlePagation"
       />
     </Common>
@@ -53,18 +53,18 @@ export default defineComponent({
 
   setup() {
     const {
-      classificationPosts,
-      classificationSummary
+      categoryPosts,
+      categorySummary
     } = usePageData()
     const router = useRouter()
 
-    const classificationList = computed(() => {
+    const categoryList = computed(() => {
       let list = []
-      const currentClassificationKey = classificationPosts.value.currentClassificationKey
+      const currentCategoryKey = categoryPosts.value.currentCategoryKey
 
-      if (currentClassificationKey) {
+      if (currentCategoryKey) {
         const { items = [] } =
-          classificationSummary.value[currentClassificationKey]
+          categorySummary.value[currentCategoryKey]
 
         list = Object.values(items)
       }
@@ -74,16 +74,16 @@ export default defineComponent({
 
     const handlePagation = (page) => {
       const {
-        currentClassificationKey,
-        currentClassificationValue
-      } = classificationPosts.value
+        currentCategoryKey,
+        currentCategoryValue
+      } = categoryPosts.value
 
-      router.push(`/${currentClassificationKey}/${currentClassificationValue}/${page}/`)
+      router.push(`/${currentCategoryKey}/${currentCategoryValue}/${page}/`)
     }
 
     return {
-      classificationList,
-      classificationPosts,
+      categoryList,
+      categoryPosts,
       handlePagation,
       convertToPinyin
     }
