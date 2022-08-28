@@ -6,19 +6,34 @@ export const mergeViteBundlerConfig = (options: ViteBundlerOptions, config: Vite
   // For inline PostCSS config, it expects the same format as postcss.config.js.
   // But for plugins property, only array format can be used.
   const userViteConfig = config?.viteOptions || {}
-  if (typeof userViteConfig?.css?.postcss === 'string') throw new Error('String type postcss is not supported yet')
-  if (!Array.isArray(userViteConfig?.css?.postcss?.plugins)) throw new Error('plugins for postcss must be an array')
+
+  if (typeof userViteConfig?.css?.postcss === 'string') {
+    throw new Error('String type postcss is not supported yet')
+  }
+
   const userPostcssPlugins = userViteConfig?.css?.postcss?.plugins || []
+  if (!Array.isArray(userPostcssPlugins)) {
+    throw new Error('plugins for postcss must be an array')
+  }
 
   const viteOptions = {
-    css: {
-      postcss: {
-        plugins: [...(options?.viteOptions?.css?.postcss as any)?.plugins, ...userPostcssPlugins],
-        ...userViteConfig?.css?.postcss
+    ...userViteConfig || {},
+    ...{
+      css: {
+        ...userViteConfig?.css || {},
+        ...{
+          postcss: {
+            ...userViteConfig?.css?.postcss || {},
+            ...{
+              plugins: [
+                ...userPostcssPlugins,
+                ...(options?.viteOptions?.css?.postcss as any)?.plugins
+              ],
+            }
+          },
+        }
       },
-      ...userViteConfig?.css?.postcss
-    },
-    ...userViteConfig
+    }
   }
 
   return {
