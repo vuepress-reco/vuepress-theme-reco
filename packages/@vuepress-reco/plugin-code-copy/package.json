@@ -19,6 +19,7 @@
   "author": "reco_luan <recoluan@qq.com>",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
+  "type": "module",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -37,9 +38,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
-    "vue-router": "^4.0.16"
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/core": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
+    "vue-router": "^4.1.5"
   }
 }

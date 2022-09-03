@@ -1,5 +1,11 @@
 import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
 import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
+import postcssImport from 'postcss-import'
+import tailwindcssNesting from 'tailwindcss/nesting/index.js'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
+import postcssEach from 'postcss-each'
+import type { Config } from 'tailwindcss'
 
 export const mergeViteBundlerConfig = (options: ViteBundlerOptions, config: ViteBundlerOptions): ViteBundlerOptions => {
   // Handling postcss alone
@@ -47,11 +53,11 @@ export const defaultViteBundlerConfig = (): ViteBundlerOptions => ({
     css: {
       postcss: {
         plugins: [
-          require('postcss-import'),
-          require('tailwindcss/nesting'),
-          require('tailwindcss')(tailwindcssConfig),
-          require('autoprefixer')({}),
-          require('postcss-each')
+          postcssImport,
+          tailwindcssNesting,
+          tailwindcss(tailwindcssConfig as unknown as Config),
+          autoprefixer({}),
+          postcssEach
         ]
       }
     },

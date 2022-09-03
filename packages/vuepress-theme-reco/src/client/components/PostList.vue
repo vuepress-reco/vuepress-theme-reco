@@ -16,18 +16,6 @@ export default defineComponent({
       type: Array,
       default: () => [],
     },
-    total: {
-      type: Number,
-      default: 0,
-    },
-    pageSize: {
-      type: Number,
-      default: 10,
-    },
-    currentPage: {
-      type: Number,
-      default: 1,
-    },
   },
 
   setup() {

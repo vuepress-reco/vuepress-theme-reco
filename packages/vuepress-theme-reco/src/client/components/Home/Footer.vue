@@ -39,7 +39,7 @@
 
 <script setup>
 import { defineComponent, computed } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { usePageFrontmatter } from '@vuepress/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import packageInfo from 'vuepress-theme-reco/package.json'

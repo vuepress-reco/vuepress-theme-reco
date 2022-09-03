@@ -11,9 +11,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { usePageCatalog } from '../composables/'
+import { usePageCatalog, useThemeLocaleData } from '../composables/'
 import { CatalogItem } from './CatalogItem'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 
 const catalog = usePageCatalog()
 const themeConfig = useThemeLocaleData()

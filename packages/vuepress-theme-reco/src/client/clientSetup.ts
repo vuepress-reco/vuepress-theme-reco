@@ -5,9 +5,8 @@ import {
   sidebarItemsSymbol,
   resolveCatalog,
   catalogSymbol,
+  useThemeLocaleData,
 } from './composables'
-
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 
 import type { DefaultThemeNormalPageFrontmatter } from '../types'
 

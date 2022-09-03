@@ -1,1 +1,1 @@
-export * from './toPinYin'
+export * from './toPinYin.js'

@@ -1,5 +1,5 @@
-import { codeCopyPlugin } from './codeCopyPlugin'
+import { codeCopyPlugin } from './codeCopyPlugin.js'
 
-export * from './codeCopyPlugin'
+export * from './codeCopyPlugin.js'
 
 export { codeCopyPlugin }

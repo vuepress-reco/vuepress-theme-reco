@@ -130,7 +130,6 @@ export default defineComponent({
                       icon: 'FileCode',
                       text: vnode.props.title,
                       'text-size': 12,
-                      'text-size': 12
                     }
                   )
                 )

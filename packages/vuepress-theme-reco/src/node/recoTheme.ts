@@ -9,7 +9,7 @@ import { gitPlugin } from '@vuepress/plugin-git'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
 import { palettePlugin } from '@vuepress/plugin-palette'
-import { path, fs } from '@vuepress/utils'
+import { path, fs, getDirname } from '@vuepress/utils'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
@@ -19,13 +19,15 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import type { Theme, Page } from '@vuepress/core'
-import { mergeViteBundlerConfig, defaultViteBundlerConfig, resolveUserConfig } from './resolveBundlerConfig'
+import { mergeViteBundlerConfig, defaultViteBundlerConfig, resolveUserConfig } from './resolveBundlerConfig.js'
 
-import { resolveContainerOptions } from './resolveContainer'
+import { resolveContainerOptions } from './resolveContainer.js'
 
 import type { RecoThemePageData } from '../types/page'
 
-import { pages } from './pages'
+import { pages } from './pages.js'
+
+const __dirname = getDirname(import.meta.url);
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   return {
@@ -59,8 +61,6 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     },
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
     templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
-
-    layouts: path.resolve(__dirname, '../client/layouts'),
 
     clientConfigFile: path.resolve(
       __dirname,

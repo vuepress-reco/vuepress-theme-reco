@@ -34,11 +34,10 @@
 <script lang="ts">
 import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleSidebarButton from './ToggleSidebarButton.vue'
-import { useSidebarItems, useScrollDirection } from '../composables'
+import { useSidebarItems, useScrollDirection, useThemeLocaleData } from '../composables'
 import Xicons from './global/Xicons.vue'
 
 export default defineComponent({

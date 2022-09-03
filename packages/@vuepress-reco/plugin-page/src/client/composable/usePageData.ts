@@ -3,13 +3,13 @@ import { useRouter } from 'vue-router'
 
 declare const __VUEPRESS_DEV__: boolean
 
-export const categoryPaginationPostsSymbol = Symbol(__VUEPRESS_DEV__ ? 'categoryPaginationPostsSymbol' : '')
-export const categorySummarySymbol = Symbol(__VUEPRESS_DEV__ ? 'categorySummarySymbol' : '')
-export const postsSymbol = Symbol(__VUEPRESS_DEV__ ? 'postsSymbol' : '')
+export const categoryPaginationPostsSymbol = Symbol('categoryPaginationPostsSymbol')
+export const categorySummarySymbol = Symbol('categorySummarySymbol')
+export const postsSymbol = Symbol('postsSymbol')
 
 export function usePageData(): Record<string, any> {
   const categorySummary = inject(categorySummarySymbol) || {}
-  const posts = inject(postsSymbol) || {}
+  const posts = inject(postsSymbol) || []
   const categoryPaginationPosts = inject(categoryPaginationPostsSymbol) || {}
 
   if (!postsSymbol) {
@@ -21,7 +21,7 @@ export function usePageData(): Record<string, any> {
 
   const categoryPosts = computed(() => {
     return (
-      ((categoryPaginationPosts as { value: any }).value as Record<string, any>)[
+      (categoryPaginationPosts as Record<string, any>)[
         currentRoute.value.path
       ] || {}
     )

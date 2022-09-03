@@ -1,12 +1,7 @@
 <template>
   <section class="home-blog-content">
     <section class="blog-list">
-      <PostList
-        :data="postsOfCurrentPage"
-        :total="posts.length"
-        :page-size="10"
-        :current-page="currentPage"
-      />
+      <PostList :data="postsOfCurrentPage" />
       <Pagation
         :currentPage="currentPage"
         :total="posts.length"
@@ -52,18 +47,18 @@ const blogContentTop = ref(0)
 const perPage = 10
 
 const categories = computed(() => {
-  return categorySummary.value?.categories?.items || []
+  return categorySummary?.categories?.items || []
 })
 
 const tags = computed(() => {
-  return categorySummary.value?.tags?.items || []
+  return categorySummary?.tags?.items || []
 })
 
 const postsOfCurrentPage = computed(() => {
   const start = (currentPage.value - 1) * perPage
   const end = currentPage.value * perPage
 
-  return (posts.value || []).slice(start, end)
+  return (posts || []).slice(start, end)
 })
 
 let handlePagation = (page) => {}

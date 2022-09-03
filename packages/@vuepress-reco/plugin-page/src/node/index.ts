@@ -1,5 +1,5 @@
-import { pagePlugin } from './pagePlugin'
+import { pagePlugin } from './pagePlugin.js'
 
-export * from './pagePlugin'
+export * from './pagePlugin.js'
 
 export { pagePlugin }

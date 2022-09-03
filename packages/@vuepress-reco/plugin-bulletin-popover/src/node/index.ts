@@ -1,5 +1,5 @@
-import { bulletinPopoverPlugin } from './bulletinPopoverPlugin'
+import { bulletinPopoverPlugin } from './bulletinPopoverPlugin.js'
 
-export * from './bulletinPopoverPlugin'
+export * from './bulletinPopoverPlugin.js'
 
 export { bulletinPopoverPlugin }

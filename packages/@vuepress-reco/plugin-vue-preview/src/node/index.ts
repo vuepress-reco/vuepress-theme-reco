@@ -1,5 +1,5 @@
-import { vuePreviewPlugin } from './vuePreviewPlugin'
+import { vuePreviewPlugin } from './vuePreviewPlugin.js'
 
-export * from './vuePreviewPlugin'
+export * from './vuePreviewPlugin.js'
 
 export { vuePreviewPlugin }

@@ -1,5 +1,5 @@
-import { recoTheme } from "./recoTheme";
+import { recoTheme } from "./recoTheme.js";
 
-export * from './recoTheme'
+export * from './recoTheme.js'
 
 export default recoTheme

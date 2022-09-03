@@ -2,8 +2,9 @@ import * as babel from '@babel/core'
 import { fs } from '@vuepress/utils'
 import * as types from '@babel/types'
 import traverse from '@babel/traverse'
+import babelPluginSyntaxJsx from '@babel/plugin-syntax-jsx'
 import * as compiler from '@vue/compiler-sfc'
-import { getModuleResolvePath } from './module-resolver'
+import { getModuleResolvePath } from './module-resolver.js'
 
 export function analyzeDeps(absoluteFilePath) {
   let content = fs.readFileSync(absoluteFilePath, 'utf-8')
@@ -16,7 +17,7 @@ export function analyzeDeps(absoluteFilePath) {
   // @ts-ignore
   const ast = babel.transformSync(content, {
     ast: true,
-    plugins: [require('@babel/plugin-syntax-jsx')],
+    plugins: [babelPluginSyntaxJsx],
   }).ast
 
   const dependencies: Array<string> = []
@@ -34,7 +35,8 @@ export function analyzeDeps(absoluteFilePath) {
     dependencies.push(absPath)
   }
 
-  traverse(ast, {
+  //@ts-ignore
+  traverse.default(ast, {
     CallExpression(callPath) {
       const callPathNode = callPath.node
 

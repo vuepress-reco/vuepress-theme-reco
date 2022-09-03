@@ -1,5 +1,5 @@
 import { createMarkdown, Markdown } from '@vuepress/markdown'
-import { resolveHighlighter } from '@vuepress/plugin-prismjs/lib/node'
+import { resolveHighlighter } from '@vuepress/plugin-prismjs'
 
 const md: Markdown = createMarkdown()
 

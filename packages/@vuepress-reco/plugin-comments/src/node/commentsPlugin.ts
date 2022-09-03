@@ -1,5 +1,7 @@
-import { path } from '@vuepress/utils'
+import { path, getDirname } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
+
+const __dirname = getDirname(import.meta.url);
 
 export const commentsPlugin = (): Plugin => {
   return {

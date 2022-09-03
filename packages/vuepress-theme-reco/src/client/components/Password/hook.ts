@@ -1,12 +1,12 @@
 import md5 from 'md5'
 import { ref, watch, computed } from 'vue'
 import { useSiteLocaleData } from '@vuepress/client'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '../../composables'
 import { RecoThemePageData } from '../../../types'
 
 export function useSiteInfo() {
   const siteLocale = useSiteLocaleData()
-  const themeLocal = useThemeLocaleData<RecoThemePageData>()
+  const themeLocal = useThemeLocaleData()
 
   const siteBrandLogo = computed(() => themeLocal.value.logo)
   const siteBrandTitle = computed(() => siteLocale.value.title)

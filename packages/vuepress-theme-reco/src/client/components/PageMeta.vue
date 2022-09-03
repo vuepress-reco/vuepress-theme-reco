@@ -37,7 +37,7 @@ import type {
   DefaultThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
 } from '../../types'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { resolveEditLink } from '../utils'
 import Link from './Link.vue'
 import {toISODate} from "../utils/other";

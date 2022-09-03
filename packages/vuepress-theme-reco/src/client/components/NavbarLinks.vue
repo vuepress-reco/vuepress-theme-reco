@@ -20,7 +20,7 @@ import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import { isString } from '@vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables/index'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { resolveRepoType } from '../utils'
@@ -156,7 +156,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
     return [
       {
         text: 'Categories',
-        children: Object.values(categorySummary.value?.categories?.items || []).map((c) => ({
+        children: Object.values(categorySummary?.categories?.items || {}).map((c) => ({
           // @ts-ignore
           text: c.label,
           // @ts-ignore
@@ -165,7 +165,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
       },
       {
         text: 'Tags',
-        children: Object.values(categorySummary.value?.tags.items || []).map(t => ({
+        children: Object.values(categorySummary?.tags?.items || {}).map(t => ({
           // @ts-ignore
           text: t.label,
           // @ts-ignore

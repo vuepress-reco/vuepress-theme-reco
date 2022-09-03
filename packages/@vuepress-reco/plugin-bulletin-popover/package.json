@@ -11,6 +11,7 @@
   "license": "MIT",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
+  "type": "module",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -36,11 +37,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
-    "vue": "^3.2.36"
+    "@vuepress-reco/tailwindcss-config": "workspace:2.0.0-beta.33",
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/core": "2.0.0-beta.51",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
+    "vue": "^3.2.38"
   }
 }

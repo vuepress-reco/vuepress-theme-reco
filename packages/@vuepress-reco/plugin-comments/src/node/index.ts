@@ -1,5 +1,5 @@
-import { commentsPlugin } from './commentsPlugin'
+import { commentsPlugin } from './commentsPlugin.js'
 
-export * from './commentsPlugin'
+export * from './commentsPlugin.js'
 
 export { commentsPlugin }

@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import { toISODate } from '../utils/other'
 import { convertToPinyin } from '@vuepress-reco/shared'

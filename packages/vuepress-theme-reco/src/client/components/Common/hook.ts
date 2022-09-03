@@ -1,9 +1,8 @@
 import { useRouter, useRoute, NavigationHookAfter } from 'vue-router'
 import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
 import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
 import { RecoThemePageData } from '../../../types'
-import { useScrollDirection } from '../../composables'
+import { useScrollDirection, useThemeLocaleData } from '../../composables'
 
 export function useSidebar(toggleSidebar, toggleMobileMenus) {
 
@@ -30,7 +29,7 @@ export function useSidebar(toggleSidebar, toggleMobileMenus) {
 
 const SITE_PASSWORD_PASS = 'SITE_PASSWORD_PASS'
 export function usePassword() {
-  const themeLocal = useThemeLocaleData<RecoThemePageData>()
+  const themeLocal = useThemeLocaleData()
   const sitePasswordPass = ref(true)
   onMounted(() => {
     let sitePasswordPassCache = 'true'

@@ -4,4 +4,4 @@ declare module '*.vue' {
   export default comp
 }
 
-declare module '@vuepress/plugin-theme-data/lib/client'
+declare module '@vuepress/plugin-theme-data/client'

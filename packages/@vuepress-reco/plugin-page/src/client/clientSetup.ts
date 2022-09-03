@@ -5,16 +5,19 @@ import {
   postsSymbol,
 } from './composable'
 
-declare const CATEGORY_PAGINATION_POSTS: Record<string, any[]>
-declare const POSTS: Record<string, any[]>
-declare const CLASSIFICATION_SUMMARY: Record<string, any>
+declare const __POSTS__: Record<string, any[]>
+declare const __CATEGORY_SUMMARY__: Record<string, any>
+declare const __CATEGORY_PAGINATION_POSTS__: Record<string, any[]>
 
 export async function applyClientSetup () {
-  const posts = computed(() => POSTS)
-  const categorySummary = computed(() => CLASSIFICATION_SUMMARY)
-  const categoryPosts = computed(() => CATEGORY_PAGINATION_POSTS)
+  //@ts-ignore
+  if (__VUEPRESS_SSR__) return
+
+  const posts = __POSTS__
+  const categorySummary = __CATEGORY_SUMMARY__
+  const categoryPosts = __CATEGORY_PAGINATION_POSTS__
 
   provide(postsSymbol, posts)
-  provide(categoryPaginationPostsSymbol, categoryPosts)
   provide(categorySummarySymbol, categorySummary)
+  provide(categoryPaginationPostsSymbol, categoryPosts)
 }

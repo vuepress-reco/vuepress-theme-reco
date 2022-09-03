@@ -1,5 +1,5 @@
 import { ref, onMounted, computed } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 export function useVisible() {
   const themeLocal = useThemeLocaleData()

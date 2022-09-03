@@ -1,15 +1,16 @@
 import { createPage } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-const { isEmptyPlainObject, convertToPinyin } = require('@vuepress-reco/shared')
+import { isEmptyPlainObject, convertToPinyin } from '@vuepress-reco/shared'
 import {
-  CategoryPaginationPost,
-  CategoryPageOptions,
   CategoryPageData,
-  PagePluginOptions,
+  CategoryPageOptions,
+  CategoryPaginationPost,
   FrontmatterKey,
-  PageOptions,
   ItemKey,
   OrdinaryPageOptions,
+  PageOptions,
+  PagePluginOptions,
+  ReleasedPage,
 } from '../types'
 
 // 获取时间的数字类型
@@ -31,7 +32,7 @@ export function compareDate (prev, next) {
 export default class PageCreater {
   app: App
   options: PagePluginOptions
-  private blogsToBeReleased: Array<Page>
+  private blogsToBeReleased: Array<ReleasedPage>
   private categoryPageData: CategoryPageData
   private _extendedPages: Promise<Page>[]
   private frontmatterKeys: FrontmatterKey[]
@@ -46,9 +47,18 @@ export default class PageCreater {
   }
 
   parse() {
+    this.parseChineseInPagePathToPinyin()
     this.parsePageOptions()
     this.setBlogsToCategoryPageData()
     this.createExtendedPages()
+  }
+
+  // 将 path 中的中文转换成拼音
+  private parseChineseInPagePathToPinyin() {
+    this.app.pages = this.app.pages.map((page: Page) => {
+      page.path = convertToPinyin(decodeURIComponent(page.path))
+      return page
+    })
   }
 
   // 解析 page 配置
@@ -74,7 +84,6 @@ export default class PageCreater {
 
     this.categoryPageData[key] = {
       pageSize: pageSize || 10, // 分页默认为 10
-      extendedPages: [],
       items: {},
       layout,
     }
@@ -93,12 +102,6 @@ export default class PageCreater {
 
   // 将博客页面注入进分类页面数据
   private setBlogsToCategoryPageData(): void {
-    // 将 path 中的中文转换成拼音
-    this.app.pages = this.app.pages.map((page: Page) => {
-      page.path = convertToPinyin(decodeURIComponent(page.path))
-      return page
-    })
-
     // @ts-ignore
     const { autoSetBlogCategories } = this.app.options.theme
 
@@ -130,10 +133,14 @@ export default class PageCreater {
           return compareDate(prev, next)
         }
       })
+      .map((page: Page) => {
+        const { title, frontmatter, excerpt, path } = page
+        return { title, frontmatter, excerpt, path }
+      })
 
     this.blogsToBeReleased = blogsToBeReleased
 
-    blogsToBeReleased.forEach((page: Page) => {
+    blogsToBeReleased.forEach((page: ReleasedPage, index) => {
       const categoryKeysOfFrontmatter = Object.keys(page.frontmatter).filter(
         (key: string) => {
           return this.frontmatterKeys.includes(key)

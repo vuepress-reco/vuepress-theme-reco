@@ -22,12 +22,7 @@
         </li>
       </ul>
 
-      <PostList
-        :data="categoryPosts.pages"
-        :total="categoryPostsPage"
-        :page-size="categoryPosts.pageSize"
-        :current-page="categoryPosts.currentPage"
-      />
+      <PostList :data="categoryPosts.pages" />
 
       <Pagation
         v-if="categoryPosts.totalPage > 10"
@@ -64,7 +59,7 @@ export default defineComponent({
 
       if (currentCategoryKey) {
         const { items = [] } =
-          categorySummary.value[currentCategoryKey]
+          categorySummary[currentCategoryKey]
 
         list = Object.values(items)
       }

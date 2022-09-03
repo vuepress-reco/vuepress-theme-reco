@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/lib/client'
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 const emits = defineEmits(['toggle'])
 

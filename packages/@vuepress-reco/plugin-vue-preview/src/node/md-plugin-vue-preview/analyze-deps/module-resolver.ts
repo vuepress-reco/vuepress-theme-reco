@@ -1,13 +1,14 @@
 import { fs, path } from '@vuepress/utils'
-const resolve = require('enhanced-resolve')
-const slash = require('slash2')
+import * as resolve from 'enhanced-resolve'
+import slash from 'slash2'
 
 const DEFAULT_EXT = ['.tsx', '.jsx', '.js', '.ts', '.vue']
 
 export function getModuleResolvePath({ basePath, sourcePath, extensions = DEFAULT_EXT, silent = null }) {
   try {
     return slash(
-      resolve.create.sync({
+      // @ts-ignore
+      resolve.default.create.sync({
         extensions,
         symlinks: false,
         mainFiles: ['index', 'package.json'],

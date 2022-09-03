@@ -1,4 +1,4 @@
-import { colors } from './custom-colors'
+import { colors } from './custom-colors.js'
 
 export const tailwindcssConfig = {
   content: [

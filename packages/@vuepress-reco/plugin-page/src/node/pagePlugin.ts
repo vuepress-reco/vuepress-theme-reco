@@ -1,7 +1,9 @@
 import type { Plugin, App } from '@vuepress/core'
-import { path } from '@vuepress/utils'
+import { path, getDirname } from '@vuepress/utils'
 import type { PagePluginOptions } from '../types'
-import PageCreater from './PageCreater'
+import PageCreater from './PageCreater.js'
+
+const __dirname = getDirname(import.meta.url);
 
 export const pagePlugin = (options: PagePluginOptions): (app: App) => Plugin => {
   return (app: App): Plugin => {
@@ -12,10 +14,9 @@ export const pagePlugin = (options: PagePluginOptions): (app: App) => Plugin => 
       // define 需要在 onInitialized 生命周期执行后执行，需要使用函数表达式，而不是对象
       define: (app) => {
         return {
-          CATEGORY_PAGINATION_POSTS:
-            pageCreater.categoryPaginationPosts,
-          CLASSIFICATION_SUMMARY: pageCreater.categorySummary,
-          POSTS: pageCreater.posts,
+          __POSTS__: pageCreater.posts,
+          __CATEGORY_SUMMARY__: pageCreater.categorySummary,
+          __CATEGORY_PAGINATION_POSTS__: pageCreater.categoryPaginationPosts,
         }
       },
 

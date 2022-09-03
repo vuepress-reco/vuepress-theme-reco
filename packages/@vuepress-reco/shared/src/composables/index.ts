@@ -1,1 +1,1 @@
-export * from './useDarkMode'
+export * from './useDarkMode.js'
