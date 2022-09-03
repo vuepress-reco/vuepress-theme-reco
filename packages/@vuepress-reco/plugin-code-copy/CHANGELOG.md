@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.34
+
+### Major Changes
+
+- adapt to vuepress@2.0.0-beta.51
+
 ## 2.0.0-beta.33
 
 ### Patch Changes

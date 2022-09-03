@@ -2,19 +2,20 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.32",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.32",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.32",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.32",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.32",
-    "@vuepress-reco/shared": "2.0.0-beta.32",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.32",
-    "vuepress-theme-reco": "2.0.0-beta.32"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.33",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.33",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.33",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.33",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.33",
+    "@vuepress-reco/shared": "2.0.0-beta.33",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.33",
+    "vuepress-theme-reco": "2.0.0-beta.33"
   },
   "changesets": [
     "chatty-badgers-cheer",
     "chilled-tools-return",
     "eleven-feet-explode",
+    "empty-nails-work",
     "four-mirrors-shop",
     "funny-coins-kneel",
     "funny-teachers-begin",
