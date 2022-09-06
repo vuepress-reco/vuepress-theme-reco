@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-beta.36
+
+### Patch Changes
+
+- adjust the version number
+
 ## 2.0.0-beta.35
 
 ### Major Changes
