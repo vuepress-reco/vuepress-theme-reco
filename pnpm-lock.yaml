@@ -72,7 +72,7 @@ importers:
 
   packages/@vuepress-reco/plugin-bulletin-popover:
     specifiers:
-      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.33
+      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.35
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/core': 2.0.0-beta.51
       '@vuepress/plugin-theme-data': 2.0.0-beta.51
@@ -145,7 +145,7 @@ importers:
       '@vue/compiler-sfc': ^3.2.29
       '@vuepress/core': 2.0.0-beta.51
       '@vuepress/markdown': 2.0.0-beta.51
-      '@vuepress/plugin-prismjs': ^2.0.0-beta.51
+      '@vuepress/plugin-prismjs': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
       enhanced-resolve: ^5.8.3
       slash2: ^2.0.0
@@ -191,7 +191,7 @@ importers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/core': 2.0.0-beta.51
       '@vuepress/plugin-active-header-links': 2.0.0-beta.51
-      '@vuepress/plugin-back-to-top': ^2.0.0-beta.51
+      '@vuepress/plugin-back-to-top': 2.0.0-beta.51
       '@vuepress/plugin-container': 2.0.0-beta.51
       '@vuepress/plugin-external-link-icon': 2.0.0-beta.51
       '@vuepress/plugin-git': 2.0.0-beta.51
@@ -1769,7 +1769,7 @@ packages:
     dev: true
 
   /@types/superagent/4.1.15:
-    resolution: {integrity: sha512-iiXaOL2wSbnSY4qg0mFPWJHL9iwyEsoNYwaHF2w58/fsVAQJlj+KUfFAFZu+nzbz+b7dUprJEAc+O9vhHHhQTA==, tarball: '@types/superagent/-/superagent-4.1.14.tgz'}
+    resolution: {integrity: sha512-iiXaOL2wSbnSY4qg0mFPWJHL9iwyEsoNYwaHF2w58/fsVAQJlj+KUfFAFZu+nzbz+b7dUprJEAc+O9vhHHhQTA==, tarball: '@types/superagent/-/superagent-4.1.15.tgz'}
     deprecated: '[WARNING] Use 4.1.14 instead of 4.1.15, reason: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/58445'
     dependencies:
       '@types/cookiejar': 2.1.2
