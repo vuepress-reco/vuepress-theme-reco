@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.39
+
+### Patch Changes
+
+- copy md5-es to shared pkg
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.39
+
 ## 2.0.0-beta.38
 
 ### Patch Changes

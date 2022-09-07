@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.39
+
+### Patch Changes
+
+- copy md5-es to shared pkg
+
 ## 2.0.0-beta.38
 
 ### Patch Changes
