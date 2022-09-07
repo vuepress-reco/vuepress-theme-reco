@@ -1,5 +1,5 @@
-import md5 from 'md5-es'
 import { ref, watch, computed } from 'vue'
+import { md5 } from '@vuepress-reco/shared'
 import { useSiteLocaleData } from '@vuepress/client'
 import { useThemeLocaleData } from '../../composables'
 import { RecoThemePageData } from '../../../types'
@@ -27,7 +27,7 @@ export function useHandlePassword(sitePassword, emit) {
 
   watch(password, newVal => {
     if (newVal.length !== 6) return
-    if (sitePassword.value.includes(md5.hash(newVal))) {
+    if (sitePassword.value.includes(md5(newVal))) {
       lockIcon.value = 'LockOpen'
       lockText.value = '密码正确，请重稍后！'
       setTimeout(() => {
