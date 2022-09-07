@@ -2,19 +2,20 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.35",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.35",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.35",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.35",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.35",
-    "@vuepress-reco/shared": "2.0.0-beta.35",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.35",
-    "vuepress-theme-reco": "2.0.0-beta.35"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.36",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.36",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.36",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.36",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.36",
+    "@vuepress-reco/shared": "2.0.0-beta.36",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.36",
+    "vuepress-theme-reco": "2.0.0-beta.36"
   },
   "changesets": [
     "chatty-badgers-cheer",
     "chilled-tools-return",
     "cold-pianos-wonder",
+    "dull-socks-pull",
     "eleven-feet-explode",
     "empty-nails-work",
     "four-mirrors-shop",
