@@ -1,5 +1,13 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.38
+
+### Patch Changes
+
+- replace md5 to md5-es
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.38
+
 ## 2.0.0-beta.37
 
 ### Patch Changes
