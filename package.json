@@ -62,6 +62,7 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.2.7",
     "md5": "2.3.0",
+    "md5-es": "1.8.2",
     "prettier": "^2.2.1",
     "prettier-config-vuepress": "^1.2.0",
     "rimraf": "3.0.2",

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import md5 from 'md5'
+import md5 from 'md5-es'
 export default {
   data () {
     return {
@@ -16,7 +16,7 @@ export default {
   computed: {
     md5Str () {
       const pw = this.password
-      return pw === '' ? '' : md5(this.password)
+      return pw === '' ? '' : md5.hash(this.password)
     }
   }
 }
