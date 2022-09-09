@@ -1,9 +1,4 @@
 import { computed, provide } from 'vue'
-import {
-  categoryPaginationPostsSymbol,
-  categorySummarySymbol,
-  postsSymbol,
-} from './composable'
 
 declare const __POSTS__: Record<string, any[]>
 declare const __CATEGORY_SUMMARY__: Record<string, any>
@@ -13,11 +8,7 @@ export async function applyClientSetup () {
   //@ts-ignore
   if (__VUEPRESS_SSR__) return
 
-  const posts = __POSTS__
-  const categorySummary = __CATEGORY_SUMMARY__
-  const categoryPosts = __CATEGORY_PAGINATION_POSTS__
-
-  provide(postsSymbol, posts)
-  provide(categorySummarySymbol, categorySummary)
-  provide(categoryPaginationPostsSymbol, categoryPosts)
+  provide('__POSTS__', __POSTS__);
+    provide('__CATEGORY_SUMMARY__', __CATEGORY_SUMMARY__);
+    provide('__CATEGORY_PAGINATION_POSTS__', __CATEGORY_PAGINATION_POSTS__);
 }
