@@ -41,7 +41,7 @@ export default defineUserConfig({
 如果 valine 的获取评论的接口报 `404` 错误的话，不用担心，这是因为你还没有添加评论，只要存在 1 条评论，就不会报错了，这是 `leanCloud` 的请求处理操作而已；
 :::
 
-### Waline
+### Waline <Badge text="暂时移除" type="danger" />
 
 ```ts
 // .vuepress/config.ts

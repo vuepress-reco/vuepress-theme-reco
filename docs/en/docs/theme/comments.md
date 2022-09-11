@@ -40,7 +40,7 @@ For other parameters, please refer to [Valine official website](https://valine.j
 If valine's interface for getting comments reports a `404` error, don't worry, this is because you haven't added a comment, as long as there is 1 comment, no error will be reported, this is just the request processing operation of `leanCloud`;
 :::
 
-### Waline
+### Waline <Badge text="Temporarily removed" type="danger" />
 
 ```ts
 // .vuepress/config.ts
