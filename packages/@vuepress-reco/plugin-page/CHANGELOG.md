@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.41
+
+### Patch Changes
+
+- fix bug where pageData could not be injected
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.41
+
 ## 2.0.0-beta.40
 
 ### Patch Changes

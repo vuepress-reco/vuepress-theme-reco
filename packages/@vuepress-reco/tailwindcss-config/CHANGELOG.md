@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-beta.41
+
+### Patch Changes
+
+- fix bug where pageData could not be injected
+
 ## 2.0.0-beta.40
 
 ### Patch Changes
