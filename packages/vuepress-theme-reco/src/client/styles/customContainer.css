@@ -1,17 +1,17 @@
 .custom-container {
-  @apply relative my-6 pl-12 pr-4 break-all;
+  @apply relative my-6 px-6 py-4 break-all;
   > svg {
     @apply absolute top-4 left-4 w-7 font-bold;
   }
   .custom-container-title {
-    @apply mt-3.5 mb-0 font-bold;
+    @apply my-0 pl-6 font-bold;
   }
   &.tip, &.info {
     @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
     .custom-container-title, svg {
       @apply text-reco-container-info-border;
     }
-    code {
+    > p > code {
       @apply bg-reco-container-info-border/20 !important;
     }
   }
@@ -20,7 +20,7 @@
     .custom-container-title, svg {
       @apply text-reco-container-warning-border;
     }
-    code {
+    > p > code {
       @apply bg-reco-container-warning-border/20 !important;
     }
   }
@@ -29,16 +29,16 @@
     .custom-container-title, svg {
       @apply text-reco-container-danger-border;
     }
-    code {
+    > p > code {
       @apply bg-reco-container-danger-border/20 !important;
     }
   }
   &.details {
-    @apply pl-6 py-4 rounded bg-block border-block;
+    @apply rounded bg-block border-block;
     .custom-container-title {
-      @apply mt-0 cursor-pointer;
+      @apply mt-0 pl-0 cursor-pointer;
     }
-    code {
+    > p > code {
       @apply bg-black/5 !important;
       @apply dark:bg-black/20;
     }
