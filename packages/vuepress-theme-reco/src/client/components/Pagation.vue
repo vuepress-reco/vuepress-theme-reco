@@ -2,49 +2,58 @@
   <div class="pagation-container">
     <span
       class="jump"
-      v-show="currentPage > 1"
+      v-if="currentPage > 1"
       @click="goPrev"
       unselectable="on"
+      key="left"
     >
       <Xicons icon="ChevronsLeft" :iconSize="16" />
     </span>
     <span
-      v-show="efont"
+      v-if="efont"
       class="jump"
+      key="page-one"
       @click="jumpPage(1)"
     >1</span>
     <span
       class="ellipsis"
-      v-show="efont"
+      v-if="efont"
+      key="ellipsis-front"
     >...</span>
     <span
       class="jump"
       v-for="num in indexs"
-      :key="num"
+      :key="`page-${num}`"
       :class="{active:currentPage == num}"
       @click="jumpPage(num)"
     >{{num}}</span>
     <span
       class="ellipsis"
-      v-show="efont && currentPage < tp - 4"
+      key="ellipsis-back"
+      v-if="efont && currentPage < tp - 4"
     >...</span>
     <span
-      v-show="efont && currentPage < tp - 4"
+      v-if="efont && currentPage < tp - 4"
       class="jump"
+      key="page-lastest"
       @click="jumpPage(tp)"
     >{{tp}}</span>
     <span
       class="jump"
-      v-show="currentPage < tp"
+      key="right"
+      v-if="currentPage < tp"
       @click="goNext"
     >
       <Xicons icon="ChevronsRight" :iconSize="16" />
     </span>
-    <span class="jumpinput">
+    <span
+      class="jumpinput"
+      key="input">
       <input type="text" v-model="targetPage">
     </span>
     <span
-      class="jump gobtn"
+      class="jump"
+      key="go"
       @click="jumpPage(targetPage)"
     >Go</span>
   </div>

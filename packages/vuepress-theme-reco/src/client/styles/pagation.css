@@ -13,9 +13,8 @@
     }
   }
   .jumpinput {
-    @apply w-16;
     input {
-      @apply outline-none w-full text-reco-text-lightmode;
+      @apply w-16 outline-none text-reco-text-lightmode;
     }
   }
 }
