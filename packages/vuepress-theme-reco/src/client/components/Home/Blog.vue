@@ -68,13 +68,13 @@ if (!__VUEPRESS_SSR__) {
   handlePagation = (page) => {
     currentPage.value = page
 
-    if (blogContentTop.value === 0) {
-      const blogContent = document.querySelector('.home-blog-content')
-      if (blogContent) blogContentTop.value = blogContent.getBoundingClientRect().top
-    }
-
     setTimeout(() => {
-      window.scrollTo({ left: 0, top: -blogContentTop.value, behavior: 'smooth' })
+      if (blogContentTop.value === 0) {
+        const blogContent = document.querySelector('.home-blog-content')
+        if (blogContent) blogContentTop.value = blogContent.getBoundingClientRect().top
+      }
+
+      window.scrollTo({ left: 0, top: -blogContentTop.value - 250, behavior: 'smooth' })
     }, 100)
   }
 }
