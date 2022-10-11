@@ -26,4 +26,6 @@
 @import 'toggleDarkModeButton.css';
 @import 'toggleSidebarButton.css';
 @import '404.css';
-@import '@vuepress/plugin-palette/style';
+
+/* vite:css 报错，迁移至 resolveStyles.ts */
+/* @import '@vuepress/plugin-palette/style'; */
