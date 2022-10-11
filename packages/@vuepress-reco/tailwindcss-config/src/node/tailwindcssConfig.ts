@@ -1,10 +1,7 @@
 import { colors } from './custom-colors.js'
+import path from 'path'
 
 export const tailwindcssConfig = {
-  content: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
-  ],
   darkMode: 'class',
   theme: {
     extend: {
