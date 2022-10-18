@@ -48,7 +48,7 @@ date: 2021-11-06 23:36:01
     - text: 按钮文案
     - link: 按钮地址
     - type: 按钮风格，默认带背景色，如果不需要可以设置为 'plain'
-  - socialLinks：社交地址，社交 icon 请到 [Xions](https://www.xicons.org/#/zh-CN) 页面的 tabler、fa 下获取，复制名称即可
+  - socialLinks：社交地址，社交 icon 请到 [Xicons](https://www.xicons.org/#/zh-CN) 页面的 tabler、fa 下获取，复制名称即可
     - icon: 图标
     - link: 按钮地址
 - 案例：
@@ -57,7 +57,7 @@ date: 2021-11-06 23:36:01
 ### blog
 - 描述：用于配置 Blog 模块
 - frontmatter 配置：
-  - socialLinks：社交地址，社交 icon 请到 [Xions](https://www.xicons.org/#/zh-CN) 页面的 tabler、fa 下获取，复制名称即可
+  - socialLinks：社交地址，社交 icon 请到 [Xicons](https://www.xicons.org/#/zh-CN) 页面的 tabler、fa 下获取，复制名称即可
     - icon: 图标
     - link: 按钮地址
 - themeConfig 配置：
@@ -115,7 +115,7 @@ bannerBrand: # bannerBrand 模块的配置
     - { text: Guide, link: '/docs/guide/introduce' }
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
 blog: # blog 模块的配置
-  socialLinks: # 社交 icon 请到 [Xions](https://www.xicons.org/#/zh-CN) 页面的 tabler 下获取，复制名称即可
+  socialLinks: # 社交 icon 请到 [Xicons](https://www.xicons.org/#/zh-CN) 页面的 tabler 下获取，复制名称即可
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
     - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # 底部模块的配置
