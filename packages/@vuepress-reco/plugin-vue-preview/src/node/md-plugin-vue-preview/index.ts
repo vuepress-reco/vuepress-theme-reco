@@ -82,22 +82,14 @@ function renderDemoOpen({ filePath, absoluteFilePath }) {
 
   const deps = analyzeDeps(absoluteFilePath)
 
-    if (!deps.length) {
-      return (
-        template +
-        `
-  ${md.render(`@[code](${absoluteFilePath})`)}
-  `)
-    }
-
-      const codeGroups = `${[absoluteFilePath]
-        .concat(deps)
-        .map((absPath, index) => {
-          return `<CodeGroupItem title="${path.basename(absPath)}">
-      ${md.render(`@[code](${absPath})`)}
-      </CodeGroupItem>`
-        })
-        .join('')}`
+  const codeGroups = `${[absoluteFilePath]
+    .concat(deps)
+    .map((absPath, index) => {
+      return `<CodeGroupItem title="${path.basename(absPath)}">
+  ${md.render(`@[code](${absPath})`)}
+  </CodeGroupItem>`
+    })
+    .join('')}`
 
   return template + codeGroups + '' + '<!-- '
 
