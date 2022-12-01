@@ -19,6 +19,7 @@
         :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
         icon-size="20"
         text-size="14"
+        link="javascript:void(0)"
       />
     </div>
   </footer>

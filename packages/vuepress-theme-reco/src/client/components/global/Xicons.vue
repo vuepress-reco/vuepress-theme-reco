@@ -69,7 +69,7 @@ export default defineComponent<PropsType>({
     },
     link: {
       type: String,
-      default: 'javascript:void(0)',
+      default: '',
     },
     target: {
       type: String,

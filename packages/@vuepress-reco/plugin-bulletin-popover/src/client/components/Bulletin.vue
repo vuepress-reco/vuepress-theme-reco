@@ -8,6 +8,7 @@
         :text="bulletin?.title || '公告'"
         text-color="#fff"
         text-size="16"
+        link="javascript:void(0)"
       />
       <!-- <span>公告</span> -->
       <i class="btn-close" @click="closeBulletinPopover">
@@ -19,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue-demi'
 import { useVisible, useHandleNodes } from './hook'
 
 const { visible, bulletin, closeBulletinPopover } = useVisible()

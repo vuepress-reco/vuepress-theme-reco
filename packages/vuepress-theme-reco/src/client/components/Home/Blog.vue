@@ -11,7 +11,7 @@
     <section class="info-wrapper">
       <PersonalInfo />
 
-      <h4 class="module-title"><Xicons icon="Folder" text="Categories" /></h4>
+      <h4 class="module-title"><Xicons icon="Folder" text="Categories" link="javascript:void(0)"/></h4>
       <ul class="category-wrapper">
         <li class="category-item" v-for="(value, key, index) in categories" :key="index">
           <router-link class="category-link" :to="`/categories/${key}/1/`">
@@ -21,7 +21,7 @@
         </li>
       </ul>
 
-      <h4 class="module-title"><Xicons icon="Tag" text="Tags" /></h4>
+      <h4 class="module-title"><Xicons icon="Tag" text="Tags" link="javascript:void(0)"/></h4>
       <ul class="tag-wrapper">
         <li class="tag-item" v-for="(value, key, index) in tags" :key="index" :style="{ borderColor: createOneColor() }">
           <router-link class="tag-link" :to="`/tags/${key}/1/`">{{ value.label }}</router-link>
