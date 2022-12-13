@@ -17,12 +17,12 @@
     >1</span>
     <span
       class="ellipsis"
-      v-if="showStartFakePageNum && indexs[0] > 2"
+      v-if="showStartFakePageNum && indexes[0] > 2"
       key="ellipsis-front"
     >...</span>
     <span
       class="jump"
-      v-for="num in indexs"
+      v-for="num in indexes"
       :key="`page-${num}`"
       :class="{active:currentPage == num}"
       @click="jumpPage(num)"
@@ -30,7 +30,7 @@
     <span
       class="ellipsis"
       key="ellipsis-back"
-      v-if="showLastFakePageNum && (tp - indexs.at(-1))> 1"
+      v-if="showLastFakePageNum && (tp - (indexes.at(-1) as number) > 1)"
     >...</span>
     <span
       v-if="showLastFakePageNum"
@@ -59,8 +59,8 @@
   </div>
 </template>
 
-<script setup>
-import { computed, ref, toRefs } from 'vue'
+<script setup lang="ts">
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   currentPage: {
@@ -88,24 +88,21 @@ const tp = computed(() => {
   return Math.ceil(props.total / props.pageSize)
 })
 
-const show = computed(() => {
-  return props.tp && props.tp != 1
-})
 
 const showStartFakePageNum = computed(() => {
-  return efont.value && !indexs.value.includes(1)
+  return efont.value && !indexes.value.includes(1)
 })
 
 const showLastFakePageNum = computed(() => {
-  return efont.value && !indexs.value.includes(tp.value)
+  return efont.value && !indexes.value.includes(tp.value)
 })
 
 const efont = computed(() => {
   return tp.value > 7
 })
 
-const indexs = computed(() => {
-  const ar = []
+const indexes = computed(() => {
+  const ar : number[] = []
   let left = 1
   let right = tp.value
   if (tp.value >= 7) {
