@@ -5,8 +5,10 @@ export type DarkModeRef = WritableComputedRef<boolean>
 
 export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol('darkMode')
 
+declare const __VUEPRESS_DEV__: boolean
+
 export function useDarkMode() {
-  const isDarkMode = inject(darkModeSymbol)
+  const isDarkMode = inject(__VUEPRESS_DEV__ ? darkModeSymbol : '')
   if (!isDarkMode) {
     throw new Error('useDarkMode() is called without provider.')
   }

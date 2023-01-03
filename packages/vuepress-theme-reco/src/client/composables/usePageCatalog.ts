@@ -4,6 +4,8 @@ import { usePageData } from '@vuepress/client'
 import type { PageHeader } from '@vuepress/client'
 import type { ResolvedSidebarItem } from '../../types'
 
+declare const __VUEPRESS_DEV__: boolean
+
 export interface ResolvedPageCatalog {
   [prop: string]: any
 }
@@ -11,7 +13,7 @@ export interface ResolvedPageCatalog {
 export type CatalogRef = ComputedRef<ResolvedPageCatalog[]>
 
 export const catalogSymbol: InjectionKey<CatalogRef> =
-  Symbol('catalog')
+  Symbol(__VUEPRESS_DEV__ ? 'catalog' : '')
 
 export const usePageCatalog = (): CatalogRef => {
   const catalog = inject(catalogSymbol)
