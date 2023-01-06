@@ -14,13 +14,13 @@ import {
 } from '../types'
 
 // 获取时间的数字类型
-export function formatDate (date) {
+export function formatDate(date) {
   const dateNum = !date ? 0 : new Date(date).getTime()
   return dateNum
 }
 
 // 比对时间
-export function compareDate (prev, next) {
+export function compareDate(prev, next) {
   const prevDate = formatDate(prev.frontmatter.date)
   const nextDate = formatDate(next.frontmatter.date)
 
@@ -90,7 +90,7 @@ export default class PageCreater {
   }
 
   // 解析常规页面的配置
-  private _parseOrdinaryPageOptions(option: OrdinaryPageOptions):void {
+  private _parseOrdinaryPageOptions(option: OrdinaryPageOptions): void {
     const { path, layout } = option
     const page = createPage(this.app, {
       frontmatter: { layout },
@@ -108,10 +108,10 @@ export default class PageCreater {
     const blogsToBeReleased = this.app.pages
       .filter((page: Page) => {
         const publishFlag = !(
-          !/.+\/blogs\/(.+)\/.+\.md$/.test(page.filePath || '')
-            || page?.frontmatter?.publish === false
-            || page?.title === ''
-          )
+          !/.+\/blogs\/(.+)\/.+\.md$/.test(page.filePath || '') ||
+          page?.frontmatter?.publish === false ||
+          page?.title === ''
+        )
 
         if (autoSetBlogCategories && publishFlag) {
           this._setBlogCategories(page)
@@ -124,7 +124,9 @@ export default class PageCreater {
         const nextSticky = next.frontmatter.sticky as number
 
         if (prevSticky && nextSticky) {
-          return prevSticky == nextSticky ? compareDate(prev, next) : (prevSticky - nextSticky)
+          return prevSticky == nextSticky
+            ? compareDate(prev, next)
+            : prevSticky - nextSticky
         } else if (prevSticky && !nextSticky) {
           return -1
         } else if (!prevSticky && nextSticky) {
@@ -134,8 +136,8 @@ export default class PageCreater {
         }
       })
       .map((page: Page) => {
-        const { title, frontmatter, excerpt, path } = page
-        return { title, frontmatter, excerpt, path }
+        const { title, frontmatter, path } = page
+        return { title, frontmatter, path }
       })
 
     this.blogsToBeReleased = blogsToBeReleased
@@ -149,7 +151,9 @@ export default class PageCreater {
 
       categoryKeysOfFrontmatter.forEach((key: FrontmatterKey) => {
         const valueOfCurrentKey = page.frontmatter[key]
-        const categoryValues = Array.isArray(valueOfCurrentKey) ? valueOfCurrentKey : [valueOfCurrentKey]
+        const categoryValues = Array.isArray(valueOfCurrentKey)
+          ? valueOfCurrentKey
+          : [valueOfCurrentKey]
 
         if (isEmptyPlainObject(this.categoryPageData[key].items)) {
           this.categoryPageData[key].items = categoryValues.reduce(
@@ -157,40 +161,43 @@ export default class PageCreater {
               prev[convertToPinyin(current)] = {
                 pages: [page],
                 length: 1,
-                label: current
+                label: current,
               }
               return prev
             },
             {}
           )
         } else {
-          categoryValues?.map(value => String(value)).forEach((value: ItemKey) => {
-            if (!value) return
+          categoryValues
+            ?.map((value) => String(value))
+            .forEach((value: ItemKey) => {
+              if (!value) return
 
-            const categoryPageDataItem = this.categoryPageData[key].items[convertToPinyin(value)]
+              const categoryPageDataItem =
+                this.categoryPageData[key].items[convertToPinyin(value)]
 
-            if (!categoryPageDataItem) {
-              this.categoryPageData[key].items[convertToPinyin(value)] = {
-                pages: [page],
-                length: 1,
-                label: value
+              if (!categoryPageDataItem) {
+                this.categoryPageData[key].items[convertToPinyin(value)] = {
+                  pages: [page],
+                  length: 1,
+                  label: value,
+                }
+              } else {
+                const { pages, length, label } = categoryPageDataItem
+                this.categoryPageData[key].items[convertToPinyin(value)] = {
+                  length: length + 1,
+                  pages: [...pages, page],
+                  label,
+                }
               }
-            } else {
-              const { pages, length, label } = categoryPageDataItem
-              this.categoryPageData[key].items[convertToPinyin(value)] = {
-                length: length + 1,
-                pages: [...pages, page],
-                label
-              }
-            }
-          })
+            })
         }
       })
     })
   }
 
   // 所有拓展的页面
-  private createExtendedPages(){
+  private createExtendedPages() {
     this._createCategoryPaginationPages()
     this._createBlogPaginationPages()
   }
@@ -201,20 +208,18 @@ export default class PageCreater {
       const { items, layout, pageSize } = this.categoryPageData[key]
       const categoryValues = Object.keys(items)
 
-      categoryValues.forEach(
-        (value, index) => {
-          const totalCount = items[convertToPinyin(value)].length
-          const totalPage = Math.ceil(totalCount / pageSize)
+      categoryValues.forEach((value, index) => {
+        const totalCount = items[convertToPinyin(value)].length
+        const totalPage = Math.ceil(totalCount / pageSize)
 
-          Array.from({ length: totalPage }).forEach((item, currentPage) => {
-            const page = createPage(this.app, {
-              path: `/${key}/${convertToPinyin(value)}/${currentPage + 1}/`,
-              frontmatter: { layout },
-            })
-            this._extendedPages.push(page)
+        Array.from({ length: totalPage }).forEach((item, currentPage) => {
+          const page = createPage(this.app, {
+            path: `/${key}/${convertToPinyin(value)}/${currentPage + 1}/`,
+            frontmatter: { layout },
           })
-        }
-      )
+          this._extendedPages.push(page)
+        })
+      })
     })
   }
 
@@ -233,7 +238,9 @@ export default class PageCreater {
 
   // 设置类别
   private _setBlogCategories(page) {
-    const blogCategory = ((page.filePath || '') as string).match(/.+\/blogs\/(.+)\/.+\.md$/)
+    const blogCategory = ((page.filePath || '') as string).match(
+      /.+\/blogs\/(.+)\/.+\.md$/
+    )
     if (blogCategory) page.frontmatter.categories = [blogCategory[1]]
   }
 
@@ -242,10 +249,7 @@ export default class PageCreater {
     return this._extendedPages
   }
 
-  get categoryPaginationPosts(): Record<
-    string,
-    CategoryPaginationPost
-  > {
+  get categoryPaginationPosts(): Record<string, CategoryPaginationPost> {
     let data = {}
 
     this.frontmatterKeys.forEach((key: string) => {
@@ -259,11 +263,7 @@ export default class PageCreater {
         const paginationDataOfValue = Array.from({
           length: totalPage,
         }).reduce(
-          (
-            prev: Record<string, CategoryPaginationPost>,
-            current,
-            index
-          ) => {
+          (prev: Record<string, CategoryPaginationPost>, current, index) => {
             const currentPage = index + 1
 
             prev[`/${key}/${convertToPinyin(value)}/${currentPage}/`] = {
@@ -272,7 +272,10 @@ export default class PageCreater {
               currentPage,
               currentCategoryKey: key,
               currentCategoryValue: value,
-              pages: pages.slice(pageSize * (currentPage - 1), pageSize * currentPage)
+              pages: pages.slice(
+                pageSize * (currentPage - 1),
+                pageSize * currentPage
+              ),
             }
             return prev
           },
