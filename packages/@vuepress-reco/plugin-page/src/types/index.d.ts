@@ -1,4 +1,4 @@
-import { PageFrontmatter } from "@vuepress/client"
+import { PageFrontmatter } from '@vuepress/client'
 
 export type CategoryPageOptions = {
   type: 'category'
@@ -20,9 +20,8 @@ export type PagePluginOptions = Array<PageOptions>
 export type ItemKey = string
 
 export type ReleasedPage = {
-  title: string,
-  excerpt: string
-  frontmatter: PageFrontmatter,
+  title: string
+  frontmatter: PageFrontmatter
   path: string
 }
 
@@ -35,7 +34,7 @@ export type CategoryPageData = Record<
       ItemKey,
       {
         pages: ReleasedPage[]
-        length: number,
+        length: number
         label: string
       }
     >
