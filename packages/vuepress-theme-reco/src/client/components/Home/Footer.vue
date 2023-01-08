@@ -8,6 +8,7 @@
         :text="`vuepress-theme-reco@${version}`"
       />
     </span>
+
     <span v-if="frontmatter?.footer?.record">
       <Xicons
         icon="ShieldCheck"
@@ -16,6 +17,7 @@
         target="_blank"
       />
     </span>
+
     <span>
       <Xicons icon="Copyright">
         <a v-if="themeLocal.author">{{themeLocal.author}}</a>&nbsp;&nbsp;
@@ -23,14 +25,16 @@
         {{new Date().getFullYear()}}
       </Xicons>
     </span>
+
     <span v-show="showAccessNumber">
       <Xicons icon="Eye">
         <ValineViews idVal="/" :numStyle="{}" />
       </Xicons>
     </span>
+
     <p class="cyber-security" v-if="frontmatter?.footer?.cyberSecurityRecord">
       <img src="../../assets/cyberSecurityRecord.png" alt="">
-      <a :href="frontmatter?.footer?.cyberSecurityLink || '#'">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
+      <a :href="frontmatter?.footer?.cyberSecurityLink || '#'" target="_blank">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
     </p>
 
     <Comments :hide-comments="true" />
