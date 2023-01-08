@@ -8,6 +8,7 @@
     "build": "pnpm build:all && pnpm build:copy",
     "build:all": "pnpm -r --stream build",
     "build:copy": "pnpm --parallel --stream copy",
+    "build:tsc": "tsc",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
     "clean": "pnpm --parallel --stream clean",
     "commit": "git add . && git-cz",
