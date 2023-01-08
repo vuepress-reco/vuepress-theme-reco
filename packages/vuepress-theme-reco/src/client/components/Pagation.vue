@@ -1,5 +1,5 @@
 <template>
-  <div class="pagation-container">
+  <div class="pagation-container" v-if="tp > 1">
     <span
       class="jump"
       v-if="currentPage > 1"
@@ -10,19 +10,19 @@
       <Xicons icon="ChevronsLeft" :iconSize="16" />
     </span>
     <span
-      v-if="efont"
+      v-if="showStartFakePageNum"
       class="jump"
       key="page-one"
       @click="jumpPage(1)"
     >1</span>
     <span
       class="ellipsis"
-      v-if="efont"
+      v-if="showStartFakePageNum && indexes[0] > 2"
       key="ellipsis-front"
     >...</span>
     <span
       class="jump"
-      v-for="num in indexs"
+      v-for="num in indexes"
       :key="`page-${num}`"
       :class="{active:currentPage == num}"
       @click="jumpPage(num)"
@@ -30,10 +30,10 @@
     <span
       class="ellipsis"
       key="ellipsis-back"
-      v-if="efont && currentPage < tp - 4"
+      v-if="showLastFakePageNum && (tp - (indexes.at(-1) as number) > 1)"
     >...</span>
     <span
-      v-if="efont && currentPage < tp - 4"
+      v-if="showLastFakePageNum"
       class="jump"
       key="page-lastest"
       @click="jumpPage(tp)"
@@ -59,8 +59,8 @@
   </div>
 </template>
 
-<script setup>
-import { computed, ref, toRefs } from 'vue'
+<script setup lang="ts">
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   currentPage: {
@@ -80,27 +80,29 @@ const props = defineProps({
     default: 0
   }
 })
-
 const emits = defineEmits(['change'])
 
 const targetPage = ref(null)
 
 const tp = computed(() => {
-  if (props.totalPage !== 0) return props.totalPage
   return Math.ceil(props.total / props.pageSize)
 })
 
-const show = computed(() => {
-  return props.tp && props.tp != 1
+
+const showStartFakePageNum = computed(() => {
+  return efont.value && !indexes.value.includes(1)
 })
 
-const efont =computed(() => {
-  if (tp.value <= 7) return false
-  return props.currentPage > 5
+const showLastFakePageNum = computed(() => {
+  return efont.value && !indexes.value.includes(tp.value)
 })
 
-const indexs = computed(() => {
-  const ar = []
+const efont = computed(() => {
+  return tp.value > 7
+})
+
+const indexes = computed(() => {
+  const ar : number[] = []
   let left = 1
   let right = tp.value
   if (tp.value >= 7) {
@@ -129,11 +131,11 @@ const jumpPage = (page) => {
   const p = parseInt(page)
 
   if (p <= tp.value && p > 0) {
-    emits('change', page)
+    emits('change', p)
     return
   }
 
-  alert(`请输入大于0，并且小于${tp.value}的页码！`)
+  alert(`请输入大于0，并且小于等于${tp.value}的页码！`)
 }
 
 const goPrev = () => {
