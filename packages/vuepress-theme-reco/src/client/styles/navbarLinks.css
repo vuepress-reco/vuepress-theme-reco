@@ -101,7 +101,7 @@
       }
     }
     /* 选中高亮，不可以移动 */
-    .router-link-active span{
+    .router-link-active {
       @apply text-reco-brand !important;
     }
   }
