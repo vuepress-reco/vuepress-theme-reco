@@ -54,7 +54,7 @@ div[class*="language-"] {
     }
   }
   pre code {
-    @apply bg-transparent p-0 leading-6 !important;
+    @apply bg-transparent ml-0 mr-0 p-0 leading-6 !important;
   }
   .highlight-lines {
     @apply absolute z-10 left-0 right-0 bottom-0 pt-2 pb-6 leading-7 ;
