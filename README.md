@@ -15,11 +15,11 @@
 
 <br/>
 
+## 🔥 vuepress-theme-reco
+
 > This is reco theme 2.0, and the 1.0 repository has been migrated to [vuepress-theme-reco-1.x](https://github.com/vuepress-reco/vuepress-theme-reco-1.x)
 
 <br/>
-
-## 🔥 vuepress-theme-reco
 
 In the past, theme `reco` has been supported by many friends, I am very honored, it changed my life, and I also made a lot of friends. But I don't think it is professional and flexible, and sometimes some advanced features require certain professionalism. I know that this is not easy for some Non-FE professional friends.
 
