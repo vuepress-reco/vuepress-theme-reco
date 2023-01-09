@@ -27,6 +27,8 @@ Some functions of `reco@2.x` refer to the default theme of `vuepress@2.x`, but i
 
 At the same time, you must rely on this document to configure your project. You cannot compare it with the official default theme document, because only a small amount of configuration overlaps with the official default theme document.
 
+**Please move [Demo](https://www.recoluan.com/) and [Docs](http://v2.vuepress-reco.recoluan.com/) to play!**
+
 <br/>
 
 ## Quick Start
