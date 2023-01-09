@@ -2,14 +2,14 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.40",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.40",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.40",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.40",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.40",
-    "@vuepress-reco/shared": "2.0.0-beta.40",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.40",
-    "vuepress-theme-reco": "2.0.0-beta.40"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.41",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.41",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.41",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.41",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.41",
+    "@vuepress-reco/shared": "2.0.0-beta.41",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.41",
+    "vuepress-theme-reco": "2.0.0-beta.41"
   },
   "changesets": [
     "chatty-badgers-cheer",
@@ -33,6 +33,7 @@
     "many-baboons-remain",
     "odd-dolphins-develop",
     "rich-queens-deliver",
+    "seven-balloons-suffer",
     "six-toes-repair",
     "smooth-clouds-dream",
     "strong-insects-move",
