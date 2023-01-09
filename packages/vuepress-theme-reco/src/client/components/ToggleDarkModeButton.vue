@@ -1,5 +1,5 @@
 <template>
-  <Xicons :icon="icon" icon-size="19" class="btn-toggle-dark-mode" @click="toggleMode()" />
+  <Xicons :icon="icon" icon-size="19" class="btn-toggle-dark-mode" @click="toggleMode()" link="javascript:void(0)"/>
 </template>
 
 <script setup lang="ts">

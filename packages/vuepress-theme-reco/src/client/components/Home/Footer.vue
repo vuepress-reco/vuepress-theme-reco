@@ -19,7 +19,7 @@
     </span>
 
     <span>
-      <Xicons icon="Copyright">
+      <Xicons icon="Copyright" link="javascript:void(0)">
         <a v-if="themeLocal.author">{{themeLocal.author}}</a>&nbsp;&nbsp;
         <a v-if="frontmatter?.footer?.startYear && frontmatter?.footer?.startYear != (new Date().getFullYear())">{{frontmatter?.footer?.startYear}} - </a>
         {{new Date().getFullYear()}}
@@ -27,7 +27,7 @@
     </span>
 
     <span v-show="showAccessNumber">
-      <Xicons icon="Eye">
+      <Xicons icon="Eye" link="javascript:void(0)">
         <ValineViews idVal="/" :numStyle="{}" />
       </Xicons>
     </span>

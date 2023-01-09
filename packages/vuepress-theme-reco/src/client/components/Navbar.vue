@@ -26,7 +26,7 @@
       <NavbarSearch />
       <NavbarLinks />
       <ToggleDarkModeButton />
-      <xicons class="btn-toggle-menus" icon="DotsVertical" :iconSize="20" @click="toggleMenus" />
+      <xicons class="btn-toggle-menus" icon="DotsVertical" :iconSize="20" @click="toggleMenus" link="javascript:void(0)"/>
     </div>
   </header>
 </template>
