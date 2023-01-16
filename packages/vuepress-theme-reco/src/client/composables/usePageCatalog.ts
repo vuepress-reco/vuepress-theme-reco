@@ -4,16 +4,13 @@ import { usePageData } from '@vuepress/client'
 import type { PageHeader } from '@vuepress/client'
 import type { ResolvedSidebarItem } from '../../types'
 
-declare const __VUEPRESS_DEV__: boolean
-
 export interface ResolvedPageCatalog {
   [prop: string]: any
 }
 
 export type CatalogRef = ComputedRef<ResolvedPageCatalog[]>
 
-export const catalogSymbol: InjectionKey<CatalogRef> =
-  Symbol(__VUEPRESS_DEV__ ? 'catalog' : '')
+export const catalogSymbol: InjectionKey<CatalogRef> = Symbol('catalog')
 
 export const usePageCatalog = (): CatalogRef => {
   const catalog = inject(catalogSymbol)
@@ -23,7 +20,6 @@ export const usePageCatalog = (): CatalogRef => {
   return catalog
 }
 
-
 export function resolveCatalog(): any {
   const page = usePageData()
   // if the sidebar item is current page and children is not set
@@ -31,9 +27,7 @@ export function resolveCatalog(): any {
   return headersToCatalog(page.value.headers)
 }
 
-const headerToCatalogItem = (
-  header: PageHeader
-): ResolvedSidebarItem => ({
+const headerToCatalogItem = (header: PageHeader): ResolvedSidebarItem => ({
   text: header.title,
   link: `#${header.slug}`,
   level: header.level,

@@ -5,10 +5,8 @@ export type DarkModeRef = WritableComputedRef<boolean>
 
 export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol('darkMode')
 
-declare const __VUEPRESS_DEV__: boolean
-
 export function useDarkMode() {
-  const isDarkMode = inject(__VUEPRESS_DEV__ ? darkModeSymbol : '')
+  const isDarkMode = inject(darkModeSymbol)
   if (!isDarkMode) {
     throw new Error('useDarkMode() is called without provider.')
   }
@@ -23,7 +21,8 @@ export function setupDarkMode() {
   const isDarkMode = ref(false)
 
   watch(isDarkMode, (newVal) => {
-    localStorage && (localStorage['vuepress-reco-color-scheme'] = newVal ? 'dark' : 'light')
+    localStorage &&
+      (localStorage['vuepress-reco-color-scheme'] = newVal ? 'dark' : 'light')
 
     const htmlEl = window?.document.querySelector('html')
     htmlEl?.classList.toggle('dark', newVal)
@@ -31,8 +30,9 @@ export function setupDarkMode() {
 
   const initMode = () => {
     if (
-      localStorage && localStorage['vuepress-reco-color-scheme'] === 'dark' ||
-      ((!localStorage || !('vuepress-reco-color-scheme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      (localStorage && localStorage['vuepress-reco-color-scheme'] === 'dark') ||
+      ((!localStorage || !('vuepress-reco-color-scheme' in localStorage)) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
       isDarkMode.value = true
     } else {

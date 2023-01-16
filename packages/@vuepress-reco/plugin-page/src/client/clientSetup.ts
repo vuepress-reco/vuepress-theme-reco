@@ -9,10 +9,7 @@ declare const __POSTS__: Record<string, any[]>
 declare const __CATEGORY_SUMMARY__: Record<string, any>
 declare const __CATEGORY_PAGINATION_POSTS__: Record<string, any[]>
 
-export async function applyClientSetup () {
-  //@ts-ignore
-  if (__VUEPRESS_SSR__) return
-
+export async function applyClientSetup() {
   const posts = __POSTS__
   const categorySummary = __CATEGORY_SUMMARY__
   const categoryPosts = __CATEGORY_PAGINATION_POSTS__

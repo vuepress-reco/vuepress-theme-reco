@@ -1,11 +1,11 @@
 import { inject, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-declare const __VUEPRESS_DEV__: boolean
-
-export const categoryPaginationPostsSymbol = Symbol.for(__VUEPRESS_DEV__ ?'categoryPaginationPostsSymbol' : '')
-export const categorySummarySymbol = Symbol.for(__VUEPRESS_DEV__ ?'categorySummarySymbol' : '')
-export const postsSymbol = Symbol.for(__VUEPRESS_DEV__ ?'postsSymbol' : '')
+export const categoryPaginationPostsSymbol = Symbol(
+  'categoryPaginationPostsSymbol'
+)
+export const categorySummarySymbol = Symbol('categorySummarySymbol')
+export const postsSymbol = Symbol('postsSymbol')
 
 export function usePageData(): Record<string, any> {
   const categorySummary = inject(categorySummarySymbol) || {}
@@ -17,7 +17,6 @@ export function usePageData(): Record<string, any> {
   }
 
   const { currentRoute } = useRouter()
-
 
   const categoryPosts = computed(() => {
     return (

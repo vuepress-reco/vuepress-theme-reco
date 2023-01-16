@@ -19,8 +19,6 @@ import type {
 
 import { useNavLink } from './useNavLink'
 
-declare const __VUEPRESS_DEV__: boolean
-
 export interface NavItem {
   text: string
   ariaLabel?: string
@@ -43,8 +41,9 @@ export interface ResolvedSidebarItem extends Partial<NavLink> {
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>
 
-export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> =
-  Symbol(__VUEPRESS_DEV__ ? 'sidebarItems' : '')
+export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
+  'sidebarItems'
+)
 
 export const useSidebarItems = (): SidebarItemsRef => {
   const sidebarItems = inject(sidebarItemsSymbol)
@@ -103,16 +102,18 @@ export const resolveArraySidebarItems = (
     return childItem
   }
 
-  return sidebarConfig.map((item): ResolvedSidebarItem => {
-    if (isString(item)) {
-      return useNavLink(item)
-    }
+  return sidebarConfig.map(
+    (item): ResolvedSidebarItem => {
+      if (isString(item)) {
+        return useNavLink(item)
+      }
 
-    return {
-      ...item,
-      children: item.children.map(handleChildItem),
+      return {
+        ...item,
+        children: item.children.map(handleChildItem),
+      }
     }
-  })
+  )
 }
 
 /**

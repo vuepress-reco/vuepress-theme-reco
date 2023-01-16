@@ -13,13 +13,9 @@ export default defineComponent({
     // refs of the tab buttons
     const tabRefs = ref<HTMLButtonElement[]>([])
 
-    if (__VUEPRESS_DEV__) {
-      // after removing a code-group-item, we need to clear the ref
-      // of the removed item to avoid issues caused by HMR
-      onBeforeUpdate(() => {
-        tabRefs.value = []
-      })
-    }
+    onBeforeUpdate(() => {
+      tabRefs.value = []
+    })
 
     // activate next tab
     const activateNext = (i = activeIndex.value): void => {
