@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.44
+
+### Patch Changes
+
+- Optimize SSR
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.44
+
 ## 2.0.0-beta.43
 
 ### Patch Changes
