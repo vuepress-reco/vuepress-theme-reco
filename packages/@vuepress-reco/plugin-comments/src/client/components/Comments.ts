@@ -5,6 +5,7 @@ import Valine from './Valine'
 // import Waline from './Waline'
 
 export default defineComponent({
+  name: 'RecoComments',
   components: { Valine },
   props: {
     hideComments: {
@@ -22,8 +23,8 @@ export default defineComponent({
         componentName = Valine
         break
       // case 'waline':
-        // componentName = Waline
-        // break
+      // componentName = Waline
+      // break
       default:
         componentName = ''
         break

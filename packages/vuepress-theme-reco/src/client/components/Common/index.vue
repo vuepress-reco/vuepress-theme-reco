@@ -21,8 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
 import MobileNavbar from '../MobileMenus.vue'
 import Navbar from '../Navbar.vue'
 import Series from '../Series.vue'
@@ -48,7 +47,9 @@ const {
   handlePass
 } = usePassword()
 
-useInitCodeCopy()
+onMounted(() => {
+  useInitCodeCopy()
+})
 
 useSidebar(toggleSidebar, toggleMobileMenus)
 </script>

@@ -9,7 +9,7 @@
       {{tags.join(' ')}}
     </Xicons>
     <Xicons v-if="showValineViews" icon="Eye" link="javascript:void(0)">
-      <ValineViews :numStyle="{}" />
+      <ValineViews />
     </Xicons>
   </div>
 </template>

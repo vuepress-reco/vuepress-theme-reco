@@ -9,33 +9,29 @@
       />
     </span>
 
-    <span v-if="frontmatter?.footer?.record">
+    <span v-show="frontmatter?.footer?.record">
       <Xicons
         icon="ShieldCheck"
-        :link="frontmatter?.footer?.recordLink || '#'"
+        :link="frontmatter?.footer?.recordLink || 'javascript:void(0)'"
         :text="frontmatter?.footer?.record"
         target="_blank"
       />
     </span>
 
     <span>
-      <Xicons icon="Copyright" link="javascript:void(0)">
-        <a v-if="themeLocal.author">{{themeLocal.author}}</a>&nbsp;&nbsp;
-        <a v-if="frontmatter?.footer?.startYear && frontmatter?.footer?.startYear != (new Date().getFullYear())">{{frontmatter?.footer?.startYear}} - </a>
-        {{new Date().getFullYear()}}
-      </Xicons>
+      <Xicons icon="Copyright" link="javascript:void(0)" :text="copyRight" />
     </span>
 
-    <span v-show="showAccessNumber">
+    <span v-if="showAccessNumber">
       <Xicons icon="Eye" link="javascript:void(0)">
-        <ValineViews idVal="/" :numStyle="{}" />
+        <ValineViews idVal="/" />
       </Xicons>
     </span>
 
-    <p class="cyber-security" v-if="frontmatter?.footer?.cyberSecurityRecord">
+    <span class="cyber-security" v-if="frontmatter?.footer?.cyberSecurityRecord">
       <img src="../../assets/cyberSecurityRecord.png" alt="">
       <a :href="frontmatter?.footer?.cyberSecurityLink || '#'" target="_blank">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
-    </p>
+    </span>
 
     <Comments :hide-comments="true" />
   </div>
@@ -53,9 +49,29 @@ const frontmatter = usePageFrontmatter()
 const { solution, options } = useComment()
 
 const { version } = packageInfo
+
 const showAccessNumber = computed(() => {
  if (solution.value !== 'valine') return false
 
   return options.value.visitor != false
+})
+
+const copyRight = computed(() => {
+  let text = ''
+
+  if (themeLocal.author) {
+    text += `${themeLocal.author} `
+  }
+
+  const startYear = frontmatter?.footer?.startYear
+  const currYear = new Date().getFullYear()
+
+  if (startYear && startYear != currYear) {
+    text += `${startYear} - `
+  }
+
+  text += currYear
+
+  return text
 })
 </script>

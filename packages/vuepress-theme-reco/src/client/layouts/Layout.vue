@@ -23,7 +23,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from 'vue'
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
 import { useSidebarData, useScrollPromise } from '../composables'
 import Common from '../components/Common/index.vue'
