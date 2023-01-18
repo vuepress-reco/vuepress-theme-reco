@@ -1,7 +1,10 @@
 import { Ref, ref } from 'vue'
 
 export function useInitCopyBtn() {
-  const codeNodes: Ref<NodeListOf<HTMLPreElement>> = ref([]) as unknown as Ref<NodeListOf<HTMLPreElement>>
+  const codeNodes: Ref<NodeListOf<HTMLPreElement>> = ref([]) as unknown as Ref<
+    NodeListOf<HTMLPreElement>
+  >
+
   const addCopyBtnToCodeNode = () => {
     codeNodes.value.forEach((node) => {
       node.style.position = 'relative'
@@ -10,10 +13,12 @@ export function useInitCopyBtn() {
       btn.className = 'code-copy-btn'
       btn.style.position = 'absolute'
       btn.style.zIndex = '20'
-      btn.style.top = '1px'
-      btn.style.right = '1px'
-      btn.style.display = 'display'
-      btn.style.position = 'block'
+      btn.style.top = '4px'
+      btn.style.right = '10px'
+      btn.style.display = 'none'
+      btn.style.padding = '0 10px 0 10px'
+      btn.style.borderRadius = '4px'
+      btn.style.backgroundColor = '#fff'
       btn.style.cursor = 'pointer'
       btn.innerHTML =
         '<span class="copied">copied</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></g></svg>'
@@ -22,7 +27,9 @@ export function useInitCopyBtn() {
       icon.style.width = '20px'
       icon.style.verticalAlign = 'middle'
 
-      const copied = btn.querySelector<HTMLSpanElement>('.copied') as HTMLSpanElement
+      const copied = btn.querySelector<HTMLSpanElement>(
+        '.copied'
+      ) as HTMLSpanElement
       copied.style.verticalAlign = 'middle'
       copied.style.fontSize = '12px'
       copied.style.display = 'none'
@@ -30,10 +37,21 @@ export function useInitCopyBtn() {
 
       handleElement(btn)
       node.appendChild(btn)
+
+      node.addEventListener('mouseenter', () => {
+        btn.style.display = 'block'
+      })
+
+      node.addEventListener('mouseleave', () => {
+        btn.style.display = 'none'
+      })
     })
   }
+
   const initCopyBtn = () => {
-    const nodes = document.querySelectorAll<HTMLPreElement>('div[class*="language-"] pre')
+    const nodes = document.querySelectorAll<HTMLPreElement>(
+      'div[class*="language-"]'
+    )
     codeNodes.value = nodes
     addCopyBtnToCodeNode()
   }
@@ -105,7 +123,9 @@ function handleElement(el: HTMLElement) {
     }
 
     copyToClipboard(text).then(() => {
-      const copied = el.querySelector<HTMLSpanElement>('.copied') as HTMLSpanElement
+      const copied = el.querySelector<HTMLSpanElement>(
+        '.copied'
+      ) as HTMLSpanElement
       copied.style.display = 'inline-block'
       setTimeout(() => {
         copied.style.display = 'none'

@@ -8,18 +8,13 @@
 div[class*="language-"] {
   @apply relative my-6 overflow-hidden bg-block border-block;
   &::before {
-    @apply absolute z-10 top-2.5 right-3 text-gray-400 text-xs;
+    @apply absolute z-10 top-1 right-3 text-gray-400 text-xs;
   }
   pre[class*="language-"] {
     @apply relative overflow-x-auto pr-6 pl-16 py-4 leading-7;
-    .code-copy-btn {
-      @apply right-3 text-gray-400 bg-block shadow-md rounded px-2 top-1 hidden !important;
-    }
   }
-  &:hover {
-    pre[class*="language-"] .code-copy-btn {
-      @apply block !important;
-    }
+  .code-copy-btn {
+    @apply text-gray-400 bg-block shadow-md !important;
   }
   &:not(.line-numbers-mode) {
     .line-numbers {
