@@ -40,12 +40,6 @@ defineProps({
   }
   div[class*="language-"] {
     @apply mt-0 mb-0 border-none;
-    &::after {
-      @apply hidden;
-    }
-    pre[class*="language-"] {
-      @apply mt-0 mb-0 py-4 border-t-0 !important;
-    }
   }
   .line-numbers {
     @apply pb-4 !important;

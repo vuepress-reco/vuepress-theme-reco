@@ -6,7 +6,7 @@
       <slot>{{ text }}</slot>
     </span>
   </a>
-  <component v-else :style="iconStyle" :is="icons[icon]" />
+  <component v-else class="icon-container" :style="iconStyle" :is="icons[icon]" />
 </template>
 
 <script lang="ts">
@@ -53,7 +53,7 @@ export default defineComponent<PropsType>({
     },
     iconColor: {
       type: String,
-      default: 'inherit',
+      default: '',
     },
     text: {
       type: String,
@@ -81,7 +81,13 @@ export default defineComponent<PropsType>({
     const { icon, iconSize, iconColor, textColor, textSize } = toRefs(props)
 
     const iconStyle = computed(() => {
-      return { color: iconColor.value, width: `${iconSize.value}px`, height: `${iconSize.value}px`, fontSize: `${iconSize.value}px` }
+      const style = { width: `${iconSize.value}px`, height: `${iconSize.value}px`, fontSize: `${iconSize.value}px` }
+
+      if (iconColor.value) {
+        style.color = iconColor.value
+      }
+
+      return style
     })
 
     const textStyle = computed(() => {

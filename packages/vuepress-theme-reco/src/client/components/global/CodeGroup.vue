@@ -152,8 +152,9 @@ export default defineComponent({
         @apply inline-block;
         button {
           @apply px-3.5 py-2.5 border-b-2 border-solid border-transparent text-reco-text-lightmode cursor-pointer text-sm;
-          .icon-container {
+          svg {
             @apply text-reco-text-lightmode align-middle;
+            @apply dark:text-reco-text-darkmode;
           }
           &.code-group__nav-tab-active {
             @apply border-reco-brand !important;
@@ -166,7 +167,7 @@ export default defineComponent({
 
 /* 兼容 */
 .code-group .code-group__nav .code-group__ul .code-group__li button .icon-container {
-  @apply dark:text-reco-text-darkmode;
+
 }
 
 </style>
