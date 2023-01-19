@@ -47,19 +47,18 @@
   }
 }
 
-
-.sidebar-mask {
+.series-mask {
   @apply fixed z-40 hidden w-screen h-screen bg-gray-600/40;
 }
 
-.sidebar-open {
+.series--open {
   .series-container {
     @apply translate-x-0 !important;
   }
-  .sidebar-mask {
+  .series-mask {
     @apply block top-0 right-0 bottom-0 left-0;
   }
-  .toggle-sidebar-button .icon span {
+  .toggle-series-button .icon span {
     &:nth-of-type(1) {
       @apply rotate-225 -translate-x-0.5 translate-y-2 w-6;
     }
@@ -72,7 +71,7 @@
   }
 }
 
-.no-sidebar {
+.series--no {
   .series-container {
     @apply md:hidden;
   }

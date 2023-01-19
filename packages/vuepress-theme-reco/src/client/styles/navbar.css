@@ -24,11 +24,12 @@
       @apply align-middle;
     }
   }
-  .toggle-sidebar-button {
+  .toggle-series-button {
     @apply inline-block align-middle;
     @apply md:hidden;
   }
-  .search-box, .docsearch-container {
+  .search-box,
+  .docsearch-container {
     @apply align-middle;
   }
   .btn-toggle-dark-mode {

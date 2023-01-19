@@ -1,22 +1,22 @@
 <template>
-  <aside class="sidebar-container">
-    <template v-for="item in sidebarItems" :key="item.link || item.text">
-      <SidebarChild :item="item" />
+  <aside class="series-container">
+    <template v-for="item in seriesItems" :key="item.link || item.text">
+      <SeriesChild :item="item" />
     </template>
   </aside>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useSidebarItems } from '../composables/'
-import { SidebarChild } from './SidebarChild.vue'
+import { useSeriesItems } from '../composables/'
+import { SeriesChild } from './SeriesChild.vue'
 
 export default defineComponent({
-  components: { SidebarChild },
+  components: { SeriesChild },
   setup() {
-    const sidebarItems = useSidebarItems()
+    const seriesItems = useSeriesItems()
     return {
-      sidebarItems,
+      seriesItems,
     }
   },
 })

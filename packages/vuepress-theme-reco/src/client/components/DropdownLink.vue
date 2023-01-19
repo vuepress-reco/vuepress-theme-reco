@@ -1,44 +1,42 @@
 <template>
-  <div class="dropdown-wrapper" :class="{ open }">
+  <div class="dropdown-link" :class="{ open }">
     <button
-      class="dropdown-title"
+      class="dropdown-link__title"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
     >
-      {{item.text}}
+      <span class="title">{{item.text}}</span>
       <span v-if="item.text" class="arrow down" />
     </button>
 
     <button
-      class="mobile-dropdown-title"
+      class="dropdown-link--mobile__title"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <span class="title">
-        <span>{{item.text}}</span>
-      </span>
+      <span class="title">{{item.text}}</span>
       <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
     <DropdownTransition>
-      <ul v-show="open" class="nav-dropdown">
+      <ul v-show="open" class="dropdown-link__container">
         <li
           v-for="(child, index) in item.children"
           :key="child.link || index"
-          class="dropdown-item"
+          class="dropdown-link__item"
         >
           <template v-if="child.children">
-            <h5 class="dropdown-subtitle">
+            <h5 class="dropdown-link__subtitle">
               {{child.text}}
             </h5>
 
-            <ul class="dropdown-subitem-wrapper">
+            <ul class="dropdown-link__subcontainer">
               <li
                 v-for="grandchild in child.children"
                 :key="grandchild.link"
-                class="dropdown-subitem"
+                class="dropdown-link__subitem"
               >
                 <Link
                   :item="grandchild"

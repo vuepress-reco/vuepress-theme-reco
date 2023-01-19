@@ -1,116 +1,26 @@
 .navbar-links {
   @apply md:ml-6;
-  .icon-container {
-    @apply align-middle;
-  }
-  .navbar-links-item {
-    @apply block md:inline-block py-1.5;
-    @apply md:py-0;
+
+  .navbar-links__item {
+    @apply block md:inline-block py-0;
+
     &:not(:first-child) {
       @apply ml-0 md:ml-6;
     }
-    > a.nav-link {
-      @apply inline-block w-full text-sm font-semibold;
+
+    > .link {
+      @apply inline-block text-sm font-semibold;
     }
-    .arrow {
-      @apply ml-1;
-    }
-    .dropdown-wrapper {
-      @apply relative;
-      height: 24px;
-      button {
-        height: 24px;
-      }
-      .dropdown-title {
-        @apply text-sm font-semibold items-center text-reco-text-lightmode hidden md:flex;
-        @apply md:flex;
-      }
-      .mobile-dropdown-title {
-        @apply text-sm font-semibold text-reco-text-lightmode flex items-center justify-between w-full;
-        @apply md:text-base md:hidden md:justify-start md:w-auto;
-      }
-      .nav-dropdown {
-        @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
-        @apply md:px-3 md:hidden md:absolute md:top-3 md:-right-6 md:py-2 md:my-3 border-0 md:border;
-        .dropdown-item {
-          @apply relative;
-          &:not(:first-of-type)::before {
-            @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-lightmode;
-            /* 待确定 */
-            /* @apply md:border-t; */
-            @apply dark:border-reco-border-darkmode;
-            content: '';
-          }
-          &:not(:first-of-type) {
-            .dropdown-subtitle {
-              @apply relative z-40 mt-8;
-              &::before {
-                @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-lightmode;
-                @apply dark:border-reco-border-darkmode;
-                content: '';
-              }
-            }
-          }
-          .dropdown-subtitle {
-            @apply my-1 py-0 text-xs;
-            @apply md:text-sm;
-          }
-          .dropdown-subitem-wrapper {
-            @apply list-none pl-3;
-            @apply md:pl-0;
-            .dropdown-subitem .nav-link {
-              @apply relative transition-all;
-              &::before {
-                @apply absolute inset-y-0 left-0 top-0 bottom-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
-                @apply bg-reco-brand;
-                content: '';
-              }
-              &:hover {
-                @apply text-reco-brand;
-              }
-              &.active {
-                @apply pl-2;
-                a {
-                  @apply text-reco-brand;
-                }
-                &::before {
-                  @apply w-1 h-1;
-                }
-              }
-              &.router-link-active {
-                @apply pl-2;
-                &::before {
-                  @apply w-1 h-1;
-                }
-              }
-            }
-          }
-          a.nav-link {
-            @apply inline-block w-full text-sm;
-          }
-        }
-      }
-      &.open {
-        height: auto;
-      }
-      &.open .nav-dropdown {
-        @apply block !important;
-      }
-      &:hover .nav-dropdown {
-        @apply md:block !important;
-      }
-    }
+
     /* 选中高亮，不可以移动 */
     .router-link-active {
       @apply text-reco-brand !important;
     }
   }
-}
 
-/* 兼容 */
-.navbar-links .navbar-links-item .dropdown-wrapper .dropdown-title {
-  @apply dark:text-reco-text-darkmode;
-}
-.navbar-links .navbar-links-item .dropdown-wrapper .mobile-dropdown-title {
-  @apply dark:text-reco-text-darkmode;
+  &.mobile {
+    .navbar-links__item {
+      @apply py-4 border-basic-bottom;
+    }
+  }
 }

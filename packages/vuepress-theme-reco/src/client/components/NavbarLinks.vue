@@ -1,6 +1,6 @@
 <template>
   <nav v-if="navbarLinks.length" class="navbar-links">
-    <div v-for="item in navbarLinks" :key="item.link" class="navbar-links-item">
+    <div v-for="item in navbarLinks" :key="item.link" class="navbar-links__item">
       <template v-if="item.children">
         <DropdownLink :item="item" />
       </template>
@@ -16,7 +16,7 @@
 import { computed, defineComponent } from 'vue'
 import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
+import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
 import { isString } from '@vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables/index'

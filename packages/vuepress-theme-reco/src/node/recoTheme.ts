@@ -19,7 +19,11 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import type { Theme, Page } from '@vuepress/core'
-import { mergeViteBundlerConfig, defaultViteBundlerConfig, resolveUserConfig } from './resolveBundlerConfig.js'
+import {
+  mergeViteBundlerConfig,
+  defaultViteBundlerConfig,
+  resolveUserConfig,
+} from './resolveBundlerConfig.js'
 
 import { resolveContainerOptions } from './resolveContainer.js'
 
@@ -27,7 +31,7 @@ import type { RecoThemePageData } from '../types/page'
 
 import { pages } from './pages.js'
 
-const __dirname = getDirname(import.meta.url);
+const __dirname = getDirname(import.meta.url)
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   return {
@@ -52,8 +56,8 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
                 ['tailwindcss', tailwindcssConfig],
                 ['autoprefixer', {}],
                 [require('tailwindcss/nesting')],
-                ['postcss-each']
-              ]
+                ['postcss-each'],
+              ],
             },
           },
         })
@@ -62,10 +66,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
     templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
 
-    clientConfigFile: path.resolve(
-      __dirname,
-      '../client/config.js'
-    ),
+    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
     alias: Object.fromEntries(
       fs
@@ -80,7 +81,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     extendsPage: (page: Page<Partial<RecoThemePageData>>) => {
       // save relative file path into page data to generate edit link
       page.data.filePathRelative = page.filePathRelative
-      // save title into route meta to generate navbar and sidebar
+      // save title into route meta to generate navbar and series
       page.routeMeta.title = page.title
     },
 
@@ -91,7 +92,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       gitPlugin(),
       themeDataPlugin({ themeData: themeConfig }),
       searchPlugin({
-        hotKeys: [{ key: 's', ctrl: true }]
+        hotKeys: [{ key: 's', ctrl: true }],
       }),
       palettePlugin(),
       nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
@@ -109,14 +110,19 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       externalLinkIconPlugin(),
       vuePreviewPlugin(),
       registerComponentsPlugin({
-        componentsDir: path.resolve(process.cwd(), themeConfig.vuePreviewsDir || './.vuepress/vue-previews'),
+        componentsDir: path.resolve(
+          process.cwd(),
+          themeConfig.vuePreviewsDir || './.vuepress/vue-previews'
+        ),
       }),
       registerComponentsPlugin({
-        componentsDir: path.resolve(process.cwd(), themeConfig.componentsDir || './.vuepress/components'),
+        componentsDir: path.resolve(
+          process.cwd(),
+          themeConfig.componentsDir || './.vuepress/components'
+        ),
       }),
       backToTopPlugin(),
-      codeCopyPlugin()
+      codeCopyPlugin(),
     ],
   }
 }
-

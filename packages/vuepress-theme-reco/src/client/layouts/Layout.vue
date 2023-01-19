@@ -13,7 +13,7 @@
         <Page
           :key="page.path"
           :class="{
-            'show-series': isShowSidebar,
+            'show-series': isShowSeries,
             'show-catalog': isShowCatalog,
           }"
         />
@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
-import { useSidebarData, useScrollPromise } from '../composables'
+import { useSeriesData, useScrollPromise } from '../composables'
 import Common from '../components/Common/index.vue'
 import HomeBlog from '../components/HomeBlog.vue'
 import Home from '../components/Home/index.vue'
@@ -32,7 +32,7 @@ import Page from '../components/Page.vue'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter()
-const { isShowSidebar, isShowCatalog } = useSidebarData()
+const { isShowSeries, isShowCatalog } = useSeriesData()
 
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()

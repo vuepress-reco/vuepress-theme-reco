@@ -1,6 +1,6 @@
 import type { LocaleData } from '@vuepress/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
-import type { NavbarConfig, SidebarConfig } from './nav'
+import type { NavbarConfig, SeriesConfig } from './nav'
 
 export interface DefaultThemePluginsOptions {
   /**
@@ -110,11 +110,11 @@ export interface DefaultThemeLocaleData extends LocaleData {
   selectLanguageName?: string
 
   /**
-   * Sidebar config
+   * Series config
    *
-   * Set to `false` to disable sidebar in current locale
+   * Set to `false` to disable series in current locale
    */
-  series?: false | SidebarConfig
+  series?: false | SeriesConfig
 
   /**
    * Page meta - edit link config

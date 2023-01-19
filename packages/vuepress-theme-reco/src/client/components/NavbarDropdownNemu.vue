@@ -1,7 +1,11 @@
 <template>
   <div class="mobile-menus-container">
-    <NavbarLinks />
-    <div class="appearance"><span>Appearance </span><ToggleDarkModeButton /></div>
+    <NavbarLinks class="mobile" />
+
+    <div class="appearance">
+      <span>Appearance</span>
+      <ToggleDarkModeButton />
+    </div>
   </div>
 </template>
 

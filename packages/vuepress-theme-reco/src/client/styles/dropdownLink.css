@@ -1,0 +1,90 @@
+.dropdown-link {
+  @apply relative;
+  height: 24px;
+  &.open {
+    height: auto;
+  }
+  &.open .dropdown-link__container {
+    @apply block !important;
+  }
+  &:hover .dropdown-link__container {
+    @apply md:block !important;
+  }
+  .arrow {
+    @apply ml-1;
+  }
+  button {
+    height: 24px;
+  }
+  .dropdown-link__title {
+    @apply text-sm font-semibold items-center text-reco-text-lightmode hidden;
+    @apply md:flex;
+    @apply dark:text-reco-text-darkmode;
+  }
+  .dropdown-link--mobile__title {
+    @apply flex items-center justify-between w-full text-sm font-semibold text-reco-text-lightmode;
+    @apply md:hidden;
+    @apply dark:text-reco-text-darkmode;
+  }
+  .dropdown-link__container {
+    @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
+    @apply md:px-3 md:hidden md:absolute md:top-3 md:-right-6 md:py-2 md:my-3 border-0 md:border;
+    .dropdown-link__item {
+      @apply relative;
+      &:not(:first-of-type)::before {
+        @apply absolute -left-3 -right-3 top-0 block border-t-0 border-solid border-reco-border-lightmode;
+        /* 待确定 */
+        /* @apply md:border-t; */
+        @apply dark:border-reco-border-darkmode;
+        content: '';
+      }
+      &:not(:first-of-type) {
+        .dropdown-link__subtitle {
+          @apply relative z-40 mt-8;
+          &::before {
+            @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-lightmode;
+            @apply dark:border-reco-border-darkmode;
+            content: '';
+          }
+        }
+      }
+      .dropdown-link__subtitle {
+        @apply my-1 py-0 text-xs;
+        @apply md:text-sm;
+      }
+      .dropdown-link__subcontainer {
+        @apply list-none pl-3;
+        @apply md:pl-0;
+        .dropdown-link__subitem .link {
+          @apply relative transition-all;
+          &::before {
+            @apply absolute inset-y-0 left-0 top-0 bottom-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
+            @apply bg-reco-brand;
+            content: '';
+          }
+          &:hover {
+            @apply text-reco-brand;
+          }
+          &.active {
+            @apply pl-2;
+            a {
+              @apply text-reco-brand;
+            }
+            &::before {
+              @apply w-1 h-1;
+            }
+          }
+          &.router-link-active {
+            @apply pl-2;
+            &::before {
+              @apply w-1 h-1;
+            }
+          }
+        }
+      }
+      .link {
+        @apply inline-block w-full text-sm;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import type { NavLink, SidebarConfig } from './nav'
+import type { NavLink, SeriesConfig } from './nav'
 
 export interface RecoThemePageData extends GitPluginPageData {
   filePathRelative: string | null
@@ -39,7 +39,7 @@ export interface DefaultThemeNormalPageFrontmatter
   editLink?: boolean
   lastUpdated?: boolean
   contributors?: boolean
-  series?: false | SidebarConfig
+  series?: false | SeriesConfig
   prev?: string | NavLink
   next?: string | NavLink
 }

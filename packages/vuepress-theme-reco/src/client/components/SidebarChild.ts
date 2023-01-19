@@ -2,7 +2,7 @@ import { h } from 'vue'
 import type { FunctionalComponent, VNode } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSidebarItem } from '../../types'
+import type { ResolvedSeriesItem } from '../../types'
 import Link from './Link.vue'
 
 const normalizePath = (path: string): string =>
@@ -30,7 +30,7 @@ const isActiveLink = (
 
 const isActiveItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
+  item: ResolvedSeriesItem
 ): boolean => {
   if (isActiveLink(route, item.link)) {
     return true
@@ -43,10 +43,7 @@ const isActiveItem = (
   return false
 }
 
-const renderItem = (
-  item: ResolvedSidebarItem,
-  props: VNode['props']
-): VNode => {
+const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
   // if the item has link, render it as `<Link>`
   if (item.link) {
     return h(Link, {
@@ -60,7 +57,7 @@ const renderItem = (
 }
 
 const renderChildren = (
-  item: ResolvedSidebarItem,
+  item: ResolvedSeriesItem,
   depth: number
 ): VNode | null => {
   if (!item.children?.length) {
@@ -71,13 +68,13 @@ const renderChildren = (
     'ul',
     {
       class: {
-        'sidebar-sub-headers': depth > 0,
+        'series-sub-headers': depth > 0,
       },
     },
     item.children.map((child) =>
       h(
         'li',
-        h(SidebarChild, {
+        h(SeriesChild, {
           item: child,
           depth: depth + 1,
         })
@@ -86,8 +83,8 @@ const renderChildren = (
   )
 }
 
-export const SidebarChild: FunctionalComponent<{
-  item: ResolvedSidebarItem
+export const SeriesChild: FunctionalComponent<{
+  item: ResolvedSeriesItem
   depth?: number
 }> = ({ item, depth = 0 }) => {
   const route = useRoute()
@@ -98,12 +95,12 @@ export const SidebarChild: FunctionalComponent<{
       h(
         'section',
         {
-          class: 'sidebar-group sidebar-item',
+          class: 'series-group series-item',
         },
         [
           renderItem(item, {
             class: {
-              'sidebar-heading': true,
+              'series-heading': true,
               active,
             },
           }),
@@ -118,12 +115,12 @@ export const SidebarChild: FunctionalComponent<{
       h(
         'section',
         {
-          class: 'sidebar-item',
+          class: 'series-item',
         },
         [
           renderItem(item, {
             class: {
-              'sidebar-heading': true,
+              'series-heading': true,
               active,
             },
           }),
@@ -136,17 +133,17 @@ export const SidebarChild: FunctionalComponent<{
   return [
     renderItem(item, {
       class: {
-        'sidebar-item': true,
-        'sidebar-link': true,
+        'series-item': true,
+        'series-link': true,
         active,
       },
     }),
   ]
 }
 
-SidebarChild.displayName = 'SidebarChild'
+SeriesChild.displayName = 'SeriesChild'
 
-SidebarChild.props = {
+SeriesChild.props = {
   item: {
     type: Object,
     required: true,

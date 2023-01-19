@@ -22,9 +22,9 @@ import { isPlainObject, isString } from '@vuepress/shared'
 import type {
   DefaultThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
-  ResolvedSidebarItem,
+  ResolvedSeriesItem,
 } from '../../types'
-import { useNavLink, useSidebarItems } from '../composables'
+import { useNavLink, useSeriesItems } from '../composables'
 import Link from './Link.vue'
 
 /**
@@ -49,25 +49,25 @@ const resolveFromFrontmatterConfig = (
 }
 
 /**
- * Resolve `prev` or `next` config from sidebar items
+ * Resolve `prev` or `next` config from series items
  */
-const resolveFromSidebarItems = (
-  sidebarItems: ResolvedSidebarItem[],
+const resolveFromSeriesItems = (
+  seriesItems: ResolvedSeriesItem[],
   currentPath: string,
   offset: number
 ): null | NavLinkType => {
-  const index = sidebarItems.findIndex((item) => item.link === currentPath)
+  const index = seriesItems.findIndex((item) => item.link === currentPath)
   if (index !== -1) {
-    const targetItem = sidebarItems[index + offset]
+    const targetItem = seriesItems[index + offset]
     if (!targetItem?.link) {
       return null
     }
     return targetItem as NavLinkType
   }
 
-  for (const item of sidebarItems) {
+  for (const item of seriesItems) {
     if (item.children) {
-      const childResult = resolveFromSidebarItems(
+      const childResult = resolveFromSeriesItems(
         item.children,
         currentPath,
         offset
@@ -88,7 +88,7 @@ export default defineComponent({
 
   setup() {
     const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
-    const sidebarItems = useSidebarItems()
+    const seriesItems = useSeriesItems()
     const route = useRoute()
     const router = useRouter()
 
@@ -98,7 +98,7 @@ export default defineComponent({
         return prevConfig
       }
 
-      return resolveFromSidebarItems(sidebarItems.value, route.path, -1)
+      return resolveFromSeriesItems(seriesItems.value, route.path, -1)
     })
 
     const nextNavLink = computed(() => {
@@ -107,7 +107,7 @@ export default defineComponent({
         return nextConfig
       }
 
-      return resolveFromSidebarItems(sidebarItems.value, route.path, 1)
+      return resolveFromSeriesItems(seriesItems.value, route.path, 1)
     })
 
     const go = (link) => {

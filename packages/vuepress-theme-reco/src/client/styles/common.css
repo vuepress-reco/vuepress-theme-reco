@@ -4,4 +4,10 @@
       @apply fixed z-50 w-screen h-screen;
     }
   }
+
+  &.mobile-menus--active {
+    .mobile-menus-container {
+      @apply translate-y-0 !important;
+    }
+  }
 }

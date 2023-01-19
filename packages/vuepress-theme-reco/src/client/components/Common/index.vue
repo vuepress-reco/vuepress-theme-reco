@@ -1,18 +1,18 @@
 <template>
   <div
+    class="common-wrapper"
     :class="{
-      'common-wrapper': true,
-      'sidebar-open': isOpenSidebar,
-      'no-sidebar': !isShowSidebar,
-      'mobile-menus-open': isOpenMobileMenus
+      'series--open': isOpenSeries,
+      'series--no': !isShowSeries,
+      'mobile-menus--active': isOpenMobileMenus
     }"
   >
     <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
     <div v-else>
-      <Navbar @toggleSidebar="toggleSidebar" @toggleMenus="toggleMobileMenus" />
-      <MobileNavbar />
-      <div class="sidebar-mask" @click="toggleSidebar(false)" />
+      <Navbar @toggleSeries="toggleSeries" @toggleMenus="toggleMobileMenus" />
+      <NavbarDropdownNemu />
+      <div class="series-mask" @click="toggleSeries(false)" />
       <Series />
       <slot />
       <Catalog v-if="isShowCatalog" />
@@ -22,20 +22,20 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import MobileNavbar from '../MobileMenus.vue'
+import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
 import Navbar from '../Navbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
 import Password from '../Password/index.vue'
-import { useSidebarData, useMobileMenus } from '../../composables'
-import { useSidebar, usePassword, useInitCodeCopy } from './hook'
+import { useSeriesData, useMobileMenus } from '../../composables'
+import { useSeries, usePassword, useInitCodeCopy } from './hook'
 
 const {
-  isOpenSidebar,
-  isShowSidebar,
+  isOpenSeries,
+  isShowSeries,
   isShowCatalog,
-  toggleSidebar
-} = useSidebarData()
+  toggleSeries
+} = useSeriesData()
 
 const {
   isOpenMobileMenus,
@@ -51,5 +51,5 @@ onMounted(() => {
   useInitCodeCopy()
 })
 
-useSidebar(toggleSidebar, toggleMobileMenus)
+useSeries(toggleSeries, toggleMobileMenus)
 </script>

@@ -1,8 +1,8 @@
 import { computed, provide } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
 import {
-  resolveSidebarItems,
-  sidebarItemsSymbol,
+  resolveSeriesItems,
+  seriesItemsSymbol,
   resolveCatalog,
   catalogSymbol,
   useThemeLocaleData,
@@ -11,14 +11,14 @@ import {
 import type { DefaultThemeNormalPageFrontmatter } from '../types'
 
 export function applyClientSetup() {
-  // we need to access sidebar items in multiple components
+  // we need to access series items in multiple components
   // so we make it global computed
   const themeLocal = useThemeLocaleData()
   const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
-  const sidebarItems = computed(() =>
-    resolveSidebarItems(frontmatter.value, themeLocal.value)
+  const seriesItems = computed(() =>
+    resolveSeriesItems(frontmatter.value, themeLocal.value)
   )
-  provide(sidebarItemsSymbol, sidebarItems)
+  provide(seriesItemsSymbol, seriesItems)
 
   const catalog = computed(() => resolveCatalog())
 

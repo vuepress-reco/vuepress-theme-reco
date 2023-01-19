@@ -1,4 +1,4 @@
-.toggle-sidebar-button {
+.toggle-series-button {
   @apply ml-2 mr-2 inline-block w-6 cursor-pointer;
   .icon {
     @apply w-full;

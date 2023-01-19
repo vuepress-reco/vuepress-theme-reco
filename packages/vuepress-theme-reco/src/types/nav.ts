@@ -34,24 +34,24 @@ export type NavbarConfig = (NavbarItem | NavbarGroup | string)[]
 export type ResolvedNavbarItem = NavbarItem | NavGroup<ResolvedNavbarItem>
 
 /**
- * Sidebar types
+ * Series types
  */
 // user config
-export interface SidebarItem
+export interface SeriesItem
   extends NavLink,
-    NavGroup<NavLink | SidebarItem | string> {
+    NavGroup<NavLink | SeriesItem | string> {
   isGroup?: false
 }
-export interface SidebarGroup
-  extends NavGroup<SidebarGroup | NavLink | SidebarItem | string> {
+export interface SeriesGroup
+  extends NavGroup<SeriesGroup | NavLink | SeriesItem | string> {
   isGroup: true
 }
-export type SidebarConfigArray = (SidebarGroup | SidebarItem | string)[]
-export type SidebarConfigObject = Record<string, SidebarConfigArray>
-export type SidebarConfig = SidebarConfigArray | SidebarConfigObject
+export type SeriesConfigArray = (SeriesGroup | SeriesItem | string)[]
+export type SeriesConfigObject = Record<string, SeriesConfigArray>
+export type SeriesConfig = SeriesConfigArray | SeriesConfigObject
 // resolved
-export interface ResolvedSidebarItem extends Partial<NavLink> {
+export interface ResolvedSeriesItem extends Partial<NavLink> {
   level?: number
   isGroup?: boolean
-  children?: ResolvedSidebarItem[]
+  children?: ResolvedSeriesItem[]
 }

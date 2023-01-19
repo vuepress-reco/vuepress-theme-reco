@@ -1,7 +1,7 @@
 <template>
   <RouterLink
     v-if="isRouterLink"
-    class="nav-link"
+    class="link"
     :class="{ 'router-link-active': isActiveInSubpath }"
     :to="item.link"
     :aria-label="linkAriaLabel"
@@ -14,7 +14,7 @@
   </RouterLink>
   <a
     v-else
-    class="nav-link"
+    class="link"
     :href="item.link"
     :target="linkTarget"
     :rel="linkRel"

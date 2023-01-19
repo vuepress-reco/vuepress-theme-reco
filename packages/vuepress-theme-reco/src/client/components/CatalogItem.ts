@@ -2,12 +2,12 @@ import { h } from 'vue'
 import type { FunctionalComponent, VNode } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSidebarItem } from '../../types'
+import type { ResolvedSeriesItem } from '../../types'
 import Link from './Link.vue'
 
 const isActiveItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSidebarItem
+  item: ResolvedSeriesItem
 ): boolean => {
   if (route.hash === item.link) {
     return true
@@ -20,10 +20,7 @@ const isActiveItem = (
   return false
 }
 
-const renderItem = (
-  item: ResolvedSidebarItem,
-  props: VNode['props']
-): VNode => {
+const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
   return h(
     'li',
     {
@@ -36,7 +33,7 @@ const renderItem = (
   )
 }
 
-const renderChildren = (item: ResolvedSidebarItem): Array<VNode | null> => {
+const renderChildren = (item: ResolvedSeriesItem): Array<VNode | null> => {
   if (!item.children?.length) {
     return [null]
   }
@@ -49,7 +46,7 @@ const renderChildren = (item: ResolvedSidebarItem): Array<VNode | null> => {
 }
 
 export const CatalogItem: FunctionalComponent<{
-  item: ResolvedSidebarItem
+  item: ResolvedSeriesItem
 }> = ({ item }) => {
   const route = useRoute()
   const active = isActiveItem(route, item)

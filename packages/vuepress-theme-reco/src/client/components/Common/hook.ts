@@ -4,9 +4,8 @@ import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/cli
 import { RecoThemePageData } from '../../../types'
 import { useScrollDirection, useThemeLocaleData } from '../../composables'
 
-export function useSidebar(toggleSidebar, toggleMobileMenus) {
-
-  // close sidebar after navigation
+export function useSeries(toggleSeries, toggleMobileMenus) {
+  // close series after navigation
   let unregisterRouterHook
 
   onMounted(() => {
@@ -14,7 +13,7 @@ export function useSidebar(toggleSidebar, toggleMobileMenus) {
     const { direction } = useScrollDirection()
     unregisterRouterHook = router.afterEach((to, from) => {
       if (to.path !== from.path) {
-        toggleSidebar(false)
+        toggleSeries(false)
         toggleMobileMenus(false)
 
         direction.value = ''
@@ -36,15 +35,15 @@ export function usePassword() {
 
     // @ts-ignore
     if (!__VUEPRESS_SSR__) {
-      sitePasswordPassCache = sessionStorage.getItem(SITE_PASSWORD_PASS) as string
+      sitePasswordPassCache = sessionStorage.getItem(
+        SITE_PASSWORD_PASS
+      ) as string
     }
 
     if (themeLocal.value.password && sitePasswordPassCache !== 'true') {
       sitePasswordPass.value = false
     }
   })
-
-
 
   const handlePass = () => {
     sitePasswordPass.value = true
