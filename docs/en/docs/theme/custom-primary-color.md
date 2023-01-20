@@ -1,5 +1,5 @@
 ---
-title: Customize the primary color
+title: Customize Primary Color
 date: 2023-01-21 01:00:00
 ---
 

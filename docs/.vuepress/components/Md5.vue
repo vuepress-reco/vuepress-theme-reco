@@ -1,6 +1,6 @@
 <template>
   <div class="md5-wrapper">
-    <input type="text" v-model="password" placeholder="请输入你的密码">
+    <input type="text" v-model="password" :placeholder="placeholder">
     <p><span v-show="md5Str !== ''">md5 密文：{{ md5Str }}</span></p>
   </div>
 </template>
@@ -8,11 +8,19 @@
 <script>
 import { md5 } from '@vuepress-reco/shared'
 export default {
+  props: {
+    placeholder: {
+      type: String,
+      default: ''
+    }
+  },
+
   data () {
     return {
       password: ''
     }
   },
+
   computed: {
     md5Str () {
       const pw = this.password

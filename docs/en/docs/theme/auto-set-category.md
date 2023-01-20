@@ -1,5 +1,5 @@
 ---
-title: Automatically set categories
+title: Auto Set categories
 date: 2021-12-12 17:58:24
 ---
 

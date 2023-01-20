@@ -1,5 +1,5 @@
 ---
-title: custom directory title
+title: Custom Catalog Title
 date: 2022-06-07 22:30:37
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: install and use
+title: Install And Use
 date: 2021-11-06 23:32:42
 ---
 

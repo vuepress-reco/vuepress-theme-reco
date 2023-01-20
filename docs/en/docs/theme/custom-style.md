@@ -1,5 +1,5 @@
 ---
-title: Custom style
+title: Custom Style
 date: 2022-08-06 22:21:01
 ---
 

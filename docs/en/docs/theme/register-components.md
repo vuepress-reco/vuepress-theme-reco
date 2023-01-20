@@ -1,5 +1,5 @@
 ---
-title: Register components
+title: Register Components
 date: 2022-04-27 00:56:21
 ---
 
