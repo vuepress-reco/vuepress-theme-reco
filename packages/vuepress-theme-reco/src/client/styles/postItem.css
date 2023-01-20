@@ -13,11 +13,11 @@
       -webkit-transform: scaleX(0);
       transform: scaleX(0);
       transition: 0.3s ease-in-out;
-      @apply bg-reco-brand;
+      @apply bg-reco-primary;
     }
 
     &:hover a {
-      @apply text-reco-brand;
+      @apply text-reco-primary;
     }
 
     &:hover:after {

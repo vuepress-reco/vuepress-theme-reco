@@ -3,18 +3,19 @@
   .category-list {
     @apply pl-0 list-none;
     .category-item {
-      @apply inline-block mr-4 mb-4 bg-basic border-block cursor-pointer border-reco-brand border-2;
+      @apply inline-block mr-4 mb-4 bg-basic border-block cursor-pointer border-reco-primary border-2;
       .category-link {
         @apply inline-block px-4 py-1;
         .text {
           @apply mr-1 text-sm leading-5 text-reco-text-lightmode;
         }
         .num {
-          @apply inline-block h-5 px-2 bg-reco-brand rounded text-white text-xs leading-5;
+          @apply inline-block h-5 px-2 bg-reco-primary rounded text-white text-xs leading-5;
         }
       }
-      &.active, &:hover {
-        @apply bg-reco-brand-lighter;
+      &.active,
+      &:hover {
+        @apply bg-reco-primary/90;
         .category-link {
           .text {
             @apply text-white;

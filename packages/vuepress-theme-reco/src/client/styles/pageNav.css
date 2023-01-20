@@ -18,7 +18,7 @@
   }
   a {
     @apply font-semibold;
-    @apply text-reco-brand;
+    @apply text-reco-primary;
   }
   .next {
     @apply text-right;
@@ -26,7 +26,7 @@
   .page-nav-item {
     @apply mt-4 p-4 block cursor-pointer border rounded border-solid border-reco-border-lightmode;
     @apply md:w-2/4;
-    @apply hover:border-reco-brand;
+    @apply hover:border-reco-primary;
   }
 }
 

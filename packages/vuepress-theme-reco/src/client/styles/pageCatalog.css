@@ -14,7 +14,7 @@
       @apply border-t border-dashed border-reco-border-lightmode;
       &.active {
         a {
-          @apply text-reco-brand;
+          @apply text-reco-primary;
         }
       }
     }
@@ -23,16 +23,16 @@
       @apply py-1.5 relative text-xs transition-all;
       &::before {
         @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
-        @apply bg-reco-brand;
+        @apply bg-reco-primary;
         content: '';
       }
       &:hover {
-        @apply text-reco-brand;
+        @apply text-reco-primary;
       }
       &.active {
         @apply pl-3;
         a {
-          @apply text-reco-brand;
+          @apply text-reco-primary;
         }
         &::before {
           @apply w-1 h-1;

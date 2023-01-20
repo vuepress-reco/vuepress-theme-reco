@@ -106,7 +106,7 @@
   a,
   area,
   button,
-  [role="button"],
+  [role='button'],
   input,
   label,
   select,
@@ -159,7 +159,8 @@
       @apply dark:bg-reco-bg-darkmode-lighter;
     }
 
-    td, th {
+    td,
+    th {
       @apply px-2 py-3;
       &:not(:last-child) {
         @apply border-r border-reco-border-lightmode border-solid;
@@ -175,8 +176,10 @@
     }
   }
 
-  pre, code, kbd {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  pre,
+  code,
+  kbd {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 
   kbd {
@@ -209,11 +212,11 @@
 
   ::-webkit-scrollbar-thumb:vertical {
     height: 5px;
-    @apply bg-reco-brand;
+    @apply bg-reco-primary;
   }
 
   ::-webkit-scrollbar-thumb:horizontal {
     width: 5px;
-    @apply bg-reco-brand;
+    @apply bg-reco-primary;
   }
 }

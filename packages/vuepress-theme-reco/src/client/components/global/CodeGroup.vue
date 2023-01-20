@@ -157,7 +157,7 @@ export default defineComponent({
             @apply dark:text-reco-text-darkmode;
           }
           &.code-group__nav-tab-active {
-            @apply border-reco-brand !important;
+            @apply border-reco-primary !important;
           }
         }
       }

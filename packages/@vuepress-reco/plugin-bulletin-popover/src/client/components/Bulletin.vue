@@ -35,7 +35,7 @@ const { bodyNodes } = useHandleNodes()
   max-height: 660px;
   overflow-y: auto;
   .bulletin-title {
-    @apply relative box-border m-0 p-1.5 bg-reco-brand text-white;
+    @apply relative box-border m-0 p-1.5 bg-reco-primary text-white;
     .btn-close {
       @apply absolute inline-block w-4 h-4 top-0 bottom-0 right-2 my-auto cursor-pointer text-white;
       width: 22px;
@@ -51,7 +51,7 @@ const { bodyNodes } = useHandleNodes()
       @apply text-center;
     }
     .btn {
-      @apply inline-block w-14 h-14 text-center rounded-1/2 text-white cursor-pointer bg-reco-brand;
+      @apply inline-block w-14 h-14 text-center rounded-1/2 text-white cursor-pointer bg-reco-primary;
       line-height: 3.5rem;
       &:not(:first-child) {
         @apply ml-2;
@@ -64,7 +64,7 @@ const { bodyNodes } = useHandleNodes()
       @apply w-full;
     }
     hr {
-      @apply my-8 border-t border-solid border-reco-brand;
+      @apply my-8 border-t border-solid border-reco-primary;
     }
   }
 }

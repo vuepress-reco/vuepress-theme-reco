@@ -18,7 +18,7 @@
         @apply pl-0 m-0 list-none;
       }
       &.active {
-        @apply text-reco-brand;
+        @apply text-reco-primary;
       }
     }
     ul {
@@ -29,11 +29,11 @@
     @apply relative block py-0.5 transition-all leading-7 text-sm;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
-      @apply bg-reco-brand;
+      @apply bg-reco-primary;
       content: '';
     }
     &:hover {
-      @apply text-reco-brand;
+      @apply text-reco-primary;
     }
     &.router-link-active {
       @apply pl-4;
@@ -41,7 +41,7 @@
         @apply w-1.5 h-1.5;
       }
       a {
-        @apply text-reco-brand;
+        @apply text-reco-primary;
       }
     }
   }

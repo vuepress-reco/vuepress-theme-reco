@@ -1,12 +1,12 @@
 .pagation-container {
   @apply text-center;
   .jump, .jumpinput {
-    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-brand border border-solid max-w-xs text-reco-text-lightmode;
+    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
   }
   .jump {
-    @apply hover:bg-reco-brand-lighter hover:text-white;
+    @apply hover:bg-reco-primary/90 hover:text-white;
     &.active {
-      @apply bg-reco-brand-lighter text-white;
+      @apply bg-reco-primary/90 text-white;
     }
     .icon-container {
       @apply align-middle;

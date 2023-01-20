@@ -41,15 +41,15 @@ defineProps({
   @apply text-white;
 
   &.tip {
-    @apply bg-reco-container-info-border;
+    @apply bg-reco-primary;
   }
 
   &.warning {
-    @apply bg-reco-container-warning-border;
+    @apply bg-reco-container-warning;
   }
 
   &.danger {
-    @apply bg-reco-container-danger-border;
+    @apply bg-reco-container-danger;
   }
 
   & + & {

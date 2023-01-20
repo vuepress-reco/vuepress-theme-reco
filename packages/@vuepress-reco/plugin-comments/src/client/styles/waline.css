@@ -18,19 +18,19 @@
 
 .wl-action:hover,
 .wl-action.actived {
-  @apply text-reco-brand-lighter;
+  @apply text-reco-primary/90;
 }
 
 .wl-btn:hover,
 .wl-btn:active {
-  @apply border-reco-brand text-reco-brand-lighter;
+  @apply border-reco-primary text-reco-primary/90;
 }
 
 .wl-btn.primary {
-  @apply border-reco-brand bg-reco-brand;
+  @apply border-reco-primary bg-reco-primary;
 }
 
 .wl-btn.primary:hover,
 .wl-btn.primary:active {
-  @apply border-reco-brand bg-reco-brand;
+  @apply border-reco-primary bg-reco-primary;
 }

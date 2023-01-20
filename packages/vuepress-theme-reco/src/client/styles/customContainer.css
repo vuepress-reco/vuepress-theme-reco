@@ -6,31 +6,35 @@
   .custom-container-title {
     @apply my-0 pl-6 font-bold;
   }
-  &.tip, &.info {
-    @apply rounded border-reco-container-info-border border border-solid bg-reco-container-info-bg;
-    .custom-container-title, svg {
-      @apply text-reco-container-info-border;
+  &.tip,
+  &.info {
+    @apply rounded border-reco-primary border border-solid bg-reco-primary/5;
+    .custom-container-title,
+    svg {
+      @apply text-reco-primary;
     }
     > p > code {
-      @apply bg-reco-container-info-border/20 !important;
+      @apply bg-reco-primary/20 !important;
     }
   }
   &.warning {
-    @apply rounded border-reco-container-warning-border border border-solid bg-reco-container-warning-bg;
-    .custom-container-title, svg {
-      @apply text-reco-container-warning-border;
+    @apply rounded border-reco-container-warning border border-solid bg-reco-container-warning/5;
+    .custom-container-title,
+    svg {
+      @apply text-reco-container-warning;
     }
     > p > code {
-      @apply bg-reco-container-warning-border/20 !important;
+      @apply bg-reco-container-warning/20 !important;
     }
   }
   &.danger {
-    @apply rounded border-reco-container-danger-border border border-solid bg-reco-container-danger-bg;
-    .custom-container-title, svg {
-      @apply text-reco-container-danger-border;
+    @apply rounded border-reco-container-danger border border-solid bg-reco-container-danger/5;
+    .custom-container-title,
+    svg {
+      @apply text-reco-container-danger;
     }
     > p > code {
-      @apply bg-reco-container-danger-border/20 !important;
+      @apply bg-reco-container-danger/20 !important;
     }
   }
   &.details {

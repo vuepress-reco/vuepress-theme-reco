@@ -2,497 +2,511 @@
 
 @keyframes spin {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes pulse {
   50% {
-      background: rgb(220, 220, 220);
+    background: rgb(220, 220, 220);
   }
 }
 
 .v {
-  font-size:16px;
+  font-size: 16px;
   text-align: left;
   * {
-      box-sizing: border-box;
-      line-height:2;
-      transition: all .3s ease;
+    box-sizing: border-box;
+    line-height: 2;
+    transition: all 0.3s ease;
   }
 
-  hr{
-      margin: .825em 0;
-      border-color:#f6f6f6;
-      border-style: dashed;
+  hr {
+    margin: 0.825em 0;
+    border-color: #f6f6f6;
+    border-style: dashed;
   }
-  &.hide-avatar{
-      .vimg{display:none;}
-  }
-  a{
-      position:relative;
-      cursor: pointer;
-      color: #1abc9c;
-      text-decoration:none;
-      display:inline-block;
-      &:hover {
-          color: #D7191A;
-      }
-  }
-  pre,code{
-      background-color: #f6f6f6;
-      color: #555;
-      padding: 0.2em 0.4em;
-      border-radius: 3px;
-      font-size: 85%;
-      margin: 0;
-      font-family: "Source Code Pro", "courier new", "Input Mono", "PT Mono","SFMono-Regular",Consolas,Monaco,Menlo,"PingFang SC","Liberation Mono","Microsoft YaHei",Courier，monospace;
-  }
-  pre{
-      padding: 10px;
-      overflow: auto;
-      line-height: 1.45;
-      code{
-          padding:0;
-          background:transparent;
-          white-space: pre-wrap;
-          word-break: keep-all;
-      }
-  }
-  blockquote{
-      color: #666;
-      margin: .5em 0;
-      padding: 0 0 0 1em ;
-      border-left: 8px solid rgba(238, 238, 238, 0.5);
-  }
-  .vinput {
-      border: none;
-      resize: none;
-      outline: none;
-      padding: 10px 5px;
-      max-width: 100%;
-      font-size: .775em;
-  }
-  input[type='checkbox'],input[type='radio']{
-      display:inline-block;
-      vertical-align: middle;
-      margin-top:-2px;
-  }
-  .vwrap {
-      border: 1px solid #f0f0f0;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      overflow: hidden;
-      position: relative;
-      padding: 10px;
-      input {
-          background: transparent;
-      }
-      .vedit {
-          position: relative;
-          padding-top:10px;
-      }
-      .vedit .vctrl {
-          text-align: right;
-          font-size: 12px;
-      }
-      .vedit .vctrl span {
-          padding: 10px;
-          display: inline-block;
-          vertical-align: middle;
-          cursor: pointer;
-      }
-      .vedit .vemojis {
-          display: none;
-          font-size: 18px;
-          text-align: justify;
-          max-height: 145px;
-          overflow: auto;
-          margin-bottom: 10px;
-          box-shadow: 0px 0 1px #f0f0f0;
-      }
-      .vedit .vemojis i {
-          font-style: normal;
-          padding: 7px 0;
-          width: 38px;
-          cursor: pointer;
-          text-align: center;
-          display: inline-block;
-          vertical-align: middle;
-      }
-      .vedit .vpreview {
-          padding: 7px;
-          box-shadow: 0px 0 1px #f0f0f0;
-          img,frame,iframe{
-              max-width: 100%;
-              border:none;
-          }
-      }
-      .vheader {
-          .vinput {
-              width: 33.33%;
-              border-bottom: 1px #dedede dashed;
-          }
-          &.item2 .vinput {
-              width: 50%;
-          }
-          &.item1 .vinput {
-              width: 100%;
-          }
-          .vinput:focus {
-              border-bottom-color: #eb5055;
-          }
-          @media screen and (max-width:520px) {
-              .vinput {
-                  width: 100%;
-              }
-              &.item2 .vinput {
-                  width: 100%;
-              }
-          }
-      }
-      .vcontrol {
-          font-size: 0;
-          padding-top: 15px;
-          .col {
-              display: inline-block;
-              font-size: 16px;
-              vertical-align: middle;
-              color: #ccc;
-              &.text-right {
-                  text-align: right;
-              }
-              svg {
-                  margin-right: 2px;
-                  overflow: hidden;
-                  fill: currentColor;
-                  vertical-align: middle;
-              }
-              &.col-20 {
-                  width: 20%;
-              }
-              &.col-40 {
-                  width: 40%;
-              }
-              &.col-60 {
-                  width: 60%;
-              }
-              &.col-80 {
-                  width: 80%;
-              }
-              &.split {
-                  width: 50%;
-              }
-          }
-      }
-      .vmark {
-          position: absolute;
-          background: rgba(0, 0, 0, .65);
-          width: 100%;
-          height: 100%;
-          left: 0;
-          top: 0;
-          .valert {
-              padding-top: 3em;
-              .vtext {
-                  color: #fff;
-                  padding: 1em 0;
-              }
-              .vcode {
-                  width: 4.6875em;
-                  border-radius: .3125em;
-                  padding: .5em;
-                  background: #dedede;
-                  &:focus {
-                      border-color: #3090e4;
-                      background-color: #fff;
-                  }
-              }
-          }
-          @media screen and(max-width:720px) {
-              .valert {
-                  padding-top: 5.5em;
-                  .vtext {
-                      color: #fff;
-                      padding: 1em 0;
-                  }
-              }
-          }
-      }
-  }
-  .power {
-      color: #999;
-      font-size: .75em;
-      padding:.5em 0;
-      a {
-          font-size: .75em;
-      }
-  }
-  .vinfo {
-      font-size: 0;
-      padding: 5px;
-      .col {
-          font-size: 16px;
-          display: inline-block;
-          width: 50%;
-          vertical-align: middle;
-      }
-      .vcount {
-          .vnum {
-              font-weight: 600;
-              font-size: 1.25em;
-          }
-      }
+  &.hide-avatar {
+    .vimg {
+      display: none;
+    }
   }
   a {
-      text-decoration: none;
-      color: #555;
-      &:hover {
-          color: #222;
-      }
+    position: relative;
+    cursor: pointer;
+    color: #1abc9c;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      color: #d7191a;
+    }
   }
-  ul,ol {
+  pre,
+  code {
+    background-color: #f6f6f6;
+    color: #555;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    font-family: 'Source Code Pro', 'courier new', 'Input Mono', 'PT Mono',
+      'SFMono-Regular', Consolas, Monaco, Menlo, 'PingFang SC',
+      'Liberation Mono', 'Microsoft YaHei', Courier，monospace;
+  }
+  pre {
+    padding: 10px;
+    overflow: auto;
+    line-height: 1.45;
+    code {
       padding: 0;
-      margin-left: 1.25em;
+      background: transparent;
+      white-space: pre-wrap;
+      word-break: keep-all;
+    }
+  }
+  blockquote {
+    color: #666;
+    margin: 0.5em 0;
+    padding: 0 0 0 1em;
+    border-left: 8px solid rgba(238, 238, 238, 0.5);
+  }
+  .vinput {
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 10px 5px;
+    max-width: 100%;
+    font-size: 0.775em;
+  }
+  input[type='checkbox'],
+  input[type='radio'] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  .vwrap {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    input {
+      background: transparent;
+    }
+    .vedit {
+      position: relative;
+      padding-top: 10px;
+    }
+    .vedit .vctrl {
+      text-align: right;
+      font-size: 12px;
+    }
+    .vedit .vctrl span {
+      padding: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    .vedit .vemojis {
+      display: none;
+      font-size: 18px;
+      text-align: justify;
+      max-height: 145px;
+      overflow: auto;
+      margin-bottom: 10px;
+      box-shadow: 0px 0 1px #f0f0f0;
+    }
+    .vedit .vemojis i {
+      font-style: normal;
+      padding: 7px 0;
+      width: 38px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .vedit .vpreview {
+      padding: 7px;
+      box-shadow: 0px 0 1px #f0f0f0;
+      img,
+      frame,
+      iframe {
+        max-width: 100%;
+        border: none;
+      }
+    }
+    .vheader {
+      .vinput {
+        width: 33.33%;
+        border-bottom: 1px #dedede dashed;
+      }
+      &.item2 .vinput {
+        width: 50%;
+      }
+      &.item1 .vinput {
+        width: 100%;
+      }
+      .vinput:focus {
+        border-bottom-color: #eb5055;
+      }
+      @media screen and (max-width: 520px) {
+        .vinput {
+          width: 100%;
+        }
+        &.item2 .vinput {
+          width: 100%;
+        }
+      }
+    }
+    .vcontrol {
+      font-size: 0;
+      padding-top: 15px;
+      .col {
+        display: inline-block;
+        font-size: 16px;
+        vertical-align: middle;
+        color: #ccc;
+        &.text-right {
+          text-align: right;
+        }
+        svg {
+          margin-right: 2px;
+          overflow: hidden;
+          fill: currentColor;
+          vertical-align: middle;
+        }
+        &.col-20 {
+          width: 20%;
+        }
+        &.col-40 {
+          width: 40%;
+        }
+        &.col-60 {
+          width: 60%;
+        }
+        &.col-80 {
+          width: 80%;
+        }
+        &.split {
+          width: 50%;
+        }
+      }
+    }
+    .vmark {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.65);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      .valert {
+        padding-top: 3em;
+        .vtext {
+          color: #fff;
+          padding: 1em 0;
+        }
+        .vcode {
+          width: 4.6875em;
+          border-radius: 0.3125em;
+          padding: 0.5em;
+          background: #dedede;
+          &:focus {
+            border-color: #3090e4;
+            background-color: #fff;
+          }
+        }
+      }
+      @media screen and(max-width:720px) {
+        .valert {
+          padding-top: 5.5em;
+          .vtext {
+            color: #fff;
+            padding: 1em 0;
+          }
+        }
+      }
+    }
+  }
+  .power {
+    color: #999;
+    font-size: 0.75em;
+    padding: 0.5em 0;
+    a {
+      font-size: 0.75em;
+    }
+  }
+  .vinfo {
+    font-size: 0;
+    padding: 5px;
+    .col {
+      font-size: 16px;
+      display: inline-block;
+      width: 50%;
+      vertical-align: middle;
+    }
+    .vcount {
+      .vnum {
+        font-weight: 600;
+        font-size: 1.25em;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  ul,
+  ol {
+    padding: 0;
+    margin-left: 1.25em;
   }
   .txt-center {
-      text-align: center;
+    text-align: center;
   }
   .txt-right {
-      text-align: right;
+    text-align: right;
   }
   .pd5 {
-      padding: 5px;
+    padding: 5px;
   }
   .pd10 {
-      padding: 10px;
+    padding: 10px;
   }
   .veditor {
-      width: 100%;
-      min-height: 8.75em;
-      font-size: .875em;
-      resize: vertical;
-      transition:all .25s ease;
-      @apply bg-block;
+    width: 100%;
+    min-height: 8.75em;
+    font-size: 0.875em;
+    resize: vertical;
+    transition: all 0.25s ease;
+    @apply bg-block;
   }
   .vbtn {
-      transition-duration: .4s;
-      text-align: center;
-      color: #313131;
-      border: 1px solid #ededed;
-      border-radius: .3em;
-      display: inline-block;
-      background: #ededed;
-      margin-bottom: 0;
-      font-weight: 400;
-      vertical-align: middle;
-      touch-action: manipulation;
-      cursor: pointer;
-      white-space: nowrap;
-      padding: .5em 1.25em;
-      font-size: .875em;
-      line-height: 1.42857143;
-      user-select: none;
-      outline: none;
-      &+.vbtn {
-          margin-left: 1.25em;
-      }
+    transition-duration: 0.4s;
+    text-align: center;
+    color: #313131;
+    border: 1px solid #ededed;
+    border-radius: 0.3em;
+    display: inline-block;
+    background: #ededed;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 0.5em 1.25em;
+    font-size: 0.875em;
+    line-height: 1.42857143;
+    user-select: none;
+    outline: none;
+    & + .vbtn {
+      margin-left: 1.25em;
+    }
   }
   .vbtn:active,
   .vbtn:hover {
-      color: #3090e4;
-      border-color: #3090e4;
-      background-color: #fff;
+    color: #3090e4;
+    border-color: #3090e4;
+    background-color: #fff;
   }
   .vempty {
-      padding: 1.25em;
-      text-align: center;
-      color: #999;
+    padding: 1.25em;
+    text-align: center;
+    color: #999;
   }
   .vlist {
-      width: 100%;
-      .vcard {
-          padding-top: 1.5em;
-          position: relative;
-          display: block;
-          &:after {
-              content: '';
-              clear: both;
-              display: block;
-          }
-          .vimg {
-              width: 3.125em;
-              height: 3.125em;
-              float: left;
-              border-radius: 50%;
-              margin-right: .7525em;
-              border:1px solid #f5f5f5;
-              padding:.125em;
-          }
-
-          @media screen and (max-width:720px) {
-              .vimg {
-                  width: 2.5em;
-                  height: 2.5em;
-              }
-          }
-          .vhead {
-              line-height: 1.5;
-              margin-top: 0;
-              .vnick {
-                  position:relative;
-                  font-size: .875em;
-                  font-weight: 500;
-                  margin-right: .875em;
-                  cursor: pointer;
-                  color: #1abc9c;
-                  text-decoration:none;
-                  display:inline-block;
-                  &:hover {
-                      color: #D7191A;
-                  }
-              }
-              .vsys {
-                  display: inline-block;
-                  padding: .2em .5em;
-                  background: #ededed;
-                  color: #b3b1b1;
-                  font-size: .75em;
-                  border-radius: .2em;
-                  margin-right: .3em;
-              }
-              @media screen and (max-width:520px) {
-                  .vsys {
-                      display: none;
-                  }
-              }
-          }
-
-          .vh {
-              overflow: hidden;
-              padding-bottom: .5em;
-              border-bottom: 1px dashed #f5f5f5;
-              .vtime {
-                  color: #b3b3b3;
-                  font-size: .75em;
-                  margin-right: .875em;
-              }
-              .vmeta {
-                  line-height:1;
-                  position: relative;
-                  .vat {
-                      font-size: .8125em;
-                      color: #ef2f11;
-                      cursor: pointer;
-                      float:right;
-                  }
-              }
-          }
-          &:last-child{
-              .vh{
-                  border-bottom:none;
-              }
-          }
-          .vcontent {
-              word-wrap: break-word;
-              word-break: break-all;
-              text-align: justify;
-              color: #4A4A4A;
-              font-size: .875em;
-              line-height: 2;
-              position: relative;
-              margin-bottom: .75em;
-              padding-top: .625em;
-              img,iframe,frame {
-                  max-width: 100%;
-                  border:none;
-              }
-              &.expand {
-                  cursor: pointer;
-                  max-height: 11.25em;
-                  overflow: hidden;
-                  &:before {
-                      display: block;
-                      content: "";
-                      position: absolute;
-                      width: 100%;
-                      left: 0;
-                      top: 0;
-                      bottom: 3.15em;
-                      pointer-events: none;
-                      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .9));
-                  }
-                  &:after {
-                      display: block;
-                      content: "Click on expand";
-                      text-align: center;
-                      color: #828586;
-                      position: absolute;
-                      width: 100%;
-                      height: 3.15em;
-                      line-height: 3.15em;
-                      left: 0;
-                      bottom: 0;
-                      pointer-events: none;
-                      background: rgba(255, 255, 255, .9);
-                  }
-              }
-          }
-
-          .vquote {
-              color: #666;
-              margin-top: 1em;
-              padding-left: 1em;
-              border-left: 1px dashed rgba(238, 238, 238, 0.5);
-              .vimg{
-                  width: 2.225em;
-                  height: 2.225em;
-              }
-          }
-
+    width: 100%;
+    .vcard {
+      padding-top: 1.5em;
+      position: relative;
+      display: block;
+      &:after {
+        content: '';
+        clear: both;
+        display: block;
       }
+      .vimg {
+        width: 3.125em;
+        height: 3.125em;
+        float: left;
+        border-radius: 50%;
+        margin-right: 0.7525em;
+        border: 1px solid #f5f5f5;
+        padding: 0.125em;
+      }
+
+      @media screen and (max-width: 720px) {
+        .vimg {
+          width: 2.5em;
+          height: 2.5em;
+        }
+      }
+      .vhead {
+        line-height: 1.5;
+        margin-top: 0;
+        .vnick {
+          position: relative;
+          font-size: 0.875em;
+          font-weight: 500;
+          margin-right: 0.875em;
+          cursor: pointer;
+          color: #1abc9c;
+          text-decoration: none;
+          display: inline-block;
+          &:hover {
+            color: #d7191a;
+          }
+        }
+        .vsys {
+          display: inline-block;
+          padding: 0.2em 0.5em;
+          background: #ededed;
+          color: #b3b1b1;
+          font-size: 0.75em;
+          border-radius: 0.2em;
+          margin-right: 0.3em;
+        }
+        @media screen and (max-width: 520px) {
+          .vsys {
+            display: none;
+          }
+        }
+      }
+
+      .vh {
+        overflow: hidden;
+        padding-bottom: 0.5em;
+        border-bottom: 1px dashed #f5f5f5;
+        .vtime {
+          color: #b3b3b3;
+          font-size: 0.75em;
+          margin-right: 0.875em;
+        }
+        .vmeta {
+          line-height: 1;
+          position: relative;
+          .vat {
+            font-size: 0.8125em;
+            color: #ef2f11;
+            cursor: pointer;
+            float: right;
+          }
+        }
+      }
+      &:last-child {
+        .vh {
+          border-bottom: none;
+        }
+      }
+      .vcontent {
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+        color: #4a4a4a;
+        font-size: 0.875em;
+        line-height: 2;
+        position: relative;
+        margin-bottom: 0.75em;
+        padding-top: 0.625em;
+        img,
+        iframe,
+        frame {
+          max-width: 100%;
+          border: none;
+        }
+        &.expand {
+          cursor: pointer;
+          max-height: 11.25em;
+          overflow: hidden;
+          &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 3.15em;
+            pointer-events: none;
+            background: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0),
+              rgba(255, 255, 255, 0.9)
+            );
+          }
+          &:after {
+            display: block;
+            content: 'Click on expand';
+            text-align: center;
+            color: #828586;
+            position: absolute;
+            width: 100%;
+            height: 3.15em;
+            line-height: 3.15em;
+            left: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+
+      .vquote {
+        color: #666;
+        margin-top: 1em;
+        padding-left: 1em;
+        border-left: 1px dashed rgba(238, 238, 238, 0.5);
+        .vimg {
+          width: 2.225em;
+          height: 2.225em;
+        }
+      }
+    }
   }
   .vpage {
-      .vmore{
-          margin:1em 0;
-      }
+    .vmore {
+      margin: 1em 0;
+    }
   }
   .clear {
-      content: '';
-      display: block;
-      clear: both;
+    content: '';
+    display: block;
+    clear: both;
   }
   .vloading {
-      position: relative;
-      padding: 20px;
-      display: block;
-      height: 80px;
+    position: relative;
+    padding: 20px;
+    display: block;
+    height: 80px;
   }
   .vloading::before {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
-      display: inline-block;
-      top: 20px;
-      left: 50%;
-      margin-left: -20px;
-      width: 40px;
-      height: 40px;
-      border: 6px double rgb(160, 160, 160);
-      border-top-color: transparent;
-      border-bottom-color: transparent;
-      border-radius: 50%;
-      animation: spin 1s infinite linear;
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    border: 6px double rgb(160, 160, 160);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
   }
 }
 
 .reco-valine-wrapper #valine.v {
-  .vbtn{
-    @apply text-reco-brand border-block border-reco-brand;
+  .vbtn {
+    @apply text-reco-primary border-block border-reco-primary;
     &:hover {
-      @apply text-reco-text-lightmode bg-reco-brand-lighter;
+      @apply text-reco-text-lightmode bg-reco-primary/90;
     }
   }
   .vwrap {
@@ -500,15 +514,15 @@
     .vheader .vinput {
       @apply border-basic-bottom border-dashed bg-block;
       &:focus {
-        @apply border-reco-brand;
+        @apply border-reco-primary;
       }
       &:-internal-autofill-selected {
-         @apply bg-basic !important;
+        @apply bg-basic !important;
       }
     }
   }
   .vicon.actived {
-    @apply fill-current text-reco-brand;
+    @apply fill-current text-reco-primary;
   }
   .vinfo {
     @apply pl-2;
@@ -518,62 +532,64 @@
       @apply ml-0 border-l-0;
     }
     .vimg {
-      @apply p-0 w-11 h-11 rounded border border-reco-brand-lighter;
+      @apply p-0 w-11 h-11 rounded border border-reco-primary/90;
     }
     .vhead .vnick {
-      @apply text-reco-brand;
+      @apply text-reco-primary;
       &::before {
-        @apply bg-reco-brand;
+        @apply bg-reco-primary;
       }
     }
   }
   .vh {
     @apply border-b-0;
     .vhead .vsys {
-      @apply bg-block text-reco-brand-lighter;
+      @apply bg-block text-reco-primary/90;
     }
     .vmeta {
       @apply mb-4;
       .vat {
-        @apply mr-1.5 text-reco-brand border rounded border-solid border-reco-brand px-1.5 py-0;
+        @apply mr-1.5 text-reco-primary border rounded border-solid border-reco-primary px-1.5 py-0;
         &:hover {
-          @apply text-white bg-reco-brand-lighter;
+          @apply text-white bg-reco-primary/90;
         }
       }
     }
     .vcontent {
       @apply mx-1.5 my-0 px-2.5 py-0.5 bg-block rounded;
       p .at {
-        @apply text-reco-brand;
+        @apply text-reco-primary;
       }
       &.expand::before {
         @apply z-10;
         /* background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff); */
       }
       &.expand::after {
-        @apply text-reco-brand;
+        @apply text-reco-primary;
       }
     }
   }
   .info {
     @apply pr-2.5;
   }
-  code, pre, .vbtn {
+  code,
+  pre,
+  .vbtn {
     @apply bg-block;
   }
   a {
-    @apply text-reco-brand;
+    @apply text-reco-primary;
     &::before {
-      @apply bg-reco-brand;
+      @apply bg-reco-primary;
     }
   }
 }
 
 /* 兼容 */
 .dark .reco-valine-wrapper #valine.v .vh .vcontent.expand::before {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 }
 
 .dark .reco-valine-wrapper #valine.v .vh .vcontent.expand::after {
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, 0.9);
 }

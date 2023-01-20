@@ -15,9 +15,9 @@
         @apply md:text-left;
         li {
           @apply inline-block align-middle;
-          @apply hover:border-reco-brand;
+          @apply hover:border-reco-primary;
           .icon-container {
-            @apply px-6 py-2 border-2 border-solid border-reco-brand rounded-md bg-reco-brand-lighter cursor-pointer font-semibold text-white;
+            @apply px-6 py-2 border-2 border-solid border-reco-primary rounded-md bg-reco-primary/90 cursor-pointer font-semibold text-white;
             @apply dark:text-reco-text-darkmode;
           }
           &.plain .icon-container {
