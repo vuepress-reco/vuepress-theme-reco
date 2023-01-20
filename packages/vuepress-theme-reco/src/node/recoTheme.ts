@@ -37,6 +37,10 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   return {
     name: 'vuepress-theme-reco',
     onInitialized(app) {
+      if (themeConfig.primaryColor) {
+        tailwindcssConfig.theme.extend.colors.reco.primary = themeConfig.primaryColor as string
+      }
+
       // todo @vuepress/bundler-webpack 适配问题
       // app.options.bundler.name = '@vuepress/bundler-webpack'
 

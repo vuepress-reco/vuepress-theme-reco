@@ -30,12 +30,18 @@ export default defineUserConfig({
             children: [
               {
                 text: '是大法师的',
-                children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
+                children: [
+                  '/blogs/category1/blog1.md',
+                  '/blogs/category1/blog2.md',
+                ],
               },
               {
                 text: '爽肤水的饭',
-                children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
-              }
+                children: [
+                  '/blogs/category1/blog1.md',
+                  '/blogs/category1/blog2.md',
+                ],
+              },
             ],
           },
         ],
@@ -59,7 +65,11 @@ export default defineUserConfig({
       '/blogs/': [
         {
           text: 'blogs1',
-          children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md', '/blogs/category1/blog3.md'],
+          children: [
+            '/blogs/category1/blog1.md',
+            '/blogs/category1/blog2.md',
+            '/blogs/category1/blog3.md',
+          ],
         },
       ],
     },
@@ -70,12 +80,18 @@ export default defineUserConfig({
         children: [
           {
             text: '是大法师的',
-            children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
+            children: [
+              '/blogs/category1/blog1.md',
+              '/blogs/category1/blog2.md',
+            ],
           },
           {
             text: '爽肤水的饭',
-            children: ['/blogs/category1/blog1.md', '/blogs/category1/blog2.md']
-          }
+            children: [
+              '/blogs/category1/blog1.md',
+              '/blogs/category1/blog2.md',
+            ],
+          },
         ],
       },
     ],
@@ -96,7 +112,7 @@ export default defineUserConfig({
             <li>QQ群1：1037296104</li>
             <li>QQ群2：1061561395</li>
           </ul>`,
-          style: 'font-size: 12px;'
+          style: 'font-size: 12px;',
         },
         {
           type: 'hr',
@@ -109,7 +125,7 @@ export default defineUserConfig({
             <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/issues">Issues<a/></li>
             <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/discussions/1">Discussions<a/></li>
           </ul>`,
-          style: 'font-size: 12px;'
+          style: 'font-size: 12px;',
         },
         {
           type: 'hr',
@@ -119,17 +135,18 @@ export default defineUserConfig({
           children: [
             {
               text: '打赏',
-              link: '/views/other/donate.html'
+              link: '/views/other/donate.html',
             },
             {
               text: '打赏',
-              link: '/views/other/donate.html'
-            }
-          ]
-        }
+              link: '/views/other/donate.html',
+            },
+          ],
+        },
       ],
     },
-    password: ['e10adc3949ba59abbe56e057f20f883e']
+    password: ['e10adc3949ba59abbe56e057f20f883e'],
+    primaryColor: '#3aa675',
   }),
   debug: true,
 })
