@@ -1,13 +1,17 @@
 <template>
   <div v-if="showPageInfo" class="page-info">
     <Xicons v-if="!!author" icon="User" :text="author" link="javascript:void(0)" />
+
     <Xicons v-if="!!date" icon="Clock" :text="date" link="javascript:void(0)" />
+
     <Xicons v-if="!!categories && categories.length > 0" icon="Folder" link="javascript:void(0)">
       {{categories.join(' ')}}
     </Xicons>
+
     <Xicons v-if="!!tags && tags.length > 0" icon="Tag" link="javascript:void(0)">
       {{tags.join(' ')}}
     </Xicons>
+
     <Xicons v-if="showValineViews" icon="Eye" link="javascript:void(0)">
       <ValineViews />
     </Xicons>
@@ -18,7 +22,7 @@
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import { toISODate } from '../utils/other'
+import { formatISODate } from '../utils/other'
 import { convertToPinyin } from '@vuepress-reco/shared'
 
 export default defineComponent({
@@ -54,7 +58,7 @@ export default defineComponent({
 
     const date = computed(() => {
       const d = pageData?.value?.frontmatter?.date
-      return d ? toISODate(d) : ''
+      return d ? formatISODate(d) : ''
     })
 
     const categories = computed(

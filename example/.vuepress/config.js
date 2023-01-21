@@ -146,7 +146,7 @@ export default defineUserConfig({
       ],
     },
     password: ['e10adc3949ba59abbe56e057f20f883e'],
-    primaryColor: '#3aa675',
+    // primaryColor: '#3aa675',
   }),
   debug: true,
 })

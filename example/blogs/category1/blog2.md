@@ -1,5 +1,6 @@
 ---
 title: 安装
+date: 2022-01-01 00:01:00
 categories:
  - c1
 tags:
