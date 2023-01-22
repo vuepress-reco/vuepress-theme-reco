@@ -76,7 +76,7 @@ importers:
 
   packages/@vuepress-reco/plugin-bulletin-popover:
     specifiers:
-      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.43
+      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.44
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
       '@vuepress/plugin-theme-data': 2.0.0-beta.60
@@ -180,6 +180,7 @@ importers:
   packages/vuepress-theme-reco:
     specifiers:
       '@vicons/fa': ^0.12.0
+      '@vicons/material': ^0.12.0
       '@vicons/tabler': ^0.12.0
       '@vuepress-reco/shared': workspace:*
       '@vuepress-reco/tailwindcss-config': workspace:*
@@ -218,6 +219,7 @@ importers:
       vue-router: ^4.1.5
     dependencies:
       '@vicons/fa': 0.12.0
+      '@vicons/material': 0.12.0
       '@vicons/tabler': 0.12.0
       '@vuepress-reco/shared': link:../@vuepress-reco/shared
       '@vuepress-reco/tailwindcss-config': link:../@vuepress-reco/tailwindcss-config
@@ -2226,6 +2228,10 @@ packages:
 
   /@vicons/fa/0.12.0:
     resolution: {integrity: sha512-g2PIeJLsTHUjt6bK63LxqC0uYQB7iu+xViJOxvp1s8b9/akpXVPVWjDTTsP980/0KYyMMe4U7F/aUo7wY+MsXA==}
+    dev: false
+
+  /@vicons/material/0.12.0:
+    resolution: {integrity: sha512-chv1CYAl8P32P3Ycwgd5+vw/OFNc2mtkKdb1Rw4T5IJmKy6GVDsoUKV3N2l208HATn7CCQphZtuPDdsm7K2kmA==}
     dev: false
 
   /@vicons/tabler/0.12.0:

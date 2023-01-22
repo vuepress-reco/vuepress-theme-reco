@@ -14,8 +14,9 @@ import { defineComponent, computed, toRefs } from 'vue'
 import type { Component } from 'vue'
 import * as tablerIcons from '@vicons/tabler'
 import * as faIcons from '@vicons/fa'
+import * as materialIcons from '@vicons/material'
 
-const icons = { ...faIcons, ...tablerIcons }
+const icons = { ...faIcons, ...tablerIcons, ...materialIcons }
 
 enum EIconPosition {
   left = 'left',
@@ -33,6 +34,7 @@ type PropsType = {
   textSize: number | string
   textColor: string
   link: string
+  target: string
 }
 
 export default defineComponent<PropsType>({
