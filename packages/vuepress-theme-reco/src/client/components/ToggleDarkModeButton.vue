@@ -1,50 +1,75 @@
 <template>
-  <Xicons :icon="icon" icon-size="19" class="btn-toggle-dark-mode" @click="toggleMode()" link="javascript:void(0)"/>
+  <Xicons
+    :icon="icon"
+    icon-size="20"
+    link="javascript:void(0)"
+    class="btn-toggle-dark-mode"
+    @click="toggleMode()"
+  />
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, Ref } from 'vue'
+
+enum ModeIcon {
+  auto = 'BrightnessAutoOutlined',
+  dark = 'MoonStars',
+  light = 'Sun'
+}
+
+enum EMode {
+  auto,
+  dark,
+  light
+}
+
+type TMode = keyof typeof EMode
 
 const APPEARANCE_KEY = 'vuepress-reco-color-scheme'
 
-const isDarkMode = ref(false)
+let userPreference = localStorage[APPEARANCE_KEY] || 'auto'
+const mode: Ref<TMode> = ref(userPreference)
+
 const icon = computed(() => {
-  return isDarkMode.value ? 'Sun' : 'MoonStars'
+  return ModeIcon[mode.value]
 })
 
 let toggleMode = () => {
-  isDarkMode.value = !isDarkMode.value
+  const currModeIndex = EMode[mode.value]
+  const nextModeIndex = currModeIndex === 2 ? 0 : currModeIndex + 1
+
+  mode.value = EMode[nextModeIndex] as TMode
 }
 
 onMounted(() => {
-  let userPreference = localStorage[APPEARANCE_KEY] || 'auto'
-
-  const query = window.matchMedia('(prefers-color-scheme: dark)')
   const classList = document.documentElement.classList
 
-  function setClass(dark: boolean): void {
+  function setDarkClass(dark: boolean): void {
     classList.toggle('dark', dark)
   }
 
-  query.onchange = (e) => {
-    if (userPreference === 'auto') {
-      setClass((isDarkMode.value = e.matches))
+  function handleModeChange(m) {
+    if (m === 'auto') {
+      setDarkClass(darkMedia.matches)
+      localStorage.removeItem(APPEARANCE_KEY)
+    } else {
+      setDarkClass(m === 'dark')
+      localStorage[APPEARANCE_KEY] = m
     }
   }
 
-  watch(isDarkMode, (m) => {
-    localStorage[APPEARANCE_KEY] = m
-      ? query.matches ? 'auto' : 'dark'
-      : query.matches ? 'light' : 'auto'
-    setClass(isDarkMode.value)
-  })
+  const darkMedia = window.matchMedia('(prefers-color-scheme: dark)')
 
-  const initMode = () => {
-    isDarkMode.value = userPreference === 'auto'
-      ? query.matches
-      : userPreference === 'dark'
+  // 监听系统化的 mode 变化
+  darkMedia.onchange = (e) => {
+    if (mode.value === 'auto') {
+      setDarkClass((e.matches))
+    }
   }
 
-  initMode()
+  // 监听手动切换 mode
+  watch(mode, handleModeChange)
+
+  handleModeChange(mode.value)
 })
 </script>
