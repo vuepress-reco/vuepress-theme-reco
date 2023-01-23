@@ -1,6 +1,6 @@
 .page-info {
   @apply flex flex-wrap;
-  .icon-container{
+  .xicon-container{
     a {
       color: inherit;
       &:hover {

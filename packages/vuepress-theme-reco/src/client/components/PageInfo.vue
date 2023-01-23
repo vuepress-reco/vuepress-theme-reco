@@ -1,18 +1,18 @@
 <template>
   <div v-if="showPageInfo" class="page-info">
-    <Xicons v-if="!!author" icon="User" :text="author" link="javascript:void(0)" />
+    <Xicons v-if="!!author" icon="tabler.User" :text="author" />
 
-    <Xicons v-if="!!date" icon="Clock" :text="date" link="javascript:void(0)" />
+    <Xicons v-if="!!date" icon="tabler.Clock" :text="date" />
 
-    <Xicons v-if="!!categories && categories.length > 0" icon="Folder" link="javascript:void(0)">
+    <Xicons v-if="!!categories && categories.length > 0" icon="tabler.Folder">
       {{categories.join(' ')}}
     </Xicons>
 
-    <Xicons v-if="!!tags && tags.length > 0" icon="Tag" link="javascript:void(0)">
+    <Xicons v-if="!!tags && tags.length > 0" icon="tabler.Tag">
       {{tags.join(' ')}}
     </Xicons>
 
-    <Xicons v-if="showValineViews" icon="Eye" link="javascript:void(0)">
+    <Xicons v-if="showValineViews" icon="fluent.Eye12Regular">
       <ValineViews />
     </Xicons>
   </div>

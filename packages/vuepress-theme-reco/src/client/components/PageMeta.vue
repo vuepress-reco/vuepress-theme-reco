@@ -15,11 +15,10 @@
     <div v-if="lastUpdated" class="meta-item last-updated">
       <Xicons
         class="meta-item-label"
-        icon="CalendarTime"
+        icon="tabler.CalendarTime"
         :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
         icon-size="20"
         text-size="14"
-        link="javascript:void(0)"
       />
     </div>
   </footer>
@@ -79,7 +78,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
     return {
       text: editLinkText ?? 'Edit this page',
       link: editLink,
-      icon: 'Edit',
+      icon: 'tabler.Edit',
       hideExternalLinkIcon: true
     }
   })

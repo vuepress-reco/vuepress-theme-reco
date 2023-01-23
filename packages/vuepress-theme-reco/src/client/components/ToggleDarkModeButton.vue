@@ -2,7 +2,6 @@
   <Xicons
     :icon="icon"
     icon-size="20"
-    link="javascript:void(0)"
     class="btn-toggle-dark-mode"
     @click="toggleMode()"
   />
@@ -12,9 +11,9 @@
 import { ref, computed, onMounted, watch, Ref } from 'vue'
 
 enum ModeIcon {
-  auto = 'BrightnessAutoOutlined',
-  dark = 'MoonStars',
-  light = 'Sun'
+  auto = 'carbon.BrightnessContrast',
+  dark = 'carbon.Moon',
+  light = 'carbon.Sun'
 }
 
 enum EMode {

@@ -2,13 +2,11 @@
   <div v-if="visible" class="bulletin-wrapper" :style="{ width: bulletin?.width || '300px' }">
     <div class="bulletin-title">
       <Xicons
-        icon="Bulb"
-        icon-size="28"
-        icon-color="#fff"
+        icon="carbon.Bullhorn"
+        icon-size="24"
         :text="bulletin?.title || '公告'"
-        text-color="#fff"
+        color="#fff"
         text-size="16"
-        link="javascript:void(0)"
       />
       <!-- <span>公告</span> -->
       <i class="btn-close" @click="closeBulletinPopover">

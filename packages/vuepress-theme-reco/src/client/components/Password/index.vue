@@ -27,7 +27,6 @@
       <Xicons
         :icon="lockIcon"
         :text="lockText"
-        link="javascript:void(0)"
       />
     </div>
 

@@ -7,7 +7,7 @@
     h1 {
       @apply text-9xl !important;
     }
-    .icon-container {
+    .xicon-container {
       @apply inline-block px-6 py-2 border-2 border-solid border-reco-primary rounded-md bg-reco-primary/90 cursor-pointer font-semibold text-white;
       @apply dark:text-reco-text-darkmode;
     }

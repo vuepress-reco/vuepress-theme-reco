@@ -4,8 +4,9 @@ export const series = {
     'introduce',
     'getting-started',
     'style',
-    'contribute',
+    'icon',
     'folder-specification',
+    'contribute',
   ],
   '/en/docs/theme/': [
     {

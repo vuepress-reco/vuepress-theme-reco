@@ -31,7 +31,7 @@
         <NavbarSearch />
         <NavbarLinks />
         <ToggleDarkModeButton />
-        <xicons class="btn-toggle-menus" icon="DotsVertical" :iconSize="20" @click="toggleMenus" link="javascript:void(0)"/>
+        <xicons class="btn-toggle-menus" icon="tabler.DotsVertical" :iconSize="20" @click="toggleMenus" />
       </div>
     </template>
   </header>

@@ -2,7 +2,7 @@
   <div class="footer-wrapper">
     <span>
       <Xicons
-        icon="Palette"
+        icon="tabler.Palette"
         link="http://v2.vuepress-reco.recoluan.com"
         target="_blank"
         :text="`vuepress-theme-reco@${version}`"
@@ -11,19 +11,19 @@
 
     <span v-show="frontmatter?.footer?.record">
       <Xicons
-        icon="ShieldCheck"
-        :link="frontmatter?.footer?.recordLink || 'javascript:void(0)'"
+        icon="tabler.ShieldCheck"
+        :link="frontmatter?.footer?.recordLink"
         :text="frontmatter?.footer?.record"
         target="_blank"
       />
     </span>
 
     <span>
-      <Xicons icon="Copyright" link="javascript:void(0)" :text="copyRight" />
+      <Xicons icon="tabler.Copyright" :text="copyRight" />
     </span>
 
     <span v-if="showAccessNumber">
-      <Xicons icon="Eye" link="javascript:void(0)">
+      <Xicons icon="fluent.Eye12Regular">
         <ValineViews idVal="/" />
       </Xicons>
     </span>

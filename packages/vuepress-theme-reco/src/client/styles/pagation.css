@@ -8,7 +8,7 @@
     &.active {
       @apply bg-reco-primary/90 text-white;
     }
-    .icon-container {
+    .xicon-container {
       @apply align-middle;
     }
   }

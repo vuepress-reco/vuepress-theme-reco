@@ -48,7 +48,7 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
     - text: button text
     - link: content link
     - type: content style, the default background color, if not needed, can be set to 'plain'
-  - socialLinks: For social address and social icon, please go to [Xions](https://www.xicons.org/#/) page to get it under tabler and fa and material, just copy the name
+  - socialLinks: For social address, See [here](/en/docs/guide/icon) for settings
     - icon: icon
     - link: button link
 - case: 
@@ -57,7 +57,7 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 ### blog
 - description: Used to configure the `Blog` module
 - frontmatter options:
-  - socialLinks: For social address and social icon, please go to [Xions](https://www.xicons.org/#/) page to get it under tabler and fa and material, just copy the name
+  - socialLinks: For social address, See [here](/en/docs/guide/icon) for settings
     - icon: icon
     - link: button link
 - themeConfig options: 
@@ -115,9 +115,9 @@ bannerBrand: # bannerBrand module configuration
     - { text: Guide, link: '/docs/guide/introduce' }
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
 blog: # blog module configuration
-  socialLinks: # For social address and social icon, please go to [Xions](https://www.xicons.org/#/) page to get it under tabler and fa and material, just copy the name
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+  socialLinks: # For social address
+    - { icon: 'tabler.BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # footer module configuration
   record: Domain name filing copy
   recordLink: Domain name registration address

@@ -4,7 +4,7 @@
       <div class="content">
         <h1>404</h1>
         <p>Oops! Page does not exist.</p>
-        <div class="icon-container" @click="goHome">Go Home</div>
+        <div class="xicon-container" @click="goHome">Go Home</div>
       </div>
       <img src="../assets/taken.svg" />
     </section>
