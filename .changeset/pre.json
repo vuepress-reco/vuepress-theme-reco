@@ -2,14 +2,14 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.44",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.44",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.44",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.44",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.44",
-    "@vuepress-reco/shared": "2.0.0-beta.44",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.44",
-    "vuepress-theme-reco": "2.0.0-beta.44"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.45",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.45",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.45",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.45",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.45",
+    "@vuepress-reco/shared": "2.0.0-beta.45",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.45",
+    "vuepress-theme-reco": "2.0.0-beta.45"
   },
   "changesets": [
     "chatty-badgers-cheer",
@@ -32,6 +32,7 @@
     "large-eggs-greet",
     "late-dragons-drop",
     "lazy-mice-relate",
+    "lovely-moons-crash",
     "many-baboons-remain",
     "modern-nails-sneeze",
     "odd-dolphins-develop",

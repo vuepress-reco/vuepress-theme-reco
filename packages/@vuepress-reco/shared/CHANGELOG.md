@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.46
+
+### Patch Changes
+
+- optimize style
+
 ## 2.0.0-beta.45
 
 ### Patch Changes
