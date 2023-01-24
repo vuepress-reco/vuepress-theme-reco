@@ -123,9 +123,8 @@ export default defineComponent({
                   h(
                     Xicons,
                     {
-                      icon: 'FileCode',
+                      icon: 'Code',
                       text: vnode.props.title,
-                      'text-size': 12,
                     }
                   )
                 )
@@ -151,13 +150,16 @@ export default defineComponent({
       .code-group__li {
         @apply inline-block;
         button {
-          @apply px-3.5 py-2.5 border-b-2 border-solid border-transparent text-reco-text-lightmode cursor-pointer text-sm;
-          svg {
-            @apply text-reco-text-lightmode align-middle;
+          @apply flex items-center px-3.5 py-2.5 border-b-2 border-solid border-transparent;
+          .xicon-container {
+            @apply block text-reco-text-lightmode cursor-pointer text-sm;
             @apply dark:text-reco-text-darkmode;
           }
           &.code-group__nav-tab-active {
             @apply border-reco-primary !important;
+            .xicon-container {
+            @apply text-reco-primary;
+            }
           }
         }
       }

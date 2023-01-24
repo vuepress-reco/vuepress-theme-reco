@@ -6,13 +6,11 @@ const bg = {
   lightmode: {
     DEFAULT: '#ffffff',
     lighter: '#f3f4f5',
-    lightest: '#eeeeee',
     code: '#F9FAFB',
   },
   darkmode: {
     DEFAULT: '#22272e',
     lighter: '#2b313a',
-    lightest: '#262c34',
     code: '#363b46',
   },
 }
@@ -22,25 +20,17 @@ const text = {
   lightmode: {
     DEFAULT: '#2c3e50',
     lighter: '#3a5169',
-    lightesr: '#4e6e8e',
   },
   darkmode: {
     DEFAULT: '#adbac7',
     lighter: '#96a7b7',
-    lightest: '#8b9eb0',
   },
 }
 
 // 边框
 const border = {
-  lightmode: {
-    DEFAULT: '#eaecef',
-    darker: '#dfe2e5',
-  },
-  darkmode: {
-    DEFAULT: '#3e4c5a',
-    darker: '#34404c',
-  },
+  lightmode: '#eaecef',
+  darkmode: '#3e4c5a',
 }
 
 // 自定义容器
