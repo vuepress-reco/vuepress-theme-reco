@@ -1,5 +1,5 @@
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-6 py-3 h-14 w-screen leading-6 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
+  @apply fixed top-0 right-0 z-30 px-6 py-3 w-screen bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
   .nav-item {
@@ -15,10 +15,10 @@
     }
   }
   .navbar-links-wrapper {
-    @apply absolute right-4 top-3;
+    @apply absolute right-4 top-3 flex items-center;
     white-space: nowrap;
     .navbar-links {
-      @apply hidden md:inline-block align-middle;
+      @apply hidden md:inline-flex items-center;
     }
     .btn-toggle-menus {
       @apply align-middle;

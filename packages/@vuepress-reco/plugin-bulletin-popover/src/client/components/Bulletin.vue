@@ -2,16 +2,14 @@
   <div v-if="visible" class="bulletin-wrapper" :style="{ width: bulletin?.width || '300px' }">
     <div class="bulletin-title">
       <Xicons
-        icon="carbon.Bullhorn"
-        icon-size="24"
+        icon="VolumeUp"
+        icon-size="20"
         :text="bulletin?.title || '公告'"
         color="#fff"
         text-size="16"
       />
-      <!-- <span>公告</span> -->
-      <i class="btn-close" @click="closeBulletinPopover">
-        <svg t="1573745677073" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4448" width="22" height="22"><path d="M512 34.133333a486.4 486.4 0 1 0 486.4 486.4A486.4 486.4 0 0 0 512 34.133333z m209.4848 632.8064l-55.6032 55.466667-151.517867-151.125333-151.517866 151.1168-55.6032-55.466667 151.517866-151.108267L307.242667 364.714667l55.6032-55.466667 151.517866 151.125333 151.517867-151.1168 55.6032 55.466667-151.517867 151.099733z m0 0" p-id="4449"></path></svg>
-      </i>
+
+        <svg class="btn-close icon" @click="closeBulletinPopover" t="1573745677073" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4448" width="22" height="22"><path d="M512 34.133333a486.4 486.4 0 1 0 486.4 486.4A486.4 486.4 0 0 0 512 34.133333z m209.4848 632.8064l-55.6032 55.466667-151.517867-151.125333-151.517866 151.1168-55.6032-55.466667 151.517866-151.108267L307.242667 364.714667l55.6032-55.466667 151.517866 151.125333 151.517867-151.1168 55.6032 55.466667-151.517867 151.099733z m0 0" p-id="4449"></path></svg>
     </div>
     <div class="bulletin-content" v-html="bodyNodes"></div>
   </div>
@@ -33,14 +31,12 @@ const { bodyNodes } = useHandleNodes()
   max-height: 660px;
   overflow-y: auto;
   .bulletin-title {
-    @apply relative box-border m-0 p-1.5 bg-reco-primary text-white;
+    @apply flex items-center justify-between box-border m-0 p-1.5 bg-reco-primary text-white;
     .btn-close {
-      @apply absolute inline-block w-4 h-4 top-0 bottom-0 right-2 my-auto cursor-pointer text-white;
+      @apply inline-block w-4 h-4 right-2 cursor-pointer text-white;
       width: 22px;
       height: 22px;
-      svg {
-        @apply fill-current;
-      }
+      @apply fill-current;
     }
   }
   .bulletin-content {

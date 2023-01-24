@@ -116,8 +116,8 @@ bannerBrand: # bannerBrand 模块的配置
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
 blog: # blog 模块的配置
   socialLinks: # 社交地址
-    - { icon: 'tabler.BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # 底部模块的配置
   record: 域名备案文案
   recordLink: 域名备案地址

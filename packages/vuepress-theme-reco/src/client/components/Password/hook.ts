@@ -22,13 +22,13 @@ export function useSiteInfo() {
 export function useHandlePassword(sitePassword, emit) {
   const password = ref('')
   const passwordRef = ref(null)
-  const lockIcon = ref('tabler.Lock')
+  const lockIcon = ref('Locked')
   const lockText = ref('请输入密码')
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
     if (sitePassword.value.includes(md5(newVal))) {
-      lockIcon.value = 'tabler.LockOpen'
+      lockIcon.value = 'Unlocked'
       lockText.value = '密码正确，请重稍后！'
       setTimeout(() => {
         emit('pass')

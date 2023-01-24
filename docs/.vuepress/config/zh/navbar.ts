@@ -1,8 +1,8 @@
 export const navbar = [
-  { text: '指南', link: '/docs/guide/introduce', icon: 'tabler.HandClick' },
+  { text: '指南', link: '/docs/guide/introduce', icon: 'Compass' },
   {
     text: '参考',
-    icon: 'tabler.FileInvoice',
+    icon: 'Document',
     children: [
       {
         text: '主题配置',
@@ -24,7 +24,7 @@ export const navbar = [
   },
   {
     text: '版本',
-    icon: 'tabler.Versions',
+    icon: 'SubVolume',
     children: [
       { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/' },
       {
@@ -33,5 +33,5 @@ export const navbar = [
       },
     ],
   },
-  { text: '留言板', link: '/docs/message-board', icon: 'tabler.Message2' },
+  { text: '留言板', link: '/docs/message-board', icon: 'Chat' },
 ]

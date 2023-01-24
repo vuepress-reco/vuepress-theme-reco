@@ -1,6 +1,5 @@
 .dropdown-link {
   @apply relative;
-  height: 24px;
   &.open {
     height: auto;
   }
@@ -10,11 +9,14 @@
   &:hover .dropdown-link__container {
     @apply md:block !important;
   }
+  .title {
+    @apply inline-flex items-center;
+    .xicon-container {
+      @apply mr-0.5;
+    }
+  }
   .arrow {
     @apply ml-1;
-  }
-  button {
-    height: 24px;
   }
   .dropdown-link__title {
     @apply text-sm font-semibold items-center text-reco-text-lightmode hidden;
@@ -28,7 +30,7 @@
   }
   .dropdown-link__container {
     @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
-    @apply md:px-3 md:hidden md:absolute md:top-3 md:-right-6 md:py-2 md:my-3 border-0 md:border;
+    @apply md:px-3 md:hidden md:absolute md:top-2 md:right-0 md:py-2 md:my-3 border-0 md:border;
     .dropdown-link__item {
       @apply relative;
       &:not(:first-of-type)::before {

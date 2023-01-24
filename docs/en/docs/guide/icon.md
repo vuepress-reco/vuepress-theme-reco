@@ -5,7 +5,7 @@ date: 2023-01-23
 
 ## Introduction
 
-`vuepress-theme-reco@2.x` is used to configure icons through [Xicons](https://www.xicons.org/#/zh-CN). `Xicons` integrates eight kinds of icons, `fluent`, `ionicons4`, `ionicons5`, `antd`, `fa`, `material`, `tabler` and `carbon`, which can almost meet most scenes.
+`vuepress-theme-reco@2.x` is used to configure icons through [Xicons](https://www.xicons.org/#/zh-CN). Only `carbon` 1 icon is integrated in `Xicons`, which can almost meet most scenes.
 
 ## Usage
 
@@ -13,17 +13,17 @@ date: 2023-01-23
 
 ### Used in markdown
 
-If you want to export an alien icon in markdown <xicons icon="tabler.Alien" />, you can do something like this in markdown:
+If you want to export an star icon in markdown <xicons icon="Star" />, you can do something like this in markdown:
 
 ```vue
-<xicons icon="tabler.Alien" />
+<xicons icon="Star" />
 ```
 
 #### Props
 
 |Params|Description|Type|Optional|Default|
 |-|-|-|-|-|
-|icon|Icon|string|Such as `tabler.Alien`, [Classification.Name], `Classification` is the TAB name of [Xicons] (https://www.xicons.org/#/zh-CN), Name is a specific icon name|tabler.Alien|
+|icon|Icon|string|For example, `Star` is the name of a specific icon under 'carbon' of [Xicons](https://www.xicons.org/#/zh-CN)|-|
 |color|Color of icon and text|string|-|inherit|
 |iconPosition|The position of icon, this makes sense when both icon and text are set|string|top/bottom/left/right|left|
 |iconSize|The size of icon|string|-|18|
@@ -37,6 +37,7 @@ If you want to export an alien icon in markdown <xicons icon="tabler.Alien" />, 
 |name|说明|
 |-|-|
 |default|Specify the contents of the props.text position to express more complex content|
+|icon|Replace with an external icon|
 
 ### Used in configuration
 

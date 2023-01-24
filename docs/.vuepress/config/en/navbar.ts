@@ -1,8 +1,8 @@
 export const navbar = [
-  { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'tabler.HandClick' },
+  { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'Compass' },
   {
     text: 'Reference',
-    icon: 'tabler.FileInvoice',
+    icon: 'Document',
     children: [
       {
         text: 'Theme config',
@@ -27,7 +27,7 @@ export const navbar = [
   },
   {
     text: 'Version',
-    icon: 'tabler.Versions',
+    icon: 'SubVolume',
     children: [
       { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/en/' },
       {
@@ -39,6 +39,6 @@ export const navbar = [
   {
     text: 'Message board',
     link: '/en/docs/message-board',
-    icon: 'tabler.Message2',
+    icon: 'Chat',
   },
 ]

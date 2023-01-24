@@ -11,9 +11,9 @@
 import { ref, computed, onMounted, watch, Ref } from 'vue'
 
 enum ModeIcon {
-  auto = 'carbon.BrightnessContrast',
-  dark = 'carbon.Moon',
-  light = 'carbon.Sun'
+  auto = 'BrightnessContrast',
+  dark = 'Moon',
+  light = 'Sun'
 }
 
 enum EMode {
@@ -26,8 +26,7 @@ type TMode = keyof typeof EMode
 
 const APPEARANCE_KEY = 'vuepress-reco-color-scheme'
 
-let userPreference = localStorage[APPEARANCE_KEY] || 'auto'
-const mode: Ref<TMode> = ref(userPreference)
+const mode: Ref<TMode> = ref('auto')
 
 const icon = computed(() => {
   return ModeIcon[mode.value]
@@ -41,6 +40,9 @@ let toggleMode = () => {
 }
 
 onMounted(() => {
+  let userPreference = localStorage[APPEARANCE_KEY] || 'auto'
+
+  mode.value = userPreference
   const classList = document.documentElement.classList
 
   function setDarkClass(dark: boolean): void {

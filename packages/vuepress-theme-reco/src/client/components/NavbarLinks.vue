@@ -50,6 +50,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     })
 
     const languageDropdown: ResolvedNavbarItem = {
+      icon: 'EarthFilled',
       text: selectLanguageText.value,
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link

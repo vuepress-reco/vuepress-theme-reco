@@ -23,15 +23,15 @@ customBanner:
   #   height: 450px
   buttons:
     - { text: Guide, link: '/blogs/category1/blog2' }
-    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain', icon: 'tabler.Alien' }
+    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain', icon: 'Alien' }
   socialLinks:
-    - { icon: 'tabler.BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 blog:
   socialLinks:
-    - { icon: 'tabler.BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
-    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer:
   record: xxxx
   cyberSecurityRecord: xxx

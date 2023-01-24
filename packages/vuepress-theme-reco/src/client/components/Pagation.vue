@@ -7,7 +7,7 @@
       unselectable="on"
       key="left"
     >
-      <Xicons icon="tabler.ChevronsLeft" :iconSize="16" />
+      <Xicons icon="ChevronLeft" :iconSize="16" />
     </span>
     <span
       v-if="showStartFakePageNum"
@@ -44,7 +44,7 @@
       v-if="currentPage < tp"
       @click="goNext"
     >
-      <Xicons icon="tabler.ChevronsRight" :iconSize="16" />
+      <Xicons icon="ChevronRight" :iconSize="16" />
     </span>
     <span
       class="jumpinput"

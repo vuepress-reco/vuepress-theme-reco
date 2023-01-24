@@ -4,12 +4,15 @@
     :class="['xicon-container', iconPosition]"
     :href="link"
     :target="target"
+    @click="emits('click')"
   >
-    <component
-      class="xicon-svg"
-      :style="iconStyle"
-      :is="iconComponent"
-    />
+    <slot name="icon">
+      <component
+        class="xicon-img"
+        :style="iconStyle"
+        :is="icons[icon]"
+      />
+    </slot>
 
     <span
       class="xicon-content"
@@ -20,26 +23,20 @@
     </span>
   </a>
 
-  <component
-    v-else
-    class="xicon-container"
-    :style="iconStyle"
-    :is="iconComponent"
-  />
+  <a v-else class="xicon-container">
+    <component
+      :style="iconStyle"
+      :is="icons[icon]"
+      @click="emits('click')"
+    />
+  </a>
+
 </template>
 
 <script lang="ts" setup>
-import { computed, toRefs, useSlots, defineProps } from 'vue'
-import * as antd from '@vicons/antd'
-import * as carbon from '@vicons/carbon'
-import * as fa from '@vicons/fa'
-import * as fluent from '@vicons/fluent'
-import * as ionicons4 from '@vicons/ionicons4'
-import * as ionicons5 from '@vicons/ionicons5'
-import * as material from '@vicons/material'
-import * as tabler from '@vicons/tabler'
-
-const icons = { antd, carbon, fa, fluent, ionicons4, ionicons5, material, tabler }
+import { computed, toRefs, useSlots } from 'vue'
+import { withBase } from '@vuepress/client'
+import * as icons from '@vicons/carbon'
 
 const slots = useSlots()
 
@@ -78,16 +75,9 @@ const props = defineProps({
   },
 })
 
-const { icon, iconSize, color, textSize } = toRefs(props)
+const emits = defineEmits(['click'])
 
-const iconComponent = computed(() => {
-  if (typeof icon.value === 'string' && icon.value.split('.').length === 2) {
-    const [category, name] = icon.value.split('.')
-    return icons[category][name]
-  } else {
-    return icons.tabler.Alien
-  }
-})
+const { icon, iconSize, color, textSize } = toRefs(props)
 
 const iconStyle = computed(() => {
   const style: Record<string, any> = {

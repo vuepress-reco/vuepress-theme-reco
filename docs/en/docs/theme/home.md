@@ -116,8 +116,8 @@ bannerBrand: # bannerBrand module configuration
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
 blog: # blog module configuration
   socialLinks: # For social address
-    - { icon: 'tabler.BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'tabler.BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # footer module configuration
   record: Domain name filing copy
   recordLink: Domain name registration address

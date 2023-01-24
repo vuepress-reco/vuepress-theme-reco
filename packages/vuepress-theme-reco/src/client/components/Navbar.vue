@@ -30,8 +30,8 @@
       <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
         <NavbarSearch />
         <NavbarLinks />
-        <ToggleDarkModeButton />
-        <xicons class="btn-toggle-menus" icon="tabler.DotsVertical" :iconSize="20" @click="toggleMenus" />
+        <ToggleDarkModeButton class="btn--dark-mode" />
+        <xicons class="btn-toggle-menus" icon="OverflowMenuVertical" :iconSize="20" @click="toggleMenus" />
       </div>
     </template>
   </header>
