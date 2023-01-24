@@ -1,5 +1,19 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.45
+
+### Patch Changes
+
+- optimize style
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.45
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.45
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.45
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.45
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.45
+  - @vuepress-reco/shared@2.0.0-beta.45
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.45
+
 ## 2.0.0-beta.44
 
 ### Patch Changes
