@@ -164,10 +164,4 @@ export default defineComponent({
     }
   }
 }
-
-/* 兼容 */
-.code-group .code-group__nav .code-group__ul .code-group__li button .xicon-container {
-
-}
-
 </style>

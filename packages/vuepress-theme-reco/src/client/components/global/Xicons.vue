@@ -8,7 +8,7 @@
   >
     <slot name="icon">
       <component
-        class="xicon-img"
+        class="xicon-icon"
         :style="iconStyle"
         :is="icons[icon]"
       />
