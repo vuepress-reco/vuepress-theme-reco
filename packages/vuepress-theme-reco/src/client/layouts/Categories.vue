@@ -17,7 +17,6 @@
             :to="`/${categoryPosts.currentCategoryKey}/${convertToPinyin(label)}/1/`"
           >
             <span class="text">{{ label }}</span>
-            <span class="num">{{ length }}</span>
           </RouterLink>
         </li>
       </ul>

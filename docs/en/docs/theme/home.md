@@ -40,8 +40,6 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 - frontmatter options:
   - heroText: title
   - tagline: Briefly
-  - heroImage: index logo
-  - heroImageStyle: index logo style
   - bgImage: Background image
   - bgImageStyle: Background image style
   - buttons: button
@@ -104,10 +102,6 @@ banner: # banner module configuration
 bannerBrand: # bannerBrand module configuration
   heroText: 午后南杂
   tagline: Enjoy when you can, and endure when you must.
-  heroImage: /logo.png
-  heroImageStyle:
-    maxWidth: 200px
-    margin: 0 auto 2rem
   bgImage: /banner.jpg
   bgImageStyle:
     height: 450px

@@ -7,7 +7,7 @@ export default defineUserConfig({
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN',
-      title: 'vuepress-theme-reco',
+      title: 'vuepress-reco',
       description: '中文描述',
     },
     '/en/': {
@@ -47,7 +47,7 @@ export default defineUserConfig({
         ],
       },
     },
-    logo: '/head.png',
+    logo: '/logo.png',
     authorAvatar: '/head.png',
     author: 'reco_luan',
     docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',

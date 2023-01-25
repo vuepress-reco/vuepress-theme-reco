@@ -5,6 +5,8 @@
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
+      @mouseenter="handleButtonMouseEnter"
+      @mouseleave="handleButtonMouseLeave"
     >
       <span class="title">
         <Xicons v-if="item.icon" :icon="item.icon" />
@@ -17,7 +19,7 @@
       class="dropdown-link--mobile__title"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="open = !open"
+      @click="handleMobileButtonClick"
     >
       <span class="title">
         <Xicons v-if="item.icon" :icon="item.icon" />
@@ -27,7 +29,12 @@
     </button>
 
     <DropdownTransition>
-      <ul v-show="open" class="dropdown-link__container">
+      <ul
+        v-show="open"
+        class="dropdown-link__container"
+        @mouseenter="handleDropdownMouseEnter"
+        @mouseleave="handleDropdownMouseLeave"
+      >
         <li
           v-for="(child, index) in item.children"
           :key="child.link || index"
@@ -71,70 +78,99 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, ref, toRefs, watch } from 'vue'
+<script lang="ts" setup>
+import { computed, ref, toRefs, watch } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavGroup, NavItem } from '../../types'
 import Link from './Link.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
-export default defineComponent({
-  name: 'DropdownLink',
-
-  components: {
-    Link,
-    DropdownTransition,
-  },
-
-  props: {
-    item: {
-      type: Object as PropType<NavGroup<NavItem>>,
-      required: true,
-    },
-  },
-
-  setup(props) {
-    const { item } = toRefs(props)
-    const dropdownAriaLabel = computed(
-      () => item.value.ariaLabel || item.value.text
-    )
-
-    const open = ref(false)
-    const route = useRoute()
-    watch(
-      () => route.path,
-      () => {
-        open.value = false
-      }
-    )
-
-    /**
-     * Open the dropdown when user tab and click from keyboard.
-     *
-     * Use event.detail to detect tab and click from keyboard.
-     * The Tab + Click is UIEvent > KeyboardEvent, so the detail is 0.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
-     */
-    const handleDropdown = (e): void => {
-      const isTriggerByTab = e.detail === 0
-      if (isTriggerByTab) {
-        open.value = !open.value
-      } else {
-        open.value = false
-      }
-    }
-
-    const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
-      arr[arr.length - 1] === item
-
-    return {
-      open,
-      dropdownAriaLabel,
-      handleDropdown,
-      isLastItemOfArray,
-    }
+const props = defineProps({
+  item: {
+    type: Object as PropType<NavGroup<NavItem>>,
+    required: true,
   },
 })
+const { item } = toRefs(props)
+const dropdownAriaLabel = computed(
+  () => item.value.ariaLabel || item.value.text
+)
+
+const open = ref(false)
+const route = useRoute()
+watch(
+  () => route.path,
+  () => {
+    open.value = false
+  }
+)
+
+/**
+ * Open the dropdown when user tab and click from keyboard.
+ *
+ * Use event.detail to detect tab and click from keyboard.
+ * The Tab + Click is UIEvent > KeyboardEvent, so the detail is 0.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
+ */
+const handleDropdown = (e): void => {
+  const isTriggerByTab = e.detail === 1
+  if (isTriggerByTab) {
+    open.value = !open.value
+  } else {
+    open.value = false
+  }
+}
+
+const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
+  arr[arr.length - 1] === item
+
+
+
+
+const inButton = ref(false)
+const handleButtonMouseEnter = () => {
+  if (isMobile.value) isMobile.value = false
+
+  open.value = true
+  inButton.value = true
+}
+const handleButtonMouseLeave = () => {
+  inButton.value = false
+
+  setTimeout(() => {
+    if (inButton.value || inDropdown.value) {
+      open.value = true
+    } else {
+      open.value = false
+    }
+  }, 200)
+}
+
+const inDropdown = ref(false)
+const handleDropdownMouseEnter = () => {
+  if (isMobile.value) return
+
+  inDropdown.value = true
+}
+const handleDropdownMouseLeave = () => {
+  if (isMobile.value) return
+
+  inDropdown.value = false
+
+  setTimeout(() => {
+    if (inButton.value || inDropdown.value) {
+      open.value = true
+    } else {
+      open.value = false
+    }
+  }, 200)
+}
+
+const isMobile = ref(true)
+const handleMobileButtonClick = () => {
+  open.value = !open.value
+  if (!isMobile.value) isMobile.value = true
+}
 </script>

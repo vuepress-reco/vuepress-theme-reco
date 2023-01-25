@@ -8,24 +8,7 @@
     </template>
 
     <template v-else>
-      <span ref="siteBrand" class="nav-item site-brand">
-        <RouterLink :to="siteBrandLink">
-          <img
-            v-if="siteBrandLogo"
-            class="logo"
-            :src="withBase(siteBrandLogo)"
-            :alt="siteBrandTitle"
-          />
-
-          <span
-            v-if="siteBrandTitle"
-            class="site-name"
-            :class="{ 'can-hide': siteBrandLogo }"
-          >
-            {{ siteBrandTitle }}
-          </span>
-        </RouterLink>
-      </span>
+      <SiteBrand class="nav-item " />
 
       <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
         <NavbarSearch />
@@ -45,9 +28,10 @@ import NavbarLinks from './NavbarLinks.vue'
 import ToggleSeriesButton from './ToggleSeriesButton.vue'
 import { useSeriesItems, useScrollDirection, useThemeLocaleData } from '../composables'
 import Xicons from './global/Xicons.vue'
+import SiteBrand from './SiteBrand.vue'
 
 export default defineComponent({
-  components: { NavbarLinks, ToggleSeriesButton, ToggleDarkModeButton, Xicons },
+  components: { NavbarLinks, ToggleSeriesButton, ToggleDarkModeButton, Xicons, SiteBrand },
   emits: ['toggle-series', 'toggle-menus'],
   setup(_, ctx) {
     const siteLocale = useSiteLocaleData()

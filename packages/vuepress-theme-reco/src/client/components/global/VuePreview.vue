@@ -18,6 +18,7 @@ const props = defineProps(['component'])
   @apply relative my-6 overflow-hidden bg-block border-block;
   .preview-container {
     @apply py-4 border-b border-dashed border-reco-border-lightmode;
+    @apply dark:border-reco-border-darkmode;
     & > * {
       @apply mx-auto;
     }
@@ -28,9 +29,5 @@ const props = defineProps(['component'])
       @apply hidden;
     }
   }
-}
-
-.vue-preview-container .preview-container {
-  @apply dark:border-reco-border-darkmode;
 }
 </style>

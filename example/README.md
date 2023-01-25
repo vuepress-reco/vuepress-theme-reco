@@ -22,16 +22,16 @@ bannerBrand:
   # bgImageStyle:
   #   height: 450px
   buttons:
-    - { text: Guide, link: '/blogs/category1/blog2' }
-    - { text: Plan, link: '/blogs/category1/blog2', type: 'plain', icon: 'Alien' }
+    - { text: 收到, icon: 'EarthFilled', link: '/blogs/category1/blog2' }
+    - { text: sdfsdfsfsdsdfsdfsd, link: '/blogs/category1/blog2', type: 'plain', icon: 'Alien' }
+    - { text: safsdfdsfdssdsdfsdf, link: '/blogs/category1/blog2', type: 'text', icon: 'Alien' }
   socialLinks:
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'LogoTwitter', link: 'https://twitter.com/reco_luan' }
 blog:
   socialLinks:
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'LogoTwitter', link: 'https://twitter.com/reco_luan' }
 footer:
   record: xxxx
   cyberSecurityRecord: xxx

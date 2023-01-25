@@ -1,5 +1,5 @@
 // 品牌色
-const primary = '#4954e6'
+const primary = '#5D67E8'
 
 // 背景色
 const bg = {

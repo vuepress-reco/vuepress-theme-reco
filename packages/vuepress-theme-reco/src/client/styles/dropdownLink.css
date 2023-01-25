@@ -6,9 +6,9 @@
   &.open .dropdown-link__container {
     @apply block !important;
   }
-  &:hover .dropdown-link__container {
+  /* &:hover .dropdown-link__container {
     @apply md:block !important;
-  }
+  } */
   .title {
     @apply inline-flex items-center;
     .xicon-container {
@@ -29,8 +29,8 @@
     @apply dark:text-reco-text-darkmode;
   }
   .dropdown-link__container {
-    @apply pl-3 py-1 my-0 rounded-md bg-basic border-block list-none;
-    @apply md:px-3 md:hidden md:absolute md:top-2 md:right-0 md:py-2 md:my-3 border-0 md:border;
+    @apply pl-3 py-1 my-0 rounded-md bg-block border-block list-none;
+    @apply md:px-3 md:hidden md:absolute md:top-8 md:right-0 md:py-2 md:my-3 border-0 md:border;
     .dropdown-link__item {
       @apply relative;
       &:not(:first-of-type)::before {

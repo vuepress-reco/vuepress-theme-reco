@@ -1,20 +1,21 @@
 .pagation-container {
-  @apply text-center;
+  @apply flex justify-center;
   .jump, .jumpinput {
-    @apply inline-block mr-2 px-2 leading-6 rounded cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
+    @apply inline-flex mr-2 mb-2 w-6 h-6 items-center justify-center rounded cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
   }
   .jump {
     @apply hover:bg-reco-primary/90 hover:text-white;
     &.active {
       @apply bg-reco-primary/90 text-white;
     }
-    .xicon-container {
-      @apply align-middle;
+    &.go {
+      @apply px-1 w-auto;
     }
   }
   .jumpinput {
+    @apply w-16 px-1;
     input {
-      @apply w-16 outline-none text-reco-text-lightmode;
+      @apply w-full outline-none text-reco-text-lightmode;
     }
   }
 }

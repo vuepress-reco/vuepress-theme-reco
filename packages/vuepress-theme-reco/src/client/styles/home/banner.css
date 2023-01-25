@@ -1,6 +1,6 @@
 .banner-wrapper {
   @apply w-screen h-screen-3/5 md:h-screen flex justify-center items-center;
-  .hero-content {
+  .banner-brand__content {
     img {
       @apply block mx-auto w-32 sm:w-40 md:w-60 mb-16;
     }

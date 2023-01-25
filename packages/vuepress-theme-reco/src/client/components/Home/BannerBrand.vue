@@ -1,41 +1,29 @@
 <template>
-  <section class="banner-brand-wrapper" :style="{ ...bgImageStyle }">
-    <div class="hero-content">
-      <img
-        v-if="heroImage"
-        :src="heroImage"
-        :style="{
-          heroImageStyle,
-        }"
-        alt="heroImage"
-      />
+  <section class="banner-brand__wrapper" :style="{ ...bgImageStyle }">
+    <div class="banner-brand__content">
+      <h1 v-if="frontmatter?.bannerBrand?.heroText">{{ frontmatter?.bannerBrand?.heroText }}</h1>
+      <p v-if="frontmatter?.bannerBrand?.tagline">{{ frontmatter?.bannerBrand?.tagline }}</p>
 
-      <div class="hero-text">
-        <h1 v-if="frontmatter?.bannerBrand?.heroText">{{ frontmatter?.bannerBrand?.heroText }}</h1>
-        <p v-if="frontmatter?.bannerBrand?.tagline">{{ frontmatter?.bannerBrand?.tagline }}</p>
-
-        <ul class="btn-group" v-if="buttons.length > 0">
-          <li v-for="(btn, index) in buttons" :class="btn.type" :key="index">
-            <Xicons
-              :icon="btn.icon"
-              :text="btn.text"
-              :link="btn.link"
-              icon-size="20"
-              text-size="14"
-            />
-          </li>
-        </ul>
-
-        <ul class="social-links" v-if="socialLinks.length > 0">
-          <li
-            class="social-item"
-            v-for="(item, index) in socialLinks"
-            :key="index"
-          >
-            <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" target="_blank" />
-          </li>
-        </ul>
+      <div class="btn-group" v-if="buttons.length > 0">
+        <Xicons
+          v-for="(btn, index) in buttons" :class="btn.type" :key="index"
+          :icon="btn.icon"
+          :text="btn.text"
+          :link="btn.link"
+          icon-size="18"
+          text-size="14"
+        />
       </div>
+
+      <ul class="social-links" v-if="socialLinks.length > 0">
+        <li
+          class="social-item"
+          v-for="(item, index) in socialLinks"
+          :key="index"
+        >
+          <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" target="_blank" />
+        </li>
+      </ul>
     </div>
   </section>
 </template>

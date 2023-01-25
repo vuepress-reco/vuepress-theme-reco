@@ -1,25 +1,31 @@
 <template>
-  <div class="pagation-container" v-if="tp > 1">
-    <span
-      class="jump"
+  <div
+    v-if="tp >1"
+    class="pagation-container"
+  >
+    <Xicons
       v-if="currentPage > 1"
-      @click="goPrev"
+      class="jump"
+      icon="ChevronLeft"
+      :iconSize="16"
       unselectable="on"
       key="left"
-    >
-      <Xicons icon="ChevronLeft" :iconSize="16" />
-    </span>
+      @click="goPrev"
+    />
+
     <span
       v-if="showStartFakePageNum"
       class="jump"
       key="page-one"
       @click="jumpPage(1)"
     >1</span>
+
     <span
       class="ellipsis"
       v-if="showStartFakePageNum && indexes[0] > 2"
       key="ellipsis-front"
     >...</span>
+
     <span
       class="jump"
       v-for="num in indexes"
@@ -27,32 +33,37 @@
       :class="{active:currentPage == num}"
       @click="jumpPage(num)"
     >{{num}}</span>
+
     <span
       class="ellipsis"
       key="ellipsis-back"
       v-if="showLastFakePageNum && (tp - (indexes.at(-1) as number) > 1)"
     >...</span>
+
     <span
       v-if="showLastFakePageNum"
       class="jump"
       key="page-lastest"
       @click="jumpPage(tp)"
     >{{tp}}</span>
-    <span
+
+    <Xicons
+      v-if="currentPage < tp"
       class="jump"
       key="right"
-      v-if="currentPage < tp"
+      icon="ChevronRight"
+      :iconSize="16"
       @click="goNext"
-    >
-      <Xicons icon="ChevronRight" :iconSize="16" />
-    </span>
+    />
+
     <span
       class="jumpinput"
       key="input">
       <input type="text" v-model="targetPage">
     </span>
+
     <span
-      class="jump"
+      class="jump go"
       key="go"
       @click="jumpPage(targetPage)"
     >Go</span>

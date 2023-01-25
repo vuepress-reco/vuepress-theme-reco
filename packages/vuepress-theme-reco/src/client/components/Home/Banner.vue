@@ -1,6 +1,6 @@
 <template>
   <section class="banner-wrapper" :style="{ ...bgImageStyle }">
-    <div class="hero-content">
+    <div class="banner-brand__content">
       <img
         v-if="heroImage"
         :src="heroImage"

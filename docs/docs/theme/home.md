@@ -40,8 +40,6 @@ date: 2021-11-06 23:36:01
 - frontmatter 配置：
   - heroText：标题
   - tagline：简述
-  - heroImage: 首页 logo
-  - heroImageStyle: 首页 logo 样式
   - bgImage: 背景图片
   - bgImageStyle: 背景图片样式
   - buttons: 按钮
@@ -104,10 +102,6 @@ banner: # banner 模块的配置
 bannerBrand: # bannerBrand 模块的配置
   heroText: 午后南杂
   tagline: Enjoy when you can, and endure when you must.
-  heroImage: /logo.png
-  heroImageStyle:
-    maxWidth: 200px
-    margin: 0 auto 2rem
   bgImage: /banner.jpg
   bgImageStyle:
     height: 450px

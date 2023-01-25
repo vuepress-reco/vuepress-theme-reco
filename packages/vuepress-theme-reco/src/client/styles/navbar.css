@@ -1,22 +1,18 @@
 .navbar-container {
-  @apply fixed top-0 right-0 z-30 px-6 py-3 w-screen bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
+  @apply flex items-center fixed top-0 left-0 right-0 z-30 px-6 h-16 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
   .nav-item {
     @apply inline-block align-middle;
   }
-  .site-brand {
-    @apply align-middle text-xl font-semibold;
-    .logo {
-      @apply mr-4 inline-block w-8 h-8 rounded-md align-middle;
-    }
-    .site-name {
-      @apply align-middle;
-    }
-  }
   .navbar-links-wrapper {
-    @apply absolute right-4 top-3 flex items-center;
+    @apply absolute right-4 top-0 flex items-center h-16;
     white-space: nowrap;
+    .navbar-links__item {
+      > a, .dropdown-link__title {
+        @apply h-14;
+      }
+    }
     .navbar-links {
       @apply hidden md:inline-flex items-center;
     }

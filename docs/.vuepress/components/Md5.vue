@@ -34,7 +34,7 @@ export default {
 .md5-wrapper {
   @apply mt-4;
   input {
-    @apply outline-none box-border p-2 text-reco-primary border-reco-primary border-2 border-solid rounded-lg;
+    @apply outline-none box-border p-2 text-reco-primary border-reco-primary border border-solid rounded-lg;
   }
 }
 </style>
