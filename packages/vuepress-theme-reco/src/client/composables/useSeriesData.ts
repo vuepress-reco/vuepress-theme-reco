@@ -18,6 +18,7 @@ export const useSeriesData: () => any = () => {
 
   const toggleSeries = (to: boolean): void => {
     isOpenSeries.value = typeof to === 'boolean' ? to : !isOpenSeries.value
+    document.body.style.overflowY = isOpenSeries.value ? 'hidden' : 'auto'
   }
 
   return { isOpenSeries, isShowSeries, isShowCatalog, toggleSeries }
