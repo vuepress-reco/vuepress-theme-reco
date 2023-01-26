@@ -9,12 +9,12 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: 'vuepress-reco',
-      description: '一款简洁而优雅的 vuepress 博客 & 文档 主题。',
+      description: '一款简洁的 vuepress 博客 & 文档 主题。',
     },
     '/en/': {
       lang: 'en-US',
-      title: 'vuepress-theme-reco',
-      description: 'A simple and beautiful vuepress Blog & Doc theme.',
+      title: 'vuepress-reco',
+      description: 'A simple vuepress Blog & Doc theme.',
     },
   },
   theme: recoTheme(themeConfig),

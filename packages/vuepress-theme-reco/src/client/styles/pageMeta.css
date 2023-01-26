@@ -5,14 +5,10 @@
     @apply cursor-pointer mt-3.5;
     .meta-item-label {
       @apply font-medium text-reco-text-lightmode;
+      @apply dark:text-reco-text-darkmode;
     }
   }
-  .edit-link {
-    @apply mr-4;
+  .edit-link .xicon-container{
+    @apply mr-4 text-reco-primary;
   }
-}
-
-/* 兼容 */
-.page-meta .meta-item .meta-item-label {
-  @apply dark:text-reco-text-darkmode;
 }

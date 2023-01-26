@@ -4,12 +4,16 @@
   .banner-brand__content {
     @apply block box-border px-6 mt-32 max-w-screen-md;
     @apply md:mt-0;
-    h1 {
+    .title {
       @apply mb-6 text-5xl text-left bg-gradient-to-r from-reco-primary to-red-500 !important;
       @apply md:text-7xl !important;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .description {
+      @apply text-2xl;
+      @apply md:text-4xl;
     }
     .btn-group {
       @apply list-none mt-8 pl-0 text-left;

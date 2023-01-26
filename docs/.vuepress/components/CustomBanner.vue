@@ -1,8 +1,12 @@
 <template>
   <section class="banner-brand__wrapper" :style="{ ...bgImageStyle }">
     <div class="banner-brand__content">
-      <h1 v-if="frontmatter?.customBanner?.heroText">{{ frontmatter?.customBanner?.heroText }}</h1>
-      <p v-if="frontmatter?.customBanner?.tagline">{{ frontmatter?.customBanner?.tagline }}</p>
+      <h1 class="title" v-if="frontmatter?.customBanner?.title">{{ frontmatter?.customBanner?.title }}</h1>
+
+      <p class="description" v-if="frontmatter?.customBanner?.description">{{ frontmatter?.customBanner?.description }}</p>
+
+      <p class="tagline" v-if="frontmatter?.customBanner?.tagline">{{ frontmatter?.customBanner?.tagline }}</p>
+
 
       <div class="btn-group" v-if="buttons.length > 0">
         <Xicons
