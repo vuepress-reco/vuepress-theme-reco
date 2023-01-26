@@ -60,19 +60,19 @@ theme-cli init
 
 ## Preview
 
-<img width="800" alt="home_dark" src="https://user-images.githubusercontent.com/18067907/211355760-6919c0d3-bddb-45a2-99b9-77c6f9380cf3.png">
+<img width="800" alt="home_dark" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
 
 <br/>
 
-<img width="800" alt="doc_dark" src="https://user-images.githubusercontent.com/18067907/211355788-7f6790d1-f183-4b2c-976f-b77c837736f2.png">
+<img width="800" alt="doc_dark" src="https://user-images.githubusercontent.com/18067907/214793709-094d4108-a3e2-4924-a263-d538c89535d3.png">
 
 <br/>
 
-<img width="800" alt="home_light" src="https://user-images.githubusercontent.com/18067907/211355806-4f1e325d-637d-4a33-8c32-1f6f4f00df29.png">
+<img width="800" alt="home_light" src="https://user-images.githubusercontent.com/18067907/214793349-ae174f83-e7ab-42e9-aac1-eb8adab695a9.png">
 
 <br/>
 
-<img width="800" alt="doc_light" src="https://user-images.githubusercontent.com/18067907/211355824-c0dc3611-b0f0-47c8-9c06-58167fc8cbd6.png">
+<img width="800" alt="doc_light" src="https://user-images.githubusercontent.com/18067907/214793361-139cea23-3634-4e42-a90a-be172a5e26fb.png">
 
 <br/>
 
