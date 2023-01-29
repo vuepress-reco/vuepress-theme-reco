@@ -21,6 +21,12 @@
   .border-basic-bottom {
     @apply border-basic border-0 border-b;
   }
+  .border-basic-left {
+    @apply border-basic border-0 border-l;
+  }
+  .border-basic-right {
+    @apply border-basic border-0 border-r;
+  }
   .border-primary {
     @apply border-basic border-reco-primary;
     @apply dark:border-reco-primary;

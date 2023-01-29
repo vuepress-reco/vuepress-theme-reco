@@ -12,8 +12,7 @@
         @apply text-basic;
       }
       &.focus {
-        @apply bg-reco-bg-lightmode-lighter;
-        @apply dark:bg-reco-bg-darkmode-lighter !important;
+        @apply bg-block;
         a {
           @apply text-reco-primary;
         }

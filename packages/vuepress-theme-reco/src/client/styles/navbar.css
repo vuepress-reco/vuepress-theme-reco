@@ -2,9 +2,6 @@
   @apply flex items-center fixed top-0 left-0 right-0 z-30 px-6 h-16 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
-  .nav-item {
-    @apply inline-block align-middle;
-  }
   .navbar-links-wrapper {
     @apply absolute right-4 top-0 flex items-center h-16;
     white-space: nowrap;

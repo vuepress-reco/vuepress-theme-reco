@@ -37,9 +37,10 @@ const siteBrandTitle = computed(() => siteLocale.value.title)
 </template>
 
 <style>
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
 
 .site-brand {
-  @apply flex text-xl font-semibold;
+  @apply flex text-xl font-semibold bg-block;
   .logo {
     @apply mr-4 inline-block w-8 h-8 rounded-md;
   }

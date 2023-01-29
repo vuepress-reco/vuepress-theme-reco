@@ -29,8 +29,8 @@
     @apply dark:text-reco-text-darkmode;
   }
   .dropdown-link__container {
-    @apply pl-3 py-1 my-0 rounded-md bg-block border-block list-none;
-    @apply md:px-3 md:hidden md:absolute md:top-8 md:right-0 md:py-2 md:my-3 border-0 md:border;
+    @apply pl-3 py-1 my-0 rounded-md bg-basic list-none;
+    @apply md:px-3 md:hidden md:absolute md:top-8 md:right-0 md:py-2 md:my-3 md:border-block;
     .dropdown-link__item {
       @apply relative;
       &:not(:first-of-type)::before {
@@ -42,7 +42,7 @@
       }
       &:not(:first-of-type) {
         .dropdown-link__subtitle {
-          @apply relative z-40 mt-8;
+          @apply relative z-30 mt-8;
           &::before {
             @apply absolute left-0 -top-4 block w-full border-t border-solid border-reco-border-lightmode;
             @apply dark:border-reco-border-darkmode;

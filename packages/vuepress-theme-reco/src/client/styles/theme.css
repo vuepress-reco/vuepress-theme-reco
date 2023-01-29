@@ -12,7 +12,6 @@
     &.theme-reco-default-content code {
       @apply mx-1 px-2 py-0.5 bg-gray-200/60 rounded;
       @apply dark:bg-gray-700;
-      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     }
   }
   .theme-reco-default-content {

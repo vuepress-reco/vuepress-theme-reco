@@ -51,9 +51,6 @@
     border-radius: 3px;
     font-size: 85%;
     margin: 0;
-    font-family: 'Source Code Pro', 'courier new', 'Input Mono', 'PT Mono',
-      'SFMono-Regular', Consolas, Monaco, Menlo, 'PingFang SC',
-      'Liberation Mono', 'Microsoft YaHei', Courier，monospace;
   }
   pre {
     padding: 10px;
@@ -528,11 +525,12 @@
     @apply pl-2;
   }
   .vcard {
+    @apply relative;
     .vquote {
-      @apply ml-0 border-l-0;
+      @apply ml-2 border-basic-left border-dashed;
     }
     .vimg {
-      @apply p-0 w-11 h-11 rounded border border-reco-primary/90;
+      @apply absolute top-7 p-0 w-11 h-11 rounded border border-reco-primary/90;
     }
     .vhead .vnick {
       @apply text-reco-primary;
@@ -543,11 +541,14 @@
   }
   .vh {
     @apply border-b-0;
-    .vhead .vsys {
-      @apply bg-block text-reco-primary/90;
+    .vhead {
+      @apply pl-16;
+      .vsys {
+        @apply bg-block text-reco-primary/90;
+      }
     }
     .vmeta {
-      @apply mb-4;
+      @apply mb-4 pl-16;
       .vat {
         @apply mr-1.5 text-reco-primary border rounded border-solid border-reco-primary px-1.5 py-0;
         &:hover {
@@ -556,16 +557,16 @@
       }
     }
     .vcontent {
-      @apply mx-1.5 my-0 px-2.5 py-0.5 bg-block rounded;
+      @apply mx-0 my-0 px-2.5 py-0.5 bg-block rounded;
       p .at {
         @apply text-reco-primary;
       }
       &.expand::before {
-        @apply z-10;
-        /* background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff); */
+        @apply bg-gradient-to-b from-reco-bg-lightmode-code/0 to-reco-bg-lightmode;
+        @apply dark:from-reco-bg-darkmode-code/0 dark:to-reco-bg-darkmode;
       }
       &.expand::after {
-        @apply text-reco-primary;
+        @apply bg-basic text-reco-primary !important;
       }
     }
   }
@@ -583,13 +584,4 @@
       @apply bg-reco-primary;
     }
   }
-}
-
-/* 兼容 */
-.dark .reco-valine-wrapper #valine.v .vh .vcontent.expand::before {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
-}
-
-.dark .reco-valine-wrapper #valine.v .vh .vcontent.expand::after {
-  background: rgba(0, 0, 0, 0.9);
 }
