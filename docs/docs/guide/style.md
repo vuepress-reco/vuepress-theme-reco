@@ -50,5 +50,5 @@ ul {
 如果在写 tailwindcss 时，用到 reco 主题自定义的基础样式、变量和组件，需要在 css 文件最上面引入 `@vuepress-reco/tailwindcss-config/lib/client/tailwindcss-base.css` ：
 
 ```css
-@import ('@vuepress-reco/tailwindcss-config/lib/client/tailwindcss-base.css);
+@import ('@vuepress-reco/tailwindcss-config/lib/client/tailwindcss-base.css');
 ```
