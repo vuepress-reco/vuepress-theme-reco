@@ -45,7 +45,7 @@
     }
   }
   .site-brand {
-    @apply sticky top-0 z-40 mb-3 py-4 border-b border-solid border-reco-border-lightmode;
+    @apply sticky top-0 z-40 mb-3 py-4 border-b border-solid border-reco-border-lightmode bg-block;
     @apply dark:border-reco-border-darkmode;
   }
 }
