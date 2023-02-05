@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.50
+
+### Patch Changes
+
+- optimize the style of site-brand
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.50
+
 ## 2.0.0-beta.49
 
 ### Patch Changes

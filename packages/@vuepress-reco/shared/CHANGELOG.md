@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.50
+
+### Patch Changes
+
+- optimize the style of site-brand
+
 ## 2.0.0-beta.49
 
 ### Patch Changes
