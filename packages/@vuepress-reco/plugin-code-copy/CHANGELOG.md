@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.49
+
+### Patch Changes
+
+- Optimize the style
+
 ## 2.0.0-beta.48
 
 ### Patch Changes

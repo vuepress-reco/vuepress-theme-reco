@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-beta.49
+
+### Patch Changes
+
+- Optimize the style
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.49
+
 ## 2.0.0-beta.48
 
 ### Patch Changes
