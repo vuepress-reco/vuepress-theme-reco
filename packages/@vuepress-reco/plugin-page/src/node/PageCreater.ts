@@ -57,6 +57,22 @@ export default class PageCreater {
   private parseChineseInPagePathToPinyin() {
     this.app.pages = this.app.pages.map((page: Page) => {
       page.path = convertToPinyin(decodeURIComponent(page.path))
+      page.data.path = convertToPinyin(decodeURIComponent(page.data.path))
+      page.componentFilePath = convertToPinyin(
+        decodeURIComponent(page.componentFilePath)
+      )
+      page.componentFilePathRelative = convertToPinyin(
+        decodeURIComponent(page.componentFilePathRelative)
+      )
+      page.dataFilePath = convertToPinyin(decodeURIComponent(page.dataFilePath))
+      page.dataFilePathRelative = convertToPinyin(
+        decodeURIComponent(page.dataFilePathRelative)
+      )
+      page.htmlFilePath = convertToPinyin(decodeURIComponent(page.htmlFilePath))
+      page.htmlFilePathRelative = convertToPinyin(
+        decodeURIComponent(page.htmlFilePathRelative)
+      )
+
       return page
     })
   }

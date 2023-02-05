@@ -3,9 +3,11 @@ import { path, getDirname } from '@vuepress/utils'
 import type { PagePluginOptions } from '../types'
 import PageCreater from './PageCreater.js'
 
-const __dirname = getDirname(import.meta.url);
+const __dirname = getDirname(import.meta.url)
 
-export const pagePlugin = (options: PagePluginOptions): (app: App) => Plugin => {
+export const pagePlugin = (
+  options: PagePluginOptions
+): ((app: App) => Plugin) => {
   return (app: App): Plugin => {
     const pageCreater = new PageCreater(options, app)
     return {
@@ -20,16 +22,13 @@ export const pagePlugin = (options: PagePluginOptions): (app: App) => Plugin => 
         }
       },
 
-      clientConfigFile: path.resolve(
-        __dirname,
-        '../client/config.js'
-      ),
+      clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
       async onInitialized(app) {
         pageCreater.parse()
 
         const resolvePages = await Promise.all(pageCreater.extendedPages)
-        app.pages = [...app.pages, ...resolvePages]
+        app.pages = [...resolvePages, ...app.pages]
       },
     }
   }
