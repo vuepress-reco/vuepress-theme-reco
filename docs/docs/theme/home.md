@@ -23,7 +23,7 @@ date: 2021-11-06 23:36:01
   - MdContent：首页的 markdown 正文展示模块
   - Footer：首页底部模块
 
-**banner**
+### banner
 - 描述：用于配置 Banner 模块
 - frontmatter 配置：
   - heroText：标题
@@ -38,10 +38,9 @@ date: 2021-11-06 23:36:01
 ### bannerBrand
 - 描述：用于配置 BannerBrand 模块
 - frontmatter 配置：
-  - heroText：标题
-  - tagline：简述
-  - bgImage: 背景图片
-  - bgImageStyle: 背景图片样式
+  - title：标题
+  - description: 描述
+  - tagline：标语
   - buttons: 按钮
     - text: 按钮文案
     - link: 按钮地址
@@ -50,7 +49,7 @@ date: 2021-11-06 23:36:01
     - icon: 图标，设置方式见 [这里](/docs/guide/icon)
     - link: 按钮地址
 - 案例：
-  - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/152644602-3e84c4cb-a989-4674-8b2e-ed7c0eeb8cad.png">
+  - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
 
 ### blog
 - 描述：用于配置 Blog 模块
@@ -62,7 +61,7 @@ date: 2021-11-06 23:36:01
   - author：作者昵称
   - authorAvatar：作者头像
 - 案例：
-  - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/152644663-dd7ae13f-b508-48c3-bf1a-dab5dc0c89ab.png">
+  - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
 
 ### footer
 - 描述：用于配置 Footer 模块
@@ -100,18 +99,17 @@ banner: # banner 模块的配置
   bgImageStyle:
     height: 450px
 bannerBrand: # bannerBrand 模块的配置
-  heroText: 午后南杂
-  tagline: Enjoy when you can, and endure when you must.
-  bgImage: /banner.jpg
-  bgImageStyle:
-    height: 450px
+  title: vuepress-reco
+  description: 一款简洁的 vuepress 博客 & 文档 主题。
+  tagline: vuepress-theme-reco 2.0 继续坚持简洁的风格，所有功能开箱即用，首页模块化组装，使用 tailwindcss 书写样式，将 Vite 作为默认编译器。你只需要负责内容创作，其他请交给我。
   buttons:
     - { text: Guide, link: '/docs/guide/introduce' }
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
+  socialLinks: # 社交地址
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
 blog: # blog 模块的配置
   socialLinks: # 社交地址
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # 底部模块的配置
   record: 域名备案文案
   recordLink: 域名备案地址

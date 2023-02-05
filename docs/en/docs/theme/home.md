@@ -23,7 +23,7 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
   - MdContent: The markdown text display module of the home page
   - Footer: Home Bottom Module
 
-**banner**
+### banner
 - description: Used to configure the `Banner` module
 - frontmatter options: 
   - heroText: title
@@ -38,8 +38,9 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 ### bannerBrand
 - description: Used to configure the `BannerBrand` module
 - frontmatter options:
-  - heroText: title
-  - tagline: Briefly
+  - title: Title
+  - descrition: Descrition
+  - tagline: tagline
   - bgImage: Background image
   - bgImageStyle: Background image style
   - buttons: button
@@ -50,7 +51,7 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
     - icon: icon
     - link: button link
 - case: 
-  - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/152644602-3e84c4cb-a989-4674-8b2e-ed7c0eeb8cad.png">
+  - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
 
 ### blog
 - description: Used to configure the `Blog` module
@@ -61,8 +62,8 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 - themeConfig options: 
   - author: author name
   - authorAvatar: author avatar
-- case: 
-  - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/152644663-dd7ae13f-b508-48c3-bf1a-dab5dc0c89ab.png">
+- case:
+  - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
 
 ### footer
 - description: Used to configure the `Footer` module
@@ -100,18 +101,20 @@ banner: # banner module configuration
   bgImageStyle:
     height: 450px
 bannerBrand: # bannerBrand module configuration
-  heroText: 午后南杂
-  tagline: Enjoy when you can, and endure when you must.
+  title: vuepress-reco
+  description: A simple vuepress Blog & Doc theme.
+  tagline: vuepress-theme-reco 2.0 continues to adhere to the concise style, all functions are out of the box, the home page is assembled modularly, the style is written with tailwindcss, and Vite is used as the default compiler. You only need to be responsible for content creation, please leave the rest to me.
   bgImage: /banner.jpg
   bgImageStyle:
     height: 450px
   buttons:
     - { text: Guide, link: '/docs/guide/introduce' }
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
+  socialLinks: # For social address
+    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
 blog: # blog module configuration
   socialLinks: # For social address
     - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
 footer: # footer module configuration
   record: Domain name filing copy
   recordLink: Domain name registration address

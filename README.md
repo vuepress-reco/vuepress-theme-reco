@@ -68,11 +68,19 @@ theme-cli init
 
 <br/>
 
+<img width="800" alt="blog_dark" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
+
+<br/>
+
 <img width="800" alt="home_light" src="https://user-images.githubusercontent.com/18067907/214793349-ae174f83-e7ab-42e9-aac1-eb8adab695a9.png">
 
 <br/>
 
 <img width="800" alt="doc_light" src="https://user-images.githubusercontent.com/18067907/214793361-139cea23-3634-4e42-a90a-be172a5e26fb.png">
+
+<br/>
+
+<img width="800" alt="blog_light" src="https://user-images.githubusercontent.com/18067907/216823287-e4699d52-e081-4c59-9e11-09fd5154c8b3.png">
 
 <br/>
 

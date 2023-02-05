@@ -12,6 +12,8 @@ customBanner:
   buttons:
     - { text: 指南, link: '/docs/guide/introduce' }
     - { text: 主题配置, link: '/docs/theme/introduce', type: 'plain' }
+  socialLinks:
+    - { icon: 'LogoGithub', link: 'https://github.com/vuepress-reco/vuepress-theme-reco' }
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
