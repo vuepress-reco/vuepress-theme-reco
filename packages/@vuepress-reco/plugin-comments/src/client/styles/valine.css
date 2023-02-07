@@ -517,6 +517,12 @@
         @apply bg-basic !important;
       }
     }
+    .vtext {
+      @apply text-basic;
+      input {
+        @apply bg-block border-basic text-reco-primary;
+      }
+    }
   }
   .vicon.actived {
     @apply fill-current text-reco-primary;

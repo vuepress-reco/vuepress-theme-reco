@@ -147,7 +147,7 @@
   }
 
   table {
-    @apply w-full rounded-md overflow-x-auto;
+    @apply w-full block rounded-md overflow-x-auto;
     border-collapse: collapse;
 
     tr {

@@ -30,7 +30,7 @@ date: 2023-01-23
 |text|文本的内容|string|-|-|
 |textSize|文本的大小|string|-|14|
 |link|跳转链接|string|-|javascript:void(0)|
-|target|跳转方式|string|_self/_blank/_parent/_top|_self|
+|target|跳转方式|string|`_self`,`_blank`,`_parent`,`_top`|_self|
 
 #### Slots
 
