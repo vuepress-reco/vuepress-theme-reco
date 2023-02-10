@@ -4,6 +4,7 @@ import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-p
 import { codeCopyPlugin } from '@vuepress-reco/vuepress-plugin-code-copy'
 import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
 import { containerPlugin } from '@vuepress/plugin-container'
+import { markdownTaskPlugin } from '@vuepress-reco/vuepress-plugin-markdown-task'
 import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { gitPlugin } from '@vuepress/plugin-git'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
@@ -127,6 +128,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       }),
       backToTopPlugin(),
       codeCopyPlugin(),
+      markdownTaskPlugin(),
     ],
   }
 }

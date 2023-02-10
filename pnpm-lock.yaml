@@ -76,7 +76,7 @@ importers:
 
   packages/@vuepress-reco/plugin-bulletin-popover:
     specifiers:
-      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.48
+      '@vuepress-reco/tailwindcss-config': workspace:2.0.0-beta.50
       '@vuepress/client': 2.0.0-beta.60
       '@vuepress/core': 2.0.0-beta.60
       '@vuepress/plugin-theme-data': 2.0.0-beta.60
@@ -123,6 +123,14 @@ importers:
       valine: 1.4.18
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
+
+  packages/@vuepress-reco/plugin-markdown-task:
+    specifiers:
+      '@vuepress/core': 2.0.0-beta.60
+      markdown-it-task-lists: 2.1.1
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.60
+      markdown-it-task-lists: 2.1.1
 
   packages/@vuepress-reco/plugin-page:
     specifiers:
@@ -185,6 +193,7 @@ importers:
       '@vuepress-reco/vuepress-plugin-bulletin-popover': workspace:*
       '@vuepress-reco/vuepress-plugin-code-copy': workspace:*
       '@vuepress-reco/vuepress-plugin-comments': workspace:*
+      '@vuepress-reco/vuepress-plugin-markdown-task': workspace:*
       '@vuepress-reco/vuepress-plugin-page': workspace:*
       '@vuepress-reco/vuepress-plugin-vue-preview': workspace:*
       '@vuepress/bundler-vite': 2.0.0-beta.60
@@ -222,6 +231,7 @@ importers:
       '@vuepress-reco/vuepress-plugin-bulletin-popover': link:../@vuepress-reco/plugin-bulletin-popover
       '@vuepress-reco/vuepress-plugin-code-copy': link:../@vuepress-reco/plugin-code-copy
       '@vuepress-reco/vuepress-plugin-comments': link:../@vuepress-reco/plugin-comments
+      '@vuepress-reco/vuepress-plugin-markdown-task': link:../@vuepress-reco/plugin-markdown-task
       '@vuepress-reco/vuepress-plugin-page': link:../@vuepress-reco/plugin-page
       '@vuepress-reco/vuepress-plugin-vue-preview': link:../@vuepress-reco/plugin-vue-preview
       '@vuepress/bundler-vite': 2.0.0-beta.60
@@ -8744,6 +8754,10 @@ packages:
 
   /markdown-it-emoji/2.0.2:
     resolution: {integrity: sha512-zLftSaNrKuYl0kR5zm4gxXjHaOI3FAOEaloKmRA5hijmJZvSjmxcokOLlzycb/HXlUFWzXqpIEoyEMCE4i9MvQ==}
+
+  /markdown-it-task-lists/2.1.1:
+    resolution: {integrity: sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==}
+    dev: false
 
   /markdown-it/13.0.1:
     resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}

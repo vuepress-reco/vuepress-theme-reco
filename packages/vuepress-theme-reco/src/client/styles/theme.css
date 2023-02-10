@@ -25,6 +25,10 @@
     }
   }
 
+  .contains-task-list {
+    @apply list-none pl-0;
+  }
+
   .fade-slide-y-enter-active {
     transition: all 0.3s ease;
   }
