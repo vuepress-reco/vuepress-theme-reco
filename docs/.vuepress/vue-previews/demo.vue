@@ -13,6 +13,6 @@ const { name } = useInfo()
 
 <style>
 .demo-container {
-  width: 200px;
+  width: 300px;
 }
 </style>

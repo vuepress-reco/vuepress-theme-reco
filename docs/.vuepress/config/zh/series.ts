@@ -27,7 +27,7 @@ export const series = {
         'auto-set-category',
         'custom-container',
         'custom-style',
-        'code-import',
+        'markdown',
         'bulletin-popover',
         'register-components',
         'password',
