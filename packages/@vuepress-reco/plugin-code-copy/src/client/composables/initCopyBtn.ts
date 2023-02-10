@@ -18,7 +18,6 @@ export function useInitCopyBtn() {
       btn.style.display = 'none'
       btn.style.padding = '0 10px 0 10px'
       btn.style.borderRadius = '4px'
-      btn.style.backgroundColor = '#fff'
       btn.style.cursor = 'pointer'
       btn.innerHTML =
         '<span class="copied">copied</span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></g></svg>'

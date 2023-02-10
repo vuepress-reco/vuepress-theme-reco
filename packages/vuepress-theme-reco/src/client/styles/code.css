@@ -14,7 +14,8 @@ div[class*="language-"] {
     @apply relative overflow-x-auto pr-6 pl-16 py-4 leading-7;
   }
   .code-copy-btn {
-    @apply text-gray-400 bg-block shadow-md !important;
+    @apply text-gray-400 bg-gray-200;
+    @apply dark:bg-gray-600;
   }
   &:not(.line-numbers-mode) {
     .line-numbers {
