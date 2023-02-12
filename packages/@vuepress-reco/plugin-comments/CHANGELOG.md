@@ -1,5 +1,16 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.51
+
+### Patch Changes
+
+- feat: add markdown task plugin
+  fix: optimize style of copy btn
+  feat: allow encryption of a single page
+  fix: optimize style
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.51
+
 ## 2.0.0-beta.50
 
 ### Patch Changes

@@ -2,14 +2,15 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.49",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.49",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.49",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.49",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.49",
-    "@vuepress-reco/shared": "2.0.0-beta.49",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.49",
-    "vuepress-theme-reco": "2.0.0-beta.49"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.50",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.50",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.50",
+    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.50",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.50",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.50",
+    "@vuepress-reco/shared": "2.0.0-beta.50",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.50",
+    "vuepress-theme-reco": "2.0.0-beta.50"
   },
   "changesets": [
     "brown-deers-juggle",
@@ -34,6 +35,7 @@
     "large-eggs-greet",
     "late-dragons-drop",
     "lazy-mice-relate",
+    "lemon-coats-lick",
     "lovely-moons-crash",
     "many-baboons-remain",
     "modern-nails-sneeze",

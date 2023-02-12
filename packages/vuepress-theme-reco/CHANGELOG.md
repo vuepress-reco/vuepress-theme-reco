@@ -1,5 +1,23 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.51
+
+### Patch Changes
+
+- feat: add markdown task plugin
+  fix: optimize style of copy btn
+  feat: allow encryption of a single page
+  fix: optimize style
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.51
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.51
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.51
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-beta.51
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.51
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.51
+  - @vuepress-reco/shared@2.0.0-beta.51
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.51
+
 ## 2.0.0-beta.50
 
 ### Patch Changes
