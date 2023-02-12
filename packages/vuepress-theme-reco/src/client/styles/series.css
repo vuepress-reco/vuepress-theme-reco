@@ -39,7 +39,7 @@
       &::before {
         @apply w-1.5 h-1.5;
       }
-      a {
+      span {
         @apply text-reco-primary;
       }
     }

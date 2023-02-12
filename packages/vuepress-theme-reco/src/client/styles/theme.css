@@ -21,7 +21,7 @@
       @apply hidden;
     }
     a {
-      @apply text-reco-primary;
+      @apply text-reco-primary !important;
     }
   }
 

@@ -12,6 +12,9 @@
     .custom-container-title,
     svg {
       @apply text-reco-primary;
+      &.external-link-icon {
+        @apply text-basic;
+      }
     }
     > p > code {
       @apply bg-reco-primary/20 !important;
