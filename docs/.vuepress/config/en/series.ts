@@ -10,28 +10,26 @@ export const series = {
   ],
   '/en/docs/theme/': [
     {
-      text: 'Basic',
+      text: 'Theme Configuration',
       children: [
-        'introduce',
-        'usage',
-        'custom-catalog-title',
-        'custom-primary-color',
-      ],
-    },
-    {
-      text: 'Advance',
-      children: [
+        'frontmatter',
         'home',
         'series',
+        'navbar',
         'comments',
         'auto-set-category',
-        'custom-container',
-        'custom-style',
-        'markdown',
         'bulletin-popover',
         'register-components',
         'password',
       ],
+    },
+    {
+      text: 'Markdown Extension',
+      children: ['custom-container', 'custom-style', 'markdown'],
+    },
+    {
+      text: 'Advance',
+      children: ['custom-catalog-title', 'custom-primary-color'],
     },
   ],
   '/en/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],

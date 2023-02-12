@@ -28,18 +28,24 @@ yarn global add @vuepress-reco/theme-cli@1.0.7
 theme-cli init
 ```
 
-## 预览
+## 手动安装
 
-<img width="800" alt="home_dark" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
+```bash
+npm install vuepress@next vuepress-theme-reco@next --save-dev
 
-<br/>
+# or
+yarn add vuepress@next vuepress-theme-reco@next
+```
 
-<img width="800" alt="doc_dark" src="https://user-images.githubusercontent.com/18067907/214793709-094d4108-a3e2-4924-a263-d538c89535d3.png">
+```ts
+// .vuepress/config.ts
 
-<br/>
+import { defineUserConfig } from 'vuepress'
+import { recoTheme } from 'vuepress-theme-reco'
 
-<img width="800" alt="home_light" src="https://user-images.githubusercontent.com/18067907/214793349-ae174f83-e7ab-42e9-aac1-eb8adab695a9.png">
-
-<br/>
-
-<img width="800" alt="doc_light" src="https://user-images.githubusercontent.com/18067907/214793361-139cea23-3634-4e42-a90a-be172a5e26fb.png">
+export default defineUserConfig({
+  theme: recoTheme({
+    // options
+  })
+})
+```

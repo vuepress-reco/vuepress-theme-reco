@@ -1,3 +1,31 @@
+---
+title: 导航栏
+date: 2023-02-12
+---
+
+## 类型
+
+```ts
+interface NavbarItemBasic {
+  text: string
+  link?: string
+  icon?: string
+}
+
+interface NavbarItem extends NavbarItemBasic {
+  children?: NavbarItemBasic[]
+}
+
+type Navbar = NavbarItem[]
+```
+
+::: tip
+设置图标请参考 [指南 -> 图标](/docs/guide/icon.html)
+:::
+
+## 参考
+
+```ts
 export const navbar = [
   { text: '指南', link: '/docs/guide/introduce', icon: 'Compass' },
   {
@@ -36,3 +64,4 @@ export const navbar = [
   },
   { text: '留言板', link: '/docs/message-board', icon: 'Chat' },
 ]
+```

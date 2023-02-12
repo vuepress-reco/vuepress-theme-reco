@@ -10,28 +10,26 @@ export const series = {
   ],
   '/docs/theme/': [
     {
-      text: '基础',
+      text: '主题配置',
       children: [
-        'introduce',
-        'usage',
-        'custom-catalog-title',
-        'custom-primary-color',
-      ],
-    },
-    {
-      text: '高级',
-      children: [
+        'frontmatter',
         'home',
         'series',
+        'navbar',
         'comments',
         'auto-set-category',
-        'custom-container',
-        'custom-style',
-        'markdown',
         'bulletin-popover',
         'register-components',
         'password',
       ],
+    },
+    {
+      text: 'Markdown 扩展',
+      children: ['custom-container', 'custom-style', 'markdown'],
+    },
+    {
+      text: '高级',
+      children: ['custom-catalog-title', 'custom-primary-color'],
     },
   ],
   '/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],

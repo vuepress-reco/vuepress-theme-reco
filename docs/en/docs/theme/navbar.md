@@ -1,3 +1,31 @@
+---
+title: Navbar
+date: 2023-02-12
+---
+
+## Types
+
+```ts
+interface NavbarItemBasic {
+  text: string
+  link?: string
+  icon?: string
+}
+
+interface NavbarItem extends NavbarItemBasic {
+  children?: NavbarItemBasic[]
+}
+
+type Navbar = NavbarItem[]
+```
+
+::: tip
+For more information on setting icons, please see [Guide-> Icon](/docs/guide/icon.html)
+:::
+
+## Refer
+
+```ts
 export const navbar = [
   { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'Compass' },
   {
@@ -46,3 +74,4 @@ export const navbar = [
     icon: 'Chat',
   },
 ]
+```
