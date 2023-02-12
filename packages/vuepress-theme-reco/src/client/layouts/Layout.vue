@@ -26,9 +26,8 @@
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
 import { useSeriesData, useScrollPromise } from '../composables'
 import Common from '../components/Common/index.vue'
-import HomeBlog from '../components/HomeBlog.vue'
 import Home from '../components/Home/index.vue'
-import Page from '../components/Page.vue'
+import Page from '../components/Page/index.vue'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter()

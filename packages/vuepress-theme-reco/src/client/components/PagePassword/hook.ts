@@ -1,25 +1,20 @@
 import { ref, watch, computed } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
-import { useSiteLocaleData } from '@vuepress/client'
-import { useThemeLocaleData } from '../../composables'
-import { RecoThemePageData } from '../../../types'
+import { usePageFrontmatter } from '@vuepress/client'
 
-export function useSiteInfo() {
-  const siteLocale = useSiteLocaleData()
-  const themeLocal = useThemeLocaleData()
+export function usePageInfo() {
+  const frontmatter = usePageFrontmatter()
 
-  const siteBrandLogo = computed(() => themeLocal.value.logo)
-  const siteBrandTitle = computed(() => siteLocale.value.title)
-  const sitePassword = computed(() => {
-    const _password = themeLocal.value.password
+  const pagePassword = computed(() => {
+    const _password = frontmatter.value.password
     if (!_password) return []
     return Array.isArray(_password) ? _password : [_password]
   })
 
-  return { siteBrandLogo, siteBrandTitle, sitePassword }
+  return { pagePassword }
 }
 
-export function useHandlePassword(sitePassword, emit) {
+export function useHandlePassword(pagePassword, emit) {
   const password = ref('')
   const passwordRef = ref(null)
   const lockIcon = ref('Locked')
@@ -27,7 +22,7 @@ export function useHandlePassword(sitePassword, emit) {
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
-    if (sitePassword.value.includes(md5(md5(newVal)))) {
+    if (pagePassword.value.includes(md5(md5(newVal)))) {
       lockIcon.value = 'Unlocked'
       lockText.value = '密码正确，请重稍后！'
       setTimeout(() => {

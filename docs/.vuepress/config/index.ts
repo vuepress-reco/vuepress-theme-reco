@@ -19,7 +19,7 @@ export const themeConfig = {
       series: enConfig.series,
       commentConfig: enConfig.commentConfig,
       bulletin: enConfig.bulletin,
-    }
+    },
   },
   logo: '/logo.png',
   author: 'reco_luan',

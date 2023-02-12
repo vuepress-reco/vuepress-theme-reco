@@ -13,6 +13,7 @@ importers:
       '@types/unist': ^2.0.3
       '@types/vfile': ^4.0.0
       '@vuepress-reco/shared': workspace:*
+      '@vuepress-reco/tailwindcss-config': workspace:*
       '@vuepress/client': 2.0.0-beta.60
       commitizen: ^4.1.2
       concurrently: ^6.0.0
@@ -48,6 +49,7 @@ importers:
       '@types/unist': 2.0.6
       '@types/vfile': 4.0.0
       '@vuepress-reco/shared': link:packages/@vuepress-reco/shared
+      '@vuepress-reco/tailwindcss-config': link:packages/@vuepress-reco/tailwindcss-config
       '@vuepress/client': 2.0.0-beta.60
       commitizen: 4.2.6
       concurrently: 6.5.1
