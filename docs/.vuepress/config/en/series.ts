@@ -21,6 +21,7 @@ export const series = {
         'bulletin-popover',
         'register-components',
         'password',
+        'appearance',
       ],
     },
     {

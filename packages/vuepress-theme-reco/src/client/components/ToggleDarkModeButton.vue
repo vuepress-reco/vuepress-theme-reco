@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch, Ref } from 'vue'
+import { useThemeLocaleData } from '../composables/'
 
 enum ModeIcon {
   auto = 'BrightnessContrast',
@@ -24,9 +25,11 @@ enum EMode {
 
 type TMode = keyof typeof EMode
 
+const themeConfig = useThemeLocaleData()
+
 const APPEARANCE_KEY = 'vuepress-reco-color-scheme'
 
-const mode: Ref<TMode> = ref('auto')
+const mode: Ref<TMode> = ref(themeConfig.value.colorMode || 'auto')
 
 const icon = computed(() => {
   return ModeIcon[mode.value]
@@ -40,9 +43,12 @@ let toggleMode = () => {
 }
 
 onMounted(() => {
-  let userPreference = localStorage[APPEARANCE_KEY] || 'auto'
+  const userPreference = localStorage[APPEARANCE_KEY]
 
-  mode.value = userPreference
+  if (userPreference) {
+    mode.value = userPreference
+  }
+
   const classList = document.documentElement.classList
 
   function setDarkClass(dark: boolean): void {
