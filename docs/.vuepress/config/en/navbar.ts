@@ -7,12 +7,13 @@ export const navbar = [
       {
         text: 'Configuration',
         children: [
-          { text: 'Theme Configuration', link: '/en/docs/theme/frontmatter' },
+          { text: 'Frontmatter', link: '/en/docs/theme/frontmatter-page' },
+          { text: 'Theme Configuration', link: '/en/docs/theme/series' },
           {
             text: 'Markdown Extension',
             link: '/en/docs/theme/custom-container',
           },
-          { text: 'Advance', link: '/en/docs/theme/custom-catalog-title' },
+          { text: 'Other', link: '/en/docs/theme/custom-style' },
         ],
       },
       {

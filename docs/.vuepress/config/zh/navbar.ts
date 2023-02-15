@@ -7,9 +7,10 @@ export const navbar = [
       {
         text: '配置',
         children: [
-          { text: '主题配置', link: '/docs/theme/frontmatter' },
+          { text: 'Frontmatter', link: '/docs/theme/frontmatter-page' },
+          { text: '主题配置', link: '/docs/theme/series' },
           { text: 'Markdown 扩展', link: '/docs/theme/custom-container' },
-          { text: '高级', link: '/docs/theme/custom-catalog-title' },
+          { text: '其他', link: '/docs/theme/custom-style' },
         ],
       },
       {

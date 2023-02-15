@@ -13,7 +13,7 @@ customBanner:
     - { icon: 'LogoGithub', link: 'https://github.com/vuepress-reco/vuepress-theme-reco' }
   buttons:
     - { text: Guide, link: '/en/docs/guide/introduce' }
-    - { text: Theme config, link: '/en/docs/theme/introduce', type: 'plain' }
+    - { text: Theme config, link: '/en/docs/theme/series', type: 'plain' }
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about

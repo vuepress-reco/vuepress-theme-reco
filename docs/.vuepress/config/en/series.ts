@@ -10,10 +10,12 @@ export const series = {
   ],
   '/en/docs/theme/': [
     {
+      text: 'Frontmatter',
+      children: ['frontmatter-page', 'frontmatter-home'],
+    },
+    {
       text: 'Theme Configuration',
       children: [
-        'frontmatter',
-        'home',
         'series',
         'navbar',
         'comments',
@@ -22,15 +24,22 @@ export const series = {
         'register-components',
         'password',
         'appearance',
+        'custom-catalog-title',
+        'custom-primary-color',
       ],
     },
     {
       text: 'Markdown Extension',
-      children: ['custom-container', 'custom-style', 'markdown'],
+      children: [
+        'custom-container',
+        'markdown-task',
+        'markdown-vue-preview',
+        'markdown-file-parse',
+      ],
     },
     {
-      text: 'Advance',
-      children: ['custom-catalog-title', 'custom-primary-color'],
+      text: 'Other',
+      children: ['custom-style'],
     },
   ],
   '/en/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],
