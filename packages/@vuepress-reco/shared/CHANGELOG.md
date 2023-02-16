@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.52
+
+### Patch Changes
+
+- feat: auto set series
+
 ## 2.0.0-beta.51
 
 ### Patch Changes

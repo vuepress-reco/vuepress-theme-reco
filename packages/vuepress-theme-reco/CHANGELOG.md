@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.52
+
+### Patch Changes
+
+- feat: auto set series
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.52
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.52
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.52
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-beta.52
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.52
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.52
+  - @vuepress-reco/shared@2.0.0-beta.52
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.52
+
 ## 2.0.0-beta.51
 
 ### Patch Changes
