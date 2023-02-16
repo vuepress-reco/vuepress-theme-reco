@@ -32,18 +32,26 @@ export function compareDate(prev, next) {
 export default class PageCreater {
   app: App
   options: PagePluginOptions
+  themeConfig: Record<string, unknown>
   private blogsToBeReleased: Array<ReleasedPage>
   private categoryPageData: CategoryPageData
   private _extendedPages: Promise<Page>[]
   private frontmatterKeys: FrontmatterKey[]
+  series: Record<string, any>
 
-  constructor(options: PagePluginOptions, app: App) {
+  constructor(
+    options: PagePluginOptions,
+    app: App,
+    themeConfig: Record<string, unknown>
+  ) {
     this.app = app
     this.options = options
+    this.themeConfig = themeConfig
     this.blogsToBeReleased = []
     this.categoryPageData = {}
     this._extendedPages = []
     this.frontmatterKeys = []
+    this.series = {}
   }
 
   parse() {
@@ -119,7 +127,7 @@ export default class PageCreater {
   // 将博客页面注入进分类页面数据
   private setBlogsToCategoryPageData(): void {
     // @ts-ignore
-    const { autoSetBlogCategories } = this.app.options.theme
+    const { autoSetBlogCategories, autoSetSeries } = this.themeConfig
 
     const blogsToBeReleased = this.app.pages
       .filter((page: Page) => {
@@ -131,6 +139,10 @@ export default class PageCreater {
 
         if (autoSetBlogCategories && publishFlag) {
           this._setBlogCategories(page)
+        }
+
+        if (autoSetSeries) {
+          this._setSeries(page)
         }
 
         return publishFlag
@@ -260,6 +272,58 @@ export default class PageCreater {
     if (blogCategory) page.frontmatter.categories = [blogCategory[1]]
   }
 
+  // 设置系列
+  private _setSeries(page) {
+    let docSeries = ((page.filePath || '') as string).match(
+      /.+\/docs\/(.+)\/(.+)\/(.+)\.md$/
+    )
+
+    if (docSeries) {
+      const series = `/docs/${docSeries[1]}/`
+      const group = docSeries[2]
+      const filePath = `${series}${group}/${docSeries[3]}.md`
+
+      if (!this.series?.[series]) {
+        // @ts-ignore
+        this.series[`/${series}/`] = [
+          {
+            text: group,
+            children: [filePath],
+          },
+        ]
+
+        return
+      } else if (
+        !this.series[series].some((groupItem) => groupItem?.text === group)
+      ) {
+        this.series[series].push({
+          text: group,
+          children: [filePath],
+        })
+      } else {
+        this.series[series]
+          .find((groupItem) => groupItem?.text === group)
+          .children.push(filePath)
+      }
+    } else {
+      docSeries = ((page.filePath || '') as string).match(
+        /.+\/docs\/(.+)\/(.+)\.md$/
+      )
+      if (docSeries) {
+        const series = `/docs/${docSeries[1]}/`
+        const filePath = `${series}${docSeries[2]}.md`
+
+        if (!this.series?.[series]) {
+          // @ts-ignore
+          this.series[series] = [filePath]
+          return
+        } else {
+          this.series[series].push(filePath)
+        }
+      }
+    }
+  }
+
   // 所有拓展的页面
   get extendedPages(): Promise<Page>[] {
     return this._extendedPages
@@ -282,7 +346,7 @@ export default class PageCreater {
           (prev: Record<string, CategoryPaginationPost>, current, index) => {
             const currentPage = index + 1
 
-            prev[`/${key}/${convertToPinyin(value)}/${currentPage}/`] = {
+            prev[`/${key}/${value}/${currentPage}/`] = {
               pageSize,
               totalPage: pages.length,
               currentPage,

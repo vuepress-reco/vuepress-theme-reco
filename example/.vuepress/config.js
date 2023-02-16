@@ -94,9 +94,14 @@ export default defineUserConfig({
           },
         ],
       },
+      {
+        text: '生活',
+        link: '/docs/shenghuo/aihao/yundong.html',
+      },
     ],
     autoSetBlogCategories: true,
     autoAddCategoryToNavbar: true,
+    autoSetSeries: true,
     vuePreviewsDir: './example/.vuepress/vue-previews',
     componentsDir: './example/.vuepress/components',
     bulletin: {

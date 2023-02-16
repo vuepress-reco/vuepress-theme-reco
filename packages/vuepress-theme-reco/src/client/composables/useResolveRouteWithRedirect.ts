@@ -10,7 +10,9 @@ export const useResolveRouteWithRedirect = (
 ): ReturnType<Router['resolve']> => {
   const router = useRouter()
   const route = router.resolve(...args)
+
   const lastMatched = route.matched[route.matched.length - 1]
+
   if (!lastMatched?.redirect) {
     return route
   }

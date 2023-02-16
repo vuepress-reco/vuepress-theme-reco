@@ -19,6 +19,8 @@ import type {
 
 import { useNavLink } from './useNavLink'
 
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+
 export interface NavItem {
   text: string
   ariaLabel?: string
@@ -55,19 +57,29 @@ export const useSeriesItems = (): SeriesItemsRef => {
 
 export const resolveSeriesItems = (
   frontmatter: DefaultThemeNormalPageFrontmatter,
-  themeLocal: DefaultThemeData
+  themeLocal: DefaultThemeData,
+  series: SeriesConfigObject
 ): ResolvedSeriesItem[] => {
+  const { series: autoSeries } = usePageData()
   // get series config from frontmatter > themeConfig
-  const seriesConfig = frontmatter.series ?? themeLocal.series ?? 'auto'
+  let seriesConfig = frontmatter.series ?? themeLocal.series ?? {}
+
+  seriesConfig = {
+    ...autoSeries,
+    ...seriesConfig,
+  }
+
+  // 解决
 
   // resolve series items according to the config
-  if (frontmatter.home || seriesConfig === false) {
+  if (frontmatter.home) {
     return []
   }
 
-  if (isArray(seriesConfig)) {
-    return resolveArraySeriesItems(seriesConfig)
-  }
+  // 自动生成 series 是对象的格式，所以不再兼容数组的格式
+  // if (isArray(seriesConfig)) {
+  //   return resolveArraySeriesItems(seriesConfig)
+  // }
 
   if (isPlainObject(seriesConfig)) {
     return resolveMultiSeriesItems(seriesConfig)

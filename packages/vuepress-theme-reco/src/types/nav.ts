@@ -48,7 +48,9 @@ export interface SeriesGroup
 }
 export type SeriesConfigArray = (SeriesGroup | SeriesItem | string)[]
 export type SeriesConfigObject = Record<string, SeriesConfigArray>
-export type SeriesConfig = SeriesConfigArray | SeriesConfigObject
+// 暂时去掉 SeriesConfigArray
+// export type SeriesConfig = SeriesConfigArray | SeriesConfigObject
+export type SeriesConfig = SeriesConfigObject
 // resolved
 export interface ResolvedSeriesItem extends Partial<NavLink> {
   level?: number

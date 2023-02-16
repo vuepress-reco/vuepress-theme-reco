@@ -6,10 +6,12 @@ export const categoryPaginationPostsSymbol = Symbol(
 )
 export const categorySummarySymbol = Symbol('categorySummarySymbol')
 export const postsSymbol = Symbol('postsSymbol')
+export const seriesSymbol = Symbol('seriesSymbol')
 
 export function usePageData(): Record<string, any> {
   const categorySummary = inject(categorySummarySymbol) || {}
   const posts = inject(postsSymbol) || []
+  const series = inject(seriesSymbol) || {}
   const categoryPaginationPosts = inject(categoryPaginationPostsSymbol) || {}
 
   if (!postsSymbol) {
@@ -26,5 +28,5 @@ export function usePageData(): Record<string, any> {
     )
   })
 
-  return { categoryPosts, categorySummary, posts }
+  return { categoryPosts, categorySummary, posts, series }
 }

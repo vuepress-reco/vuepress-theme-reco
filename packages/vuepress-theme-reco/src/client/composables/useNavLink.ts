@@ -10,6 +10,7 @@ import { useResolveRouteWithRedirect } from './useResolveRouteWithRedirect'
  */
 export const useNavLink = (item: string): NavLink => {
   const resolved = useResolveRouteWithRedirect(item)
+
   return {
     text: (resolved.meta.title || item) as string,
     link: resolved.name === '404' ? item : resolved.fullPath,

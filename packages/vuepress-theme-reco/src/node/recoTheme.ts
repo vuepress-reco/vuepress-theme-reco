@@ -93,7 +93,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     plugins: [
       bulletinPopoverPlugin(),
       commentsPlugin(),
-      pagePlugin(pages || []),
+      pagePlugin(pages || [], themeConfig),
       gitPlugin(),
       themeDataPlugin({ themeData: themeConfig }),
       searchPlugin({

@@ -1,5 +1,5 @@
 .series-container {
-  @apply transition-all pr-6 pl-8 w-72 fixed z-40 top-0 left-0 bottom-0 bg-block overflow-y-auto;
+  @apply transition-all pr-6 pl-8 pb-8 w-72 fixed z-40 top-0 left-0 bottom-0 bg-block overflow-y-auto;
   @apply -translate-x-full;
   @apply md:translate-x-0 !important;
   .series-group {
