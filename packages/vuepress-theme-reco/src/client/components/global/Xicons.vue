@@ -1,10 +1,8 @@
 <template>
-  <a
+  <span
     v-if="link !=='javascript:void(0)' || (text || slots.default)"
     :class="['xicon-container', iconPosition]"
-    :href="link"
-    :target="target"
-    @click="emits('click')"
+    @click="handleClick"
   >
     <slot name="icon">
       <component
@@ -21,21 +19,20 @@
     >
       <slot>{{ text }}</slot>
     </span>
-  </a>
+  </span>
 
-  <a v-else class="xicon-container">
+  <span v-else class="xicon-container">
     <component
       :style="iconStyle"
       :is="icons[icon]"
       @click="emits('click')"
     />
-  </a>
+  </span>
 
 </template>
 
 <script lang="ts" setup>
 import { computed, toRefs, useSlots } from 'vue'
-import { withBase } from '@vuepress/client'
 import * as icons from '@vicons/carbon'
 
 const slots = useSlots()
@@ -93,33 +90,41 @@ const iconStyle = computed(() => {
 const textStyle = computed(() => {
   return { color: color.value, fontSize: `${textSize.value}px` }
 })
+
+const handleClick = () => {
+  if (props.link) {
+    window.open(props.link, props.target)
+  }
+
+  emits('click')
+}
 </script>
 
 <style>
 .xicon-container {
-  @apply inline-flex;
+  @apply inline-flex cursor-pointer;
   &.left {
     @apply flex-row items-center;
-    > .xicon-content {
-      @apply ml-1.5;
+    > svg {
+      @apply mr-1.5;
     }
   }
   &.right {
     @apply flex-row-reverse items-center;
-    > .xicon-content {
-      @apply mr-1.5;
+    > svg {
+      @apply ml-1.5;
     }
   }
   &.top {
     @apply flex-col items-center;
-    > .xicon-content {
-      @apply mt-1.5;
+    > svg {
+      @apply mb-1.5;
     }
   }
   &.bottom {
     @apply flex-col-reverse items-center;
-    > .xicon-content {
-      @apply mb-1.5;
+    > svg {
+      @apply mt-1.5;
     }
   }
 }

@@ -8,10 +8,7 @@
       @mouseenter="handleButtonMouseEnter"
       @mouseleave="handleButtonMouseLeave"
     >
-      <span class="title">
-        <Xicons v-if="item.icon" :icon="item.icon" />
-        <span>{{item.text}}</span>
-      </span>
+      <Xicons class="title" :icon="item.icon" :text="item.text" />
       <span v-if="item.text" class="arrow down" />
     </button>
 
@@ -22,8 +19,7 @@
       @click="handleMobileButtonClick"
     >
       <span class="title">
-        <Xicons v-if="item.icon" :icon="item.icon" />
-        <span>{{item.text}}</span>
+        <Xicons :icon="item.icon" :text="item.text" />
       </span>
       <span v-if="item.text" class="arrow" :class="open ? 'down' : 'right'" />
     </button>
@@ -42,8 +38,7 @@
         >
           <template v-if="child.children">
             <h5 class="dropdown-link__subtitle">
-              <Xicons v-if="child.icon" :icon="child.icon" :text="child.text" />
-              <template v-else>{{ child.text }}</template>
+              <Xicons :icon="child.icon" :text="child.text" />
             </h5>
 
             <ul class="dropdown-link__subcontainer">

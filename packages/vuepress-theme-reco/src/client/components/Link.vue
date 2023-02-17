@@ -9,8 +9,7 @@
     :key="item.link"
   >
     <slot name="before" />
-    <Xicons v-if="item.icon" :icon="item.icon" />
-    <span>{{item.text}}</span>
+    <Xicons :icon="item.icon" :text="item.text" />
     <slot name="after" />
   </RouterLink>
 
@@ -25,8 +24,7 @@
     :key="item.link"
   >
     <slot name="before" />
-    <Xicons v-if="item.icon" :icon="item.icon" />
-    <span>{{item.text}}</span>
+    <Xicons :icon="item.icon" :text="item.text" />
     <ExternalLinkIcon v-if="!item.hideExternalLinkIcon && isBlankTarget" />
     <slot name="after" />
   </a>
