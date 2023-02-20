@@ -31,7 +31,7 @@ export default defineUserConfig({
   theme: recoTheme({
     // automatically set categories
     autoSetBlogCategories: true,
-    // automatically add homepage, categories and tags to the header navigation bar
+    // automatically add categories and tags to the header navigation bar
     autoAddCategoryToNavbar: true
   })
 })

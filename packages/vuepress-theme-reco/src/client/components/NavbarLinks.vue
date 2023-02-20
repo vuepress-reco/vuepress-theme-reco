@@ -180,7 +180,6 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
     let navItems = themeLocal.value.navbar || []
     if (themeLocal.value.autoAddCategoryToNavbar === true) {
       navItems = [
-        { text: 'Home', link: '/' },
         ...parseCategories.value,
         ...navItems
       ]

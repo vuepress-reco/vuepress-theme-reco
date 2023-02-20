@@ -30,7 +30,7 @@ import { recoTheme } from 'vuepress-theme-reco'
 export default defineUserConfig({
   theme: recoTheme({// 自动设置分类
     autoSetBlogCategories: true,
-    // 自动将首页、分类和标签添加至头部导航条
+    // 自动将分类和标签添加至头部导航条
     autoAddCategoryToNavbar: true
   })
 })
