@@ -11,14 +11,18 @@
   </Common>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useRouter } from 'vue-router'
+import { useRouteLocale, withBase } from '@vuepress/client';
 import Common from '../components/Common/index.vue'
+import { useThemeLocaleData } from '../composables';
 
 const router = useRouter()
+const routeLocale = useRouteLocale()
+const themeLocal = useThemeLocaleData()
 
 const goHome = () => {
-  router.push('/')
+  router.push(withBase(themeLocal.value.home || routeLocale.value))
 }
 </script>
 

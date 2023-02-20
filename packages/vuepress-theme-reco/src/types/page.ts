@@ -6,6 +6,7 @@ export interface RecoThemePageData extends GitPluginPageData {
   logo?: string
   password?: string | Array<string>
   colorMode?: 'light' | 'dark'
+  home?: string
 }
 
 export interface DefaultThemePageFrontmatter {

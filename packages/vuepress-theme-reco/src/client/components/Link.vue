@@ -6,7 +6,7 @@
     :to="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
-    :key="item.link"
+    :key="`${item.link}-router`"
   >
     <slot name="before" />
     <Xicons :icon="item.icon" :text="item.text" />
@@ -21,11 +21,11 @@
     :rel="linkRel"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
-    :key="item.link"
+    :key="`${item.link}-a`"
   >
     <slot name="before" />
     <Xicons :icon="item.icon" :text="item.text" />
-    <ExternalLinkIcon v-if="!item.hideExternalLinkIcon && isBlankTarget" />
+    <ExternalLinkIcon v-if="isBlankTarget" />
     <slot name="after" />
   </a>
 </template>
@@ -34,9 +34,10 @@
 import { computed, defineComponent, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSiteData } from '@vuepress/client'
+import { useSiteLocaleData, useRouteLocale } from '@vuepress/client'
 import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
 import type { NavLink } from '../../types'
+import { useThemeLocaleData } from '../composables'
 
 export default defineComponent({
   name: 'Link',
@@ -52,7 +53,10 @@ export default defineComponent({
 
   setup(props) {
     const route = useRoute()
-    const site = useSiteData()
+    const routeLocale = useRouteLocale()
+    const siteLocal = useSiteLocaleData()
+    const themeLocal = useThemeLocaleData()
+
     const { item } = toRefs(props)
 
     // if the link has http protocol
@@ -91,11 +95,11 @@ export default defineComponent({
 
     // should be active when current route is a subpath of this link
     const shouldBeActiveInSubpath = computed(() => {
-      const localeKeys = Object.keys(site.value.locales)
+      const localeKeys = Object.keys(siteLocal.value.locales)
       if (localeKeys.length) {
         return !localeKeys.some((key) => key === item.value.link)
       }
-      return item.value.link !== '/'
+      return item.value.link !== themeLocal.value.home || routeLocale.value
     })
     // if this link is active in subpath
     const isActiveInSubpath = computed(() => {

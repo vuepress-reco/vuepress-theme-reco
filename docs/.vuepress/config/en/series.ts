@@ -11,11 +11,12 @@ export const series = {
   '/en/docs/theme/': [
     {
       text: 'Frontmatter',
-      children: ['frontmatter-page', 'frontmatter-home'],
+      children: ['frontmatter-home', 'frontmatter-page'],
     },
     {
       text: 'Theme Configuration',
       children: [
+        'home',
         'series',
         'navbar',
         'comments',
