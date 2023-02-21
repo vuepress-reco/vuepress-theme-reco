@@ -14,6 +14,7 @@ import { path, fs, getDirname } from '@vuepress/utils'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { viteBundler } from '@vuepress/bundler-vite'
@@ -100,6 +101,11 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
         hotKeys: [{ key: 's', ctrl: true }],
       }),
       palettePlugin(),
+      mediumZoomPlugin({
+        zoomOptions: {
+          background: 'inherit',
+        },
+      }),
       nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
       prismjsPlugin(),
       activeHeaderLinksPlugin({

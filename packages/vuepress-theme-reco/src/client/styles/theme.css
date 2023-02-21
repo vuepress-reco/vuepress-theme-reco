@@ -66,3 +66,7 @@ a.header-anchor {
     @apply no-underline;
   }
 }
+
+.medium-zoom--opened .medium-zoom-overlay {
+  @apply bg-reco-bg-lightmode dark:bg-reco-bg-darkmode !important;
+}
