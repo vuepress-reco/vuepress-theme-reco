@@ -4,6 +4,8 @@
     :class="{
       'series--open': isOpenSeries,
       'series--no': !isShowSeries,
+      'show-series': isShowSeries,
+      'show-catalog': isShowCatalog,
       'mobile-menus--active': isOpenMobileMenus
     }"
   >
