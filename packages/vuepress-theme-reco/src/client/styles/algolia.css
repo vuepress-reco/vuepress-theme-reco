@@ -1,0 +1,121 @@
+
+
+#docsearch-container {
+  @apply inline-block align-middle;
+  button {
+    @apply h-8 px-1.5;
+  }
+
+  .DocSearch-Button {
+    @apply pl-6 bg-block border-block border-2 rounded-md;
+    @apply hover:shadow-none hover:border-reco-primary;
+
+    background: url('../assets/search.svg') 0.4rem 0.4rem no-repeat;
+    background-size: 1.2rem 1.2rem;
+    svg {
+      @apply hidden;
+    }
+    .DocSearch-Button-Placeholder {
+      @apply text-basic text-sm;
+    }
+    .DocSearch-Button-Key {
+      background: inherit;
+      @apply border-block shadow-md !important;
+    }
+  }
+}
+
+.DocSearch-Container {
+  .DocSearch-Modal {
+    @apply bg-basic border-block;
+
+    .DocSearch-SearchBar {
+      @apply bg-basic border-reco-border-lightmode;
+      @apply dark:border-reco-border-darkmode;
+      .DocSearch-Form {
+        @apply bg-block shadow-none border-2 border-reco-primary;
+        .DocSearch-Search-Icon {
+          @apply text-reco-primary;
+        }
+        .DocSearch-LoadingIndicator svg, .DocSearch-Reset svg {
+          @apply text-reco-primary;
+        }
+        .DocSearch-Input {
+          @apply text-basic;
+        }
+      }
+    }
+
+    .DocSearch-Dropdown {
+      .DocSearch-StartScreen .DocSearch-Help {
+        @apply text-basic;
+      }
+      .DocSearch-NoResults {
+        .DocSearch-Screen-Icon svg, .DocSearch-Title {
+          @apply text-basic;
+        }
+      }
+
+      .DocSearch-Dropdown-Container {
+        .DocSearch-Hits {
+          .DocSearch-Hit-source {
+            @apply bg-basic text-reco-primary;
+          }
+
+          #docsearch-list .DocSearch-Hit {
+            a {
+              @apply bg-block border-block shadow-none;
+            }
+            &[aria-selected=true] a {
+              @apply bg-reco-primary text-white;
+              .DocSearch-Hit-icon svg, .DocSearch-Hit-action svg {
+                @apply text-white dark:text-white;
+              }
+            }
+
+            .DocSearch-Hit-Container {
+              .DocSearch-Hit-icon svg, .DocSearch-Hit-action svg {
+                @apply text-basic;
+              }
+
+              .DocSearch-Hit-content-wrapper {
+                .DocSearch-Hit-title {
+                  @apply text-basic;
+
+                  mark {
+                    @apply text-reco-primary;
+                  }
+                }
+
+                .DocSearch-Hit-path {
+                  @apply text-reco-text-lightmode/60 dark:text-reco-text-darkmode/60;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .DocSearch-Dropdown, .DocSearch-Footer {
+    @apply bg-basic border-reco-border-lightmode shadow-none;
+    @apply dark:border-reco-border-darkmode;
+  }
+
+  .DocSearch-Footer {
+    @apply border-t;
+    .DocSearch-Commands-Key {
+      background: inherit;
+      @apply border-block shadow-md !important;
+    }
+    .DocSearch-Logo {
+      .DocSearch-Label {
+        @apply text-basic;
+      }
+      svg {
+        @apply text-reco-primary;
+      }
+    }
+  }
+}

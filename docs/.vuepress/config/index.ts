@@ -28,4 +28,12 @@ export const themeConfig = {
   docsDir: '/docs',
   vuePreviewsDir: './docs/.vuepress/vue-previews',
   componentsDir: './docs/.vuepress/components',
+  algolia: {
+    appId: '38R2J3MTQC',
+    apiKey: '583d3caf699630b08a9bc2d12d599701',
+    indexName: 'v2-vuepress-reco-recoluan',
+    // inputSelector: '### REPLACE ME ####',
+    // algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
+    // debug: false // Set debug to true if you want to inspect the dropdown
+  },
 }

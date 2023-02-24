@@ -14,6 +14,10 @@ import { path, fs, getDirname } from '@vuepress/utils'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
+import {
+  docsearchPlugin,
+  DocsearchPluginOptions,
+} from '@vuepress/plugin-docsearch'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
@@ -36,6 +40,60 @@ import { pages } from './pages.js'
 const __dirname = getDirname(import.meta.url)
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
+  const plugins = [
+    bulletinPopoverPlugin(),
+    commentsPlugin(),
+    pagePlugin(pages || [], themeConfig),
+    gitPlugin(),
+    themeDataPlugin({ themeData: themeConfig }),
+    searchPlugin({
+      hotKeys: [{ key: 's', ctrl: true }],
+    }),
+    palettePlugin(),
+    mediumZoomPlugin({
+      zoomOptions: {
+        background: 'inherit',
+      },
+    }),
+    nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
+    prismjsPlugin(),
+    activeHeaderLinksPlugin({
+      headerLinkSelector: 'a.page-catalog-item',
+    }),
+    containerPlugin(resolveContainerOptions('tip')),
+    containerPlugin(resolveContainerOptions('info')),
+    containerPlugin(resolveContainerOptions('warning')),
+    containerPlugin(resolveContainerOptions('danger')),
+    containerPlugin(resolveContainerOptions('details')),
+    containerPlugin(resolveContainerOptions('code-group')),
+    containerPlugin(resolveContainerOptions('code-group-item')),
+    externalLinkIconPlugin(),
+    vuePreviewPlugin(),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(
+        process.cwd(),
+        themeConfig.vuePreviewsDir || './.vuepress/vue-previews'
+      ),
+    }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(
+        process.cwd(),
+        themeConfig.componentsDir || './.vuepress/components'
+      ),
+    }),
+    backToTopPlugin(),
+    codeCopyPlugin(),
+    markdownTaskPlugin(),
+  ]
+
+  if (themeConfig.algolia) {
+    plugins.push(
+      docsearchPlugin(
+        (themeConfig.algolia as unknown) as DocsearchPluginOptions
+      )
+    )
+  }
+
   return {
     name: 'vuepress-theme-reco',
     onInitialized(app) {
@@ -91,50 +149,6 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
       page.routeMeta.title = page.title
     },
 
-    plugins: [
-      bulletinPopoverPlugin(),
-      commentsPlugin(),
-      pagePlugin(pages || [], themeConfig),
-      gitPlugin(),
-      themeDataPlugin({ themeData: themeConfig }),
-      searchPlugin({
-        hotKeys: [{ key: 's', ctrl: true }],
-      }),
-      palettePlugin(),
-      mediumZoomPlugin({
-        zoomOptions: {
-          background: 'inherit',
-        },
-      }),
-      nprogressPlugin(), // todo 在 vuepress-vite 下出现异常
-      prismjsPlugin(),
-      activeHeaderLinksPlugin({
-        headerLinkSelector: 'a.page-catalog-item',
-      }),
-      containerPlugin(resolveContainerOptions('tip')),
-      containerPlugin(resolveContainerOptions('info')),
-      containerPlugin(resolveContainerOptions('warning')),
-      containerPlugin(resolveContainerOptions('danger')),
-      containerPlugin(resolveContainerOptions('details')),
-      containerPlugin(resolveContainerOptions('code-group')),
-      containerPlugin(resolveContainerOptions('code-group-item')),
-      externalLinkIconPlugin(),
-      vuePreviewPlugin(),
-      registerComponentsPlugin({
-        componentsDir: path.resolve(
-          process.cwd(),
-          themeConfig.vuePreviewsDir || './.vuepress/vue-previews'
-        ),
-      }),
-      registerComponentsPlugin({
-        componentsDir: path.resolve(
-          process.cwd(),
-          themeConfig.componentsDir || './.vuepress/components'
-        ),
-      }),
-      backToTopPlugin(),
-      codeCopyPlugin(),
-      markdownTaskPlugin(),
-    ],
+    plugins,
   }
 }

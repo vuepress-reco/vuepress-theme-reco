@@ -24,6 +24,7 @@ export const series = {
         'register-components',
         'password',
         'appearance',
+        'doc-search',
         'auto-set-category',
         'auto-set-series',
         'custom-catalog-title',
