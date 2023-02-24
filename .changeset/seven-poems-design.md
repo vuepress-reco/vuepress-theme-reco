@@ -1,0 +1,14 @@
+---
+'@vuepress-reco/vuepress-plugin-bulletin-popover': patch
+'@vuepress-reco/vuepress-plugin-code-copy': patch
+'@vuepress-reco/vuepress-plugin-comments': patch
+'@vuepress-reco/vuepress-plugin-markdown-task': patch
+'@vuepress-reco/vuepress-plugin-page': patch
+'@vuepress-reco/vuepress-plugin-vue-preview': patch
+'@vuepress-reco/shared': patch
+'@vuepress-reco/tailwindcss-config': patch
+'vuepress-theme-reco': patch
+---
+
+feat: add algolia
+feat: integrate plugin medium-zoom

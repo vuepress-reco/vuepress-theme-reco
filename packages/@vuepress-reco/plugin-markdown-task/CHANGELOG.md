@@ -1,5 +1,12 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-beta.53
+
+### Patch Changes
+
+- feat: add algolia
+  feat: integrate plugin medium-zoom
+
 ## 2.0.0-beta.52
 
 ### Patch Changes

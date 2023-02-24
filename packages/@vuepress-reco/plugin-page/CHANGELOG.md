@@ -1,5 +1,14 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.53
+
+### Patch Changes
+
+- feat: add algolia
+  feat: integrate plugin medium-zoom
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.53
+
 ## 2.0.0-beta.52
 
 ### Patch Changes
