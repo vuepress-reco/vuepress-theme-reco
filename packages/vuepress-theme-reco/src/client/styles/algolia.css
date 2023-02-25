@@ -7,13 +7,10 @@
   }
 
   .DocSearch-Button {
-    @apply pl-6 bg-block border-block border-2 rounded-md;
+    @apply bg-block border-block border-2 rounded-md;
     @apply hover:shadow-none hover:border-reco-primary;
-
-    background: url('../assets/search.svg') 0.4rem 0.4rem no-repeat;
-    background-size: 1.2rem 1.2rem;
     svg {
-      @apply hidden;
+      @apply w-4 h-4 text-basic;
     }
     .DocSearch-Button-Placeholder {
       @apply text-basic text-sm;
