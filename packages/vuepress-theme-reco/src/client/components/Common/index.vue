@@ -1,13 +1,7 @@
 <template>
   <div
     class="common-wrapper"
-    :class="{
-      'series--open': isOpenSeries,
-      'series--no': !isShowSeries,
-      'show-series': isShowSeries,
-      'show-catalog': isShowCatalog,
-      'mobile-menus--active': isOpenMobileMenus
-    }"
+    :class="containerClass"
   >
     <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
@@ -23,14 +17,20 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
+import { onMounted, computed } from 'vue'
+import { usePageFrontmatter } from '@vuepress/client'
+
 import Navbar from '../Navbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
 import Password from '../Password/index.vue'
-import { useSeriesData, useMobileMenus } from '../../composables'
+import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
+
 import { useSeries, usePassword, useInitCodeCopy } from './hook'
+import { useSeriesData, useMobileMenus } from '../../composables'
+import { RecoThemeNormalPageFrontmatter } from '../../../types'
+
+const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
 
 const {
   isOpenSeries,
@@ -48,6 +48,17 @@ const {
   sitePasswordPass,
   handlePass
 } = usePassword()
+
+const containerClass = computed(() => [
+  {
+    'series--open': isOpenSeries.value,
+    'series--no': !isShowSeries.value,
+    'show-series': isShowSeries.value,
+    'show-catalog': isShowCatalog.value,
+    'mobile-menus--active': isOpenMobileMenus.value
+  },
+  frontmatter.value.pageClass,
+])
 
 onMounted(() => {
   useInitCodeCopy()
