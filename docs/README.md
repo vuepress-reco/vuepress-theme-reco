@@ -14,9 +14,6 @@ customBanner:
     - { text: 主题配置, link: '/docs/theme/series', type: 'plain' }
   socialLinks:
     - { icon: 'LogoGithub', link: 'https://github.com/vuepress-reco/vuepress-theme-reco' }
-isShowTitleInHome: true
-actionText: About
-actionLink: /views/other/about
 features:
 - title: 过去
   details: 开发一款看着开心、写着顺手的 vuepress 博客主题。

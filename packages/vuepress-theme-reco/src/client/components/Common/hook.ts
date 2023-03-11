@@ -1,7 +1,6 @@
 import { useRouter, useRoute, NavigationHookAfter } from 'vue-router'
 import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
 import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
-import { RecoThemePageData } from '../../../types'
 import { useScrollDirection, useThemeLocaleData } from '../../composables'
 
 export function useSeries(toggleSeries, toggleMobileMenus) {

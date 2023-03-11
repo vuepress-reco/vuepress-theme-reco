@@ -10,14 +10,14 @@ import {
 
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 
-import type { DefaultThemeNormalPageFrontmatter } from '../types'
+import type { RecoThemeNormalPageFrontmatter } from '../types'
 
 export function applyClientSetup() {
   // we need to access series items in multiple components
   // so we make it global computed
   const themeLocal = useThemeLocaleData()
   const { series } = usePageData()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
   const seriesItems = computed(() =>
     resolveSeriesItems(frontmatter.value, themeLocal.value, series)
   )

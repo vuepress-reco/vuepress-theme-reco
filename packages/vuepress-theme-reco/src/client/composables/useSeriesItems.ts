@@ -1,16 +1,11 @@
 import { inject } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
 import { useRoute } from 'vue-router'
-import {
-  isArray,
-  isPlainObject,
-  isString,
-  resolveLocalePath,
-} from '@vuepress/shared'
+import { isPlainObject, isString, resolveLocalePath } from '@vuepress/shared'
 
 import type {
-  DefaultThemeData,
-  DefaultThemeNormalPageFrontmatter,
+  RecoThemeData,
+  RecoThemeNormalPageFrontmatter,
   SeriesConfigArray,
   SeriesConfigObject,
   SeriesGroup,
@@ -37,7 +32,7 @@ export interface NavLink extends NavItem {
 }
 
 export interface ResolvedSeriesItem extends Partial<NavLink> {
-  isGroup?: boolean
+  text?: string
   children?: ResolvedSeriesItem[]
 }
 
@@ -56,13 +51,13 @@ export const useSeriesItems = (): SeriesItemsRef => {
 }
 
 export const resolveSeriesItems = (
-  frontmatter: DefaultThemeNormalPageFrontmatter,
-  themeLocal: DefaultThemeData,
+  frontmatter: RecoThemeNormalPageFrontmatter,
+  themeLocal: RecoThemeData,
   series: SeriesConfigObject
 ): ResolvedSeriesItem[] => {
   const { series: autoSeries } = usePageData()
   // get series config from frontmatter > themeConfig
-  let seriesConfig = frontmatter.series ?? themeLocal.series ?? {}
+  let seriesConfig = themeLocal.series ?? {}
 
   seriesConfig = {
     ...autoSeries,
@@ -75,11 +70,6 @@ export const resolveSeriesItems = (
   if (frontmatter.home) {
     return []
   }
-
-  // 自动生成 series 是对象的格式，所以不再兼容数组的格式
-  // if (isArray(seriesConfig)) {
-  //   return resolveArraySeriesItems(seriesConfig)
-  // }
 
   if (isPlainObject(seriesConfig)) {
     return resolveMultiSeriesItems(seriesConfig)
@@ -102,13 +92,6 @@ export const resolveArraySeriesItems = (
       childItem = useNavLink(item)
     } else {
       childItem = item as ResolvedSeriesItem
-    }
-
-    if (childItem.isGroup && childItem.children) {
-      return {
-        ...childItem,
-        children: childItem.children.map(handleChildItem),
-      }
     }
 
     return childItem

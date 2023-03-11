@@ -20,7 +20,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { usePageFrontmatter } from '@vuepress/client'
 import { isPlainObject, isString } from '@vuepress/shared'
 import type {
-  DefaultThemeNormalPageFrontmatter,
+  RecoThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
   ResolvedSeriesItem,
 } from '../../types'
@@ -87,7 +87,7 @@ export default defineComponent({
   components: { Link },
 
   setup() {
-    const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+    const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
     const seriesItems = useSeriesItems()
     const route = useRoute()
     const router = useRouter()

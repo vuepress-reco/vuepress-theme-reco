@@ -3,45 +3,73 @@ import type { NavLink, SeriesConfig } from './nav'
 
 export interface RecoThemePageData extends GitPluginPageData {
   filePathRelative: string | null
-  logo?: string
-  password?: string | Array<string>
-  colorMode?: 'light' | 'dark'
-  home?: string
 }
 
-export interface DefaultThemePageFrontmatter {
+export interface RecoThemePageFrontmatter {
   home?: boolean
-  navbar?: boolean
   pageClass?: string
 }
 
-export interface DefaultThemeHomePageFrontmatter
-  extends DefaultThemePageFrontmatter {
-  home: true
-  heroImage?: string
-  heroAlt?: string
-  heroText?: string | null
-  tagline?: string | null
-  actions?: {
-    text: string
-    link: string
-    type?: 'primary' | 'secondary'
-  }[]
-  features?: {
-    title: string
-    details: string
-  }[]
-  footer?: string
-  footerHtml?: boolean
-}
-
-export interface DefaultThemeNormalPageFrontmatter
-  extends DefaultThemePageFrontmatter {
+export interface RecoThemeNormalPageFrontmatter
+  extends RecoThemePageFrontmatter {
   home?: false
   editLink?: boolean
   lastUpdated?: boolean
-  contributors?: boolean
-  series?: false | SeriesConfig
   prev?: string | NavLink
   next?: string | NavLink
+  password?: string | Array<string>
+  sticky?: number
+}
+
+interface Style {
+  [prop: string]: string
+}
+
+interface Banner {
+  heroText?: string
+  tagline?: string
+  heroImage?: string
+  heroImageStyle?: Style
+  bgImage?: string
+  bgImageStyle?: Style
+}
+
+interface Button {
+  text?: string
+  link?: string
+  type?: 'plain' | 'link'
+}
+
+interface SocialLink {
+  icon?: string
+  link?: string
+}
+
+interface BannerBrand {
+  title?: string
+  description?: string
+  tagline?: string
+  buttons?: Button[]
+  socialLinks?: SocialLink[]
+}
+
+interface Blog {
+  socialLinks?: SocialLink[]
+}
+
+interface Footer {
+  record?: string
+  recordLink?: string
+  cyberSecurityRecord?: string
+  cyberSecurityLink?: string
+  startYear?: number
+}
+
+export interface RecoThemeHomePageFrontmatter extends RecoThemePageFrontmatter {
+  home: true
+  modules: string[]
+  banner?: Banner
+  bannerBrand?: BannerBrand
+  blog?: Blog
+  footer?: Footer
 }

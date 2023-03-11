@@ -33,8 +33,8 @@ import {
   useSiteLocaleData,
 } from '@vuepress/client'
 import type {
-  DefaultThemePageData,
-  DefaultThemeNormalPageFrontmatter,
+  RecoThemePageData,
+  RecoThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
 } from '../../types'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
@@ -44,8 +44,8 @@ import {formatISODate} from "../utils/other";
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocal = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const page = usePageData<RecoThemePageData>()
+  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showEditLink =
@@ -87,8 +87,8 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 const useLastUpdated = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData()
   const themeLocal = useThemeLocaleData()
-  const page = usePageData<DefaultThemePageData>()
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>()
+  const page = usePageData<RecoThemePageData>()
+  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
 
   return computed(() => {
     const showLastUpdated =

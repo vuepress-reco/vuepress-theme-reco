@@ -39,21 +39,14 @@ export type ResolvedNavbarItem = NavbarItem | NavGroup<ResolvedNavbarItem>
 // user config
 export interface SeriesItem
   extends NavLink,
-    NavGroup<NavLink | SeriesItem | string> {
-  isGroup?: false
-}
+    NavGroup<NavLink | SeriesItem | string> {}
 export interface SeriesGroup
-  extends NavGroup<SeriesGroup | NavLink | SeriesItem | string> {
-  isGroup: true
-}
+  extends NavGroup<SeriesGroup | NavLink | SeriesItem | string> {}
 export type SeriesConfigArray = (SeriesGroup | SeriesItem | string)[]
 export type SeriesConfigObject = Record<string, SeriesConfigArray>
-// 暂时去掉 SeriesConfigArray
-// export type SeriesConfig = SeriesConfigArray | SeriesConfigObject
 export type SeriesConfig = SeriesConfigObject
-// resolved
+
 export interface ResolvedSeriesItem extends Partial<NavLink> {
   level?: number
-  isGroup?: boolean
   children?: ResolvedSeriesItem[]
 }

@@ -24,7 +24,7 @@ export const resolveEditLink = ({
   docsRepo: string
   docsBranch: string
   docsDir: string
-  path: string
+  path: null | string
   editLinkPattern?: string
 }): string | null => {
   const repoType = resolveRepoType(docsRepo)

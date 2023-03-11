@@ -7,6 +7,10 @@ export const navbar = [
       {
         text: 'Configuration',
         children: [
+          {
+            text: 'Vuepress Config',
+            link: 'https://v2.vuepress.vuejs.org/reference/config.html',
+          },
           { text: 'Frontmatter', link: '/en/docs/theme/frontmatter-page' },
           { text: 'Theme Configuration', link: '/en/docs/theme/series' },
           {

@@ -3,10 +3,8 @@ import {
   useThemeData as _useThemeData,
   useThemeLocaleData as _useThemeLocaleData,
 } from '@vuepress/plugin-theme-data/client'
-import type { RecoThemePageData } from '../../types'
+import type { RecoThemeData } from '../../types'
 
-export const useThemeData = (): Ref<RecoThemePageData> =>
-  _useThemeData()
-export const useThemeLocaleData = (): Ref<RecoThemePageData> =>
+export const useThemeData = (): Ref<RecoThemeData> => _useThemeData()
+export const useThemeLocaleData = (): Ref<RecoThemeData> =>
   _useThemeLocaleData()
-
