@@ -31,8 +31,8 @@
     "url": "https://github.com/recoluan/vuepress-theme-reco/issues"
   },
   "dependencies": {
-    "@vuepress/core": "2.0.0-beta.60",
-    "vue": "^3.2.45"
+    "@vuepress/core": "2.0.0-beta.61",
+    "vue": "^3.2.47"
   },
   "publishConfig": {
     "access": "public"

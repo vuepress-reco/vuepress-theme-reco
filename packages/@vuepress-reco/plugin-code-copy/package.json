@@ -38,9 +38,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
-    "@vuepress/core": "2.0.0-beta.60",
-    "@vuepress/utils": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.61",
+    "@vuepress/core": "2.0.0-beta.61",
+    "@vuepress/utils": "2.0.0-beta.61",
     "vue-router": "^4.1.5"
   }
 }

@@ -69,7 +69,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
       docsRepo,
       docsBranch,
       docsDir,
-      path: page.value.filePathRelative,
+      filePathRelative: page.value.filePathRelative,
       editLinkPattern: themeLocal.value.editLinkPattern,
     })
 

@@ -18,13 +18,13 @@ export const resolveEditLink = ({
   docsRepo,
   docsBranch,
   docsDir,
-  path,
+  filePathRelative,
   editLinkPattern,
 }: {
   docsRepo: string
   docsBranch: string
   docsDir: string
-  path: null | string
+  filePathRelative: null | string
   editLinkPattern?: string
 }): string | null => {
   const repoType = resolveRepoType(docsRepo)
@@ -39,8 +39,6 @@ export const resolveEditLink = ({
 
   if (!pattern) return null
 
-  const filePathRelative = path.replace(/\.html$/, '.md')
-
   return pattern
     .replace(
       /:repo/,
@@ -52,3 +50,33 @@ export const resolveEditLink = ({
       removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`)
     )
 }
+
+// export const resolveEditLink = ({
+//   docsRepo,
+//   docsBranch,
+//   docsDir,
+//   filePathRelative,
+//   editLinkPattern,
+// }: {
+//   docsRepo: string
+//   docsBranch: string
+//   docsDir: string
+//   filePathRelative: string | null
+//   editLinkPattern?: string
+// }): string | null => {
+//   if (!filePathRelative) return null
+
+//   const pattern = resolveEditLinkPatterns({ docsRepo, editLinkPattern })
+//   if (!pattern) return null
+
+//   return pattern
+//     .replace(
+//       /:repo/,
+//       isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`
+//     )
+//     .replace(/:branch/, docsBranch)
+//     .replace(
+//       /:path/,
+//       removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`)
+//     )
+// }
