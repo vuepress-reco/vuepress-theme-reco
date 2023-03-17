@@ -87,7 +87,7 @@ async function copyToClipboard(text: string) {
     @apply outline-none box-border p-2 text-reco-primary border-reco-primary border border-solid rounded-lg;
   }
   .btn-copy {
-    @apply ml-2 box-border px-1 py-0.5 bg-block border-block rounded-md text-sm;
+    @apply ml-2 box-border px-1 py-0.5 bg-block border-block rounded-lg text-sm;
   }
 }
 </style>
