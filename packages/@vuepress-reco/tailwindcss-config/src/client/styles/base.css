@@ -147,7 +147,7 @@
   }
 
   table {
-    @apply w-full block rounded-md overflow-x-auto;
+    @apply w-full block rounded-lg overflow-x-auto;
     border-collapse: collapse;
 
     tr {
@@ -155,8 +155,8 @@
     }
 
     th {
-      @apply text-left font-semibold bg-reco-bg-lightmode-lighter;
-      @apply dark:bg-reco-bg-darkmode-lighter;
+      @apply text-left font-semibold bg-reco-bg-lightmode-code;
+      @apply dark:bg-reco-bg-darkmode-code;
     }
 
     td,
@@ -183,7 +183,7 @@
   }
 
   kbd {
-    @apply border border-gray-400/20 border-b-2 rounded;
+    @apply border border-gray-400/20 border-b-2 rounded-lg;
     @apply bg-gray-400/5 py-0.5 px-2 text-sm text-center;
   }
 
@@ -192,7 +192,7 @@
   }
 
   p > img {
-    @apply rounded-2xl;
+    @apply rounded-lg;
   }
 
   li svg {

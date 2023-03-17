@@ -5,32 +5,30 @@ const primary = '#5D67E8'
 const bg = {
   lightmode: {
     DEFAULT: '#ffffff',
-    lighter: '#f3f4f5',
     code: '#F9FAFB',
   },
   darkmode: {
-    DEFAULT: '#22272e',
-    lighter: '#2b313a',
-    code: '#363b46',
+    DEFAULT: '#1e1e20',
+    code: '#161618',
   },
 }
 
 // 文本色
 const text = {
   lightmode: {
-    DEFAULT: '#2c3e50',
-    lighter: '#3a5169',
+    DEFAULT: 'rgba(60, 60, 67)',
+    lighter: 'rgba(60, 60, 67, .75)',
   },
   darkmode: {
-    DEFAULT: '#adbac7',
-    lighter: '#96a7b7',
+    DEFAULT: 'rgba(255, 255, 245, .86)',
+    lighter: 'rgba(235, 235, 245, .6)',
   },
 }
 
 // 边框
 const border = {
   lightmode: '#eaecef',
-  darkmode: '#3e4c5a',
+  darkmode: 'rgba(82, 82, 89, .32)',
 }
 
 // 自定义容器

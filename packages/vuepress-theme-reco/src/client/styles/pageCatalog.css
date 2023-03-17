@@ -12,8 +12,8 @@
     .page-catalog-menu-depth_2 {
       @apply py-2 font-semibold text-sm;
       @apply border-t border-dashed border-reco-border-lightmode;
-      &.active {
-        a {
+      &.active, &:hover {
+        .page-catalog-item {
           @apply text-reco-primary;
         }
       }
@@ -21,13 +21,18 @@
 
     .page-catalog-menu-depth_3 {
       @apply py-1.5 relative text-xs transition-all;
+      .page-catalog-item {
+        @apply text-lighter;
+      }
       &::before {
         @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
         @apply bg-reco-primary;
         content: '';
       }
       &:hover {
-        @apply text-reco-primary;
+        .page-catalog-item {
+          @apply text-reco-primary;
+        }
       }
       &.active {
         @apply pl-3;

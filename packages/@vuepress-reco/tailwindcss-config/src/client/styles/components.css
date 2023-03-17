@@ -8,6 +8,10 @@
     @apply text-reco-text-lightmode;
     @apply dark:text-reco-text-darkmode;
   }
+  .text-lighter {
+    @apply text-reco-text-lightmode-lighter;
+    @apply dark:text-reco-text-darkmode-lighter;
+  }
 }
 
 @layer components {
@@ -32,10 +36,10 @@
     @apply dark:border-reco-primary;
   }
   .border-block {
-    @apply border-basic rounded;
+    @apply border-basic rounded-lg;
   }
   .border-block-primary {
-    @apply border-primary rounded;
+    @apply border-primary rounded-lg;
   }
 }
 

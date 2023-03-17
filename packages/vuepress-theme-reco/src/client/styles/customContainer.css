@@ -8,7 +8,7 @@
   }
   &.tip,
   &.info {
-    @apply rounded border-reco-primary border border-solid bg-reco-primary/5;
+    @apply rounded-lg border-reco-primary border border-solid bg-reco-primary/5;
     .custom-container-title,
     svg {
       @apply text-reco-primary;
@@ -21,7 +21,7 @@
     }
   }
   &.warning {
-    @apply rounded border-reco-container-warning border border-solid bg-reco-container-warning/5;
+    @apply rounded-lg border-reco-container-warning border border-solid bg-reco-container-warning/5;
     .custom-container-title,
     svg {
       @apply text-reco-container-warning;
@@ -31,7 +31,7 @@
     }
   }
   &.danger {
-    @apply rounded border-reco-container-danger border border-solid bg-reco-container-danger/5;
+    @apply rounded-lg border-reco-container-danger border border-solid bg-reco-container-danger/5;
     .custom-container-title,
     svg {
       @apply text-reco-container-danger;
@@ -41,7 +41,7 @@
     }
   }
   &.details {
-    @apply rounded bg-block border-block;
+    @apply rounded-lg bg-block border-block;
     .custom-container-title {
       @apply mt-0 pl-0 cursor-pointer;
     }

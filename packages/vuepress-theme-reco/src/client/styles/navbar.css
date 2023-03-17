@@ -22,7 +22,7 @@
     @apply md:hidden;
   }
   .search-box,
-  .docsearch-container {
+  #docsearch-container {
     @apply align-middle;
   }
   .btn-toggle-dark-mode {

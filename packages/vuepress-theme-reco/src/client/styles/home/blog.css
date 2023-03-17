@@ -14,14 +14,14 @@
     .category-wrapper {
       @apply list-none pl-0;
       .category-item {
-        @apply mb-4 rounded cursor-pointer border-reco-primary border border-solid;
+        @apply mb-4 rounded-lg cursor-pointer border-reco-primary border border-solid;
         .category-link {
           @apply flex justify-between px-4 py-1.5;
           .text {
             @apply mr-1 text-xs leading-5 text-reco-text-lightmode;
           }
           .num {
-            @apply inline-block h-5 px-2 bg-reco-primary rounded text-white text-xs leading-5;
+            @apply inline-block h-5 px-2 bg-reco-primary rounded-lg text-white text-xs leading-5;
           }
         }
         &:hover {
@@ -40,7 +40,7 @@
     .tag-wrapper {
       @apply list-none pl-0;
       .tag-item {
-        @apply inline-block mr-2 mb-2 rounded cursor-pointer border border-solid;
+        @apply inline-block mr-2 mb-2 rounded-lg cursor-pointer border border-solid;
         .tag-link {
           @apply flex justify-between px-2 py-1 leading-none text-xs;
         }

@@ -1,7 +1,7 @@
 .pagation-container {
   @apply flex justify-center;
   .jump, .jumpinput {
-    @apply inline-flex mr-2 mb-2 w-6 h-6 items-center justify-center rounded cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
+    @apply inline-flex mr-2 mb-2 w-6 h-6 items-center justify-center rounded-lg cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
   }
   .jump {
     @apply hover:bg-reco-primary/90 hover:text-white;

@@ -20,6 +20,9 @@
         @apply text-reco-primary;
       }
     }
+    .series-item {
+      @apply text-lighter;
+    }
     ul {
       @apply pl-4 list-none;
     }

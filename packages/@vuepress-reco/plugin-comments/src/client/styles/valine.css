@@ -536,7 +536,7 @@
       @apply ml-2 border-basic-left border-dashed;
     }
     .vimg {
-      @apply absolute top-7 p-0 w-11 h-11 rounded border border-reco-primary/90;
+      @apply absolute top-7 p-0 w-11 h-11 rounded-lg border border-reco-primary/90;
     }
     .vhead .vnick {
       @apply text-reco-primary;
@@ -556,14 +556,14 @@
     .vmeta {
       @apply mb-4 pl-16;
       .vat {
-        @apply mr-1.5 text-reco-primary border rounded border-solid border-reco-primary px-1.5 py-0;
+        @apply mr-1.5 text-reco-primary border rounded-lg border-solid border-reco-primary px-1.5 py-0;
         &:hover {
           @apply text-white bg-reco-primary/90;
         }
       }
     }
     .vcontent {
-      @apply mx-0 my-0 px-2.5 py-0.5 bg-block rounded;
+      @apply mx-0 my-0 px-2.5 py-0.5 bg-block rounded-lg;
       p .at {
         @apply text-reco-primary;
       }

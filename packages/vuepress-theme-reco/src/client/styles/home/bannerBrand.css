@@ -15,10 +15,13 @@
       @apply text-2xl;
       @apply md:text-4xl;
     }
+    .tagline {
+      @apply text-lighter;
+    }
     .btn-group {
       @apply list-none mt-8 pl-0 text-left;
       .xicon-container {
-        @apply mb-4 px-4 h-10 leading-none align-middle border-block rounded-md bg-reco-primary/90 cursor-pointer font-semibold text-white;
+        @apply mb-4 px-4 h-10 leading-none align-middle border-block rounded-lg bg-reco-primary/90 cursor-pointer font-semibold text-white;
         @apply dark:text-reco-text-darkmode;
         @apply hover:border-reco-primary !important;
         &.plain {
@@ -33,7 +36,7 @@
       }
     }
     .social-links {
-      @apply  mt-4 box-border flex flex-wrap p-2 pl-0 text-center;
+      @apply mt-4 box-border flex flex-wrap p-2 pl-0 text-center;
       @apply md:text-left;
       .social-item {
         @apply text-center list-none transition-transform;

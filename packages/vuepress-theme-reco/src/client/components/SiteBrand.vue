@@ -42,7 +42,7 @@ const siteBrandTitle = computed(() => siteLocale.value.title)
 .site-brand {
   @apply flex text-xl font-semibold;
   .logo {
-    @apply mr-4 inline-block w-8 h-8 rounded-md;
+    @apply mr-4 inline-block w-8 h-8 rounded-lg;
   }
   /* .site-name {
     @apply align-middle;

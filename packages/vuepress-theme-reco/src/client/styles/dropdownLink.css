@@ -29,7 +29,7 @@
     @apply dark:text-reco-text-darkmode;
   }
   .dropdown-link__container {
-    @apply pl-3 py-1 my-0 rounded-md bg-basic list-none;
+    @apply pl-3 py-1 my-0 rounded-lg bg-basic list-none;
     @apply md:px-3 md:hidden md:absolute md:top-8 md:right-0 md:py-2 md:my-3 md:border-block;
     .dropdown-link__item {
       @apply relative;
@@ -58,7 +58,7 @@
         @apply list-none pl-3;
         @apply md:pl-0;
         .dropdown-link__subitem .link {
-          @apply relative transition-all;
+          @apply relative transition-all text-lighter;
           &::before {
             @apply absolute inset-y-0 left-0 top-0 bottom-0 m-auto block w-0 h-0 rounded-1/2 transition-all;
             @apply bg-reco-primary;

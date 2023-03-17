@@ -21,7 +21,7 @@
     @apply text-right;
   }
   .page-nav-item {
-    @apply mt-4 p-4 block cursor-pointer border rounded border-solid border-reco-border-lightmode font-semibold text-reco-primary;
+    @apply mt-4 p-4 block cursor-pointer border rounded-lg border-solid border-reco-border-lightmode font-semibold text-reco-primary;
     @apply md:w-2/4;
     @apply dark:border-reco-border-darkmode;
     @apply hover:border-reco-primary;
