@@ -1,17 +1,12 @@
 .page-info {
   @apply flex flex-wrap;
   .xicon-container{
-    a {
-      color: inherit;
-      &:hover {
-        @apply text-reco-primary;
-      }
+    @apply text-lighter;
+    &:not(:last-child) {
+      @apply mr-5;
     }
     a:not(:last-child) {
       @apply mr-2;
-    }
-    &:not(:last-child) {
-      @apply mr-5;
     }
   }
 }

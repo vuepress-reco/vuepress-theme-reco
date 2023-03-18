@@ -1,5 +1,5 @@
 .pagation-container {
-  @apply flex justify-center;
+  @apply flex justify-center flex-wrap;
   .jump, .jumpinput {
     @apply inline-flex mr-2 mb-2 w-6 h-6 items-center justify-center rounded-lg cursor-pointer border-reco-primary border border-solid max-w-xs text-reco-text-lightmode;
   }

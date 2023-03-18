@@ -143,6 +143,10 @@ pre[class*="language-"] {
    color: green;
  }
 
+ .token.punctuation {
+   @apply text-lighter;
+ }
+
 /* code-other */
 
 @each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {

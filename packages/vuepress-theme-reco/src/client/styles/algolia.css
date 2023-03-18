@@ -1,22 +1,18 @@
 #docsearch-container {
-  @apply inline-block align-middle;
-  button {
-    @apply h-8 px-1.5;
-  }
+}
 
-  .DocSearch-Button {
-    @apply bg-block border-block border rounded-lg;
-    @apply hover:shadow-none hover:border-reco-primary;
-    svg {
-      @apply w-4 h-4 text-lighter;
-    }
-    .DocSearch-Button-Placeholder {
-      @apply text-lighter text-sm;
-    }
-    .DocSearch-Button-Key {
-      background: inherit;
-      @apply border-block shadow rounded !important;
-    }
+.DocSearch-Button.DocSearch-Button {
+  @apply bg-block h-8 px-1.5 border-block rounded-lg !important;
+  @apply hover:shadow-none hover:border-reco-primary !important;
+  svg {
+    @apply w-4 h-4 text-lighter;
+  }
+  .DocSearch-Button-Placeholder {
+    @apply text-lighter text-sm;
+  }
+  .DocSearch-Button-Key {
+    background: inherit;
+    @apply border-block shadow rounded !important;
   }
 }
 

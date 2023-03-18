@@ -8,8 +8,8 @@ const bg = {
     code: '#F9FAFB',
   },
   darkmode: {
-    DEFAULT: '#1e1e20',
-    code: '#161618',
+    DEFAULT: '#161618',
+    code: '#1e1e20',
   },
 }
 

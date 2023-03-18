@@ -11,7 +11,8 @@
       <SiteBrand class="nav-item " />
 
       <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
-        <NavbarSearch />
+        <div>
+        <NavbarSearch /></div>
         <NavbarLinks />
         <ToggleDarkModeButton class="btn--dark-mode" />
         <xicons class="btn-toggle-menus" icon="OverflowMenuVertical" :iconSize="20" @click="toggleMenus" />

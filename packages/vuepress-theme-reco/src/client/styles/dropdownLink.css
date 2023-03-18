@@ -55,8 +55,7 @@
         @apply md:text-sm;
       }
       .dropdown-link__subcontainer {
-        @apply list-none pl-3;
-        @apply md:pl-0;
+        @apply list-none pl-0;
         .dropdown-link__subitem .link {
           @apply relative transition-all text-lighter;
           &::before {
