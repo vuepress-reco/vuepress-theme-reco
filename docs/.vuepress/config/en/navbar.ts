@@ -11,7 +11,7 @@ export const navbar = [
             text: 'Vuepress Config',
             link: 'https://v2.vuepress.vuejs.org/reference/config.html',
           },
-          { text: 'Frontmatter', link: '/en/docs/theme/frontmatter-page' },
+          { text: 'Frontmatter', link: '/en/docs/theme/frontmatter-home' },
           { text: 'Theme Configuration', link: '/en/docs/theme/series' },
           {
             text: 'Markdown Extension',
