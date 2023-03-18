@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-beta.55
+
+### Patch Changes
+
+- optmize style
+
 ## 2.0.0-beta.54
 
 ### Patch Changes
