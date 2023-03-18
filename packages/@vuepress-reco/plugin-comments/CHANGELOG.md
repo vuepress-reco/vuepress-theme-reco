@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.54
+
+### Patch Changes
+
+- optmize style
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.54
+
 ## 2.0.0-beta.53
 
 ### Patch Changes
