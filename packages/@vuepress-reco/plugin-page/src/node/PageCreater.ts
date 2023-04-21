@@ -55,10 +55,18 @@ export default class PageCreater {
   }
 
   parse() {
-    this.parseChineseInPagePathToPinyin()
     this.parsePageOptions()
     this.setBlogsToCategoryPageData()
     this.createExtendedPages()
+
+    /**
+     * The name of the file is changed in the develop environment,
+     * and bug of 404 appears during hot updates.
+     */
+    //
+    if (this.app.env.isBuild) {
+      this.parseChineseInPagePathToPinyin()
+    }
   }
 
   // 将 path 中的中文转换成拼音
