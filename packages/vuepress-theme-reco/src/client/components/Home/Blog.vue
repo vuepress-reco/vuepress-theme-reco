@@ -52,12 +52,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { useRoute, useRouter } from 'vue-router'
 import { createOneColor } from '../../utils'
 import PostList from '../PostList.vue'
 import Pagation from '../Pagation.vue'
 import PersonalInfo from '../PersonalInfo.vue'
+import { useRouteLocale, withBase } from '@vuepress/client';
+import { useThemeLocaleData } from '../../composables';
 
 const { posts, categorySummary } = usePageData()
 
@@ -81,11 +84,20 @@ const postsOfCurrentPage = computed(() => {
 })
 
 let handlePagation = (page) => {}
+const route = useRoute()
+const router = useRouter()
+const routeLocale = useRouteLocale()
+const themeLocal = useThemeLocaleData()
+
+const queryPage = computed(() => route.query.page)
 
 // @ts-ignore
 if (!__VUEPRESS_SSR__) {
   handlePagation = (page) => {
     currentPage.value = page
+
+    const homeHref = withBase(themeLocal.value.home || routeLocale.value)
+    router.push(page > 1 ? `${homeHref}?page=${page}` : homeHref)
 
     setTimeout(() => {
       if (blogContentTop.value === 0) {
@@ -96,5 +108,15 @@ if (!__VUEPRESS_SSR__) {
       window.scrollTo({ left: 0, top: -blogContentTop.value - 250, behavior: 'smooth' })
     }, 100)
   }
+
+  onMounted(() => {
+  // @ts-ignore
+    watch(queryPage, (newVal) => {
+    if (newVal) {
+      currentPage.value = Number(newVal)
+      console.log(456, newVal)
+    }
+    })
+  })
 }
 </script>
