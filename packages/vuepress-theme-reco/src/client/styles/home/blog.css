@@ -40,7 +40,7 @@
     .tag-wrapper {
       @apply list-none pl-0;
       .tag-item {
-        @apply inline-block mr-2 mb-2 rounded-lg cursor-pointer border border-solid;
+        @apply inline-block mr-2 mb-2 rounded-md cursor-pointer border border-solid;
         .tag-link {
           @apply flex justify-between px-2 py-1 leading-none text-xs;
         }

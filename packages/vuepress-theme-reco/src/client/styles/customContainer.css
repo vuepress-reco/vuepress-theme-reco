@@ -46,8 +46,8 @@
       @apply mt-0 pl-0 cursor-pointer;
     }
     > p > code {
-      @apply bg-black/5 !important;
-      @apply dark:bg-black/20;
+      @apply bg-zinc-200 !important;
+      @apply dark:bg-zinc-700 !important;
     }
   }
 }

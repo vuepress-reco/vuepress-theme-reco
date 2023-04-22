@@ -10,8 +10,8 @@
     @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
-      @apply mx-1 px-2 py-0.5 bg-gray-200/60 rounded-lg;
-      @apply dark:bg-gray-700;
+      @apply mx-1 px-2 py-0.5 rounded bg-zinc-100;
+      @apply dark:bg-zinc-800;
     }
   }
   .theme-reco-default-content {

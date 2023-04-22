@@ -556,7 +556,7 @@
     .vmeta {
       @apply mb-4 pl-16;
       .vat {
-        @apply mr-1.5 text-reco-primary border rounded-lg border-solid border-reco-primary px-1.5 py-0;
+        @apply mr-1.5 text-reco-primary border rounded-md border-solid border-reco-primary px-1.5 py-0;
         &:hover {
           @apply text-white bg-reco-primary/90;
         }
