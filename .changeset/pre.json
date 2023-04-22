@@ -2,15 +2,15 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.54",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.54",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.54",
-    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.54",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.54",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.54",
-    "@vuepress-reco/shared": "2.0.0-beta.54",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.54",
-    "vuepress-theme-reco": "2.0.0-beta.54"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.55",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.55",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.55",
+    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.55",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.55",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.55",
+    "@vuepress-reco/shared": "2.0.0-beta.55",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.55",
+    "vuepress-theme-reco": "2.0.0-beta.55"
   },
   "changesets": [
     "beige-radios-visit",
@@ -27,6 +27,7 @@
     "funny-teachers-begin",
     "funny-trainers-admire",
     "giant-islands-smoke",
+    "giant-years-thank",
     "gold-mice-exist",
     "gold-pillows-talk",
     "good-jeans-sleep",

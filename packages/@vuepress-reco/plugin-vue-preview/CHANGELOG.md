@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-beta.56
+
+### Patch Changes
+
+- optimize something
+
 ## 2.0.0-beta.55
 
 ### Patch Changes
