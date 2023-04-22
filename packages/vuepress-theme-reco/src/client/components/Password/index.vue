@@ -38,12 +38,15 @@
       <li><i v-if="password.length > 4"></i></li>
       <li><i v-if="password.length > 5"></i></li>
     </ul>
+
+    <Password></Password>
   </div>
 </template>
 
 <script setup lang="ts">
 import { withBase } from '@vuepress/client'
 import { useSiteInfo, useHandlePassword } from './hook'
+import Password from '../Home/Footer.vue'
 
 
 const emit = defineEmits(['pass'])
