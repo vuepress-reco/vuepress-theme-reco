@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.57
+
+### Patch Changes
+
+- fix the bug of waline
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.57
+
 ## 2.0.0-beta.56
 
 ### Patch Changes
