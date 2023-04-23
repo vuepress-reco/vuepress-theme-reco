@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-beta.57
+
+### Patch Changes
+
+- fix the bug of waline
+
 ## 2.0.0-beta.56
 
 ### Patch Changes
