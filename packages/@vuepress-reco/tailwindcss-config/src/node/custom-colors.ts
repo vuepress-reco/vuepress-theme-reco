@@ -9,7 +9,7 @@ const bg = {
   },
   darkmode: {
     DEFAULT: '#161617',
-    code: '#19191B',
+    code: '#202022',
   },
 }
 
