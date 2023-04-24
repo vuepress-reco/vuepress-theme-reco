@@ -39,5 +39,6 @@ export const navbar = [
       },
     ],
   },
+  { text: '案例', link: '/docs/others/examples', icon: 'Fire' },
   { text: '留言板', link: '/docs/message-board', icon: 'Chat' },
 ]

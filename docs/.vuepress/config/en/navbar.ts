@@ -45,6 +45,7 @@ export const navbar = [
       },
     ],
   },
+  { text: 'Examples', link: '/en/docs/others/examples', icon: 'Fire' },
   {
     text: 'Message board',
     link: '/en/docs/message-board',
