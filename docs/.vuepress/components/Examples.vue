@@ -2,7 +2,7 @@
   <div class="examples__container">
     <div
       class="examples__item"
-      v-for="(item, index) in examplesData"
+      v-for="(item, index) in examplesOfCurrentPage"
       :key="index"
       :style="{ backgroundImage: `url(${item.thumbnail})`}"
     >
@@ -17,14 +17,45 @@
       </div>
     </div>
   </div>
+
+  <Pagation
+    :currentPage="currentPage"
+    :total="examplesData.length"
+    @change="handlePagation"
+  />
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted } from 'vue';
 import examplesData from '../data/examples';
+import Pagation from 'vuepress-theme-reco/lib/client/components/Pagation.vue';
 
 const jumpLink = (link?: string) => {
   if (link) {
     window.open(link, '_blank')
+  }
+}
+
+const currentPage = ref(1)
+const perPage = 9
+const examplesOfCurrentPage = computed(() => {
+  const start = (currentPage.value - 1) * perPage
+  const end = currentPage.value * perPage
+
+  return (examplesData || []).slice(start, end)
+})
+
+let handlePagation = (page) => {
+  currentPage.value = page
+}
+// @ts-ignore
+if (!__VUEPRESS_SSR__) {
+  handlePagation = (page) => {
+    currentPage.value = page
+
+    setTimeout(() => {
+      window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
+    }, 100)
   }
 }
 </script>
@@ -35,10 +66,12 @@ const jumpLink = (link?: string) => {
 .examples__container {
   @apply flex flex-wrap;
   .examples__item {
-    @apply relative w-72 h-40 my-4 border-block overflow-hidden bg-cover bg-center;
+    @apply relative w-full h-48 my-4 border-block overflow-hidden bg-cover bg-center;
     @apply hover:border-0 hover:border-primary hover:shadow-2xl hover:shadow-reco-primary;
+    @apply md:w-72 md:h-40;
     &:nth-child(3n+2) {
-      @apply mx-8;
+      @apply mx-0;
+      @apply md:mx-8;
     }
     &:hover {
       .examples__item__btn {

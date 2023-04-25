@@ -112,10 +112,9 @@ if (!__VUEPRESS_SSR__) {
   onMounted(() => {
   // @ts-ignore
     watch(queryPage, (newVal) => {
-    if (newVal) {
-      currentPage.value = Number(newVal)
-      console.log(456, newVal)
-    }
+      if (newVal) {
+        currentPage.value = Number(newVal)
+      }
     })
   })
 }
