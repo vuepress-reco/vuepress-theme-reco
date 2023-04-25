@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.58
+
+### Patch Changes
+
+- optimize interactive mode of series
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.58
+
 ## 2.0.0-beta.57
 
 ### Patch Changes
