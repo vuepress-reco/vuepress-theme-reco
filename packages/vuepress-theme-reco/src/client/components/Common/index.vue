@@ -6,7 +6,8 @@
     <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
     <div v-else>
-      <Navbar @toggleSeries="toggleSeries" @toggleMenus="toggleMobileMenus" />
+      <Navbar @toggleMenus="toggleMobileMenus" />
+      <SubNavbar @toggleSeries="toggleSeries" />
       <NavbarDropdownNemu />
       <div class="series-mask" @click="toggleSeries(false)" />
       <Series />
@@ -21,6 +22,7 @@ import { onMounted, computed } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
 
 import Navbar from '../Navbar.vue'
+import SubNavbar from '../SubNavbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
 import Password from '../Password/index.vue'

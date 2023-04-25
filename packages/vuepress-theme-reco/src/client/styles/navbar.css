@@ -1,5 +1,5 @@
 .navbar-container {
-  @apply flex items-center fixed top-0 left-0 right-0 z-30 px-6 h-16 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
+  @apply flex items-center sticky -top-16 z-30 px-6 h-16 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
   .navbar-links-wrapper {
@@ -16,10 +16,6 @@
     .btn-toggle-menus {
       @apply align-middle;
     }
-  }
-  .toggle-series-button {
-    @apply inline-block align-middle;
-    @apply md:hidden;
   }
   .search-box,
   #docsearch-container {

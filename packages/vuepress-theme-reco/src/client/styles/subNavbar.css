@@ -1,0 +1,9 @@
+.sub-navbar-container {
+  @apply flex items-center sticky top-0 z-20 px-6 h-12 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl border-basic border-l-0 border-r-0;
+  @apply dark:bg-reco-bg-darkmode/60;
+  @apply md:px-8 md:hidden;
+  .toggle-series-button {
+    @apply inline-block align-middle;
+    @apply md:hidden;
+  }
+}

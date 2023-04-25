@@ -3,7 +3,7 @@
   .icon {
     @apply w-full;
     span {
-      @apply transition-all origin-center duration-300 block my-1.5 bg-reco-text-lightmode;
+      @apply transition-all origin-center duration-500 block my-1.5 bg-reco-text-lightmode;
       @apply dark:bg-reco-text-darkmode;
       height: 2px;
       border-radius: 2px;

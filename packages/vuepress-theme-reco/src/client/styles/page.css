@@ -1,5 +1,5 @@
 .page-container {
-  @apply my-24;
+  @apply mt-8 mb-24;
   .page-info {
     @apply mb-4;
   }
