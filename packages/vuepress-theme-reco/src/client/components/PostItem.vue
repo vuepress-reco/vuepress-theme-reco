@@ -3,12 +3,13 @@
     <div class="title">
       <RouterLink :to="data.path">{{ data.title }}</RouterLink>
     </div>
-    <PageInfo :page-data="data" :hide-views="false"> </PageInfo>
+    <PageInfo :page-data="data" :hide-views="solution==='valine'"> </PageInfo>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import PageInfo from './PageInfo.vue'
 
 export default defineComponent({
@@ -22,7 +23,8 @@ export default defineComponent({
   },
 
   setup() {
-    return {}
+    const { solution } = useComment()
+    return { solution }
   },
 })
 </script>
