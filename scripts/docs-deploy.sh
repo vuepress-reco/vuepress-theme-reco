@@ -14,7 +14,7 @@ git commit -m 'docs: update docs'
 
 git remote remove origin
 
-git remote add origin git@github.com:vuepress-reco/docs-v2.git
+git remote add origin git@github.com:vuepress-reco/vuepress-reco.github.io.git
 
 git remote -v
 

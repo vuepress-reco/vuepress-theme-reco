@@ -61,7 +61,7 @@ export const navbar = [
     text: 'Version',
     icon: 'SubVolume',
     children: [
-      { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/en/' },
+      { text: '2.x(alpha)', link: 'https://vuepress-theme-reco.recoluan.com/en/' },
       {
         text: '1.x',
         link: 'https://vuepress-theme-reco.recoluan.com/en/views/1.x/',

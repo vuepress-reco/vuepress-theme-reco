@@ -32,10 +32,10 @@ export const navbar = [
     text: '版本',
     icon: 'SubVolume',
     children: [
-      { text: '2.x(alpha)', link: 'http://v2.vuepress-reco.recoluan.com/' },
+      { text: '2.x(beta)', link: 'https://vuepress-theme-reco.recoluan.com/' },
       {
         text: '1.x',
-        link: 'https://vuepress-theme-reco.recoluan.com/views/1.x/',
+        link: 'http://v1.vuepress-reco.recoluan.com/views/1.x/',
       },
     ],
   },

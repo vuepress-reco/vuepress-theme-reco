@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://v2.vuepress-reco.recoluan.com/en/" target="_blank" rel="noopener noreferrer">
+  <a href="https://vuepress-theme-reco.recoluan.com/en/" target="_blank" rel="noopener noreferrer">
     <img width="200" src="https://user-images.githubusercontent.com/18067907/211360896-daee923a-8b60-4025-9858-172c186d2549.png" alt="logo" />
   </a>
 </p>
@@ -27,7 +27,7 @@ Some functions of `reco@2.x` refer to the default theme of `vuepress@2.x`, but i
 
 At the same time, you must rely on this document to configure your project. You cannot compare it with the official default theme document, because only a small amount of configuration overlaps with the official default theme document.
 
-**Please move [Demo](https://www.recoluan.com/) and [Docs](http://v2.vuepress-reco.recoluan.com/) to play!**
+**Please move [Demo](https://www.recoluan.com/) and [Docs](https://vuepress-theme-reco.recoluan.com/) to play!**
 
 <br/>
 

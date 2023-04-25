@@ -3,7 +3,7 @@
     <span>
       <Xicons
         icon="ColorPalette"
-        link="http://v2.vuepress-reco.recoluan.com"
+        link="https://vuepress-theme-reco.recoluan.com"
         target="_blank"
         :text="`vuepress-theme-reco@${version}`"
       />
