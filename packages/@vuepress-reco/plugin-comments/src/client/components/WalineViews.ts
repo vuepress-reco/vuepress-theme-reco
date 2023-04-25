@@ -1,5 +1,5 @@
 import { defineComponent, h, onMounted, onUpdated, toRefs } from 'vue'
-import { pageviewCount } from '@waline/client/pageview'
+import { pageviewCount } from '@waline/client'
 import { useComment } from '../composables'
 import { useRoute } from 'vue-router'
 export default defineComponent({
