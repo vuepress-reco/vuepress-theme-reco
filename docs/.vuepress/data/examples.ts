@@ -5,4 +5,9 @@ export default [
     link: 'https://www.recoluan.com',
     avator: 'https://www.recoluan.com/head.png',
   },
+    {
+    thumbnail: 'https://dragon-chen777.github.io/assets/images/cover.png',
+    link: 'https://dragon-chen777.github.io/NOxONE/',
+    avator: 'https://p3-passport.byteimg.com/img/user-avatar/039391726bfa394febe9e5853f06026a~180x180.awebp',
+  },
 ]
