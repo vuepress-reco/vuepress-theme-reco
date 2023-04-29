@@ -1,13 +1,15 @@
 <template>
-  <div
-    class="common-wrapper"
-    :class="containerClass"
-  >
-    <Password v-if="!sitePasswordPass" class="out" key="out" @pass="handlePass" />
+  <div class="common-wrapper" :class="containerClass">
+    <Password
+      v-if="!sitePasswordPass"
+      class="out"
+      key="out"
+      @pass="handlePass"
+    />
 
     <div v-else>
       <Navbar @toggleMenus="toggleMobileMenus" />
-      <SubNavbar @toggleSeries="toggleSeries" />
+      <SubNavbar v-if="seriesItems.length > 0" @toggleSeries="toggleSeries" />
       <NavbarDropdownNemu />
       <div class="series-mask" @click="toggleSeries(false)" />
       <Series />
@@ -21,6 +23,7 @@
 import { onMounted, computed } from 'vue'
 import { usePageFrontmatter } from '@vuepress/client'
 
+import { useSeriesItems } from '../../composables'
 import Navbar from '../Navbar.vue'
 import SubNavbar from '../SubNavbar.vue'
 import Series from '../Series.vue'
@@ -38,18 +41,12 @@ const {
   isOpenSeries,
   isShowSeries,
   isShowCatalog,
-  toggleSeries
+  toggleSeries,
 } = useSeriesData()
 
-const {
-  isOpenMobileMenus,
-  toggleMobileMenus
-} = useMobileMenus()
+const { isOpenMobileMenus, toggleMobileMenus } = useMobileMenus()
 
-const {
-  sitePasswordPass,
-  handlePass
-} = usePassword()
+const { sitePasswordPass, handlePass } = usePassword()
 
 const containerClass = computed(() => [
   {
@@ -57,10 +54,14 @@ const containerClass = computed(() => [
     'series--no': !isShowSeries.value,
     'show-series': isShowSeries.value,
     'show-catalog': isShowCatalog.value,
-    'mobile-menus--active': isOpenMobileMenus.value
+    'mobile-menus--active': isOpenMobileMenus.value,
   },
   frontmatter.value.pageClass,
 ])
+
+const seriesItems = useSeriesItems()
+
+console.log(123, seriesItems)
 
 onMounted(() => {
   useInitCodeCopy()
