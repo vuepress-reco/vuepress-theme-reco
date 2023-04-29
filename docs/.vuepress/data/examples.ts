@@ -5,4 +5,10 @@ export default [
     link: 'https://www.recoluan.com',
     avator: 'https://www.recoluan.com/head.png',
   },
+  {
+    thumbnail:
+      'https://www.wstee.com/banner.svg',
+    link: 'https://www.wstee.com',
+    avator: 'https://www.wstee.com/head.jpg',
+  },
 ]
