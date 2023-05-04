@@ -61,8 +61,6 @@ const containerClass = computed(() => [
 
 const seriesItems = useSeriesItems()
 
-console.log(123, seriesItems)
-
 onMounted(() => {
   useInitCodeCopy()
 })

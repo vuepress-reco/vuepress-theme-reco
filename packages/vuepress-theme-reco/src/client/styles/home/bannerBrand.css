@@ -1,5 +1,5 @@
 .banner-brand__wrapper {
-  @apply w-screen flex justify-center items-center;
+  @apply w-screen flex justify-center items-center -mt-16;
   @apply md:h-screen;
   .banner-brand__content {
     @apply block box-border px-6 mt-32 max-w-screen-md;

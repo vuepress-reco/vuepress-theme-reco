@@ -1,5 +1,5 @@
 <template>
-  <header ref="navbar" class="navbar-container">
+  <header ref="navbar" class="navbar-container" :style="{ top: seriesItems.length > 0 ? '-4rem' : '0' }">
     <SiteBrand class="nav-item " />
 
     <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
@@ -22,11 +22,11 @@ import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
-import { useThemeLocaleData } from '../composables'
+import { useThemeLocaleData, useSeriesItems } from '../composables'
 import Xicons from './global/Xicons.vue'
 import SiteBrand from './SiteBrand.vue'
 
-
+const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()
