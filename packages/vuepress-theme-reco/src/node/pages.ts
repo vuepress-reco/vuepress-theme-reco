@@ -17,4 +17,8 @@ export const pages = [
     path: '/timeline/',
     layout: 'TimeLine',
   },
+  {
+    path: '/posts',
+    layout: 'Posts',
+  },
 ]

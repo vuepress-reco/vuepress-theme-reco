@@ -1,0 +1,3 @@
+.posts-container {
+  @apply mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+}
