@@ -140,7 +140,7 @@ export default class PageCreater {
     const blogsToBeReleased = this.app.pages
       .filter((page: Page) => {
         const publishFlag = !(
-          !/.+\/blogs\/(.+)\/.+\.md$/.test(page.filePath || '') ||
+          !/.+\/blogs\/[(.+)\/]?.+\.md$/.test(page.filePath || '') ||
           page?.frontmatter?.publish === false ||
           page?.title === ''
         )
