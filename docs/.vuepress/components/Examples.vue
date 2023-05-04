@@ -86,7 +86,8 @@ if (!__VUEPRESS_SSR__) {
       @apply transition-all duration-500 ease-in-out;
       border-radius: 50%;
       .btn--go {
-        @apply hidden w-full h-full text-center leading-10 cursor-pointer font-bold bg-reco-primary text-reco-text-darkmode;
+        @apply hidden w-full h-full text-center leading-10 cursor-pointer bg-reco-primary text-reco-text-darkmode;
+        @apply hover:font-bold;
       }
     }
   }
