@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.60
+
+### Patch Changes
+
+- add posts route
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.60
+
 ## 2.0.0-beta.59
 
 ### Patch Changes
