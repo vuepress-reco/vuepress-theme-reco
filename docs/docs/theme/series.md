@@ -34,6 +34,7 @@ module.exports = {
         {
           text: '基础',
           children: [ 'introduce', 'usage' ]
+          collapsible: true // 默认展开，true 为折叠
         },
         {
           text: '高级',

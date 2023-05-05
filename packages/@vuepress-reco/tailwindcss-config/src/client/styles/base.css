@@ -148,7 +148,7 @@
 
   table {
     @apply w-full block rounded-lg overflow-x-auto;
-    border-collapse: collapse;
+    border-collapsible: collapsible;
 
     tr {
       @apply border-block;

@@ -34,6 +34,7 @@ export interface NavLink extends NavItem {
 export interface ResolvedSeriesItem extends Partial<NavLink> {
   text?: string
   children?: ResolvedSeriesItem[]
+  collapsible?: boolean
 }
 
 export type SeriesItemsRef = ComputedRef<ResolvedSeriesItem[]>

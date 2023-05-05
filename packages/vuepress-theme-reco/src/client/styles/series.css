@@ -3,13 +3,15 @@
   @apply -translate-x-full;
   @apply md:translate-x-0 !important;
   .series-group {
-    &:not(:first-of-type) h5.series-heading {
-      @apply relative mt-3;
-      &::before {
-        @apply absolute left-0 bottom-14 block w-full border-t border-solid border-reco-border-lightmode;
-        @apply dark:border-reco-border-darkmode;
-        content: '';
+    @apply pb-6;
+    h5.series-heading {
+      @apply flex justify-between items-center cursor-pointer pt-0 mt-6 mb-0;
+      & + ul {
+        @apply pt-4;
       }
+    }
+    &:not(:first-of-type){
+      @apply border-basic-top;
     }
     .series-heading {
       @apply mb-4 font-extrabold;

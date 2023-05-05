@@ -33,7 +33,8 @@ module.exports = {
       '/vuepress-theme-reco/': [
         {
           text: 'base',
-          children: [ 'introduce', 'usage' ]
+          children: [ 'introduce', 'usage' ],
+          collapsible: true // expand by default, true is collapsible
         },
         {
           text: 'advanced',

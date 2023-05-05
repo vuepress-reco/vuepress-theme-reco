@@ -2,7 +2,7 @@ import { h } from 'vue'
 import type { FunctionalComponent, VNode } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSeriesItem } from '../../types'
+import type { ResolvedSeriesItem } from '../composables/useSeriesItems'
 import Link from './Link.vue'
 
 const normalizePath = (path: string): string =>
@@ -43,6 +43,22 @@ const isActiveItem = (
   return false
 }
 
+const togglecollapsible = (e, item) => {
+  item.collapsible = !!!item.collapsible
+  const currentNode = e.target.querySelector('.arrow')
+  const nextNode = e.target.nextElementSibling
+
+  if (item.collapsible) {
+    currentNode.classList.remove('down')
+    currentNode.classList.add('right')
+    nextNode.style.display = 'none'
+  } else {
+    currentNode.classList.remove('right')
+    currentNode.classList.add('down')
+    nextNode.style.display = 'block'
+  }
+}
+
 const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
   // if the item has link, render it as `<Link>`
   if (item.link) {
@@ -53,7 +69,12 @@ const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
   }
 
   // if the item only has text, render it as `<p>`
-  return h('h5', props, item.text)
+  return h('h5', { ...props, onClick: (e) => togglecollapsible(e, item) }, [
+    item.text,
+    h('span', {
+      class: !!item.collapsible ? 'arrow right' : 'arrow down',
+    }),
+  ])
 }
 
 const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
@@ -63,6 +84,11 @@ const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
 
   return h(
     'ul',
+    {
+      style: {
+        display: !!item.collapsible ? 'none' : 'block',
+      },
+    },
     item.children.map((child) =>
       h(
         'li',
