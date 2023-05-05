@@ -1,6 +1,6 @@
 <template>
-  <div class="categories-container">
-    <Common>
+  <Common>
+    <div class="categories-container">
       <ul class="category-list">
         <li
           v-for="({ label, length }, index) in categoryList"
@@ -29,8 +29,8 @@
         :total="categoryPosts.totalPage"
         @change="handlePagation"
       />
-    </Common>
-  </div>
+    </div>
+  </Common>
 </template>
 
 <script lang="ts">

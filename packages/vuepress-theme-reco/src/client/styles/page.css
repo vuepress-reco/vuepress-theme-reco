@@ -1,5 +1,5 @@
 .page-container {
-  @apply mt-8 mb-24;
+  @apply pt-6 pb-24;
   .page-info {
     @apply mb-4;
   }
