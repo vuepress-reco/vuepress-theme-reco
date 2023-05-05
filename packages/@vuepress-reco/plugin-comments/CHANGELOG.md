@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.62
+
+### Patch Changes
+
+- optimize style of category
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.62
+
 ## 2.0.0-beta.61
 
 ### Patch Changes

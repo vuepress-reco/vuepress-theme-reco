@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.62
+
+### Patch Changes
+
+- optimize style of category
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.62
+
 ## 2.0.0-beta.61
 
 ### Patch Changes

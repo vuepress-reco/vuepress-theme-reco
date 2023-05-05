@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-beta.62
+
+### Patch Changes
+
+- optimize style of category
+
 ## 2.0.0-beta.61
 
 ### Patch Changes
