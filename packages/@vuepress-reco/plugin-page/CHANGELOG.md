@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.61
+
+### Patch Changes
+
+- add collapse function of series
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.61
+
 ## 2.0.0-beta.60
 
 ### Patch Changes

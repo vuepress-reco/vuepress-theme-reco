@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.61
+
+### Patch Changes
+
+- add collapse function of series
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.61
+
 ## 2.0.0-beta.60
 
 ### Patch Changes

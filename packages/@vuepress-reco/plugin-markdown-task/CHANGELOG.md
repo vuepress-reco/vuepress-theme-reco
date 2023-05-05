@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-beta.61
+
+### Patch Changes
+
+- add collapse function of series
+
 ## 2.0.0-beta.60
 
 ### Patch Changes

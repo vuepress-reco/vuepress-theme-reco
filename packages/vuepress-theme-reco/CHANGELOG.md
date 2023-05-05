@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.61
+
+### Patch Changes
+
+- add collapse function of series
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.61
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.61
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.61
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-beta.61
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.61
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.61
+  - @vuepress-reco/shared@2.0.0-beta.61
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.61
+
 ## 2.0.0-beta.60
 
 ### Patch Changes
