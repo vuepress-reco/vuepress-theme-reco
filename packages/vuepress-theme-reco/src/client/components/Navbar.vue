@@ -1,5 +1,5 @@
 <template>
-  <header ref="navbar" class="navbar-container" :style="{ top: seriesItems.length > 0 ? '-4rem' : '0' }">
+  <header ref="navbar" class="navbar-container" :style="{ top: seriesItems.length > 0 && isMobile ? '-4rem' : '0' }">
     <SiteBrand class="nav-item " />
 
     <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
@@ -25,6 +25,7 @@ import NavbarLinks from './NavbarLinks.vue'
 import { useThemeLocaleData, useSeriesItems } from '../composables'
 import Xicons from './global/Xicons.vue'
 import SiteBrand from './SiteBrand.vue'
+import { throttle } from '../utils'
 
 const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()
@@ -54,20 +55,24 @@ const toggleMenus = (): void => {
   emits('toggle-menus')
 }
 
+const isMobile = ref(false)
+
 onMounted(() => {
   // TODO: migrate to css var
   // refer to _variables.scss
-  const MOBILE_DESKTOP_BREAKPOINT = 719
+  const MOBILE_DESKTOP_BREAKPOINT = 768
   const handleLinksWrapWidth = (): void => {
     if (window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT) {
+      isMobile.value = true
       linksWrapperMaxWidth.value = 0
     } else {
+      isMobile.value = false
       linksWrapperMaxWidth.value =
         (navbar.value as HTMLElement)?.offsetWidth - (siteBrand.value?.offsetWidth || 0) - 50
     }
   }
   handleLinksWrapWidth()
-  window.addEventListener('resize', handleLinksWrapWidth, false)
+  window.addEventListener('resize', throttle(handleLinksWrapWidth), false)
   window.addEventListener('orientationchange', handleLinksWrapWidth, false)
 })
 </script>
