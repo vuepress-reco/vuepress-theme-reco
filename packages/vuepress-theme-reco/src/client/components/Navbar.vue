@@ -51,8 +51,8 @@ const linksWrapperStyle = computed(() => {
 })
 
 const emits = defineEmits(['toggle-menus'])
-const toggleMenus = (): void => {
-  emits('toggle-menus')
+const toggleMenus = (bool: boolean): void => {
+  emits('toggle-menus', bool)
 }
 
 const isMobile = ref(false)
@@ -69,6 +69,8 @@ onMounted(() => {
       isMobile.value = false
       linksWrapperMaxWidth.value =
         (navbar.value as HTMLElement)?.offsetWidth - (siteBrand.value?.offsetWidth || 0) - 50
+
+      toggleMenus(false)
     }
   }
   handleLinksWrapWidth()
