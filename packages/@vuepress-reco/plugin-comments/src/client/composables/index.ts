@@ -11,6 +11,8 @@ export function useComment() {
         return 'valine'
       case 'waline':
         return 'waline'
+      case 'giscus':
+        return 'giscus'
       default:
         return ''
     }

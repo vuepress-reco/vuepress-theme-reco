@@ -2,10 +2,11 @@ import { defineComponent, h, toRefs } from 'vue'
 import { useComment } from '../composables'
 import Valine from './Valine'
 import Waline from './Waline'
+import Giscus from './Giscus'
 
 export default defineComponent({
   name: 'RecoComments',
-  components: { Valine, Waline },
+  components: { Valine, Waline, Giscus },
   props: {
     hideComments: {
       type: Boolean,
@@ -23,6 +24,9 @@ export default defineComponent({
         break
       case 'waline':
       componentName = Waline
+      break
+      case 'giscus':
+      componentName = Giscus
       break
       default:
         componentName = ''

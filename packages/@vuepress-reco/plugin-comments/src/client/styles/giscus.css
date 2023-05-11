@@ -1,0 +1,5 @@
+.reco-giscus-wrapper {
+  @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-4;
+  @apply md:px-10;
+  border-top: 1px solid transparent;
+}
