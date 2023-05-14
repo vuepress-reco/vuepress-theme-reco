@@ -3,7 +3,7 @@
     <div class="title">
       <RouterLink :to="data.path">{{ data.title }}</RouterLink>
     </div>
-    <PageInfo :page-data="data" :hide-views="solution==='valine'"> </PageInfo>
+    <PageInfo :page-data="data" :hide-views="solution!=='waline'"> </PageInfo>
   </div>
 </template>
 

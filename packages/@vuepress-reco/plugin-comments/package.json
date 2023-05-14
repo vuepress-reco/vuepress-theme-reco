@@ -35,6 +35,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,js}\" lib"
   },
   "dependencies": {
+    "@giscus/vue": "^2.2.8",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/core": "2.0.0-beta.61",

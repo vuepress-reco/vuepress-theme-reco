@@ -30,12 +30,13 @@ export default defineComponent({
     const { options } = toRefs(props)
     const lang = usePageLang()
     const pageData = usePageData();
-
+    
     const walineOption = computed(() => ({
       lang: lang.value || 'zh-CN',
-      dark: 'html.dark',
+      dark: 'html[class="dark"]',
       path: withBase(pageData.value?.path),
       ...options.value,
+      pageview: false,
     }))
 
     return (): VNode =>
