@@ -9,10 +9,10 @@ export const postsSymbol = Symbol('postsSymbol')
 export const seriesSymbol = Symbol('seriesSymbol')
 
 export function usePageData(): Record<string, any> {
-  const categorySummary = inject(categorySummarySymbol) || {}
-  const posts = inject(postsSymbol) || []
-  const series = inject(seriesSymbol) || {}
-  const categoryPaginationPosts = inject(categoryPaginationPostsSymbol) || {}
+  const categorySummary = inject(categorySummarySymbol, null) || {}
+  const posts = inject(postsSymbol, null) || []
+  const series = inject(seriesSymbol, null) || {}
+  const categoryPaginationPosts = inject(categoryPaginationPostsSymbol, null) || {}
 
   if (!postsSymbol) {
     throw new Error('useSiteLocaleData() is called without provider.')
