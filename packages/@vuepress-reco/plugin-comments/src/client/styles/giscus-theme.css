@@ -99,14 +99,21 @@
 .btn-primary:active {
   @apply border-reco-primary bg-reco-primary;
 }
+/* 标记确认功能在评论功能中并不需要，且点击无效，暂时移除 */
+.gsc-upvote-button {
+  @apply hidden;
+}
+.gsc-social-reaction-summary-item {
+  @apply rounded;
+}
 .gsc-social-reaction-summary-item.has-reacted {
-  @apply border-reco-primary bg-reco-primary/25 text-reco-primary;
+  @apply border-reco-primary bg-transparent text-reco-primary;
 }
 .gsc-social-reaction-summary-item.has-reacted:hover {
   @apply bg-reco-primary/50;
 }
 .color-box-border-info {
-  @apply border-reco-primary/30;
+  @apply border-reco-border-lightmode;
 }
 .gsc-comment-box-write:focus-within {
   @apply border-reco-primary ring-2 ring-reco-primary/80;
@@ -118,7 +125,7 @@
   @apply bg-reco-bg-lightmode-code;
 }
 .color-border-primary {
-  @apply border-reco-primary/30;
+  @apply border-reco-border-lightmode;
 }
 .form-control:focus {
   @apply border-reco-primary ring-2 ring-reco-primary/80;
@@ -132,4 +139,51 @@
 }
 .gsc-comment-box-buttons a:active, .gsc-comment-box-buttons a:link, .gsc-comment-box-buttons a:focus, .gsc-comment-box-buttons a:visited {
   @apply text-white;
+}
+
+.color-bg-default, .color-bg-primary {
+  @apply bg-reco-bg-lightmode-code;
+}
+
+.gsc-reply-box {
+  @apply border-dashed;
+}
+
+.gsc-comment-box-tabs {
+  @apply border-dashed;
+  border-bottom-style: solid;
+  div:first-child {
+    @apply m-0;
+  }
+  .color-bg-canvas {
+    @apply border-t-0 border-l-0 border-r-0 border-b-2 !important;
+    @apply bg-reco-bg-lightmode-code border-solid border-reco-primary;
+  }
+}
+
+.form-control {
+  @apply bg-reco-bg-lightmode;
+}
+
+.gsc-comment-box-textarea:focus {
+  @apply bg-reco-bg-lightmode;
+}
+
+.gsc-right-header button {
+  @apply bg-reco-bg-lightmode-code;
+  &[aria-selected='true'] {
+    @apply bg-reco-primary text-reco-text-darkmode;
+  }
+}
+
+.color-fg-default, .color-text-primary, .link-primary {
+  @apply text-reco-text-lightmode;
+}
+
+.color-fg-muted, .color-text-secondary, .link-secondary {
+  @apply text-reco-text-lightmode-lighter;
+}
+
+.gsc-comment-author img {
+  @apply rounded !important;
 }
