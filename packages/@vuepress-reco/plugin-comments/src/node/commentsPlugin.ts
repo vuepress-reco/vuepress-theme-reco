@@ -16,7 +16,7 @@ export const commentsPlugin = (): Plugin => {
         bundlerOptions.viteOptions.build.rollupOptions.output ??= {}
         if (app.env.isBuild) {
           bundlerOptions.viteOptions.build.rollupOptions.output.assetFileNames = (assetInfo: any) => {
-            if (/giscus-theme\.css/.test(assetInfo.name)) {
+            if (/giscus-theme(-dark)?\.css/.test(assetInfo.name)) {
               return 'assets/[name]'
             } else {
               return 'assets/[name]-[hash][extname]'
@@ -25,14 +25,15 @@ export const commentsPlugin = (): Plugin => {
 
         }
         bundlerOptions.viteOptions.build.rollupOptions.output.manualChunks = (id: any): string | undefined => {
-          if (/giscus-theme\.css/.test(id)) {
-              return 'giscus-theme.css'
+          if (/giscus-theme(-dark)?\.css/.test(id)) {
+              return id.match(/giscus-theme(-dark)?\.css/)[0]
             }
         }
       }
     },
     onGenerated: (app) => {
       rename(app.dir.dest('assets/giscus-theme'), app.dir.dest('assets/giscus-theme.css'), (err) => { err&&console.error(err) })
+      rename(app.dir.dest('assets/giscus-theme-dark'), app.dir.dest('assets/giscus-theme-dark.css'), (err) => { err&&console.error(err) })
     },
     clientConfigFile: path.resolve(
       __dirname,
