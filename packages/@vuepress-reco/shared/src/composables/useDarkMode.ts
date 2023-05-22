@@ -1,7 +1,7 @@
-import type { InjectionKey, WritableComputedRef } from 'vue'
+import type { InjectionKey, WritableComputedRef, Ref } from 'vue'
 import { inject, provide, watch, ref } from 'vue'
 
-export type DarkModeRef = WritableComputedRef<boolean>
+export type DarkModeRef = Ref<boolean>
 
 export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol('darkMode')
 
@@ -18,7 +18,7 @@ export function useDarkMode() {
 }
 
 export function setupDarkMode() {
-  const isDarkMode = ref(false)
+  const isDarkMode: Ref<boolean> = ref(false)
 
   watch(isDarkMode, (newVal) => {
     localStorage &&

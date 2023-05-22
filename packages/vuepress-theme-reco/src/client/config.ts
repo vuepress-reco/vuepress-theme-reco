@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import { defineClientConfig } from '@vuepress/client'
 
 import { applyClientSetup } from './clientSetup'
@@ -17,10 +18,10 @@ export default defineClientConfig({
     applyClientSetup()
   },
   layouts: {
-    Categories,
-    Layout,
-    NotFound,
-    Posts,
-    Timeline,
+    Categories: h(Categories),
+    Layout: h(Layout),
+    NotFound: h(NotFound),
+    Posts: h(Posts),
+    Timeline: h(Timeline),
   },
 })
