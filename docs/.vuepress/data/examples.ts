@@ -11,4 +11,10 @@ export default [
     link: 'https://www.wstee.com',
     avator: 'https://www.wstee.com/head.jpg',
   },
+  {
+    thumbnail:
+      'https://qian-shen.github.io/images/wiki.png',
+    link: 'https://qian-shen.github.io',
+    avator: 'https://qian-shen.github.io/icons/logo.png',
+  },
 ]
