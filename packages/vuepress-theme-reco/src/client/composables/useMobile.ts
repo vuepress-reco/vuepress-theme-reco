@@ -4,7 +4,6 @@ const MOBILE_DESKTOP_BREAKPOINT = 719
 const isMobile = ref(false)
 
 export function useMobile() {
-
   const handleLinksWrapWidth = (): void => {
     isMobile.value = window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT
   }

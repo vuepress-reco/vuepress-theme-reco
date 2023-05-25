@@ -8,7 +8,7 @@
         @change="handlePagation"
       />
     </section>
-    <section class="info-wrapper">
+    <MagicCard class="info-wrapper">
       <PersonalInfo />
 
       <h4 class="module-title">
@@ -47,7 +47,7 @@
           >{{ value.label }}</router-link>
         </li>
       </ul>
-    </section>
+    </MagicCard>
   </section>
 </template>
 
@@ -55,7 +55,7 @@
 import { computed, onMounted, ref, watch } from "vue";
 import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
 import { useRoute, useRouter } from 'vue-router'
-import { createOneColor } from '../../utils'
+import { createOneColor, throttle } from '../../utils'
 import PostList from '../PostList.vue'
 import Pagation from '../Pagation.vue'
 import PersonalInfo from '../PersonalInfo.vue'
@@ -117,5 +117,21 @@ if (!__VUEPRESS_SSR__) {
       }
     })
   })
+
+  window.addEventListener(
+    'scroll',
+    throttle(() => {
+      const card = document.querySelector('.info-wrapper')
+
+      // @ts-ignore
+      card.setAttribute('data-x', card.offsetLeft)
+      // @ts-ignore
+      card.setAttribute('data-y', card.offsetTop)
+      // @ts-ignore
+      card.setAttribute('data-width', card.clientWidth)
+      // @ts-ignore
+      card.setAttribute('data-height', card.clientHeight)
+    }, 50)
+  )
 }
 </script>

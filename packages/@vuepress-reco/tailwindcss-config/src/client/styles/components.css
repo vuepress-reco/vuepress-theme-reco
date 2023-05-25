@@ -52,4 +52,8 @@
     @apply text-basic bg-reco-bg-lightmode-code;
     @apply dark:bg-reco-bg-darkmode-code;
   }
+  .bg-active {
+    @apply text-basic bg-reco-bg-lightmode-active;
+    @apply dark:bg-reco-bg-darkmode-active;
+  }
 }

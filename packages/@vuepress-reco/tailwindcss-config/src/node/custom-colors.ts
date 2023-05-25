@@ -6,10 +6,12 @@ const bg = {
   lightmode: {
     DEFAULT: '#ffffff',
     code: '#F9FAFB',
+    active: '#F4F5F5',
   },
   darkmode: {
     DEFAULT: '#161617',
     code: '#202022',
+    active: '#27272a',
   },
 }
 
@@ -27,7 +29,7 @@ const text = {
 
 // 边框
 const border = {
-  lightmode: '#eaecef',
+  lightmode: 'rgba(200, 200, 200, .32)',
   darkmode: 'rgba(82, 82, 89, .32)',
 }
 

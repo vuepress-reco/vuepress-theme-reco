@@ -1,10 +1,10 @@
 <template>
-  <div class="post-item-container">
+  <MagicCard class="post-item-container">
     <div class="title">
       <RouterLink :to="data.path">{{ data.title }}</RouterLink>
     </div>
-    <PageInfo :page-data="data" :hide-views="solution!=='waline'"> </PageInfo>
-  </div>
+    <PageInfo :page-data="data" :hide-views="solution==='valine'"> </PageInfo>
+  </MagicCard>
 </template>
 
 <script lang="ts">

@@ -68,6 +68,7 @@ if (!__VUEPRESS_SSR__) {
   .examples__item {
     @apply relative w-full h-48 my-4 border-block overflow-hidden bg-cover bg-center;
     @apply hover:border-0 hover:border-primary hover:shadow-2xl hover:shadow-reco-primary;
+    transition: box-shadow 0.4s;
     @apply md:w-72 md:h-40;
     &:nth-child(3n+2) {
       @apply mx-0;

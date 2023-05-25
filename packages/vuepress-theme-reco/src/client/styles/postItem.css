@@ -1,12 +1,11 @@
 .post-item-container {
-  @apply mb-8 p-6 bg-block border-block;
+  @apply mb-8 p-6;
 
   .title {
     @apply relative mb-2 inline-block text-lg font-medium;
 
     &:after {
       @apply absolute left-0 -bottom-2 w-full;
-
       content: "";
       height: 2px;
       visibility: hidden;

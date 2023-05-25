@@ -1,4 +1,5 @@
 export * from './useInstance'
+export * from './useMagicCard'
 export * from './useMobile'
 export * from './useMobileMenus'
 export * from './useNavLink'

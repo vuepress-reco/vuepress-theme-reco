@@ -19,11 +19,14 @@
 </template>
 
 <script lang="ts" setup>
+import { onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { usePageFrontmatter, usePageData } from '@vuepress/client'
-import { useScrollPromise } from '../composables'
-import Common from '../components/Common/index.vue'
+
 import Home from '../components/Home/index.vue'
 import Page from '../components/Page/index.vue'
+import Common from '../components/Common/index.vue'
+import { useScrollPromise, useMagicCard } from '../composables'
 
 const page = usePageData()
 const frontmatter = usePageFrontmatter()
@@ -32,4 +35,14 @@ const frontmatter = usePageFrontmatter()
 const scrollPromise = useScrollPromise()
 const onBeforeEnter = scrollPromise.resolve
 const onBeforeLeave = scrollPromise.pending
+
+const { initMagicCard } = useMagicCard()
+onMounted(() => {
+  initMagicCard()
+})
+
+const route = useRoute()
+watch(route, () => {
+  initMagicCard()
+})
 </script>

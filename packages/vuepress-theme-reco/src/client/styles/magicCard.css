@@ -1,0 +1,25 @@
+.magic-card {
+  @apply relative border-block;
+  background: none;
+  .magic-card__bg {
+    @apply absolute rounded-lg inset-x-0 inset-y-0 bg-block;
+    z-index: -1;
+    transition: background .45s ease;
+  }
+  &:hover .magic-card__bg {
+    @apply bg-active;
+  }
+  &::before {
+    @apply absolute rounded-lg;
+    bottom: -1px;
+    content: "";
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    transition: background 1s ease;
+    user-select: none;
+    will-change: background;
+    z-index: -2;
+    background: radial-gradient(200px circle at var(--x) var(--y), #f87171 0, #5D67E8 50%, transparent 100%);
+  }
+}
