@@ -1,39 +1,39 @@
 import { path, getDirname } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
-import { rename } from 'fs'
+import { readFileSync, readdirSync, writeFileSync } from 'fs'
 
 const __dirname = getDirname(import.meta.url)
 
 export const commentsPlugin = (): Plugin => {
   return {
     name: '@vuepress-reco/vuepress-plugin-comments',
-    extendsBundlerOptions: (bundlerOptions, app) => {
-      if (app.options.bundler.name === '@vuepress/bundler-vite') {
-        bundlerOptions.viteOptions ??= {}
-        bundlerOptions.viteOptions.build ??= {}
-        bundlerOptions.viteOptions.build.cssCodeSplit = true
-        bundlerOptions.viteOptions.build.rollupOptions ??= {}
-        bundlerOptions.viteOptions.build.rollupOptions.output ??= {}
-        if (app.env.isBuild) {
-          bundlerOptions.viteOptions.build.rollupOptions.output.assetFileNames = (assetInfo: any) => {
-            if (/giscus-theme(-dark)?\.css/.test(assetInfo.name)) {
-              return 'assets/[name]'
-            } else {
-              return 'assets/[name]-[hash][extname]'
-            }
-          }
-
+    onGenerated: (app) => {
+      const files = readdirSync(app.dir.dest('assets'))
+      let styleFileName = ''
+      files.forEach(file => {
+        if(/\.css/.test(file)) {
+          styleFileName = file;
         }
-        bundlerOptions.viteOptions.build.rollupOptions.output.manualChunks = (id: any): string | undefined => {
-          if (/giscus-theme(-dark)?\.css/.test(id)) {
-              return id.match(/giscus-theme(-dark)?\.css/)[0]
-            }
+      })
+      if(styleFileName) {
+        try {
+          let content = readFileSync(app.dir.dest('assets/'+styleFileName), { encoding: 'utf8' })
+          let lightdarkIndexStart = content.indexOf('/*giscus-theme-light-start*/')
+          let lightIndexEnd = content.indexOf('/*giscus-theme-light-end*/')
+          let darkdarkIndexStart = content.indexOf('/*giscus-theme-dark-start*/')
+          let darkIndexEnd = content.indexOf('/*giscus-theme-dark-end*/')
+          const giscusThemeLight = content.substring(lightdarkIndexStart, lightIndexEnd + 27)
+          const giscusThemeDark = content.substring(darkdarkIndexStart, darkIndexEnd + 25)
+          content = content.replace(giscusThemeLight, '')
+          content = content.replace(giscusThemeDark, '')
+          writeFileSync(app.dir.dest('assets/' + styleFileName), content)
+          writeFileSync(app.dir.dest('assets/giscus-theme.css'), giscusThemeLight)
+          writeFileSync(app.dir.dest('assets/giscus-theme-dark.css'), giscusThemeDark)
+        } catch (error) {
+          console.error(error)
+          console.error('giscus样式处理错误')
         }
       }
-    },
-    onGenerated: (app) => {
-      rename(app.dir.dest('assets/giscus-theme'), app.dir.dest('assets/giscus-theme.css'), (err) => { err&&console.error(err) })
-      rename(app.dir.dest('assets/giscus-theme-dark'), app.dir.dest('assets/giscus-theme-dark.css'), (err) => { err&&console.error(err) })
     },
     clientConfigFile: path.resolve(
       __dirname,

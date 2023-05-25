@@ -1,3 +1,4 @@
+/*giscus-theme-dark-start*/
 main {
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
@@ -188,3 +189,4 @@ main .gsc-loading-image {
 .gsc-comment-author img {
   @apply rounded !important;
 }
+/*giscus-theme-dark-end*/
