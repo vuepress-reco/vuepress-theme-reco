@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-beta.63
+
+### Patch Changes
+
+- add giscus
+
 ## 2.0.0-beta.62
 
 ### Patch Changes

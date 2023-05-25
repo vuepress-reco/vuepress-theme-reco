@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.63
+
+### Patch Changes
+
+- add giscus
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.63
+
 ## 2.0.0-beta.62
 
 ### Patch Changes

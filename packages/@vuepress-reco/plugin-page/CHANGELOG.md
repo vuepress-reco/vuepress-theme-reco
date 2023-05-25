@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.63
+
+### Patch Changes
+
+- add giscus
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.63
+
 ## 2.0.0-beta.62
 
 ### Patch Changes
