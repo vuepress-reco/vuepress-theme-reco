@@ -10,34 +10,52 @@ export const commentsPlugin = (): Plugin => {
     onGenerated: (app) => {
       const files = readdirSync(app.dir.dest('assets'))
       let styleFileName = ''
-      files.forEach(file => {
-        if(/\.css/.test(file)) {
-          styleFileName = file;
+      files.forEach((file) => {
+        if (/\.css/.test(file)) {
+          styleFileName = file
         }
       })
-      if(styleFileName) {
+      if (styleFileName) {
         try {
-          let content = readFileSync(app.dir.dest('assets/'+styleFileName), { encoding: 'utf8' })
-          let lightdarkIndexStart = content.indexOf('/*giscus-theme-light-start*/')
+          let content = readFileSync(app.dir.dest('assets/' + styleFileName), {
+            encoding: 'utf8',
+          })
+          let lightdarkIndexStart = content.indexOf(
+            '/*giscus-theme-light-start*/'
+          )
           let lightIndexEnd = content.indexOf('/*giscus-theme-light-end*/')
-          let darkdarkIndexStart = content.indexOf('/*giscus-theme-dark-start*/')
+          let darkdarkIndexStart = content.indexOf(
+            '/*giscus-theme-dark-start*/'
+          )
           let darkIndexEnd = content.indexOf('/*giscus-theme-dark-end*/')
-          const giscusThemeLight = content.substring(lightdarkIndexStart, lightIndexEnd + 27)
-          const giscusThemeDark = content.substring(darkdarkIndexStart, darkIndexEnd + 25)
+          const giscusThemeLight = content.substring(
+            lightdarkIndexStart,
+            lightIndexEnd + 27
+          )
+          const giscusThemeDark = content.substring(
+            darkdarkIndexStart,
+            darkIndexEnd + 25
+          )
           content = content.replace(giscusThemeLight, '')
           content = content.replace(giscusThemeDark, '')
           writeFileSync(app.dir.dest('assets/' + styleFileName), content)
-          writeFileSync(app.dir.dest('assets/giscus-theme.css'), giscusThemeLight)
-          writeFileSync(app.dir.dest('assets/giscus-theme-dark.css'), giscusThemeDark)
+          writeFileSync(
+            app.dir.dest('assets/giscus-theme.css'),
+            giscusThemeLight
+          )
+          writeFileSync(
+            app.dir.dest('assets/giscus-theme-dark.css'),
+            giscusThemeDark
+          )
         } catch (error) {
-          console.error(error)
-          console.error('giscus样式处理错误')
+          console.error(
+            '[THEME RECO ERROR] ',
+            'an error occurred while processing the style of giscus',
+            error
+          )
         }
       }
     },
-    clientConfigFile: path.resolve(
-      __dirname,
-      '../client/config.js'
-    ),
+    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
   }
 }

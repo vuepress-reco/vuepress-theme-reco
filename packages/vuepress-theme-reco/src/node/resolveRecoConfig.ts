@@ -11,7 +11,7 @@ export const resolveRecoConfigPath = (
 
   if (!recoConfigPath) {
     console.error(
-      'THEME RECO ERROR: ',
+      '[THEME RECO ERROR] ',
       'Please add reco.config.js in root path.'
     )
   }
