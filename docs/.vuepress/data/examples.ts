@@ -17,4 +17,9 @@ export default [
     link: 'https://qian-shen.github.io',
     avator: 'https://qian-shen.github.io/icons/logo.png',
   },
+  {
+    thumbnail: "https://www.licodeao.top/bg.svg",
+    link: "https://www.licodeao.top",
+    avator: "https://www.licodeao.top/avatar.jpg"
+  }
 ]
