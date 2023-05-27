@@ -18,7 +18,7 @@ export default [
     avator: 'https://qian-shen.github.io/icons/logo.png',
   },
   {
-    thumbnail: "https://www.licodeao.top/bg.svg",
+    thumbnail: "https://typora-licodeao.oss-cn-guangzhou.aliyuncs.com/typoraImg/home.png",
     link: "https://www.licodeao.top",
     avator: "https://www.licodeao.top/avatar.jpg"
   }
