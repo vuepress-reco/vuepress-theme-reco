@@ -21,5 +21,10 @@ export default [
     thumbnail: "https://typora-licodeao.oss-cn-guangzhou.aliyuncs.com/typoraImg/home.png",
     link: "https://www.licodeao.top",
     avator: "https://www.licodeao.top/avatar.jpg"
+  },
+  {
+    thumbnail: "https://github-production-user-asset-6210df.s3.amazonaws.com/75941562/241768717-21953f79-fe88-4dca-bfaf-306d4a8c1dac.png",
+    link: "https://www.yixiangzhilv.com/",
+    avator: "https://www.yixiangzhilv.com/head.png"
   }
 ]
