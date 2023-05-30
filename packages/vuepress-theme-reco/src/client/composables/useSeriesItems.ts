@@ -119,7 +119,10 @@ export const resolveMultiSeriesItems = (
   seriesConfig: SeriesConfigObject
 ): ResolvedSeriesItem[] => {
   const route = useRoute()
-  const seriesPath = resolveLocalePath(seriesConfig, route.path)
+  const seriesPath = resolveLocalePath(
+    seriesConfig,
+    decodeURIComponent(route.path)
+  )
   const matchedSeriesConfig = seriesConfig[seriesPath] ?? []
 
   return resolveArraySeriesItems(matchedSeriesConfig)
