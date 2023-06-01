@@ -21,20 +21,20 @@ export const commentsPlugin = (): Plugin => {
             encoding: 'utf8',
           })
           let lightdarkIndexStart = content.indexOf(
-            '/*giscus-theme-light-start*/'
+            '/*!giscus-theme-light-start*/'
           )
-          let lightIndexEnd = content.indexOf('/*giscus-theme-light-end*/')
+          let lightIndexEnd = content.indexOf('/*!giscus-theme-light-end*/')
           let darkdarkIndexStart = content.indexOf(
-            '/*giscus-theme-dark-start*/'
+            '/*!giscus-theme-dark-start*/'
           )
-          let darkIndexEnd = content.indexOf('/*giscus-theme-dark-end*/')
+          let darkIndexEnd = content.indexOf('/*!giscus-theme-dark-end*/')
           const giscusThemeLight = content.substring(
             lightdarkIndexStart,
             lightIndexEnd + 27
           )
           const giscusThemeDark = content.substring(
             darkdarkIndexStart,
-            darkIndexEnd + 25
+            darkIndexEnd + 26
           )
           content = content.replace(giscusThemeLight, '')
           content = content.replace(giscusThemeDark, '')
