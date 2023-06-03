@@ -1,6 +1,14 @@
-import { usePageLang  } from '@vuepress/client'
-import Giscus, { GiscusProps } from '@giscus/vue';
-import { PropType, computed, defineComponent, h, onMounted, ref, toRefs } from 'vue'
+import { usePageLang } from '@vuepress/client'
+import Giscus, { GiscusProps } from '@giscus/vue'
+import {
+  PropType,
+  computed,
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  toRefs,
+} from 'vue'
 
 import type { VNode } from 'vue'
 
@@ -9,7 +17,7 @@ import '../styles/giscus-theme.css'
 import '../styles/giscus-theme-dark.css'
 
 function getUrl(url: string): string {
-  return new URL(url, import.meta.url).href;
+  return new URL(url, import.meta.url).href
 }
 export default defineComponent({
   name: 'Giscus',
@@ -29,14 +37,20 @@ export default defineComponent({
     const theme = ref('light_tritanopia')
 
     onMounted(async () => {
-      const fn = function() {
-        const dark = document.querySelector('html')?.className === 'dark'
+      const fn = function () {
+        let dark = false
+        document
+          .querySelector('html')
+          ?.classList?.forEach((i) => (dark = i === 'dark' || dark))
         // @ts-ignore
-        if(import.meta.env.PROD) {
+        if (import.meta.env.PROD) {
           const baseUrl = window.location.protocol + '//' + window.location.host
-          theme.value =  baseUrl + `/assets/giscus-theme${dark?'-dark':''}.css`
+          theme.value =
+            baseUrl + `/assets/giscus-theme${dark ? '-dark' : ''}.css`
         } else {
-          theme.value = getUrl(`../styles/giscus-theme${dark?'-dark':''}.css`)
+          theme.value = getUrl(
+            `../styles/giscus-theme${dark ? '-dark' : ''}.css`
+          )
         }
       }
       const mutationObserver = new MutationObserver(fn)
@@ -45,7 +59,7 @@ export default defineComponent({
         attributes: true,
       })
       fn()
-    }) 
+    })
     const giscusOption = computed(() => ({
       lang: lang.value || 'zh-CN',
       host: 'https://giscus.app',
