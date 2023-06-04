@@ -30,7 +30,7 @@ export default defineComponent({
 
     onMounted(async () => {
       const fn = function() {
-        const dark = document.querySelector('html')?.className === 'dark'
+        const dark = document.documentElement.classList?.contains('dark')
         // @ts-ignore
         if(import.meta.env.PROD) {
           const baseUrl = window.location.protocol + '//' + window.location.host
@@ -40,8 +40,7 @@ export default defineComponent({
         }
       }
       const mutationObserver = new MutationObserver(fn)
-      /**Element**/
-      mutationObserver.observe(document.querySelector('html')!, {
+      mutationObserver.observe(document.documentElement, {
         attributes: true,
       })
       fn()
