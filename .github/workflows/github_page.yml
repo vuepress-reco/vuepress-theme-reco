@@ -32,8 +32,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          author: vuepress-reco
-          repo: vuepress-reco.github.io
+          repo: vuepress-reco/vuepress-reco.github.io
           target_branch: master
           build_dir: docs/.vuepress/dist
         env:
