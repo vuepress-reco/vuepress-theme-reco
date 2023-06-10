@@ -1,0 +1,39 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          cache: npm
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.9.1
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Packages
+        run: pnpm run build:all
+
+      - name: Build Docs
+        run: pnpm run docs:build
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          repo: vuepress-reco.github.io
+          target_branch: master
+          build_dir: docs/.vuepress/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAGE_TOKEN }}
