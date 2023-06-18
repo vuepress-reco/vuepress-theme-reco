@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-beta.64
+
+### Patch Changes
+
+- fix some known issues
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-beta.64
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-beta.64
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-beta.64
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-beta.64
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-beta.64
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-beta.64
+  - @vuepress-reco/shared@2.0.0-beta.64
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.64
+
 ## 2.0.0-beta.63
 
 ### Patch Changes
