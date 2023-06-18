@@ -7,6 +7,8 @@ export function usePassword() {
   const route = useRoute()
   PAGE_PASSWORD_PASS = `${PAGE_PASSWORD_PASS}:${route.path}`
   const frontmatter = usePageFrontmatter()
+
+  const pageLoaded = ref(false)
   const pagePasswordPass = ref(true)
 
   onMounted(() => {
@@ -22,6 +24,8 @@ export function usePassword() {
     if (frontmatter.value.password && pagePasswordPassCache !== 'true') {
       pagePasswordPass.value = false
     }
+
+    pageLoaded.value = true
   })
 
   const handlePass = () => {
@@ -33,5 +37,5 @@ export function usePassword() {
     }
   }
 
-  return { pagePasswordPass, handlePass }
+  return { pageLoaded, pagePasswordPass, handlePass }
 }

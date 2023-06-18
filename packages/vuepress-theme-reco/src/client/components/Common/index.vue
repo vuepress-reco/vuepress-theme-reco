@@ -1,13 +1,13 @@
 <template>
   <div class="common-wrapper" :class="containerClass">
     <Password
-      v-if="!sitePasswordPass"
+      v-if="siteLoaded && !sitePasswordPass"
       class="out"
       key="out"
       @pass="handlePass"
     />
 
-    <div v-else>
+    <div v-if="siteLoaded && sitePasswordPass">
       <Navbar @toggleMenus="toggleMobileMenus" />
       <SubNavbar v-if="seriesItems.length > 0" @toggleSeries="toggleSeries" />
       <NavbarDropdownNemu />
@@ -46,7 +46,7 @@ const {
 
 const { isOpenMobileMenus, toggleMobileMenus } = useMobileMenus()
 
-const { sitePasswordPass, handlePass } = usePassword()
+const { siteLoaded, sitePasswordPass, handlePass } = usePassword()
 
 const containerClass = computed(() => [
   {

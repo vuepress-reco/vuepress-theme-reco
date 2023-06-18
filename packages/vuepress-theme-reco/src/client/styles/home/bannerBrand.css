@@ -7,6 +7,7 @@
     .title {
       @apply mb-6 text-5xl text-left bg-gradient-to-r from-reco-primary to-red-500 !important;
       @apply md:text-7xl !important;
+      @apply leading-tight !important;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

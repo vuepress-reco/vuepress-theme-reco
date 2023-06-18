@@ -1,4 +1,4 @@
-import { useRouter, useRoute, NavigationHookAfter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
 import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
 import { useScrollDirection, useThemeLocaleData } from '../../composables'
@@ -28,7 +28,10 @@ export function useSeries(toggleSeries, toggleMobileMenus) {
 const SITE_PASSWORD_PASS = 'SITE_PASSWORD_PASS'
 export function usePassword() {
   const themeLocal = useThemeLocaleData()
+
+  const siteLoaded = ref(false)
   const sitePasswordPass = ref(true)
+
   onMounted(() => {
     let sitePasswordPassCache = 'true'
 
@@ -42,6 +45,8 @@ export function usePassword() {
     if (themeLocal.value.password && sitePasswordPassCache !== 'true') {
       sitePasswordPass.value = false
     }
+
+    siteLoaded.value = true
   })
 
   const handlePass = () => {
@@ -53,7 +58,7 @@ export function usePassword() {
     }
   }
 
-  return { sitePasswordPass, handlePass }
+  return { siteLoaded, sitePasswordPass, handlePass }
 }
 
 export function useInitCodeCopy() {

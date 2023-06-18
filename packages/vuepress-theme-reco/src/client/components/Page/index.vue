@@ -3,8 +3,8 @@
     <h1 v-if="!!title" class="page-title">{{ title }}</h1>
     <PageInfo :page-data="pageData" />
     <div class="theme-reco-default-content">
-      <Password v-if="!pagePasswordPass" @pass="handlePass" />
-      <Content v-else />
+      <Password v-if="pageLoaded && !pagePasswordPass" @pass="handlePass" />
+      <Content v-if="pageLoaded && pagePasswordPass" />
     </div>
     <PageMeta />
     <PageNav />
@@ -25,7 +25,7 @@ import { usePassword } from './hook'
 
 const pageData = usePageData()
 const { options } = useComment()
-const { pagePasswordPass, handlePass } = usePassword()
+const { pageLoaded, pagePasswordPass, handlePass } = usePassword()
 
 const title = computed(
   () => pageData?.value?.frontmatter?.title
