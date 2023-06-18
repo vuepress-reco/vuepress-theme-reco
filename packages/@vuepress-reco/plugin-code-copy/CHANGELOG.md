@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-beta.65
+
+### Patch Changes
+
+- fix some known issues
+
 ## 2.0.0-beta.64
 
 ### Patch Changes
