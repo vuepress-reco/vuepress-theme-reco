@@ -13,9 +13,9 @@ export default [
   },
   {
     thumbnail:
-      'http://47.106.238.103/images/wiki.png',
+      'https://gitee.com/xiangwangyouzai/vuepressnote/raw/master/wiki.png',
     link: 'http://47.106.238.103/',
-    avator: 'http://47.106.238.103/icons/logo.png',
+    avator: 'https://gitee.com/xiangwangyouzai/vuepressnote/raw/master/logo.png',
   },
   {
     thumbnail: "https://typora-licodeao.oss-cn-guangzhou.aliyuncs.com/typoraImg/home.png",
