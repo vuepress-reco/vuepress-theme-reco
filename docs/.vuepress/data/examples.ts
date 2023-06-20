@@ -13,9 +13,9 @@ export default [
   },
   {
     thumbnail:
-      'https://qian-shen.github.io/images/wiki.png',
-    link: 'https://qian-shen.github.io',
-    avator: 'https://qian-shen.github.io/icons/logo.png',
+      'http://47.106.238.103/images/wiki.png',
+    link: 'http://47.106.238.103/',
+    avator: 'http://47.106.238.103/icons/logo.png',
   },
   {
     thumbnail: "https://typora-licodeao.oss-cn-guangzhou.aliyuncs.com/typoraImg/home.png",
