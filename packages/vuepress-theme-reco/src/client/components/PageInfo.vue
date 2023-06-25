@@ -103,7 +103,7 @@ export default defineComponent({
     const showWalineViews = computed(() => {
       return (
         solution.value === 'waline' &&
-        options.value.pageView != false &&
+        options.value.pageview != false &&
         !hideViews.value
       )
     })
