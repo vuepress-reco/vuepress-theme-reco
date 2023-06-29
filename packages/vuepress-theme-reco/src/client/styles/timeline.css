@@ -1,0 +1,35 @@
+.timeline-wrapper {
+  .timeline-content {
+    @apply relative mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+    .year-wrapper {
+      @apply pl-0;
+    }
+    li {
+      @apply list-none;
+      .date {
+        @apply inline-block mr-2 text-sm;
+        width: 48px;
+      }
+      &.item {
+        @apply relative transition-all duration-500 leading-10 text-lighter;
+        span, a {
+          @apply text-lighter;
+        }
+        &::before {
+          @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
+          @apply bg-reco-primary;
+          content: '';
+        }
+        &:hover {
+          @apply text-reco-primary pl-4;
+          &::before {
+            @apply w-1.5 h-1.5;
+          }
+          span, a {
+            @apply text-reco-primary;
+          }
+        }
+      }
+    }
+  }
+}

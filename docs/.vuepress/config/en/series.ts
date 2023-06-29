@@ -42,7 +42,7 @@ export const series = {
     },
     {
       text: 'Other',
-      children: ['custom-style'],
+      children: ['custom-style', 'builtin-page'],
     },
   ],
   '/en/docs/plugins/': ['page', 'comments', 'vue-previews', 'bulletin-popover'],

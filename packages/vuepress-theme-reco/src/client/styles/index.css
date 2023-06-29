@@ -29,6 +29,7 @@
 @import 'subNavbar.css';
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
 @import 'theme.css';
+@import 'timeline.css';
 @import 'toggleDarkModeButton.css';
 @import 'toggleSeriesButton.css';
 @import '404.css';
