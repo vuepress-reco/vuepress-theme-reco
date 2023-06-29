@@ -14,8 +14,8 @@ export const pages = [
     pagination: 10,
   },
   {
-    path: '/timeline/',
-    layout: 'TimeLine',
+    path: '/timeline',
+    layout: 'Timeline',
   },
   {
     path: '/posts',
