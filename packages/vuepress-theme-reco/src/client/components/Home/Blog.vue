@@ -123,14 +123,16 @@ if (!__VUEPRESS_SSR__) {
     throttle(() => {
       const card = document.querySelector('.info-wrapper')
 
-      // @ts-ignore
-      card.setAttribute('data-x', card.offsetLeft)
-      // @ts-ignore
-      card.setAttribute('data-y', card.offsetTop)
-      // @ts-ignore
-      card.setAttribute('data-width', card.clientWidth)
-      // @ts-ignore
-      card.setAttribute('data-height', card.clientHeight)
+      if (card) {
+        // @ts-ignore
+        card.setAttribute('data-x', card.offsetLeft)
+        // @ts-ignore
+        card.setAttribute('data-y', card.offsetTop)
+        // @ts-ignore
+        card.setAttribute('data-width', card.clientWidth)
+        // @ts-ignore
+        card.setAttribute('data-height', card.clientHeight)
+      }
     }, 50)
   )
 }
