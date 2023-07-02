@@ -9,18 +9,19 @@ In order to meet more usage scenarios of users, the theme has modularized the ho
 
 ## Configure
 
-Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`, `MdContent`, `Footer`, and their configurations are as follows:
+Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`, `MdContent`, `Comment`, `Footer`, and their configurations are as follows:
 
 ### modules
  
 - description: Specify the home page module
 - default: `['Banner', 'Blog', 'Footer']`
-- optional：`Banner`、`BannerBrand`、`Blog`、`MdContent`、`Footer`
+- optional：`Banner`, `BannerBrand`, `Blog`, `MdContent`, `Comment`, `Footer`
 - configuration item: 
   - Banner: Huge display map, can display logo, title, brief description, background image, top and bottom layout
   - BannerBrand: Huge display map in brand format, which can display logo, title, brief description, background image, button, left and right layout
   - Blog: Blog module, two-column layout, showing the list of blogs as a rule, and displaying user information and blog-related content on the right
   - MdContent: The markdown text display module of the home page
+  - Comment: Comment Module
   - Footer: Home Bottom Module
 
 ### banner
@@ -78,7 +79,11 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 
 ### MdContent
 - description: The markdown text display module of the home page
-- case
+- case: -
+
+###  Comment
+- description: Comment function, if the site wants to put the comment function on the home page, you can configure this option
+- case: -
 
 ## Case
 

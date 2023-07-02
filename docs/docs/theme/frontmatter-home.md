@@ -9,18 +9,19 @@ date: 2021-11-06 23:36:01
 
 ## 配置
 
-目前内置的首页模块有 `Banner`、`BannerBrand`、`Blog`、`MdContent`、`Footer`，其配置如下：
+目前内置的首页模块有 `Banner`、`BannerBrand`、`Blog`、`MdContent`、`Comment`, `Footer`，其配置如下：
 
 ### modules
 
 - 描述：指定首页模块
 - 默认值：`['Banner', 'Blog', 'Footer']`
-- 可选值：`Banner`、`BannerBrand`、`Blog`、`MdContent`、`Footer`
+- 可选值：`Banner`、`BannerBrand`、`Blog`、`MdContent`、`Comment`、`Footer`
 - 配置项：
   - Banner：巨幅展示图，可以展示 logo、标题、简述、背景图，上下布局
   - BannerBrand：品牌格式的巨幅展示图，可以展示 logo、标题、简述、背景图、按钮，左右布局
   - Blog：博客模块，两栏布局，作则展示博客列表，右侧展示用户信息及博客相关内容
   - MdContent：首页的 markdown 正文展示模块
+  - Comment: 评论模块
   - Footer：首页底部模块
 
 ### banner
@@ -76,6 +77,10 @@ date: 2021-11-06 23:36:01
 
 ### MdContent
 - 描述：首页的 markdown 正文展示模块
+- 案例：-
+
+###  Comment
+- 描述： 评论功能，如果站点想把评论功能放在首页，可以配置这个选项
 - 案例：-
 
 ## 案例

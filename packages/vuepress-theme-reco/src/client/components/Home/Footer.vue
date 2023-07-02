@@ -41,7 +41,7 @@
       <a :href="frontmatter?.footer?.cyberSecurityLink || '#'" target="_blank">{{ frontmatter?.footer?.cyberSecurityRecord }}</a>
     </span>
 
-    <Comments :hide-comments="true" />
+    <Comments v-if="!isShowCommentAtHomePage" :hide-comments="true" />
   </div>
 </template>
 
@@ -72,7 +72,9 @@ const copyRight = computed(() => {
     text += `${themeLocal.value.author} `
   }
 
-  const startYear = frontmatter?.footer?.startYear
+  console.log(frontmatter.value)
+
+  const startYear = frontmatter.value?.footer?.startYear
   const currYear = new Date().getFullYear()
 
   if (startYear && startYear != currYear) {
@@ -85,4 +87,8 @@ const copyRight = computed(() => {
 })
 
 const homeLink = computed(() => themeLocal.value.home || routeLocale.value)
+
+const isShowCommentAtHomePage = computed(() => {
+  return (frontmatter.value.modules || [])?.includes('Comment')
+})
 </script>
