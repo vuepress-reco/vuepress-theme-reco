@@ -14,6 +14,7 @@ import Banner from './Banner.vue'
 import BannerBrand from './BannerBrand.vue'
 import Blog from './Blog.vue'
 import MdContent from './MdContent.vue'
+import Comment from './Comment.vue'
 import Footer from './Footer.vue'
 
 export default defineComponent({
@@ -24,6 +25,7 @@ export default defineComponent({
     BannerBrand,
     Blog,
     MdContent,
+    Comment,
     Footer
   }
 })

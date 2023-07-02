@@ -14,6 +14,8 @@ customBanner:
   buttons:
     - { text: Guide, link: '/en/docs/guide/introduce' }
     - { text: Theme config, link: '/en/docs/theme/series', type: 'plain' }
+footer:
+  startYear: 2018
 isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
