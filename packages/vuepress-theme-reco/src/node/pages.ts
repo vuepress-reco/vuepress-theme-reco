@@ -21,4 +21,8 @@ export const pages = [
     path: '/posts',
     layout: 'Posts',
   },
+  {
+    path: '/friendship-link',
+    layout: 'FriendshipLink',
+  },
 ]

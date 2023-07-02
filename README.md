@@ -60,27 +60,27 @@ theme-cli init
 
 ## Preview
 
-<img width="800" alt="home_dark" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
+<img width="800" alt="home_dark" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/5a20e487-e7ff-4820-b9b1-65068da8d8fc">
 
 <br/>
 
-<img width="800" alt="doc_dark" src="https://user-images.githubusercontent.com/18067907/214793709-094d4108-a3e2-4924-a263-d538c89535d3.png">
+<img width="800" alt="doc_dark" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/909ba49d-72b1-4f90-8950-dadec99741a1">
 
 <br/>
 
-<img width="800" alt="blog_dark" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
+<img width="800" alt="blog_dark" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/f68466fe-ba76-4792-a1cf-9adc5dcbf420">
 
 <br/>
 
-<img width="800" alt="home_light" src="https://user-images.githubusercontent.com/18067907/214793349-ae174f83-e7ab-42e9-aac1-eb8adab695a9.png">
+<img width="800" alt="home_light" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/90c09696-f196-481b-b058-1332ce432136">
 
 <br/>
 
-<img width="800" alt="doc_light" src="https://user-images.githubusercontent.com/18067907/214793361-139cea23-3634-4e42-a90a-be172a5e26fb.png">
+<img width="800" alt="doc_light" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/6c942c42-a2d7-4945-ae07-eb4fdcaedff2">
 
 <br/>
 
-<img width="800" alt="blog_light" src="https://user-images.githubusercontent.com/18067907/216823287-e4699d52-e081-4c59-9e11-09fd5154c8b3.png">
+<img width="800" alt="blog_light" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/d3b7c656-b942-4d7e-a2f9-6089de325429">
 
 <br/>
 
