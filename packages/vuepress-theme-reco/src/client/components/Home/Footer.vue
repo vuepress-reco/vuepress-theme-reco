@@ -72,8 +72,6 @@ const copyRight = computed(() => {
     text += `${themeLocal.value.author} `
   }
 
-  console.log(frontmatter.value)
-
   const startYear = frontmatter.value?.footer?.startYear
   const currYear = new Date().getFullYear()
 
