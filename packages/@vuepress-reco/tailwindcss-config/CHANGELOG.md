@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-beta.66
+
+### Patch Changes
+
+- add built-in page
+
 ## 2.0.0-beta.65
 
 ### Patch Changes
