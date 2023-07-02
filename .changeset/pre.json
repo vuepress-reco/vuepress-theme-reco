@@ -2,15 +2,15 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.64",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.64",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.64",
-    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.64",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.64",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.64",
-    "@vuepress-reco/shared": "2.0.0-beta.64",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.64",
-    "vuepress-theme-reco": "2.0.0-beta.64"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.65",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.65",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.65",
+    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.65",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.65",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.65",
+    "@vuepress-reco/shared": "2.0.0-beta.65",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.65",
+    "vuepress-theme-reco": "2.0.0-beta.65"
   },
   "changesets": [
     "beige-radios-visit",
@@ -59,6 +59,7 @@
     "sixty-houses-hammer",
     "slow-ways-complain",
     "smooth-clouds-dream",
+    "soft-sloths-sin",
     "strong-insects-move",
     "tidy-students-search",
     "weak-months-shout"
