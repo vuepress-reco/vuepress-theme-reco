@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@vuepress-reco/tailwindcss-config": "workspace:2.0.0-beta.65",
-    "@vuepress/client": "2.0.0-beta.62",
-    "@vuepress/core": "2.0.0-beta.62",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.62",
-    "@vuepress/utils": "2.0.0-beta.62",
-    "vue": "^3.3.1"
+    "@vuepress/client": "2.0.0-beta.63",
+    "@vuepress/core": "2.0.0-beta.63",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.63",
+    "@vuepress/utils": "2.0.0-beta.63",
+    "vue": "^3.3.4"
   }
 }
