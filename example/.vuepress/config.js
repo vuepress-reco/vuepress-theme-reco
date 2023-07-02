@@ -100,7 +100,11 @@ export default defineUserConfig({
       },
     ],
     autoSetBlogCategories: true,
-    autoAddCategoryToNavbar: true,
+    autoAddCategoryToNavbar: {
+      location: 1,
+      categoryText: '分类',
+      tagText: '标签'
+    },
     autoSetSeries: true,
     vuePreviewsDir: './example/.vuepress/vue-previews',
     componentsDir: './example/.vuepress/components',

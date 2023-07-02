@@ -156,7 +156,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const parseCategories = computed(() => {
     return [
       {
-        text: 'Categories',
+        text: themeLocal.value.autoAddCategoryToNavbar?.categoryText || 'Categories',
         children: Object.values(categorySummary?.categories?.items || {}).map((c) => ({
           // @ts-ignore
           text: c.label,
@@ -165,7 +165,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
         }))
       },
       {
-        text: 'Tags',
+        text: themeLocal.value.autoAddCategoryToNavbar?.tagText || 'Tags',
         children: Object.values(categorySummary?.tags?.items || {}).map(t => ({
           // @ts-ignore
           text: t.label,
@@ -177,13 +177,16 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   })
 
   return computed(() => {
-    let navItems = themeLocal.value.navbar || []
-    if (themeLocal.value.autoAddCategoryToNavbar === true) {
-      navItems = [
-        ...parseCategories.value,
-        ...navItems
-      ]
+    let navItems = [...(themeLocal.value.navbar || [])]
+
+    if (themeLocal.value.autoAddCategoryToNavbar) {
+      navItems.splice(
+        themeLocal.value.autoAddCategoryToNavbar?.location || 0,
+        0,
+        ...parseCategories.value
+      )
     }
+
     return navItems.map(resolveNavbarItem)
   })
 }

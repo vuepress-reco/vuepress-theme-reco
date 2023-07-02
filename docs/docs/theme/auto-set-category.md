@@ -28,9 +28,16 @@ import { defineUserConfig } from 'vuepress'
 import { recoTheme } from 'vuepress-theme-reco'
 
 export default defineUserConfig({
-  theme: recoTheme({// 自动设置分类
+  theme: recoTheme({
+    // 自动设置分类
     autoSetBlogCategories: true,
     // 自动将分类和标签添加至头部导航条
+    autoAddCategoryToNavbar: {
+      location: 1, // 默认 0
+      categoryText: '分类', // 默认 categories
+      tagText: '标签' // 默认 tags
+    },
+    // 当 autoAddCategoryToNavbar 为 true 时，则全部取默认值
     autoAddCategoryToNavbar: true
   })
 })
