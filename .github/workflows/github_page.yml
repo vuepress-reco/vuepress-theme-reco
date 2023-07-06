@@ -24,7 +24,7 @@ jobs:
         run: pnpm install
 
       - name: Build Packages
-        run: pnpm run build:all
+        run: pnpm run build
 
       - name: Build Docs
         run: pnpm run docs:build
