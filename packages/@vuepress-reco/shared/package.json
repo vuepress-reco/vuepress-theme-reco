@@ -23,7 +23,6 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "tsc --build tsconfig.build.json",
-    "build:watch": "tsc --build -w tsconfig.build.json",
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/components/**/*.{ts,vue}\" lib/esm/components"
   },
