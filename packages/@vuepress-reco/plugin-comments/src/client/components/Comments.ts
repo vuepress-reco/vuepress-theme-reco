@@ -33,12 +33,22 @@ export default defineComponent({
         break
     }
 
-    return () =>
-      componentName
-        ? h(componentName, {
-            options: options.value,
-            style: `display: ${hideComments.value ? 'none' : 'block'}`,
-          })
-        : null
+    return () => {
+      if (componentName) {
+        if (hideComments.value) {
+          if (solution.value === 'valine') {
+            return h(componentName, {
+              options: options.value,
+              style: 'display: none',
+            })
+          }
+          return null
+        }
+        return h(componentName, {
+          options: options.value,
+        })
+      }
+      return null
+    }
   },
 })
