@@ -1,4 +1,9 @@
 export default [
+    {
+    thumbnail: 'https://oss.bakerchen.top/img/2023-07-18-20-59-20.jpg',
+    link: 'https://www.bakerchen.top',
+    avator: 'https://www.bakerchen.top/logo.png',
+  },
   {
     thumbnail:
       'https://user-images.githubusercontent.com/18067907/234058377-28a7e909-ae5c-4e7d-a35b-2968848bef89.png',
