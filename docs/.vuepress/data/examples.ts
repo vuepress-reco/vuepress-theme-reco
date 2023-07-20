@@ -18,9 +18,9 @@ export default [
   },
   {
     thumbnail:
-      'https://gitee.com/xiangwangyouzai/vuepressnote/raw/master/wiki.png',
+      'https://qian-shen.github.io/images/wiki.png',
     link: 'http://47.106.238.103/',
-    avator: 'https://gitee.com/xiangwangyouzai/vuepressnote/raw/master/logo.png',
+    avator: 'https://qian-shen.github.io/icons/logo.png',
   },
   {
     thumbnail: "https://typora-licodeao.oss-cn-guangzhou.aliyuncs.com/typoraImg/home.png",
