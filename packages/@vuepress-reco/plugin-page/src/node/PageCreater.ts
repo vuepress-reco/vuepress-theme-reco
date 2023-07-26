@@ -19,6 +19,10 @@ export function formatDate(date) {
   return dateNum
 }
 
+export function removeEmptyString(value) {
+  return !value ? '' : value.trim().replaceAll(' ', '-')
+}
+
 // 比对时间
 export function compareDate(prev, next) {
   const prevDate = formatDate(prev.frontmatter.date)
@@ -197,7 +201,7 @@ export default class PageCreater {
               prev[convertToPinyin(current)] = {
                 pages: [page],
                 length: 1,
-                label: current,
+                label: removeEmptyString(current),
               }
               return prev
             },
@@ -205,7 +209,7 @@ export default class PageCreater {
           )
         } else {
           categoryValues
-            ?.map((value) => String(value))
+            ?.map((value) => removeEmptyString(String(value)))
             .forEach((value: ItemKey) => {
               if (!value) return
 
@@ -250,7 +254,7 @@ export default class PageCreater {
 
         Array.from({ length: totalPage }).forEach((item, currentPage) => {
           const page = createPage(this.app, {
-            path: `/${key}/${convertToPinyin(value)}/${currentPage + 1}/`,
+            path: `/${key}/${convertToPinyin(removeEmptyString(value))}/${currentPage + 1}/`,
             frontmatter: { layout },
           })
           this._extendedPages.push(page)
