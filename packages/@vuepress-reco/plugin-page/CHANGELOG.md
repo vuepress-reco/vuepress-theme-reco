@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-beta.67
+
+### Patch Changes
+
+- fix some bugs
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-beta.67
+
 ## 2.0.0-beta.66
 
 ### Patch Changes

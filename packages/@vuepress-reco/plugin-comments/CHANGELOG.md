@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-beta.67
+
+### Patch Changes
+
+- fix some bugs
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-beta.67
+
 ## 2.0.0-beta.66
 
 ### Patch Changes
