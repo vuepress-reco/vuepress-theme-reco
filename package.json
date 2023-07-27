@@ -20,8 +20,8 @@
     "example:build": "vuepress build example",
     "example:dev": "DEBUG=vuepress* vuepress dev example",
     "lint": "eslint --ext .js,.ts,.vue .",
-    "release": "pnpm build:all && bash scripts/release.sh",
-    "release:pre": "pnpm build:all && bash scripts/pre-release.sh",
+    "release": "pnpm build && bash scripts/release.sh",
+    "release:pre": "pnpm build && bash scripts/pre-release.sh",
     "update": "pnpm up --latest"
   },
   "husky": {
