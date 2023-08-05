@@ -33,14 +33,18 @@ const dataMap: {
 } = {}
 
 posts.forEach(post => {
-  const [year, mounth, day] = formatISODate(post.frontmatter.date).split('-') || []
+  if (!post.frontmatter.date) return
+
+  let connector = post.frontmatter.date.includes('/') ? '/' : '-'
+
+  const [year, mounth, day] = formatISODate(post.frontmatter.date).split(' ')[0].split(connector) || []
 
   if (!year || !mounth || !day) return
 
   if (!dataMap[year]) {
     dataMap[year] = [{
       ...post,
-      date: `${mounth}-${day}`
+      date: `${mounth}${connector}${day}`
     }]
 
     return

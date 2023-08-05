@@ -37,9 +37,9 @@ export default [
     link: "https://blog.latteandcat.cn/",
     avator: "https://blog.latteandcat.cn/head.png"
   },
-    {
+  {
     thumbnail: "https://avatars.githubusercontent.com/u/87223862?v=4",
     link: "https://zzh.4everland.app/",
     avator: "https://vue3-xiao-admin.4everland.app/static/png/logo-22eeabbe.png"
-  }，
+  }
 ]
