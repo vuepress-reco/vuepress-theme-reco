@@ -19,7 +19,7 @@ export default [
   {
     thumbnail:
       'https://qian-shen.github.io/images/wiki.png',
-    link: 'http://47.106.238.103/',
+    link: 'https://qian-shen.github.io/',
     avator: 'https://qian-shen.github.io/icons/logo.png',
   },
   {
