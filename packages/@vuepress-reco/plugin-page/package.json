@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@vuepress-reco/shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.66",
-    "@vuepress/core": "2.0.0-beta.66",
-    "@vuepress/utils": "2.0.0-beta.66",
+    "@vuepress/client": "2.0.0-beta.67",
+    "@vuepress/core": "2.0.0-beta.67",
+    "@vuepress/utils": "2.0.0-beta.67",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   }
