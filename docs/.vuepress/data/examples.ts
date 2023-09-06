@@ -41,5 +41,10 @@ export default [
     thumbnail: "https://avatars.githubusercontent.com/u/87223862?v=4",
     link: "https://zzh.4everland.app/",
     avator: "https://vue3-xiao-admin.4everland.app/static/png/logo-22eeabbe.png"
+  },
+  {
+    thumbnail: "https://numb.run/homeIndex.jpg",
+    link: "https://numb.run/",
+    avator: "https://numb.run/homepage.jpg"
   }
 ]
