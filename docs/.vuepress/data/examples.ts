@@ -46,5 +46,10 @@ export default [
     thumbnail: "https://numb.run/homeIndex.jpg",
     link: "https://numb.run/",
     avator: "https://numb.run/homepage.jpg"
-  }
+  },
+  {
+    thumbnail: "https://www.dreamai.world/assets/homeview.jpg",
+    link: "https://www.dreamai.world/",
+    avator: "https://www.dreamai.world/logo.png"
+  }    
 ]
