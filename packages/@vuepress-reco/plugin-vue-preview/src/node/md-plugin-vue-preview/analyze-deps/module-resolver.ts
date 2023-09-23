@@ -26,12 +26,12 @@ export function getModuleResolvePath({
     )
   } catch (err) {
     if (!silent) {
-      console.error(
-        '[THEME RECO ERROR] ',
-        'cannot resolve module ${sourcePath} from ${basePath}'
+      console.info(
+        '[THEME RECO TIP] ',
+        `cannot resolve module ${sourcePath} from ${basePath}`
       )
     }
 
-    throw err
+    return null
   }
 }
