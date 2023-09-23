@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-beta.68
+
+### Patch Changes
+
+- deal with some compatibility issues
+
 ## 2.0.0-beta.67
 
 ### Patch Changes
