@@ -65,7 +65,6 @@ import { useThemeLocaleData } from '../../composables';
 const { posts, categorySummary } = usePageData()
 
 const currentPage = ref(1)
-const blogContentTop = ref(0)
 const perPage = 10
 
 const categories = computed(() => {
@@ -99,14 +98,7 @@ if (!__VUEPRESS_SSR__) {
     const homeHref = themeLocal.value.home || routeLocale.value
     router.push(page > 1 ? `${homeHref}?page=${page}` : homeHref)
 
-    setTimeout(() => {
-      if (blogContentTop.value === 0) {
-        const blogContent = document.querySelector('.home-blog-content')
-        if (blogContent) blogContentTop.value = blogContent.getBoundingClientRect().top
-      }
-
-      window.scrollTo({ left: 0, top: -blogContentTop.value - 250, behavior: 'smooth' })
-    }, 100)
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
   }
 
   onMounted(() => {

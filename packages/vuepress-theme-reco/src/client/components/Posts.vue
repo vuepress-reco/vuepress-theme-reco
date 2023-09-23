@@ -53,7 +53,7 @@ if (!__VUEPRESS_SSR__) {
         if (blogContent) blogContentTop.value = blogContent.getBoundingClientRect().top
       }
 
-      window.scrollTo({ left: 0, top: -blogContentTop.value - 250, behavior: 'smooth' })
+      window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
     }, 100)
   }
 
