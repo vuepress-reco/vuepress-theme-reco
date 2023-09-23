@@ -29,6 +29,7 @@ const SITE_PASSWORD_PASS = 'SITE_PASSWORD_PASS'
 export function usePassword() {
   const themeLocal = useThemeLocaleData()
 
+  const setedSitePassword = ref(!!themeLocal.value.password)
   const siteLoaded = ref(false)
   const sitePasswordPass = ref(true)
 
@@ -58,7 +59,7 @@ export function usePassword() {
     }
   }
 
-  return { siteLoaded, sitePasswordPass, handlePass }
+  return { siteLoaded, sitePasswordPass, setedSitePassword, handlePass }
 }
 
 export function useInitCodeCopy() {

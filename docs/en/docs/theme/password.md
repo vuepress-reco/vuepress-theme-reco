@@ -10,7 +10,10 @@ If the website as a whole or a document is private and does not want to be made 
 - multiple passwords can be set through an array.
 :::
 
-
+::: warning
+1. The security of encryption is low, please use it as appropriate.
+2. If encryption is set, the anchor function will fail.
+:::
 
 ## Obtaining Ciphertext
 

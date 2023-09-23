@@ -1,12 +1,20 @@
 <template>
   <main class="page-container">
     <h1 v-if="!!title" class="page-title">{{ title }}</h1>
+
     <PageInfo :page-data="pageData" />
-    <div class="theme-reco-default-content">
+
+    <div v-if="!setedPagePassword" class="theme-reco-default-content">
+      <Content />
+    </div>
+
+    <div v-else class="theme-reco-default-content">
       <Password v-if="pageLoaded && !pagePasswordPass" @pass="handlePass" />
       <Content v-if="pageLoaded && pagePasswordPass" />
     </div>
+
     <PageMeta />
+
     <PageNav />
 
     <Comments :hide-comments="shouldHideComments" />
@@ -25,7 +33,7 @@ import { usePassword } from './hook'
 
 const pageData = usePageData()
 const { options } = useComment()
-const { pageLoaded, pagePasswordPass, handlePass } = usePassword()
+const { pageLoaded, pagePasswordPass, setedPagePassword, handlePass } = usePassword()
 
 const title = computed(
   () => pageData?.value?.frontmatter?.title
