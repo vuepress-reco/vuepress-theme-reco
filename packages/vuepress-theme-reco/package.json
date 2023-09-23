@@ -74,5 +74,8 @@
     "eslint-config-vuepress-typescript": "2.2.1",
     "prettier": "2.2.1",
     "sort-package-json": "1.44.0"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-beta.67"
   }
 }
