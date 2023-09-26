@@ -1,4 +1,9 @@
 export default [
+  {
+    thumbnail: 'https://pic.imgdb.cn/item/64ffbee3661c6c8e54af2462.png',
+    link: 'https://www.sloving.top',
+    avator: 'https://sloving.top/head.png',
+  },
     {
     thumbnail: 'https://oss.bakerchen.top/img/2023-07-18-20-59-20.jpg',
     link: 'https://www.bakerchen.top',
