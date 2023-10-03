@@ -1,4 +1,10 @@
 export default [
+         {
+    name: "明",
+    desc: "全栈分享",
+    link: "https://www.stucoding.com/",
+    thumbnail: "https://www.stucoding.com/assets/mybatis/1/1-1.png",
+  },
      {
     thumbnail: 'https://pic.imgdb.cn/item/64ffbee3661c6c8e54af2462.png',
     link: 'https://sloving.top',
