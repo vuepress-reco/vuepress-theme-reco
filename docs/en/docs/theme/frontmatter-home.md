@@ -116,10 +116,10 @@ bannerBrand: # bannerBrand module configuration
     - { text: Guide, link: '/docs/guide/introduce' }
     - { text: Default Style, link: '/docs/theme/introduce', type: 'plain' }
   socialLinks: # For social address
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 blog: # blog module configuration
   socialLinks: # For social address
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 footer: # footer module configuration
   record: Domain name filing copy
   recordLink: Domain name registration address
