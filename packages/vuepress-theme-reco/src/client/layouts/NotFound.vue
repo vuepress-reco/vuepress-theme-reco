@@ -22,7 +22,7 @@ const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()
 
 const goHome = () => {
-  router.push(withBase(themeLocal.value.home || routeLocale.value))
+  router.push(themeLocal.value.home || routeLocale.value)
 }
 </script>
 
