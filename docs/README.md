@@ -2,6 +2,7 @@
 home: true
 modules:
   - CustomBanner
+  - Features
   - MdContent
   - Footer
 customBanner:

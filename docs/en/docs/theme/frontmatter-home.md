@@ -14,8 +14,8 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 ### modules
  
 - description: Specify the home page module
-- default: `['Banner', 'Blog', 'Footer']`
-- optional：`Banner`, `BannerBrand`, `Blog`, `MdContent`, `Comment`, `Footer`
+- default: `['BannerBrand', 'Blog', 'Footer']`
+- optional：`Banner`、`BannerBrand`、`Features`、`Blog`、`MdContent`、`Comment`、`Footer`
 - configuration item: 
   - Banner: Huge display map, can display logo, title, brief description, background image, top and bottom layout
   - BannerBrand: Huge display map in brand format, which can display logo, title, brief description, background image, button, left and right layout
@@ -66,6 +66,14 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 - case:
   - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
 
+### features
+- description: Used to configure the feature list of home page
+- frontmatter options: 
+  - title：标题
+  - details：详情
+- case: 
+  - <img width="600" alt="footer" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/5b1ced88-606a-4088-b32d-4a9c6ed9cc66">
+
 ### footer
 - description: Used to configure the `Footer` module
 - frontmatter options: 
@@ -90,10 +98,10 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`
 ```yaml
 ---
 home: true
-modules: # Designated homepage display module
-  - Banner
+modules: # Designated homepage display module  - BannerBrand
   - Blog
   - MdContent
+  - Features
   - Footer
 banner: # banner module configuration
   heroText: 午后南杂
@@ -120,6 +128,13 @@ bannerBrand: # bannerBrand module configuration
 blog: # blog module configuration
   socialLinks: # For social address
     - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
+features:
+- title: Past
+  details: Develop a vuepress blog theme that looks happy and writes smoothly.
+- title: Present
+  details: Help more friends save time to write content with heart, instead of just configuring a blog to enjoy yourself.
+- title: Future
+  details: Attract more friends to participate in the development and continue to have powerful functions.
 footer: # footer module configuration
   record: Domain name filing copy
   recordLink: Domain name registration address

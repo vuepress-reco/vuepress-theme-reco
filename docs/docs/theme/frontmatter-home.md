@@ -14,11 +14,12 @@ date: 2021-11-06 23:36:01
 ### modules
 
 - 描述：指定首页模块
-- 默认值：`['Banner', 'Blog', 'Footer']`
-- 可选值：`Banner`、`BannerBrand`、`Blog`、`MdContent`、`Comment`、`Footer`
+- 默认值：`['BannerBrand', 'Blog', 'Footer']`
+- 可选值：`Banner`、`BannerBrand`、`Features`、`Blog`、`MdContent`、`Comment`、`Footer`
 - 配置项：
   - Banner：巨幅展示图，可以展示 logo、标题、简述、背景图，上下布局
   - BannerBrand：品牌格式的巨幅展示图，可以展示 logo、标题、简述、背景图、按钮，左右布局
+  - Features: 首页特性列表
   - Blog：博客模块，两栏布局，作则展示博客列表，右侧展示用户信息及博客相关内容
   - MdContent：首页的 markdown 正文展示模块
   - Comment: 评论模块
@@ -64,6 +65,14 @@ date: 2021-11-06 23:36:01
 - 案例：
   - <img width="600" alt="blog" src="https://user-images.githubusercontent.com/18067907/216823247-8aee08e1-2c24-45e5-8c2e-b9a919ed1c27.png">
 
+### features
+- 描述：配置首页特性列表
+- frontmatter 配置：
+  - title：标题
+  - details：详情
+- 案例：
+  - <img width="600" alt="footer" src="https://github.com/vuepress-reco/vuepress-theme-reco/assets/18067907/5b1ced88-606a-4088-b32d-4a9c6ed9cc66">
+
 ### footer
 - 描述：用于配置 Footer 模块
 - frontmatter 配置：
@@ -89,9 +98,10 @@ date: 2021-11-06 23:36:01
 ---
 home: true
 modules: # 指定首页展示模块
-  - Banner
+  - BannerBrand
   - Blog
   - MdContent
+  - Features
   - Footer
 banner: # banner 模块的配置
   heroText: 午后南杂
@@ -115,6 +125,13 @@ bannerBrand: # bannerBrand 模块的配置
 blog: # blog 模块的配置
   socialLinks: # 社交地址
     - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
+features:
+- title: 过去
+  details: 开发一款看着开心、写着顺手的 vuepress 博客主题。
+- title: 当下
+  details: 帮助更多的朋友节省时间去用心书写内容，而不是仅仅配置一个博客去孤芳自赏。
+- title: 未来
+  details: 吸引更多的朋友参与到开发中来，继续强大功能。
 footer: # 底部模块的配置
   record: 域名备案文案
   recordLink: 域名备案地址
