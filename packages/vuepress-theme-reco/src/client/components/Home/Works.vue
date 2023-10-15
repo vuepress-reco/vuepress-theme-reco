@@ -17,8 +17,6 @@ import { usePageFrontmatter } from '@vuepress/client'
 
 const frontmatter = usePageFrontmatter()
 
-console.log(frontmatter.value.features)
-
 // @ts-ignore
 const data: ComputedRef<Array<{ title: string, details: string }>> = computed(() => frontmatter.value.features || [])
 </script>
