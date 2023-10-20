@@ -1,16 +1,22 @@
 export default [
-         {
+  {
+    name: "QFluentWidgets",
+    desc: "无需书写 QSS，拖拽即可快速构建美观的界面",
+    link: "https://qfluentwidgets.com",
+    thumbnail: "https://raw.githubusercontent.com/zhiyiYo/QMaterialWidgets/master/docs/source/_static/Interface.jpg",   
+  },       
+  {
     name: "明",
     desc: "全栈分享",
     link: "https://www.stucoding.com/",
     thumbnail: "https://www.stucoding.com/assets/mybatis/1/1-1.png",
   },
-     {
+  {
     thumbnail: 'https://pic.imgdb.cn/item/64ffbee3661c6c8e54af2462.png',
     link: 'https://sloving.top',
     avator: 'https://sloving.top/head.png',
   },
-    {
+  {
     thumbnail: 'https://oss.bakerchen.top/img/2023-07-18-20-59-20.jpg',
     link: 'https://www.bakerchen.top',
     avator: 'https://www.bakerchen.top/logo.png',
