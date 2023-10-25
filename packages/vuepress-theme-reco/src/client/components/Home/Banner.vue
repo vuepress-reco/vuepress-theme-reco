@@ -5,7 +5,7 @@
         v-if="heroImage"
         :src="heroImage"
         :style="{
-          heroImageStyle,
+          ...heroImageStyle,
         }"
         alt="heroImage"
       />
