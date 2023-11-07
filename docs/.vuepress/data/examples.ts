@@ -68,5 +68,10 @@ export default [
     thumbnail: "https://www.dreamai.world/assets/homeview.jpg",
     link: "https://www.dreamai.world/",
     avator: "https://www.dreamai.world/logo.png"
-  }    
+  },
+  {
+    thumbnail: "https://www.xinmi.life/home.png",
+    link: "https://www.xinmi.life/",
+    avator: "https://www.xinmi.life/avatar.jpg"
+  }
 ]
