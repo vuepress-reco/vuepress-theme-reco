@@ -1,3 +1,4 @@
+import { Component } from 'vue';
 import { defineClientConfig } from '@vuepress/client'
 
 import { applyClientSetup } from './clientSetup'
@@ -12,5 +13,6 @@ export default defineClientConfig({
   setup() {
     applyClientSetup()
   },
-  layouts,
+  // @ts-ignore
+  layouts: layouts as Record<string, Component>,
 })

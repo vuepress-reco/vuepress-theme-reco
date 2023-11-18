@@ -35,7 +35,7 @@ import { computed, defineComponent, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import { useSiteLocaleData, useRouteLocale } from '@vuepress/client'
-import { isLinkHttp, isLinkMailto, isLinkTel } from '@vuepress/shared'
+import { isLinkHttp, isLinkWithProtocol } from '@vuepress/shared'
 import type { NavLink } from '../../types'
 import { useThemeLocaleData } from '../composables'
 
@@ -63,7 +63,7 @@ export default defineComponent({
     const hasHttpProtocol = computed(() => isLinkHttp(item.value.link))
     // if the link has non-http protocol
     const hasNonHttpProtocal = computed(
-      () => isLinkMailto(item.value.link) || isLinkTel(item.value.link)
+      () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link)
     )
     // resolve the `target` attr
     const linkTarget = computed(() => {
