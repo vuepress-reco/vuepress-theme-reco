@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-comments",
-  "version": "2.0.0-beta.68",
+  "version": "2.0.0-rc.0",
   "description": "Comments plugin for vuepress-theme-reco or other vuepress theme.",
   "keywords": [
     "vuepress-theme-reco",
@@ -36,14 +36,14 @@
   "dependencies": {
     "@giscus/vue": "^2.2.8",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/core": "2.0.0-beta.67",
-    "@vuepress/plugin-theme-data": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "@waline/client": "^2.14.7",
     "valine": "1.4.18",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.5"
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"

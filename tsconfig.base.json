@@ -3,7 +3,7 @@
     "composite": true,
     "declaration": true,
     "declarationMap": false,
-    "lib": ["DOM", "ES2020"],
+    "lib": ["DOM", "ES2022"],
     "module": "CommonJS",
     "moduleResolution": "node",
     "newLine": "lf",
@@ -15,7 +15,7 @@
     "strict": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2018",
+    "target": "ES2022",
     "jsx": "preserve",
     "paths": {
       "@theme/*": [

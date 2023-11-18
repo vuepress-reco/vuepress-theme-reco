@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-page",
-  "version": "2.0.0-beta.68",
+  "version": "2.0.0-rc.0",
   "description": "A simple blog plugin for vuepress-theme-reco.",
   "keywords": [
     "vuepress-plugin",
@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@vuepress-reco/shared": "workspace:*",
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/core": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
+    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/core": "2.0.0-rc.0",
+    "@vuepress/utils": "2.0.0-rc.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.5"
   }
 }

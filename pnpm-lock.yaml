@@ -97,12 +97,12 @@ importers:
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/utils': 2.0.0-beta.67
-      vue-router: ^4.2.2
+      vue-router: ^4.2.5
     dependencies:
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/utils': 2.0.0-beta.67
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
 
   packages/@vuepress-reco/plugin-comments:
     specifiers:
@@ -115,7 +115,7 @@ importers:
       '@waline/client': ^2.14.7
       valine: 1.4.18
       vue: ^3.3.4
-      vue-router: ^4.2.2
+      vue-router: ^4.2.5
     dependencies:
       '@giscus/vue': 2.3.0_vue@3.3.4
       '@vuepress-reco/tailwindcss-config': link:../tailwindcss-config
@@ -126,7 +126,7 @@ importers:
       '@waline/client': 2.15.7
       valine: 1.4.18
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
 
   packages/@vuepress-reco/plugin-markdown-task:
     specifiers:
@@ -143,14 +143,14 @@ importers:
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/utils': 2.0.0-beta.67
       vue: ^3.3.4
-      vue-router: ^4.2.2
+      vue-router: ^4.2.5
     dependencies:
       '@vuepress-reco/shared': link:../shared
       '@vuepress/client': 2.0.0-beta.67
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/utils': 2.0.0-beta.67
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
 
   packages/@vuepress-reco/plugin-vue-preview:
     specifiers:
@@ -229,7 +229,7 @@ importers:
       sort-package-json: 1.44.0
       tailwindcss: 3.1.6
       vue: ^3.3.4
-      vue-router: ^4.2.2
+      vue-router: ^4.2.5
     dependencies:
       '@vicons/carbon': 0.12.0
       '@vuepress-reco/shared': link:../@vuepress-reco/shared
@@ -265,7 +265,7 @@ importers:
       postcss-import: 14.0.2_postcss@8.4.14
       tailwindcss: 3.1.6
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     devDependencies:
       eslint-config-vuepress: 3.2.1_phcjgzrnfqmu6ubbfw2z3ta3fq
       eslint-config-vuepress-typescript: 2.2.1_7ltcsawtlkamuniiywkctjrnay
@@ -2564,7 +2564,7 @@ packages:
       rollup: 3.28.1
       vite: 4.4.9
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
@@ -2593,7 +2593,7 @@ packages:
       rollup: 3.28.1
       vite: 4.4.9_@types+node@17.0.45
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@types/node'
       - '@vue/composition-api'
@@ -2630,7 +2630,7 @@ packages:
       style-loader: 3.3.3_webpack@5.88.2
       vue: 3.3.4
       vue-loader: 17.2.2_vue@3.3.4+webpack@5.88.2
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
       webpack: 5.88.2
       webpack-chain: 6.5.1
       webpack-dev-server: 4.15.1_webpack@5.88.2
@@ -2672,7 +2672,7 @@ packages:
       '@vuepress/shared': 2.0.0-beta.67
       '@vueuse/core': 10.4.1_vue@3.3.4
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@vue/composition-api'
 
@@ -2718,7 +2718,7 @@ packages:
       '@vuepress/utils': 2.0.0-beta.67
       ts-debounce: 4.0.0
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -2762,7 +2762,7 @@ packages:
       '@vueuse/core': 10.4.1_vue@3.3.4
       ts-debounce: 4.0.0
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/react'
@@ -2815,7 +2815,7 @@ packages:
       '@vuepress/core': 2.0.0-beta.67
       '@vuepress/utils': 2.0.0-beta.67
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -2859,7 +2859,7 @@ packages:
       '@vuepress/utils': 2.0.0-beta.67
       chokidar: 3.5.3
       vue: 3.3.4
-      vue-router: 4.2.4_vue@3.3.4
+      vue-router: 4.2.5_vue@3.3.4
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -12381,6 +12381,15 @@ packages:
 
   /vue-router/4.2.4_vue@3.3.4:
     resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      vue: 3.3.4
+    dev: true
+
+  /vue-router/4.2.5_vue@3.3.4:
+    resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
