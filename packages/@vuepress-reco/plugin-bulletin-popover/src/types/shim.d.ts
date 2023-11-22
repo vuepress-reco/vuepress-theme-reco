@@ -3,5 +3,3 @@ declare module '*.vue' {
   const comp: ComponentOptions
   export default comp
 }
-
-declare module '@vuepress/plugin-theme-data/client'

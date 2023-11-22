@@ -4,4 +4,4 @@ declare module '*.vue' {
   export default comp
 }
 
-declare module '@vuepress/plugin-theme-data/client'
+declare module '@vuepress-reco/shared'

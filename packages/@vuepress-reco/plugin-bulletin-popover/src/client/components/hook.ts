@@ -1,5 +1,7 @@
 import { ref, onMounted, computed } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+import { useRouter } from 'vue-router'
+import { resolveLocalePath } from '@vuepress/shared'
+import { useThemeData, resolveThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 export function useVisible() {
   const themeLocal = useThemeLocaleData()
@@ -65,4 +67,19 @@ export function useHandleNodes() {
   })
 
   return { bodyNodes, handleNode }
+}
+
+function useThemeLocaleData() {
+  const themeData = useThemeData()
+  const router = useRouter()
+  const routePath = computed(() => router.currentRoute.value.path)
+  const routeLocale = computed(() =>
+    resolveLocalePath(themeData.value.locales, routePath.value),
+  )
+
+  const themeLocaleData = computed(() =>
+    resolveThemeLocaleData(themeData.value, routeLocale.value),
+  )
+
+  return themeLocaleData
 }

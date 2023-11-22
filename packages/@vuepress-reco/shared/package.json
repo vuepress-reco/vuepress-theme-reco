@@ -31,7 +31,10 @@
   },
   "dependencies": {
     "@vuepress/core": "2.0.0-rc.0",
-    "vue": "^3.3.8"
+    "@vuepress/shared": "2.0.0-rc.0",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.0",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
   },
   "publishConfig": {
     "access": "public"

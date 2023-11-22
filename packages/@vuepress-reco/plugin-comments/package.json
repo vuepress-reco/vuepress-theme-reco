@@ -39,6 +39,7 @@
     "@vuepress/client": "2.0.0-rc.0",
     "@vuepress/core": "2.0.0-rc.0",
     "@vuepress/plugin-theme-data": "2.0.0-rc.0",
+    "@vuepress/shared": "2.0.0-rc.0",
     "@vuepress/utils": "2.0.0-rc.0",
     "@waline/client": "^2.14.7",
     "valine": "1.4.18",

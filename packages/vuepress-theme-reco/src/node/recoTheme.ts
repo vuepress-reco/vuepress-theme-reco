@@ -41,11 +41,11 @@ const __dirname = getDirname(import.meta.url)
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   const plugins = [
+    themeDataPlugin({ themeData: themeConfig }),
     bulletinPopoverPlugin(),
     commentsPlugin(),
     pagePlugin(pages || [], themeConfig),
     gitPlugin(),
-    themeDataPlugin({ themeData: themeConfig }),
     searchPlugin({
       hotKeys: [{ key: 's', ctrl: true }],
     }),
