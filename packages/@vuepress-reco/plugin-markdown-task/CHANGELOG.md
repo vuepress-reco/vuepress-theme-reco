@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-rc.69
+
+### Patch Changes
+
+- Adapting vuepress@2.0.0-rc.0
+
 ## 2.0.0-beta.68
 
 ### Patch Changes

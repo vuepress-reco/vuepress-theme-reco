@@ -1,19 +1,20 @@
 {
   "mode": "exit",
-  "tag": "beta",
+  "tag": "rc",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.67",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-beta.67",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-beta.67",
-    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.67",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-beta.67",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.67",
-    "@vuepress-reco/shared": "2.0.0-beta.67",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.67",
-    "vuepress-theme-reco": "2.0.0-beta.67"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-beta.68",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-rc.0",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-rc.0",
+    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-beta.68",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-rc.0",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-beta.68",
+    "@vuepress-reco/shared": "2.0.0-beta.68",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-beta.68",
+    "vuepress-theme-reco": "2.0.0-rc.0"
   },
   "changesets": [
     "beige-radios-visit",
+    "bright-socks-wash",
     "brown-deers-juggle",
     "chatty-badgers-cheer",
     "chilled-tools-return",
