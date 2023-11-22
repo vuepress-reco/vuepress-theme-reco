@@ -48,7 +48,7 @@ The content of the announcement is displayed in the upper right corner of the pa
         body: [
           {
             type: 'text',
-            content: `🎉🎉🎉 The reco theme 2.x has been released in beta version, and there will be no major updates until the latest version is released.
+            content: `🎉🎉🎉 The reco theme 2.x has been released in RC version, and there will be no major updates until the latest version is released.
             Everyone can enjoy the early adopters, and I hope you will actively feedback the experience in the QQ group and GitHub, and I will respond as soon as possible.`,
             style: 'font-size: 12px;'
           },

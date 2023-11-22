@@ -3,31 +3,28 @@ export const bulletin = {
   body: [
     {
       type: 'title',
+      content: 'Latest',
+    },
+    {
+      type: 'text',
+      content: `
+      <div>
+        <div>vuepress@2.0.0-rc.0</div>
+        <div>vuepress-theme-reco@2.0.0-rc.1</div>
+      </div>`,
+      style: 'font-size: 12px;'
+    },
+    {
+      type: 'title',
       content: 'QQ Group',
     },
     {
       type: 'text',
       content: `
       <ul>
-        <li>Group 1：1037296104</li>
-        <li>Group 2：1061561395</li>
-        <li>Group 3：962687802</li>
-      </ul>`,
-      style: 'font-size: 12px;'
-    },
-    {
-      type: 'hr',
-    },
-    {
-      type: 'title',
-      content: 'GitHub',
-    },
-    {
-      type: 'text',
-      content: `
-      <ul>
-        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/issues">Issues<a/></li>
-        <li><a href="https://github.com/vuepress-reco/vuepress-theme-reco/discussions/1">Discussions<a/></li>
+        <li>QQ Group 1：1037296104</li>
+        <li>QQ Group 2：1061561395</li>
+        <li>QQ Group 3：962687802</li>
       </ul>`,
       style: 'font-size: 12px;'
     },

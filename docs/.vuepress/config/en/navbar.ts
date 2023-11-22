@@ -39,7 +39,7 @@ export const navbar = [
     icon: 'SubVolume',
     children: [
       {
-        text: '2.x(beta)',
+        text: '2.x(rc)',
         link: 'https://vuepress-theme-reco.recoluan.com/en/',
       },
       {
