@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-rc.3
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-rc.71
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-rc.3
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-rc.3
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-rc.71
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-rc.3
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-rc.71
+  - @vuepress-reco/shared@2.0.0-rc.71
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.71
+
 ## 2.0.0-rc.2
 
 ### Patch Changes
