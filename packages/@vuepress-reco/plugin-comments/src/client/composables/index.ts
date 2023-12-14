@@ -33,7 +33,7 @@ function useThemeLocaleData() {
   const router = useRouter()
   const routePath = computed(() => router.currentRoute.value.path)
   const routeLocale = computed(() =>
-    resolveLocalePath(themeData.value.locales, routePath.value),
+    resolveLocalePath(themeData.value.locales || {}, routePath.value),
   )
 
   const themeLocaleData = computed(() =>
