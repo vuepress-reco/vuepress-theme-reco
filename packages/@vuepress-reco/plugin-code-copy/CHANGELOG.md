@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.4
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+
 ## 2.0.0-rc.3
 
 ### Patch Changes

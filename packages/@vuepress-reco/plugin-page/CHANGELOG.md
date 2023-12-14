@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.4
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.72
+
 ## 2.0.0-rc.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.72
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+
 ## 2.0.0-rc.71
 
 ### Patch Changes
