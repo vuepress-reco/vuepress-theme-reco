@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-rc.70
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+
 ## 2.0.0-rc.69
 
 ### Patch Changes

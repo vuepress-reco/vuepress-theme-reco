@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-rc.2
+
+### Patch Changes
+
+- fix params error of resolveLocalePath
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.70
+
 ## 2.0.0-rc.1
 
 ### Patch Changes
