@@ -97,35 +97,10 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
   return {
     name: 'vuepress-theme-reco',
     onInitialized(app) {
-      if (themeConfig.primaryColor) {
-        tailwindcssConfig.theme.extend.colors.reco.primary = themeConfig.primaryColor as string
-      }
-
-      // todo @vuepress/bundler-webpack 适配问题
-      // app.options.bundler.name = '@vuepress/bundler-webpack'
-
-      const userConfig = resolveUserConfig(themeConfig)
-      // @ts-ignore
-      if (app.options.bundler.name === '@vuepress/bundler-vite') {
-        const options = defaultViteBundlerConfig()
-        const viteBundlerOptions = mergeViteBundlerConfig(options, userConfig)
-        // @ts-ignore
-        app.options.bundler = viteBundler(viteBundlerOptions)
-      } else {
-        // @ts-ignore
-        app.options.bundler = webpackBundler({
-          postcss: {
-            postcssOptions: {
-              plugins: [
-                ['tailwindcss', tailwindcssConfig],
-                ['autoprefixer', {}],
-                [require('tailwindcss/nesting')],
-                ['postcss-each'],
-              ],
-            },
-          },
-        })
-      }
+      _injectiBuilderOptionsOfRecoTheme(app, themeConfig)
+    },
+    onWatched(app) {
+      _injectiBuilderOptionsOfRecoTheme(app, themeConfig)
     },
     templateBuild: path.resolve(__dirname, '../../templates/index.build.html'),
     templateDev: path.resolve(__dirname, '../../templates/index.dev.html'),
@@ -150,5 +125,37 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     },
 
     plugins,
+  }
+}
+
+function _injectiBuilderOptionsOfRecoTheme(app, themeConfig) {
+  if (themeConfig.primaryColor) {
+    tailwindcssConfig.theme.extend.colors.reco.primary = themeConfig.primaryColor as string
+  }
+
+  // todo @vuepress/bundler-webpack 适配问题
+  // app.options.bundler.name = '@vuepress/bundler-webpack'
+
+  const userConfig = resolveUserConfig(themeConfig)
+  // @ts-ignore
+  if (app.options.bundler.name === '@vuepress/bundler-vite') {
+    const options = defaultViteBundlerConfig()
+    const viteBundlerOptions = mergeViteBundlerConfig(options, userConfig)
+    // @ts-ignore
+    app.options.bundler = viteBundler(viteBundlerOptions)
+  } else {
+    // @ts-ignore
+    app.options.bundler = webpackBundler({
+      postcss: {
+        postcssOptions: {
+          plugins: [
+            ['tailwindcss', tailwindcssConfig],
+            ['autoprefixer', {}],
+            [require('tailwindcss/nesting')],
+            ['postcss-each'],
+          ],
+        },
+      },
+    })
   }
 }

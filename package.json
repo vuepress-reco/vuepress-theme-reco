@@ -50,6 +50,8 @@
     "@types/node": "^17.0.42",
     "@types/unist": "^2.0.3",
     "@types/vfile": "^4.0.0",
+    "@vuepress-reco/shared": "workspace:*",
+    "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/client": "2.0.0-rc.0",
     "commitizen": "^4.1.2",
     "concurrently": "^6.0.0",
@@ -74,8 +76,6 @@
     "typescript": "5.2.2",
     "vue": "^3.3.8",
     "vuepress": "2.0.0-rc.0",
-    "vuepress-theme-reco": "workspace:*",
-    "@vuepress-reco/shared": "workspace:*",
-    "@vuepress-reco/tailwindcss-config": "workspace:*"
+    "vuepress-theme-reco": "workspace:*"
   }
 }
