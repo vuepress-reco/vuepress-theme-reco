@@ -10,7 +10,12 @@ reco 主题的 css 方案是 [tailwindcss 3.0](https://tailwindcss.com/docs/inst
 ## 示例
 
 :::: code-group
-::: code-group-item tailwindcss
+::: code-group-item tailwindcss in html
+```html
+<div class="bg-indigo-500">reco_luan</div>
+```
+:::
+::: code-group-item tailwindcss in css
 ```css
 ul {
   @apply flex items-center list-none;

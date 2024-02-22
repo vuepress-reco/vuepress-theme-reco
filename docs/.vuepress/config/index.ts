@@ -26,7 +26,6 @@ export const themeConfig = {
   docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
   docsBranch: 'main',
   docsDir: '/docs',
-  vuePreviewsDir: './docs/.vuepress/vue-previews',
   componentsDir: './docs/.vuepress/components',
   algolia: {
     appId: '38R2J3MTQC',

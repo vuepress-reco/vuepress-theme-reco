@@ -80,11 +80,11 @@ const bar = 'bar'
 
 虽然如此，我们以后绝对不会像有些父母一样，整天对你表达我们的不容易，或是向你诉说我们为你承受了什么痛苦、受了多少累，因为这是我们自主的选择，并且我认为家庭的压力绝对不是因为孩子，而是因为父母的选择。同时，你是你，一个独立的个体，在你形成真正的世界观和价值观之前，我和妈妈都要做的你引路者，而不只是客观的父母，我希望你能记住，你来到这个世界，就是要寻找你自己的意义，绝对不是继承父母的理想，也不是为了传宗接代，你仅代表你自己。我觉得中国的家族文化和其他传统文化，对于个性的压迫太过严重，我们的传统文化更倾向于培养中庸的人，虽然中庸也是一种高深的智慧，但我更希望你能找到自己的本心，成为一个有个性的智人，而个性，绝对不是外表，是由内而外的自由。
 
-@[code](./.vuepress/vue-previews/in.vue)
+@[code](./.vuepress/components/in.vue)
 
-@[preview-in](@/example/.vuepress/vue-previews/in.vue)
+@[preview-in](@/example/.vuepress/components/in.vue)
 
-@[preview](@/example/.vuepress/vue-previews/in.vue)
+@[preview](@/example/.vuepress/components/in.vue)
 
 [asd](https://abc)
 

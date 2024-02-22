@@ -10,7 +10,12 @@ The css scheme of the reco theme is [tailwindcss 3.0](https://tailwindcss.com/do
 ## Example
 
 :::: code-group
-::: code-group-item tailwindcss
+::: code-group-item tailwindcss in html
+```html
+<div class="bg-indigo-500">reco_luan</div>
+```
+:::
+::: code-group-item tailwindcss in css
 ````css
 ul {
    @apply flex items-center list-none;

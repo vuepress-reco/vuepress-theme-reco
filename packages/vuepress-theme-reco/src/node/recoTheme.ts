@@ -70,16 +70,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     externalLinkIconPlugin(),
     vuePreviewPlugin(),
     registerComponentsPlugin({
-      componentsDir: path.resolve(
-        process.cwd(),
-        themeConfig.vuePreviewsDir || './.vuepress/vue-previews'
-      ),
-    }),
-    registerComponentsPlugin({
-      componentsDir: path.resolve(
-        process.cwd(),
-        themeConfig.componentsDir || './.vuepress/components'
-      ),
+      componentsDir: path.join(process.cwd(), themeConfig.docsDir || '/', './.vuepress/components'),
     }),
     backToTopPlugin(),
     codeCopyPlugin(),

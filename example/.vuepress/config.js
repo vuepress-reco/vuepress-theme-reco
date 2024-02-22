@@ -106,7 +106,6 @@ export default defineUserConfig({
       tagText: '标签'
     },
     autoSetSeries: true,
-    vuePreviewsDir: './example/.vuepress/vue-previews',
     componentsDir: './example/.vuepress/components',
     bulletin: {
       body: [
