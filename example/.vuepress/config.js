@@ -50,9 +50,9 @@ export default defineUserConfig({
     logo: '/logo.png',
     authorAvatar: '/head.png',
     author: 'reco_luan',
-    docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
-    docsBranch: 'main',
-    docsDir: 'example',
+    gitRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
+    gitBranch: 'main',
+    sourceDir: 'example',
     lastUpdatedText: '',
     series: {
       '/group/': [

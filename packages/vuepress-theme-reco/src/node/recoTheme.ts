@@ -70,7 +70,7 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
     externalLinkIconPlugin(),
     vuePreviewPlugin(),
     registerComponentsPlugin({
-      componentsDir: path.join(process.cwd(), themeConfig.docsDir || '/', './.vuepress/components'),
+      componentsDir: path.join(process.cwd(), themeConfig.sourceDir || '/', './.vuepress/components'),
     }),
     backToTopPlugin(),
     codeCopyPlugin(),
@@ -125,7 +125,7 @@ function _injectiBuilderOptionsOfRecoTheme(app, themeConfig) {
   }
 
   tailwindcssConfig.content.push(
-    path.join(themeConfig.docsDir || '/', './.vuepress/components/*.(vue|html|js)'),
+    path.join(themeConfig.sourceDir || '/', './.vuepress/components/*.(vue|html|js)'),
   )
 
   // todo @vuepress/bundler-webpack 适配问题

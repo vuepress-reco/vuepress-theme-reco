@@ -17,6 +17,8 @@ export const series = {
       text: '主题配置',
       children: [
         'home',
+        'source-dir',
+        'git',
         'series',
         'navbar',
         'comments',

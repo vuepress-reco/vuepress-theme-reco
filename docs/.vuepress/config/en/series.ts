@@ -17,6 +17,8 @@ export const series = {
       text: 'Theme Configuration',
       children: [
         'home',
+        'source-dir',
+        'git',
         'series',
         'navbar',
         'comments',

@@ -15,19 +15,19 @@ export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {
 }
 
 export const resolveEditLink = ({
-  docsRepo,
-  docsBranch,
-  docsDir,
+  gitRepo,
+  gitBranch,
+  sourceDir,
   filePathRelative,
   editLinkPattern,
 }: {
-  docsRepo: string
-  docsBranch: string
-  docsDir: string
+  gitRepo: string
+  gitBranch: string
+  sourceDir: string
   filePathRelative: null | string
   editLinkPattern?: string
 }): string | null => {
-  const repoType = resolveRepoType(docsRepo)
+  const repoType = resolveRepoType(gitRepo)
 
   let pattern: string | undefined
 
@@ -42,41 +42,41 @@ export const resolveEditLink = ({
   return pattern
     .replace(
       /:repo/,
-      isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`
+      isLinkHttp(gitRepo) ? gitRepo : `https://github.com/${gitRepo}`
     )
-    .replace(/:branch/, docsBranch)
+    .replace(/:branch/, gitBranch)
     .replace(
       /:path/,
-      removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`)
+      removeLeadingSlash(`${removeEndingSlash(sourceDir)}/${filePathRelative}`)
     )
 }
 
 // export const resolveEditLink = ({
-//   docsRepo,
-//   docsBranch,
-//   docsDir,
+//   gitRepo,
+//   gitBranch,
+//   sourceDir,
 //   filePathRelative,
 //   editLinkPattern,
 // }: {
-//   docsRepo: string
-//   docsBranch: string
-//   docsDir: string
+//   gitRepo: string
+//   gitBranch: string
+//   sourceDir: string
 //   filePathRelative: string | null
 //   editLinkPattern?: string
 // }): string | null => {
 //   if (!filePathRelative) return null
 
-//   const pattern = resolveEditLinkPatterns({ docsRepo, editLinkPattern })
+//   const pattern = resolveEditLinkPatterns({ gitRepo, editLinkPattern })
 //   if (!pattern) return null
 
 //   return pattern
 //     .replace(
 //       /:repo/,
-//       isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`
+//       isLinkHttp(gitRepo) ? gitRepo : `https://github.com/${gitRepo}`
 //     )
-//     .replace(/:branch/, docsBranch)
+//     .replace(/:branch/, gitBranch)
 //     .replace(
 //       /:path/,
-//       removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`)
+//       removeLeadingSlash(`${removeEndingSlash(sourceDir)}/${filePathRelative}`)
 //     )
 // }
