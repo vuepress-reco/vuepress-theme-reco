@@ -133,6 +133,10 @@ function _injectiBuilderOptionsOfRecoTheme(app, themeConfig) {
     tailwindcssConfig.theme.extend.colors.reco.primary = themeConfig.primaryColor as string
   }
 
+  tailwindcssConfig.content.push(
+    path.join(themeConfig.docsDir || '/', './.vuepress/components/*.(vue|html|js)'),
+  )
+
   // todo @vuepress/bundler-webpack 适配问题
   // app.options.bundler.name = '@vuepress/bundler-webpack'
 
