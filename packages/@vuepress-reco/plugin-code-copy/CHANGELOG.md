@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.6
+
+### Patch Changes
+
+- fix the bug where tailwindcss could not work in vue template
+
 ## 2.0.0-rc.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-rc.74
+
+### Patch Changes
+
+- fix the bug where tailwindcss could not work in vue template
+
 ## 2.0.0-rc.73
 
 ### Patch Changes
