@@ -1,5 +1,5 @@
-import { path, getDirname } from '@vuepress/utils'
-import type { Plugin } from '@vuepress/core'
+import { path, getDirname } from 'vuepress/utils'
+import type { Plugin } from 'vuepress/core'
 import { readFileSync, readdirSync, writeFileSync } from 'fs'
 
 const __dirname = getDirname(import.meta.url)

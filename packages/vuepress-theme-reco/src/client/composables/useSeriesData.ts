@@ -1,5 +1,5 @@
 import { ref, computed, watch } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 import { useSeriesItems, usePageCatalog } from './index'
 
 export const useSeriesData: () => any = () => {

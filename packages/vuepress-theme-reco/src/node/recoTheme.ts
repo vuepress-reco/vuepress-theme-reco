@@ -10,7 +10,7 @@ import { gitPlugin } from '@vuepress/plugin-git'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
 import { palettePlugin } from '@vuepress/plugin-palette'
-import { path, fs, getDirname } from '@vuepress/utils'
+import { path, fs, getDirname } from 'vuepress/utils'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { searchPlugin } from '@vuepress/plugin-search'
@@ -24,7 +24,7 @@ import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
 import { webpackBundler } from '@vuepress/bundler-webpack'
-import type { Theme, Page } from '@vuepress/core'
+import type { Theme, Page } from 'vuepress/core'
 import {
   mergeViteBundlerConfig,
   defaultViteBundlerConfig,

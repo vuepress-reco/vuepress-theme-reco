@@ -1,5 +1,4 @@
-import { createPage } from '@vuepress/core'
-import type { App, Page } from '@vuepress/core'
+import { createPage, type App, type Page } from 'vuepress/core'
 import { isEmptyPlainObject, convertToPinyin } from '@vuepress-reco/shared'
 import {
   CategoryPageData,
@@ -84,9 +83,9 @@ export default class PageCreater {
       page.componentFilePathRelative = convertToPinyin(
         decodeURIComponent(page.componentFilePathRelative)
       )
-      page.dataFilePath = convertToPinyin(decodeURIComponent(page.dataFilePath))
-      page.dataFilePathRelative = convertToPinyin(
-        decodeURIComponent(page.dataFilePathRelative)
+      page.chunkFilePath = convertToPinyin(decodeURIComponent(page.chunkFilePath))
+      page.chunkFilePathRelative = convertToPinyin(
+        decodeURIComponent(page.chunkFilePathRelative)
       )
       page.htmlFilePath = convertToPinyin(decodeURIComponent(page.htmlFilePath))
       page.htmlFilePathRelative = convertToPinyin(

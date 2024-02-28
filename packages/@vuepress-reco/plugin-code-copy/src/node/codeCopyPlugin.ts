@@ -1,5 +1,5 @@
-import type { Plugin, App } from '@vuepress/core'
-import { path, getDirname } from '@vuepress/utils'
+import type { Plugin, App } from 'vuepress/core'
+import { path, getDirname } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url);
 

@@ -59,7 +59,7 @@ import { createOneColor, throttle } from '../../utils'
 import PostList from '../PostList.vue'
 import Pagation from '../Pagation.vue'
 import PersonalInfo from '../PersonalInfo.vue'
-import { useRouteLocale, withBase } from '@vuepress/client';
+import { useRouteLocale, withBase } from 'vuepress/client';
 import { useThemeLocaleData } from '../../composables';
 
 const { posts, categorySummary } = usePageData()

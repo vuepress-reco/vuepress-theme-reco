@@ -17,9 +17,20 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from 'vuepress/client'
 
-const frontmatter = usePageFrontmatter()
+const frontmatter = usePageFrontmatter<{
+  banner: {
+    tagline?: string
+    heroText?: string
+    buttons?: Array<Record<string, any>>
+    socialLinks?: Array<Record<string, any>>
+    heroImage?: string
+    heroImageStyle?: Record<string, string>
+    bgImage?: string
+    bgImageStyle?: Record<string, string>
+  }
+}>()
 
 const heroImage = computed(() => {
   return frontmatter.value?.banner?.heroImage
@@ -28,18 +39,23 @@ const heroImage = computed(() => {
 })
 
 const heroImageStyle = computed(
-  () => frontmatter.value.banner.heroImageStyle || {}
+  () => frontmatter.value?.banner?.heroImageStyle || {}
 )
 
-const bgImageStyle = computed(() => {
+const bgImageStyle = computed<Record<string, string>>(() => {
   const { bgImageStyle, bgImage } = frontmatter.value?.banner || {}
 
   const initBgImageStyle = bgImage ? {
     textAlign: 'center',
     overflow: 'hidden',
     background: `url(${withBase(bgImage)}) center/cover no-repeat`
-  } : {}
+  } : {
 
-  return bgImageStyle ? { ...initBgImageStyle, ...bgImageStyle } : initBgImageStyle
+    textAlign: 'center',
+    overflow: 'hidden',
+    background: ''
+  }
+
+  return bgImageStyle ? { ...initBgImageStyle, ...bgImageStyle } : { ...initBgImageStyle }
 })
 </script>

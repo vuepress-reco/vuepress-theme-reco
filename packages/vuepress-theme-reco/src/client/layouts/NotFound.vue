@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
-import { useRouteLocale, withBase } from '@vuepress/client';
+import { useRouteLocale } from 'vuepress/client';
 import Common from '../components/Common/index.vue'
 import { useThemeLocaleData } from '../composables';
 

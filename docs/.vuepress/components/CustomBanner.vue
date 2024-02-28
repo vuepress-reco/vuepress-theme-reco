@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from 'vuepress/client'
 import Link from 'vuepress-theme-reco/lib/client/components/Link.vue'
 import { createOneColor } from 'vuepress-theme-reco/lib/client/utils'
 

@@ -39,7 +39,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@vuepress/core": "2.0.0-rc.0",
     "markdown-it-task-lists": "2.1.1"
   }
 }

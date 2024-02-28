@@ -1,4 +1,4 @@
-import { usePageLang, withBase, usePageData  } from '@vuepress/client'
+import { usePageLang, withBase, usePageData  } from 'vuepress/client'
 import { Waline } from '@waline/client/dist/component'
 import { computed, defineComponent, h, toRefs } from 'vue'
 import { useRoute } from 'vue-router'
@@ -30,7 +30,7 @@ export default defineComponent({
     const { options } = toRefs(props)
     const lang = usePageLang()
     const pageData = usePageData();
-    
+
     const walineOption = computed(() => ({
       lang: lang.value || 'zh-CN',
       dark: 'html[class="dark"]',

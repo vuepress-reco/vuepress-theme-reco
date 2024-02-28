@@ -1,5 +1,5 @@
 import * as babel from '@babel/core'
-import { fs } from '@vuepress/utils'
+import { fs } from 'vuepress/utils'
 import * as types from '@babel/types'
 import traverse from '@babel/traverse'
 import babelPluginSyntaxJsx from '@babel/plugin-syntax-jsx'

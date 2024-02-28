@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import { onMounted, computed } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 
 import { useSeriesItems } from '../../composables'
 import Navbar from '../Navbar.vue'

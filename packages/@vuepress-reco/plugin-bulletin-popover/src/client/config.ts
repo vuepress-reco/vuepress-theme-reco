@@ -1,5 +1,5 @@
 import { defineComponent, h } from 'vue'
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig, type ClientConfig } from 'vuepress/client'
 
 import Bulletin from './components/Bulletin.vue'
 
@@ -11,4 +11,4 @@ export default defineClientConfig({
       return () => h(Bulletin)
     }),
   ],
-})
+}) as ClientConfig

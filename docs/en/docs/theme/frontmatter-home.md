@@ -174,6 +174,6 @@ footer: # footer module configuration
 When developing the front page module, you can get the `frontmatter` configuration by the following methods:
 
 ```js
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from 'vuepress/utils'
 const frontmatter = usePageFrontmatter()
 ```

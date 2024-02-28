@@ -30,7 +30,7 @@
 <script>
 import { defineComponent, computed } from 'vue'
 import { createOneColor } from '../utils'
-import { withBase, usePageFrontmatter } from '@vuepress/client'
+import { withBase, usePageFrontmatter } from 'vuepress/client'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 export default defineComponent({

@@ -1,6 +1,6 @@
 import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { resolveLocalePath } from '@vuepress/shared'
+import { resolveLocalePath } from 'vuepress/shared'
 import { useThemeData, resolveThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 export function useVisible() {

@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { usePageData } from '@vuepress/client'
+import { usePageData } from 'vuepress/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 import PageInfo from '../PageInfo.vue'
 import PageNav from '../PageNav.vue'

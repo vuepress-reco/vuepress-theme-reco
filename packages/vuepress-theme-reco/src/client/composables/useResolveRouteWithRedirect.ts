@@ -1,6 +1,6 @@
 import { useRouter } from 'vue-router'
 import type { Router } from 'vue-router'
-import { isFunction, isString } from '@vuepress/shared'
+import { isFunction, isString } from 'vuepress/shared'
 
 /**
  * Resolve a route with redirection
@@ -24,6 +24,7 @@ export const useResolveRouteWithRedirect = (
   return useResolveRouteWithRedirect({
     hash: route.hash,
     query: route.query,
+    // @ts-ignore
     params: route.params,
     ...resolvedRedirectObj,
   })

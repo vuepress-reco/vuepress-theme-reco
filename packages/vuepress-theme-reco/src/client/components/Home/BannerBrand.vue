@@ -33,11 +33,21 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from 'vuepress/client'
 import Link from '../Link.vue'
 import { createOneColor } from '../../utils'
 
-const frontmatter = usePageFrontmatter()
+const frontmatter = usePageFrontmatter<{
+  bannerBrand: {
+    heroImage?: string
+    buttons?: Array<Record<string, any>>
+    socialLinks?: Array<Record<string, any>>
+    heroImageStyle?: Record<string, any>
+    bgImage?: string
+    bgImageStyle?: Record<string, any>
+    [key: string]: any
+  }
+}>()
 
 const heroImage = computed(() => {
   return frontmatter.value?.bannerBrand?.heroImage
@@ -56,7 +66,7 @@ const socialLinks = computed(() =>
   }))
 
 const heroImageStyle = computed(
-  () => frontmatter.value.bannerBrand.heroImageStyle || {}
+  () => frontmatter.value?.bannerBrand?.heroImageStyle || {}
 )
 
 const bgImageStyle = computed(() => {

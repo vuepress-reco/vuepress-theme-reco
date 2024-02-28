@@ -21,6 +21,7 @@ export interface NavLink extends NavItem {
   icon?: string
   rel?: string
   target?: string
+  children?: Array<Record<string, any>>
 }
 
 /**
@@ -37,9 +38,7 @@ export type ResolvedNavbarItem = NavbarItem | NavGroup<ResolvedNavbarItem>
  * Series types
  */
 // user config
-export interface SeriesItem
-  extends NavLink,
-    NavGroup<NavLink | SeriesItem | string> {}
+export type SeriesItem = NavLink
 export interface SeriesGroup
   extends NavGroup<SeriesGroup | NavLink | SeriesItem | string> {}
 export type SeriesConfigArray = (SeriesGroup | SeriesItem | string)[]
@@ -48,5 +47,5 @@ export type SeriesConfig = SeriesConfigObject
 
 export interface ResolvedSeriesItem extends Partial<NavLink> {
   level?: number
-  children?: ResolvedSeriesItem[]
+  children?: any[]
 }

@@ -1,7 +1,7 @@
 import { inject } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
 import { useRoute } from 'vue-router'
-import { isPlainObject, isString, resolveLocalePath } from '@vuepress/shared'
+import { isPlainObject, isString, resolveLocalePath } from 'vuepress/shared'
 
 import type {
   RecoThemeData,
@@ -106,6 +106,7 @@ export const resolveArraySeriesItems = (
 
       return {
         ...item,
+        // @ts-ignore
         children: item.children.map(handleChildItem),
       }
     }

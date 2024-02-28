@@ -17,8 +17,8 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { usePageFrontmatter } from '@vuepress/client'
-import { isPlainObject, isString } from '@vuepress/shared'
+import { usePageFrontmatter } from 'vuepress/client'
+import { isPlainObject, isString } from 'vuepress/shared'
 import type {
   RecoThemeNormalPageFrontmatter,
   NavLink as NavLinkType,

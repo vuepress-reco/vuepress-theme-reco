@@ -1,6 +1,6 @@
 import { ref, watch, computed } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 
 export function usePageInfo() {
   const frontmatter = usePageFrontmatter()

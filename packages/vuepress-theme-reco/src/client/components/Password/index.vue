@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import { useSiteInfo, useHandlePassword } from './hook'
 import Footer from '../Home/Footer.vue'
 

@@ -1,4 +1,4 @@
-import { fs, path } from '@vuepress/utils'
+import { fs, path } from 'vuepress/utils'
 import { md } from './md-instance/index.js'
 import { analyzeDeps } from './analyze-deps/index.js'
 

@@ -1,4 +1,4 @@
-import { fs, path } from '@vuepress/utils'
+import { fs, path } from 'vuepress/utils'
 
 // 获取 reco.config.js 的绝对路径
 export const resolveRecoConfigPath = (

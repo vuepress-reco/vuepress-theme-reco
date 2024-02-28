@@ -34,7 +34,10 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 
-const frontmatter = usePageFrontmatter()
+const frontmatter = usePageFrontmatter<{
+  modules?: [string],
+  [key: string]: unknown
+}>()
 </script>

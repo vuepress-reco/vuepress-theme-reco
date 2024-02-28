@@ -1,4 +1,4 @@
-import type { Plugin, App } from '@vuepress/core'
+import type { Plugin, App } from 'vuepress/core'
 import taskLists from 'markdown-it-task-lists'
 
 export const markdownTaskPlugin = (): ((app: App) => Plugin) => {

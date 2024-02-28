@@ -1,5 +1,5 @@
-import type { Plugin, App } from '@vuepress/core'
-import { path, getDirname } from '@vuepress/utils'
+import type { Plugin, App } from 'vuepress/core'
+import { path, getDirname } from 'vuepress/utils'
 import type { PagePluginOptions } from '../types'
 import PageCreater from './PageCreater.js'
 

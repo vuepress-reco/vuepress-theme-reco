@@ -1,4 +1,4 @@
-import { PageFrontmatter } from '@vuepress/client'
+import { PageFrontmatter } from 'vuepress/client'
 
 export type CategoryPageOptions = {
   type: 'category'

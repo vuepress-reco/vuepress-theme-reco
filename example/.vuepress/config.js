@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import recoTheme from 'vuepress-theme-reco'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   locales: {
@@ -16,6 +17,10 @@ export default defineUserConfig({
       description: '英文描述',
     },
   },
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   theme: recoTheme({
     locales: {
       '/': {

@@ -37,12 +37,11 @@
   },
   "dependencies": {
     "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/core": "2.0.0-rc.0",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.0",
-    "@vuepress/shared": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
-    "vue": "^3.3.8",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.15",
+    "vue": "^3.4.19",
     "vue-router": "^4.2.5"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-rc.8"
   }
 }

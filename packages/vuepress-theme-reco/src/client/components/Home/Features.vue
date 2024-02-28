@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { computed, ComputedRef } from 'vue';
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 
 const frontmatter = usePageFrontmatter()
 

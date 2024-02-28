@@ -1,4 +1,4 @@
-import { fs, path } from '@vuepress/utils'
+import { fs, path } from 'vuepress/utils'
 import * as resolve from 'enhanced-resolve'
 import slash from 'slash2'
 

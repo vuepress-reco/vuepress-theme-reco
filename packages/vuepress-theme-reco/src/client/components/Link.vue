@@ -34,8 +34,8 @@
 import { computed, defineComponent, toRefs } from 'vue'
 import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSiteLocaleData, useRouteLocale } from '@vuepress/client'
-import { isLinkHttp, isLinkWithProtocol } from '@vuepress/shared'
+import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
+import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
 import type { NavLink } from '../../types'
 import { useThemeLocaleData } from '../composables'
 

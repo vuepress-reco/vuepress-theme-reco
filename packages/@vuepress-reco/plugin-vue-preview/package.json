@@ -41,11 +41,12 @@
     "@babel/traverse": "^7.16.10",
     "@babel/types": "^7.16.8",
     "@vue/compiler-sfc": "^3.2.29",
-    "@vuepress/core": "2.0.0-rc.0",
-    "@vuepress/markdown": "2.0.0-rc.0",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.0",
-    "@vuepress/utils": "2.0.0-rc.0",
+    "@vuepress/markdown": "2.0.0-rc.8",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.15",
     "enhanced-resolve": "^5.8.3",
     "slash2": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-rc.8"
   }
 }

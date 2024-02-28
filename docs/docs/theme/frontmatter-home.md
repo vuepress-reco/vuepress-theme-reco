@@ -171,6 +171,6 @@ footer: # 底部模块的配置
 开发首页模块时，可以通过下面方法去获得 frontmatter 配置：
 
 ```js
-import { usePageFrontmatter, withBase } from '@vuepress/client'
+import { usePageFrontmatter, withBase } from 'vuepress/utils'
 const frontmatter = usePageFrontmatter()
 ```

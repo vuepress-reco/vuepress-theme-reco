@@ -31,7 +31,7 @@ import {
   usePageData,
   usePageFrontmatter,
   useSiteLocaleData,
-} from '@vuepress/client'
+} from 'vuepress/client'
 import type {
   RecoThemePageData,
   RecoThemeNormalPageFrontmatter,

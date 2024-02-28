@@ -1,5 +1,5 @@
 import { computed, provide } from 'vue'
-import { usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from 'vuepress/client'
 import {
   resolveSeriesItems,
   seriesItemsSymbol,

@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 import { defineComponent, computed, ref, onMounted } from 'vue'
-import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
+import { useRouteLocale, useSiteLocaleData, withBase } from 'vuepress/client'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
 import { useThemeLocaleData, useSeriesItems } from '../composables'

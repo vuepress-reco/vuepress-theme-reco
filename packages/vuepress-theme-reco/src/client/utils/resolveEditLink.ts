@@ -2,7 +2,7 @@ import {
   isLinkHttp,
   removeLeadingSlash,
   removeEndingSlash,
-} from '@vuepress/shared'
+} from 'vuepress/shared'
 import { resolveRepoType } from './resolveRepoType'
 import type { RepoType } from './resolveRepoType'
 

@@ -52,7 +52,7 @@
     "@types/vfile": "^4.0.0",
     "@vuepress-reco/shared": "workspace:*",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/client": "2.0.0-rc.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.8",
     "commitizen": "^4.1.2",
     "concurrently": "^6.0.0",
     "conventional-changelog-cli": "^2.0.34",
@@ -74,8 +74,8 @@
     "stylelint-config-standard": "^22.0.0",
     "ts-jest": "^26.4.4",
     "typescript": "5.2.2",
-    "vue": "^3.3.8",
-    "vuepress": "2.0.0-rc.0",
+    "vue": "^3.4.19",
+    "vuepress": "2.0.0-rc.8",
     "vuepress-theme-reco": "workspace:*"
   }
 }

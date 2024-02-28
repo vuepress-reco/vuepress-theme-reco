@@ -1,4 +1,4 @@
-import { usePageLang  } from '@vuepress/client'
+import { usePageLang  } from 'vuepress/client'
 import Giscus, { GiscusProps } from '@giscus/vue';
 import { PropType, computed, defineComponent, h, onMounted, ref, toRefs } from 'vue'
 
@@ -44,7 +44,7 @@ export default defineComponent({
         attributes: true,
       })
       fn()
-    }) 
+    })
     const giscusOption = computed(() => ({
       lang: lang.value || 'zh-CN',
       host: 'https://giscus.app',
