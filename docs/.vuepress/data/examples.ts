@@ -1,5 +1,11 @@
 export default [
    {
+      name: '超炫之家',
+      desc: '致敬大师，致敬未来的你！',
+      link: 'https://www.caochaochao.cn/',
+      thumbnail: 'https://minio.caochaochao.cn/superc/home.png'
+  },
+  {
     thumbnail: "https://avatars.githubusercontent.com/u/87223862?v=4",
     link: "https://zzh.4everland.website/",
     avator: "https://vue3-xiao-admin.4everland.app/static/png/logo-22eeabbe.png"
