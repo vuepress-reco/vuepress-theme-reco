@@ -19,11 +19,11 @@ import { useRouter } from 'vue-router'
 import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { isString } from 'vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
-import { useNavLink } from '../composables/index'
+import { useNavLink } from '../composables/index.js'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { convertToPinyin } from '@vuepress-reco/shared'
-import { resolveRepoType } from '../utils'
+import { resolveRepoType } from '../utils/index.js'
 import DropdownLink from './DropdownLink.vue'
 import Link from './Link.vue'
 
@@ -135,10 +135,11 @@ const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
 }
 
 const resolveNavbarItem = (
-  item: NavbarItem | NavbarGroup | string
+  item: NavbarItem | NavbarGroup | string,
+  router
 ): ResolvedNavbarItem => {
   if (isString(item)) {
-    return useNavLink(item)
+    return useNavLink(item, router)
   }
   if ((item as NavbarGroup).children) {
     return {

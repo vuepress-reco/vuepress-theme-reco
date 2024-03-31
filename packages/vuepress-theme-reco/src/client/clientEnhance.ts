@@ -1,5 +1,5 @@
-import { registerGlobalComponents, resolveSearchComponent } from './utils'
-import './utils/resolveStyles'
+import { registerGlobalComponents, resolveSearchComponent } from './utils/index.js'
+import './utils/resolveStyles.js'
 
 export function applyClientEnhance({ app }) {
   registerGlobalComponents(app)

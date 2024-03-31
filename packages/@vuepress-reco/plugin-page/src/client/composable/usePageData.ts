@@ -18,12 +18,12 @@ export function usePageData(): Record<string, any> {
     throw new Error('useSiteLocaleData() is called without provider.')
   }
 
-  const { currentRoute } = useRouter()
+  const router = useRouter()
 
   const categoryPosts = computed(() => {
     return (
       (categoryPaginationPosts as Record<string, any>)[
-        currentRoute.value.path
+        router.currentRoute.value.path
       ] || {}
     )
   })

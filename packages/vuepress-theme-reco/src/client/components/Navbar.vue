@@ -22,10 +22,10 @@ import { defineComponent, computed, ref, onMounted } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from 'vuepress/client'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import NavbarLinks from './NavbarLinks.vue'
-import { useThemeLocaleData, useSeriesItems } from '../composables'
+import { useThemeLocaleData, useSeriesItems } from '../composables/index.js'
 import Xicons from './global/Xicons.vue'
 import SiteBrand from './SiteBrand.vue'
-import { throttle } from '../utils'
+import { throttle } from '../utils/index.js'
 
 const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()

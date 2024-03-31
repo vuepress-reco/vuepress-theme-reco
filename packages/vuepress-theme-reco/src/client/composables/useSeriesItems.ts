@@ -1,6 +1,6 @@
 import { inject } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
-import { useRoute } from 'vue-router'
+import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
 import { isPlainObject, isString, resolveLocalePath } from 'vuepress/shared'
 
 import type {
@@ -12,9 +12,9 @@ import type {
   SeriesItem,
 } from '../../types'
 
-import { useNavLink } from './useNavLink'
+import { useNavLink } from './useNavLink.js'
 
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 
 export interface NavItem {
   text: string
@@ -54,7 +54,7 @@ export const useSeriesItems = (): SeriesItemsRef => {
 export const resolveSeriesItems = (
   frontmatter: RecoThemeNormalPageFrontmatter,
   themeLocal: RecoThemeData,
-  series: SeriesConfigObject
+  route: RouteLocationNormalizedLoaded
 ): ResolvedSeriesItem[] => {
   const { series: autoSeries } = usePageData()
   // get series config from frontmatter > themeConfig
@@ -73,7 +73,7 @@ export const resolveSeriesItems = (
   }
 
   if (isPlainObject(seriesConfig)) {
-    return resolveMultiSeriesItems(seriesConfig)
+    return resolveMultiSeriesItems(seriesConfig, route)
   }
 
   return []
@@ -83,14 +83,15 @@ export const resolveSeriesItems = (
  * Resolve series items if the config is an array
  */
 export const resolveArraySeriesItems = (
-  seriesConfig: SeriesConfigArray
+  seriesConfig: SeriesConfigArray,
+  router
 ): ResolvedSeriesItem[] => {
   const handleChildItem = (
     item: ResolvedSeriesItem | SeriesGroup | SeriesItem | string
   ): ResolvedSeriesItem => {
     let childItem: ResolvedSeriesItem
     if (isString(item)) {
-      childItem = useNavLink(item)
+      childItem = useNavLink(item, router)
     } else {
       childItem = item as ResolvedSeriesItem
     }
@@ -101,7 +102,7 @@ export const resolveArraySeriesItems = (
   return seriesConfig.map(
     (item): ResolvedSeriesItem => {
       if (isString(item)) {
-        return useNavLink(item)
+        return useNavLink(item, router)
       }
 
       return {
@@ -117,14 +118,14 @@ export const resolveArraySeriesItems = (
  * Resolve series items if the config is a key -> value (path-prefix -> array) object
  */
 export const resolveMultiSeriesItems = (
-  seriesConfig: SeriesConfigObject
+  seriesConfig: SeriesConfigObject,
+  route: RouteLocationNormalizedLoaded
 ): ResolvedSeriesItem[] => {
-  const route = useRoute()
   const seriesPath = resolveLocalePath(
     seriesConfig,
     decodeURIComponent(route.path)
   )
   const matchedSeriesConfig = seriesConfig[seriesPath] ?? []
 
-  return resolveArraySeriesItems(matchedSeriesConfig)
+  return resolveArraySeriesItems(matchedSeriesConfig, route)
 }

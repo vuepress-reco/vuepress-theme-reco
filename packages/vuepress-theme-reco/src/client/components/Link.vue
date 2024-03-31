@@ -37,7 +37,7 @@ import { useRoute } from 'vue-router'
 import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
 import type { NavLink } from '../../types'
-import { useThemeLocaleData } from '../composables'
+import { useThemeLocaleData } from '../composables/index.js'
 
 export default defineComponent({
   name: 'Link',

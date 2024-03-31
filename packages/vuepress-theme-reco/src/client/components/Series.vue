@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { useSeriesItems, useSortSeries } from '../composables'
-import { SeriesItem } from './SeriesItem'
+import { useSeriesItems, useSortSeries } from '../composables/index.js'
+import { SeriesItem } from './SeriesItem.js'
 import SiteBrand from './SiteBrand.vue'
 
 const themeLocal = useThemeLocaleData()

@@ -13,6 +13,8 @@ const props = defineProps(['component'])
 
 <style>
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 .vue-preview-container {
   @apply relative my-6 overflow-hidden bg-block border-block;

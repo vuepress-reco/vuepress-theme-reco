@@ -1,6 +1,6 @@
 import { defineComponent, h, onMounted, onUpdated, toRefs } from 'vue'
 import { pageviewCount } from '@waline/client'
-import { useComment } from '../composables'
+import { useComment } from '../composables/index.js'
 import { useRoute } from 'vue-router'
 export default defineComponent({
   name: 'WalineViews',

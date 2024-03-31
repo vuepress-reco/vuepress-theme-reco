@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { MagicCard } from './global';
+import { MagicCard } from './global/index.js';
 
 const themeLocal = useThemeLocaleData()
 

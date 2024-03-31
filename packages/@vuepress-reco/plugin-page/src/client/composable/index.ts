@@ -1,1 +1,1 @@
-export * from './usePageData'
+export * from './usePageData.js'

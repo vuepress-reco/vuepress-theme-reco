@@ -1,6 +1,7 @@
 import { defineUserConfig } from 'vuepress'
 import recoTheme from 'vuepress-theme-reco'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { webpackBundler } from '@vuepress/bundler-webpack'
 
 export default defineUserConfig({
   locales: {
@@ -17,10 +18,7 @@ export default defineUserConfig({
       description: '英文描述',
     },
   },
-  bundler: viteBundler({
-    viteOptions: {},
-    vuePluginOptions: {},
-  }),
+  bundler: webpackBundler({}),
   theme: recoTheme({
     locales: {
       '/': {
@@ -161,5 +159,5 @@ export default defineUserConfig({
     password: ['14e1b600b1fd579f47433b88e8d85291'],
     // primaryColor: '#3aa675',
   }),
-  debug: true,
+  // debug: true,
 })

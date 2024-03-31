@@ -1,7 +1,7 @@
 import { ref, watch, computed } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
 import { useSiteLocaleData } from 'vuepress/client'
-import { useThemeLocaleData } from '../../composables'
+import { useThemeLocaleData } from '../../composables/index.js'
 
 export function useSiteInfo() {
   const siteLocale = useSiteLocaleData()

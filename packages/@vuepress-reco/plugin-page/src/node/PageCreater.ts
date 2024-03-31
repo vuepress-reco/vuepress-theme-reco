@@ -253,7 +253,7 @@ export default class PageCreater {
 
         Array.from({ length: totalPage }).forEach((item, currentPage) => {
           const page = createPage(this.app, {
-            path: `/${key}/${convertToPinyin(removeEmptyString(value))}/${currentPage + 1}/`,
+            path: `/${key}/${convertToPinyin(removeEmptyString(value))}/${currentPage + 1}.html`,
             frontmatter: { layout },
           })
           this._extendedPages.push(page)
@@ -268,8 +268,8 @@ export default class PageCreater {
 
     Array.from({ length: totalPages }).map((item, index) => {
       const page = createPage(this.app, {
-        path: `/posts/${index + 1}/`,
-        frontmatter: { layout: 'Post' },
+        path: `/posts/${index + 1}.html`,
+        frontmatter: { layout: 'Posts' },
       })
       this._extendedPages.push(page)
     })
@@ -357,7 +357,7 @@ export default class PageCreater {
           (prev: Record<string, CategoryPaginationPost>, current, index) => {
             const currentPage = index + 1
 
-            prev[`/${key}/${value}/${currentPage}/`] = {
+            prev[`/${key}/${value}/${currentPage}.html`] = {
               pageSize,
               totalPage: pages.length,
               currentPage,

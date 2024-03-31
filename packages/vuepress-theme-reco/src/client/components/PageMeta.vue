@@ -38,7 +38,7 @@ import type {
   NavLink as NavLinkType,
 } from '../../types'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { resolveEditLink } from '../utils'
+import { resolveEditLink } from '../utils/index.js'
 import Link from './Link.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {

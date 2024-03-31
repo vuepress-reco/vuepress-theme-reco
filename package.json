@@ -53,6 +53,7 @@
     "@vuepress-reco/shared": "workspace:*",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/bundler-vite": "2.0.0-rc.8",
+    "@vuepress/bundler-webpack": "2.0.0-rc.8",
     "commitizen": "^4.1.2",
     "concurrently": "^6.0.0",
     "conventional-changelog-cli": "^2.0.34",

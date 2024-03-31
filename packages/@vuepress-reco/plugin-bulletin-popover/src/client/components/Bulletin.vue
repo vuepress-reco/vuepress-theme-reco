@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { useVisible, useHandleNodes } from './hook'
+import { useVisible, useHandleNodes } from './hook.js'
 
 const { visible, bulletin, closeBulletinPopover } = useVisible()
 const { bodyNodes } = useHandleNodes()

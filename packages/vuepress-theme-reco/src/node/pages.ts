@@ -2,27 +2,27 @@ export const pages = [
   {
     type: 'category',
     frontmatterKey: 'categories',
-    path: '/categories/',
+    path: '/categories.html',
     layout: 'Categories',
     pagination: 10,
   },
   {
     type: 'category',
     frontmatterKey: 'tags',
-    path: '/tags/',
+    path: '/tags.html',
     layout: 'Categories',
     pagination: 10,
   },
   {
-    path: '/timeline',
+    path: '/timeline.html',
     layout: 'Timeline',
   },
   {
-    path: '/posts',
+    path: '/posts.html',
     layout: 'Posts',
   },
   {
-    path: '/friendship-link',
+    path: '/friendship-link.html',
     layout: 'FriendshipLink',
   },
 ]

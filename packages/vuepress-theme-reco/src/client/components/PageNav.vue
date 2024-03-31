@@ -24,21 +24,22 @@ import type {
   NavLink as NavLinkType,
   ResolvedSeriesItem,
 } from '../../types'
-import { useNavLink, useSeriesItems } from '../composables'
+import { useNavLink, useSeriesItems } from '../composables/index.js'
 import Link from './Link.vue'
 
 /**
  * Resolve `prev` or `next` config from frontmatter
  */
 const resolveFromFrontmatterConfig = (
-  conf: unknown
+  conf: unknown,
+  router
 ): null | false | NavLinkType => {
   if (conf === false) {
     return null
   }
 
   if (isString(conf)) {
-    return useNavLink(conf)
+    return useNavLink(conf, router)
   }
 
   if (isPlainObject<NavLinkType>(conf)) {
@@ -93,7 +94,7 @@ export default defineComponent({
     const router = useRouter()
 
     const prevNavLink = computed(() => {
-      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev)
+      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev, router)
       if (prevConfig !== false) {
         return prevConfig
       }
@@ -102,7 +103,7 @@ export default defineComponent({
     })
 
     const nextNavLink = computed(() => {
-      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next)
+      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next, router)
       if (nextConfig !== false) {
         return nextConfig
       }

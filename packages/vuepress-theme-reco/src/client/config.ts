@@ -1,10 +1,10 @@
 import { Component } from 'vue';
 import { defineClientConfig, type ClientConfig } from 'vuepress/client'
 
-import { applyClientSetup } from './clientSetup'
-import { applyClientEnhance } from './clientEnhance'
+import { applyClientSetup } from './clientSetup.js'
+import { applyClientEnhance } from './clientEnhance.js'
 
-import * as layouts from './layouts'
+import * as layouts from './layouts/index.js'
 
 export default defineClientConfig({
   enhance(...args) {

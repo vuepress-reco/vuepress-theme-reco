@@ -29,7 +29,7 @@ import PageInfo from '../PageInfo.vue'
 import PageNav from '../PageNav.vue'
 import PageMeta from '../PageMeta.vue'
 import Password from '../PagePassword/index.vue'
-import { usePassword } from './hook'
+import { usePassword } from './hook.js'
 
 const pageData = usePageData()
 const { options } = useComment()

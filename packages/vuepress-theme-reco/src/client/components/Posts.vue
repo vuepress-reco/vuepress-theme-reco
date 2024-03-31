@@ -11,12 +11,12 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { useRoute, useRouter } from 'vue-router'
 import PostList from './PostList.vue'
 import Pagation from './Pagation.vue'
 import { useRouteLocale, withBase } from 'vuepress/client';
-import { useThemeLocaleData } from '../composables';
+import { useThemeLocaleData } from '../composables/index.js';
 
 const { posts } = usePageData()
 
@@ -44,8 +44,8 @@ if (!__VUEPRESS_SSR__) {
   handlePagation = (page) => {
     currentPage.value = page
 
-    const homeHref = withBase('/posts/')
-    router.push(page > 1 ? `${homeHref}?page=${page}` : homeHref)
+    const homeHref = withBase('/posts')
+    router.push(page > 1 ? `${homeHref}/${page}.html` : `${homeHref}.html`)
 
     setTimeout(() => {
       if (blogContentTop.value === 0) {

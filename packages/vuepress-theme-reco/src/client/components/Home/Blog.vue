@@ -53,14 +53,14 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable'
+import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { useRoute, useRouter } from 'vue-router'
-import { createOneColor, throttle } from '../../utils'
+import { createOneColor, throttle } from '../../utils/index.js'
 import PostList from '../PostList.vue'
 import Pagation from '../Pagation.vue'
 import PersonalInfo from '../PersonalInfo.vue'
 import { useRouteLocale, withBase } from 'vuepress/client';
-import { useThemeLocaleData } from '../../composables';
+import { useThemeLocaleData } from '../../composables/index.js';
 
 const { posts, categorySummary } = usePageData()
 

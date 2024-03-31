@@ -1,5 +1,5 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import type { NavLink, SeriesConfig } from './nav'
+import type { NavLink, SeriesConfig } from './nav.js'
 
 export interface RecoThemePageData extends GitPluginPageData {
   filePathRelative: string | null

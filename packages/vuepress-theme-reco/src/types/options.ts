@@ -1,6 +1,6 @@
 import type { LocaleData } from 'vuepress/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
-import type { NavbarConfig, SeriesConfig } from './nav'
+import type { NavbarConfig, SeriesConfig } from './nav.js'
 
 export type RecoThemeData = ThemeData<RecoThemeLocaleData>
 

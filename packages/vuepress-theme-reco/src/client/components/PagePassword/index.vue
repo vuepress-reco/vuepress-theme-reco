@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { usePageInfo, useHandlePassword } from './hook'
+import { usePageInfo, useHandlePassword } from './hook.js'
 
 
 const emit = defineEmits(['pass'])

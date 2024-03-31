@@ -9,7 +9,7 @@ import { watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Common from '../components/Common/index.vue'
 import Posts from '../components/Posts.vue'
-import { useMagicCard } from '../composables'
+import { useMagicCard } from '../composables/index.js'
 
 const { initMagicCard } = useMagicCard()
 onMounted(() => {

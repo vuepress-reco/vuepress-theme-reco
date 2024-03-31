@@ -4,7 +4,7 @@ import {
   categorySummarySymbol,
   postsSymbol,
   seriesSymbol,
-} from './composable'
+} from './composable/index.js'
 
 declare const __POSTS__: Record<string, any[]>
 declare const __SERIES__: Record<string, any>

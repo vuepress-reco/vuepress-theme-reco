@@ -1,8 +1,8 @@
 import { defineComponent, h, toRefs } from 'vue'
-import { useComment } from '../composables'
-import Valine from './Valine'
-import Waline from './Waline'
-import Giscus from './Giscus'
+import { useComment } from '../composables/index.js'
+import Valine from './Valine.js'
+import Waline from './Waline.js'
+import Giscus from './Giscus.js'
 
 export default defineComponent({
   name: 'RecoComments',

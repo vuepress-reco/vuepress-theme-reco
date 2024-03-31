@@ -1,5 +1,5 @@
 import { ref, onMounted } from 'vue'
-import { throttle } from '../utils'
+import { throttle } from '../utils/index.js'
 
 const direction = ref('')
 

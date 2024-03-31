@@ -37,6 +37,12 @@ import type { RecoThemePageData } from '../types/page'
 
 import { pages } from './pages.js'
 
+import postcssImport from 'postcss-import'
+import tailwindcssNesting from 'tailwindcss/nesting/index.js'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
+import postcssEach from 'postcss-each'
+
 const __dirname = getDirname(import.meta.url)
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
@@ -141,13 +147,20 @@ function _injectiBuilderOptionsOfRecoTheme(app, themeConfig) {
   } else {
     // @ts-ignore
     app.options.bundler = webpackBundler({
+      chainWebpack: config => {
+        // 修改 resolve.extensions
+        config.resolve.extensions
+          .merge(['.js', '.vue']) // 添加一个新的扩展名
+          .end();
+      },
       postcss: {
         postcssOptions: {
           plugins: [
-            ['tailwindcss', tailwindcssConfig],
-            ['autoprefixer', {}],
-            [require('tailwindcss/nesting')],
-            ['postcss-each'],
+          postcssImport,
+          tailwindcssNesting,
+          tailwindcss(tailwindcssConfig as any),
+          autoprefixer({}),
+          postcssEach
           ],
         },
       },

@@ -1,7 +1,7 @@
 import { useRouter, useRoute } from 'vue-router'
 import { watch, ref, onMounted, onUnmounted, toRefs } from 'vue'
-import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn'
-import { useScrollDirection, useThemeLocaleData } from '../../composables'
+import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/lib/client/composables/initCopyBtn.js'
+import { useScrollDirection, useThemeLocaleData } from '../../composables/index.js'
 
 export function useSeries(toggleSeries, toggleMobileMenus) {
   // close series after navigation
