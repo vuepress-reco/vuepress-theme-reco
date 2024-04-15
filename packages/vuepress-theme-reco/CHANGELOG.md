@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-rc.7
+
+### Patch Changes
+
+- adapt to vuepress@2.0.0-rc.8
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-rc.75
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-rc.7
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-rc.7
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-rc.75
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-rc.7
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-rc.75
+  - @vuepress-reco/shared@2.0.0-rc.75
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.75
+
 ## 2.0.0-rc.6
 
 ### Patch Changes

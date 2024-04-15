@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.75
+
+### Patch Changes
+
+- adapt to vuepress@2.0.0-rc.8
+
 ## 2.0.0-rc.74
 
 ### Patch Changes

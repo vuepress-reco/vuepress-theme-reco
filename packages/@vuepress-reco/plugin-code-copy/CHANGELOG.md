@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.7
+
+### Patch Changes
+
+- adapt to vuepress@2.0.0-rc.8
+
 ## 2.0.0-rc.6
 
 ### Patch Changes
