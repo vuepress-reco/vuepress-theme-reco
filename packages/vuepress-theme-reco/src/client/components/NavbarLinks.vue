@@ -21,7 +21,7 @@ import { isString } from 'vuepress/shared'
 import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
 import { useNavLink } from '../composables/index.js'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { resolveRepoType } from '../utils/index.js'
 import DropdownLink from './DropdownLink.vue'
@@ -152,7 +152,7 @@ const resolveNavbarItem = (
 
 const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const themeLocal = useThemeLocaleData()
-  const { categorySummary } = usePageData()
+  const { categorySummary } = useExtendPageData()
 
   const parseCategories = computed(() => {
     return [

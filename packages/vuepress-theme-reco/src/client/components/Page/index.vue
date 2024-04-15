@@ -31,19 +31,19 @@ import PageMeta from '../PageMeta.vue'
 import Password from '../PagePassword/index.vue'
 import { usePassword } from './hook.js'
 
-const pageData = usePageData()
+const page = usePageData()
 const { options } = useComment()
 const { pageLoaded, pagePasswordPass, setedPagePassword, handlePass } = usePassword()
 
 const title = computed(
-  () => pageData?.value?.frontmatter?.title
-    || pageData?.value?.title
+  () => page?.value?.frontmatter?.title
+    || page?.value?.title
     || ''
 )
 
 // 是否显示评论
 const shouldHideComments = computed(() => {
-  const { hideComments: hideCommentsInSinglePage } = pageData?.value?.frontmatter
+  const { hideComments: hideCommentsInSinglePage } = page?.value?.frontmatter
   const { hideComments: hideCommentsInAllPage } = options.value
 
   return hideCommentsInSinglePage === true

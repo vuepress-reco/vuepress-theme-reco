@@ -14,8 +14,6 @@ import type {
 
 import { useNavLink } from './useNavLink.js'
 
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
-
 export interface NavItem {
   text: string
   ariaLabel?: string
@@ -54,9 +52,9 @@ export const useSeriesItems = (): SeriesItemsRef => {
 export const resolveSeriesItems = (
   frontmatter: RecoThemeNormalPageFrontmatter,
   themeLocal: RecoThemeData,
-  route: RouteLocationNormalizedLoaded
+  route: RouteLocationNormalizedLoaded,
+  autoSeries
 ): ResolvedSeriesItem[] => {
-  const { series: autoSeries } = usePageData()
   // get series config from frontmatter > themeConfig
   let seriesConfig = themeLocal.series ?? {}
 

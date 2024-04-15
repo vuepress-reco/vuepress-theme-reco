@@ -37,7 +37,7 @@
 import { defineComponent, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import PostList from '../components/PostList.vue'
 import Common from '../components/Common/index.vue'
@@ -51,7 +51,7 @@ export default defineComponent({
     const {
       categoryPosts,
       categorySummary
-    } = usePageData()
+    } = useExtendPageData()
     const router = useRouter()
 
     const categoryList = computed(() => {

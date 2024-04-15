@@ -23,10 +23,10 @@ import { computed, onMounted, ref, watch } from "vue";
 import Common from '../components/Common/index.vue'
 
 
-import { usePageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import { formatISODate } from '../utils/other.js'
 
-const { posts } = usePageData()
+const { posts } = useExtendPageData()
 
 const dataMap: {
   [key: string]: Array<any>

@@ -1,4 +1,4 @@
-import { computed, provide } from 'vue'
+import { provide } from 'vue'
 import {
   categoryPaginationPostsSymbol,
   categorySummarySymbol,

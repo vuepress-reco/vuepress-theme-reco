@@ -1,5 +1,6 @@
 import { computed, provide } from 'vue'
 import { usePageFrontmatter, useRoute, usePageData } from 'vuepress/client'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
 import {
   resolveSeriesItems,
   seriesItemsSymbol,
@@ -16,9 +17,8 @@ export function applyClientSetup() {
   const themeLocal = useThemeLocaleData()
   const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
   const route =  useRoute()
-  const seriesItems = computed(() =>{
-    return resolveSeriesItems(frontmatter.value, themeLocal.value, route)
-  })
+  const { series } = useExtendPageData()
+  const seriesItems = computed(() => resolveSeriesItems(frontmatter.value, themeLocal.value, route, series))
   provide(seriesItemsSymbol, seriesItems)
 
   const page = usePageData()

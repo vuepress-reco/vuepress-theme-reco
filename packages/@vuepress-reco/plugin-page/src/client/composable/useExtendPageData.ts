@@ -8,7 +8,9 @@ export const categorySummarySymbol = Symbol('categorySummarySymbol')
 export const postsSymbol = Symbol('postsSymbol')
 export const seriesSymbol = Symbol('seriesSymbol')
 
-export function usePageData(): Record<string, any> {
+export function useExtendPageData(): {
+  [key: string]: Record<string, any>
+} {
   const categorySummary = inject(categorySummarySymbol, null) || {}
   const posts = inject(postsSymbol, null) || []
   const series = inject(seriesSymbol, null) || {}
