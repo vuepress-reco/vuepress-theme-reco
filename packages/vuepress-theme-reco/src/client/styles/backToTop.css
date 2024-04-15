@@ -1,3 +1,3 @@
-.back-to-top {
-  @apply bg-reco-primary hover:bg-reco-primary/90 !important;
+.vp-back-to-top-button {
+  @apply text-reco-primary/90 hover:text-reco-primary !important;
 }
