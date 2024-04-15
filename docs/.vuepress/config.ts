@@ -19,7 +19,7 @@ export default defineUserConfig({
       description: 'A simple vuepress Blog & Doc theme.',
     },
   },
-  bundler: webpackBundler({}),
+  bundler: viteBundler({}),
   theme: recoTheme(themeConfig),
   // debug: true,
 })

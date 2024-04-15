@@ -18,7 +18,7 @@ export default defineUserConfig({
       description: '英文描述',
     },
   },
-  bundler: webpackBundler({}),
+  bundler: viteBundler({}),
   theme: recoTheme({
     locales: {
       '/': {
