@@ -139,7 +139,7 @@ const resolveNavbarItem = (
   router
 ): ResolvedNavbarItem => {
   if (isString(item)) {
-    return useNavLink(item, router)
+    return useNavLink(item)
   }
   if ((item as NavbarGroup).children) {
     return {
@@ -162,7 +162,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
           // @ts-ignore
           text: c.label,
           // @ts-ignore
-          link: `/categories/${convertToPinyin(c.label)}/1/`,
+          link: `/categories/${convertToPinyin(c.label)}/1.html`,
         }))
       },
       {
@@ -171,7 +171,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
           // @ts-ignore
           text: t.label,
           // @ts-ignore
-          link: `/tags/${convertToPinyin(t.label)}/1/`,
+          link: `/tags/${convertToPinyin(t.label)}/1.html`,
         }))
       },
     ]

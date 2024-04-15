@@ -1,9 +1,9 @@
 import { computed, provide } from 'vue'
-import { usePageFrontmatter, useRoute } from 'vuepress/client'
+import { usePageFrontmatter, useRoute, usePageData } from 'vuepress/client'
 import {
   resolveSeriesItems,
   seriesItemsSymbol,
-  resolveCatalog,
+  headersToCatalog,
   catalogSymbol,
   useThemeLocaleData,
 } from './composables/index.js'
@@ -21,7 +21,8 @@ export function applyClientSetup() {
   })
   provide(seriesItemsSymbol, seriesItems)
 
-  const catalog = computed(() => resolveCatalog())
+  const page = usePageData()
+  const catalog = computed(() => headersToCatalog(page.value.headers))
 
   provide(catalogSymbol, catalog)
 }

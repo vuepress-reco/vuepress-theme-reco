@@ -91,7 +91,7 @@ export const resolveArraySeriesItems = (
   ): ResolvedSeriesItem => {
     let childItem: ResolvedSeriesItem
     if (isString(item)) {
-      childItem = useNavLink(item, router)
+      childItem = useNavLink(item)
     } else {
       childItem = item as ResolvedSeriesItem
     }
@@ -102,7 +102,7 @@ export const resolveArraySeriesItems = (
   return seriesConfig.map(
     (item): ResolvedSeriesItem => {
       if (isString(item)) {
-        return useNavLink(item, router)
+        return useNavLink(item)
       }
 
       return {

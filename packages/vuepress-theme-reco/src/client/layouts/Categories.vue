@@ -14,7 +14,7 @@
         >
           <RouterLink
             class="category-link"
-            :to="`/${categoryPosts.currentCategoryKey}/${convertToPinyin(label)}/1/`"
+            :to="`/${categoryPosts.currentCategoryKey}/${convertToPinyin(label)}/1.html`"
           >
             <span class="text">{{ label }}</span>
           </RouterLink>
@@ -74,7 +74,7 @@ export default defineComponent({
         currentCategoryValue
       } = categoryPosts.value
 
-      router.push(`/${currentCategoryKey}/${currentCategoryValue}/${page}/`)
+      router.push(`/${currentCategoryKey}/${currentCategoryValue}/${page}.html`)
     }
 
     const { initMagicCard } = useMagicCard()

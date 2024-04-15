@@ -9,7 +9,8 @@ export const useResolveRouteWithRedirect = (
   router,
   ...args: Parameters<Router['resolve']>
 ): ReturnType<Router['resolve']> => {
-  const route = router.resolve(...args)
+  const router1 = useRouter()
+  const route = router1.resolve(...args)
 
   const lastMatched = route.matched[route.matched.length - 1]
 

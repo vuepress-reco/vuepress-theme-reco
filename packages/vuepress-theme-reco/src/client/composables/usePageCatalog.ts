@@ -20,13 +20,6 @@ export const usePageCatalog = (): CatalogRef => {
   return catalog
 }
 
-export function resolveCatalog(): any {
-  const page = usePageData()
-  // if the series item is current page and children is not set
-  // use headers of current page as children
-  return headersToCatalog(page.value.headers)
-}
-
 const headerToCatalogItem = (header: PageHeader): ResolvedSeriesItem => ({
   text: header.title,
   link: `#${header.slug}`,

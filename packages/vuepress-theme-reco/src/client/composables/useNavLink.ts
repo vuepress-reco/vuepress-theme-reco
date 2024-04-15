@@ -1,3 +1,5 @@
+import { useRouter } from 'vue-router'
+import { resolveRoute } from 'vuepress/client'
 import type { NavLink } from '../../types'
 import { useResolveRouteWithRedirect } from './useResolveRouteWithRedirect.js'
 
@@ -8,12 +10,15 @@ import { useResolveRouteWithRedirect } from './useResolveRouteWithRedirect.js'
  * - Input: '/README.md'
  * - Output: { text: 'Home', link: '/' }
  */
-export const useNavLink = (item: string, router): NavLink => {
-  console.log(1234, item)
-  const resolved = useResolveRouteWithRedirect(router, item)
+export const useNavLink = (config: string): NavLink => {
+  const { notFound, meta, path } = resolveRoute<{
+    title?: string
+  }>(config)
 
-  return {
-    text: (resolved.meta.title || item) as string,
-    link: resolved.name === '404' ? item : resolved.fullPath,
-  }
+  return notFound
+    ? { text: path, link: path }
+    : {
+        text: meta.title || path,
+        link: path,
+      }
 }
