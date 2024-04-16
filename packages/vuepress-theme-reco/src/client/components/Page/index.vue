@@ -2,7 +2,7 @@
   <main class="page-container">
     <h1 v-if="!!title" class="page-title">{{ title }}</h1>
 
-    <PageInfo :page-data="pageData" />
+    <PageInfo :page-data="page" />
 
     <div v-if="!setedPagePassword" class="theme-reco-default-content">
       <Content />
