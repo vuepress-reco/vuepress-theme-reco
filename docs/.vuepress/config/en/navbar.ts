@@ -12,7 +12,7 @@ export const navbar = [
             link: 'https://v2.vuepress.vuejs.org/reference/config.html',
           },
           { text: 'Frontmatter', link: '/en/docs/theme/frontmatter-home' },
-          { text: 'Theme Configuration', link: '/en/docs/theme/series' },
+          { text: 'Theme Configuration', link: '/en/docs/theme/home' },
           {
             text: 'Markdown Extension',
             link: '/en/docs/theme/custom-container',
