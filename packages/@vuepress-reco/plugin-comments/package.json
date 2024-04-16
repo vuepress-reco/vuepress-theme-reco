@@ -43,7 +43,7 @@
     "vue-router": "^4.2.5"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.8"
+    "vuepress": "2.0.0-rc.9"
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
