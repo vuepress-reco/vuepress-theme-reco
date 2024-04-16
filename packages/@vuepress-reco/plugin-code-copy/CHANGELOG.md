@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.8
+
+### Patch Changes
+
+- optimize display
+
 ## 2.0.0-rc.7
 
 ### Patch Changes

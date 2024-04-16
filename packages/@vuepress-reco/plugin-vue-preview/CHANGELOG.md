@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.76
+
+### Patch Changes
+
+- optimize display
+
 ## 2.0.0-rc.75
 
 ### Patch Changes

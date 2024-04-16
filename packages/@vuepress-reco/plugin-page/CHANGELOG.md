@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.8
+
+### Patch Changes
+
+- optimize display
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.76
+
 ## 2.0.0-rc.7
 
 ### Patch Changes
