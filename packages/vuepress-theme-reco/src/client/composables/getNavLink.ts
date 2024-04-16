@@ -10,7 +10,7 @@ import { useResolveRouteWithRedirect } from './useResolveRouteWithRedirect.js'
  * - Input: '/README.md'
  * - Output: { text: 'Home', link: '/' }
  */
-export const useNavLink = (config: string): NavLink => {
+export const getNavLink = (config: string): NavLink => {
   const { notFound, meta, path } = resolveRoute<{
     title?: string
   }>(config)

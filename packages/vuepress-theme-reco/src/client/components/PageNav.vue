@@ -24,7 +24,7 @@ import type {
   NavLink as NavLinkType,
   ResolvedSeriesItem,
 } from '../../types'
-import { useNavLink, useSeriesItems } from '../composables/index.js'
+import { getNavLink, useSeriesItems } from '../composables/index.js'
 import Link from './Link.vue'
 
 /**
@@ -39,7 +39,7 @@ const resolveFromFrontmatterConfig = (
   }
 
   if (isString(conf)) {
-    return useNavLink(conf, router)
+    return getNavLink(conf, router)
   }
 
   if (isPlainObject<NavLinkType>(conf)) {

@@ -12,7 +12,7 @@ import type {
   SeriesItem,
 } from '../../types'
 
-import { useNavLink } from './useNavLink.js'
+import { getNavLink } from './getNavLink.js'
 
 export interface NavItem {
   text: string
@@ -80,16 +80,14 @@ export const resolveSeriesItems = (
 /**
  * Resolve series items if the config is an array
  */
-export const resolveArraySeriesItems = (
-  seriesConfig: SeriesConfigArray,
-  router
-): ResolvedSeriesItem[] => {
+export const resolveArraySeriesItems = (seriesPath: string, seriesConfig: SeriesConfigArray): ResolvedSeriesItem[] => {
   const handleChildItem = (
-    item: ResolvedSeriesItem | SeriesGroup | SeriesItem | string
+    item: ResolvedSeriesItem | SeriesGroup | SeriesItem | string,
   ): ResolvedSeriesItem => {
     let childItem: ResolvedSeriesItem
     if (isString(item)) {
-      childItem = useNavLink(item)
+      const link = item.includes(seriesPath) ? item : `${seriesPath}${item}`
+      childItem = getNavLink(link)
     } else {
       childItem = item as ResolvedSeriesItem
     }
@@ -100,13 +98,14 @@ export const resolveArraySeriesItems = (
   return seriesConfig.map(
     (item): ResolvedSeriesItem => {
       if (isString(item)) {
-        return useNavLink(item)
+        const link = item.includes(seriesPath) ? item : `${seriesPath}${item}`
+        return getNavLink(link)
       }
 
       return {
         ...item,
         // @ts-ignore
-        children: item.children.map(handleChildItem),
+        children: item.children.map(subItem => handleChildItem(subItem)),
       }
     }
   )
@@ -125,5 +124,5 @@ export const resolveMultiSeriesItems = (
   )
   const matchedSeriesConfig = seriesConfig[seriesPath] ?? []
 
-  return resolveArraySeriesItems(matchedSeriesConfig, route)
+  return resolveArraySeriesItems(seriesPath, matchedSeriesConfig)
 }
