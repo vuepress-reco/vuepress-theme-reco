@@ -49,12 +49,14 @@
     @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10;
   }
   h1 {
-    @apply text-3xl -mt-12;
+    @apply -mt-12 text-3xl;
   }
 
   h2 {
-    @apply leading-tight text-2xl;
-    /* @apply -mt-4 relative; */
+    @apply leading-tight;
+    span {
+      @apply text-2xl;
+    }
     &::before {
       @apply mb-6 block w-full border-t border-solid border-reco-border-lightmode;
       @apply dark:border-reco-border-darkmode;
@@ -62,19 +64,19 @@
     }
   }
 
-  h3 {
+  h3 span {
     @apply text-xl;
   }
 
-  h4 {
+  h4 span {
     @apply text-lg;
   }
 
-  h5 {
+  h5 span {
     @apply text-base;
   }
 
-  h6 {
+  h6 span {
     @apply text-sm;
   }
 
