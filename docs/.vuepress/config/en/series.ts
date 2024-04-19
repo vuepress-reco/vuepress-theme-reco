@@ -5,6 +5,7 @@ export const series = {
     'getting-started',
     'style',
     'icon',
+    'bundler',
     'folder-specification',
     'contribute',
   ],

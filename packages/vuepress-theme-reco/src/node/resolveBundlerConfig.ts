@@ -1,5 +1,6 @@
 import { tailwindcssConfig } from '@vuepress-reco/tailwindcss-config'
 import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
+import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 import postcssImport from 'postcss-import'
 import tailwindcssNesting from 'tailwindcss/nesting/index.js'
 import tailwindcss from 'tailwindcss'
@@ -7,63 +8,56 @@ import autoprefixer from 'autoprefixer'
 import postcssEach from 'postcss-each'
 import type { Config } from 'tailwindcss'
 
-export const mergeViteBundlerConfig = (options: ViteBundlerOptions, config: ViteBundlerOptions): ViteBundlerOptions => {
-  // Handling postcss alone
-  // For inline PostCSS config, it expects the same format as postcss.config.js.
-  // But for plugins property, only array format can be used.
-  const userViteConfig = config?.viteOptions || {}
+const postcssPlugins = {
+  plugins: [
+    postcssImport,
+    tailwindcssNesting,
+    tailwindcss((tailwindcssConfig as unknown) as Config),
+    autoprefixer({}),
+    postcssEach,
+  ],
+}
 
-  if (typeof userViteConfig?.css?.postcss === 'string') {
-    throw new Error('String type postcss is not supported yet')
+export const getViteBundlerOptions = (themeConfig: Record<string, unknown>) => {
+  const userConfig =
+    (themeConfig?.viteBundlerOptions as ViteBundlerOptions) || {}
+  const defaultConfig = {
+    viteOptions: { css: { postcss: { ...postcssPlugins } } },
   }
 
-  const userPostcssPlugins = userViteConfig?.css?.postcss?.plugins || []
-  if (!Array.isArray(userPostcssPlugins)) {
-    throw new Error('plugins for postcss must be an array')
+  return _mergeConfig<ViteBundlerOptions>(userConfig, defaultConfig)
+}
+
+export const getWebpackBundlerOptions = (
+  themeConfig: Record<string, unknown>
+) => {
+  const userConfig =
+    (themeConfig?.webpackBundlerOptions as WebpackBundlerOptions) || {}
+  const defaultConfig = {
+    chainWebpack: (config) => {
+      config.resolve.extensions.merge(['.js', '.vue']).end()
+    },
+    postcss: {
+      postcssOptions: { ...postcssPlugins },
+    },
   }
 
-  const viteOptions = {
-    ...userViteConfig || {},
-    ...{
-      css: {
-        ...userViteConfig?.css || {},
-        ...{
-          postcss: {
-            ...userViteConfig?.css?.postcss || {},
-            ...{
-              plugins: [
-                ...userPostcssPlugins,
-                ...(options?.viteOptions?.css?.postcss as any)?.plugins
-              ],
-            }
-          },
-        }
-      },
+  return _mergeConfig<WebpackBundlerOptions>(userConfig, defaultConfig)
+}
+
+function _mergeConfig<T>(userConfig: T, defaultConfig: T): T {
+  const mergedConfig = { ...defaultConfig }
+
+  for (const key in userConfig) {
+    if (
+      typeof userConfig[key] === 'object' &&
+      typeof mergedConfig[key] === 'object'
+    ) {
+      mergedConfig[key] = _mergeConfig(userConfig[key], mergedConfig[key])
+    } else {
+      mergedConfig[key] = userConfig[key]
     }
   }
 
-  return {
-    viteOptions: { ...viteOptions },
-    vuePluginOptions: { ...(options?.vuePluginOptions || {}), ...(config?.vuePluginOptions || {}) }
-  }
-}
-
-export const defaultViteBundlerConfig = (): ViteBundlerOptions => ({
-  viteOptions: {
-    css: {
-      postcss: {
-        plugins: [
-          postcssImport,
-          tailwindcssNesting,
-          tailwindcss(tailwindcssConfig as unknown as Config),
-          autoprefixer({}),
-          postcssEach
-        ]
-      }
-    },
-  }
-})
-
-export const resolveUserConfig = (config: Record<string, unknown>) => {
-  return config?.viteBundler as ViteBundlerOptions || {}
+  return mergedConfig
 }
