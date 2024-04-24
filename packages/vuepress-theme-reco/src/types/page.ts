@@ -1,8 +1,24 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import type { NavLink, SeriesConfig } from './nav.js'
+import type { NavLink } from './nav.js'
+
+export interface HeaderItem {
+  slug: string
+  link: string
+  level: number
+  title: string
+  children: Array<HeaderItem>
+}
 
 export interface RecoThemePageData extends GitPluginPageData {
   filePathRelative: string | null
+  headers: Array<HeaderItem>
+  // path?: string
+}
+
+export interface SocialLink {
+  icon: string
+  link?: string
+  color?: string
 }
 
 export interface RecoThemePageFrontmatter {
@@ -35,14 +51,10 @@ interface Banner {
 }
 
 interface Button {
+  icon?: string
   text?: string
   link?: string
   type?: 'plain' | 'link'
-}
-
-interface SocialLink {
-  icon?: string
-  link?: string
 }
 
 interface BannerBrand {
@@ -51,6 +63,11 @@ interface BannerBrand {
   tagline?: string
   buttons?: Button[]
   socialLinks?: SocialLink[]
+  heroImage?: string
+  heroImageStyle?: Record<string, any>
+  bgImage?: string
+  bgImageStyle?: Record<string, any>
+  [key: string]: any
 }
 
 interface Blog {

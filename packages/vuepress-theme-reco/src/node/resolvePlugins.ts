@@ -29,7 +29,9 @@ import { bulletinPopoverPlugin } from '@vuepress-reco/vuepress-plugin-bulletin-p
 import { pages } from './pages.js'
 import { resolveContainerOptions } from './resolveContainer.js'
 
-export const getPlugins = (themeConfig) => {
+import type { Plugin } from 'vuepress/core'
+
+export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
   const plugins = [
     gitPlugin(),
     palettePlugin(),

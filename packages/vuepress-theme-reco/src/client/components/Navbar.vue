@@ -18,14 +18,15 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, computed, ref, onMounted } from 'vue'
-import { useRouteLocale, useSiteLocaleData, withBase } from 'vuepress/client'
-import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
-import NavbarLinks from './NavbarLinks.vue'
-import { useThemeLocaleData, useSeriesItems } from '../composables/index.js'
+import { computed, ref, onMounted } from 'vue'
+import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
+
 import Xicons from './global/Xicons.vue'
 import SiteBrand from './SiteBrand.vue'
 import { throttle } from '../utils/index.js'
+import NavbarLinks from './NavbarLinks.vue'
+import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
+import { useThemeLocaleData, useSeriesItems } from '@composables/index.js'
 
 const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()

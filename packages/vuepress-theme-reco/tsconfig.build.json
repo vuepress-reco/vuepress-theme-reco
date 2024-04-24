@@ -5,7 +5,12 @@
     "rootDir": "./src",
     "outDir": "./lib",
     "paths": {
-      "@theme/*": ["./src/client/components/*"]
+      "@types/*": ["./src/types/*"],
+      "@client/*": ["./src/client/*"],
+      "@utils/*": ["./src/client/utils/*"],
+      "@theme/*": ["./src/client/components/*"],
+      "@components/*": ["./src/client/components/*"],
+      "@composables/*": ["./src/client/composables/*"],
     },
   },
   "include": ["./src"]

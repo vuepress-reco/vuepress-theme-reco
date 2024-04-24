@@ -47,10 +47,10 @@
 
 <script setup>
 import { defineComponent, computed } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { usePageFrontmatter, useRouteLocale } from 'vuepress/client'
-import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import { useRouteLocale } from 'vuepress/client'
 import packageInfo from 'vuepress-theme-reco/package.json'
+import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
 
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()

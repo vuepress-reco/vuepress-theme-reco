@@ -17,6 +17,7 @@ import MdContent from './MdContent.vue'
 import Comment from './Comment.vue'
 import Footer from './Footer.vue'
 import Features from './Features.vue'
+import { RecoThemeHomePageFrontmatter } from '../../../types'
 
 export default defineComponent({
   name: 'HomeWrapper',
@@ -36,8 +37,5 @@ export default defineComponent({
 <script setup lang="ts">
 import { usePageFrontmatter } from 'vuepress/client'
 
-const frontmatter = usePageFrontmatter<{
-  modules?: [string],
-  [key: string]: unknown
-}>()
+const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
 </script>

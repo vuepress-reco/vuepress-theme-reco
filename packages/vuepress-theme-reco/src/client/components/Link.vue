@@ -31,13 +31,15 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, toRefs } from 'vue'
-import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
+import { computed, defineComponent, toRefs } from 'vue'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
+import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
+
+import { useThemeLocaleData } from '@composables/index.js'
+
+import type { PropType } from 'vue'
 import type { NavLink } from '../../types'
-import { useThemeLocaleData } from '../composables/index.js'
 
 export default defineComponent({
   name: 'Link',

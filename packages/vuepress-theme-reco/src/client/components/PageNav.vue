@@ -17,14 +17,13 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { usePageFrontmatter } from 'vuepress/client'
 import { isPlainObject, isString } from 'vuepress/shared'
 import type {
   RecoThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
   ResolvedSeriesItem,
 } from '../../types'
-import { getNavLink, useSeriesItems } from '../composables/index.js'
+import { getNavLink, useSeriesItems, usePageFrontmatter } from '@composables/index.js'
 import Link from './Link.vue'
 
 /**
@@ -88,7 +87,7 @@ export default defineComponent({
   components: { Link },
 
   setup() {
-    const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
+    const frontmatter = usePageFrontmatter()
     const seriesItems = useSeriesItems()
     const route = useRoute()
     const router = useRouter()

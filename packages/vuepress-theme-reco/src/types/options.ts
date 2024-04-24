@@ -12,7 +12,12 @@ export interface RecoThemeLocaleData extends LocaleData {
    */
   home?: string
 
-  colorMode?: 'light' | 'dark'
+  /**
+   * Default color mode
+   *
+   * @default 'auto'
+   */
+  colorMode?: 'light' | 'dark' | 'auto'
 
   password?: string | Array<string>
 
@@ -126,4 +131,46 @@ export interface RecoThemeLocaleData extends LocaleData {
    * The text to replace the default "Last Updated"
    */
   lastUpdatedText?: string
+
+
+  /**
+   * The Name of author
+   */
+  author?: string
+
+
+  /**
+   * The avatar of author
+   */
+  authorAvatar?: string
+
+  /**
+   * Friendship links
+   */
+  friendshipLinks?: Array<{
+    logo: string
+    link: string
+    title: string
+  }>
+
+  autoSetSeries: boolean
+
+  /**
+   * Auto set categories
+   *
+   * @default false
+   */
+  autoSetBlogCategories?: boolean
+
+  /**
+   * Automatically add categories and tags to the header navigation bar
+   * when autoAddCategoryToNavbar is true, all defaults are taken.
+   */
+  autoAddCategoryToNavbar?: boolean | AutoAddCategoryToNavbarOptions
+}
+
+export type AutoAddCategoryToNavbarOptions = {
+  location: number // default 0
+  categoryText: string // default categories
+  tagText: string // default tags
 }

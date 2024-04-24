@@ -3,7 +3,7 @@
   <img
     class="personal-img"
     v-if="themeLocal.authorAvatar"
-    :src="$withBase(themeLocal.authorAvatar)"
+    :src="withBase(themeLocal.authorAvatar)"
     alt="author-avatar"
   >
   <p
@@ -27,23 +27,19 @@
 </div>
 </template>
 
-<script>
-import { defineComponent, computed } from 'vue'
-import { createOneColor } from '../utils/index.js'
+<script lang="ts" setup>
+import { computed } from 'vue'
+import { createOneColor } from '@utils/index.js'
 import { withBase, usePageFrontmatter } from 'vuepress/client'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+import { useThemeLocaleData } from '@composables/index.js'
 
-export default defineComponent({
-  setup (props, ctx) {
-    const themeLocal = useThemeLocaleData()
-    const frontmatter = usePageFrontmatter()
+import type { RecoThemeHomePageFrontmatter } from '../../types'
 
-    const socialLinks = computed(() => (frontmatter.value?.blog?.socialLinks || []).map(item => {
-      if (!item.color) item.color = createOneColor()
-      return item
-    }))
+const themeLocal = useThemeLocaleData()
 
-    return { themeLocal, socialLinks }
-  }
-})
+const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
+const socialLinks = computed(() => (frontmatter.value?.blog?.socialLinks || []).map(item => {
+  if (!item.color) item.color = createOneColor()
+  return item
+}))
 </script>

@@ -1,31 +1,39 @@
 <template>
   <nav v-if="navbarLinks.length" class="navbar-links">
-    <div v-for="item in navbarLinks" :key="item.link" class="navbar-links__item">
+    <div v-for="(item, index) in navbarLinks" :key="index" class="navbar-links__item">
       <template v-if="item.children">
-        <DropdownLink :item="item" />
+        <DropdownLink :item="item as NavGroup<ResolvedNavbarItem>" />
       </template>
 
       <template v-else>
-        <Link :item="item" />
+        <Link :item="item as NavLink" />
       </template>
     </div>
   </nav>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { isString } from 'vuepress/shared'
-import type { NavbarItem, NavbarGroup, ResolvedNavbarItem } from '../../types'
-import { getNavLink } from '../composables/index.js'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { computed, defineComponent } from 'vue'
 import { convertToPinyin } from '@vuepress-reco/shared'
-import { resolveRepoType } from '../utils/index.js'
-import DropdownLink from './DropdownLink.vue'
+import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
+import { getNavLink, useThemeLocaleData } from '@composables/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+
 import Link from './Link.vue'
+import DropdownLink from './DropdownLink.vue'
+import { resolveRepoType } from '../utils/index.js'
+
+import type { ComputedRef } from 'vue'
+import type {
+  NavLink,
+  NavGroup,
+  NavbarItem,
+  NavbarGroup,
+  ResolvedNavbarItem,
+  AutoAddCategoryToNavbarOptions,
+} from '../../types'
 
 /**
  * Get navbar config of select language dropdown
@@ -157,7 +165,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   const parseCategories = computed(() => {
     return [
       {
-        text: themeLocal.value.autoAddCategoryToNavbar?.categoryText || 'Categories',
+        text: (themeLocal.value.autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.categoryText || 'Categories',
         children: Object.values(categorySummary?.categories?.items || {}).map((c) => ({
           // @ts-ignore
           text: c.label,
@@ -166,7 +174,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
         }))
       },
       {
-        text: themeLocal.value.autoAddCategoryToNavbar?.tagText || 'Tags',
+        text: (themeLocal.value.autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.tagText || 'Tags',
         children: Object.values(categorySummary?.tags?.items || {}).map(t => ({
           // @ts-ignore
           text: t.label,
@@ -182,7 +190,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
 
     if (themeLocal.value.autoAddCategoryToNavbar) {
       navItems.splice(
-        themeLocal.value.autoAddCategoryToNavbar?.location || 0,
+        (themeLocal.value.autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.location || 0,
         0,
         ...parseCategories.value
       )
@@ -205,7 +213,7 @@ export default defineComponent({
     const navbarSelectLanguage = useNavbarSelectLanguage()
     const navbarRepo = useNavbarRepo()
 
-    const navbarLinks = computed(() => [
+    const navbarLinks: ComputedRef<Array<ResolvedNavbarItem>> = computed(() => [
       ...navbarConfig.value,
       ...navbarSelectLanguage.value,
       ...navbarRepo.value,

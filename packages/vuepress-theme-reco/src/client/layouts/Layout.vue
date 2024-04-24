@@ -10,9 +10,7 @@
         @before-enter="onBeforeEnter"
         @before-leave="onBeforeLeave"
       >
-        <Page
-          :key="page.path"
-        />
+        <Page />
       </Transition>
     </Common>
   </div>
@@ -21,15 +19,20 @@
 <script lang="ts" setup>
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { usePageFrontmatter, usePageData } from 'vuepress/client'
 
 import Home from '../components/Home/index.vue'
 import Page from '../components/Page/index.vue'
 import Common from '../components/Common/index.vue'
-import { useScrollPromise, useMagicCard } from '../composables/index.js'
+import {
+  usePageData,
+  useMagicCard,
+  useScrollPromise,
+} from '@composables/index.js'
+import { usePageFrontmatter } from 'vuepress/client'
+import { RecoThemeHomePageFrontmatter } from '../../types'
 
 const page = usePageData()
-const frontmatter = usePageFrontmatter()
+const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
 
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise()

@@ -1,6 +1,6 @@
 import { ref, computed, watch } from 'vue'
 import { usePageFrontmatter } from 'vuepress/client'
-import { useSeriesItems, usePageCatalog } from './index.js'
+import { useSeriesItems, usePageCatalog,  } from './index.js'
 
 export const useSeriesData: () => any = () => {
   const isOpenSeries = ref(false)

@@ -35,19 +35,10 @@
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from 'vuepress/client'
 import Link from '../Link.vue'
-import { createOneColor } from '../../utils/index.js'
+import { createOneColor } from '@utils/index.js'
+import { RecoThemeHomePageFrontmatter } from "../../../types";
 
-const frontmatter = usePageFrontmatter<{
-  bannerBrand: {
-    heroImage?: string
-    buttons?: Array<Record<string, any>>
-    socialLinks?: Array<Record<string, any>>
-    heroImageStyle?: Record<string, any>
-    bgImage?: string
-    bgImageStyle?: Record<string, any>
-    [key: string]: any
-  }
-}>()
+const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
 
 const heroImage = computed(() => {
   return frontmatter.value?.bannerBrand?.heroImage

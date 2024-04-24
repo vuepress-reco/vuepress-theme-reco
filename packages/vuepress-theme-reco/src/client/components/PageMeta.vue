@@ -1,50 +1,38 @@
 <template>
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
-      <Xicons
-        class="meta-item-label"
-        :icon="editNavLink.icon"
-        :text="editNavLink.text"
-        :link="editNavLink.link"
-        target="_blank"
-        icon-size="20"
-        text-size="14"
-      />
+      <Xicons class="meta-item-label" :icon="editNavLink.icon" :text="editNavLink.text" :link="editNavLink.link"
+        target="_blank" icon-size="20" text-size="14" />
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
-      <Xicons
-        class="meta-item-label"
-        icon="Calendar"
-        :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`"
-        icon-size="20"
-        text-size="14"
-      />
+      <Xicons class="meta-item-label" icon="Calendar"
+        :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`" icon-size="20" text-size="14" />
     </div>
   </footer>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import type { ComputedRef } from 'vue'
 import {
   usePageData,
-  usePageFrontmatter,
   useSiteLocaleData,
 } from 'vuepress/client'
+import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
+
+import Link from './Link.vue'
+import { resolveEditLink } from '@utils/index.js'
+
+import type { ComputedRef } from 'vue'
 import type {
   RecoThemePageData,
-  RecoThemeNormalPageFrontmatter,
   NavLink as NavLinkType,
 } from '../../types'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { resolveEditLink } from '../utils/index.js'
-import Link from './Link.vue'
 
 const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
   const themeLocal = useThemeLocaleData()
   const page = usePageData<RecoThemePageData>()
-  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
+  const frontmatter = usePageFrontmatter()
 
   return computed(() => {
     const showEditLink =
@@ -87,7 +75,7 @@ const useLastUpdated = (): ComputedRef<null | string> => {
   const siteLocale = useSiteLocaleData()
   const themeLocal = useThemeLocaleData()
   const page = usePageData<RecoThemePageData>()
-  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
+  const frontmatter = usePageFrontmatter()
 
   return computed(() => {
     const showLastUpdated =

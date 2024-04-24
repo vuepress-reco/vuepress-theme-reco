@@ -1,6 +1,6 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { usePageFrontmatter } from 'vuepress/client'
+import { usePageFrontmatter } from '@composables/index.js'
 
 let PAGE_PASSWORD_PASS = 'PAGE_PASSWORD_PASS'
 export function usePassword() {

@@ -1,6 +1,6 @@
 import { path, fs, getDirname } from 'vuepress/utils'
 
-import { getPlugins } from './resolvePlugins.js'
+import { resolveBuildInPlugins } from './resolvePlugins.js'
 import { injectiBuilderOptionsOfRecoTheme } from './resolveBundlerConfig.js'
 
 import type { Theme, Page } from 'vuepress/core'
@@ -9,7 +9,7 @@ import type { RecoThemePageData } from '../types/page'
 const __dirname = getDirname(import.meta.url)
 
 export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
-  const plugins = getPlugins(themeConfig)
+  const plugins = resolveBuildInPlugins(themeConfig)
 
   return {
     name: 'vuepress-theme-reco',
@@ -27,15 +27,13 @@ export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
 
     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 
-    alias: Object.fromEntries(
-      fs
-        .readdirSync(path.resolve(__dirname, '../client/components'))
-        .filter((file) => file.endsWith('.vue'))
-        .map((file) => [
-          `@theme/${file}`,
-          path.resolve(__dirname, '../client/components', file),
-        ])
-    ),
+    alias: {
+      '@types': path.resolve(__dirname, '../types'),
+      '@client': path.resolve(__dirname, '../client'),
+      '@utils': path.resolve(__dirname, '../client/utils'),
+      '@components': path.resolve(__dirname, '../client/components'),
+      '@composables': path.resolve(__dirname, '../client/composables'),
+    },
 
     extendsPage: (page: Page<Partial<RecoThemePageData>>) => {
       // save relative file path into page data to generate edit link

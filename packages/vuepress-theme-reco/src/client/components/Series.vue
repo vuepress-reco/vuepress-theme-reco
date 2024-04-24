@@ -1,16 +1,24 @@
 <template>
   <aside class="series-container">
     <SiteBrand />
-    <SeriesItem v-for="item in sortedSeries" :item="item" :key="item.link || item.text" />
+    <SeriesItem
+      v-for="item in sortedSeries"
+      :item="item"
+      :key="item.link || item.text"
+    />
   </aside>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { useSeriesItems, useSortSeries } from '../composables/index.js'
-import { SeriesItem } from './SeriesItem.js'
+import { computed } from 'vue'
+
+import {
+  useSeriesItems,
+  useSortSeries,
+  useThemeLocaleData,
+} from '@composables/index.js'
 import SiteBrand from './SiteBrand.vue'
+import { SeriesItem } from './SeriesItem.js'
 
 const themeLocal = useThemeLocaleData()
 const { sortSeries } = useSortSeries()

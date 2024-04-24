@@ -31,7 +31,6 @@
 
 <script lang="ts" setup>
 import { onMounted, computed } from 'vue'
-import { usePageFrontmatter } from 'vuepress/client'
 
 import { useSeriesItems } from '../../composables/index.js'
 import Navbar from '../Navbar.vue'
@@ -42,10 +41,10 @@ import Password from '../Password/index.vue'
 import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
 
 import { useSeries, usePassword, useInitCodeCopy } from './hook.js'
-import { useSeriesData, useMobileMenus } from '../../composables/index.js'
+import { useSeriesData, useMobileMenus, usePageFrontmatter } from '@composables/index.js'
 import { RecoThemeNormalPageFrontmatter } from '../../../types'
 
-const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
+const frontmatter = usePageFrontmatter()
 
 const {
   isOpenSeries,

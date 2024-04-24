@@ -16,21 +16,11 @@
 </template>
 
 <script setup lang="ts">
+import { RecoThemeHomePageFrontmatter } from "../../../types";
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from 'vuepress/client'
 
-const frontmatter = usePageFrontmatter<{
-  banner: {
-    tagline?: string
-    heroText?: string
-    buttons?: Array<Record<string, any>>
-    socialLinks?: Array<Record<string, any>>
-    heroImage?: string
-    heroImageStyle?: Record<string, string>
-    bgImage?: string
-    bgImageStyle?: Record<string, string>
-  }
-}>()
+const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
 
 const heroImage = computed(() => {
   return frontmatter.value?.banner?.heroImage
