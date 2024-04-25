@@ -9,9 +9,7 @@ import {
   useThemeLocaleData,
   usePageFrontmatter,
 } from '@composables/index.js'
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
-
-import type { RecoThemeNormalPageFrontmatter } from '../types'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 export function applyClientSetup() {
   // we need to access series items in multiple components

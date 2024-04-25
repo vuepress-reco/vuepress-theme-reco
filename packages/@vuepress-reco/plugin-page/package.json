@@ -7,6 +7,16 @@
     "vuepress",
     "blog"
   ],
+  "exports": {
+    ".": {
+      "types": "./lib/node/index.d.ts",
+      "default": "./lib/node/index.js"
+    },
+    "./composables": {
+      "types": "./lib/client/composables/index.d.ts",
+      "default": "./lib/client/composables/index.js"
+    }
+  },
   "homepage": "https://github.com/recoluan/vuepress-theme-reco#readme",
   "bugs": {
     "url": "https://github.com/recoluan/vuepress-theme-reco/issues"

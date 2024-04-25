@@ -1,4 +1,4 @@
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { usePageFrontmatter } from 'vuepress/client'
 import { useSeriesItems, usePageCatalog,  } from './index.js'
 

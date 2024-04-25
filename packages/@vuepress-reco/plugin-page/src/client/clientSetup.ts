@@ -1,10 +1,10 @@
 import { provide } from 'vue'
 import {
-  categoryPaginationPostsSymbol,
-  categorySummarySymbol,
   postsSymbol,
   seriesSymbol,
-} from './composable/index.js'
+  categorySummarySymbol,
+  categoryPaginationPostsSymbol,
+} from './composables/index.js'
 
 declare const __POSTS__: Record<string, any[]>
 declare const __SERIES__: Record<string, any>

@@ -34,9 +34,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from 'vuepress/client'
-import Link from '../Link.vue'
+
 import { createOneColor } from '@utils/index.js'
-import { RecoThemeHomePageFrontmatter } from "../../../types";
+
+import type { RecoThemeHomePageFrontmatter } from "../../../types";
 
 const frontmatter = usePageFrontmatter<RecoThemeHomePageFrontmatter>()
 

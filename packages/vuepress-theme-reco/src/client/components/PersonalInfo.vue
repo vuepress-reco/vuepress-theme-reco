@@ -29,8 +29,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { createOneColor } from '@utils/index.js'
 import { withBase, usePageFrontmatter } from 'vuepress/client'
+
+import { createOneColor } from '@utils/index.js'
 import { useThemeLocaleData } from '@composables/index.js'
 
 import type { RecoThemeHomePageFrontmatter } from '../../types'

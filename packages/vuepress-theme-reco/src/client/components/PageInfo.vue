@@ -38,8 +38,8 @@
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
-import { formatISODate } from '../utils/other'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
+import { formatISODate } from '@utils/other'
 import { convertToPinyin } from '@vuepress-reco/shared'
 
 export default defineComponent({

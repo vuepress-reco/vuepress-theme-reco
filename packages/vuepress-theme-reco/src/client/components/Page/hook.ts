@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router'
 import { usePageFrontmatter } from '@composables/index.js'
 
 let PAGE_PASSWORD_PASS = 'PAGE_PASSWORD_PASS'
+
 export function usePassword() {
   const route = useRoute()
   PAGE_PASSWORD_PASS = `${PAGE_PASSWORD_PASS}:${route.path}`

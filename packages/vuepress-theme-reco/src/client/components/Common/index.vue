@@ -1,21 +1,16 @@
 <template>
   <div v-if="!setedSitePassword" class="common-wrapper" :class="containerClass">
     <Navbar @toggleMenus="toggleMobileMenus" />
-      <SubNavbar v-if="seriesItems.length > 0" @toggleSeries="toggleSeries" />
-      <NavbarDropdownNemu />
-      <div class="series-mask" @click="toggleSeries(false)" />
-      <Series />
-      <slot />
-      <Catalog v-if="isShowCatalog" />
+    <SubNavbar v-if="seriesItems.length > 0" @toggleSeries="toggleSeries" />
+    <NavbarDropdownNemu />
+    <div class="series-mask" @click="toggleSeries(false)" />
+    <Series />
+    <slot />
+    <Catalog v-if="isShowCatalog" />
   </div>
 
   <div v-else class="common-wrapper" :class="containerClass">
-    <Password
-      v-if="siteLoaded && !sitePasswordPass"
-      class="out"
-      key="out"
-      @pass="handlePass"
-    />
+    <Password v-if="siteLoaded && !sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
     <div v-if="siteLoaded && sitePasswordPass">
       <Navbar @toggleMenus="toggleMobileMenus" />
@@ -32,19 +27,20 @@
 <script lang="ts" setup>
 import { onMounted, computed } from 'vue'
 
-import { useSeriesItems } from '../../composables/index.js'
 import Navbar from '../Navbar.vue'
-import SubNavbar from '../SubNavbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
+import SubNavbar from '../SubNavbar.vue'
 import Password from '../Password/index.vue'
 import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
 
+import {
+  useSeriesItems,
+  useSeriesData,
+  useMobileMenus,
+  usePageFrontmatter
+} from '@composables/index.js'
 import { useSeries, usePassword, useInitCodeCopy } from './hook.js'
-import { useSeriesData, useMobileMenus, usePageFrontmatter } from '@composables/index.js'
-import { RecoThemeNormalPageFrontmatter } from '../../../types'
-
-const frontmatter = usePageFrontmatter()
 
 const {
   isOpenSeries,
@@ -52,9 +48,8 @@ const {
   isShowCatalog,
   toggleSeries,
 } = useSeriesData()
-
+const frontmatter = usePageFrontmatter()
 const { isOpenMobileMenus, toggleMobileMenus } = useMobileMenus()
-
 const { siteLoaded, sitePasswordPass, setedSitePassword, handlePass } = usePassword()
 
 const containerClass = computed(() => [

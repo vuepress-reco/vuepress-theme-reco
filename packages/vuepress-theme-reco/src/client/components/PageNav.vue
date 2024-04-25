@@ -14,34 +14,28 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { isPlainObject, isString } from 'vuepress/shared'
-import type {
-  RecoThemeNormalPageFrontmatter,
-  NavLink as NavLinkType,
-  ResolvedSeriesItem,
-} from '../../types'
+
 import { getNavLink, useSeriesItems, usePageFrontmatter } from '@composables/index.js'
-import Link from './Link.vue'
+
+import type { NavLink, ResolvedSeriesItem } from '../../types'
 
 /**
  * Resolve `prev` or `next` config from frontmatter
  */
-const resolveFromFrontmatterConfig = (
-  conf: unknown,
-  router
-): null | false | NavLinkType => {
+const resolveFromFrontmatterConfig = (conf: unknown): null | false | NavLink => {
   if (conf === false) {
     return null
   }
 
   if (isString(conf)) {
-    return getNavLink(conf, router)
+    return getNavLink(conf)
   }
 
-  if (isPlainObject<NavLinkType>(conf)) {
+  if (isPlainObject<NavLink>(conf)) {
     return conf
   }
 
@@ -55,14 +49,14 @@ const resolveFromSeriesItems = (
   seriesItems: ResolvedSeriesItem[],
   currentPath: string,
   offset: number
-): null | NavLinkType => {
+): null | NavLink => {
   const index = seriesItems.findIndex((item) => item.link === currentPath)
   if (index !== -1) {
     const targetItem = seriesItems[index + offset]
     if (!targetItem?.link) {
       return null
     }
-    return targetItem as NavLinkType
+    return targetItem as NavLink
   }
 
   for (const item of seriesItems) {
@@ -81,44 +75,31 @@ const resolveFromSeriesItems = (
   return null
 }
 
-export default defineComponent({
-  name: 'PageNav',
 
-  components: { Link },
+const route = useRoute()
+const router = useRouter()
+const seriesItems = useSeriesItems()
+const frontmatter = usePageFrontmatter()
 
-  setup() {
-    const frontmatter = usePageFrontmatter()
-    const seriesItems = useSeriesItems()
-    const route = useRoute()
-    const router = useRouter()
+const prevNavLink = computed(() => {
+  const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev)
+  if (prevConfig !== false) {
+    return prevConfig
+  }
 
-    const prevNavLink = computed(() => {
-      const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev, router)
-      if (prevConfig !== false) {
-        return prevConfig
-      }
-
-      return resolveFromSeriesItems(seriesItems.value, route.path, -1)
-    })
-
-    const nextNavLink = computed(() => {
-      const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next, router)
-      if (nextConfig !== false) {
-        return nextConfig
-      }
-
-      return resolveFromSeriesItems(seriesItems.value, route.path, 1)
-    })
-
-    const go = (link) => {
-      router.push(link)
-    }
-
-    return {
-      prevNavLink,
-      nextNavLink,
-      go
-    }
-  },
+  return resolveFromSeriesItems(seriesItems.value, route.path, -1)
 })
+
+const nextNavLink = computed(() => {
+  const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next)
+  if (nextConfig !== false) {
+    return nextConfig
+  }
+
+  return resolveFromSeriesItems(seriesItems.value, route.path, 1)
+})
+
+const go = (link) => {
+  router.push(link)
+}
 </script>

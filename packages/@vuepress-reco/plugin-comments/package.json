@@ -7,6 +7,16 @@
     "comment",
     "vuepress"
   ],
+  "exports": {
+    ".": {
+      "types": "./lib/node/index.d.ts",
+      "default": "./lib/node/index.js"
+    },
+    "./composables": {
+      "types": "./lib/client/composables/index.d.ts",
+      "default": "./lib/client/composables/index.js"
+    }
+  },
   "author": "reco_luan <recoluan@qq.com>",
   "homepage": "https://vuepress-theme-reco.recoluan.com",
   "license": "MIT",

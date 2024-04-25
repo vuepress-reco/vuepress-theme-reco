@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch, Ref } from 'vue'
-import { useThemeLocaleData } from '../composables/index.js'
+import { useThemeLocaleData } from '@composables/index.js'
 
 enum ModeIcon {
   auto = 'BrightnessContrast',

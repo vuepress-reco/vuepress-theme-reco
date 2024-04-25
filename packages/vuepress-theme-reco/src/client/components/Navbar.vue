@@ -23,7 +23,7 @@ import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 
 import Xicons from './global/Xicons.vue'
 import SiteBrand from './SiteBrand.vue'
-import { throttle } from '../utils/index.js'
+import { throttle } from '@utils/index.js'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 import { useThemeLocaleData, useSeriesItems } from '@composables/index.js'

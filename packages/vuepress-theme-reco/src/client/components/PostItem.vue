@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 import PageInfo from './PageInfo.vue'
 
 export default defineComponent({

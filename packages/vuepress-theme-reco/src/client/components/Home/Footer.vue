@@ -45,12 +45,12 @@
   </div>
 </template>
 
-<script setup>
-import { defineComponent, computed } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useRouteLocale } from 'vuepress/client'
 import packageInfo from 'vuepress-theme-reco/package.json'
 import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
-import { useComment } from '@vuepress-reco/vuepress-plugin-comments/lib/client/composables'
+import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()

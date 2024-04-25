@@ -19,12 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
-import Common from '../components/Common/index.vue'
+import Common from '@components/Common/index.vue'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
-
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
-import { formatISODate } from '../utils/other.js'
+import { formatISODate } from '@utils/other.js'
 
 const { posts } = useExtendPageData()
 

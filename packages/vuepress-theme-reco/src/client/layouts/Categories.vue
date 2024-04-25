@@ -37,12 +37,12 @@
 import { defineComponent, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 import { convertToPinyin } from '@vuepress-reco/shared'
-import PostList from '../components/PostList.vue'
-import Common from '../components/Common/index.vue'
-import Pagation from '../components/Pagation.vue'
-import { useMagicCard } from '../composables/index.js'
+import PostList from '@components/PostList.vue'
+import Common from '@components/Common/index.vue'
+import Pagation from '@components/Pagation.vue'
+import { useMagicCard } from '@composables/index.js'
 
 export default defineComponent({
   components: { Common, PostList, Pagation },

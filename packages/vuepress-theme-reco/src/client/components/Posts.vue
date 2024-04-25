@@ -11,12 +11,12 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 import { useRoute, useRouter } from 'vue-router'
 import PostList from './PostList.vue'
 import Pagation from './Pagation.vue'
 import { useRouteLocale, withBase } from 'vuepress/client';
-import { useThemeLocaleData } from '../composables/index.js';
+import { useThemeLocaleData } from '@composables/index.js';
 
 const { posts } = useExtendPageData()
 

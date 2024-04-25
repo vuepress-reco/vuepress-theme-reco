@@ -2,7 +2,7 @@ import { h } from 'vue'
 import type { FunctionalComponent, VNode } from 'vue'
 import { useRoute } from 'vue-router'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSeriesItem } from '../composables/useSeriesItems'
+import type { ResolvedSeriesItem } from '@composables/useSeriesItems'
 import Link from './Link.vue'
 
 const normalizePath = (path: string): string =>

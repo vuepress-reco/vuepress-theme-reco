@@ -19,11 +19,11 @@ import { computed, defineComponent } from 'vue'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { getNavLink, useThemeLocaleData } from '@composables/index.js'
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/lib/client/composable/index.js'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import Link from './Link.vue'
 import DropdownLink from './DropdownLink.vue'
-import { resolveRepoType } from '../utils/index.js'
+import { resolveRepoType } from '@utils/index.js'
 
 import type { ComputedRef } from 'vue'
 import type {

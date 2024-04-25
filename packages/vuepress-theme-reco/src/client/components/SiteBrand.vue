@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRouteLocale, useSiteLocaleData, withBase } from 'vuepress/client'
-import { useThemeLocaleData } from '../composables/index.js'
+import { useThemeLocaleData } from '@composables/index.js'
 
 const siteLocale = useSiteLocaleData()
 const routeLocale = useRouteLocale()

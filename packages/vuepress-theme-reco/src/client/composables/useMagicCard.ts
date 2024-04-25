@@ -1,4 +1,4 @@
-import { throttle } from '../utils/index.js'
+import { throttle } from '@utils/index.js'
 
 class MouseMove {
   cards: NodeListOf<Element>
