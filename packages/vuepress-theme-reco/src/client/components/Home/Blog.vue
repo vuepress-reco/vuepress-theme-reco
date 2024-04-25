@@ -18,14 +18,14 @@
       <ul class="category-wrapper">
         <li
           class="category-item"
-          v-for="(value, key, index) in categories"
+          v-for="({ label, length, categoryValue }, key, index) in categories"
           :key="index">
           <router-link
             class="category-link"
-            :to="`/categories/${key}/1.html`"
+            :to="`/categories/${categoryValue}/1.html`"
           >
-            <span class="text">{{ value.label }}</span>
-            <span class="num">{{ value.length }}</span>
+            <span class="text">{{ label }}</span>
+            <span class="num">{{ length }}</span>
           </router-link>
         </li>
       </ul>
@@ -37,14 +37,14 @@
       <ul class="tag-wrapper">
         <li
           class="tag-item"
-          v-for="(value, key, index) in tags"
+          v-for="({ label, categoryValue }, key, index) in tags"
           :key="index"
           :style="{ borderColor: createOneColor() }"
         >
           <router-link
             class="tag-link"
-            :to="`/tags/${key}/1.html`"
-          >{{ value.label }}</router-link>
+            :to="`/tags/${categoryValue}/1.html`"
+          >{{ label }}</router-link>
         </li>
       </ul>
     </MagicCard>
@@ -76,6 +76,8 @@ const categories = computed(() => {
 const tags = computed(() => {
   return categorySummary?.tags?.items || []
 })
+
+console.log(categories.value, tags.value)
 
 const postsOfCurrentPage = computed(() => {
   const start = (currentPage.value - 1) * perPage

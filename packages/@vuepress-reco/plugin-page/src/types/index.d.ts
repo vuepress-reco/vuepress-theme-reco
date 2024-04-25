@@ -36,6 +36,7 @@ export type CategoryPageData = Record<
         pages: ReleasedPage[]
         length: number
         label: string
+        categoryValue: string
       }
     >
   }

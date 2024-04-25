@@ -4,12 +4,20 @@
 
     <Xicons v-if="!!date" icon="Calendar" :text="date" />
 
-    <Xicons v-if="!!categories && categories.length > 0" icon="Folder">
-      {{ categories.join(' ') }}
+    <Xicons v-if="categories.length > 0" icon="Folder">
+      <router-link
+        v-for="({ label, pathValue }) in categories"
+        :to="`/categories/${pathValue}/1.html`"
+        :key="pathValue"
+      >{{ label }}</router-link>
     </Xicons>
 
-    <Xicons v-if="!!tags && tags.length > 0" icon="Tag">
-      {{ tags.join(' ') }}
+    <Xicons v-if="tags.length > 0" icon="Tag">
+      <router-link
+        v-for="({ label, pathValue }) in tags"
+        :to="`/tags/${pathValue}/1.html`"
+        :key="pathValue"
+      >{{ label }}</router-link>
     </Xicons>
 
     <Xicons v-if="showValineViews || showWalineViews">
@@ -41,6 +49,14 @@ import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 import { formatISODate } from '@utils/other'
 import { convertToPinyin } from '@vuepress-reco/shared'
+
+function removeEmptyString(value: string) {
+  return !value ? '' : value.trim().replaceAll(' ', '-')
+}
+
+function formatCategory(category: string) {
+  return convertToPinyin(removeEmptyString(category))
+}
 
 export default defineComponent({
   name: 'PageInfo',
@@ -78,11 +94,23 @@ export default defineComponent({
       return d ? formatISODate(d) : ''
     })
 
-    const categories = computed(
-      () => pageData?.value?.frontmatter?.categories || []
-    )
+    const categories = computed(() => {
+      return (pageData?.value?.frontmatter?.categories || []).map(category => {
+        return {
+          label: category,
+          pathValue: formatCategory((category))
+        }
+      })
+    })
 
-    const tags = computed(() => pageData?.value?.frontmatter?.tags || [])
+    const tags = computed(() => {
+      return (pageData?.value?.frontmatter?.tags || []).map(category => {
+        return {
+          label: category,
+          pathValue: formatCategory((category))
+        }
+      })
+    })
 
     const showPageInfo = computed(
       () =>

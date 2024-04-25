@@ -18,8 +18,16 @@ export function formatDate(date) {
   return dateNum
 }
 
-export function removeEmptyString(value) {
+export function removeEmptyString(value: string) {
   return !value ? '' : value.trim().replaceAll(' ', '-')
+}
+
+export function formatCategory(category: string) {
+  return convertToPinyin(removeEmptyString(category))
+}
+
+export function formatPath(path: string) {
+  return convertToPinyin(decodeURIComponent(path))
 }
 
 // 比对时间
@@ -75,22 +83,14 @@ export default class PageCreater {
   // 将 path 中的中文转换成拼音
   private parseChineseInPagePathToPinyin() {
     this.app.pages = this.app.pages.map((page: Page) => {
-      page.path = convertToPinyin(decodeURIComponent(page.path))
-      page.data.path = convertToPinyin(decodeURIComponent(page.data.path))
-      page.componentFilePath = convertToPinyin(
-        decodeURIComponent(page.componentFilePath)
-      )
-      page.componentFilePathRelative = convertToPinyin(
-        decodeURIComponent(page.componentFilePathRelative)
-      )
-      page.chunkFilePath = convertToPinyin(decodeURIComponent(page.chunkFilePath))
-      page.chunkFilePathRelative = convertToPinyin(
-        decodeURIComponent(page.chunkFilePathRelative)
-      )
-      page.htmlFilePath = convertToPinyin(decodeURIComponent(page.htmlFilePath))
-      page.htmlFilePathRelative = convertToPinyin(
-        decodeURIComponent(page.htmlFilePathRelative)
-      )
+      page.path = formatPath(page.path)
+      page.data.path = formatPath(page.data.path)
+      page.componentFilePath = formatPath(page.componentFilePath)
+      page.componentFilePathRelative = formatPath(page.componentFilePathRelative)
+      page.chunkFilePath = formatPath(page.chunkFilePath)
+      page.chunkFilePathRelative = formatPath(page.chunkFilePathRelative)
+      page.htmlFilePath = formatPath(page.htmlFilePath)
+      page.htmlFilePathRelative = formatPath(page.htmlFilePathRelative)
 
       return page
     })
@@ -129,7 +129,7 @@ export default class PageCreater {
     const { path, layout } = option
     const page = createPage(this.app, {
       frontmatter: { layout },
-      path: convertToPinyin(path),
+      path: formatPath(path),
     })
 
     this._extendedPages.push(page)
@@ -197,10 +197,11 @@ export default class PageCreater {
         if (isEmptyPlainObject(this.categoryPageData[key].items)) {
           this.categoryPageData[key].items = categoryValues.reduce(
             (prev, current) => {
-              prev[convertToPinyin(current)] = {
+              prev[formatCategory(current)] = {
                 pages: [page],
                 length: 1,
-                label: removeEmptyString(current),
+                label: current,
+                categoryValue: formatCategory(current),
               }
               return prev
             },
@@ -208,25 +209,26 @@ export default class PageCreater {
           )
         } else {
           categoryValues
-            ?.map((value) => removeEmptyString(String(value)))
             .forEach((value: ItemKey) => {
               if (!value) return
 
               const categoryPageDataItem =
-                this.categoryPageData[key].items[convertToPinyin(value)]
+                this.categoryPageData[key].items[formatCategory(value)]
 
               if (!categoryPageDataItem) {
-                this.categoryPageData[key].items[convertToPinyin(value)] = {
+                this.categoryPageData[key].items[formatCategory(value)] = {
                   pages: [page],
                   length: 1,
                   label: value,
+                  categoryValue: formatCategory(value),
                 }
               } else {
                 const { pages, length, label } = categoryPageDataItem
-                this.categoryPageData[key].items[convertToPinyin(value)] = {
+                this.categoryPageData[key].items[formatCategory(value)] = {
                   length: length + 1,
                   pages: [...pages, page],
                   label,
+                  categoryValue: formatCategory(value),
                 }
               }
             })
@@ -248,12 +250,12 @@ export default class PageCreater {
       const categoryValues = Object.keys(items)
 
       categoryValues.forEach((value, index) => {
-        const totalCount = items[convertToPinyin(value)].length
+        const totalCount = items[formatCategory(value)].length
         const totalPage = Math.ceil(totalCount / pageSize)
 
         Array.from({ length: totalPage }).forEach((item, currentPage) => {
           const page = createPage(this.app, {
-            path: `/${key}/${convertToPinyin(removeEmptyString(value))}/${currentPage + 1}.html`,
+            path: `/${key}/${formatCategory(value)}/${currentPage + 1}.html`,
             frontmatter: { layout },
           })
           this._extendedPages.push(page)

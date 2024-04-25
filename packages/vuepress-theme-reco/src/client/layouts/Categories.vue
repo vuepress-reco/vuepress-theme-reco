@@ -3,18 +3,18 @@
     <div class="categories-container">
       <ul class="category-list">
         <li
-          v-for="({ label, length }, index) in categoryList"
+          v-for="({ label, categoryValue }, index) in categoryList"
           :key="index"
           :class="[
             'category-item',
             {
-              active: categoryPosts.currentCategoryValue === convertToPinyin(label),
+              active: categoryPosts.currentCategoryValue === categoryValue,
             },
           ]"
         >
           <RouterLink
             class="category-link"
-            :to="`/${categoryPosts.currentCategoryKey}/${convertToPinyin(label)}/1.html`"
+            :to="`/${categoryPosts.currentCategoryKey}/${categoryValue}/1.html`"
           >
             <span class="text">{{ label }}</span>
           </RouterLink>
@@ -38,7 +38,6 @@ import { defineComponent, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
-import { convertToPinyin } from '@vuepress-reco/shared'
 import PostList from '@components/PostList.vue'
 import Common from '@components/Common/index.vue'
 import Pagation from '@components/Pagation.vue'
@@ -91,7 +90,6 @@ export default defineComponent({
       categoryList,
       categoryPosts,
       handlePagation,
-      convertToPinyin
     }
   },
 })
