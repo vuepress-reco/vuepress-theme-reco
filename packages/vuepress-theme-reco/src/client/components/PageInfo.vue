@@ -46,13 +46,10 @@
 <script lang="ts">
 import { defineComponent, computed, toRefs } from 'vue'
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+import { convertToPinyin, removeEmptyString } from '@vuepress-reco/shared'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
-import { formatISODate } from '@utils/other'
-import { convertToPinyin } from '@vuepress-reco/shared'
 
-function removeEmptyString(value: string) {
-  return !value ? '' : value.trim().replaceAll(' ', '-')
-}
+import { formatISODate } from '@utils/other'
 
 function formatCategory(category: string) {
   return convertToPinyin(removeEmptyString(category))

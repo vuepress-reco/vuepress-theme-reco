@@ -2,7 +2,7 @@ import { PageFrontmatter } from 'vuepress/client'
 
 export type CategoryPageOptions = {
   type: 'category'
-  frontmatterKey: string
+  frontmatterKey: CategoryKey
   path: string
   layout: string
   pageSize?: number
@@ -42,7 +42,7 @@ export type CategoryPageData = Record<
   }
 >
 
-export type FrontmatterKey = string
+export type CategoryKey = string
 
 export type CategoryPaginationPost = {
   pageSize: number
