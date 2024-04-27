@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.9
+
+### Patch Changes
+
+- optimize code
+
 ## 2.0.0-rc.8
 
 ### Patch Changes
