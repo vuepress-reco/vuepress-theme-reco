@@ -7,24 +7,18 @@
   </MagicCard>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { toRefs } from 'vue'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 import PageInfo from './PageInfo.vue'
 
-export default defineComponent({
-  components: { PageInfo },
-
-  props: {
-    data: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
-
-  setup() {
-    const { solution } = useComment()
-    return { solution }
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => ({}),
   },
 })
+const { data } = toRefs(props)
+
+const { solution } = useComment()
 </script>

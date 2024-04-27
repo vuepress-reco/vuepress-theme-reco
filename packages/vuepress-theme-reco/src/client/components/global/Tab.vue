@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent, h, ref, useSlots } from 'vue'
-// @ts-ignore
 import Xicons from './Xicons.vue'
 
 export default defineComponent({
@@ -23,7 +22,7 @@ export default defineComponent({
 
       // set the active item
       items.forEach((vnode, i) => {
-        vnode.props.active = i === activeIndex.value
+        vnode.props && (vnode.props.active = i === activeIndex.value)
       })
 
       return h('div', { class: 'tab' }, [
@@ -49,7 +48,7 @@ export default defineComponent({
                   },
                   h(Xicons, {
                     icon: 'Sitemap',
-                    text: vnode.props.title,
+                    text: vnode.props?.title,
                     'text-size': 12,
                   }),
                 ),

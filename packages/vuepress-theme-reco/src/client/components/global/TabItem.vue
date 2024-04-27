@@ -7,22 +7,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'TabItem',
+<script lang="ts" setup>
+import { toRefs } from 'vue'
 
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    active: {
-      type: Boolean,
-      default: false,
-    },
-  }
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
 })
+
+const { title, active } = toRefs(props)
 </script>
 
 <style>

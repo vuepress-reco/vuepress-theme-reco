@@ -3,7 +3,7 @@
     v-if="isRouterLink"
     class="link"
     :class="{ 'router-link-active': isActiveInSubpath }"
-    :to="item.link"
+    :to="item.link as string"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
     :key="`${item.link}-router`"
@@ -30,95 +30,84 @@
   </a>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useRoute } from 'vue-router'
-import { computed, defineComponent, toRefs } from 'vue'
+import { computed, toRefs } from 'vue'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
 import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@composables/index.js'
 
 import type { PropType } from 'vue'
-import type { NavLink } from '../../types'
+import type { NavLink, ResolvedSeriesItem } from '../../types'
 
-export default defineComponent({
-  name: 'Link',
 
-  inheritAttrs: false,
+const route = useRoute()
+const routeLocale = useRouteLocale()
+const siteLocal = useSiteLocaleData()
+const themeLocal = useThemeLocaleData()
 
-  props: {
-    item: {
-      type: Object as PropType<NavLink>,
-      required: true,
-    },
+interface LinkItem extends NavLink {
+  [key: string]: unknown
+}
+
+const props = defineProps({
+  item: {
+    type: Object as PropType<NavLink | ResolvedSeriesItem>,
+    required: true,
   },
+})
+const { item } = toRefs(props)
 
-  setup(props) {
-    const route = useRoute()
-    const routeLocale = useRouteLocale()
-    const siteLocal = useSiteLocaleData()
-    const themeLocal = useThemeLocaleData()
+// if the link has http protocol
+const hasHttpProtocol = computed(() => isLinkHttp(item.value.link as string))
+// if the link has non-http protocol
+const hasNonHttpProtocal = computed(
+  () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link as string)
+)
+// resolve the `target` attr
+const linkTarget = computed(() => {
+  if (hasNonHttpProtocal.value) return undefined
+  if (item.value.target) return item.value.target
+  if (hasHttpProtocol.value) return '_blank'
+  return undefined
+})
+// if the `target` attr is '_blank'
+const isBlankTarget = computed(() => linkTarget.value === '_blank')
+// is `<RouterLink>` or not
+const isRouterLink = computed(
+  () =>
+    !hasHttpProtocol.value &&
+    !hasNonHttpProtocal.value &&
+    !isBlankTarget.value
+)
 
-    const { item } = toRefs(props)
+// resolve the `rel` attr
+const linkRel = computed(() => {
+  if (hasNonHttpProtocal.value) return undefined
+  if (item.value.rel) return item.value.rel
+  if (isBlankTarget.value) return 'noopener noreferrer'
+  return undefined
+})
+// resolve the `aria-label` attr
+const linkAriaLabel = computed(
+  () => item.value.ariaLabel || item.value.text
+)
 
-    // if the link has http protocol
-    const hasHttpProtocol = computed(() => isLinkHttp(item.value.link))
-    // if the link has non-http protocol
-    const hasNonHttpProtocal = computed(
-      () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link)
-    )
-    // resolve the `target` attr
-    const linkTarget = computed(() => {
-      if (hasNonHttpProtocal.value) return undefined
-      if (item.value.target) return item.value.target
-      if (hasHttpProtocol.value) return '_blank'
-      return undefined
-    })
-    // if the `target` attr is '_blank'
-    const isBlankTarget = computed(() => linkTarget.value === '_blank')
-    // is `<RouterLink>` or not
-    const isRouterLink = computed(
-      () =>
-        !hasHttpProtocol.value &&
-        !hasNonHttpProtocal.value &&
-        !isBlankTarget.value
-    )
-    // resolve the `rel` attr
-    const linkRel = computed(() => {
-      if (hasNonHttpProtocal.value) return undefined
-      if (item.value.rel) return item.value.rel
-      if (isBlankTarget.value) return 'noopener noreferrer'
-      return undefined
-    })
-    // resolve the `aria-label` attr
-    const linkAriaLabel = computed(
-      () => item.value.ariaLabel || item.value.text
-    )
+// should be active when current route is a subpath of this link
+const shouldBeActiveInSubpath = computed(() => {
+  const localeKeys = Object.keys(siteLocal.value.locales)
+  if (localeKeys.length) {
+    return !localeKeys.some((key) => key === item.value.link)
+  }
+  return item.value.link !== themeLocal.value.home || routeLocale.value
+})
 
-    // should be active when current route is a subpath of this link
-    const shouldBeActiveInSubpath = computed(() => {
-      const localeKeys = Object.keys(siteLocal.value.locales)
-      if (localeKeys.length) {
-        return !localeKeys.some((key) => key === item.value.link)
-      }
-      return item.value.link !== themeLocal.value.home || routeLocale.value
-    })
-    // if this link is active in subpath
-    const isActiveInSubpath = computed(() => {
-      if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
-        return false
-      }
-      return route.path.startsWith(item.value.link)
-    })
-
-    return {
-      isActiveInSubpath,
-      isBlankTarget,
-      isRouterLink,
-      linkRel,
-      linkTarget,
-      linkAriaLabel,
-    }
-  },
+// if this link is active in subpath
+const isActiveInSubpath = computed(() => {
+  if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
+    return false
+  }
+  return route.path.startsWith(item.value.link as string)
 })
 </script>

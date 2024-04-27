@@ -43,9 +43,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, toRefs } from 'vue'
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+<script lang="ts" setup>
+import { computed, toRefs } from 'vue'
+import { useThemeLocaleData } from '@composables/index.js'
 import { convertToPinyin, removeEmptyString } from '@vuepress-reco/shared'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
@@ -55,95 +55,77 @@ function formatCategory(category: string) {
   return convertToPinyin(removeEmptyString(category))
 }
 
-export default defineComponent({
-  name: 'PageInfo',
-
-  props: {
-    pageData: {
-      type: Object,
-      default: () => ({}),
-    },
-    currentCategory: {
-      type: String,
-      default: '',
-    },
-    currentTag: {
-      type: String,
-      default: '',
-    },
-    hideViews: {
-      type: Boolean,
-      default: false,
-    },
+const props = defineProps({
+  pageData: {
+    type: Object,
+    default: () => ({}),
   },
+  currentCategory: {
+    type: String,
+    default: '',
+  },
+  currentTag: {
+    type: String,
+    default: '',
+  },
+  hideViews: {
+    type: Boolean,
+    default: false,
+  },
+})
+const { pageData, hideViews } = toRefs(props)
 
-  setup(props) {
-    const { pageData, hideViews } = toRefs(props)
-    const { solution, options } = useComment()
-    const themeData = useThemeLocaleData()
+const themeData = useThemeLocaleData()
+const { solution, options } = useComment()
 
-    const author = computed(
-      () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
-    )
+const author = computed(
+  () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
+)
 
-    const date = computed(() => {
-      const d = pageData?.value?.frontmatter?.date
-      return d ? formatISODate(d) : ''
-    })
+const date = computed(() => {
+  const d = pageData?.value?.frontmatter?.date
+  return d ? formatISODate(d) : ''
+})
 
-    const categories = computed(() => {
-      return (pageData?.value?.frontmatter?.categories || []).map(category => {
-        return {
-          label: category,
-          pathValue: formatCategory((category))
-        }
-      })
-    })
-
-    const tags = computed(() => {
-      return (pageData?.value?.frontmatter?.tags || []).map(category => {
-        return {
-          label: category,
-          pathValue: formatCategory((category))
-        }
-      })
-    })
-
-    const showPageInfo = computed(
-      () =>
-        !!author.value ||
-        !!date.value ||
-        !!(categories.value && categories.value.length > 0) ||
-        !!(tags.value && tags.value.length > 0)
-    )
-
-    const showValineViews = computed(() => {
-      return (
-        solution.value === 'valine' &&
-        options.value.visitor != false &&
-        !hideViews.value
-      )
-    })
-
-    const showWalineViews = computed(() => {
-      return (
-        solution.value === 'waline' &&
-        options.value.pageview != false &&
-        !hideViews.value
-      )
-    })
-
+const categories = computed(() => {
+  return (pageData?.value?.frontmatter?.categories || []).map(category => {
     return {
-      author,
-      date,
-      categories,
-      tags,
-      showPageInfo,
-      solution,
-      showValineViews,
-      showWalineViews,
-      convertToPinyin,
+      label: category,
+      pathValue: formatCategory((category))
     }
-  },
+  })
+})
+
+const tags = computed(() => {
+  return (pageData?.value?.frontmatter?.tags || []).map(category => {
+    return {
+      label: category,
+      pathValue: formatCategory((category))
+    }
+  })
+})
+
+const showPageInfo = computed(
+  () =>
+    !!author.value ||
+    !!date.value ||
+    !!(categories.value && categories.value.length > 0) ||
+    !!(tags.value && tags.value.length > 0)
+)
+
+const showValineViews = computed(() => {
+  return (
+    solution.value === 'valine' &&
+    options.value.visitor != false &&
+    !hideViews.value
+  )
+})
+
+const showWalineViews = computed(() => {
+  return (
+    solution.value === 'waline' &&
+    options.value.pageview != false &&
+    !hideViews.value
+  )
 })
 </script>

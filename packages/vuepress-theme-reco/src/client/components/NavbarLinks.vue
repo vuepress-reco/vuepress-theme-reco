@@ -12,10 +12,10 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { isString } from 'vuepress/shared'
-import { computed, defineComponent } from 'vue'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { getNavLink, useThemeLocaleData } from '@composables/index.js'
@@ -200,28 +200,14 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   })
 }
 
-export default defineComponent({
-  name: 'NavbarLinks',
 
-  components: {
-    Link,
-    DropdownLink,
-  },
+const navbarConfig = useNavbarConfig()
+const navbarSelectLanguage = useNavbarSelectLanguage()
+const navbarRepo = useNavbarRepo()
 
-  setup() {
-    const navbarConfig = useNavbarConfig()
-    const navbarSelectLanguage = useNavbarSelectLanguage()
-    const navbarRepo = useNavbarRepo()
-
-    const navbarLinks: ComputedRef<Array<ResolvedNavbarItem>> = computed(() => [
-      ...navbarConfig.value,
-      ...navbarSelectLanguage.value,
-      ...navbarRepo.value,
-    ])
-
-    return {
-      navbarLinks,
-    }
-  },
-})
+const navbarLinks: ComputedRef<Array<ResolvedNavbarItem>> = computed(() => [
+  ...navbarConfig.value,
+  ...navbarSelectLanguage.value,
+  ...navbarRepo.value,
+])
 </script>

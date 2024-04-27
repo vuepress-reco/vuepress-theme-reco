@@ -1,25 +1,18 @@
 <template>
   <div class="post-list-container">
-    <PostItem v-for="(item, index) in data" :key="index" :data="item" />
+    <PostItem v-for="(item, index) in data" :key="index" :data="item as Record<string, unknown>" />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { toRefs } from 'vue'
 import PostItem from './PostItem.vue'
 
-export default defineComponent({
-  components: { PostItem },
-
-  props: {
-    data: {
-      type: Array,
-      default: () => [],
-    },
-  },
-
-  setup() {
-    return {}
+const props = defineProps({
+  data: {
+    type: Array,
+    default: () => [],
   },
 })
+const { data } = toRefs(props)
 </script>

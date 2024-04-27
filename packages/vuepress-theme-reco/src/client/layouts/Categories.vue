@@ -33,64 +33,55 @@
   </Common>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, onMounted, watch } from 'vue'
+<script lang="ts" setup>
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
+import { computed, onMounted, watch } from 'vue'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
+
 import PostList from '@components/PostList.vue'
-import Common from '@components/Common/index.vue'
 import Pagation from '@components/Pagation.vue'
+import Common from '@components/Common/index.vue'
 import { useMagicCard } from '@composables/index.js'
 
-export default defineComponent({
-  components: { Common, PostList, Pagation },
 
-  setup() {
-    const {
-      categoryPosts,
-      categorySummary
-    } = useExtendPageData()
-    const router = useRouter()
+const {
+  categoryPosts,
+  categorySummary
+} = useExtendPageData()
+const route = useRoute()
+const router = useRouter()
 
-    const categoryList = computed(() => {
-      let list = []
-      const currentCategoryKey = categoryPosts.value.currentCategoryKey
+const categoryList = computed(() => {
+  let list = []
+  const currentCategoryKey = categoryPosts.value.currentCategoryKey
 
-      if (currentCategoryKey) {
-        const { items = [] } =
-          categorySummary[currentCategoryKey]
+  if (currentCategoryKey) {
+    const { items = [] } =
+      categorySummary[currentCategoryKey]
 
-        list = Object.values(items)
-      }
+    list = Object.values(items)
+  }
 
-      return list
-    })
+  return list
+})
 
-    const handlePagation = (page) => {
-      const {
-        currentCategoryKey,
-        currentCategoryValue
-      } = categoryPosts.value
+const handlePagation = (page) => {
+  const {
+    currentCategoryKey,
+    currentCategoryValue
+  } = categoryPosts.value
 
-      router.push(`/${currentCategoryKey}/${currentCategoryValue}/${page}.html`)
-    }
+  router.push(`/${currentCategoryKey}/${currentCategoryValue}/${page}.html`)
+}
 
-    const { initMagicCard } = useMagicCard()
-    onMounted(() => {
-      initMagicCard()
-    })
+const { initMagicCard } = useMagicCard()
 
-    const route = useRoute()
-    watch(route, () => {
-      initMagicCard()
-    })
+onMounted(() => {
+  initMagicCard()
+})
 
-    return {
-      categoryList,
-      categoryPosts,
-      handlePagation,
-    }
-  },
+watch(route, () => {
+  initMagicCard()
 })
 </script>
