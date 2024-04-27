@@ -2,30 +2,22 @@ export const bulletin = {
   body: [
     {
       type: 'title',
-      content: '最新版本',
+      content: 'QQ 频道：3u8x6485s0',
+    },
+    {
+      type: 'image',
+      src: '/qq_channel.png',
     },
     {
       type: 'text',
-      content: `
-      <div>
-        <div>vuepress@2.0.0-rc.9</div>
-        <div>vuepress-theme-reco@2.0.0-rc.8</div>
-      </div>`,
-      style: 'font-size: 12px;'
-    },
-    {
-      type: 'title',
-      content: 'QQ 群',
-    },
-    {
-      type: 'text',
-      content: `
-      <ul>
-        <li>QQ群1：1037296104</li>
-        <li>QQ群2：1061561395</li>
-        <li>QQ群3：962687802</li>
-      </ul>`,
-      style: 'font-size: 12px;'
+      // content: `
+      // <ul>
+      //   <li>QQ群1：1037296104</li>
+      //   <li>QQ群2：1061561395</li>
+      //   <li>QQ群3：962687802</li>
+      // </ul>`,
+      content: `<br /><div><b>周知：</b>原 3 个 QQ 群成员活跃状态差异较大，且分布较分散，现停止新人加群，为了方便大家的交流，请移步 QQ 频道。</div>`,
+      style: 'font-size: 12px; color: red;'
     },
     {
       type: 'hr',
