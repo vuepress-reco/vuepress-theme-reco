@@ -92,3 +92,7 @@ export default defineUserConfig({
 ```
 
 使用教程及 options 其它参数参考[Giscus](https://giscus.app)。
+
+::: warning
+Giscus 会在页面内放置指向 giscus.app 的 iframe，而该组件需要加载网站中的 css 文件才能使用配置文件中的主题，这会造成跨域问题。在使用开发服务器问题时，该问题无需处理；在正式部署时，需要配置 `Access-Control-Allow-Origin` 和 `Access-Control-Allow-Headers` 请求头，否则评论样式会出现问题。
+:::
