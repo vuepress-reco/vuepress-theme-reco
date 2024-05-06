@@ -91,3 +91,7 @@ export default defineUserConfig({
 ```
 
 Refer to [Giscus](https://giscus.app) for the tutorial and other parameters of options.
+
+::: warning
+Giscus uses an iframe referring to giscus.app, which requires to load css files from your own website. This causes an cross origin problem. You needn't to handle it when you are using development server, but when you are deploying the project, it is necessary to configure headers `Access-Control-Allow-Origin` and `Access-Control-Allow-Headers`, otherwise a style problem will occur.
+:::

@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { isString } from 'vuepress/shared'
+import { isString, isLinkHttp } from 'vuepress/shared'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { getNavLink, useThemeLocaleData } from '@composables/index.js'
@@ -115,7 +115,7 @@ const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
   )
 
   const repoLink = computed(() => {
-    if (repoType.value === 'GitHub') {
+    if (repoType.value === 'GitHub' && !isLinkHttp(repo.value)) {
       return `https://github.com/${repo.value}`
     }
     return repo.value
