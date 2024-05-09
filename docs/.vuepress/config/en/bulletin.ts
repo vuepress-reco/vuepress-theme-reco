@@ -18,7 +18,7 @@ export const bulletin = {
       //   <li>QQ Group 3：962687802</li>
       // </ul>`,
       content: `<br /><div><b>Tip: </b>The original three QQ group members are quite different and scattered, so new people are stopped to join the group now. In order to facilitate your communication, please move to the QQ channel.</div>`,
-      style: 'font-size: 12px; color: red;'
+      style: 'font-size: 12px; color: #5D67E8;'
     },
     {
       type: 'hr',

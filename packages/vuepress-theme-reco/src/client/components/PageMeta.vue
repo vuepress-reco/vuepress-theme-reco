@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { usePageData, useSiteLocaleData } from 'vuepress/client'
+import { usePageData } from 'vuepress/client'
 
 import { resolveEditLink } from '@utils/index.js'
 import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
@@ -66,7 +66,6 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 }
 
 const useLastUpdated = (): ComputedRef<null | string> => {
-  const siteLocale = useSiteLocaleData()
   const themeLocal = useThemeLocaleData()
   const page = usePageData<RecoThemePageData>()
   const frontmatter = usePageFrontmatter()
