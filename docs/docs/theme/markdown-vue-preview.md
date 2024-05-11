@@ -10,7 +10,7 @@ date: 2022-01-29
 :::tip
 主题默认将 `/.vuepress/components` 下面的 `.vue` 组件进行了全局注册，所以需要预览的组件请放在此目录下，注意：文件名不允许有 `-` `_`。
 
-如果我们文档项目存放在工程的子目录，比如 `/docs` 文件夹下，我们需要设置 `themeConfig.sourceDir` 为 `./docs`。
+如果我们文档项目存放在工程的子目录，比如 `/docs` 文件夹下，我们需要设置 `themeConfig.docsDir` 为 `./docs`。
 :::
 
 **输入**

@@ -9,4 +9,4 @@ date: 2022-04-27 00:56:21
 
 主题默认将 `/.vuepress/components` 下面的 `.vue` 组件进行了全局注册。
 
-如果我们文档项目存放在工程的子目录，比如 `/docs` 文件夹下，我们需要设置 `themeConfig.sourceDir` 为 `/docs`。
+如果我们文档项目存放在工程的子目录，比如 `/docs` 文件夹下，我们需要设置 `themeConfig.docsDir` 为 `/docs`。

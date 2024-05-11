@@ -8,7 +8,7 @@ date: 2024-02-23
 :::tip
 Used to generate git jump addresses and edit links.
 
-If our project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.sourceDir` to `/docs`.
+If our project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.docsDir` to `/docs`.
 :::
 
 ## Configuration
@@ -53,9 +53,14 @@ import { recoTheme } from 'vuepress-theme-reco'
 
 export default defineUserConfig({
   theme: recoTheme({
-    sourceDir: '/docs',
-    gitRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
-    gitBranch: 'main',
+    docsDir: '/docs',
+    docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
+    docsBranch: 'main',
   })
 })
 ```
+
+**docsDir**
+- Type: string
+- Default: '.'
+- Detail: The project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.docsDir` to `/docs`.Be sure to set it this way, because this configuration is strongly related to many parsing features.

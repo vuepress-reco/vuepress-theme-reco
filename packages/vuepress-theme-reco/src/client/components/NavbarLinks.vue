@@ -109,7 +109,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
 const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
   const themeLocal = useThemeLocaleData()
 
-  const repo = computed(() => themeLocal.value.repo || themeLocal.value.gitRepo)
+  const repo = computed(() => themeLocal.value.repo || themeLocal.value.docsRepo)
   const repoType = computed(() =>
     repo.value ? resolveRepoType(repo.value) : null
   )

@@ -47,7 +47,7 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     registerComponentsPlugin({
       componentsDir: path.join(
         process.cwd(),
-        themeConfig.sourceDir || '/',
+        themeConfig.docsDir || '/',
         './.vuepress/components'
       ),
     }),

@@ -15,19 +15,19 @@ export const editLinkPatterns: Record<Exclude<RepoType, null>, string> = {
 }
 
 export const resolveEditLink = ({
-  gitRepo,
-  gitBranch,
-  sourceDir,
+  docsRepo,
+  docsBranch,
+  docsDir,
   filePathRelative,
   editLinkPattern,
 }: {
-  gitRepo: string
-  gitBranch: string
-  sourceDir: string
+  docsRepo: string
+  docsBranch: string
+  docsDir: string
   filePathRelative: null | string
   editLinkPattern?: string
 }): string | null => {
-  const repoType = resolveRepoType(gitRepo)
+  const repoType = resolveRepoType(docsRepo)
 
   let pattern: string | undefined
 
@@ -42,41 +42,11 @@ export const resolveEditLink = ({
   return pattern
     .replace(
       /:repo/,
-      isLinkHttp(gitRepo) ? gitRepo : `https://github.com/${gitRepo}`
+      isLinkHttp(docsRepo) ? docsRepo : `https://github.com/${docsRepo}`
     )
-    .replace(/:branch/, gitBranch)
+    .replace(/:branch/, docsBranch)
     .replace(
       /:path/,
-      removeLeadingSlash(`${removeEndingSlash(sourceDir)}/${filePathRelative}`)
+      removeLeadingSlash(`${removeEndingSlash(docsDir)}/${filePathRelative}`)
     )
 }
-
-// export const resolveEditLink = ({
-//   gitRepo,
-//   gitBranch,
-//   sourceDir,
-//   filePathRelative,
-//   editLinkPattern,
-// }: {
-//   gitRepo: string
-//   gitBranch: string
-//   sourceDir: string
-//   filePathRelative: string | null
-//   editLinkPattern?: string
-// }): string | null => {
-//   if (!filePathRelative) return null
-
-//   const pattern = resolveEditLinkPatterns({ gitRepo, editLinkPattern })
-//   if (!pattern) return null
-
-//   return pattern
-//     .replace(
-//       /:repo/,
-//       isLinkHttp(gitRepo) ? gitRepo : `https://github.com/${gitRepo}`
-//     )
-//     .replace(/:branch/, gitBranch)
-//     .replace(
-//       /:path/,
-//       removeLeadingSlash(`${removeEndingSlash(sourceDir)}/${filePathRelative}`)
-//     )
-// }

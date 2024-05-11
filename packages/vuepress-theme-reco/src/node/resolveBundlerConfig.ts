@@ -82,7 +82,7 @@ function _customizeTailwindcssOptions(themeConfig) {
 
   tailwindcssConfig.content.push(
     path.join(
-      themeConfig.sourceDir || '/',
+      themeConfig.docsDir || '/',
       './.vuepress/components/*.(vue|html|js)'
     )
   )

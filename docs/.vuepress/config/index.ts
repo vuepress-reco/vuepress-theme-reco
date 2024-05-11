@@ -23,9 +23,9 @@ export const themeConfig = {
   },
   logo: '/logo.png',
   author: 'reco_luan',
-  gitRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
-  gitBranch: 'main',
-  sourceDir: '/docs',
+  docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',
+  docsBranch: 'main',
+  docsDir: '/docs',
   componentsDir: './docs/.vuepress/components',
   algolia: {
     appId: '38R2J3MTQC',

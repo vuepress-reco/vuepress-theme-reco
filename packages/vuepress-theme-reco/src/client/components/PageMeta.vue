@@ -38,18 +38,18 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 
     const {
       repo,
-      gitRepo = repo,
-      gitBranch = 'main',
-      sourceDir = '',
+      docsRepo = repo,
+      docsBranch = 'main',
+      docsDir = '',
       editLinkText,
     } = themeLocal.value
 
-    if (!gitRepo) return null
+    if (!docsRepo) return null
 
     const editLink = resolveEditLink({
-      gitRepo,
-      gitBranch,
-      sourceDir,
+      docsRepo,
+      docsBranch,
+      docsDir,
       filePathRelative: page.value.filePathRelative,
       editLinkPattern: themeLocal.value.editLinkPattern,
     })

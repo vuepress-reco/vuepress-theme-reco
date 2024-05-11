@@ -10,7 +10,7 @@ Note that the version after `2.0.0-rc.5` cancels the ability of the `vue-preview
 :::tip
 By default, the theme registers the `.vue` component under `/.vuepress/components` globally, so the components that need to be previewed should be placed in this directory. Note:`-``_ `is not allowed in the file name.
 
-If our project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.sourceDir` to `/docs`.
+If our project is stored in a subdirectory of the project, such as the `/docs` folder, we need to set `themeConfig.docsDir` to `/docs`.
 :::
 
 **Input**

@@ -102,21 +102,21 @@ export interface RecoThemeLocaleData extends LocaleData {
    *
    * Set this config if your docs is placed in a different repo
    */
-  gitRepo?: string
+  docsRepo?: string
 
   /**
    * Page meta - edit link config
    *
    * Set this config if the branch of your docs is not 'master'
    */
-  gitBranch?: string
+  docsBranch?: string
 
   /**
    * Page meta - edit link config
    *
-   * Set this config if your docs is placed in sub dir of your `gitRepo`
+   * Set this config if your docs is placed in sub dir of your `docsRepo`
    */
-  sourceDir?: string
+  docsDir?: string
 
   /**
    * Page meta - last updated config
