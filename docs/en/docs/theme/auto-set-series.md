@@ -5,12 +5,12 @@ date: 2023-02-17
 
 ## Introduction
 
-In order to save users' time cost, the theme can automatically generate a series of configurations for the documents under the `docs` folder according to the folder nesting relationship.
+In order to save users' time cost, the theme can automatically generate a series of configurations for the documents under the `series` folder according to the folder nesting relationship.
 
 ```
 /
 └─ .vuepress
-└─ docs
+└─ series
   └─ sery 1
     └─ doc1.md
     └─ doc2.md

@@ -1,7 +1,11 @@
-import { inject } from 'vue'
+import { computed } from 'vue'
 import type { ComputedRef, InjectionKey } from 'vue'
-import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
+import { useRoute, usePageFrontmatter, type RouteLocationNormalizedLoaded } from 'vuepress/client'
 import { isPlainObject, isString, resolveLocalePath } from 'vuepress/shared'
+import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
+
+
+import { useThemeLocaleData } from '@composables/index.js'
 
 import type {
   RecoThemeData,
@@ -37,19 +41,22 @@ export interface ResolvedSeriesItem extends Partial<NavLink> {
 
 export type SeriesItemsRef = ComputedRef<ResolvedSeriesItem[]>
 
-export const seriesItemsSymbol: InjectionKey<SeriesItemsRef> = Symbol(
-  'seriesItems'
-)
-
 export const useSeriesItems = (): SeriesItemsRef => {
-  const seriesItems = inject(seriesItemsSymbol)
+  const route = useRoute()
+  const { series } = useExtendPageData()
+  const themeLocal = useThemeLocaleData()
+  const frontmatter = usePageFrontmatter<RecoThemeNormalPageFrontmatter>()
+  const seriesItems = computed(() =>
+    resolveSeriesItems(frontmatter.value, themeLocal.value, route, series)
+  )
+
   if (!seriesItems) {
     throw new Error('useSeriesItems() is called without provider.')
   }
   return seriesItems
 }
 
-export const resolveSeriesItems = (
+const resolveSeriesItems = (
   frontmatter: RecoThemeNormalPageFrontmatter,
   themeLocal: RecoThemeData,
   route: RouteLocationNormalizedLoaded,
@@ -80,7 +87,7 @@ export const resolveSeriesItems = (
 /**
  * Resolve series items if the config is an array
  */
-export const resolveArraySeriesItems = (seriesPath: string, seriesConfig: SeriesConfigArray): ResolvedSeriesItem[] => {
+const resolveArraySeriesItems = (seriesPath: string, seriesConfig: SeriesConfigArray): ResolvedSeriesItem[] => {
   const handleChildItem = (
     item: ResolvedSeriesItem | SeriesGroup | SeriesItem | string,
   ): ResolvedSeriesItem => {
@@ -114,7 +121,7 @@ export const resolveArraySeriesItems = (seriesPath: string, seriesConfig: Series
 /**
  * Resolve series items if the config is a key -> value (path-prefix -> array) object
  */
-export const resolveMultiSeriesItems = (
+const resolveMultiSeriesItems = (
   seriesConfig: SeriesConfigObject,
   route: RouteLocationNormalizedLoaded
 ): ResolvedSeriesItem[] => {

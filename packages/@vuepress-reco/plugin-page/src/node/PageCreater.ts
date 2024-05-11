@@ -95,12 +95,6 @@ export default class PageCreater {
   }
 
   parse() {
-    this._parsePageOptions()
-
-    this._setBlogsToCategoryPageData()
-
-    this._createExtendedPages()
-
     /**
      * The name of the file is changed in the develop environment,
      * and bug of 404 appears during hot updates.
@@ -109,6 +103,12 @@ export default class PageCreater {
     if (this.app.env.isBuild) {
       this._parseChineseInPagePathToPinyin()
     }
+
+    this._parsePageOptions()
+
+    this._setBlogsToCategoryPageData()
+
+    this._createExtendedPages()
   }
 
   // 将 path 中的中文转换成拼音
@@ -211,7 +211,7 @@ export default class PageCreater {
 
     this.__blogs_to_be_released__ = blogsToBeReleased
 
-    blogsToBeReleased.forEach((page: ReleasedPage, index) => {
+    blogsToBeReleased.forEach((page: ReleasedPage) => {
       const categoryKeysOfFrontmatter = Object.keys(page.frontmatter)
         .filter((key: string) => {
           return this.__category_keys__.includes(key)
@@ -320,45 +320,40 @@ export default class PageCreater {
 
   // 设置系列
   private _setSeries(page) {
-    let docSeries = ((page.filePath || '') as string).match(
-      /.+\/docs\/(.+)\/(.+)\/(.+)\.md$/
+    let matches = ((page.filePath || '') as string).match(
+      /\/series\/([^/]+)(\S*?)\/([^/.]+)\.md/
     )
 
-    if (docSeries) {
-      const group = docSeries[2]
-      const series = `/docs/${docSeries[1]}/`
-      const filePath = `${series}${group}/${docSeries[3]}.md`
+    if (!matches) return
 
-      if (!this.__series__?.[series]) {
-        this.__series__[`/${series}/`] = [{
-          text: group,
-          children: [filePath],
-        }]
-      } else if ( !this.__series__[series].some((groupItem) => groupItem?.text === group)) {
-        this.__series__[series].push({
-          text: group,
-          children: [filePath],
+    const [filePath, sery, dirStr] = matches
+    const seryKey = `/series/${sery}/`
+
+    if (!this.__series__?.[seryKey]) {
+      this.__series__[seryKey] = []
+    }
+
+    const dirs = dirStr.split('/').splice(1)
+    const dirLen = dirs.length
+    if (dirLen === 0) {
+      this.__series__[seryKey].push(filePath)
+      return
+    }
+    dirs.reduce((total, current, index) => {
+      if (!total.some((groupItem) => groupItem?.text === current)) {
+        total.push({
+          text: current,
+          children: index === dirLen - 1 ? [filePath] : [],
         })
       } else {
-        this.__series__[series]
-          .find((groupItem) => groupItem?.text === group)
-          .children.push(filePath)
+        total.find((groupItem) => groupItem?.text === current).children.push(index === dirLen - 1 ? filePath : {
+          text: current,
+          children: index === dirLen - 1 ? [filePath] : [],
+        })
       }
-    } else {
-      docSeries = ((page.filePath || '') as string).match(
-        /.+\/docs\/(.+)\/(.+)\.md$/
-      )
-      if (docSeries) {
-        const series = `/docs/${docSeries[1]}/`
-        const filePath = `${series}${docSeries[2]}.md`
 
-        if (!this.__series__?.[series]) {
-          this.__series__[series] = [filePath]
-        } else {
-          this.__series__[series].push(filePath)
-        }
-      }
-    }
+      return total
+    }, this.__series__[seryKey])
   }
 }
 

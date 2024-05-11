@@ -4,12 +4,9 @@ import {
   usePageData,
   catalogSymbol,
   headersToCatalog,
-  seriesItemsSymbol,
-  resolveSeriesItems,
   useThemeLocaleData,
   usePageFrontmatter,
 } from '@composables/index.js'
-import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 export function applyClientSetup() {
   // we need to access series items in multiple components
@@ -17,11 +14,6 @@ export function applyClientSetup() {
   const themeLocal = useThemeLocaleData()
   const frontmatter = usePageFrontmatter()
   const route = useRoute()
-  const { series } = useExtendPageData()
-  const seriesItems = computed(() =>
-    resolveSeriesItems(frontmatter.value, themeLocal.value, route, series)
-  )
-  provide(seriesItemsSymbol, seriesItems)
 
   const page = usePageData()
   const catalog = computed(() => headersToCatalog(page.value.headers))
