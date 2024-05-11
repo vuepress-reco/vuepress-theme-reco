@@ -57,6 +57,7 @@
     "@vuepress/plugin-search": "2.0.0-rc.15",
     "@vuepress/plugin-docsearch": "2.0.0-rc.17",
     "@vuepress/plugin-theme-data": "2.0.0-rc.15",
+    "@vuepress/helper": "2.0.0-rc.28",
     "autoprefixer": "10.4.7",
     "postcss": "8.4.14",
     "postcss-each": "1.1.0",

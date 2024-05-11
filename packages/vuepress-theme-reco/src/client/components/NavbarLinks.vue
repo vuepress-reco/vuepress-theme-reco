@@ -17,6 +17,7 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { isString, isLinkHttp } from 'vuepress/shared'
 import { convertToPinyin } from '@vuepress-reco/shared'
+import { useRoutePaths } from '@vuepress/helper/client'
 import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
 import { getNavLink, useThemeLocaleData } from '@composables/index.js'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
@@ -40,6 +41,7 @@ import type {
  */
 const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
   const router = useRouter()
+  const routePaths = useRoutePaths()
   const routeLocale = useRouteLocale()
   const siteLocale = useSiteLocaleData()
   const themeLocal = useThemeLocaleData()
@@ -84,7 +86,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
             targetLocalePath
           )
           if (
-            router.getRoutes().some((item) => item.path === targetLocalePage)
+            routePaths.value.some((item) => item === targetLocalePage)
           ) {
             link = targetLocalePage
           } else {
