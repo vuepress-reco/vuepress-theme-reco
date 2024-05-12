@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.10
+
+### Patch Changes
+
+- fix some bug
+
 ## 2.0.0-rc.9
 
 ### Patch Changes

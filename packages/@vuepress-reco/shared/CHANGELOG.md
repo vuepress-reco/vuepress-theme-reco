@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-rc.78
+
+### Patch Changes
+
+- fix some bug
+
 ## 2.0.0-rc.77
 
 ### Patch Changes
