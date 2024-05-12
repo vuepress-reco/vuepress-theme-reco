@@ -3,6 +3,19 @@ export const bulletin = {
   body: [
     {
       type: 'title',
+      content: 'Latest Version',
+    },
+    {
+      type: 'text',
+      content: `
+      <ul>
+        <li>vuepress：2.0.0-rc.9</li>
+        <li>theme reco：2.0.0-rc.10</li>
+      </ul>`,
+      style: 'font-size: 12px; color: #5D67E8;'
+    },
+    {
+      type: 'title',
       content: 'QQ Channel：3u8x6485s0',
     },
     {
