@@ -173,17 +173,17 @@ const handleMobileButtonClick = () => {
 
 const isChildActive = computed(() => {
   let flag = false
-    function traverse(node) {
-      if (node.children) {
-        node.children.forEach(child => traverse(child));
-      } else {
-        if (node.link && !node.language) {
-          if (node.link === route.path) {
-            flag = true
-          }
+  function traverse(node) {
+    if (node.children) {
+      node.children.forEach(child => traverse(child));
+    } else {
+      if (node.link && !node.language) {
+        if (node.link === route.path) {
+          flag = true
         }
       }
     }
+  }
 
   traverse(item.value)
   return flag
