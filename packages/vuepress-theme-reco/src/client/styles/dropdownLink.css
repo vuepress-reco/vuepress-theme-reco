@@ -23,6 +23,11 @@
     @apply md:flex;
     @apply dark:text-reco-text-darkmode;
   }
+
+  .dropdown-link__title--active {
+    @apply text-reco-primary;
+  }
+
   .dropdown-link--mobile__title {
     @apply flex items-center justify-between w-full text-sm font-semibold text-reco-text-lightmode;
     @apply md:hidden;

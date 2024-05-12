@@ -2,6 +2,7 @@
   <div class="dropdown-link" :class="{ open }">
     <button
       class="dropdown-link__title"
+      :class="isChildActive ? 'dropdown-link__title--active' : ''"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
@@ -168,4 +169,24 @@ const handleMobileButtonClick = () => {
   open.value = !open.value
   if (!isMobile.value) isMobile.value = true
 }
+
+
+const isChildActive = computed(() => {
+  let flag = false
+    function traverse(node) {
+      if (node.children) {
+        node.children.forEach(child => traverse(child));
+      } else {
+        if (node.link && !node.language) {
+          if (node.link === route.path) {
+            flag = true
+          }
+        }
+      }
+    }
+
+  traverse(item.value)
+  return flag
+})
+
 </script>
