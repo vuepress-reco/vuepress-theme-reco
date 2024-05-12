@@ -172,32 +172,21 @@ const handleMobileButtonClick = () => {
 
 
 const isChildActive = computed(() => {
-  function flattenTree(tree: any) {
-    let result: any[] = [];
+  let flag = false
     function traverse(node) {
       if (node.children) {
         node.children.forEach(child => traverse(child));
       } else {
         if (node.link && !node.language) {
-          result.push(node.link);
+          if (node.link === route.path) {
+            flag = true
+          }
         }
       }
     }
-    if (tree.children) {
-      traverse(tree); // 从根节点开始遍历
-      return result;
-    } else {
-      result.push(tree)
-    }
-  }
-  const result = flattenTree(item.value)
-  if (result) {
-    return result.some(listItem => {
-      return listItem === route.path
-    })
-  } else {
-    return false
-  }
+
+  traverse(item.value)
+  return flag
 })
 
 </script>

@@ -95,7 +95,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
         return {
           text,
           link,
-            language: true
+          language: true
         }
       }),
     }
