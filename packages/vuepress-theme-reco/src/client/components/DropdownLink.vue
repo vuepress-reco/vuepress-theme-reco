@@ -2,7 +2,7 @@
   <div class="dropdown-link" :class="{ open }">
     <button
       class="dropdown-link__title"
-      :class="isChildActive?'dropdown-link__title--active':''"
+      :class="isChildActive ? 'dropdown-link__title--active' : ''"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
