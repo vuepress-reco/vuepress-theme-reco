@@ -168,7 +168,7 @@ export default class PageCreater {
 
   // 将博客页面注入进分类页面数据
   private _setBlogsToCategoryPageData(): void {
-    const { autoSetBlogCategories, autoSetSeries } = this.themeConfig
+    const { autoSetBlogCategories, autoSetSeries } = this.themeConfig || {}
 
     const blogsToBeReleased = this.app.pages
       .filter((page: Page) => {

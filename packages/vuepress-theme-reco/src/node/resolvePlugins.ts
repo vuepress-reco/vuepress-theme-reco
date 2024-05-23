@@ -47,7 +47,7 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     registerComponentsPlugin({
       componentsDir: path.join(
         process.cwd(),
-        themeConfig.docsDir || '/',
+        themeConfig?.docsDir || '/',
         './.vuepress/components'
       ),
     }),
@@ -65,7 +65,7 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     containerPlugin(resolveContainerOptions('code-group-item')),
   ]
 
-  if (themeConfig.algolia) {
+  if (themeConfig?.algolia) {
     plugins.push(
       docsearchPlugin(
         (themeConfig.algolia as unknown) as DocsearchPluginOptions

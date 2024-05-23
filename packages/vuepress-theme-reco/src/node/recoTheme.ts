@@ -8,7 +8,7 @@ import type { RecoThemePageData } from '../types/page'
 
 const __dirname = getDirname(import.meta.url)
 
-export const recoTheme = (themeConfig: Record<string, unknown>): Theme => {
+export const recoTheme = (themeConfig: Record<string, unknown> = {}): Theme => {
   const plugins = resolveBuildInPlugins(themeConfig)
 
   return {

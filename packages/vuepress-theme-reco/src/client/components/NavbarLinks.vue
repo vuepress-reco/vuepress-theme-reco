@@ -47,7 +47,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
   const themeLocal = useThemeLocaleData()
 
   return computed<ResolvedNavbarItem[]>(() => {
-    const localePaths = Object.keys(siteLocale.value.locales)
+    const localePaths = Object.keys(siteLocale.value.locales || {})
     // do not display language selection dropdown if there is only one language
     if (localePaths.length < 2) {
       return []

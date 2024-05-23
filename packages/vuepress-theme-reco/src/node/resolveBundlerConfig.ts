@@ -76,13 +76,13 @@ const _getWebpackBundlerOptions = (themeConfig: Record<string, unknown>) => {
 }
 
 function _customizeTailwindcssOptions(themeConfig) {
-  if (themeConfig.primaryColor) {
+  if (themeConfig?.primaryColor) {
     tailwindcssConfig.theme.extend.colors.reco.primary = themeConfig.primaryColor as string
   }
 
   tailwindcssConfig.content.push(
     path.join(
-      themeConfig.docsDir || '/',
+      themeConfig?.docsDir || '/',
       './.vuepress/components/*.(vue|html|js)'
     )
   )
