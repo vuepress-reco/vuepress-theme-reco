@@ -52,6 +52,6 @@
     "vue-router": "^4.2.5"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.9"
+    "vuepress": "2.0.0-rc.11"
   }
 }

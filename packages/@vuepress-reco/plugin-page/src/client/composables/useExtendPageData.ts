@@ -1,5 +1,5 @@
 import { inject, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 export const categoryPaginationPostsSymbol = Symbol(
   'categoryPaginationPostsSymbol'
@@ -20,12 +20,12 @@ export function useExtendPageData(): {
     throw new Error('useSiteLocaleData() is called without provider.')
   }
 
-  const router = useRouter()
+  const route = useRoute()
 
   const categoryPosts = computed(() => {
     return (
       (categoryPaginationPosts as Record<string, any>)[
-        router.currentRoute.value.path
+        route?.path
       ] || {}
     )
   })

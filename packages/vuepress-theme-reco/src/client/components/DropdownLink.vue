@@ -178,7 +178,7 @@ const isChildActive = computed(() => {
       node.children.forEach(child => traverse(child));
     } else {
       if (node.link && !node.language) {
-        if (node.link === route.path) {
+        if (node.link === route?.path) {
           flag = true
         }
       }

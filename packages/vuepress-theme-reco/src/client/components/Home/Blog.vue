@@ -77,8 +77,6 @@ const tags = computed(() => {
   return categorySummary?.tags?.items || []
 })
 
-console.log(categories.value, tags.value)
-
 const postsOfCurrentPage = computed(() => {
   const start = (currentPage.value - 1) * perPage
   const end = currentPage.value * perPage

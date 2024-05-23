@@ -14,12 +14,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { isString, isLinkHttp } from 'vuepress/shared'
 import { convertToPinyin } from '@vuepress-reco/shared'
 import { useRoutePaths } from '@vuepress/helper/client'
-import { useRouteLocale, useSiteLocaleData } from 'vuepress/client'
-import { getNavLink, useThemeLocaleData } from '@composables/index.js'
+import { useRouteLocale, useSiteData, useSiteLocaleData } from 'vuepress/client'
+import { getNavLink, useThemeData, useThemeLocaleData } from '@composables/index.js'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import Link from './Link.vue'
@@ -40,34 +40,30 @@ import type {
  * Get navbar config of select language dropdown
  */
 const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
-  const router = useRouter()
+  const route = useRoute()
   const routePaths = useRoutePaths()
   const routeLocale = useRouteLocale()
+  const site = useSiteData()
   const siteLocale = useSiteLocaleData()
+  const theme = useThemeData()
   const themeLocal = useThemeLocaleData()
 
   return computed<ResolvedNavbarItem[]>(() => {
-    const localePaths = Object.keys(siteLocale.value.locales || {})
+    const localePaths = Object.keys(site.value.locales || {})
     // do not display language selection dropdown if there is only one language
     if (localePaths.length < 2) {
       return []
     }
-    const currentPath = router.currentRoute.value.path
-    const currentFullPath = router.currentRoute.value.fullPath
-
-    const selectLanguageText = computed(() => {
-      return themeLocal.value.selectLanguageText || '选择语言'
-    })
+    const currentPath = route?.path
+    const currentFullPath = route?.fullPath
 
     const languageDropdown: ResolvedNavbarItem = {
       icon: 'EarthFilled',
-      text: selectLanguageText.value,
+      text: themeLocal.value.selectLanguageText || '选择语言',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
-        const targetSiteLocale =
-          siteLocale.value.locales?.[targetLocalePath] ?? {}
-        const targetThemeLocale =
-          themeLocal.value.locales?.[targetLocalePath] ?? {}
+        const targetSiteLocale = site.value.locales?.[targetLocalePath] ?? {}
+        const targetThemeLocale = theme.value.locales?.[targetLocalePath] ?? {}
         const targetLang = `${targetSiteLocale.lang}`
 
         const text = targetThemeLocale.selectLanguageName ?? targetLang
@@ -81,7 +77,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
           // if the target language is not current language
           // try to link to the corresponding page of current page
           // or fallback to homepage
-          const targetLocalePage = currentPath.replace(
+          const targetLocalePage = currentPath?.replace(
             routeLocale.value,
             targetLocalePath
           )

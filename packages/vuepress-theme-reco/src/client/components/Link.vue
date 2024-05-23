@@ -62,7 +62,7 @@ const { item } = toRefs(props)
 const hasHttpProtocol = computed(() => isLinkHttp(item.value.link as string))
 // if the link has non-http protocol
 const hasNonHttpProtocal = computed(
-  () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link as string)
+  () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link as string || '')
 )
 // resolve the `target` attr
 const linkTarget = computed(() => {

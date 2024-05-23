@@ -4,7 +4,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'fs'
 
 const __dirname = getDirname(import.meta.url)
 
-export const commentsPlugin = (): Plugin => {
+export const commentsPlugin = (themeConfig): Plugin => {
   return {
     name: '@vuepress-reco/vuepress-plugin-comments',
     onGenerated: (app) => {
@@ -56,6 +56,9 @@ export const commentsPlugin = (): Plugin => {
         }
       }
     },
+    define: () => ({
+      __THEME_CONFIG__: themeConfig
+    }),
     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
   }
 }

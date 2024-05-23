@@ -1,7 +1,7 @@
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { resolveLocalePath } from 'vuepress/shared'
-import { useThemeData, resolveThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+import { resolveThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 export function useComment() {
   const themeLocal = useThemeLocaleData()
@@ -29,15 +29,15 @@ export function useComment() {
 }
 
 function useThemeLocaleData() {
-  const themeData = useThemeData()
-  const router = useRouter()
-  const routePath = computed(() => router.currentRoute.value.path)
+  // @ts-ignore
+  const themeConfig = __THEME_CONFIG__
+  const route = useRoute()
   const routeLocale = computed(() =>
-    resolveLocalePath(themeData.value.locales || {}, routePath.value),
+    resolveLocalePath(themeConfig.locales || {}, route?.path || '/'),
   )
 
   const themeLocaleData = computed(() =>
-    resolveThemeLocaleData(themeData.value, routeLocale.value),
+    resolveThemeLocaleData(themeConfig, routeLocale.value),
   )
 
   return themeLocaleData

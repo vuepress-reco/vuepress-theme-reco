@@ -37,12 +37,12 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     palettePlugin(),
     prismjsPlugin(),
     codeCopyPlugin(),
-    commentsPlugin(),
+    commentsPlugin(themeConfig),
     nprogressPlugin(),
     backToTopPlugin(),
     vuePreviewPlugin(),
     markdownTaskPlugin(),
-    bulletinPopoverPlugin(),
+    bulletinPopoverPlugin(themeConfig),
     externalLinkIconPlugin(),
     registerComponentsPlugin({
       componentsDir: path.join(
