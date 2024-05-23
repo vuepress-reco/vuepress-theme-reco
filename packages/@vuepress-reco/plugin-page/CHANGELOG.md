@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.11
+
+### Patch Changes
+
+- bump deps
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.79
+
 ## 2.0.0-rc.10
 
 ### Patch Changes
