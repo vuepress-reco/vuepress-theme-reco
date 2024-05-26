@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.12
+
+### Patch Changes
+
+- bump deps
+
 ## 2.0.0-rc.11
 
 ### Patch Changes
