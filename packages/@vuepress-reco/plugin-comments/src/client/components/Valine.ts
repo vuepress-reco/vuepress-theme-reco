@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, toRefs, h, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import '../styles/valine.css'
 
 type TvalineOptions = Record<string, unknown>
@@ -24,7 +24,7 @@ export default defineComponent({
     //@ts-ignore
     if (__VUEPRESS_SSR__) return
 
-    const router = useRouter()
+    const route = useRoute()
     const { options } = toRefs(props)
 
     let valineInstance = null
@@ -32,8 +32,6 @@ export default defineComponent({
     onMounted(async () => {
       const { Valine } = await import('./reco-valine.js')
       const initValine = async () => {
-
-        if (valineInstance) return
 
         const valineOptions = {
           el: '#valine',
@@ -52,7 +50,7 @@ export default defineComponent({
 
       initValine()
 
-      watch(() => router.currentRoute.value.path,(toPath) => {
+      watch(() => route?.path,(toPath) => {
         initValine();
       },{ immediate: true, deep: true })
     })

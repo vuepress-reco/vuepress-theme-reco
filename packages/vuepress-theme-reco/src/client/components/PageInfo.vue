@@ -37,8 +37,8 @@
           </g>
         </svg>
       </template>
-      <ValineViews v-if="showValineViews" />
-      <WalineViews v-if="showWalineViews" :path="pageData.path" />
+      <ValineViews v-if="showValineViews" :idVal="path" />
+      <WalineViews v-if="showWalineViews" :path="path" />
     </Xicons>
   </div>
 </template>
@@ -80,6 +80,10 @@ const { solution, options } = useComment()
 
 const author = computed(
   () => pageData?.value?.frontmatter?.author || themeData.value.author || ''
+)
+
+const path = computed(
+  () => pageData?.value?.path || '/'
 )
 
 const date = computed(() => {
