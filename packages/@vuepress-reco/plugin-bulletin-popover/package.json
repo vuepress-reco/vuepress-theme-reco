@@ -38,8 +38,8 @@
   "dependencies": {
     "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/plugin-theme-data": "2.0.0-rc.30",
-    "vue": "^3.4.19",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-rc.11"

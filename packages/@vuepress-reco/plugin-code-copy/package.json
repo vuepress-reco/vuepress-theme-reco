@@ -47,7 +47,7 @@
     "access": "public"
   },
   "dependencies": {
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.3.2"
   },
   "peerDependencies": {
     "vuepress": "2.0.0-rc.11"
