@@ -25,7 +25,6 @@ export default defineComponent({
 
   setup(props) {
     const { options } = toRefs(props)
-    const lang = usePageLang()
     const theme = ref('light_tritanopia')
 
     onMounted(async () => {
@@ -46,7 +45,7 @@ export default defineComponent({
       fn()
     })
     const giscusOption = computed(() => ({
-      lang: lang.value || 'zh-CN',
+      lang: 'zh-CN',
       host: 'https://giscus.app',
       theme: theme.value,
       ...options.value,
