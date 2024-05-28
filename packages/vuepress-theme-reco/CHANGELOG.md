@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-rc.13
+
+### Patch Changes
+
+- resolve the ssr parsing bug when using npm and yarn
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-rc.81
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-rc.13
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-rc.13
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-rc.81
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-rc.13
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-rc.81
+  - @vuepress-reco/shared@2.0.0-rc.81
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.81
+
 ## 2.0.0-rc.12
 
 ### Patch Changes

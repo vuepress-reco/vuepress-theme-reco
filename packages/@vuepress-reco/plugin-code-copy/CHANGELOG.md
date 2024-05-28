@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.13
+
+### Patch Changes
+
+- resolve the ssr parsing bug when using npm and yarn
+
 ## 2.0.0-rc.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.13
+
+### Patch Changes
+
+- resolve the ssr parsing bug when using npm and yarn
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.81
+
 ## 2.0.0-rc.12
 
 ### Patch Changes
