@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-rc.82
+
+### Patch Changes
+
+- bump deps
+
 ## 2.0.0-rc.81
 
 ### Patch Changes
