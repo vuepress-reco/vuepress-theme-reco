@@ -28,6 +28,10 @@ features:
 
 ## 快速开始
 
+::: tip
+前往 [这里](/docs/guide/gui-builder.html) 体验全新可视化搭建脚手架。
+:::
+
 **npx**
 
 ```bash

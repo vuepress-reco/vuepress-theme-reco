@@ -5,6 +5,10 @@ date: 2021-11-05 00:34:35
 
 ## Quick Start
 
+::: tip
+Go to [here](/en/docs/guide/gui-builder.html) to experience the new visual scaffolding.
+:::
+
 **npx**
 
 ```bash

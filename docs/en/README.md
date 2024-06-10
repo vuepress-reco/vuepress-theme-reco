@@ -30,6 +30,10 @@ features:
 
 ## Quick Start
 
+::: tip
+Go to [here](/en/docs/guide/gui-builder.html) to experience the new visual scaffolding.
+:::
+
 **npx**
 
 ```bash

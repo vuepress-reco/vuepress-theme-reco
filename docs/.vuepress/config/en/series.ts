@@ -3,6 +3,7 @@ export const series = {
   '/en/docs/guide/': [
     'introduce',
     'getting-started',
+    'gui-builder',
     'package-manager',
     'style',
     'icon',
