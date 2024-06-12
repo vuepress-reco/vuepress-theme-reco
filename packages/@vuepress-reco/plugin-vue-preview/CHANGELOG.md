@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.83
+
+### Patch Changes
+
+- bump deps
+
 ## 2.0.0-rc.82
 
 ### Patch Changes
