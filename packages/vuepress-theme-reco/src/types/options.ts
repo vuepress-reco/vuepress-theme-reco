@@ -19,6 +19,12 @@ export interface RecoThemeLocaleData extends LocaleData {
    */
   colorMode?: 'light' | 'dark' | 'auto'
 
+
+  /**
+   * If show colorMode switch
+   */
+  colorModeSwitch?: boolean
+
   password?: string | Array<string>
 
   /**

@@ -6,7 +6,7 @@
       <div>
       <NavbarSearch /></div>
       <NavbarLinks />
-      <ToggleDarkModeButton class="btn--dark-mode" />
+      <ToggleDarkModeButton v-if="themeLocal.colorModeSwitch ?? 'true'" class="btn--dark-mode" />
       <xicons
         class="btn-toggle-menus"
         icon="OverflowMenuVertical"
@@ -32,12 +32,14 @@ const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()
+console.log(111, themeLocal.value.colorModeSwitch)
 
 const siteBrandLink = computed(
   () => themeLocal.value.home || routeLocale.value
 )
 const siteBrandLogo = computed(() => themeLocal.value.logo)
 const siteBrandTitle = computed(() => siteLocale.value.title)
+
 
 const navbar = ref<HTMLElement | null>(null)
 const siteBrand = ref<HTMLElement | null>(null)

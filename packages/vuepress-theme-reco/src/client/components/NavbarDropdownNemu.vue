@@ -4,13 +4,15 @@
 
     <div class="appearance">
       <span>Appearance</span>
-      <ToggleDarkModeButton />
+      <ToggleDarkModeButton  v-if="themeLocal.colorModeSwitch ?? true" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useThemeLocaleData } from '@composables/index.js'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 
+const themeLocal = useThemeLocaleData()
 </script>
