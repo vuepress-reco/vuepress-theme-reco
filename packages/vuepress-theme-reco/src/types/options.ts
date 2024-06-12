@@ -153,7 +153,7 @@ export interface RecoThemeLocaleData extends LocaleData {
     title: string
   }>
 
-  autoSetSeries: boolean
+  autoSetSeries?: boolean
 
   /**
    * Auto set categories

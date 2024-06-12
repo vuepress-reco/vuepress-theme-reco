@@ -10,8 +10,8 @@
     @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-default-content code {
-      @apply mx-1 px-2 py-0.5 rounded bg-zinc-100 text-sm;
-      @apply dark:bg-zinc-800;
+      @apply mx-1 px-2 py-0.5 rounded bg-reco-primary/10 text-sm;
+      @apply dark:bg-reco-primary/20;
     }
   }
   .theme-reco-default-content {
@@ -65,7 +65,7 @@ a.header-anchor {
     @apply text-basic;
   }
   &::before {
-    @apply -ml-4 mr-1 invisible;
+    @apply -ml-3 mr-1 invisible;
     content: '#';
   }
   &:hover,
