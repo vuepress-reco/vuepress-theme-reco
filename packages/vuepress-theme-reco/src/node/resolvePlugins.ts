@@ -35,7 +35,9 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
   const plugins = [
     gitPlugin(),
     palettePlugin(),
-    prismjsPlugin(),
+    prismjsPlugin({
+      lineNumbers: true
+    }),
     codeCopyPlugin(),
     commentsPlugin(themeConfig),
     nprogressPlugin(),

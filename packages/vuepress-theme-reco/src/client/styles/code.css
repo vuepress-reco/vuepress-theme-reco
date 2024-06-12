@@ -24,7 +24,7 @@ div[class*="language-"] {
   &.line-numbers-mode {
     @apply relative;
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 py-4 leading-7 bg-block;
+      @apply absolute bottom-0 w-16 text-center text-gray-400 py-4 leading-6 bg-block;
       counter-reset: line-number;
       br {
         user-select: none;
@@ -59,7 +59,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   tab-size: 4;
   hyphens: none;
-  @apply tracking-wide text-emerald-900 dark:text-amber-50 text-sm text-left whitespace-pre leading-normal;
+  @apply bg-transparent tracking-wide text-emerald-900 dark:text-amber-50 text-sm text-left whitespace-pre leading-normal !important;
 }
 
  .token.comment,
