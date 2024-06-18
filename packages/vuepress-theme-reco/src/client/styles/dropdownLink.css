@@ -25,7 +25,7 @@
   }
 
   .dropdown-link__title--active {
-    @apply text-reco-primary;
+    @apply text-reco-primary !important;
   }
 
   .dropdown-link--mobile__title {

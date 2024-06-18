@@ -32,7 +32,6 @@ const seriesItems = useSeriesItems()
 const siteLocale = useSiteLocaleData()
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()
-console.log(111, themeLocal.value.colorModeSwitch)
 
 const siteBrandLink = computed(
   () => themeLocal.value.home || routeLocale.value

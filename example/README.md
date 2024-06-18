@@ -87,9 +87,9 @@ const bar = 'bar'
 
 @[code](./.vuepress/components/in.vue)
 
-@[preview-in](@/example/.vuepress/components/in.vue)
-
 @[preview](@/example/.vuepress/components/in.vue)
+
+<in />
 
 [asd](https://abc)
 

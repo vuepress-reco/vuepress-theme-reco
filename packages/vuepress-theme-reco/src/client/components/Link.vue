@@ -2,6 +2,7 @@
   <RouterLink
     v-if="isRouterLink"
     class="link"
+    :class="{ 'router-link-active': isActiveInSubpath }"
     :to="item.link as string"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
@@ -33,7 +34,7 @@
 import { useRoute } from 'vue-router'
 import { computed, toRefs } from 'vue'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
-import { useSiteLocaleData, useRouteLocale } from 'vuepress/client'
+import { useSiteLocaleData, useSiteData, useRouteLocale } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@composables/index.js'
 
@@ -43,6 +44,7 @@ import type { NavLink, ResolvedSeriesItem } from '../../types'
 
 const route = useRoute()
 const routeLocale = useRouteLocale()
+const site = useSiteData()
 const siteLocal = useSiteLocaleData()
 const themeLocal = useThemeLocaleData()
 
@@ -92,4 +94,20 @@ const linkRel = computed(() => {
 const linkAriaLabel = computed(
   () => item.value.ariaLabel || item.value.text
 )
+
+// should be active when current route is a subpath of this link
+const shouldBeActiveInSubpath = computed(() => {
+  const localeKeys = Object.keys(site.value.locales || {})
+  if (localeKeys.length) {
+    return !localeKeys.some((key) => key === item.value.link)
+  }
+  return item.value.link !== themeLocal.value.home || routeLocale.value
+})
+// if this link is active in subpath
+const isActiveInSubpath = computed(() => {
+  if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
+    return false
+  }
+  return route.path.startsWith(item.value.link as string)
+})
 </script>
