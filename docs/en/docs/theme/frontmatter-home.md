@@ -9,7 +9,7 @@ In order to meet more usage scenarios of users, the theme has modularized the ho
 
 ## Configure
 
-Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Blog`, `MdContent`, `Comment`, `Footer`, and their configurations are as follows:
+Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Features`, `Blog`, `MdContent`, `Comment`, `Footer`, and their configurations are as follows:
 
 ### modules
  

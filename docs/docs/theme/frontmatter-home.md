@@ -9,7 +9,7 @@ date: 2021-11-06 23:36:01
 
 ## 配置
 
-目前内置的首页模块有 `Banner`、`BannerBrand`、`Blog`、`MdContent`、`Comment`, `Footer`，其配置如下：
+目前内置的首页模块有 `Banner`、`BannerBrand`、`Features`、`Blog`、`MdContent`、`Comment`, `Footer`，其配置如下：
 
 ### modules
 
