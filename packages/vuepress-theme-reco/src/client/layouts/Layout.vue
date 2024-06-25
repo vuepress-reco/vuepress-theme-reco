@@ -1,19 +1,17 @@
 <template>
-  <div class="theme-container">
-    <Common>
-      <Home v-if="frontmatter.home === true" />
+  <Common>
+    <Home v-if="frontmatter.home === true" />
 
-      <Transition
-        v-else
-        name="fade-slide-y"
-        mode="out-in"
-        @before-enter="onBeforeEnter"
-        @before-leave="onBeforeLeave"
-      >
-        <Page />
-      </Transition>
-    </Common>
-  </div>
+    <Transition
+      v-else
+      name="fade-slide-y"
+      mode="out-in"
+      @before-enter="onBeforeEnter"
+      @before-leave="onBeforeLeave"
+    >
+      <Page />
+    </Transition>
+  </Common>
 </template>
 
 <script lang="ts" setup>

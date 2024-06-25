@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!setedSitePassword" class="common-wrapper" :class="containerClass">
+  <div v-if="!setedSitePassword" class="theme-container" :class="containerClass">
     <Navbar @toggleMenus="toggleMobileMenus" />
     <SubNavbar v-if="seriesItems.length > 0" @toggleSeries="toggleSeries" />
     <NavbarDropdownNemu />
@@ -9,7 +9,7 @@
     <Catalog v-if="isShowCatalog" />
   </div>
 
-  <div v-else class="common-wrapper" :class="containerClass">
+  <div v-else class="theme-container" :class="containerClass">
     <Password v-if="siteLoaded && !sitePasswordPass" class="out" key="out" @pass="handlePass" />
 
     <div v-if="siteLoaded && sitePasswordPass">

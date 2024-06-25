@@ -1,6 +1,6 @@
 <template>
   <aside class="series-container">
-    <SiteBrand />
+    <SiteBrand :custom-title="customTitle"  />
     <SeriesItem
       v-for="item in sortedSeries"
       :item="item"
@@ -13,13 +13,15 @@
 import { computed } from 'vue'
 
 import {
-  useSeriesItems,
+  useMobile,
   useSortSeries,
+  useSeriesItems,
   useThemeLocaleData,
 } from '@composables/index.js'
 import SiteBrand from './SiteBrand.vue'
 import { SeriesItem } from './SeriesItem.js'
 
+const { isMobile } = useMobile()
 const themeLocal = useThemeLocaleData()
 const { sortSeries } = useSortSeries()
 const seriesItems = useSeriesItems()
@@ -31,5 +33,9 @@ const sortedSeries = computed(() => {
 
   const series = sortSeries(seriesItems.value)
   return series
+})
+
+const customTitle = computed(() => {
+  return isMobile.value ? 'Series' : ''
 })
 </script>

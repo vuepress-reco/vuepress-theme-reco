@@ -201,24 +201,4 @@
     @apply align-middle;
     transform: translateY(-10%);
   }
-
-  /************** 滚动条 **************/
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  ::-webkit-scrollbar-track-piece {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  ::-webkit-scrollbar-thumb:vertical {
-    height: 5px;
-    @apply bg-reco-primary;
-  }
-
-  ::-webkit-scrollbar-thumb:horizontal {
-    width: 5px;
-    @apply bg-reco-primary;
-  }
 }
