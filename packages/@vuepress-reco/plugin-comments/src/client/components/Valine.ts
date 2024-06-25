@@ -30,7 +30,7 @@ export default defineComponent({
     let valineInstance = null
 
     onMounted(async () => {
-      const { Valine } = await import('./reco-valine.js')
+      const Valine = (await import('valine')).default
       const initValine = async () => {
 
         const valineOptions = {

@@ -155,8 +155,8 @@ importers:
         specifier: ^2.14.7
         version: 2.14.7(typescript@5.2.2)
       valine:
-        specifier: 1.4.18
-        version: 1.4.18
+        specifier: 1.5.1
+        version: 1.5.1
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.2.2)
@@ -7769,6 +7769,10 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
 
+  /immutable@4.3.6:
+    resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -11653,6 +11657,16 @@ packages:
       - supports-color
     dev: true
 
+  /sass@1.77.6:
+    resolution: {integrity: sha512-ByXE1oLD79GVq9Ht1PeHWCPMPB8XHpBuz1r85oByKHjZY6qV6rWnQovQzXJXuQ/XyE1Oj3iPk3lo28uzaRA2/Q==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.6
+      source-map-js: 1.2.0
+    dev: false
+
   /saxes@5.0.1:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
     engines: {node: '>=10'}
@@ -13159,8 +13173,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /valine@1.4.18:
-    resolution: {integrity: sha512-7Epks0rMn10qWAbBxmUGCUYPL+bJwasYuzU9QHpa6yNk5vAv6PTh1oPTVYX5AB7OzhVwUxj5HKs/jyUpXLwESQ==}
+  /valine@1.5.1:
+    resolution: {integrity: sha512-uT9tHuoKkFUqqVHHRyz4EPe8U+h1ZkCa2lVKH8SKZM9r1Whm8DZW9GfrK4USmLJ+QwpHWenPIKOH0s2xO0BVbQ==}
     dependencies:
       autosize: 4.0.4
       balajs: 1.0.10
@@ -13171,6 +13185,7 @@ packages:
       insane: 2.6.2
       leancloud-storage: 3.15.0
       marked: 4.3.0
+      sass: 1.77.6
       storejs: 1.1.0
       xss: 1.0.15
     transitivePeerDependencies:
