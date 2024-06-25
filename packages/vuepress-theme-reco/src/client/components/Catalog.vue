@@ -14,7 +14,7 @@ import { computed } from 'vue'
 import { usePageCatalog, useThemeLocaleData } from '@composables/index.js'
 import { CatalogItem } from './CatalogItem.js'
 
-const catalog = usePageCatalog()
+const { catalog } = usePageCatalog()
 const themeConfig = useThemeLocaleData()
 
 const catalogTitle = computed(() => {

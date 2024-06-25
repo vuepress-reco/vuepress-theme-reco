@@ -25,8 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, computed } from 'vue'
-
 import Navbar from '../Navbar.vue'
 import Series from '../Series.vue'
 import Catalog from '../Catalog.vue'
@@ -34,40 +32,37 @@ import SubNavbar from '../SubNavbar.vue'
 import Password from '../Password/index.vue'
 import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
 
-import {
-  useSeriesItems,
-  useSeriesData,
-  useMobileMenus,
-  usePageFrontmatter
-} from '@composables/index.js'
-import { useSeries, usePassword, useInitCodeCopy } from './hook.js'
-
-const {
-  isOpenSeries,
-  isShowSeries,
-  isShowCatalog,
-  toggleSeries,
-} = useSeriesData()
-const frontmatter = usePageFrontmatter()
-const { isOpenMobileMenus, toggleMobileMenus } = useMobileMenus()
-const { siteLoaded, sitePasswordPass, setedSitePassword, handlePass } = usePassword()
-
-const containerClass = computed(() => [
-  {
-    'series--open': isOpenSeries.value,
-    'series--no': !isShowSeries.value,
-    'show-series': isShowSeries.value,
-    'show-catalog': isShowCatalog.value,
-    'mobile-menus--active': isOpenMobileMenus.value,
-  },
-  frontmatter.value.pageClass,
-])
-
+import { useSeriesItems } from '@composables/index.js'
 const seriesItems = useSeriesItems()
 
-onMounted(() => {
-  useInitCodeCopy()
+import { useSeriesData } from '@composables/index.js'
+const { toggleSeries } = useSeriesData()
+
+import { usePageCatalog } from '@composables/index.js'
+const { isShowCatalog } = usePageCatalog()
+
+import { useMobileMenus } from '@composables/index.js'
+const { toggleMobileMenus } = useMobileMenus()
+
+// Handle password
+import { usePassword } from './usePassword.js'
+const { siteLoaded, sitePasswordPass, setedSitePassword, handlePass } = usePassword()
+
+// Format className of container
+import { useContainerClass } from './useContainerClass.js'
+const { containerClass } = useContainerClass()
+
+// Init code copy button
+import { useInitCodeCopy } from './useInitCodeCopy.js'
+const { initCodeCopy } = useInitCodeCopy()
+initCodeCopy()
+
+// Init series status
+import { useSeries } from './useSeries.js'
+const { initSeriesStatus } = useSeries()
+initSeriesStatus(() => {
+  toggleSeries(false)
+  toggleMobileMenus(false)
 })
 
-useSeries(toggleSeries, toggleMobileMenus)
 </script>

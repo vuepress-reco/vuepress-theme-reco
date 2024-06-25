@@ -173,6 +173,8 @@ export interface RecoThemeLocaleData extends LocaleData {
    * when autoAddCategoryToNavbar is true, all defaults are taken.
    */
   autoAddCategoryToNavbar?: boolean | AutoAddCategoryToNavbarOptions
+
+  catalogTitle?: string
 }
 
 export type AutoAddCategoryToNavbarOptions = {

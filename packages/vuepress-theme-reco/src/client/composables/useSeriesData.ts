@@ -1,19 +1,13 @@
 import { ref, computed } from 'vue'
-import { usePageFrontmatter } from 'vuepress/client'
-import { useSeriesItems, usePageCatalog,  } from './index.js'
+
+import { useSeriesItems } from './index.js'
 
 export const useSeriesData: () => any = () => {
   const isOpenSeries = ref(false)
-  const frontmatter = usePageFrontmatter()
   const seriesItems = useSeriesItems()
-  const catalog = usePageCatalog()
 
   const isShowSeries = computed(
     () => seriesItems.value.length > 0 && isOpenSeries
-  )
-
-  const isShowCatalog = computed(
-    () => catalog.value.length > 0 && frontmatter.value.home !== true
   )
 
   const toggleSeries = (to: boolean): void => {
@@ -21,5 +15,5 @@ export const useSeriesData: () => any = () => {
     document.body.style.overflowY = isOpenSeries.value ? 'hidden' : 'auto'
   }
 
-  return { isOpenSeries, isShowSeries, isShowCatalog, toggleSeries }
+  return { isOpenSeries, isShowSeries, toggleSeries }
 }
