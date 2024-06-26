@@ -1,7 +1,8 @@
-import { path, fs, getDirname } from 'vuepress/utils'
+import { path, getDirname } from 'vuepress/utils'
 
 import { resolveBuildInPlugins } from './resolvePlugins.js'
 import { extendsBundlerOptions } from './extendsBundlerOptions.js'
+import { prepareClientConfigFile } from './prepareClientConfigFile.js'
 import { injectiBuilderOptionsOfRecoTheme } from './resolveBundlerConfig.js'
 
 import type { Theme, Page } from 'vuepress/core'
@@ -28,7 +29,7 @@ export const recoTheme = (themeConfig: Record<string, unknown> = {}): Theme => {
 
     extendsBundlerOptions,
 
-    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
+    clientConfigFile: (app) => prepareClientConfigFile(app, themeConfig),
 
     alias: {
       '@types': path.resolve(__dirname, '../types'),
