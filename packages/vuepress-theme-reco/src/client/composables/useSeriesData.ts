@@ -2,8 +2,8 @@ import { ref, computed } from 'vue'
 
 import { useSeriesItems } from './index.js'
 
+const isOpenSeries = ref(false)
 export const useSeriesData: () => any = () => {
-  const isOpenSeries = ref(false)
   const seriesItems = useSeriesItems()
 
   const isShowSeries = computed(
