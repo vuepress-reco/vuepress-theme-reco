@@ -49,10 +49,6 @@ import * as layouts from '${CLIENT_FOLDER}layouts/index.js'
   const layoutsFromDir = ${layoutsFromDir}
 `
 
-  content += `
-  console.log(666, layouts, layoutsFromDir)
-`
-
   content += `export default defineClientConfig({
   enhance(...args) {
     applyClientEnhance(...args)
