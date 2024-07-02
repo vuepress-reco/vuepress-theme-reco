@@ -54,7 +54,7 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
       ),
     }),
     themeDataPlugin({ themeData: themeConfig }),
-    pagePlugin(pages || [], themeConfig),
+    pagePlugin([...pages, ...(themeConfig.pages || [])], themeConfig),
     searchPlugin({ hotKeys: [{ key: 's', ctrl: true }] }),
     mediumZoomPlugin({ zoomOptions: { background: 'inherit' } }),
     activeHeaderLinksPlugin({ headerLinkSelector: 'a.page-catalog-item' }),

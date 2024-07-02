@@ -1,6 +1,7 @@
 import type { LocaleData } from 'vuepress/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { NavbarConfig, SeriesConfig } from './nav.js'
+import { PageOptions } from '../../../@vuepress-reco/plugin-page/src/types/index.js'
 
 export type RecoThemeData = ThemeData<RecoThemeLocaleData>
 
@@ -175,6 +176,8 @@ export interface RecoThemeLocaleData extends LocaleData {
   autoAddCategoryToNavbar?: boolean | AutoAddCategoryToNavbarOptions
 
   catalogTitle?: string
+
+  pages?: Array<PageOptions>
 }
 
 export type AutoAddCategoryToNavbarOptions = {

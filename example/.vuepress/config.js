@@ -159,5 +159,11 @@ export default defineUserConfig({
     password: ['14e1b600b1fd579f47433b88e8d85291'],
     // primaryColor: '#3aa675',
   }),
-  // debug: true,
+  // debug: true,,
+  pages: [
+    {
+      path: '/aaaaa.html',
+      layout: 'Timeline',
+    },
+  ]
 })

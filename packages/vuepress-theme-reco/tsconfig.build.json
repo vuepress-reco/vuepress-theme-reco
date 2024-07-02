@@ -13,5 +13,8 @@
       "@composables/*": ["./src/client/composables/*"],
     },
   },
-  "include": ["./src"]
+  "include": ["./src"],
+  "references": [
+    { "path": "../@vuepress-reco/plugin-page/tsconfig.build.json" },
+  ]
 }

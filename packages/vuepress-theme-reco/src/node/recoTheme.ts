@@ -6,11 +6,11 @@ import { prepareClientConfigFile } from './prepareClientConfigFile.js'
 import { injectiBuilderOptionsOfRecoTheme } from './resolveBundlerConfig.js'
 
 import type { Theme, Page } from 'vuepress/core'
-import type { RecoThemePageData } from '../types/page'
+import type { RecoThemePageData, RecoThemeData } from '../types'
 
 const __dirname = getDirname(import.meta.url)
 
-export const recoTheme = (themeConfig: Record<string, unknown> = {}): Theme => {
+export const recoTheme = (themeConfig: RecoThemeData): Theme => {
   const plugins = resolveBuildInPlugins(themeConfig)
 
   return {
