@@ -1,7 +1,16 @@
 .navbar-container {
-  @apply flex items-center sticky z-30 px-6 h-16 bg-reco-bg-lightmode/60 backdrop-saturate-150 backdrop-blur-xl;
+  @apply flex items-center sticky top-0 z-30 px-6 h-16 bg-reco-bg-lightmode/60;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
+
+  &.navbar-container--has-series {
+    @apply -top-16;
+  }
+
+  &.not-open {
+    @apply backdrop-saturate-150 backdrop-blur-xl;
+  }
+
   .navbar-links-wrapper {
     @apply absolute right-4 top-0 flex items-center h-16;
     white-space: nowrap;
@@ -17,15 +26,18 @@
       @apply align-middle;
     }
   }
+
   .search-box,
   #docsearch-container {
     @apply align-middle;
   }
+
   .btn-toggle-dark-mode {
     @apply ml-4 hidden align-middle;
     @apply md:inline-block;
     height: 20px;
   }
+
   .btn-toggle-menus {
     @apply ml-3 inline-block align-middle;
     @apply md:hidden;

@@ -56,16 +56,16 @@
 }
 
 .series-mask {
-  @apply fixed z-30 hidden w-screen h-screen bg-gray-600/40;
+  @apply transition-colors delay-100 fixed z-30 top-0 right-0 bottom-0 left-0 block w-screen h-screen bg-gray-600/40;
 }
 
 .series--open {
   .series-container {
     @apply translate-x-0 !important;
   }
-  .series-mask {
-    @apply block top-0 right-0 bottom-0 left-0;
-  }
+  /* .series-mask {
+    @apply block bg-gray-600/40;
+  } */
   .toggle-series-button .icon span {
     &:nth-of-type(1) {
       @apply rotate-225 -translate-x-0.5 translate-y-2 w-6;

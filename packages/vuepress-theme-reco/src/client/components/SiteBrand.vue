@@ -1,37 +1,40 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { useRouteLocale, useSiteLocaleData, withBase } from 'vuepress/client'
-import { useThemeLocaleData } from '@composables/index.js'
+import { toRefs } from 'vue'
 
-const siteLocale = useSiteLocaleData()
-const routeLocale = useRouteLocale()
-const themeLocal = useThemeLocaleData()
+const props = defineProps({
+  icon: {
+    type: String,
+    default: ''
+  },
+  link: {
+    type: String,
+    default: ''
+  },
+  title: {
+    type: String,
+    default: ''
+  },
+})
 
-const siteBrandLink = computed(
-  () => themeLocal.value.home || routeLocale.value
-)
-
-const siteBrandLogo = computed(() => themeLocal.value.logo)
-
-const siteBrandTitle = computed(() => siteLocale.value.title)
+const { title, icon, link } = toRefs(props)
 </script>
 
 <template>
   <div class="site-brand">
     <img
-      v-if="siteBrandLogo"
+      v-if="icon"
       class="logo"
-      :src="withBase(siteBrandLogo)"
-      :alt="siteBrandTitle"
+      :src="icon"
+      :alt="title"
     />
 
     <RouterLink
-      v-if="siteBrandTitle"
-      :to="siteBrandLink"
+      v-if="title"
+      :to="link"
       class="site-name"
-      :class="{ 'can-hide': siteBrandLogo }"
+      :class="{ 'can-hide': icon }"
     >
-      {{ siteBrandTitle }}
+      {{ title }}
     </RouterLink>
   </div>
 </template>
@@ -44,8 +47,5 @@ const siteBrandTitle = computed(() => siteLocale.value.title)
   .logo {
     @apply mr-4 inline-block w-8 h-8 rounded-lg;
   }
-  /* .site-name {
-    @apply align-middle;
-  } */
 }
 </style>
