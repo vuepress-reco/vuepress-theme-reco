@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const MOBILE_DESKTOP_BREAKPOINT = 719
 const isMobile = ref(false)
@@ -8,10 +8,12 @@ export function useMobile() {
     isMobile.value = window.innerWidth <= MOBILE_DESKTOP_BREAKPOINT
   }
 
-  handleLinksWrapWidth()
 
-  window.addEventListener('resize', handleLinksWrapWidth, false)
-  window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+  onMounted(() => {
+    handleLinksWrapWidth()
+    window.addEventListener('resize', handleLinksWrapWidth, false)
+    window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+  })
 
   return { isMobile }
 }
