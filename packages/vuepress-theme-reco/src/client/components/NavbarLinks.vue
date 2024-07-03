@@ -58,8 +58,8 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     const currentFullPath = route?.fullPath
 
     const languageDropdown: ResolvedNavbarItem = {
-      icon: 'EarthFilled',
-      text: themeLocal.value.selectLanguageText || '选择语言',
+      icon: 'Translate',
+      text: themeLocal.value.selectLanguageText || 'Languages',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale = site.value.locales?.[targetLocalePath] ?? {}

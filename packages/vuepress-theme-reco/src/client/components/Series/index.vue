@@ -14,14 +14,12 @@
 import { computed } from 'vue'
 
 import {
-  useMobile,
   useSortSeries,
   useSeriesItems,
   useThemeLocaleData,
 } from '@composables/index.js'
 import SiteBrand from '../SiteBrand.vue'
 import { SeriesItem } from '../SeriesItem.js'
-
 import { useSiteBrand } from './useSiteBrand.js'
 
 const { customTitle, customLink, customIcon } = useSiteBrand()

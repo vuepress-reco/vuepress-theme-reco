@@ -23,7 +23,7 @@ export function useSiteBrand() {
     () => isMobile.value ? '' : (themeLocal.value.home || routeLocale.value)
   )
   const customIcon = computed(() => {
-    if (isMobile) return ''
+    if (isMobile.value) return ''
 
     const icon = themeLocal.value.logo
       ? withBase(themeLocal.value.logo)
