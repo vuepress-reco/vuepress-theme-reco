@@ -1,13 +1,13 @@
 <template>
-  <Common>
+  <GenericContainer>
     <FriendshipLink />
-  </Common>
+  </GenericContainer>
 </template>
 
 <script setup lang="ts">
 import { watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import Common from '@components/Common/index.vue'
+import GenericContainer from '@components/GenericContainer/index.vue'
 import FriendshipLink from '@components/FriendshipLink.vue'
 import { useMagicCard } from '@composables/index.js'
 
@@ -20,3 +20,4 @@ watch(route, () => {
   initMagicCard()
 })
 </script>
+@client/components/GenericContainer/index.vue

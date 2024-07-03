@@ -1,5 +1,5 @@
 <template>
-  <Common>
+  <GenericContainer>
     <section class="page-404-wrapper">
       <div class="content">
         <h1>404</h1>
@@ -8,13 +8,13 @@
       </div>
       <img src="../assets/taken.svg" />
     </section>
-  </Common>
+  </GenericContainer>
 </template>
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
 import { useRouteLocale } from 'vuepress/client';
-import Common from '@components/Common/index.vue'
+import GenericContainer from '@components/GenericContainer/index.vue'
 import { useThemeLocaleData } from '@composables/index.js';
 
 const router = useRouter()
@@ -26,3 +26,4 @@ const goHome = () => {
 }
 </script>
 
+@client/components/GenericContainer/index.vue

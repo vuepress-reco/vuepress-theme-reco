@@ -1,5 +1,5 @@
 <template>
-  <Common>
+  <GenericContainer>
     <div class="categories-container">
       <ul class="category-list">
         <li
@@ -30,7 +30,7 @@
         @change="handlePagation"
       />
     </div>
-  </Common>
+  </GenericContainer>
 </template>
 
 <script lang="ts" setup>
@@ -41,7 +41,7 @@ import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composabl
 
 import PostList from '@components/PostList.vue'
 import Pagation from '@components/Pagation.vue'
-import Common from '@components/Common/index.vue'
+import GenericContainer from '@components/GenericContainer/index.vue'
 import { useMagicCard } from '@composables/index.js'
 
 
@@ -85,3 +85,4 @@ watch(route, () => {
   initMagicCard()
 })
 </script>
+@client/components/GenericContainer/index.vue

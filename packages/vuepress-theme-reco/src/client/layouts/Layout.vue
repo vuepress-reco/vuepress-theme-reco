@@ -1,5 +1,5 @@
 <template>
-  <Common>
+  <GenericContainer>
     <Home v-if="frontmatter.home === true" />
 
     <Transition
@@ -11,7 +11,7 @@
     >
       <Page />
     </Transition>
-  </Common>
+  </GenericContainer>
 </template>
 
 <script lang="ts" setup>
@@ -21,7 +21,7 @@ import { usePageFrontmatter } from 'vuepress/client'
 
 import Home from '@components/Home/index.vue'
 import Page from '@components/Page/index.vue'
-import Common from '@components/Common/index.vue'
+import GenericContainer from '@components/GenericContainer/index.vue'
 import {
   usePageData,
   useMagicCard,
@@ -47,3 +47,4 @@ watch(route, () => {
   initMagicCard()
 })
 </script>
+@client/components/GenericContainer/index.vue

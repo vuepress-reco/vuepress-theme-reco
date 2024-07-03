@@ -1,5 +1,5 @@
 <template>
-  <Common class="timeline-wrapper">
+  <GenericContainer class="timeline-wrapper">
     <ul class="timeline-content">
       <li
         v-for="(item, index) in timelineData"
@@ -15,11 +15,11 @@
         </ul>
       </li>
     </ul>
-  </Common>
+  </GenericContainer>
 </template>
 
 <script setup lang="ts">
-import Common from '@components/Common/index.vue'
+import GenericContainer from '@components/GenericContainer/index.vue'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import { formatISODate } from '@utils/other.js'
@@ -71,3 +71,4 @@ const timelineData: Array<TimelineData> = Object.keys(dataMap).reduce(
   []
 )
 </script>
+@client/components/GenericContainer/index.vue
