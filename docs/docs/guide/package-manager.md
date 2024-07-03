@@ -26,7 +26,7 @@ date: 2024-04-27
   "dependencies": {
     "vue": "^3.4.27",
     "vuepress": "2.0.0-rc.13",
-    "vuepress-theme-reco": "2.0.0-rc.15",
+    "vuepress-theme-reco": "2.0.0-rc.16",
     "@vuepress/bundler-vite": "2.0.0-rc.13",
     "@vuepress/bundler-webpack": "2.0.0-rc.13"
   }
