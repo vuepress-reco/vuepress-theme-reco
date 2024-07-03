@@ -17,7 +17,6 @@ export const navbar = [
             text: 'Markdown Extension',
             link: '/en/docs/theme/custom-container',
           },
-          { text: 'Other', link: '/en/docs/theme/custom-style' },
         ],
       },
       {
