@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.16
+
+### Patch Changes
+
+- allow to register layous and pages
+
 ## 2.0.0-rc.15
 
 ### Patch Changes

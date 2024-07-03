@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-rc.84
+
+### Patch Changes
+
+- allow to register layous and pages
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.84
+
 ## 2.0.0-rc.83
 
 ### Patch Changes

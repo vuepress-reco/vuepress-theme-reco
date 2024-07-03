@@ -1,5 +1,11 @@
 # @vuepress-reco/shared
 
+## 2.0.0-rc.84
+
+### Patch Changes
+
+- allow to register layous and pages
+
 ## 2.0.0-rc.83
 
 ### Patch Changes
