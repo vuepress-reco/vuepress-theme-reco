@@ -149,7 +149,7 @@ pre[class*="language-"] {
 
 /* code-other */
 
-@each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml {
+@each $lang in javascript, yaml, bash, cpp, cs, css, dart, docker, fs, go, html, java, js, json, kt, less, makefile, md, markdown, php, py, rb, rs, sass, scss, sh, styl, ts, toml, vue, yml, text, typescript {
   div.language-$(lang)::before {
     content: '$(lang)';
   }
