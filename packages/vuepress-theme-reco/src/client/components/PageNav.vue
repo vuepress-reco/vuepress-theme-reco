@@ -21,12 +21,12 @@ import { isPlainObject, isString } from 'vuepress/shared'
 
 import { getNavLink, useSeriesItems, usePageFrontmatter } from '@composables/index.js'
 
-import type { NavLink, ResolvedSeriesItem } from '../../types'
+import type { MenuLink, ResolvedSeriesItem } from '../../types'
 
 /**
  * Resolve `prev` or `next` config from frontmatter
  */
-const resolveFromFrontmatterConfig = (conf: unknown): null | false | NavLink => {
+const resolveFromFrontmatterConfig = (conf: unknown): null | false | MenuLink => {
   if (conf === false) {
     return null
   }
@@ -35,7 +35,7 @@ const resolveFromFrontmatterConfig = (conf: unknown): null | false | NavLink => 
     return getNavLink(conf)
   }
 
-  if (isPlainObject<NavLink>(conf)) {
+  if (isPlainObject<MenuLink>(conf)) {
     return conf
   }
 
@@ -49,14 +49,14 @@ const resolveFromSeriesItems = (
   seriesItems: ResolvedSeriesItem[],
   currentPath: string,
   offset: number
-): null | NavLink => {
+): null | MenuLink => {
   const index = seriesItems.findIndex((item) => item.link === currentPath)
   if (index !== -1) {
     const targetItem = seriesItems[index + offset]
     if (!targetItem?.link) {
       return null
     }
-    return targetItem as NavLink
+    return targetItem as MenuLink
   }
 
   for (const item of seriesItems) {

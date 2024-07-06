@@ -36,4 +36,4 @@ const sortedSeries = computed(() => {
   const series = sortSeries(seriesItems.value)
   return series
 })
-</script>../SeriesItem.js
+</script>

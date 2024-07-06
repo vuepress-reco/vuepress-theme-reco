@@ -1,9 +1,11 @@
 import { h } from 'vue'
-import type { FunctionalComponent, VNode } from 'vue'
 import { useRoute } from 'vue-router'
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSeriesItem } from '@composables/useSeriesItems'
+
 import Link from './Link.vue'
+
+import type { FunctionalComponent, VNode } from 'vue'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import { MenuGroup, MenuLink, MenuLinkGroup, ResolvedSeriesItem } from '../../types'
 
 const normalizePath = (path: string): string =>
   decodeURI(path)
@@ -30,14 +32,15 @@ const isActiveLink = (
 
 const isActiveItem = (
   route: RouteLocationNormalizedLoaded,
-  item: ResolvedSeriesItem
+  item: MenuLinkGroup
 ): boolean => {
-  if (isActiveLink(route, item.link)) {
-    return true
-  }
-
   if (item.children) {
     return item.children.some((child) => isActiveItem(route, child))
+  }
+
+
+  if (isActiveLink(route, item.link)) {
+    return true
   }
 
   return false
@@ -101,7 +104,7 @@ const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
 }
 
 export const SeriesItem: FunctionalComponent<{
-  item: ResolvedSeriesItem
+  item: MenuLinkGroup
 }> = ({ item }) => {
   const route = useRoute()
   const active = isActiveItem(route, item)

@@ -1,12 +1,12 @@
 <template>
   <nav v-if="navbarLinks.length" class="navbar-links">
     <div v-for="(item, index) in navbarLinks" :key="index" class="navbar-links__item">
-      <template v-if="item.children">
-        <DropdownLink :item="item as NavGroup<ResolvedNavbarItem>" />
+      <template v-if="'children' in item && item.children">
+        <DropdownLink :item="item" />
       </template>
 
       <template v-else>
-        <Link :item="item as NavLink" />
+        <Link :item="(item as MenuLink)" />
       </template>
     </div>
   </nav>
@@ -28,18 +28,16 @@ import { resolveRepoType } from '@utils/index.js'
 
 import type { ComputedRef } from 'vue'
 import type {
-  NavLink,
-  NavGroup,
-  NavbarItem,
-  NavbarGroup,
-  ResolvedNavbarItem,
+  MenuLink,
+  MenuGroup,
+  MenuLinkGroup,
   AutoAddCategoryToNavbarOptions,
 } from '../../types'
 
 /**
  * Get navbar config of select language dropdown
  */
-const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
+const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLinkGroup>[]> => {
   const route = useRoute()
   const routePaths = useRoutePaths()
   const routeLocale = useRouteLocale()
@@ -48,7 +46,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
   const theme = useThemeData()
   const themeLocal = useThemeLocaleData()
 
-  return computed<ResolvedNavbarItem[]>(() => {
+  return computed(() => {
     const localePaths = Object.keys(site.value.locales || {})
     // do not display language selection dropdown if there is only one language
     if (localePaths.length < 2) {
@@ -57,7 +55,7 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     const currentPath = route?.path
     const currentFullPath = route?.fullPath
 
-    const languageDropdown: ResolvedNavbarItem = {
+    const languageDropdown: MenuGroup<MenuLink> = {
       icon: 'Translate',
       text: themeLocal.value.selectLanguageText || 'Languages',
       children: localePaths.map((targetLocalePath) => {
@@ -105,10 +103,10 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
 /**
  * Get navbar config of repository link
  */
-const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
+const useNavbarRepo = (): ComputedRef<Array<MenuLink>> => {
   const themeLocal = useThemeLocaleData()
 
-  const repo = computed(() => themeLocal.value.repo || themeLocal.value.docsRepo)
+  const repo = computed(() => themeLocal.value.repo || themeLocal.value.docsRepo || '')
   const repoType = computed(() =>
     repo.value ? resolveRepoType(repo.value) : null
   )
@@ -141,23 +139,24 @@ const useNavbarRepo = (): ComputedRef<ResolvedNavbarItem[]> => {
   })
 }
 
-const resolveNavbarItem = (
-  item: NavbarItem | NavbarGroup | string,
-  router
-): ResolvedNavbarItem => {
+function resolveNavbarItem(
+  item: MenuLink | MenuLinkGroup | string,
+): MenuLink | MenuLinkGroup {
   if (isString(item)) {
     return getNavLink(item)
   }
-  if ((item as NavbarGroup).children) {
+
+  if ('children' in item && Array.isArray(item.children)) {
     return {
       ...item,
-      children: (item as NavbarGroup).children.map(resolveNavbarItem),
-    }
+      children: item.children.map(resolveNavbarItem),
+    };
   }
-  return item as ResolvedNavbarItem
+
+  return item as MenuLink
 }
 
-const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
+const useNavbarConfig = (): ComputedRef<Array<MenuLinkGroup>> => {
   const themeLocal = useThemeLocaleData()
   const { categorySummary } = useExtendPageData()
 
@@ -185,7 +184,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   })
 
   return computed(() => {
-    let navItems = [...(themeLocal.value.navbar || [])]
+    let navItems = themeLocal.value.navbar || []
 
     if (themeLocal.value.autoAddCategoryToNavbar) {
       navItems.splice(
@@ -195,16 +194,15 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
       )
     }
 
-    return navItems.map(resolveNavbarItem)
+    return navItems.map((item) => resolveNavbarItem(item as MenuLink | MenuLinkGroup))
   })
 }
-
 
 const navbarConfig = useNavbarConfig()
 const navbarSelectLanguage = useNavbarSelectLanguage()
 const navbarRepo = useNavbarRepo()
 
-const navbarLinks: ComputedRef<Array<ResolvedNavbarItem>> = computed(() => [
+const navbarLinks: ComputedRef<Array<MenuLink | MenuGroup<MenuLinkGroup>>> = computed(() => [
   ...navbarConfig.value,
   ...navbarSelectLanguage.value,
   ...navbarRepo.value,

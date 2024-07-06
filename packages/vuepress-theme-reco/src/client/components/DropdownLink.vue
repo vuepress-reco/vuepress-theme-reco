@@ -5,7 +5,6 @@
       :class="isChildActive ? 'dropdown-link__title--active' : ''"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="handleDropdown"
       @mouseenter="handleButtonMouseEnter"
       @mouseleave="handleButtonMouseLeave"
     >
@@ -50,11 +49,6 @@
               >
                 <Link
                   :item="grandchild"
-                  @focusout="
-                    isLastItemOfArray(grandchild, child.children) &&
-                      isLastItemOfArray(child, item.children) &&
-                      (open = false)
-                  "
                 />
               </li>
             </ul>
@@ -63,9 +57,6 @@
           <template v-else>
             <Link
               :item="child"
-              @focusout="
-                isLastItemOfArray(child, item.children) && (open = false)
-              "
             />
           </template>
         </li>
@@ -75,16 +66,18 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, toRefs, watch } from 'vue'
-import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
-import type { NavGroup, NavItem } from '../../types'
+import { computed, ref, toRefs, watch } from 'vue'
+
+import type { PropType } from 'vue'
+import type { MenuGroup, MenuLink, MenuLinkGroup } from '../../types'
+
 import Link from './Link.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
 const props = defineProps({
   item: {
-    type: Object as PropType<NavGroup<NavItem>>,
+    type: Object as PropType<MenuGroup<MenuLinkGroup>>,
     required: true,
   },
 })
@@ -101,29 +94,6 @@ watch(
     open.value = false
   }
 )
-
-/**
- * Open the dropdown when user tab and click from keyboard.
- *
- * Use event.detail to detect tab and click from keyboard.
- * The Tab + Click is UIEvent > KeyboardEvent, so the detail is 0.
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
- */
-const handleDropdown = (e): void => {
-  const isTriggerByTab = e.detail === 1
-  if (isTriggerByTab) {
-    open.value = !open.value
-  } else {
-    open.value = false
-  }
-}
-
-const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
-  arr[arr.length - 1] === item
-
-
-
 
 const inButton = ref(false)
 const handleButtonMouseEnter = () => {

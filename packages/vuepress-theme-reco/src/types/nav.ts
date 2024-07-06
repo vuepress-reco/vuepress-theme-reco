@@ -1,51 +1,48 @@
 /**
  * Base nav item, displayed as text
  */
-export interface NavItem {
+export interface MenuItem {
   text: string
+  icon?: string
   ariaLabel?: string
 }
 
 /**
  * Base nav group, has nav items children
  */
-export interface NavGroup<T> extends NavItem {
+export interface MenuGroup<T> extends MenuItem {
   children: T[]
 }
 
 /**
  * Props for `<NavLink>`
  */
-export interface NavLink extends NavItem {
-  link: string
-  icon?: string
+export interface MenuLink extends MenuItem {
+  link?: string
   rel?: string
   target?: string
-  children?: Array<Record<string, any>>
+}
+
+export interface MenuLinkGroup extends MenuLink {
+  children?: MenuLinkGroup[]
 }
 
 /**
  * Navbar types
  */
 // user config
-export type NavbarItem = NavLink
-export type NavbarGroup = NavGroup<NavbarGroup | NavbarItem | string>
-export type NavbarConfig = (NavbarItem | NavbarGroup | string)[]
-// resolved
-export type ResolvedNavbarItem = NavbarItem | NavGroup<ResolvedNavbarItem>
+export type NavbarConfig = (MenuLink | MenuGroup<MenuLinkGroup> | string)[]
 
-/**
+/* *
  * Series types
  */
-// user config
-export type SeriesItem = NavLink
 export interface SeriesGroup
-  extends NavGroup<SeriesGroup | NavLink | SeriesItem | string> {}
-export type SeriesConfigArray = (SeriesGroup | SeriesItem | string)[]
+  extends MenuGroup<SeriesGroup | MenuLink | string> {}
+export type SeriesConfigArray = (SeriesGroup | MenuLink | string)[]
 export type SeriesConfigObject = Record<string, SeriesConfigArray>
 export type SeriesConfig = SeriesConfigObject
 
-export interface ResolvedSeriesItem extends Partial<NavLink> {
+export interface ResolvedSeriesItem extends MenuLinkGroup {
   level?: number
-  children?: any[]
+  collapsible?: boolean
 }

@@ -1,5 +1,5 @@
 import type { GitPluginPageData } from '@vuepress/plugin-git'
-import type { NavLink } from './nav.js'
+import type { MenuLink } from './nav.js'
 
 export interface HeaderItem {
   slug: string
@@ -31,8 +31,8 @@ export interface RecoThemeNormalPageFrontmatter
   home?: false
   editLink?: boolean
   lastUpdated?: boolean
-  prev?: string | NavLink
-  next?: string | NavLink
+  prev?: string | MenuLink
+  next?: string | MenuLink
   password?: string | Array<string>
   sticky?: number
 }

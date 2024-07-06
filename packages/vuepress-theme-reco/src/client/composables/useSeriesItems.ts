@@ -1,8 +1,7 @@
-import { computed } from 'vue'
-import type { ComputedRef, InjectionKey } from 'vue'
-import { useRoute, usePageFrontmatter, type RouteLocationNormalizedLoaded } from 'vuepress/client'
+import { computed, type ComputedRef } from 'vue'
 import { isPlainObject, isString, resolveLocalePath } from 'vuepress/shared'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
+import { useRoute, usePageFrontmatter, type RouteLocationNormalizedLoaded } from 'vuepress/client'
 
 
 import { useThemeLocaleData } from '@composables/index.js'
@@ -13,31 +12,11 @@ import type {
   SeriesConfigArray,
   SeriesConfigObject,
   SeriesGroup,
-  SeriesItem,
+  MenuLink,
+  ResolvedSeriesItem
 } from '../../types'
 
 import { getNavLink } from './getNavLink.js'
-
-export interface NavItem {
-  text: string
-  ariaLabel?: string
-}
-
-export interface NavGroup<T> extends NavItem {
-  children: T[]
-}
-
-export interface NavLink extends NavItem {
-  link: string
-  rel?: string
-  target?: string
-}
-
-export interface ResolvedSeriesItem extends Partial<NavLink> {
-  text?: string
-  children?: ResolvedSeriesItem[]
-  collapsible?: boolean
-}
 
 export type SeriesItemsRef = ComputedRef<ResolvedSeriesItem[]>
 
@@ -89,7 +68,7 @@ const resolveSeriesItems = (
  */
 const resolveArraySeriesItems = (seriesPath: string, seriesConfig: SeriesConfigArray): ResolvedSeriesItem[] => {
   const handleChildItem = (
-    item: ResolvedSeriesItem | SeriesGroup | SeriesItem | string,
+    item: ResolvedSeriesItem | SeriesGroup | MenuLink | string,
   ): ResolvedSeriesItem => {
     let childItem: ResolvedSeriesItem
     if (isString(item)) {

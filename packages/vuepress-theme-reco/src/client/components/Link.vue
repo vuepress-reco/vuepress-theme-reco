@@ -33,28 +33,23 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
 import { computed, toRefs } from 'vue'
+import { useSiteData, useRouteLocale } from 'vuepress/client'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
-import { useSiteLocaleData, useSiteData, useRouteLocale } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@composables/index.js'
 
 import type { PropType } from 'vue'
-import type { NavLink, ResolvedSeriesItem } from '../../types'
+import type { MenuLink } from '../../types'
 
 
 const route = useRoute()
-const routeLocale = useRouteLocale()
 const site = useSiteData()
-const siteLocal = useSiteLocaleData()
+const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()
-
-interface LinkItem extends NavLink {
-  [key: string]: unknown
-}
 
 const props = defineProps({
   item: {
-    type: Object as PropType<NavLink | ResolvedSeriesItem>,
+    type: Object as PropType<MenuLink>,
     required: true,
   },
 })
