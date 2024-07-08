@@ -33,7 +33,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
 import { computed, toRefs } from 'vue'
-import { useSiteData, useRouteLocale } from 'vuepress/client'
+import { withBase, useSiteData, useRouteLocale } from 'vuepress/client'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
 
 import { useThemeLocaleData } from '@composables/index.js'
@@ -61,6 +61,7 @@ const hasHttpProtocol = computed(() => isLinkHttp(item.value.link as string))
 const hasNonHttpProtocal = computed(
   () => !hasHttpProtocol.value && isLinkWithProtocol(item.value.link as string || '')
 )
+
 // resolve the `target` attr
 const linkTarget = computed(() => {
   if (hasNonHttpProtocal.value) return undefined
@@ -68,6 +69,7 @@ const linkTarget = computed(() => {
   if (hasHttpProtocol.value) return '_blank'
   return undefined
 })
+
 // if the `target` attr is '_blank'
 const isBlankTarget = computed(() => linkTarget.value === '_blank')
 // is `<RouterLink>` or not
@@ -85,6 +87,7 @@ const linkRel = computed(() => {
   if (isBlankTarget.value) return 'noopener noreferrer'
   return undefined
 })
+
 // resolve the `aria-label` attr
 const linkAriaLabel = computed(
   () => item.value.ariaLabel || item.value.text
@@ -98,11 +101,20 @@ const shouldBeActiveInSubpath = computed(() => {
   }
   return item.value.link !== themeLocal.value.home || routeLocale.value
 })
+
 // if this link is active in subpath
 const isActiveInSubpath = computed(() => {
   if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
     return false
   }
+
+  if (
+    route.path === withBase(themeLocal.value.home || '/') &&
+    item.value.link === withBase(themeLocal.value.home || '/')
+  ) {
+    return true
+  }
+
   return route.path.startsWith(item.value.link as string)
 })
 </script>

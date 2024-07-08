@@ -1,4 +1,5 @@
 export const navbar = [
+  { text: '首页', link: '/en/' },
   { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'Compass' },
   {
     text: 'Reference',
