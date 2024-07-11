@@ -46,14 +46,14 @@
   "dependencies": {
     "@giscus/vue": "^2.2.8",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.34",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.37",
     "@waline/client": "^2.14.7",
     "valine": "1.5.1",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.13"
+    "vuepress": "2.0.0-rc.14"
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
