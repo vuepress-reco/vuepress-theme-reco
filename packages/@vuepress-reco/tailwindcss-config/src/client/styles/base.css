@@ -46,7 +46,7 @@
   h4,
   h5,
   h6 {
-    @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10;
+    @apply -mt-8 mb-8 mx-0 pt-12 leading-5 z-negative-10 text-heavier;
   }
   h1 {
     @apply -mt-12 text-3xl;

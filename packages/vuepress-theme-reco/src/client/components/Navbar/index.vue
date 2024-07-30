@@ -1,22 +1,24 @@
 <template>
   <header ref="navbar" class="navbar-container">
-    <SiteBrand class="nav-item" :icon="customIcon" :title="customTitle" :link="customLink" />
+    <div class="navbar-inner">
+      <SiteBrand class="nav-item" :icon="customIcon" :title="customTitle" :link="customLink" />
 
-    <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
-      <div>
-        <NavbarSearch />
+      <div class="nav-item navbar-links-wrapper" :style="linksWrapperStyle">
+        <div>
+          <NavbarSearch />
+        </div>
+
+        <NavbarLinks />
+
+        <ToggleDarkModeButton v-if="themeLocal.colorModeSwitch ?? 'true'" class="btn--dark-mode" />
+
+        <xicons
+          class="btn-toggle-menus"
+          icon="OverflowMenuVertical"
+          :iconSize="20"
+          @click="toggleMenus"
+        />
       </div>
-
-      <NavbarLinks />
-
-      <ToggleDarkModeButton v-if="themeLocal.colorModeSwitch ?? 'true'" class="btn--dark-mode" />
-
-      <xicons
-        class="btn-toggle-menus"
-        icon="OverflowMenuVertical"
-        :iconSize="20"
-        @click="toggleMenus"
-      />
     </div>
   </header>
 </template>
@@ -32,6 +34,7 @@ import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
 import { useSiteBrand } from './useSiteBrand.js'
 
 const themeLocal = useThemeLocaleData()
+themeLocal.value.colorModeSwitch
 
 const { customTitle, customLink, customIcon } = useSiteBrand()
 

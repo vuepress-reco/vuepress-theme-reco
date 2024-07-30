@@ -1,23 +1,29 @@
 <template>
   <main class="page-container">
-    <h1 v-if="!!title" class="page-title">{{ title }}</h1>
+    <Series />
 
-    <PageInfo :key="page.path" :page-data="page" />
+    <div class="page-content">
+      <h1 v-if="!!title" class="page-title">{{ title }}</h1>
 
-    <div v-if="!setedPagePassword" class="theme-reco-default-content">
-      <Content />
+      <PageInfo :key="page.path" :page-data="page" />
+
+      <div v-if="!setedPagePassword" class="theme-reco-md-content">
+        <Content />
+      </div>
+
+      <div v-else class="theme-reco-md-content">
+        <Password v-if="pageLoaded && !pagePasswordPass" @pass="handlePass" />
+        <Content v-if="pageLoaded && pagePasswordPass" />
+      </div>
+
+      <PageMeta />
+
+      <PageNav />
+
+      <Comments :hide-comments="shouldHideComments" />
     </div>
 
-    <div v-else class="theme-reco-default-content">
-      <Password v-if="pageLoaded && !pagePasswordPass" @pass="handlePass" />
-      <Content v-if="pageLoaded && pagePasswordPass" />
-    </div>
-
-    <PageMeta />
-
-    <PageNav />
-
-    <Comments :hide-comments="shouldHideComments" />
+    <Catalog v-if="isShowCatalog" />
   </main>
 </template>
 
@@ -30,6 +36,8 @@ import PageNav from '../PageNav.vue'
 import PageMeta from '../PageMeta.vue'
 import Password from '../PagePassword/index.vue'
 import { usePassword } from './hook.js'
+import Series from '../Series/index.vue'
+import Catalog from '../Catalog.vue'
 
 const page = usePageData()
 const { options } = useComment()
@@ -49,4 +57,7 @@ const shouldHideComments = computed(() => {
   return hideCommentsInSinglePage === true
     || (hideCommentsInSinglePage !== false && hideCommentsInAllPage === true)
 })
+
+import { usePageCatalog } from '@composables/index.js'
+const { isShowCatalog } = usePageCatalog()
 </script>

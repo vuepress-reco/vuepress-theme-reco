@@ -1,11 +1,11 @@
 <template>
-  <div class="home-wrapper">
+  <main class="home-wrapper">
     <component
       v-for="key in (frontmatter.modules || ['Banner', 'Blog', 'Footer'])"
       :is="key"
       :key="key"
     />
-  </div>
+  </main>
 </template>
 
 <script lang="ts">

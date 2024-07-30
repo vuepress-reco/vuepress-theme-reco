@@ -18,12 +18,14 @@ const bg = {
 // 文本色
 const text = {
   lightmode: {
-    DEFAULT: 'rgba(60, 60, 67)',
-    lighter: 'rgba(60, 60, 67, .75)',
+    DEFAULT: 'rgb(51, 65, 85)',
+    lighter: 'rgb(100, 116, 139)',
+    heavier: 'rgb(15, 23, 42)'
   },
   darkmode: {
-    DEFAULT: 'rgba(255, 255, 245, .86)',
-    lighter: 'rgba(235, 235, 245, .6)',
+    DEFAULT: 'rgb(226, 232, 240)',
+    lighter: 'rgb(148, 163, 184)',
+    heavier: 'rgb(255, 255, 255)'
   },
 }
 

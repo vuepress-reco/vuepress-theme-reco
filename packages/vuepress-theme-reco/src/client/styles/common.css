@@ -1,4 +1,10 @@
 .theme-container {
+  @apply relative min-h-screen;
+
+  .page-container {
+    @apply flex relative mx-auto max-w-screen-xl w-full;
+  }
+
   .password-wrapper {
     &.out {
       @apply fixed z-40 w-screen h-screen;

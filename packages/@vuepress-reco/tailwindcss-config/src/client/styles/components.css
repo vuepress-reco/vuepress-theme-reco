@@ -12,6 +12,10 @@
     @apply text-reco-text-lightmode-lighter;
     @apply dark:text-reco-text-darkmode-lighter;
   }
+  .text-heavier {
+    @apply text-reco-text-lightmode-heavier;
+    @apply dark:text-reco-text-darkmode-heavier;
+  }
 }
 
 @layer components {

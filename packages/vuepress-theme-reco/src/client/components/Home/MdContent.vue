@@ -1,6 +1,5 @@
 <template>
-  <!-- content -->
-  <section class="theme-reco-default-content">
+  <section class="theme-reco-md-content">
     <Content />
   </section>
 </template>

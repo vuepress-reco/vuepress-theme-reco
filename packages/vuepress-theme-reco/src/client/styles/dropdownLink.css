@@ -16,7 +16,7 @@
     }
   }
   .arrow {
-    @apply ml-1;
+    @apply ml-2;
   }
   .dropdown-link__title {
     @apply text-sm font-semibold items-center text-reco-text-lightmode hidden;

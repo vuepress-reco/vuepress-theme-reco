@@ -1,7 +1,11 @@
 .navbar-container {
-  @apply flex items-center sticky top-0 z-30 px-6 h-16 bg-reco-bg-lightmode/60;
+  @apply sticky top-0 z-50 px-6 h-16 bg-reco-bg-lightmode/60;
   @apply dark:bg-reco-bg-darkmode/60;
   @apply md:px-8;
+
+  .navbar-inner {
+    @apply flex items-center relative mx-auto max-w-screen-xl w-full h-16;
+  }
 
   &.navbar-container--has-series {
     @apply -top-16;

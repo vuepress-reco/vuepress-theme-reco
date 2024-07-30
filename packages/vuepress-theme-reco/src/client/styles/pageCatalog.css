@@ -1,9 +1,10 @@
 .page-catalog-container {
-  @apply ml-10 pl-6 pr-10 pt-4 w-56 fixed z-10 top-16 bottom-16 right-0 hidden overflow-y-auto;
+  @apply p-6 w-56 sticky z-10 top-16 bottom-16 hidden overflow-y-auto;
   @apply lg:block;
+  max-height: calc(100vh - 8rem);
 
   .tip {
-    @apply font-extrabold;
+    @apply mt-0 pt-0 font-extrabold;
   }
 
   ul {

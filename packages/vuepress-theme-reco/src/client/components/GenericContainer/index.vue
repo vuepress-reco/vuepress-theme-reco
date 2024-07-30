@@ -22,12 +22,7 @@
       <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />
     </Transition>
 
-    <Series />
-
     <slot />
-
-    <Catalog v-if="isShowCatalog" />
-
   </div>
 
   <div v-else class="theme-container" :class="containerClass">
