@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.17
+
+### Patch Changes
+
+- restructure the layout
+
 ## 2.0.0-rc.16
 
 ### Patch Changes

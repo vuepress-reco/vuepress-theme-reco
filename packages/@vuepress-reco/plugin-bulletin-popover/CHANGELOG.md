@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-rc.85
+
+### Patch Changes
+
+- restructure the layout
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.85
+
 ## 2.0.0-rc.84
 
 ### Patch Changes

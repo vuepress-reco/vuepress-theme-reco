@@ -2,15 +2,15 @@
   "mode": "exit",
   "tag": "rc",
   "initialVersions": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-rc.83",
-    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-rc.15",
-    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-rc.15",
-    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-rc.83",
-    "@vuepress-reco/vuepress-plugin-page": "2.0.0-rc.15",
-    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-rc.83",
-    "@vuepress-reco/shared": "2.0.0-rc.83",
-    "@vuepress-reco/tailwindcss-config": "2.0.0-rc.83",
-    "vuepress-theme-reco": "2.0.0-rc.15"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "2.0.0-rc.84",
+    "@vuepress-reco/vuepress-plugin-code-copy": "2.0.0-rc.16",
+    "@vuepress-reco/vuepress-plugin-comments": "2.0.0-rc.16",
+    "@vuepress-reco/vuepress-plugin-markdown-task": "2.0.0-rc.84",
+    "@vuepress-reco/vuepress-plugin-page": "2.0.0-rc.16",
+    "@vuepress-reco/vuepress-plugin-vue-preview": "2.0.0-rc.84",
+    "@vuepress-reco/shared": "2.0.0-rc.84",
+    "@vuepress-reco/tailwindcss-config": "2.0.0-rc.84",
+    "vuepress-theme-reco": "2.0.0-rc.16"
   },
   "changesets": [
     "beige-radios-visit",
@@ -62,6 +62,7 @@
     "plenty-ladybugs-build",
     "polite-queens-shake",
     "rich-queens-deliver",
+    "rotten-spiders-listen",
     "seven-balloons-suffer",
     "seven-poems-design",
     "sharp-pigs-sin",

@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.17
+
+### Patch Changes
+
+- restructure the layout
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.85
+
 ## 2.0.0-rc.16
 
 ### Patch Changes

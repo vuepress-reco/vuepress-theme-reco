@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.85
+
+### Patch Changes
+
+- restructure the layout
+
 ## 2.0.0-rc.84
 
 ### Patch Changes
