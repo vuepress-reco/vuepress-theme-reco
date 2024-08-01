@@ -1,7 +1,7 @@
 .page-catalog-container {
-  @apply p-6 w-56 sticky z-10 top-16 bottom-16 hidden overflow-y-auto;
+  @apply p-6 w-56 sticky z-10 top-16 hidden overflow-y-auto;
   @apply lg:block;
-  max-height: calc(100vh - 8rem);
+  max-height: calc(100vh - 4rem);
 
   .tip {
     @apply mt-0 pt-0 font-extrabold;
@@ -12,21 +12,21 @@
 
     .page-catalog-menu-depth_2 {
       @apply py-2 font-semibold text-sm;
-      @apply border-t border-dashed border-reco-border-lightmode;
+      @apply border-basic-top border-dashed;
       &.active, &:hover {
         .page-catalog-item {
           @apply text-reco-primary;
         }
       }
+      span {
+        @apply inline-block w-full text-ellipsis overflow-hidden text-nowrap;
+      }
     }
 
     .page-catalog-menu-depth_3 {
-      @apply py-1.5 relative text-xs transition-all duration-500;
-      .page-catalog-item {
-        @apply text-lighter;
-      }
+      @apply pl-2 py-1.5 relative text-xs transition-all duration-500;
       &::before {
-        @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
+        @apply absolute inset-y-0 left-2 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
         @apply bg-reco-primary;
         content: '';
       }
@@ -36,7 +36,7 @@
         }
       }
       &.active {
-        @apply pl-3;
+        @apply pl-5;
         a {
           @apply text-reco-primary;
         }
@@ -44,11 +44,9 @@
           @apply w-1 h-1;
         }
       }
+      span {
+        @apply inline-block w-full text-ellipsis overflow-hidden text-nowrap text-lighter;
+      }
     }
   }
-}
-
-/* 兼容 */
-.page-catalog-container ul .page-catalog-menu-depth_2 {
-  @apply dark:border-reco-border-darkmode;
 }

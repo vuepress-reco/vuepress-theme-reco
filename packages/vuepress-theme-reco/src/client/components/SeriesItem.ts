@@ -6,6 +6,7 @@ import Link from './Link.vue'
 import type { FunctionalComponent, VNode } from 'vue'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import { MenuGroup, MenuLink, MenuLinkGroup, ResolvedSeriesItem } from '../../types'
+import Xicons from './global/Xicons.vue'
 
 const normalizePath = (path: string): string =>
   decodeURI(path)
@@ -48,21 +49,26 @@ const isActiveItem = (
 
 const togglecollapsible = (e, item) => {
   item.collapsible = !!!item.collapsible
-  const currentNode = e.target.querySelector('.arrow')
-  const nextNode = e.target.nextElementSibling
+
+  const currentNode = e.target.closest('.series-heading')
+  const arrowNode = currentNode.querySelector('.arrow')
+  const nextNode = currentNode.nextElementSibling
 
   if (item.collapsible) {
-    currentNode.classList.remove('down')
-    currentNode.classList.add('right')
+    arrowNode.classList.remove('down')
+    arrowNode.classList.add('right')
     nextNode.style.display = 'none'
   } else {
-    currentNode.classList.remove('right')
-    currentNode.classList.add('down')
+    arrowNode.classList.remove('right')
+    arrowNode.classList.add('down')
     nextNode.style.display = 'block'
   }
 }
 
 const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
+  // if (!item.icon) {
+  //   item.icon = 'DocumentBlank'
+  // }
   // if the item has link, render it as `<Link>`
   if (item.link) {
     return h(Link, {
@@ -73,7 +79,11 @@ const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
 
   // if the item only has text, render it as `<p>`
   return h('h5', { ...props, onClick: (e) => togglecollapsible(e, item) }, [
-    item.text,
+    h(Xicons, {
+      icon: 'Folder',
+      text: item.text,
+      textSize: 16
+    }),
     h('span', {
       class: !!item.collapsible ? 'arrow right' : 'arrow down',
     }),

@@ -2,7 +2,7 @@
 }
 
 .DocSearch-Button.DocSearch-Button {
-  @apply bg-block h-8 px-1.5 border-block rounded-lg !important;
+  @apply bg-transparent h-8 px-1.5 border-block rounded-lg !important;
   @apply hover:shadow-none hover:border-reco-primary !important;
   svg {
     @apply w-4 h-4 text-lighter;

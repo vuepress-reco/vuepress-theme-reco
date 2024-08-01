@@ -11,6 +11,7 @@ export const themeConfig = {
       series: zhConfig.series,
       commentConfig: zhConfig.commentConfig,
       bulletin: zhConfig.bulletin,
+      catalogTitle: '页面导航'
     },
     '/en/': {
       selectLanguageText: 'Languages',
