@@ -9,7 +9,7 @@
       @before-enter="onBeforeEnter"
       @before-leave="onBeforeLeave"
     >
-      <Page />
+      <Page :key="page.path" />
     </Transition>
   </GenericContainer>
 </template>

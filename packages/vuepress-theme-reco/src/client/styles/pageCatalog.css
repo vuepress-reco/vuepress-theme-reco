@@ -1,5 +1,5 @@
 .page-catalog-container {
-  @apply p-6 w-56 sticky z-10 top-16 hidden overflow-y-auto;
+  @apply p-6 w-60 sticky z-10 top-16 hidden overflow-y-auto;
   @apply lg:block;
   max-height: calc(100vh - 4rem);
 
@@ -10,8 +10,14 @@
   ul {
     @apply list-none pl-0;
 
+    li {
+      span {
+        @apply w-full text-ellipsis overflow-hidden text-nowrap;
+      }
+    }
+
     .page-catalog-menu-depth_2 {
-      @apply py-2 font-semibold text-sm;
+      @apply py-4 font-semibold text-sm;
       @apply border-basic-top border-dashed;
       &.active, &:hover {
         .page-catalog-item {
@@ -19,12 +25,12 @@
         }
       }
       span {
-        @apply inline-block w-full text-ellipsis overflow-hidden text-nowrap;
+
       }
     }
 
     .page-catalog-menu-depth_3 {
-      @apply pl-2 py-1.5 relative text-xs transition-all duration-500;
+      @apply pl-2 py-2 relative text-xs transition-all duration-500;
       &::before {
         @apply absolute inset-y-0 left-2 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
         @apply bg-reco-primary;
@@ -45,7 +51,7 @@
         }
       }
       span {
-        @apply inline-block w-full text-ellipsis overflow-hidden text-nowrap text-lighter;
+        @apply text-lighter;
       }
     }
   }

@@ -2,14 +2,14 @@
   @apply p-6 border-t border-solid border-reco-border-lightmode text-center font-medium;
   @apply dark:border-reco-border-darkmode;
   > span {
-    @apply block ml-4 py-1 text-left;
-    @apply md:inline-block;
+    @apply block py-1 text-left;
+    @apply md:inline-block md:ml-4;
     &:first-of-type {
       @apply md:ml-0;
     }
   }
   .cyber-security {
-    @apply px-4 text-left flex items-center justify-start 
+    @apply px-4 text-left flex items-center justify-start
     my-0 md:text-center md:justify-center;
     img {
       @apply mr-2 w-4 h-4 align-middle;

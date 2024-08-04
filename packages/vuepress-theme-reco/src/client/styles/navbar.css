@@ -1,10 +1,13 @@
 .navbar-container {
-  @apply sticky top-0 z-50 px-6 h-16 bg-reco-bg-lightmode/60;
+  @apply sticky top-0 z-50 h-16 bg-reco-bg-lightmode/60;
   @apply dark:bg-reco-bg-darkmode/60;
-  @apply md:px-8;
+
+  &.has-border {
+    @apply border-basic-bottom;
+  }
 
   .navbar-inner {
-    @apply flex items-center relative mx-auto max-w-screen-xl w-full h-16;
+    @apply flex items-center relative mx-auto px-6 max-w-screen-xl w-full h-16;
   }
 
   &.navbar-container--has-series {

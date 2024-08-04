@@ -1,18 +1,15 @@
 .theme-container {
-  .theme-reco-md-content,
-  .page-content .page-title,
-  .page-content .page-info,
-  .page-meta,
-  .page-nav,
-  .reco-valine-wrapper,
-  .reco-vssue-wrapper {
+  .page-content,
+  .theme-reco-md-content {
     @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-6;
-    @apply md:px-10;
     border-top: 1px solid transparent;
     &.theme-reco-md-content code {
       @apply inline-block mx-1 px-2 py-0.5 rounded bg-reco-primary/10 text-sm;
       @apply dark:bg-reco-primary/20;
     }
+  }
+  .page-content .theme-reco-md-content {
+    @apply px-0;
   }
   .theme-reco-md-content {
     @apply mb-16;
@@ -20,7 +17,7 @@
       @apply hidden;
     }
     a {
-      @apply text-reco-primary !important;
+      @apply text-reco-primary hover:underline !important;
     }
   }
 
@@ -40,6 +37,10 @@
   .fade-slide-y-leave-to {
     transform: translateY(10px);
     opacity: 0;
+  }
+
+  .external-link-icon {
+    @apply text-basic;
   }
 }
 

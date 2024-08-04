@@ -1,5 +1,5 @@
 .series-container {
-  @apply transition-all duration-500 p-7 w-56 fixed bottom-0 left-0 z-50 top-0 overflow-y-auto;
+  @apply transition-all duration-500 p-6 pt-7 w-64 fixed bottom-0 left-0 z-50 top-0 overflow-y-auto;
   @apply -translate-x-full;
   @apply md:translate-x-0 md:sticky md:top-16 md:z-40 !important;
   max-height: calc(100vh - 4rem);
@@ -46,7 +46,7 @@
     }
   }
   a.series-item {
-    @apply relative block py-0.5 transition-all duration-500 leading-7 text-sm;
+    @apply relative block py-1 transition-all duration-500 leading-7 text-sm;
     &::before {
       @apply absolute inset-y-0 left-0 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
       @apply bg-reco-primary;

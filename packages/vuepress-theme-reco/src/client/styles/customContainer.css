@@ -10,11 +10,8 @@
   &.info {
     @apply rounded-lg border-reco-primary border border-solid bg-reco-primary/5;
     .custom-container-title,
-    svg {
+    > svg {
       @apply text-reco-primary;
-      &.external-link-icon {
-        @apply text-basic;
-      }
     }
     > p > code {
       @apply bg-reco-primary/20 !important;
@@ -23,7 +20,7 @@
   &.warning {
     @apply rounded-lg border-reco-container-warning border border-solid bg-reco-container-warning/5;
     .custom-container-title,
-    svg {
+    > svg {
       @apply text-reco-container-warning;
     }
     > p > code {
@@ -33,7 +30,7 @@
   &.danger {
     @apply rounded-lg border-reco-container-danger border border-solid bg-reco-container-danger/5;
     .custom-container-title,
-    svg {
+    > svg {
       @apply text-reco-container-danger;
     }
     > p > code {

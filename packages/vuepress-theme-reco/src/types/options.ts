@@ -178,6 +178,11 @@ export interface RecoThemeLocaleData extends LocaleData {
   catalogTitle?: string
 
   pages?: Array<PageOptions>
+
+  commentConfig: {
+    type: 'valine' | 'waline' | 'giscus'
+    options: Record<string, any>
+  }
 }
 
 export type AutoAddCategoryToNavbarOptions = {

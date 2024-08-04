@@ -1,5 +1,5 @@
 <template>
-  <header ref="navbar" class="navbar-container">
+  <header ref="navbar" :class="{ 'navbar-container': true, 'has-border': scrollY > 20 }">
     <div class="navbar-inner">
       <SiteBrand class="nav-item" :icon="customIcon" :title="customTitle" :link="customLink" />
 
@@ -26,12 +26,13 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 
-import Xicons from '../global/Xicons.vue'
 import SiteBrand from '../SiteBrand.vue'
+import Xicons from '../global/Xicons.vue'
 import NavbarLinks from '../NavbarLinks.vue'
-import { useThemeLocaleData } from '@composables/index.js'
 import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
+
 import { useSiteBrand } from './useSiteBrand.js'
+import { useThemeLocaleData, useScrollDirection } from '@composables/index.js'
 
 const themeLocal = useThemeLocaleData()
 themeLocal.value.colorModeSwitch
@@ -52,4 +53,6 @@ const emits = defineEmits(['toggle-menus'])
 const toggleMenus = (bool: boolean): void => {
   emits('toggle-menus', bool)
 }
+
+const { scrollY } = useScrollDirection()
 </script>
