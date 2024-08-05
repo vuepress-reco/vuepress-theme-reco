@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-rc.86
+
+### Patch Changes
+
+- fix bug caused by autoAddCategoryToNavbar
+
 ## 2.0.0-rc.85
 
 ### Patch Changes

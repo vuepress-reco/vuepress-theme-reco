@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.18
+
+### Patch Changes
+
+- fix bug caused by autoAddCategoryToNavbar
+
 ## 2.0.0-rc.17
 
 ### Patch Changes
