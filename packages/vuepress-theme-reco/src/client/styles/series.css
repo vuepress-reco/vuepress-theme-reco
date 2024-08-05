@@ -1,8 +1,7 @@
 .series-container {
-  @apply transition-all duration-500 p-6 pt-7 w-64 fixed bottom-0 left-0 z-50 top-0 overflow-y-auto;
+  @apply transition-all duration-500 p-6 pt-7 w-64 fixed bottom-0 left-0 z-50 top-0 overflow-y-auto h-full;
   @apply -translate-x-full;
   @apply md:translate-x-0 md:sticky md:top-16 md:z-40 !important;
-  max-height: calc(100vh - 4rem);
   .series-group {
     @apply pb-6;
     h5.series-heading {
@@ -64,6 +63,12 @@
         @apply text-reco-primary;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .series-container {
+    max-height: calc(100vh - 4rem)
   }
 }
 

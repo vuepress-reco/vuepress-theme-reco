@@ -1,6 +1,6 @@
 .timeline-wrapper {
   .timeline-content {
-    @apply relative mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+    @apply relative mx-auto mt-4 mb-16 px-6 max-w-screen-lg;
     .year-wrapper {
       @apply pl-0;
     }

@@ -1,5 +1,6 @@
 .categories-container {
-  @apply lg:max-w-screen-md xl:max-w-screen-lg py-24 mx-auto py-6;
+  @apply py-24 mx-auto py-6 px-6;
+  @apply lg:max-w-screen-md xl:max-w-screen-lg lg:px-0;
   .category-list {
     @apply pl-0 list-none;
     .category-item {

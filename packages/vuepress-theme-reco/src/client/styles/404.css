@@ -1,5 +1,5 @@
 .page-404-wrapper {
-  @apply w-screen h-screen flex flex-col justify-center items-center;
+  @apply w-screen h-screen flex flex-col justify-center items-center px-6;
   @apply md:flex-row;
   .content {
     @apply mr-0 mb-20 text-center;

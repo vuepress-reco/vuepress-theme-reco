@@ -1,7 +1,6 @@
 .page-catalog-container {
-  @apply p-6 w-60 sticky z-10 top-16 hidden overflow-y-auto;
+  @apply p-6 w-60 sticky z-10 top-16 hidden overflow-y-auto h-full;
   @apply lg:block;
-  max-height: calc(100vh - 4rem);
 
   .tip {
     @apply mt-0 pt-0 font-extrabold;
@@ -54,5 +53,13 @@
         @apply text-lighter;
       }
     }
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .page-catalog-container {
+    max-height: calc(100vh - 4rem)
   }
 }
