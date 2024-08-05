@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { useThemeLocaleData } from '@composables/index.js'
-import NavbarLinks from './NavbarLinks.vue'
+import NavbarLinks from './NavbarLinks/index.vue'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
 
 const themeLocal = useThemeLocaleData()

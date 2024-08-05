@@ -16,7 +16,7 @@
       @toggleSeries="toggleSeries"
     />
 
-    <NavbarDropdownNemu />
+    <NavbarDropdownNemu v-if="isMobile" />
 
     <Transition name="fade">
       <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />
@@ -38,14 +38,14 @@
       />
 
       <SubNavbar
-        v-if="hasSeries"
+        v-if="isMobile && hasSeries"
         :class="{
           'not-open': !isOpenSeries,
         }"
         @toggleSeries="toggleSeries"
       />
 
-      <NavbarDropdownNemu />
+      <NavbarDropdownNemu v-if="isMobile" />
 
       <Transition name="fade">
         <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />

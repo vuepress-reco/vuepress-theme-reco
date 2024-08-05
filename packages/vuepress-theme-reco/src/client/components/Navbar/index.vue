@@ -28,7 +28,7 @@ import { computed, ref } from 'vue'
 
 import SiteBrand from '../SiteBrand.vue'
 import Xicons from '../global/Xicons.vue'
-import NavbarLinks from '../NavbarLinks.vue'
+import NavbarLinks from '../NavbarLinks/index.vue'
 import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
 
 import { useSiteBrand } from './useSiteBrand.js'
