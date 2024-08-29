@@ -52,7 +52,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'inherit',
+    default: '',
   },
   text: {
     type: String,

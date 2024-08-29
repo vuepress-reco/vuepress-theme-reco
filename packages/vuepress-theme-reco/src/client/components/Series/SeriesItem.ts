@@ -1,12 +1,12 @@
 import { h } from 'vue'
 import { useRoute } from 'vue-router'
 
-import Link from './Link.vue'
+import Link from '../Link.vue'
 
 import type { FunctionalComponent, VNode } from 'vue'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import { MenuGroup, MenuLink, MenuLinkGroup, ResolvedSeriesItem } from '../../types'
-import Xicons from './global/Xicons.vue'
+import type { MenuLinkGroup, ResolvedSeriesItem } from '../../../types'
+import Xicons from '../global/Xicons.vue'
 
 const normalizePath = (path: string): string =>
   decodeURI(path)
@@ -47,7 +47,9 @@ const isActiveItem = (
   return false
 }
 
-const togglecollapsible = (e, item) => {
+const togglecollapsible = (e, item, level) => {
+  if (level !== 1) return
+
   item.collapsible = !!!item.collapsible
 
   const currentNode = e.target.closest('.series-heading')
@@ -65,11 +67,7 @@ const togglecollapsible = (e, item) => {
   }
 }
 
-const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
-  // if (!item.icon) {
-  //   item.icon = 'DocumentBlank'
-  // }
-  // if the item has link, render it as `<Link>`
+const renderItem = (item: ResolvedSeriesItem, level: number, props: VNode['props']): VNode => {
   if (item.link) {
     return h(Link, {
       ...props,
@@ -77,20 +75,22 @@ const renderItem = (item: ResolvedSeriesItem, props: VNode['props']): VNode => {
     })
   }
 
+  const titleTag = level === 1 ? 'h5' : 'h6'
+
   // if the item only has text, render it as `<p>`
-  return h('h5', { ...props, onClick: (e) => togglecollapsible(e, item) }, [
+  return h(titleTag, { ...props, onClick: (e) => togglecollapsible(e, item, level) }, [
     h(Xicons, {
-      icon: 'Folder',
+      icon: level === 1 ? 'Folder' : '',
       text: item.text,
-      textSize: 16
+      textSize: level === 1 ? 16 : 14
     }),
-    h('span', {
+    level !== 1 ? null : h('span', {
       class: !!item.collapsible ? 'arrow right' : 'arrow down',
     }),
   ])
 }
 
-const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
+const renderChildren = (item: ResolvedSeriesItem, level: number): VNode | null => {
   if (!item.children?.length) {
     return null
   }
@@ -107,6 +107,7 @@ const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
         'li',
         h(SeriesItem, {
           item: child,
+          level
         })
       )
     )
@@ -115,9 +116,10 @@ const renderChildren = (item: ResolvedSeriesItem): VNode | null => {
 
 export const SeriesItem: FunctionalComponent<{
   item: MenuLinkGroup
-}> = ({ item }) => {
+  level: number
+}> = ({ item, level }) => {
   const route = useRoute()
-  const active = isActiveItem(route, item)
+  const active = level === 1 ? isActiveItem(route, item) : false
 
   if (item.children) {
     return [
@@ -127,20 +129,21 @@ export const SeriesItem: FunctionalComponent<{
           class: 'series-group series-item',
         },
         [
-          renderItem(item, {
+          renderItem(item, level, {
             class: {
               'series-heading': true,
+              [`series-level-${level}`]: true,
               active,
             },
           }),
-          renderChildren(item),
+          renderChildren(item, ++level),
         ]
       ),
     ]
   }
 
   return [
-    renderItem(item, {
+    renderItem(item, ++level, {
       class: {
         'series-item': true,
         active,
@@ -154,6 +157,10 @@ SeriesItem.displayName = 'SeriesItem'
 SeriesItem.props = {
   item: {
     type: Object,
+    required: true,
+  },
+  level: {
+    type: Number,
     required: true,
   },
 }

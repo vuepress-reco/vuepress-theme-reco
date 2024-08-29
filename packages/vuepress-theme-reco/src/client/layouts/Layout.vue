@@ -2,7 +2,7 @@
   <GenericContainer>
     <Home v-if="frontmatter.home === true" />
 
-    <Transition
+    <!-- <Transition
       v-else
       name="fade-slide-y"
       mode="out-in"
@@ -10,7 +10,8 @@
       @before-leave="onBeforeLeave"
     >
       <Page :key="page.path" />
-    </Transition>
+    </Transition> -->
+    <Page :key="page.path" />
   </GenericContainer>
 </template>
 

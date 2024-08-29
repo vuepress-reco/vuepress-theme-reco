@@ -3,6 +3,8 @@ title: Series
 date: 2021-11-06 23:36:01
 ---
 
+## Introduction
+
 In `vuepress-theme-reco@2.x`, `sidebar` was changed to `series` for two reasons:
 
 1. In `vuepress-theme-reco@1.x`, the sidebar is split into `left sidebar' and `right sidebar', multiple documents can be aggregated in the left sidebar Together, to express the connection between them, the right sidebar shows the directory structure of the current page, because considering the `vuepress` default theme, putting them all on the left sidebar will make it unfocused, but by `sidebar` and `subSidebar` to represent `left sidebar` and `right sidebar`, the semantics are not very good;
@@ -10,7 +12,7 @@ In `vuepress-theme-reco@2.x`, `sidebar` was changed to `series` for two reasons:
 
 ## Configure
 
-**general**
+### General
 
 ``` js
 // .vuepress/config.js
@@ -23,7 +25,7 @@ module.exports = {
 }
 ```
 
-**group**
+### Group
 
 ```js
 // .vuepress/config.js
@@ -46,7 +48,39 @@ module.exports = {
 }
 ```
 
-**error**
+### Sub Group
+
+```js
+// .vuepress/config.js
+module.exports = {
+  themeConfig: {
+    series: {
+      '/vuepress-theme-reco/': [
+        {
+          text: 'Group 1',
+          children: [ 'introduce', 'usage' ]
+          collapsible: true // This attribute can only be used for first-level groups
+        },
+        {
+          text: 'Group 2',
+          children: [
+            {
+              text: 'Sub Group 1',
+              children: ['home']
+            },
+            {
+              text: 'Sub Group 2',
+              children: ['series', 'comments']
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Error
 
 ::: warning
 If the name of the article on the left shows the path to the document, you can turn children into full mode.

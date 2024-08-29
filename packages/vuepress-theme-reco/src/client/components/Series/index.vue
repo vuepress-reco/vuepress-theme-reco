@@ -3,6 +3,7 @@
     <SeriesItem
       v-for="item in sortedSeries"
       :item="item"
+      :level="1"
       :key="item.link || item.text"
     />
   </aside>
@@ -16,7 +17,7 @@ import {
   useSeriesItems,
   useThemeLocaleData,
 } from '@composables/index.js'
-import { SeriesItem } from '../SeriesItem.js'
+import { SeriesItem } from './SeriesItem.js'
 
 const themeLocal = useThemeLocaleData()
 const { sortSeries } = useSortSeries()
@@ -30,4 +31,4 @@ const sortedSeries = computed(() => {
   const series = sortSeries(seriesItems.value)
   return series
 })
-</script>
+</script>./SeriesItem.js

@@ -67,34 +67,22 @@ const resolveSeriesItems = (
  * Resolve series items if the config is an array
  */
 const resolveArraySeriesItems = (seriesPath: string, seriesConfig: SeriesConfigArray): ResolvedSeriesItem[] => {
-  const handleChildItem = (
-    item: ResolvedSeriesItem | SeriesGroup | MenuLink | string,
-  ): ResolvedSeriesItem => {
-    let childItem: ResolvedSeriesItem
+  return seriesConfig.map((item): ResolvedSeriesItem => {
     if (isString(item)) {
       const link = item.includes(seriesPath) ? item : `${seriesPath}${item}`
-      childItem = getNavLink(link)
-    } else {
-      childItem = item as ResolvedSeriesItem
+      return getNavLink(link)
     }
 
-    return childItem
-  }
-
-  return seriesConfig.map(
-    (item): ResolvedSeriesItem => {
-      if (isString(item)) {
-        const link = item.includes(seriesPath) ? item : `${seriesPath}${item}`
-        return getNavLink(link)
-      }
-
-      return {
-        ...item,
-        // @ts-ignore
-        children: item.children.map(subItem => handleChildItem(subItem)),
-      }
+    const resolvedItem = { ...item }
+    // @ts-ignore
+    if (item.children) {
+      // @ts-ignore
+      resolvedItem.children = resolveArraySeriesItems(seriesPath, item.children)
     }
-  )
+
+    // @ts-ignore
+    return resolvedItem
+  })
 }
 
 /**

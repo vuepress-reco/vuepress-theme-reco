@@ -23,21 +23,31 @@ export const series = {
     {
       text: '主题配置',
       children: [
-        'home',
-        'source-dir',
-        'git',
-        'series',
-        'navbar',
-        'comments',
-        'bulletin-popover',
-        'password',
-        'appearance',
-        'pages',
-        'doc-search',
-        'auto-set-category',
-        'auto-set-series',
-        'custom-catalog-title',
-        'custom-primary-color',
+        {
+          text: 'Local 配置',
+          children: [
+            'home',
+            'source-dir',
+            'git',
+            'series',
+            'navbar',
+            'comments',
+            'bulletin-popover',
+            'password',
+            'appearance',
+            'pages',
+            'doc-search',
+            'auto-set-category',
+            'auto-set-series',
+            'custom-primary-color',
+          ]
+        },
+        {
+          text: '多语言',
+          children: [
+            'custom-catalog-title'
+          ]
+        }
       ],
     },
     {

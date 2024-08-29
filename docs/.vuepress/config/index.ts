@@ -22,6 +22,7 @@ export const themeConfig = {
       bulletin: enConfig.bulletin,
     },
   },
+  colorMode: 'dark',
   logo: '/logo.png',
   author: 'reco_luan',
   docsRepo: 'https://github.com/vuepress-reco/vuepress-theme-reco',

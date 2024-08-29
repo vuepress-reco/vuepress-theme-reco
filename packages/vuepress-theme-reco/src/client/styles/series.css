@@ -4,27 +4,6 @@
   @apply md:translate-x-0 md:sticky md:top-16 md:z-40 !important;
   .series-group {
     @apply pb-6;
-    h5.series-heading {
-      @apply flex justify-between items-center cursor-pointer pt-0 my-0 text-basic;
-      & + ul {
-        @apply pt-4;
-        li {
-          @apply ml-2 pl-4 border-basic-left;
-          span.xicon-container {
-            @apply w-full;
-          }
-          span.xicon-content {
-            @apply text-ellipsis overflow-hidden text-nowrap;
-          }
-        }
-      }
-    }
-    &:not(:first-of-type){
-      @apply border-basic-top border-dashed;
-      h5.series-heading {
-        @apply mt-6;
-      }
-    }
     .series-heading {
       @apply mb-4 font-extrabold;
       span {
@@ -32,9 +11,41 @@
       }
       & + ul {
         @apply pl-0 m-0 list-none;
+        li:is(:last-of-type) .series-group {
+          @apply pb-0;
+        }
       }
       &.active {
         @apply text-reco-primary;
+      }
+    }
+    h5.series-heading {
+      @apply flex justify-between items-center cursor-pointer pt-0 my-0 text-basic;
+      & + ul {
+        @apply pt-4;
+        li {
+          span.xicon-content {
+            @apply text-ellipsis overflow-hidden text-nowrap;
+          }
+        }
+      }
+      &.series-level-1 + ul > li {
+        @apply ml-2 pl-4 border-basic-left;
+        span.xicon-container {
+          @apply w-full;
+        }
+      }
+    }
+    h6.series-heading {
+      @apply mt-0 pt-3 text-basic;
+      .xicon-content {
+        @apply text-lighter !important;
+      }
+    }
+    &:not(:first-of-type){
+      @apply border-basic-top border-dashed;
+      h5.series-heading {
+        @apply mt-6;
       }
     }
     .series-item {
