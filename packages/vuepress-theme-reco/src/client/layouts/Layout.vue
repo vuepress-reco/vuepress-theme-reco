@@ -11,7 +11,7 @@
     >
       <Page :key="page.path" />
     </Transition> -->
-    <Page :key="page.path" />
+    <Page v-else :key="page.path" />
   </GenericContainer>
 </template>
 
