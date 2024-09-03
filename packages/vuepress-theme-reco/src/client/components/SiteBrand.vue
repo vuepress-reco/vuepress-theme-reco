@@ -40,8 +40,6 @@ const { title, icon, link } = toRefs(props)
 </template>
 
 <style>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
-
 .site-brand {
   @apply flex text-xl font-semibold;
   .logo {

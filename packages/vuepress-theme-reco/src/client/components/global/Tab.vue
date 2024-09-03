@@ -64,8 +64,6 @@ export default defineComponent({
 </script>
 
 <style>
-@import url('@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css');
-
 .tab {
   @apply relative my-6 overflow-hidden border-block;
   .tab__nav {

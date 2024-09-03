@@ -3,8 +3,8 @@ import { colors } from './custom-colors.js'
 export const tailwindcssConfig = {
   darkMode: 'class',
   content: [
-    'node_modules/vuepress-theme-reco/lib/**/*.(vue|html|js)',
-    'node_modules/@vuepress-reco/**/lib/**/*.(vue|html|js)',
+    'node_modules/**/vuepress-theme-reco/lib/**/*.(vue|html|js)',
+    'node_modules/**/@vuepress-reco/**/lib/**/*.(vue|html|js)',
   ],
   theme: {
     extend: {
