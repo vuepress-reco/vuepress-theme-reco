@@ -59,7 +59,7 @@ interface TimelineData {
   data: any
 }
 
-const timelineData: Array<TimelineData> = Object.keys(dataMap).reduce(
+const timelineData: Array<TimelineData> = Object.keys(dataMap).sort((a, b) => b - a).reduce(
   (all: Array<TimelineData>, next: string) => {
     all.push({
       year: next,
@@ -71,4 +71,4 @@ const timelineData: Array<TimelineData> = Object.keys(dataMap).reduce(
   []
 )
 </script>
-@client/components/GenericContainer/index.vue
+
