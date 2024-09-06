@@ -51,11 +51,7 @@
         <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />
       </Transition>
 
-      <Series />
-
       <slot />
-
-      <Catalog v-if="isShowCatalog" />
     </div>
   </div>
 </template>
@@ -74,9 +70,6 @@ const hasSeries = computed(() => seriesItems.value.length > 0)
 
 import { useSeriesData } from '@composables/index.js'
 const { isOpenSeries, toggleSeries } = useSeriesData()
-
-import { usePageCatalog } from '@composables/index.js'
-const { isShowCatalog } = usePageCatalog()
 
 import { useMobileMenus } from '@composables/index.js'
 const { toggleMobileMenus } = useMobileMenus()

@@ -23,13 +23,13 @@
           @apply text-reco-primary;
         }
       }
-      span {
-
-      }
     }
 
     .page-catalog-menu-depth_3 {
       @apply pl-2 py-2 relative text-xs transition-all duration-500;
+      span {
+        @apply text-lighter;
+      }
       &::before {
         @apply absolute inset-y-0 left-2 m-auto block w-0 h-0 rounded-1/2 transition-all duration-500;
         @apply bg-reco-primary;
@@ -42,15 +42,12 @@
       }
       &.active {
         @apply pl-5;
-        a {
+        span {
           @apply text-reco-primary;
         }
         &::before {
           @apply w-1 h-1;
         }
-      }
-      span {
-        @apply text-lighter;
       }
     }
   }

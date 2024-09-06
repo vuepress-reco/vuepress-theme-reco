@@ -38,9 +38,6 @@
     }
     h6.series-heading {
       @apply mt-0 pt-3 text-basic;
-      .xicon-content {
-        @apply text-lighter !important;
-      }
     }
     &:not(:first-of-type){
       @apply border-basic-top border-dashed;
