@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-rc.19
+
+### Patch Changes
+
+- add sub group in series
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.87
+
 ## 2.0.0-rc.18
 
 ### Patch Changes

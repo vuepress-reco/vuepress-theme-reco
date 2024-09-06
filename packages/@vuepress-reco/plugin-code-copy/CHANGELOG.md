@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.19
+
+### Patch Changes
+
+- add sub group in series
+
 ## 2.0.0-rc.18
 
 ### Patch Changes
