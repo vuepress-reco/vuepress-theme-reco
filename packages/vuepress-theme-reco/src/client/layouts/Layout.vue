@@ -48,4 +48,3 @@ watch(route, () => {
   initMagicCard()
 })
 </script>
-@client/components/GenericContainer/index.vue

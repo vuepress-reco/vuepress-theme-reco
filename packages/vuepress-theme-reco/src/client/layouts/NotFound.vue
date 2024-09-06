@@ -25,5 +25,3 @@ const goHome = () => {
   router.push(themeLocal.value.home || routeLocale.value)
 }
 </script>
-
-@client/components/GenericContainer/index.vue
