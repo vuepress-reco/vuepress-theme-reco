@@ -17,7 +17,7 @@ If the website as a whole or a document is private and does not want to be made 
 
 ## Obtaining Ciphertext
 
-If your password is `123456`, you need to convert it into ciphertext, that is, `e10adc3949ba59abbe56e057f20f883e`, use ciphertext to set the password.
+If your password is `123456`, you need to convert it into ciphertext, that is, `14e1b600b1fd579f47433b88e8d85291`, use ciphertext to set the password.
 
 After the website is released, enter `123456` in the password input box to enter the website, and others cannot know your password through the ciphertext in the code, but you must remember your password in plaintext.
 
