@@ -23,6 +23,9 @@
 
   .contains-task-list {
     @apply list-none pl-0;
+    .contains-task-list {
+      @apply pl-3;
+    }
   }
 
   .fade-slide-y-enter-active {
