@@ -101,14 +101,16 @@ export default class PageCreater {
 
     this._createExtendedPages()
 
+    this._parseChineseInPagePathToPinyin()
+
     /**
      * The name of the file is changed in the develop environment,
      * and bug of 404 appears during hot updates.
      */
     //
-    if (this.app.env.isBuild) {
-      this._parseChineseInPagePathToPinyin()
-    }
+    // if (this.app.env.isBuild) {
+    //   this._parseChineseInPagePathToPinyin()
+    // }
   }
 
   // 将 path 中的中文转换成拼音
