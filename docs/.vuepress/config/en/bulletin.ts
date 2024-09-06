@@ -10,7 +10,7 @@ export const bulletin = {
       content: `
       <ul>
         <li>vuepress：2.0.0-rc.14</li>
-        <li>theme reco：2.0.0-rc.18</li>
+        <li>theme reco：2.0.0-rc.19</li>
       </ul>`,
       style: 'font-size: 12px; color: #5D67E8;'
     },
