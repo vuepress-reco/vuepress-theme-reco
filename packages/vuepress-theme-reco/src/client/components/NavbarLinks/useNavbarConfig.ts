@@ -38,7 +38,7 @@ export const useNavbarConfig = (): Array<MenuLinkGroup> => {
         // @ts-ignore
         text: c.label,
         // @ts-ignore
-        link: `/categories/${convertToPinyin(c.label)}/1.html`,
+        link: `/categories/${convertToPinyin(c.categoryValue)}/1.html`,
       }))
     },
     {
@@ -47,7 +47,7 @@ export const useNavbarConfig = (): Array<MenuLinkGroup> => {
         // @ts-ignore
         text: t.label,
         // @ts-ignore
-        link: `/tags/${convertToPinyin(t.label)}/1.html`,
+        link: `/tags/${convertToPinyin(t.categoryValue)}/1.html`,
       }))
     },
   ]
