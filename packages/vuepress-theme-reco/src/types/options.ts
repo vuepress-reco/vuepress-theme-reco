@@ -179,14 +179,17 @@ export interface RecoThemeLocaleData extends LocaleData {
 
   pages?: Array<PageOptions>
 
-  commentConfig: {
+  commentConfig?: {
     type: 'valine' | 'waline' | 'giscus'
     options: Record<string, any>
-  }
+  },
+
+  categoriesText?: string
+
+  tagsText?: string
 }
 
 export type AutoAddCategoryToNavbarOptions = {
-  location: number // default 0
-  categoryText: string // default categories
-  tagText: string // default tags
+  location?: number // default 0
+  showIcon?: boolean // default false
 }

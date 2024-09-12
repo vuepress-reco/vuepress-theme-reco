@@ -103,10 +103,11 @@ export default defineUserConfig({
       },
     ],
     autoSetBlogCategories: true,
+    categoriesText: '分类',
+    tagsText: '标签',
     autoAddCategoryToNavbar: {
       location: 1,
-      categoryText: '分类',
-      tagText: '标签'
+      showIcon: true
     },
     autoSetSeries: true,
     componentsDir: './example/.vuepress/components',
