@@ -24,7 +24,7 @@ export const series = {
       text: '主题配置',
       children: [
         {
-          text: 'Local 配置',
+          text: 'Locale 配置',
           children: [
             'home',
             'source-dir',
@@ -45,7 +45,7 @@ export const series = {
         {
           text: '多语言',
           children: [
-            'custom-catalog-title'
+            'multilingual'
           ]
         }
       ],

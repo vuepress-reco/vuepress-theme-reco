@@ -33,9 +33,8 @@ export default defineUserConfig({
     autoSetBlogCategories: true,
     // 自动将分类和标签添加至头部导航条
     autoAddCategoryToNavbar: {
-      location: 1, // 默认 0
-      categoryText: '分类', // 默认 categories
-      tagText: '标签' // 默认 tags
+      location: 1, // 插入位置，默认 0
+      showIcon: true, // 展示图标，默认 false
     },
     // 当 autoAddCategoryToNavbar 为 true 时，则全部取默认值
     autoAddCategoryToNavbar: true

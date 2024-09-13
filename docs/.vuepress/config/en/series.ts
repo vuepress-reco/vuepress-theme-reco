@@ -24,7 +24,7 @@ export const series = {
       text: 'Theme Configuration',
       children: [
         {
-          text: 'Local 配置',
+          text: 'Locale Config',
           children: [
             'home',
             'source-dir',
@@ -43,9 +43,9 @@ export const series = {
           ]
         },
         {
-          text: '多语言',
+          text: 'Multilingual',
           children: [
-            'custom-catalog-title'
+            'multilingual'
           ]
         }
       ],

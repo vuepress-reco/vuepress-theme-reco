@@ -58,13 +58,13 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     searchPlugin({ hotKeys: [{ key: 's', ctrl: true }] }),
     mediumZoomPlugin({ zoomOptions: { background: 'inherit' } }),
     activeHeaderLinksPlugin({ headerLinkSelector: 'a.page-catalog-item' }),
-    containerPlugin(resolveContainerOptions('tip')),
-    containerPlugin(resolveContainerOptions('info')),
-    containerPlugin(resolveContainerOptions('warning')),
-    containerPlugin(resolveContainerOptions('danger')),
-    containerPlugin(resolveContainerOptions('details')),
-    containerPlugin(resolveContainerOptions('code-group')),
-    containerPlugin(resolveContainerOptions('code-group-item')),
+    containerPlugin(resolveContainerOptions('tip', themeConfig)),
+    containerPlugin(resolveContainerOptions('info', themeConfig)),
+    containerPlugin(resolveContainerOptions('warning', themeConfig)),
+    containerPlugin(resolveContainerOptions('danger', themeConfig)),
+    containerPlugin(resolveContainerOptions('details', themeConfig)),
+    containerPlugin(resolveContainerOptions('code-group', themeConfig)),
+    containerPlugin(resolveContainerOptions('code-group-item', themeConfig)),
   ]
 
   if (themeConfig?.algolia) {

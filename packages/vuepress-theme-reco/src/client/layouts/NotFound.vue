@@ -3,8 +3,8 @@
     <section class="page-404-wrapper">
       <div class="content">
         <h1>404</h1>
-        <p>Oops! Page does not exist.</p>
-        <div class="xicon-container" @click="goHome">Go Home</div>
+        <p>{{ themeLocal.notFound || 'Oops! Page does not exist.' }}</p>
+        <div class="xicon-container" @click="goHome">{{ themeLocal.backToHome || 'Back To Home' }}</div>
       </div>
       <img src="../assets/taken.svg" />
     </section>

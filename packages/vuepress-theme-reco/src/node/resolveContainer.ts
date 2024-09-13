@@ -1,4 +1,6 @@
-import type { ContainerPluginOptions, MarkdownItContainerRenderFunction } from '@vuepress/plugin-container'
+import { ensureLeadingSlash, resolveLocalePath } from 'vuepress/shared'
+import type { ContainerPluginOptions } from '@vuepress/plugin-container'
+import type { RecoThemeData } from '../types/options.js'
 
 // todo 增加对 detail 和 代码示例的展示
 const svgMap = {
@@ -9,11 +11,29 @@ const svgMap = {
   details: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l5 5l5-5"></path><path d="M7 13l5 5l5-5"></path></g></svg>'
 }
 
-const renderOptions = (tokens, idx, options, env, self) => {
+const parseLocalTitle = (type, env, locales) => {
+  let title
+  const { filePathRelative } = env
+  const relativePath = ensureLeadingSlash(filePathRelative ?? '')
+
+  const localePath = resolveLocalePath(locales, relativePath)
+  const localeData = locales[localePath] ?? {}
+
+  if (localeData.defaultInfo) {
+    title = localeData.defaultInfo
+  } else {
+    title = type.toUpperCase()
+  }
+
+  return title
+}
+
+const renderOptions = (locals) => (tokens, idx, options, env, self) => {
   const { type, info } = tokens[idx]
   const [customType, title] = info.trim().split(' ')
   if (/container\_\w+\_open/g.test(type)) {
-    return `<div class="custom-container ${customType}">${svgMap[customType] || ''}<p class="custom-container-title">${ title || customType.toUpperCase() }</p>`
+    const localTitle = parseLocalTitle(customType, env, locals)
+    return `<div class="custom-container ${customType}">${svgMap[customType] || ''}<p class="custom-container-title">${ title || localTitle }</p>`
   }
 
   if (/container\_\w+\_close/g.test(type)) {
@@ -23,11 +43,12 @@ const renderOptions = (tokens, idx, options, env, self) => {
   return self.renderToken(tokens, idx, options)
 }
 
-const renderOptionsForDetails = (tokens, idx, options, env, self) => {
+const renderOptionsForDetails = (locals) => (tokens, idx, options, env, self) => {
   const { type, info } = tokens[idx]
   const [customType, title] = info.trim().split(' ')
   if (/container_details_open/g.test(type)) {
-    return `<details class="custom-container ${customType}"><summary class="custom-container-title">${ title || customType.toUpperCase() }</summary>`
+    const localTitle = parseLocalTitle(customType, env, locals)
+    return `<details class="custom-container ${customType}"><summary class="custom-container-title">${ title || localTitle }</summary>`
   }
 
   if (/container_details_close/g.test(type)) {
@@ -37,25 +58,35 @@ const renderOptionsForDetails = (tokens, idx, options, env, self) => {
   return self.renderToken(tokens, idx, options)
 }
 
-export const resolveOptionsForCodeGroup = () => {
+const resolveOptionsForCodeGroup = () => {
   return {
     before: () => `<CodeGroup>\n`,
     after: () => '</CodeGroup>\n',
   }
 }
 
-export const resolveOptionsForCodeGroupItem = () => {
+const resolveOptionsForCodeGroupItem = () => {
   return {
     before: (info) => `<CodeGroupItem title="${info}">\n`,
     after: () => '</CodeGroupItem>\n',
   }
 }
 
-export const resolveContainerOptions = (type: string): ContainerPluginOptions => {
-  let render = renderOptions
+export const resolveContainerOptions = (type: string, themeData: RecoThemeData): ContainerPluginOptions => {
+  const locales = Object.entries(themeData.locales || {}).reduce(
+    (result, [key, value]) => {
+      result[key] = {
+        defaultInfo: value?.[type] ?? themeData[type],
+      }
+      return result
+    },
+    {},
+  )
+
+  let render = renderOptions(locales)
 
   if (type === 'details') {
-    render = renderOptionsForDetails
+    render = renderOptionsForDetails(locales)
     return { type, render }
   }
 

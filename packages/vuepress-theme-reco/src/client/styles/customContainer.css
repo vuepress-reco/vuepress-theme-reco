@@ -1,7 +1,8 @@
 .custom-container {
   @apply relative my-6 px-6 py-4 break-all;
   > svg {
-    @apply absolute top-4 left-4 w-7 font-bold;
+    @apply absolute left-4 w-7 font-bold;
+    top: 1.1rem;
   }
   .custom-container-title {
     @apply my-0 pl-6 font-bold;

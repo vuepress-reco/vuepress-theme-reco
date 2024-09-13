@@ -11,7 +11,15 @@ export const themeConfig = {
       series: zhConfig.series,
       commentConfig: zhConfig.commentConfig,
       bulletin: zhConfig.bulletin,
-      catalogTitle: '页面导航'
+      catalogTitle: '页面导航',
+      tip: '提示',
+      info: '信息',
+      warning: '警告',
+      danger: '危险',
+      details: '详情',
+      editLinkText: '编辑当前页面',
+      notFound: '哇哦，没有发现这个页面！',
+      backToHome: '返回首页'
     },
     '/en/': {
       selectLanguageText: 'Languages',

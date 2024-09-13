@@ -33,9 +33,8 @@ export default defineUserConfig({
     autoSetBlogCategories: true,
     // automatically add categories and tags to the header navigation bar
     autoAddCategoryToNavbar: {
-      location: 1, // default 0
-      categoryText: '分类', // default categories
-      tagText: '标签' // default tags
+      location: 1, // insertion position，default 0
+      showIcon: true, // display icon，default false
     },
     // when autoAddCategoryToNavbar is true, all defaults are taken.
     autoAddCategoryToNavbar: true
