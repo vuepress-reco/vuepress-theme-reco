@@ -1,7 +1,8 @@
 import * as zhConfig from './zh'
 import * as enConfig from './en'
+import { RecoThemeData } from 'vuepress-theme-reco/lib/types'
 
-export const themeConfig = {
+export const themeConfig: RecoThemeData = {
   locales: {
     '/': {
       selectLanguageText: '语言',

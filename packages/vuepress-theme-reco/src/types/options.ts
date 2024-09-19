@@ -2,6 +2,8 @@ import type { LocaleData } from 'vuepress/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { NavbarConfig, SeriesConfig } from './nav.js'
 import { PageOptions } from '../../../@vuepress-reco/plugin-page/src/types/index.js'
+import { ViteBundlerOptions } from '@vuepress/bundler-vite'
+import { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
 
 export type RecoThemeData = ThemeData<RecoThemeLocaleData>
 
@@ -180,13 +182,36 @@ export interface RecoThemeLocaleData extends LocaleData {
   pages?: Array<PageOptions>
 
   commentConfig?: {
-    type: 'valine' | 'waline' | 'giscus'
+    type: string
     options: Record<string, any>
   },
 
   categoriesText?: string
 
   tagsText?: string
+
+  viteBundlerOptions?: ViteBundlerOptions
+
+  webpackBundlerOptions?: WebpackBundlerOptions
+
+  bulletin?: {
+    title?: string
+    width?: string
+    body?: Array<{
+      type: string
+      [key: string]: any
+    }>
+  }
+
+  tip?: string
+  info?: string
+  warning?: string
+  danger?: string
+  details?: string
+  notFound?: string
+  backToHome?: string
+
+  algolia?: Record<string, any>
 }
 
 export type AutoAddCategoryToNavbarOptions = {
