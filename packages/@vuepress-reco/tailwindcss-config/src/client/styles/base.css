@@ -12,6 +12,7 @@
   html {
     font-size: 16px !important;
     -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
