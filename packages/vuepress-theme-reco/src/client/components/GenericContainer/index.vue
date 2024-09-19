@@ -22,7 +22,11 @@
       <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />
     </Transition>
 
-    <slot />
+    <div class="theme-main" :style="widthStyle === 'full' ? 'max-width: 100%' : ''">
+      <Series v-if="hasSeries" />
+
+      <slot />
+    </div>
   </div>
 
   <div v-else class="theme-container" :class="containerClass">
@@ -51,12 +55,17 @@
         <div v-if="isOpenSeries" class="series-mask" @click="toggleSeries(false)" />
       </Transition>
 
-      <slot />
+      <div class="theme-main">
+        <Series v-if="hasSeries" />
+
+        <slot />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { toRefs } from 'vue'
 import Navbar from '../Navbar/index.vue'
 import Series from '../Series/index.vue'
 import Catalog from '../Catalog.vue'
@@ -99,4 +108,11 @@ initSeriesStatus(() => {
   toggleMobileMenus(false)
 })
 
+const props = defineProps({
+  widthStyle: {
+    type: String,
+    default: 'max-width',
+  },
+})
+const { widthStyle } = toRefs(props)
 </script>

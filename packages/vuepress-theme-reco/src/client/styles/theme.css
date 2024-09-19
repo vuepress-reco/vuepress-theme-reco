@@ -1,7 +1,7 @@
 .theme-container {
   .page-content,
   .theme-reco-md-content {
-    @apply lg:max-w-screen-md xl:max-w-screen-lg mx-auto px-6;
+    @apply w-full px-6;
     border-top: 1px solid transparent;
     &.theme-reco-md-content code {
       @apply inline-block mx-1 px-2 py-0.5 rounded bg-reco-primary/10 text-sm;
@@ -18,6 +18,12 @@
     }
     a {
       @apply text-reco-primary hover:underline !important;
+    }
+  }
+  .home-wrapper {
+    @apply w-full;
+    .theme-reco-md-content {
+      @apply max-w-screen-xl mx-auto;
     }
   }
 

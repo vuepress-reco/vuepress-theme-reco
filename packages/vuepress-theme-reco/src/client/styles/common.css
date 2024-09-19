@@ -1,8 +1,12 @@
 .theme-container {
   @apply relative min-h-screen;
 
-  .page-container {
-    @apply flex relative mx-auto max-w-screen-xl w-full;
+  .theme-main {
+    @apply mx-auto max-w-screen-1.5xl w-full;
+    @apply md:flex;
+    .page-container {
+      @apply flex-1 flex relative;
+    }
   }
 
   .password-wrapper {

@@ -7,7 +7,7 @@
   }
 
   .navbar-inner {
-    @apply flex items-center relative mx-auto px-6 max-w-screen-xl w-full h-16;
+    @apply flex items-center relative mx-auto px-6 max-w-screen-1.5xl w-full h-16;
   }
 
   &.navbar-container--has-series {

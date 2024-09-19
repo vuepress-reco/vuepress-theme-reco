@@ -1,6 +1,5 @@
 <template>
   <main class="page-container">
-    <Series />
 
     <div class="page-content">
       <h1 v-if="!!title" class="page-title">{{ title }}</h1>
@@ -36,7 +35,6 @@ import PageNav from '../PageNav.vue'
 import PageMeta from '../PageMeta.vue'
 import Password from '../PagePassword/index.vue'
 import { usePassword } from './hook.js'
-import Series from '../Series/index.vue'
 import Catalog from '../Catalog.vue'
 
 const page = usePageData()

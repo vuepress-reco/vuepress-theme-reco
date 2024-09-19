@@ -1,8 +1,8 @@
 <template>
-  <GenericContainer>
+  <GenericContainer :width-style="frontmatter.home === true ? 'full' : 'max-width'">
     <Home v-if="frontmatter.home === true" />
 
-    <!-- <Transition
+    <Transition
       v-else
       name="fade-slide-y"
       mode="out-in"
@@ -10,8 +10,7 @@
       @before-leave="onBeforeLeave"
     >
       <Page :key="page.path" />
-    </Transition> -->
-    <Page v-else :key="page.path" />
+    </Transition>
   </GenericContainer>
 </template>
 

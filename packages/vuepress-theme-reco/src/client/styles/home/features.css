@@ -1,5 +1,5 @@
 .features__container {
-  @apply grid grid-cols-1 gap-4 max-w-screen-lg mx-auto my-16 px-6;
+  @apply grid grid-cols-1 gap-4 max-w-screen-xl mx-auto my-16 px-6;
   @apply md:grid-cols-3;
   .features__item {
     @apply py-4 px-6 cursor-pointer;
