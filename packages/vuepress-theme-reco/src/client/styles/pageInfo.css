@@ -2,6 +2,9 @@
   @apply flex flex-wrap;
   .xicon-container{
     @apply text-lighter;
+    a {
+      @apply text-lighter;
+    }
     &:not(:last-child) {
       @apply mr-5;
     }

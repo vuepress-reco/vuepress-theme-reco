@@ -16,9 +16,6 @@ div[class*="language-"] {
   .code-copy-btn {
     @apply text-basic bg-basic;
   }
-  .line {
-    @apply text-wrap;
-  }
   &:not(.line-numbers-mode) {
     .line-numbers {
       @apply hidden;

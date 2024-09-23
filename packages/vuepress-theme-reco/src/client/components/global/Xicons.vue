@@ -103,6 +103,9 @@ const handleClick = () => {
 <style>
 .xicon-container {
   @apply inline-flex cursor-pointer;
+  .xicon-content {
+    @apply text-nowrap;
+  }
   &.left {
     @apply flex-row items-center;
     > svg {

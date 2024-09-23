@@ -6,6 +6,7 @@
     @apply md:flex;
     .page-container {
       @apply flex-1 flex relative;
+      @apply md:w-0;
     }
   }
 
