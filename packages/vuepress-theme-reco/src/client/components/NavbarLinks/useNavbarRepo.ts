@@ -1,5 +1,5 @@
 
-import { computed } from 'vue'
+import { computed, ComputedRef } from 'vue'
 import { isLinkHttp } from 'vuepress/shared'
 import { useThemeLocaleData } from '@composables/index.js'
 
@@ -10,7 +10,7 @@ import type { MenuLink } from '../../../types'
 /**
  * Get navbar config of repository link
  */
-export const useNavbarRepo = (): Array<MenuLink> => {
+export const useNavbarRepo = (): ComputedRef<Array<MenuLink>>=> {
   const themeLocal = useThemeLocaleData()
 
   const repo = computed(() => themeLocal.value.repo || themeLocal.value.docsRepo || '')
@@ -32,14 +32,18 @@ export const useNavbarRepo = (): Array<MenuLink> => {
     return repoType.value
   })
 
-  if (!repoLink.value || !repoLabel.value) {
-    return []
-  }
+  const result = computed(() => {
+    if (!repoLink.value || !repoLabel.value) {
+      return []
+    }
 
-  return [
-    {
-      text: repoLabel.value,
-      link: repoLink.value,
-    },
-  ]
+    return [
+      {
+        text: repoLabel.value,
+        link: repoLink.value,
+      },
+    ]
+  })
+
+  return result
 }

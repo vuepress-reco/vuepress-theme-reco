@@ -10,6 +10,7 @@ import type {
   MenuLinkGroup,
   AutoAddCategoryToNavbarOptions,
 } from '../../../types'
+import { computed, ComputedRef } from 'vue'
 
 function resolveNavbarItem(
   item: MenuLink | MenuLinkGroup | string,
@@ -28,60 +29,65 @@ function resolveNavbarItem(
   return item as MenuLink
 }
 
-export const useNavbarConfig = (): Array<MenuLink | MenuGroup<MenuLinkGroup>> => {
+export const useNavbarConfig = (): ComputedRef<Array<MenuLink | MenuGroup<MenuLinkGroup>>> => {
   const themeLocal = useThemeLocaleData()
-  const autoAddCategoryToNavbar = themeLocal.value.autoAddCategoryToNavbar
 
-  let navItems = [...themeLocal.value.navbar || []]
+  const result = computed(() => {
+    const autoAddCategoryToNavbar = themeLocal.value.autoAddCategoryToNavbar
 
-  if (autoAddCategoryToNavbar) {
-    const { categorySummary } = useExtendPageData()
-    const parsedData: any[] = []
+    let navItems = [...themeLocal.value.navbar || []]
 
-    const categoriesData =  Object.values(categorySummary?.categories?.items || {})
-    if (categoriesData.length > 0) {
-      const parsedCategoriesData: MenuLink | MenuGroup<MenuLinkGroup> = {
-        text: themeLocal.value.categoriesText || 'Categories',
-        children: Object.values(categorySummary?.categories?.items || {}).map((c) => ({
-          // @ts-ignore
-          text: c.label,
-          // @ts-ignore
-          link: `/categories/${convertToPinyin(c.categoryValue)}/1.html`,
-        }))
+    if (autoAddCategoryToNavbar) {
+      const { categorySummary } = useExtendPageData()
+      const parsedData: any[] = []
+
+      const categoriesData =  Object.values(categorySummary?.categories?.items || {})
+      if (categoriesData.length > 0) {
+        const parsedCategoriesData: MenuLink | MenuGroup<MenuLinkGroup> = {
+          text: themeLocal.value.categoriesText || 'Categories',
+          children: Object.values(categorySummary?.categories?.items || {}).map((c) => ({
+            // @ts-ignore
+            text: c.label,
+            // @ts-ignore
+            link: `/categories/${convertToPinyin(c.categoryValue)}/1.html`,
+          }))
+        }
+
+        if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
+          parsedCategoriesData.icon = 'Folder'
+        }
+
+        parsedData.push(parsedCategoriesData)
       }
 
-      if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
-        parsedCategoriesData.icon = 'Folder'
+      const tagsData =  Object.values(categorySummary?.categories?.items || {})
+      if (tagsData.length > 0) {
+        const parsedTagsData: MenuLink | MenuGroup<MenuLinkGroup> = {
+          text: themeLocal.value.tagsText || 'Tags',
+          children: Object.values(categorySummary?.tags?.items || {}).map(t => ({
+            // @ts-ignore
+            text: t.label,
+            // @ts-ignore
+            link: `/tags/${convertToPinyin(t.categoryValue)}/1.html`,
+          }))
+        }
+
+        if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
+          parsedTagsData.icon = 'Tag'
+        }
+
+        parsedData.push(parsedTagsData)
       }
 
-      parsedData.push(parsedCategoriesData)
+      navItems.splice(
+        (autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.location || 0,
+        0,
+        ...parsedData
+      )
     }
 
-    const tagsData =  Object.values(categorySummary?.categories?.items || {})
-    if (tagsData.length > 0) {
-      const parsedTagsData: MenuLink | MenuGroup<MenuLinkGroup> = {
-        text: themeLocal.value.tagsText || 'Tags',
-        children: Object.values(categorySummary?.tags?.items || {}).map(t => ({
-          // @ts-ignore
-          text: t.label,
-          // @ts-ignore
-          link: `/tags/${convertToPinyin(t.categoryValue)}/1.html`,
-        }))
-      }
+    return navItems.map((item) => resolveNavbarItem(item as MenuLink | MenuLinkGroup))
+  })
 
-      if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
-        parsedTagsData.icon = 'Tag'
-      }
-
-      parsedData.push(parsedTagsData)
-    }
-
-    navItems.splice(
-      (autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.location || 0,
-      0,
-      ...parsedData
-    )
-  }
-
-  return navItems.map((item) => resolveNavbarItem(item as MenuLink | MenuLinkGroup))
+  return result
 }

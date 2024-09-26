@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, ComputedRef } from 'vue'
 import { useNavbarRepo } from './useNavbarRepo.js'
 import { useNavbarConfig } from './useNavbarConfig.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'
@@ -30,9 +31,10 @@ const navbarRepo = useNavbarRepo()
 const navbarConfig = useNavbarConfig()
 const navbarSelectLanguage = useNavbarSelectLanguage()
 
-const navbarLinks: Array<MenuLink | MenuGroup<MenuLinkGroup>> = [
-  ...navbarConfig,
-  ...navbarSelectLanguage,
-  ...navbarRepo,
-]
+const navbarLinks: ComputedRef<Array<MenuLink | MenuGroup<MenuLinkGroup>>>
+  = computed(() => [
+    ...navbarConfig.value,
+    ...navbarSelectLanguage.value,
+    ...navbarRepo.value,
+  ])
 </script>
