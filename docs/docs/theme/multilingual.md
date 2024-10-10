@@ -11,8 +11,8 @@ date: 2022-06-07 22:30:37
 
 |参数|类型|默认值|描述|
 |-|-|-|-|
-|categories|`string`|Categories|分类|
-|tags|`string`|Tags|标签|
+|categoriesText|`string`|Categories|分类|
+|tagsText|`string`|Tags|标签|
 |catalogTitle|`string`|ON THIS PAGE|文章右侧目录的标题|
 |selectLanguageText|`string`|Languages|选择语言菜单 的文字|
 |selectLanguageName|`string`|${lang}|Locale 的语言名称|
@@ -41,13 +41,15 @@ export default defineUserConfig({
       danger: '危险',
       warning: '警告',
       details: '详情',
+      tagsText: '标签',
       backToHome: '返回首页',
+      categoriesText: '分类',
       catalogTitle: '页面导航',
-      editLinkText: '编辑当前页面',
-      notFound: '哇哦，没有发现这个页面！',
       selectLanguageText: '语言',
+      editLinkText: '编辑当前页面',
       lastUpdatedText: '最后更新时间',
       selectLanguageName: '简体中文',
+      notFound: '哇哦，没有发现这个页面！',
   })
 })
 ```
