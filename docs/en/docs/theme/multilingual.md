@@ -11,8 +11,8 @@ If your site is served in a different language besides English, you should set t
 
 |Options|Type|Default|Description|
 |-|-|-|-|
-|categories|`string`|Categories|categories|
-|tags|`string`|Tags|tags|
+|categoriesText|`string`|Categories|categories|
+|tagsText|`string`|Tags|tags|
 |catalogTitle|`string`|ON THIS PAGE|The title of the table of contents on the right of the article|
 |selectLanguageText|`string`|Languages|Select text from the language menu|
 |selectLanguageName|`string`|${lang}|Language name of Locale|
@@ -38,16 +38,18 @@ export default defineUserConfig({
   theme: recoTheme({
       tip: 'Tip',
       info: 'Info',
+      tagsText: 'Tags',
       danger: 'Danger',
       warning: 'Warning',
       details: 'Details',
       backToHome: 'Back To Home',
+      categoriesText: 'Categories',
       catalogTitle: 'On This Page',
+      selectLanguageName: 'English',
       editLinkText: 'Edit this page',
-      notFound: 'Oops! Page does not exist.',
       selectLanguageText: 'Languages',
       lastUpdatedText: 'Last Updated',
-      selectLanguageName: 'English',
+      notFound: 'Oops! Page does not exist.',
   })
 })
 ```
