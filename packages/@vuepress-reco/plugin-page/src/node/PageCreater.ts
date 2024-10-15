@@ -329,6 +329,7 @@ export default class PageCreater {
     if (!matches) return
 
     const [filePath, sery, dirStr] = matches
+    const parsedFilePath = filePath === 'README' ? 'index' : filePath
     const seryKey = `/series/${sery}/`
 
     if (!this.__series__?.[seryKey]) {
@@ -338,23 +339,23 @@ export default class PageCreater {
     const dirs = dirStr.split('/').splice(1)
     const dirLen = dirs.length
     if (dirLen === 0) {
-      this.__series__[seryKey].push(filePath)
+      this.__series__[seryKey].push(parsedFilePath)
       return
     }
-    dirs.reduce((total, current, index) => {
-      if (!total.some((groupItem) => groupItem?.text === current)) {
-        total.push({
-          text: current,
-          children: index === dirLen - 1 ? [filePath] : [],
-        })
-      } else {
-        total.find((groupItem) => groupItem?.text === current).children.push(index === dirLen - 1 ? filePath : {
-          text: current,
-          children: index === dirLen - 1 ? [filePath] : [],
-        })
-      }
 
-      return total
+    dirs.reduce((currentItem, dir, index) => {
+      const nextItem = currentItem.find((item) => item?.text === dir)
+
+      if (!nextItem) {
+        return currentItem.push({
+          text: dir,
+          children: index === dirLen - 1 ? [parsedFilePath] : [],
+        })
+      } else if (index === dirLen - 1) {
+        return nextItem.children.push(parsedFilePath)
+      } else {
+        return nextItem.children
+      }
     }, this.__series__[seryKey])
   }
 }
