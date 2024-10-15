@@ -81,7 +81,7 @@ function sortSeries(arr) {
     if (a.children) sortSeries(a.children)
     if (b.children) sortSeries(b.children)
 
-    return compare(a.text, b.text, true)
+    return compare(typeof a === 'string' ? a : a.text, typeof b === 'string' ? b : b.text, true)
   })
 
   return a

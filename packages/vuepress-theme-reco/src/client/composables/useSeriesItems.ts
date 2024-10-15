@@ -4,16 +4,14 @@ import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composabl
 import { useRoute, usePageFrontmatter, type RouteLocationNormalizedLoaded } from 'vuepress/client'
 
 
-import { useThemeLocaleData } from '@composables/index.js'
+import { useSortSeries, useThemeLocaleData } from '@composables/index.js'
 
 import type {
   RecoThemeData,
-  RecoThemeNormalPageFrontmatter,
   SeriesConfigArray,
+  ResolvedSeriesItem,
   SeriesConfigObject,
-  SeriesGroup,
-  MenuLink,
-  ResolvedSeriesItem
+  RecoThemeNormalPageFrontmatter,
 } from '../../types'
 
 import { getNavLink } from './getNavLink.js'
@@ -41,12 +39,18 @@ const resolveSeriesItems = (
   route: RouteLocationNormalizedLoaded,
   autoSeries
 ): ResolvedSeriesItem[] => {
+  const { sortSeries } = useSortSeries()
+
   // get series config from frontmatter > themeConfig
   let seriesConfig = themeLocal.series ?? {}
 
+  Object.keys(autoSeries).forEach(key => {
+    autoSeries[key] = sortSeries(autoSeries[key])
+  })
+
   seriesConfig = {
-    ...autoSeries,
     ...seriesConfig,
+    ...autoSeries,
   }
 
   // 解决
