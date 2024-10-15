@@ -11,9 +11,9 @@ export const seriesSymbol = Symbol('seriesSymbol')
 export function useExtendPageData(): {
   [key: string]: Record<string, any>
 } {
-  const categorySummary = inject(categorySummarySymbol, null) || {}
   const posts = inject(postsSymbol, null) || []
   const series = inject(seriesSymbol, null) || {}
+  const categorySummary = inject(categorySummarySymbol, null) || {}
   const categoryPaginationPosts = inject(categoryPaginationPostsSymbol, null) || {}
 
   if (!postsSymbol) {

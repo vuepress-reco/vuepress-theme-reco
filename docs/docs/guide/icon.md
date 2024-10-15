@@ -5,7 +5,7 @@ date: 2023-01-23
 
 ## 介绍
 
-`vuepress-theme-reco@2.x` 是通过 [Xicons](https://www.xicons.org/#/zh-CN) 来配置图标的，`Xicons` 只集成了 [carbon](https://carbondesignsystem.com/guidelines/icons/library) 1 种图标，几乎可以满足绝大部分场景。
+`vuepress-theme-reco@2.x` 是通过 [Xicons](https://www.xicons.org/#/zh-CN) 来配置图标的，`Xicons` 只集成了 [carbon](https://carbondesignsystem.com/elements/icons/library/) 1 种图标，几乎可以满足绝大部分场景。
 
 ## 使用
 

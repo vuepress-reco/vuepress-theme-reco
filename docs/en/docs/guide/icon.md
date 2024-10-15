@@ -5,7 +5,7 @@ date: 2023-01-23
 
 ## Introduction
 
-`vuepress-theme-reco@2.x` is used to configure icons through [Xicons](https://www.xicons.org/#/zh-CN). Only [carbon](https://carbondesignsystem.com/guidelines/icons/library) 1 icon is integrated in `Xicons`, which can almost meet most scenes.
+`vuepress-theme-reco@2.x` is used to configure icons through [Xicons](https://www.xicons.org/#/zh-CN). Only [carbon](https://carbondesignsystem.com/elements/icons/library/) 1 icon is integrated in `Xicons`, which can almost meet most scenes.
 
 ## Usage
 

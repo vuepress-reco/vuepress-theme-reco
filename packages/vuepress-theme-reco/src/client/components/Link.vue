@@ -115,6 +115,6 @@ const isActiveInSubpath = computed(() => {
     return true
   }
 
-  return route.path.startsWith(item.value.link as string)
+  return route.path.startsWith(item.value.link as string) && !item.value.link?.endsWith('/')
 })
 </script>
