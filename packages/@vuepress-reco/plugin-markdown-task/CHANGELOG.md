@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-rc.89
+
+### Patch Changes
+
+- optimize series
+
 ## 2.0.0-rc.88
 
 ### Patch Changes

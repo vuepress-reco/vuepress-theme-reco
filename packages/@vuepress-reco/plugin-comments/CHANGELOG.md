@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-comments
 
+## 2.0.0-rc.21
+
+### Patch Changes
+
+- optimize series
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.89
+
 ## 2.0.0-rc.20
 
 ### Patch Changes
