@@ -1,5 +1,5 @@
 .home-blog-content {
-  @apply block items-start mx-auto mt-4 mb-16 px-4 max-w-screen-lg;
+  @apply block items-start mx-auto mt-4 mb-16 px-4 max-w-screen-xl;
   @apply md:flex;
   .blog-list {
     @apply flex-auto;
