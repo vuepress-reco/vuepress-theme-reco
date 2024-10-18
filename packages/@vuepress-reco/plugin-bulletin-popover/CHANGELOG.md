@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-bulletin-popover
 
+## 2.0.0-rc.90
+
+### Patch Changes
+
+- fix custom class error of tailwindcss
+- Updated dependencies
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.90
+
 ## 2.0.0-rc.89
 
 ### Patch Changes

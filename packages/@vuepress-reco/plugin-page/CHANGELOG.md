@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.22
+
+### Patch Changes
+
+- fix custom class error of tailwindcss
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.90
+
 ## 2.0.0-rc.21
 
 ### Patch Changes

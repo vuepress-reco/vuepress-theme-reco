@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-vue-preview
 
+## 2.0.0-rc.90
+
+### Patch Changes
+
+- fix custom class error of tailwindcss
+
 ## 2.0.0-rc.89
 
 ### Patch Changes

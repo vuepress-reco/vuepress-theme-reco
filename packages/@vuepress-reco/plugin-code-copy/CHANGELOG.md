@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.22
+
+### Patch Changes
+
+- fix custom class error of tailwindcss
+
 ## 2.0.0-rc.21
 
 ### Patch Changes
