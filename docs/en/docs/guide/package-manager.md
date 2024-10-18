@@ -26,7 +26,7 @@ If the package manager uses `pnpm`, `package.json` also needs to include `vue`.
   "dependencies": {
     "vue": "^3.4.29",
     "vuepress": "2.0.0-rc.14",
-    "vuepress-theme-reco": "2.0.0-rc.19",
+    "vuepress-theme-reco": "2.0.0-rc.22",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14"
   }
