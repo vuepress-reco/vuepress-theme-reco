@@ -149,7 +149,7 @@ reco 主题的 css 方案是 postcss + tailwindcss，支持 css 最新嵌套提�
 
 只要组件在全局注册，即可作为首页的模块被首页使用。
 
-首先可以参考 [注册组件](/docs/theme/register-components.html) 将首页模块组件注册为全局组件，然后在首页的 frontmatter 中去配置（假如自定义的模块组件为 CustomModule）：
+首先可以参考 [注册组件](/docs/guide/register-components.html) 将首页模块组件注册为全局组件，然后在首页的 frontmatter 中去配置（假如自定义的模块组件为 CustomModule）：
 
 ```yaml
 ---
