@@ -35,6 +35,7 @@ export interface RecoThemeNormalPageFrontmatter
   next?: string | MenuLink
   password?: string | Array<string>
   sticky?: number
+  [key: string]: unknown
 }
 
 interface Style {

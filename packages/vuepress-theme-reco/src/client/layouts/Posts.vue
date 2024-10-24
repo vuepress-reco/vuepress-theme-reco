@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { watch, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 import GenericContainer from '@components/GenericContainer/index.vue'
 import Posts from '@components/Posts.vue'
 import { useMagicCard } from '@composables/index.js'

@@ -15,9 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import { onMounted, watch } from 'vue'
-import { usePageFrontmatter } from 'vuepress/client'
+import { usePageFrontmatter, useRoute } from 'vuepress/client'
 
 import Home from '@components/Home/index.vue'
 import Page from '@components/Page/index.vue'

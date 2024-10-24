@@ -52,9 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
-import { useRouteLocale } from 'vuepress/client'
 import { computed, onMounted, ref, watch } from "vue";
+import { useRouteLocale, useRoute, useRouter } from 'vuepress/client'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import { createOneColor, throttle } from '@utils/index.js'

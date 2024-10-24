@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 import { resolveLocalePath } from 'vuepress/shared'
 import { resolveThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 

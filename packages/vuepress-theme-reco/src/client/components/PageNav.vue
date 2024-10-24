@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vuepress/client'
 import { isPlainObject, isString } from 'vuepress/shared'
 
 import { getNavLink, useSeriesItems, usePageFrontmatter } from '@composables/index.js'

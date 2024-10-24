@@ -66,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 import { computed, ref, toRefs, watch } from 'vue'
 
 import type { PropType } from 'vue'

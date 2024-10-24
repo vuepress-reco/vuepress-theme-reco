@@ -1,8 +1,7 @@
 
 import { computed, ComputedRef } from 'vue'
-import { useRoute } from 'vue-router'
 import { useRoutePaths } from '@vuepress/helper/client'
-import { useRouteLocale, useSiteData, useSiteLocaleData } from 'vuepress/client'
+import { useRouteLocale, useSiteData, useSiteLocaleData, useRoute } from 'vuepress/client'
 import { useThemeData, useThemeLocaleData } from '@composables/index.js'
 
 import type {

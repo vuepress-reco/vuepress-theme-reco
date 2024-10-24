@@ -3,8 +3,8 @@ import {
   highlightPlugin,
   preWrapperPlugin,
   resolveHighlighter,
-  type HighlightOptions,
-  type PreWrapperOptions
+  type PrismjsPluginOptions,
+  type MarkdownItPreWrapperOptions
 } from '@vuepress/plugin-prismjs'
 import { lineNumbers as lineNumbersPlugin } from '@vuepress/highlighter-helper'
 
@@ -15,8 +15,8 @@ md.options.highlight = (code, lang) => {
   return highlighter?.(code) || ''
 }
 
-md.use<HighlightOptions>(highlightPlugin)
-md.use<PreWrapperOptions>(preWrapperPlugin, { preWrapper: true })
+md.use<PrismjsPluginOptions>(highlightPlugin)
+md.use<MarkdownItPreWrapperOptions>(preWrapperPlugin, { preWrapper: true })
 md.use(lineNumbersPlugin, { lineNumbers: true, removeLastLine: true })
 
 export { md }

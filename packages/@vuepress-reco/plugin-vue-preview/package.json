@@ -41,13 +41,13 @@
     "@babel/traverse": "^7.16.10",
     "@babel/types": "^7.16.8",
     "@vue/compiler-sfc": "^3.2.29",
-    "@vuepress/highlighter-helper": "2.0.0-rc.37",
-    "@vuepress/markdown": "2.0.0-rc.14",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.37",
+    "@vuepress/highlighter-helper": "2.0.0-rc.54",
+    "@vuepress/markdown": "2.0.0-rc.18",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.54",
     "enhanced-resolve": "^5.8.3",
     "slash2": "^2.0.0"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.14"
+    "vuepress": "2.0.0-rc.18"
   }
 }

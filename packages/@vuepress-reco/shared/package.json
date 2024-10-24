@@ -30,14 +30,13 @@
     "url": "https://github.com/recoluan/vuepress-theme-reco/issues"
   },
   "dependencies": {
-    "@vuepress/plugin-theme-data": "2.0.0-rc.37",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "@vuepress/plugin-theme-data": "2.0.0-rc.55",
+    "vue": "^3.5.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.14"
+    "vuepress": "2.0.0-rc.18"
   }
 }

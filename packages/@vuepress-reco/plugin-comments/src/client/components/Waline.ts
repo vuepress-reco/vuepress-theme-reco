@@ -1,7 +1,7 @@
-import { usePageLang, withBase, usePageData  } from 'vuepress/client'
-import { Waline } from '@waline/client/dist/component.mjs'
 import { computed, defineComponent, h, toRefs } from 'vue'
-import { useRoute } from 'vue-router'
+import { usePageLang, withBase, usePageData  } from 'vuepress/client'
+
+import { Waline } from '@waline/client/dist/component.mjs'
 
 import type { VNode } from 'vue'
 

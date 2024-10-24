@@ -1,9 +1,12 @@
 import { h } from 'vue'
-import type { FunctionalComponent, VNode } from 'vue'
-import { useRoute } from 'vue-router'
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ResolvedSeriesItem } from '../../types'
+import { useRoute } from 'vuepress/client'
+
 import Link from './Link.vue'
+
+import type { FunctionalComponent, VNode } from 'vue'
+import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
+
+import type { ResolvedSeriesItem } from '../../types'
 
 const isActiveItem = (
   route: RouteLocationNormalizedLoaded,

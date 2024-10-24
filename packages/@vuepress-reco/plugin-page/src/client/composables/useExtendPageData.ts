@@ -1,5 +1,5 @@
 import { inject, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 
 export const categoryPaginationPostsSymbol = Symbol(
   'categoryPaginationPostsSymbol'

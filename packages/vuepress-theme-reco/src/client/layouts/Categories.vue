@@ -34,9 +34,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-import { useRouter } from 'vue-router'
 import { computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vuepress/client'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import PostList from '@components/PostList.vue'
