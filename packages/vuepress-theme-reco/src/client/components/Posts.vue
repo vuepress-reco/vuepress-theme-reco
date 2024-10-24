@@ -16,6 +16,7 @@ import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composabl
 
 import PostList from './PostList.vue'
 import Pagation from './Pagation.vue'
+
 import { useThemeLocaleData } from '@composables/index.js';
 
 const { posts } = useExtendPageData()

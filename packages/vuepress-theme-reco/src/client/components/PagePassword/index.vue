@@ -28,7 +28,6 @@
 <script setup lang="ts">
 import { usePageInfo, useHandlePassword } from './hook.js'
 
-
 const emit = defineEmits(['pass'])
 
 const { pagePassword } = usePageInfo()

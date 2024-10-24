@@ -1,4 +1,5 @@
 import { ensureLeadingSlash, resolveLocalePath } from 'vuepress/shared'
+
 import type { ContainerPluginOptions } from '@vuepress/plugin-container'
 import type { RecoThemeData } from '../types/options.js'
 

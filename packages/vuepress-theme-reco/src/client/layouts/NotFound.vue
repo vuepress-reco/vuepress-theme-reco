@@ -13,7 +13,9 @@
 
 <script lang="ts" setup>
 import { useRouteLocale, useRouter } from 'vuepress/client';
+
 import GenericContainer from '@components/GenericContainer/index.vue'
+
 import { useThemeLocaleData } from '@composables/index.js';
 
 const router = useRouter()

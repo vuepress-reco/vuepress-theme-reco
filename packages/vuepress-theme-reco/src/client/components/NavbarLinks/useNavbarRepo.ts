@@ -1,9 +1,9 @@
 
 import { computed, ComputedRef } from 'vue'
 import { isLinkHttp } from 'vuepress/shared'
-import { useThemeLocaleData } from '@composables/index.js'
 
 import { resolveRepoType } from '@utils/index.js'
+import { useThemeLocaleData } from '@composables/index.js'
 
 import type { MenuLink } from '../../../types'
 

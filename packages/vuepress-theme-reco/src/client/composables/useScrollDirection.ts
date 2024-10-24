@@ -1,8 +1,8 @@
 import { ref, onMounted } from 'vue'
 import { throttle } from '@utils/index.js'
 
-const direction = ref('')
 const scrollY = ref(0)
+const direction = ref('')
 
 export function useScrollDirection() {
   let startY = 0,

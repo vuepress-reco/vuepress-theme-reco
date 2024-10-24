@@ -30,12 +30,14 @@
 import { computed } from 'vue'
 import { usePageData } from 'vuepress/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
-import PageInfo from '../PageInfo.vue'
+
 import PageNav from '../PageNav.vue'
+import Catalog from '../Catalog.vue'
+import PageInfo from '../PageInfo.vue'
 import PageMeta from '../PageMeta.vue'
 import Password from '../PagePassword/index.vue'
+
 import { usePassword } from './hook.js'
-import Catalog from '../Catalog.vue'
 
 const page = usePageData()
 const { options } = useComment()

@@ -1,6 +1,6 @@
 <template>
   <div class="post-list-container">
-    <PostItem v-for="(item, index) in data" :key="index" :data="item as Record<string, unknown>" />
+    <PostItem v-for="(item, index) in data" :key="index" :data="item" />
   </div>
 </template>
 

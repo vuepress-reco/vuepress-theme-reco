@@ -10,13 +10,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Banner from './Banner.vue'
-import BannerBrand from './BannerBrand.vue'
+
 import Blog from './Blog.vue'
-import MdContent from './MdContent.vue'
-import Comment from './Comment.vue'
+import Banner from './Banner.vue'
 import Footer from './Footer.vue'
+import Comment from './Comment.vue'
 import Features from './Features.vue'
+import MdContent from './MdContent.vue'
+import BannerBrand from './BannerBrand.vue'
+
 import { RecoThemeHomePageFrontmatter } from '../../../types'
 
 export default defineComponent({

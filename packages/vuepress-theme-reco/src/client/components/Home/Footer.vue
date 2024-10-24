@@ -49,8 +49,9 @@
 import { computed } from 'vue'
 import { useRouteLocale } from 'vuepress/client'
 import packageInfo from 'vuepress-theme-reco/package.json'
-import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
+
+import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
 
 const routeLocale = useRouteLocale()
 const themeLocal = useThemeLocaleData()

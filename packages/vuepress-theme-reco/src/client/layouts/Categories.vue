@@ -41,8 +41,8 @@ import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composabl
 import PostList from '@components/PostList.vue'
 import Pagation from '@components/Pagation.vue'
 import GenericContainer from '@components/GenericContainer/index.vue'
-import { useMagicCard } from '@composables/index.js'
 
+import { useMagicCard } from '@composables/index.js'
 
 const {
   categoryPosts,

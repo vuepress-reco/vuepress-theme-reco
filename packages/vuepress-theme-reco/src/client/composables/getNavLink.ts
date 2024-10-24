@@ -1,4 +1,5 @@
 import { resolveRoute } from 'vuepress/client'
+
 import type { MenuLink } from '../../types'
 
 /**

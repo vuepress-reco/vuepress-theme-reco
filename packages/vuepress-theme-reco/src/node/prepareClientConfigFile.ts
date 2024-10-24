@@ -1,6 +1,7 @@
 import { App } from "vuepress/core";
 import { ensureEndingSlash } from '@vuepress/helper'
 import { getDirname, path, fs } from 'vuepress/utils'
+
 import { getComponentsFromDir } from './getComponentsFromDir.js';
 
 const __dirname = getDirname(import.meta.url)

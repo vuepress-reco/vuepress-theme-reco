@@ -14,6 +14,7 @@
 
 <script lang="ts" setup>
 import { computed, ComputedRef } from 'vue'
+
 import { useNavbarRepo } from './useNavbarRepo.js'
 import { useNavbarConfig } from './useNavbarConfig.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'

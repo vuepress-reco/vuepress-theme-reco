@@ -1,7 +1,9 @@
 <script lang="ts">
 import { defineComponent, h, onBeforeUpdate, ref } from 'vue'
-import type { Component, VNode } from 'vue'
+
 import Xicons from './Xicons.vue'
+
+import type { Component, VNode } from 'vue'
 
 export default defineComponent({
   name: 'CodeGroup',

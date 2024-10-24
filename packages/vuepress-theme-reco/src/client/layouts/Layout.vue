@@ -21,11 +21,13 @@ import { usePageFrontmatter, useRoute } from 'vuepress/client'
 import Home from '@components/Home/index.vue'
 import Page from '@components/Page/index.vue'
 import GenericContainer from '@components/GenericContainer/index.vue'
+
 import {
   usePageData,
   useMagicCard,
   useScrollPromise,
 } from '@composables/index.js'
+
 import { RecoThemeHomePageFrontmatter } from '../../types'
 
 const page = usePageData()
