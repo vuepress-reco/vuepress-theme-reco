@@ -1,5 +1,6 @@
+import { useRoute } from 'vuepress/client'
 import { defineComponent, onMounted, toRefs, h, watch } from 'vue'
-import { useRoute } from 'vue-router'
+
 import '../styles/valine.css'
 
 type TvalineOptions = Record<string, unknown>

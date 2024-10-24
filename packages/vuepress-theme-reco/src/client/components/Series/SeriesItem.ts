@@ -1,10 +1,10 @@
 import { h } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 
 import Link from '../Link.vue'
 
 import type { FunctionalComponent, VNode } from 'vue'
-import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
 import type { MenuLinkGroup, ResolvedSeriesItem } from '../../../types'
 import Xicons from '../global/Xicons.vue'
 

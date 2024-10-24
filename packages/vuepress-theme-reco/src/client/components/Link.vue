@@ -31,10 +31,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import { computed, toRefs } from 'vue'
-import { withBase, useSiteData, useRouteLocale } from 'vuepress/client'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
+import { withBase, useSiteData, useRouteLocale, useRoute } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@composables/index.js'
 

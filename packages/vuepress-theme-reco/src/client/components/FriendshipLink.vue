@@ -16,8 +16,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
+
 import { useThemeLocaleData } from '@composables/index.js'
-import { MagicCard } from './global/index.js';
+
+import { MagicCard } from '@components/global/index.js';
 
 const themeLocal = useThemeLocaleData()
 

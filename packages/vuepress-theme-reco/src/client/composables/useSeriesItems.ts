@@ -1,10 +1,13 @@
-import { computed, type ComputedRef } from 'vue'
+import { computed } from 'vue'
+import { useRoute, usePageFrontmatter } from 'vuepress/client'
 import { isPlainObject, isString, resolveLocalePath } from 'vuepress/shared'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
-import { useRoute, usePageFrontmatter, type RouteLocationNormalizedLoaded } from 'vuepress/client'
 
 
 import { useSortSeries, useThemeLocaleData } from '@composables/index.js'
+
+import type { ComputedRef } from 'vue'
+import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
 
 import type {
   RecoThemeData,

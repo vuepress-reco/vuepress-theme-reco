@@ -1,5 +1,5 @@
+import { useRoute } from 'vuepress/client'
 import { defineComponent, toRefs, h } from 'vue'
-import { useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'ValineViews',

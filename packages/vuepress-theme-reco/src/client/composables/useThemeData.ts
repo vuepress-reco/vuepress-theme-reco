@@ -1,4 +1,3 @@
-import { Ref } from 'vue'
 import {
   useThemeData as _useThemeData,
   useThemeLocaleData as _useThemeLocaleData,
@@ -12,5 +11,4 @@ import type {
 import type { RecoThemeData } from '../../types'
 
 export const useThemeData = (): ThemeDataRef<RecoThemeData> => _useThemeData()
-export const useThemeLocaleData = (): ThemeLocaleDataRef<RecoThemeData> =>
-  _useThemeLocaleData()
+export const useThemeLocaleData = (): ThemeLocaleDataRef<RecoThemeData> => _useThemeLocaleData()

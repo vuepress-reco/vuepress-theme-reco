@@ -66,14 +66,16 @@
 
 <script lang="ts" setup>
 import { toRefs } from 'vue'
+
+import Catalog from '../Catalog.vue'
 import Navbar from '../Navbar/index.vue'
 import Series from '../Series/index.vue'
-import Catalog from '../Catalog.vue'
 import SubNavbar from '../SubNavbar.vue'
 import Password from '../Password/index.vue'
 import NavbarDropdownNemu from '../NavbarDropdownNemu.vue'
 
 import { useSeriesItems } from '@composables/index.js'
+
 const seriesItems = useSeriesItems()
 const hasSeries = computed(() => seriesItems.value.length > 0)
 

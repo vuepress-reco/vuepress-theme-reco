@@ -66,14 +66,14 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vuepress/client'
 import { computed, ref, toRefs, watch } from 'vue'
-
-import type { PropType } from 'vue'
-import type { MenuGroup, MenuLink, MenuLinkGroup } from '../../types'
 
 import Link from './Link.vue'
 import DropdownTransition from './DropdownTransition.vue'
+
+import type { PropType } from 'vue'
+import type { MenuGroup, MenuLink, MenuLinkGroup } from '../../types'
 
 const props = defineProps({
   item: {

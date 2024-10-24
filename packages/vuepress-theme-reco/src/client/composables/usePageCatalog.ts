@@ -1,6 +1,8 @@
-import { computed, inject, type ComputedRef, type InjectionKey } from 'vue'
-import { usePageFrontmatter, type PageHeader } from 'vuepress/client'
+import { computed, inject } from 'vue'
+import { usePageFrontmatter } from 'vuepress/client'
 
+import type { PageHeader } from 'vuepress/client'
+import type { ComputedRef, InjectionKey } from 'vue'
 import type { ResolvedSeriesItem } from '../../types'
 
 export interface ResolvedPageCatalog {

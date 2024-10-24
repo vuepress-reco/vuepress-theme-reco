@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent, h, ref, useSlots } from 'vue'
+
 import Xicons from './Xicons.vue'
 
 export default defineComponent({

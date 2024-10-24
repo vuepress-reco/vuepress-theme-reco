@@ -34,16 +34,15 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-import { useRouter } from 'vue-router'
 import { computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vuepress/client'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import PostList from '@components/PostList.vue'
 import Pagation from '@components/Pagation.vue'
 import GenericContainer from '@components/GenericContainer/index.vue'
-import { useMagicCard } from '@composables/index.js'
 
+import { useMagicCard } from '@composables/index.js'
 
 const {
   categoryPosts,

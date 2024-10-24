@@ -46,10 +46,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "vue-router": "^4.3.3"
-  },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.14"
+    "vuepress": "2.0.0-rc.18"
   }
 }

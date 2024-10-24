@@ -1,4 +1,4 @@
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vuepress/client'
 import { onMounted, onUnmounted } from 'vue'
 import { useScrollDirection } from '@composables/index.js'
 

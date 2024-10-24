@@ -3,7 +3,7 @@ import { path } from 'vuepress/utils'
 // The official plugins for vuepress
 import {
   docsearchPlugin,
-  DocsearchPluginOptions,
+  DocSearchPluginOptions,
 } from '@vuepress/plugin-docsearch'
 import { gitPlugin } from '@vuepress/plugin-git'
 import { searchPlugin } from '@vuepress/plugin-search'
@@ -70,7 +70,7 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
   if (themeConfig?.algolia) {
     plugins.push(
       docsearchPlugin(
-        (themeConfig.algolia as unknown) as DocsearchPluginOptions
+        (themeConfig.algolia as unknown) as DocSearchPluginOptions
       )
     )
   }

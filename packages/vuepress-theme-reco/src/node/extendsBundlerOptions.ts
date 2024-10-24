@@ -4,6 +4,7 @@ import {
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
 } from "@vuepress/helper";
+
 import type { App } from "vuepress/core";
 
 /**

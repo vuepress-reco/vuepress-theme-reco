@@ -24,8 +24,8 @@ date: 2024-04-27
     "build": "vuepress build ."
   },
   "dependencies": {
-    "vue": "^3.4.29",
-    "vuepress": "2.0.0-rc.14",
+    "vue": "^3.5.0",
+    "vuepress": "2.0.0-rc.18",
     "vuepress-theme-reco": "2.0.0-rc.22",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@vuepress/bundler-webpack": "2.0.0-rc.14"

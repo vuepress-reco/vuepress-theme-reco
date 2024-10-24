@@ -1,5 +1,5 @@
-import { useRoute } from 'vue-router'
 import { watch, onMounted } from 'vue'
+import { useRoute } from 'vuepress/client'
 import { useInitCopyBtn } from '@vuepress-reco/vuepress-plugin-code-copy/composables'
 
 export function useInitCodeCopy() {
