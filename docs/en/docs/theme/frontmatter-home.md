@@ -152,7 +152,7 @@ The css scheme of the reco theme is postcss + tailwindcss, which supports the la
 
 As long as the component is registered globally, it can be used by the home page as a module of the home page.
 
-First, you can refer to [Register Components](/docs/theme/register-components.html) to register the homepage module component as a global component, and then configure it in the frontmatter of the homepage (if the custom module component is CustomModule):
+First, you can refer to [Register Components](/docs/guide/register-components.html) to register the homepage module component as a global component, and then configure it in the frontmatter of the homepage (if the custom module component is CustomModule):
 
 ```yaml
 ---
