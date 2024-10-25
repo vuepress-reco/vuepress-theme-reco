@@ -26,8 +26,7 @@ const { bodyNodes } = useHandleNodes()
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
 
 .bulletin-wrapper {
-  @apply fixed top-20 right-4 z-30 box-border rounded-lg bg-basic;
-  @apply border-primary;
+  @apply fixed flex-col  top-20 right-4 z-30 flex box-border rounded-lg bg-basic border-primary;
   min-height: 200px;
   max-height: 660px;
   overflow-y: auto;
@@ -41,7 +40,7 @@ const { bodyNodes } = useHandleNodes()
     }
   }
   .bulletin-content {
-    @apply box-border py-6 px-8;
+    @apply flex-1 overflow-y-scroll box-border py-6 px-8;
     .btn-group {
       @apply text-center;
     }
