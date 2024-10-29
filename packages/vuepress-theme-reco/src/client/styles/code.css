@@ -10,7 +10,7 @@ div[class*="language-"] {
   &::before {
     @apply absolute z-10 top-1 right-3 text-gray-400 text-xs;
   }
-  pre[class*="language-"] {
+  pre {
     @apply relative overflow-x-auto pr-6 pl-16 py-4 leading-7;
   }
   .code-copy-btn {
@@ -23,6 +23,9 @@ div[class*="language-"] {
   }
   &.line-numbers-mode {
     @apply relative;
+    &::after {
+      @apply hidden;
+    }
     .line-numbers {
       @apply absolute bottom-0 w-16 text-center text-gray-400 py-4 leading-6 bg-block;
       counter-reset: line-number;
@@ -39,9 +42,9 @@ div[class*="language-"] {
         }
       }
     }
-  }
-  pre code {
-    @apply bg-transparent ml-0 mr-0 p-0 leading-6 !important;
+    pre code {
+      @apply bg-transparent ml-0 mr-0 p-0 leading-6 !important;
+    }
   }
   .highlight-lines {
     @apply absolute z-10 left-0 right-0 bottom-0 py-4 leading-7 ;
@@ -52,14 +55,14 @@ div[class*="language-"] {
   }
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+div[class*="language-"].line-numbers-mode code,
+div[class*="language-"].line-numbers-mode pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
   tab-size: 4;
   hyphens: none;
-  @apply bg-transparent tracking-wide text-emerald-900 dark:text-amber-50 text-sm text-left whitespace-pre leading-normal !important;
+  @apply ml-0 bg-transparent tracking-wide text-emerald-900 dark:text-amber-50 text-sm text-left whitespace-pre leading-normal !important;
 }
 
  .token.comment,
