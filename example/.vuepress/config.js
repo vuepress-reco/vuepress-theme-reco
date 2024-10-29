@@ -29,7 +29,7 @@ export default defineUserConfig({
         navbar: [
           {
             text: 'Blogs',
-            icon: 'Language',
+            icon: 'IconLanguage',
             children: [
               {
                 text: '是大法师的',
@@ -61,7 +61,7 @@ export default defineUserConfig({
     //   '/group/': [
     //     {
     //       text: 'group',
-    //       icon: 'Language',
+    //       icon: 'IconLanguage',
     //       children: ['/group/bar.md', '/group/foo.md'],
     //     },
     //   ],
@@ -79,7 +79,7 @@ export default defineUserConfig({
     navbar: [
       {
         text: '博客',
-        icon: 'Language',
+        icon: 'IconLanguage',
         children: [
           {
             text: '是大法师的',

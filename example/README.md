@@ -39,6 +39,11 @@ features:
   details: 吸引更多的朋友参与到开发中来，继续强大功能。
 ---
 
+<Tab>
+  <TabItem title="1">1</TabItem>
+  <TabItem title="2">2</TabItem>
+</Tab>
+
 - [ ] asdaf
 - [x] asdaf
 

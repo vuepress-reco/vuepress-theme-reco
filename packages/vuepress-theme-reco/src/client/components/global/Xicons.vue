@@ -8,7 +8,7 @@
       <component
         class="xicon-icon"
         :style="iconStyle"
-        :is="icons[icon]"
+        :is="icon"
       />
     </slot>
 
@@ -24,7 +24,7 @@
   <span v-else class="xicon-container">
     <component
       :style="iconStyle"
-      :is="icons[icon]"
+      :is="icon"
       @click="emits('click')"
     />
   </span>
@@ -33,15 +33,11 @@
 
 <script lang="ts" setup>
 import { computed, toRefs, useSlots } from 'vue'
-import * as icons from '@vicons/carbon'
 
 const slots = useSlots()
 
 const props = defineProps({
-  icon: {
-    type: String,
-    default: '',
-  },
+  icon: [Object, String],
   iconPosition: {
     type: String,
     default: 'left',
@@ -74,7 +70,7 @@ const props = defineProps({
 
 const emits = defineEmits(['click'])
 
-const { icon, iconSize, color, textSize } = toRefs(props)
+const { icon, iconPosition, iconSize, color, textSize } = toRefs(props)
 
 const iconStyle = computed(() => {
   const style: Record<string, any> = {

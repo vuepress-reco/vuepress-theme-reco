@@ -1,9 +1,9 @@
 export const navbar = [
-  { text: '首页', link: '/', icon: 'Home' },
-  { text: '指南', link: '/docs/guide/introduce', icon: 'Compass' },
+  { text: '首页', link: '/', icon: 'IconHome' },
+  { text: '指南', link: '/docs/guide/introduce', icon: 'IconCompass' },
   {
     text: '参考',
-    icon: 'Document',
+    icon: 'IconDocument',
     children: [
       {
         text: '配置',
@@ -30,7 +30,7 @@ export const navbar = [
   },
   {
     text: '版本',
-    icon: 'SubVolume',
+    icon: 'IconSubVolume',
     children: [
       { text: '2.x(rc)', link: 'https://vuepress-theme-reco.recoluan.com/' },
       {
@@ -39,7 +39,7 @@ export const navbar = [
       },
     ],
   },
-  { text: '博客', link: '/posts', icon: 'DocumentAttachment' },
-  { text: '案例', link: '/docs/others/examples', icon: 'Fire' },
-  { text: '留言板', link: '/docs/message-board', icon: 'Chat' },
+  { text: '博客', link: '/posts', icon: 'IconDocumentAttachment' },
+  { text: '案例', link: '/docs/others/examples', icon: 'IconFire' },
+  { text: '留言板', link: '/docs/message-board', icon: 'IconChat' },
 ]

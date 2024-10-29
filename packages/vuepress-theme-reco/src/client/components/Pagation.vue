@@ -6,7 +6,7 @@
     <Xicons
       v-if="currentPage > 1"
       class="jump"
-      icon="ChevronLeft"
+      :icon="ChevronLeft"
       :iconSize="16"
       unselectable="on"
       key="left"
@@ -51,7 +51,7 @@
       v-if="currentPage < tp"
       class="jump"
       key="right"
-      icon="ChevronRight"
+      :icon="ChevronRight"
       :iconSize="16"
       @click="goNext"
     />
@@ -72,6 +72,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { ChevronLeft, ChevronRight } from '@vicons/carbon'
 
 const props = defineProps({
   currentPage: {
