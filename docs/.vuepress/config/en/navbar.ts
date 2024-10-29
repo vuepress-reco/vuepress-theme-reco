@@ -1,9 +1,9 @@
 export const navbar = [
-  { text: 'Home', link: '/en/', icon: 'Home' },
-  { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'Compass' },
+  { text: 'Home', link: '/en/', icon: 'IconHome' },
+  { text: 'Guide', link: '/en/docs/guide/introduce', icon: 'IconCompass' },
   {
     text: 'Reference',
-    icon: 'Document',
+    icon: 'IconDocument',
     children: [
       {
         text: 'Configuration',
@@ -36,7 +36,7 @@ export const navbar = [
   },
   {
     text: 'Version',
-    icon: 'SubVolume',
+    icon: 'IconSubVolume',
     children: [
       {
         text: '2.x(rc)',
@@ -48,10 +48,10 @@ export const navbar = [
       },
     ],
   },
-  { text: 'Examples', link: '/en/docs/others/examples', icon: 'Fire' },
+  { text: 'Examples', link: '/en/docs/others/examples', icon: 'IconFire' },
   {
     text: 'Message board',
     link: '/en/docs/message-board',
-    icon: 'Chat',
+    icon: 'IconChat',
   },
 ]

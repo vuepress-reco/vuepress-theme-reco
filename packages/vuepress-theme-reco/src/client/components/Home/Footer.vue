@@ -2,7 +2,7 @@
   <div class="footer-wrapper">
     <span>
       <Xicons
-        icon="ColorPalette"
+        :icon="ColorPalette"
         link="https://vuepress-theme-reco.recoluan.com"
         target="_blank"
         :text="`vuepress-theme-reco@${version}`"
@@ -11,7 +11,7 @@
 
     <span v-show="frontmatter?.footer?.record">
       <Xicons
-        icon="Security"
+        :icon="Security"
         :link="frontmatter?.footer?.recordLink"
         :text="frontmatter?.footer?.record"
         target="_blank"
@@ -48,6 +48,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRouteLocale } from 'vuepress/client'
+import { ColorPalette, Security } from '@vicons/carbon'
 import packageInfo from 'vuepress-theme-reco/package.json'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 

@@ -1,12 +1,13 @@
 import { h } from 'vue'
+import { Folder } from '@vicons/carbon'
 import { useRoute } from 'vuepress/client'
 
 import Link from '../Link.vue'
+import Xicons from '../global/Xicons.vue'
 
 import type { FunctionalComponent, VNode } from 'vue'
 import type { RouteLocationNormalizedLoaded } from 'vuepress/client'
 import type { MenuLinkGroup, ResolvedSeriesItem } from '../../../types'
-import Xicons from '../global/Xicons.vue'
 
 const normalizePath = (path: string): string =>
   decodeURI(path)
@@ -80,7 +81,7 @@ const renderItem = (item: ResolvedSeriesItem, level: number, props: VNode['props
   // if the item only has text, render it as `<p>`
   return h(titleTag, { ...props, onClick: (e) => togglecollapsible(e, item, level) }, [
     h(Xicons, {
-      icon: level === 1 ? 'Folder' : '',
+      icon: level === 1 ? Folder : '',
       text: item.text,
       textSize: level === 1 ? 16 : 14
     }),

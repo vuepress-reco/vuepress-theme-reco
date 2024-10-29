@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Switcher } from '@vicons/carbon'
 import { defineComponent, h, ref, useSlots } from 'vue'
 
 import Xicons from './Xicons.vue'
@@ -48,9 +49,8 @@ export default defineComponent({
                     onClick: () => (activeIndex.value = i),
                   },
                   h(Xicons, {
-                    icon: 'Sitemap',
+                    icon: Switcher,
                     text: vnode.props?.title,
-                    'text-size': 12,
                   }),
                 ),
               )
@@ -65,6 +65,8 @@ export default defineComponent({
 </script>
 
 <style>
+@import url('@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css');
+
 .tab {
   @apply relative my-6 overflow-hidden border-block;
   .tab__nav {

@@ -1,4 +1,4 @@
-
+import { Translate } from '@vicons/carbon'
 import { computed, ComputedRef } from 'vue'
 import { useRoutePaths } from '@vuepress/helper/client'
 import { useRouteLocale, useSiteData, useSiteLocaleData, useRoute } from 'vuepress/client'
@@ -33,7 +33,7 @@ export const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLinkGroup>[
     const currentFullPath = route?.fullPath
 
     const languageDropdown: MenuGroup<MenuLink> = {
-      icon: 'Translate',
+      icon: Translate,
       text: themeLocal.value.selectLanguageText || 'Languages',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link

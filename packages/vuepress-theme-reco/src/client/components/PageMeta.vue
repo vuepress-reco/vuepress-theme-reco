@@ -6,7 +6,7 @@
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
-      <Xicons class="meta-item-label" icon="Calendar"
+      <Xicons class="meta-item-label" :icon="Calendar"
         :text="`${themeLocal.lastUpdatedText || 'Last Updated'} ${lastUpdated}`" icon-size="20" text-size="14" />
     </div>
   </footer>
@@ -15,6 +15,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { usePageData } from 'vuepress/client'
+import { Edit, Calendar } from '@vicons/carbon'
 
 import { resolveEditLink } from '@utils/index.js'
 import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
@@ -59,7 +60,7 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
     return {
       text: editLinkText ?? 'Edit this page',
       link: editLink,
-      icon: 'Edit',
+      icon: Edit,
       hideExternalLinkIcon: true
     }
   })

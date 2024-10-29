@@ -1,10 +1,10 @@
 <template>
   <div v-if="showPageInfo" class="page-info">
-    <Xicons v-if="!!author" icon="User" :text="author" />
+    <Xicons v-if="!!author" :icon="User" :text="author" />
 
-    <Xicons v-if="!!date" icon="Calendar" :text="date" />
+    <Xicons v-if="!!date" :icon="Calendar" :text="date" />
 
-    <Xicons v-if="categories.length > 0" icon="Folder">
+    <Xicons v-if="categories.length > 0" :icon="Folder">
       <router-link
         v-for="({ label, pathValue }) in categories"
         :to="`/categories/${pathValue}/1.html`"
@@ -12,7 +12,7 @@
       >{{ label }}</router-link>
     </Xicons>
 
-    <Xicons v-if="tags.length > 0" icon="Tag">
+    <Xicons v-if="tags.length > 0" :icon="Tag">
       <router-link
         v-for="({ label, pathValue }) in tags"
         :to="`/tags/${pathValue}/1.html`"
@@ -45,11 +45,12 @@
 
 <script lang="ts" setup>
 import { computed, toRefs } from 'vue'
-import { useThemeLocaleData } from '@composables/index.js'
+import { User, Calendar, Folder, Tag } from '@vicons/carbon'
 import { convertToPinyin, removeEmptyString } from '@vuepress-reco/shared'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
 import { formatISODate } from '@utils/other'
+import { useThemeLocaleData } from '@composables/index.js'
 
 function formatCategory(category: string) {
   return convertToPinyin(removeEmptyString(category))
