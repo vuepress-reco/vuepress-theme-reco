@@ -9,12 +9,20 @@
         <Link :item="(item as MenuLink)" />
       </template>
     </div>
+    <DropdownLink
+      v-if="navbarSelectLanguage"
+      :class="{
+        'navbar-links__item': true,
+        'language': !isMobile
+      }"
+      :item="navbarSelectLanguage" />
   </nav>
 </template>
 
 <script lang="ts" setup>
 import { computed, ComputedRef } from 'vue'
 
+import { useMobile } from '@composables/index.js'
 import { useNavbarRepo } from './useNavbarRepo.js'
 import { useNavbarConfig } from './useNavbarConfig.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'
@@ -28,6 +36,7 @@ import type {
   MenuLinkGroup,
 } from '../../../types'
 
+const { isMobile } = useMobile()
 const navbarRepo = useNavbarRepo()
 const navbarConfig = useNavbarConfig()
 const navbarSelectLanguage = useNavbarSelectLanguage()
@@ -35,7 +44,6 @@ const navbarSelectLanguage = useNavbarSelectLanguage()
 const navbarLinks: ComputedRef<Array<MenuLink | MenuGroup<MenuLinkGroup>>>
   = computed(() => [
     ...navbarConfig.value,
-    ...navbarSelectLanguage.value,
     ...navbarRepo.value,
   ])
 </script>

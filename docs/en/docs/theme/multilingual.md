@@ -14,7 +14,6 @@ If your site is served in a different language besides English, you should set t
 |categoriesText|`string`|Categories|categories|
 |tagsText|`string`|Tags|tags|
 |catalogTitle|`string`|ON THIS PAGE|The title of the table of contents on the right of the article|
-|selectLanguageText|`string`|Languages|Select text from the language menu|
 |selectLanguageName|`string`|${lang}|Language name of Locale|
 |editLinkText|`string`|Edit this page|Edit the text of the link on this pag|
 |lastUpdatedText|`string`|Last Updated|The text of the recently updated timestamp label|
@@ -47,7 +46,6 @@ export default defineUserConfig({
       catalogTitle: 'On This Page',
       selectLanguageName: 'English',
       editLinkText: 'Edit this page',
-      selectLanguageText: 'Languages',
       lastUpdatedText: 'Last Updated',
       notFound: 'Oops! Page does not exist.',
   })

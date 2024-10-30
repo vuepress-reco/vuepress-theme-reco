@@ -61,13 +61,6 @@ export interface RecoThemeLocaleData extends LocaleData {
   /**
    * Navbar language selection config
    *
-   * Text of the language selection dropdown
-   */
-  selectLanguageText?: string
-
-  /**
-   * Navbar language selection config
-   *
    * Language name of current locale
    *
    * Displayed inside the language selection dropdown

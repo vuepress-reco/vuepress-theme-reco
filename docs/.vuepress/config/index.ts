@@ -5,7 +5,6 @@ import { RecoThemeData } from 'vuepress-theme-reco/lib/types'
 export const themeConfig: RecoThemeData = {
   locales: {
     '/': {
-      selectLanguageText: '语言',
       selectLanguageName: '简体中文',
       lastUpdatedText: '最后更新时间',
       navbar: zhConfig.navbar,
@@ -23,7 +22,6 @@ export const themeConfig: RecoThemeData = {
       backToHome: '返回首页'
     },
     '/en/': {
-      selectLanguageText: 'Languages',
       selectLanguageName: 'English',
       navbar: enConfig.navbar,
       series: enConfig.series,

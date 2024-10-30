@@ -14,7 +14,6 @@ date: 2022-06-07 22:30:37
 |categoriesText|`string`|Categories|分类|
 |tagsText|`string`|Tags|标签|
 |catalogTitle|`string`|ON THIS PAGE|文章右侧目录的标题|
-|selectLanguageText|`string`|Languages|选择语言菜单 的文字|
 |selectLanguageName|`string`|${lang}|Locale 的语言名称|
 |editLinkText|`string`|Edit this page|编辑此页 链接的文字|
 |lastUpdatedText|`string`|Last Updated|最近更新时间戳 标签的文字|
@@ -45,7 +44,6 @@ export default defineUserConfig({
       backToHome: '返回首页',
       categoriesText: '分类',
       catalogTitle: '页面导航',
-      selectLanguageText: '语言',
       editLinkText: '编辑当前页面',
       lastUpdatedText: '最后更新时间',
       selectLanguageName: '简体中文',

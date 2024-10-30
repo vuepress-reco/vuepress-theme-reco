@@ -14,7 +14,7 @@ import type {
 /**
  * Get navbar config of select language dropdown
  */
-export const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLinkGroup>[]> => {
+export const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLink> | null> => {
   const route = useRoute()
   const site = useSiteData()
   const theme = useThemeData()
@@ -27,14 +27,14 @@ export const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLinkGroup>[
     const localePaths = Object.keys(site.value.locales || {})
     // do not display language selection dropdown if there is only one language
     if (localePaths.length < 2) {
-      return []
+      return null
     }
+
     const currentPath = route?.path
     const currentFullPath = route?.fullPath
-
     const languageDropdown: MenuGroup<MenuLink> = {
       icon: IconLanguage,
-      text: themeLocal.value.selectLanguageText || 'Languages',
+      text: '',
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale = site.value.locales?.[targetLocalePath] ?? {}
@@ -73,7 +73,7 @@ export const useNavbarSelectLanguage = (): ComputedRef<MenuGroup<MenuLinkGroup>[
       }),
     }
 
-    return [languageDropdown]
+    return languageDropdown
   })
 
   return result

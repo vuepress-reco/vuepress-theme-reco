@@ -1,11 +1,19 @@
 .navbar-links {
-  @apply md:ml-6;
-
+  @apply md:ml-3;
   .navbar-links__item {
-    @apply block md:inline-block py-0;
+    @apply block ml-0 py-0;
+    @apply md:inline-block md:ml-3 md:mr-3;
 
-    &:not(:first-child) {
-      @apply ml-0 md:ml-6;
+    &.language {
+      @apply flex items-center;
+      &::before {
+        @apply mr-4 h-6 border-basic-left;
+        content: '';
+      }
+      &::after {
+        @apply ml-4 h-6 border-basic-right;
+        content: '';
+      }
     }
 
     > .link {
