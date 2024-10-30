@@ -3,7 +3,7 @@
  */
 export interface MenuItem {
   text: string
-  icon?: string
+  icon?: string | Object
   ariaLabel?: string
 }
 
