@@ -1,9 +1,11 @@
 import { ref, watch, computed } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
-import { Locked, Unlocked } from '@vicons/carbon'
+import { IconLocked, IconUnlocked } from '@components/icons/index.js'
 import { useSiteLocaleData } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@composables/index.js'
+
+import type { ComputedRef, Ref } from 'vue'
 
 export function useSiteInfo() {
   const siteLocale = useSiteLocaleData()
@@ -20,19 +22,25 @@ export function useSiteInfo() {
   return { siteBrandLogo, siteBrandTitle, sitePassword }
 }
 
-export function useHandlePassword(sitePassword, emit) {
+export function useHandlePassword(sitePassword: ComputedRef<string[]>, emit: any): {
+  lockIcon: Ref<any>
+  password: Ref<string>
+  passwordRef: Ref<any>
+  lockText: Ref<string>
+  focus: () => void
+} {
   const password = ref('')
   const passwordRef = ref(null)
-  const lockIcon = ref(Locked)
+  const lockIcon = ref(IconLocked)
   const lockText = ref('请输入密码')
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
     if (sitePassword.value.includes(md5(md5(newVal)))) {
-      lockIcon.value = Unlocked
+      lockIcon.value = IconUnlocked
       lockText.value = '密码正确，请重稍后！'
       setTimeout(() => {
-        emit('pass')
+        // emit('pass')
       }, 600)
     } else {
       password.value = ''

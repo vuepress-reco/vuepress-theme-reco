@@ -12,7 +12,7 @@
       <PersonalInfo />
 
       <h4 class="module-title">
-        <Xicons :icon="Folder" :text="themeLocal.categoriesText || 'Categories'" />
+        <Xicons :icon="IconFolder" :text="themeLocal.categoriesText || 'Categories'" />
       </h4>
 
       <ul class="category-wrapper">
@@ -31,7 +31,7 @@
       </ul>
 
       <h4 class="module-title">
-        <Xicons :icon="Tag" :text="themeLocal.tagsText || 'Tags'" />
+        <Xicons :icon="IconTag" :text="themeLocal.tagsText || 'Tags'" />
       </h4>
 
       <ul class="tag-wrapper">
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { Folder, Tag } from '@vicons/carbon'
+import { IconFolder, IconTag } from '@components/icons/index.js'
 import { computed, onMounted, ref, watch } from "vue";
 import { useRouteLocale, useRoute, useRouter } from 'vuepress/client'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'

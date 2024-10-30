@@ -9,7 +9,7 @@
       @mouseleave="handleButtonMouseLeave"
     >
       <Xicons class="title" :icon="item.icon" :text="item.text" />
-      <span v-if="item.text" class="arrow down" />
+      <span v-if="item.text || item.icon" class="arrow down" />
     </button>
 
     <button

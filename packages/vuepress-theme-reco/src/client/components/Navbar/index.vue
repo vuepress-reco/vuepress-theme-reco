@@ -14,7 +14,7 @@
 
         <Xicons
           class="btn-toggle-menus"
-          :icon="OverflowMenuVertical"
+          :icon="IconOverflowMenuVertical"
           :iconSize="20"
           @click="toggleMenus"
         />
@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { OverflowMenuVertical } from '@vicons/carbon'
+import { IconOverflowMenuVertical } from '@components/icons/index.js'
 
 import SiteBrand from '../SiteBrand.vue'
 import Xicons from '../global/Xicons.vue'

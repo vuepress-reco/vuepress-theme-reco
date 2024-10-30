@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { Folder } from '@vicons/carbon'
+import { IconFolder } from '@components/icons/index.js'
 import { useRoute } from 'vuepress/client'
 
 import Link from '../Link.vue'
@@ -81,7 +81,7 @@ const renderItem = (item: ResolvedSeriesItem, level: number, props: VNode['props
   // if the item only has text, render it as `<p>`
   return h(titleTag, { ...props, onClick: (e) => togglecollapsible(e, item, level) }, [
     h(Xicons, {
-      icon: level === 1 ? Folder : '',
+      icon: level === 1 ? IconFolder : '',
       text: item.text,
       textSize: level === 1 ? 16 : 14
     }),

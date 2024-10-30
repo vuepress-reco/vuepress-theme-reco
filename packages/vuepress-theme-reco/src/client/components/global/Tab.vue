@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Switcher } from '@vicons/carbon'
+import { IconSwitcher } from '@components/icons/index.js'
 import { defineComponent, h, ref, useSlots } from 'vue'
 
 import Xicons from './Xicons.vue'
@@ -49,7 +49,7 @@ export default defineComponent({
                     onClick: () => (activeIndex.value = i),
                   },
                   h(Xicons, {
-                    icon: Switcher,
+                    icon: IconSwitcher,
                     text: vnode.props?.title,
                   }),
                 ),

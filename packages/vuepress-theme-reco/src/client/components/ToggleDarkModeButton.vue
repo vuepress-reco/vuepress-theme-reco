@@ -9,13 +9,13 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch, Ref } from 'vue'
-import { BrightnessContrast, Moon, Sun } from '@vicons/carbon'
+import { IconBrightnessContrast, IconMoon, IconSun } from '@components/icons/index.js'
 import { useThemeLocaleData } from '@composables/index.js'
 
 const ModeIcon = {
-  light: Sun,
-  dark: Moon,
-  auto: BrightnessContrast
+  light: IconSun,
+  dark: IconMoon,
+  auto: IconBrightnessContrast
 }
 
 enum EMode {

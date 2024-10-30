@@ -228,9 +228,6 @@ importers:
 
   packages/vuepress-theme-reco:
     dependencies:
-      '@vicons/carbon':
-        specifier: ^0.12.0
-        version: 0.12.0
       '@vuepress-reco/shared':
         specifier: workspace:*
         version: link:../@vuepress-reco/shared
@@ -3141,10 +3138,6 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
-
-  /@vicons/carbon@0.12.0:
-    resolution: {integrity: sha512-kCOgr/ZOhZzoiFLJ8pwxMa2TMxrkCUOA22qExPabus35F4+USqzcsxaPoYtqRd9ROOYiHrSqwapak/ywF0D9bg==}
-    dev: false
 
   /@vitejs/plugin-vue@5.1.4(vite@5.4.9)(vue@3.5.12):
     resolution: {integrity: sha512-N2XSI2n3sQqp5w7Y/AN/L2XDjBIRGqXko+eDp42sydYSBeJuSm5a1sLf8zakmo8u7tA8NmBgoDLA1HeOESjp9A==}

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Code } from '@vicons/carbon'
+import { IconCode } from '@components/icons/index.js'
 import { defineComponent, h, onBeforeUpdate, ref } from 'vue'
 
 import Xicons from './Xicons.vue'
@@ -126,7 +126,7 @@ export default defineComponent({
                   h(
                     Xicons,
                     {
-                      icon: Code,
+                      icon: IconCode,
                       text: vnode.props.title,
                     }
                   )
