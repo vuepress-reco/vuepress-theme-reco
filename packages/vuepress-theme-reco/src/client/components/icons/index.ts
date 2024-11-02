@@ -5,6 +5,7 @@ import IconCode from './IconCode.vue';
 import IconEdit from './IconEdit.vue';
 import IconMoon from './IconMoon.vue';
 import IconUser from './IconUser.vue';
+import IconGithub from './IconGithub.vue';
 import IconFolder from './IconFolder.vue';
 import IconLocked from './IconLocked.vue';
 import IconCalendar from './IconCalendar.vue';
@@ -28,6 +29,7 @@ export {
   IconEdit,
   IconMoon,
   IconFolder,
+  IconGithub,
   IconLocked,
   IconLanguage,
   IconCalendar,

@@ -10,8 +10,6 @@
 
         <NavbarLinks />
 
-        <ToggleDarkModeButton v-if="themeLocal.colorModeSwitch ?? 'true'" class="btn--dark-mode" />
-
         <Xicons
           class="btn-toggle-menus"
           :icon="IconOverflowMenuVertical"
@@ -30,13 +28,9 @@ import { IconOverflowMenuVertical } from '@components/icons/index.js'
 import SiteBrand from '../SiteBrand.vue'
 import Xicons from '../global/Xicons.vue'
 import NavbarLinks from '../NavbarLinks/index.vue'
-import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
 
 import { useSiteBrand } from './useSiteBrand.js'
-import { useThemeLocaleData, useScrollDirection } from '@composables/index.js'
-
-const themeLocal = useThemeLocaleData()
-themeLocal.value.colorModeSwitch
+import { useScrollDirection } from '@composables/index.js'
 
 const { customTitle, customLink, customIcon } = useSiteBrand()
 

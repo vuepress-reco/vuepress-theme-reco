@@ -47,10 +47,7 @@ Currently, the built-in homepage modules include `Banner`, `BannerBrand`, `Featu
   - buttons: button
     - text: button text
     - link: content link
-    - type: content style, the default background color, if not needed, can be set to 'plain'
-  - socialLinks: For social address, See [here](/en/docs/guide/icon) for settings
-    - icon: icon
-    - link: button link
+    - type: content style, the default background color, if not needed, can be set to 'plain' ds
 - case: 
   - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
 

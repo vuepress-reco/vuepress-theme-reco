@@ -10,7 +10,7 @@ import type { MenuLink } from '../../../types'
 /**
  * Get navbar config of repository link
  */
-export const useNavbarRepo = (): ComputedRef<Array<MenuLink>>=> {
+export const useNavbarRepo = (): ComputedRef<MenuLink>=> {
   const themeLocal = useThemeLocaleData()
 
   const repo = computed(() => themeLocal.value.repo || themeLocal.value.docsRepo || '')
@@ -34,15 +34,16 @@ export const useNavbarRepo = (): ComputedRef<Array<MenuLink>>=> {
 
   const result = computed(() => {
     if (!repoLink.value || !repoLabel.value) {
-      return []
+      return {
+        text: '',
+        link: '',
+      }
     }
 
-    return [
-      {
-        text: repoLabel.value,
-        link: repoLink.value,
-      },
-    ]
+    return {
+      text: repoLabel.value,
+      link: repoLink.value,
+    }
   })
 
   return result

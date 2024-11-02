@@ -1,6 +1,6 @@
 <template>
-  <nav v-if="navbarLinks.length" class="navbar-links">
-    <div v-for="(item, index) in navbarLinks" :key="index" class="navbar-links__item">
+  <nav v-if="navbarConfig.length || socialLinks.length || navbarSelectLanguage" class="navbar-links">
+    <div v-for="(item, index) in navbarConfig" :key="index" class="navbar-links__item">
       <template v-if="'children' in item && item.children">
         <DropdownLink :item="item" />
       </template>
@@ -9,41 +9,49 @@
         <Link :item="(item as MenuLink)" />
       </template>
     </div>
+
     <DropdownLink
       v-if="navbarSelectLanguage"
       :class="{
         'navbar-links__item': true,
         'language': !isMobile
       }"
-      :item="navbarSelectLanguage" />
+      :item="navbarSelectLanguage"
+    />
+
+    <ToggleDarkModeButton
+      v-if="!isMobile && (themeLocal.colorModeSwitch ?? true)"
+      class="btn--dark-mode navbar-links__item"
+    />
+
+    <ul class="social-links navbar-links__item">
+      <li
+        class="social-item"
+        v-for="(item, index) in socialLinks"
+        :key="index"
+        @click="jumpSocialLink(item.link)"
+      >
+        <component :is="item.icon" :style="{ width: '25px', height: '25px' }" />
+      </li>
+    </ul>
   </nav>
 </template>
 
 <script lang="ts" setup>
-import { computed, ComputedRef } from 'vue'
-
-import { useMobile } from '@composables/index.js'
-import { useNavbarRepo } from './useNavbarRepo.js'
+import { useSocialLinks } from './useSocialLinks.js'
 import { useNavbarConfig } from './useNavbarConfig.js'
+import { useMobile, useThemeLocaleData } from '@composables/index.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'
 
 import Link from '../Link.vue'
 import DropdownLink from '../DropdownLink.vue'
+import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
 
-import type {
-  MenuLink,
-  MenuGroup,
-  MenuLinkGroup,
-} from '../../../types'
+import type { MenuLink } from '../../../types'
 
 const { isMobile } = useMobile()
-const navbarRepo = useNavbarRepo()
 const navbarConfig = useNavbarConfig()
+const themeLocal = useThemeLocaleData()
 const navbarSelectLanguage = useNavbarSelectLanguage()
-
-const navbarLinks: ComputedRef<Array<MenuLink | MenuGroup<MenuLinkGroup>>>
-  = computed(() => [
-    ...navbarConfig.value,
-    ...navbarRepo.value,
-  ])
+const { socialLinks, jumpSocialLink } = useSocialLinks()
 </script>

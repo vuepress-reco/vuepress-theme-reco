@@ -35,6 +35,7 @@ export const series = {
             'bulletin-popover',
             'password',
             'appearance',
+            'social-links',
             'pages',
             'doc-search',
             'auto-set-category',

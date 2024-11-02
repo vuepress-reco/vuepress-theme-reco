@@ -16,7 +16,7 @@ export interface RecoThemePageData extends GitPluginPageData {
 }
 
 export interface SocialLink {
-  icon: string
+  icon: string | Object
   link?: string
   color?: string
 }

@@ -47,9 +47,6 @@ date: 2021-11-06 23:36:01
     - text: 按钮文案
     - link: 按钮地址
     - type: 按钮风格，默认带背景色，如果不需要可以设置为 'plain'
-  - socialLinks：社交地址
-    - icon: 图标，设置方式见 [这里](/docs/guide/icon)
-    - link: 按钮地址
 - 案例：
   - <img width="600" alt="bannerBrand" src="https://user-images.githubusercontent.com/18067907/214793265-d316133f-12c3-47a3-8f96-a34e5cca5087.png">
 

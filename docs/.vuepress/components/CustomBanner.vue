@@ -19,16 +19,6 @@
         />
       </div>
 
-      <ul class="social-links" v-if="socialLinks.length > 0">
-        <li
-          class="social-item"
-          v-for="(item, index) in socialLinks"
-          :key="index"
-        >
-          <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" target="_blank" />
-        </li>
-      </ul>
-
       <div class="shields-wrapper">
         <img alt="GitHub license" src="https://img.shields.io/github/license/vuepress-reco/vuepress-theme-reco?style=flat-square&logo=github&color=5D67E8">
         <img alt="GitHub stars" src="https://img.shields.io/github/stars/vuepress-reco/vuepress-theme-reco?style=flat-square&logo=github&color=5D67E8">
@@ -58,12 +48,6 @@ const heroImage = computed(() => {
 const buttons = computed(() => {
   return frontmatter.value?.customBanner?.buttons || []
 })
-
-const socialLinks = computed(() =>
-  (frontmatter.value?.customBanner?.socialLinks || []).map(item => {
-    if (!item.color) item.color = createOneColor()
-    return item
-  }))
 
 const heroImageStyle = computed(
   () => frontmatter.value.customBanner.heroImageStyle || {}

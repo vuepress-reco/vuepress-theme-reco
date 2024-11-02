@@ -1,9 +1,11 @@
 import type { LocaleData } from 'vuepress/shared'
 import type { ThemeData } from '@vuepress/plugin-theme-data'
+import type { ViteBundlerOptions } from '@vuepress/bundler-vite'
+import type { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
+
+import type { SocialLink } from './page.js'
 import type { NavbarConfig, SeriesConfig } from './nav.js'
-import { PageOptions } from '../../../@vuepress-reco/plugin-page/src/types/index.js'
-import { ViteBundlerOptions } from '@vuepress/bundler-vite'
-import { WebpackBundlerOptions } from '@vuepress/bundler-webpack'
+import type { PageOptions } from '../../../@vuepress-reco/plugin-page/src/types/index.js'
 
 export type RecoThemeData = ThemeData<RecoThemeLocaleData>
 
@@ -205,6 +207,10 @@ export interface RecoThemeLocaleData extends LocaleData {
   backToHome?: string
 
   algolia?: Record<string, any>
+
+  primaryColor?: string
+
+  socialLinks: Array<SocialLink>
 }
 
 export type AutoAddCategoryToNavbarOptions = {

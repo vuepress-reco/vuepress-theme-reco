@@ -27,10 +27,10 @@ type Navbar = NavbarItem[]
 
 ```ts
 export const navbar = [
-  { text: '指南', link: '/docs/guide/introduce', icon: 'Compass' },
+  { text: '指南', link: '/docs/guide/introduce', icon: 'IconCompass' },
   {
     text: '参考',
-    icon: 'Document',
+    icon: 'IconDocument',
     children: [
       {
         text: '配置',
@@ -53,7 +53,7 @@ export const navbar = [
   },
   {
     text: '版本',
-    icon: 'SubVolume',
+    icon: 'IconSubVolume',
     children: [
       { text: '2.x(alpha)', link: 'https://vuepress-theme-reco.recoluan.com/' },
       {
@@ -62,6 +62,6 @@ export const navbar = [
       },
     ],
   },
-  { text: '留言板', link: '/docs/message-board', icon: 'Chat' },
+  { text: '留言板', link: '/docs/message-board', icon: 'IconChat' },
 ]
 ```

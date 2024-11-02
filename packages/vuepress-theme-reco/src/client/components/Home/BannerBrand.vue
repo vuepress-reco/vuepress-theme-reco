@@ -17,16 +17,6 @@
           text-size="14"
         />
       </div>
-
-      <ul class="social-links" v-if="socialLinks.length > 0">
-        <li
-          class="social-item"
-          v-for="(item, index) in socialLinks"
-          :key="index"
-        >
-          <Xicons :icon="item.icon" :link="item.link" :style="{ color: item.color }" target="_blank" />
-        </li>
-      </ul>
     </div>
   </section>
 </template>
@@ -34,8 +24,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { usePageFrontmatter, withBase } from 'vuepress/client'
-
-import { createOneColor } from '@utils/index.js'
 
 import type { RecoThemeHomePageFrontmatter } from "../../../types";
 
@@ -50,12 +38,6 @@ const heroImage = computed(() => {
 const buttons = computed(() => {
   return frontmatter.value?.bannerBrand?.buttons || []
 })
-
-const socialLinks = computed(() =>
-  (frontmatter.value?.bannerBrand?.socialLinks || []).map(item => {
-    if (!item.color) item.color = createOneColor()
-    return item
-  }))
 
 const heroImageStyle = computed(
   () => frontmatter.value?.bannerBrand?.heroImageStyle || {}
