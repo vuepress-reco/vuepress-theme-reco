@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-rc.91
+
+### Patch Changes
+
+- Update to vuepress@2.0.0-rc.18
+
 ## 2.0.0-rc.90
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.23
+
+### Patch Changes
+
+- Update to vuepress@2.0.0-rc.18
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.91
+
 ## 2.0.0-rc.22
 
 ### Patch Changes
