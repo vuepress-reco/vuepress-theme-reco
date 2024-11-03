@@ -43,4 +43,14 @@ export const themeConfig: RecoThemeData = {
     // algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
     // debug: false // Set debug to true if you want to inspect the dropdown
   },
+  socialLinks: [
+    {
+      icon: 'IconReco',
+      link: 'https://recoluan.com/'
+    },
+    {
+      icon: 'IconRevili',
+      link: 'https://revili.recoluan.com'
+    }
+  ],
 }
