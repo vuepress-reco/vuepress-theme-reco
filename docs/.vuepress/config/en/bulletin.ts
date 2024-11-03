@@ -9,8 +9,8 @@ export const bulletin = {
       type: 'text',
       content: `
       <ul>
-        <li>vuepress：2.0.0-rc.14</li>
-        <li>theme reco：2.0.0-rc.22</li>
+        <li>vuepress：2.0.0-rc.18</li>
+        <li>theme reco：2.0.0-rc.23</li>
       </ul>`,
       style: 'font-size: 12px; color: #5D67E8;'
     },
