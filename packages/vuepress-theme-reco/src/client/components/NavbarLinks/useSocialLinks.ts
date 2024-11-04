@@ -15,7 +15,7 @@ export function useSocialLinks(): {
   const themeLocal = useThemeLocaleData()
 
   const socialLinks = computed(() => {
-    const data = themeLocal.value?.socialLinks || []
+    const data = [...themeLocal.value?.socialLinks || []]
     navbarRepo.value.text === 'GitHub' && data.unshift({
       icon: IconGithub,
       link: navbarRepo.value.link
