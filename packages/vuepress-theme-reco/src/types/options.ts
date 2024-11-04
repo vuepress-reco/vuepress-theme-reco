@@ -210,7 +210,7 @@ export interface RecoThemeLocaleData extends LocaleData {
 
   primaryColor?: string
 
-  socialLinks: Array<SocialLink>
+  socialLinks?: Array<SocialLink>
 }
 
 export type AutoAddCategoryToNavbarOptions = {

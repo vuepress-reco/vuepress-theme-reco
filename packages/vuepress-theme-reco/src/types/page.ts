@@ -90,4 +90,5 @@ export interface RecoThemeHomePageFrontmatter extends RecoThemePageFrontmatter {
   bannerBrand?: BannerBrand
   blog?: Blog
   footer?: Footer
+  [key: string]: unknown
 }

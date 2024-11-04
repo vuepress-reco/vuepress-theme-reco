@@ -67,7 +67,6 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue'
 
-import Catalog from '../Catalog.vue'
 import Navbar from '../Navbar/index.vue'
 import Series from '../Series/index.vue'
 import SubNavbar from '../SubNavbar.vue'

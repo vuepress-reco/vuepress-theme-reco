@@ -22,9 +22,9 @@ import { useThemeLocaleData, usePageFrontmatter } from '@composables/index.js'
 
 
 import type { ComputedRef } from 'vue'
-import type { RecoThemePageData, NavLink as NavLinkType } from '../../types'
+import type { RecoThemePageData, MenuLink } from '../../types'
 
-const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
+const useEditNavLink = (): ComputedRef<null | MenuLink> => {
   const themeLocal = useThemeLocaleData()
   const page = usePageData<RecoThemePageData>()
   const frontmatter = usePageFrontmatter()

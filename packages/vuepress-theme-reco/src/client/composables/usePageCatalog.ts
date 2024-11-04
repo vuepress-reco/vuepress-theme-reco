@@ -3,7 +3,6 @@ import { usePageFrontmatter } from 'vuepress/client'
 
 import type { PageHeader } from 'vuepress/client'
 import type { ComputedRef, InjectionKey } from 'vue'
-import type { ResolvedSeriesItem } from '../../types'
 
 export interface ResolvedPageCatalog {
   [prop: string]: any
@@ -30,12 +29,12 @@ export const usePageCatalog = (): {
   return { catalog, isShowCatalog }
 }
 
-const headerToCatalogItem = (header: PageHeader): ResolvedSeriesItem => ({
+const headerToCatalogItem = (header: PageHeader): ResolvedPageCatalog => ({
   text: header.title,
   link: `#${header.slug}`,
   level: header.level,
   children: headersToCatalog(header.children),
 })
 
-export const headersToCatalog = (headers: PageHeader[]): ResolvedSeriesItem[] =>
+export const headersToCatalog = (headers: PageHeader[]): ResolvedPageCatalog[] =>
   headers.map((header) => headerToCatalogItem(header))

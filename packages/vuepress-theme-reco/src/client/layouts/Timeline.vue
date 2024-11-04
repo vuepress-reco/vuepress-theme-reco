@@ -59,7 +59,7 @@ interface TimelineData {
   data: any
 }
 
-const timelineData: Array<TimelineData> = Object.keys(dataMap).sort((a, b) => b - a).reduce(
+const timelineData: Array<TimelineData> = Object.keys(dataMap).sort((a, b) => Number(b) - Number(a)).reduce(
   (all: Array<TimelineData>, next: string) => {
     all.push({
       year: next,
