@@ -1,11 +1,13 @@
 ---
-title: Locale Config
+title: I18n
 date: 2022-06-07 22:30:37
 ---
 
 These options configure locale-related texts.
 
 If your site is served in a different language besides English, you should set these options per locale to provide translations.
+
+> Please refer to [Official Documentation](https://v2.vuepress.vuejs.org/guide/i18n.html) for detailed i18n config.
 
 ## Options
 
