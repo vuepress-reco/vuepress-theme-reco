@@ -205,6 +205,9 @@ export interface RecoThemeLocaleData extends LocaleData {
   details?: string
   notFound?: string
   backToHome?: string
+  inputPasswordText?: string
+  unlockSucessText?: string
+  unlockFailuerText?: string
 
   algolia?: Record<string, any>
 

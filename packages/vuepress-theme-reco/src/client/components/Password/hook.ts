@@ -1,4 +1,4 @@
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, shallowRef } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
 import { IconLocked, IconUnlocked } from '@components/icons/index.js'
 import { useSiteLocaleData } from 'vuepress/client'
@@ -31,16 +31,16 @@ export function useHandlePassword(sitePassword: ComputedRef<string[]>, emit: any
 } {
   const password = ref('')
   const passwordRef = ref(null)
-  const lockIcon = ref(IconLocked)
+  const lockIcon = shallowRef(IconLocked)
   const lockText = ref('请输入密码')
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
     if (sitePassword.value.includes(md5(md5(newVal)))) {
       lockIcon.value = IconUnlocked
-      lockText.value = '密码正确，请重稍后！'
+      lockText.value = '密码正确，玩得开心！'
       setTimeout(() => {
-        // emit('pass')
+        emit('pass')
       }, 600)
     } else {
       password.value = ''

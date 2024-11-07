@@ -26,6 +26,9 @@ If your site is served in a different language besides English, you should set t
 |details|`string`|DETAILS|Customize the title of the details container|
 |notFound|`string`|Oops! Page does not exist.|404 page text|
 |backToHome|`string`|Back To Home|404 page returns to the home page|
+|inputPasswordText|`string`|Please enter the password|Password entry prompt|
+|unlockSucessText|`string`|Success, enjoy it!|Prompt for successful password entry|
+|unlockFailuerText|`string`|Failed, please enter again!|Password entry error prompt|
 
 ## Example
 
@@ -50,6 +53,9 @@ export default defineUserConfig({
       editLinkText: 'Edit this page',
       lastUpdatedText: 'Last Updated',
       notFound: 'Oops! Page does not exist.',
+      inputPasswordText: 'Please enter the password',
+      unlockSucessText: 'Success, enjoy it!',
+      unlockFailuerText: 'Failed, please enter again!'
   })
 })
 ```

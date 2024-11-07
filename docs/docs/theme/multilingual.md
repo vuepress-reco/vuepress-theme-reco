@@ -28,6 +28,9 @@ date: 2022-06-07 22:30:37
 |details|`string`|DETAILS|自定义详情容器的标题|
 |notFound|`string`|Oops! Page does not exist.|404 页面文案|
 |backToHome|`string`|Back To Home|404 页面返回首页文案|
+|inputPasswordText|`string`|Please enter the password|密码输入提示|
+|unlockSucessText|`string`|Success, enjoy it!|密码输入正确提示|
+|unlockFailuerText|`string`|Failed, please enter again!|密码输入错误提示|
 
 ## 案例
 
@@ -52,6 +55,9 @@ export default defineUserConfig({
       lastUpdatedText: '最后更新时间',
       selectLanguageName: '简体中文',
       notFound: '哇哦，没有发现这个页面！',
+      inputPasswordText: '请输入密码',
+      unlockSucessText: '密码正确，玩得开心！',
+      unlockFailuerText: '密码错误，请重新输入！'
   })
 })
 ```
