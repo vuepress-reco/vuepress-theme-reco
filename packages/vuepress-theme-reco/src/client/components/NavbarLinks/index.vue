@@ -43,9 +43,9 @@ import { useNavbarConfig } from './useNavbarConfig.js'
 import { useMobile, useThemeLocaleData } from '@composables/index.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'
 
-import Link from '../Link.vue'
-import DropdownLink from '../DropdownLink.vue'
-import ToggleDarkModeButton from '../ToggleDarkModeButton.vue'
+import Link from '@components/Link.vue'
+import DropdownLink from '@components/DropdownLink/index.vue'
+import ToggleDarkModeButton from '@components/ToggleDarkModeButton.vue'
 
 import type { MenuLink } from '../../../types'
 

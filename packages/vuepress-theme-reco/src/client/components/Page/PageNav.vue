@@ -21,7 +21,7 @@ import { isPlainObject, isString } from 'vuepress/shared'
 
 import { getNavLink, useSeriesItems, usePageFrontmatter } from '@composables/index.js'
 
-import type { MenuLink, ResolvedSeriesItem } from '../../types'
+import type { MenuLink, ResolvedSeriesItem } from '../../../types'
 
 /**
  * Resolve `prev` or `next` config from frontmatter

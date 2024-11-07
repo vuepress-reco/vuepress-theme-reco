@@ -29,22 +29,24 @@ export function useHandlePassword(sitePassword: ComputedRef<string[]>, emit: any
   lockText: Ref<string>
   focus: () => void
 } {
+  const themeLocal = useThemeLocaleData()
+
   const password = ref('')
   const passwordRef = ref(null)
   const lockIcon = shallowRef(IconLocked)
-  const lockText = ref('请输入密码')
+  const lockText = ref(themeLocal.value.inputPasswordText || 'Please enter the password')
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
     if (sitePassword.value.includes(md5(md5(newVal)))) {
       lockIcon.value = IconUnlocked
-      lockText.value = '密码正确，玩得开心！'
+      lockText.value = themeLocal.value.unlockSucessText || 'Success, enjoy it!'
       setTimeout(() => {
         emit('pass')
       }, 600)
     } else {
       password.value = ''
-      lockText.value = '密码错误，请重新输入！'
+      lockText.value = themeLocal.value.unlockFailuerText || 'Failed, please enter again!'
     }
   })
 

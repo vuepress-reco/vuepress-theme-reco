@@ -1,6 +1,6 @@
 import { ref, watch, computed } from 'vue'
 import { md5 } from '@vuepress-reco/shared'
-import { usePageFrontmatter } from '@composables/index.js'
+import { usePageFrontmatter, useThemeLocaleData } from '@composables/index.js'
 
 export function usePageInfo() {
   const frontmatter = usePageFrontmatter()
@@ -15,22 +15,23 @@ export function usePageInfo() {
 }
 
 export function useHandlePassword(pagePassword, emit) {
+  const themeLocal = useThemeLocaleData()
   const password = ref('')
   const passwordRef = ref(null)
   const lockIcon = ref('Locked')
-  const lockText = ref('请输入密码')
+  const lockText = ref(themeLocal.value.inputPasswordText || 'Please enter the password')
 
   watch(password, (newVal) => {
     if (newVal.length !== 6) return
     if (pagePassword.value.includes(md5(md5(newVal)))) {
       lockIcon.value = 'Unlocked'
-      lockText.value = '密码正确，请重稍后！'
+      lockText.value = themeLocal.value.unlockSucessText || 'Success, enjoy it!'
       setTimeout(() => {
         emit('pass')
       }, 600)
     } else {
       password.value = ''
-      lockText.value = '密码错误，请重新输入！'
+      lockText.value = themeLocal.value.unlockFailuerText || 'Failed, please enter again!'
     }
   })
 

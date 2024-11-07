@@ -68,7 +68,7 @@ import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composabl
 import { createOneColor, throttle } from '@utils/index.js'
 import { useThemeLocaleData } from '@composables/index.js';
 
-import PostList from '../PostList.vue'
+import PostList from '@components/PostList/index.vue'
 import Pagation from '../Pagation.vue'
 import { IconFolder, IconTag } from '@components/icons/index.js'
 

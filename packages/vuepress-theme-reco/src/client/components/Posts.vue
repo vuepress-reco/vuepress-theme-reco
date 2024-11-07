@@ -14,7 +14,7 @@ import { computed, onMounted, ref, watch } from "vue";
 import { useRouteLocale, withBase, useRoute, useRouter } from 'vuepress/client';
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
-import PostList from './PostList.vue'
+import PostList from '@components/PostList/index.vue'
 import Pagation from './Pagation.vue'
 
 import { useThemeLocaleData } from '@composables/index.js';

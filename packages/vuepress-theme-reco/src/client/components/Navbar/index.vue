@@ -25,7 +25,7 @@
 import { computed, ref } from 'vue'
 import { IconOverflowMenuVertical } from '@components/icons/index.js'
 
-import SiteBrand from '../SiteBrand.vue'
+import SiteBrand from './SiteBrand.vue'
 import Xicons from '../global/Xicons.vue'
 import NavbarLinks from '../NavbarLinks/index.vue'
 

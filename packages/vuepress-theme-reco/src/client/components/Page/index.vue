@@ -31,11 +31,11 @@ import { computed } from 'vue'
 import { usePageData } from 'vuepress/client'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
-import PageNav from '../PageNav.vue'
-import Catalog from '../Catalog.vue'
-import PageInfo from '../PageInfo.vue'
-import PageMeta from '../PageMeta.vue'
-import Password from '../PagePassword/index.vue'
+import PageNav from './PageNav.vue'
+import PageMeta from './PageMeta.vue'
+import PageInfo from '@components/PageInfo.vue'
+import Catalog from '@components/Catalog/index.vue'
+import Password from '@components/PagePassword/index.vue'
 
 import { usePassword } from './hook.js'
 

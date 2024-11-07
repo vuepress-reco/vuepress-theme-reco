@@ -11,7 +11,7 @@
 import { toRefs } from 'vue'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
-import PageInfo from './PageInfo.vue'
+import PageInfo from '@components/PageInfo.vue'
 
 const props = defineProps({
   data: {

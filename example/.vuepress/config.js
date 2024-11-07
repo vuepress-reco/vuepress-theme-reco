@@ -159,6 +159,13 @@ export default defineUserConfig({
     },
     password: ['14e1b600b1fd579f47433b88e8d85291'],
     // primaryColor: '#3aa675',
+    friendshipLinks: [
+      {
+        title: 'vuepress-recovuepress-recovuepress-recovuepress-reco',
+        logo: 'https://avatars.githubusercontent.com/u/54167020?s=200&v=4',
+        link: 'https://github.com/vuepress-reco'
+      }
+    ]
   }),
   // debug: true,,
   pages: [
