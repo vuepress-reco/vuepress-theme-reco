@@ -3,6 +3,7 @@ title: vuepress-theme-reco 一周岁
 date: 2019-10-26
 categories:
  - blog
+sticky: 1
 ---
 
 不知不觉，`vuepress-theme-reco` 已经一周岁了，静下心来回想这个过程，过程是美好的，结果也是美好的。

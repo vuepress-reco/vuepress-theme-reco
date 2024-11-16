@@ -2,7 +2,7 @@
   @apply mb-8 p-6;
 
   .title {
-    @apply relative mb-2 inline-block text-lg font-medium;
+    @apply relative mb-2 inline-flex items-center text-lg font-medium;
 
     &:after {
       @apply absolute left-0 -bottom-2 w-full;
@@ -22,6 +22,13 @@
     &:hover:after {
       visibility: visible;
       transform: scaleX(1);
+    }
+    a {
+      @apply inline-flex items-center;
+    }
+
+    .xicon-container {
+      @apply mr-1 text-reco-primary;
     }
   }
 
