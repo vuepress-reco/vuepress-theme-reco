@@ -27,7 +27,7 @@ div[class*="language-"] {
       @apply hidden;
     }
     .line-numbers {
-      @apply absolute bottom-0 w-16 text-center text-gray-400 py-4 leading-6 bg-block;
+      @apply absolute z-10 bottom-0 w-16 text-center text-gray-400 py-4 leading-6 bg-block;
       counter-reset: line-number;
       br {
         user-select: none;
