@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-rc.92
+
+### Patch Changes
+
+- Optimize the user experience
+
 ## 2.0.0-rc.91
 
 ### Patch Changes

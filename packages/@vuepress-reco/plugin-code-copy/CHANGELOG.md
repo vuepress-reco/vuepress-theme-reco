@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-code-copy
 
+## 2.0.0-rc.24
+
+### Patch Changes
+
+- Optimize the user experience
+
 ## 2.0.0-rc.23
 
 ### Patch Changes
