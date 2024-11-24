@@ -1,5 +1,20 @@
 # vuepress-theme-reco
 
+## 2.0.0-rc.25
+
+### Patch Changes
+
+- fix bug where autoAddCategoryToNavbar.showIcon cannot display icons
+- Updated dependencies
+  - @vuepress-reco/vuepress-plugin-bulletin-popover@2.0.0-rc.93
+  - @vuepress-reco/vuepress-plugin-code-copy@2.0.0-rc.25
+  - @vuepress-reco/vuepress-plugin-comments@2.0.0-rc.25
+  - @vuepress-reco/vuepress-plugin-markdown-task@2.0.0-rc.93
+  - @vuepress-reco/vuepress-plugin-page@2.0.0-rc.25
+  - @vuepress-reco/vuepress-plugin-vue-preview@2.0.0-rc.93
+  - @vuepress-reco/shared@2.0.0-rc.93
+  - @vuepress-reco/tailwindcss-config@2.0.0-rc.93
+
 ## 2.0.0-rc.24
 
 ### Patch Changes

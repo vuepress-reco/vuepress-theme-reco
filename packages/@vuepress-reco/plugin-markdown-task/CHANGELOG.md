@@ -1,5 +1,11 @@
 # @vuepress-reco/vuepress-plugin-markdown-task
 
+## 2.0.0-rc.93
+
+### Patch Changes
+
+- fix bug where autoAddCategoryToNavbar.showIcon cannot display icons
+
 ## 2.0.0-rc.92
 
 ### Patch Changes

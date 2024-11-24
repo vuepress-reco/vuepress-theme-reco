@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.25
+
+### Patch Changes
+
+- fix bug where autoAddCategoryToNavbar.showIcon cannot display icons
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.93
+
 ## 2.0.0-rc.24
 
 ### Patch Changes
