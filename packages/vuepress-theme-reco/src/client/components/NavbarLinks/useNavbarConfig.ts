@@ -12,6 +12,8 @@ import type {
 } from '../../../types'
 import { computed, ComputedRef } from 'vue'
 
+import { IconFolder, IconTag } from '@components/icons/index.js'
+
 function resolveNavbarItem(
   item: MenuLink | MenuLinkGroup | string,
 ): MenuLink | MenuLinkGroup {
@@ -54,7 +56,7 @@ export const useNavbarConfig = (): ComputedRef<Array<MenuLink | MenuGroup<MenuLi
         }
 
         if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
-          parsedCategoriesData.icon = 'Folder'
+          parsedCategoriesData.icon = IconFolder
         }
 
         parsedData.push(parsedCategoriesData)
@@ -73,7 +75,7 @@ export const useNavbarConfig = (): ComputedRef<Array<MenuLink | MenuGroup<MenuLi
         }
 
         if ((autoAddCategoryToNavbar as AutoAddCategoryToNavbarOptions)?.showIcon) {
-          parsedTagsData.icon = 'Tag'
+          parsedTagsData.icon = IconTag
         }
 
         parsedData.push(parsedTagsData)
