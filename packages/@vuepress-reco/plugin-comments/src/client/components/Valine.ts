@@ -6,7 +6,8 @@ import '../styles/valine.css'
 type TvalineOptions = Record<string, unknown>
 
 type Tprops = {
-  options: TvalineOptions
+  options: TvalineOptions,
+  noCounter?:boolean;
 }
 
 export default defineComponent({
@@ -18,6 +19,10 @@ export default defineComponent({
       default () {
         return {}
       }
+    },
+    noCounter:{
+      type:Boolean,
+      default:false
     }
   },
 
@@ -26,34 +31,31 @@ export default defineComponent({
     if (__VUEPRESS_SSR__) return
 
     const route = useRoute()
-    const { options } = toRefs(props)
+    const { options,noCounter } = toRefs(props)
 
     let valineInstance = null
 
     onMounted(async () => {
       const Valine = (await import('valine')).default
       const initValine = async () => {
-
         const valineOptions = {
           el: '#valine',
           placeholder: 'just go go',
           notify: false,
           verify: false,
           avatar: 'retro',
-          visitor: true,
+          visitor: !noCounter,
           recordIP: false,
           path: window.location.pathname,
           ...options.value
         }
-
         valineInstance = new Valine(valineOptions)
       }
 
       initValine()
-
-      watch(() => route?.path,(toPath) => {
-        initValine();
-      },{ immediate: true, deep: true })
+      // watch(() => route?.path,(toPath) => {
+      //   initValine();
+      // },{ immediate: true, deep: true })
     })
   },
 
