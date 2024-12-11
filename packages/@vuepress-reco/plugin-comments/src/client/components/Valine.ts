@@ -7,7 +7,6 @@ type TvalineOptions = Record<string, unknown>
 
 type Tprops = {
   options: TvalineOptions,
-  noCounter?:boolean;
 }
 
 export default defineComponent({
@@ -19,10 +18,6 @@ export default defineComponent({
       default () {
         return {}
       }
-    },
-    noCounter:{
-      type:Boolean,
-      default:false
     }
   },
 
@@ -31,7 +26,7 @@ export default defineComponent({
     if (__VUEPRESS_SSR__) return
 
     const route = useRoute()
-    const { options,noCounter } = toRefs(props)
+    const { options } = toRefs(props)
 
     let valineInstance = null
 
@@ -44,18 +39,14 @@ export default defineComponent({
           notify: false,
           verify: false,
           avatar: 'retro',
-          visitor: !noCounter,
+          visitor: true,
           recordIP: false,
           path: window.location.pathname,
           ...options.value
         }
         valineInstance = new Valine(valineOptions)
       }
-
       initValine()
-      // watch(() => route?.path,(toPath) => {
-      //   initValine();
-      // },{ immediate: true, deep: true })
     })
   },
 
