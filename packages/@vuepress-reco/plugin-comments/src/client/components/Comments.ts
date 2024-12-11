@@ -11,15 +11,11 @@ export default defineComponent({
     hideComments: {
       type: Boolean,
       default: true,
-    },
-    noCounter:{  // 不带计数
-      type: Boolean,
-      default: false,
     }
   },
   setup(props) {
     const { solution, options } = useComment()
-    const { hideComments,noCounter } = toRefs(props)
+    const { hideComments } = toRefs(props)
 
     let componentName
     switch (solution.value) {
@@ -44,16 +40,6 @@ export default defineComponent({
             return h(componentName, {
               options: options.value,
               style: 'display: none',
-            })
-          }
-          return null
-        }
-
-        if(noCounter.value){
-          if (solution.value === 'valine') {
-            return h(componentName, {
-              options: options.value,
-              noCounter:true
             })
           }
           return null
