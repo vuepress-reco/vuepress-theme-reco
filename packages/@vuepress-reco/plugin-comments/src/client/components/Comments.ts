@@ -11,7 +11,7 @@ export default defineComponent({
     hideComments: {
       type: Boolean,
       default: true,
-    },
+    }
   },
   setup(props) {
     const { solution, options } = useComment()
@@ -44,6 +44,7 @@ export default defineComponent({
           }
           return null
         }
+
         return h(componentName, {
           options: options.value,
         })
