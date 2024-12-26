@@ -6,7 +6,7 @@ import '../styles/valine.css'
 type TvalineOptions = Record<string, unknown>
 
 type Tprops = {
-  options: TvalineOptions
+  options: TvalineOptions,
 }
 
 export default defineComponent({
@@ -33,7 +33,6 @@ export default defineComponent({
     onMounted(async () => {
       const Valine = (await import('valine')).default
       const initValine = async () => {
-
         const valineOptions = {
           el: '#valine',
           placeholder: 'just go go',
@@ -45,15 +44,9 @@ export default defineComponent({
           path: window.location.pathname,
           ...options.value
         }
-
         valineInstance = new Valine(valineOptions)
       }
-
       initValine()
-
-      watch(() => route?.path,(toPath) => {
-        initValine();
-      },{ immediate: true, deep: true })
     })
   },
 
