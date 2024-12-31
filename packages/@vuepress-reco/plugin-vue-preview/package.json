@@ -36,18 +36,18 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/core": "^7.16.12",
-    "@babel/plugin-syntax-jsx": "^7.16.7",
-    "@babel/traverse": "^7.16.10",
-    "@babel/types": "^7.16.8",
-    "@vue/compiler-sfc": "^3.2.29",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-jsx": "^7.25.9",
+    "@babel/traverse": "^7.26.4",
+    "@babel/types": "^7.26.3",
+    "@vue/compiler-sfc": "^3.5.13",
     "@vuepress/highlighter-helper": "2.0.0-rc.54",
     "@vuepress/markdown": "2.0.0-rc.18",
     "@vuepress/plugin-prismjs": "2.0.0-rc.54",
-    "enhanced-resolve": "^5.8.3",
+    "enhanced-resolve": "^5.18.0",
     "slash2": "^2.0.0"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19"
   }
 }
