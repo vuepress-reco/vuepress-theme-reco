@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "@vuepress/plugin-theme-data": "2.0.0-rc.55",
-    "vue": "^3.5.0"
+    "vue": "^3.5.13"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19"
   }
 }

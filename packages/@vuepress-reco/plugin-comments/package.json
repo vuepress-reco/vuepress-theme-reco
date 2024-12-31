@@ -44,15 +44,15 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,js}\" lib"
   },
   "dependencies": {
-    "@giscus/vue": "^2.2.8",
+    "@giscus/vue": "^2.4.0",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
     "@vuepress/plugin-theme-data": "2.0.0-rc.55",
-    "@waline/client": "^2.14.7",
+    "@waline/client": "^2.15.8",
     "valine": "1.5.1",
-    "vue": "^3.5.0"
+    "vue": "^3.5.13"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19"
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"

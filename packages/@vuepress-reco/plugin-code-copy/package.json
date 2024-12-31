@@ -47,6 +47,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "vuepress": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19"
   }
 }
