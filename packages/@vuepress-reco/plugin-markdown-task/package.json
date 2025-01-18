@@ -1,6 +1,6 @@
 {
   "name": "@vuepress-reco/vuepress-plugin-markdown-task",
-  "version": "2.0.0-rc.93",
+  "version": "2.0.0-rc.94",
   "description": "A plugin to extend task function for vuepress.",
   "keywords": [
     "vuepress-plugin",

@@ -1,5 +1,11 @@
 # @vuepress-reco/tailwindcss-config
 
+## 2.0.0-rc.94
+
+### Patch Changes
+
+- fix something
+
 ## 2.0.0-rc.93
 
 ### Patch Changes

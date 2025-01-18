@@ -1,5 +1,13 @@
 # @vuepress-reco/vuepress-plugin-page
 
+## 2.0.0-rc.26
+
+### Patch Changes
+
+- fix something
+- Updated dependencies
+  - @vuepress-reco/shared@2.0.0-rc.94
+
 ## 2.0.0-rc.25
 
 ### Patch Changes
