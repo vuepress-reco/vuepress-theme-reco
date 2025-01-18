@@ -25,10 +25,10 @@ date: 2024-04-27
   },
   "dependencies": {
     "vue": "^3.5.0",
-    "vuepress": "2.0.0-rc.18",
-    "vuepress-theme-reco": "2.0.0-rc.23",
-    "@vuepress/bundler-vite": "2.0.0-rc.18",
-    "@vuepress/bundler-webpack": "2.0.0-rc.18"
+    "vuepress": "2.0.0-rc.19",
+    "vuepress-theme-reco": "2.0.0-rc.26",
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
+    "@vuepress/bundler-webpack": "2.0.0-rc.19"
   }
 }
 ```

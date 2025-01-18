@@ -77,6 +77,6 @@
     "typescript": "5.2.2",
     "vue": "^3.5.13",
     "vuepress": "2.0.0-rc.19",
-    "vuepress-theme-reco": "2.0.0-rc.25"
+    "vuepress-theme-reco": "workspace:*"
   }
 }
