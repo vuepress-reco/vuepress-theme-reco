@@ -10,6 +10,9 @@
   }
   .page-content .theme-reco-md-content {
     @apply px-0;
+    img {
+      @apply rounded-lg;
+    }
   }
   .theme-reco-md-content {
     @apply mb-16;
