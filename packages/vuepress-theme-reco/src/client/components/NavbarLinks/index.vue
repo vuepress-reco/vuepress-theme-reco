@@ -1,5 +1,8 @@
 <template>
-  <nav v-if="navbarConfig.length || socialLinks.length || navbarSelectLanguage" class="navbar-links">
+  <nav
+    v-if="navbarConfig.length || socialLinks.length || navbarSelectLanguage || showToggleDarkModeButton"
+    class="navbar-links"
+  >
     <div v-for="(item, index) in navbarConfig" :key="index" class="navbar-links__item">
       <template v-if="'children' in item && item.children">
         <DropdownLink :item="item" />
@@ -20,11 +23,11 @@
     />
 
     <ToggleDarkModeButton
-      v-if="!isMobile && (themeLocal.colorModeSwitch ?? true)"
+      v-if="showToggleDarkModeButton"
       class="btn--dark-mode navbar-links__item"
     />
 
-    <ul class="social-links navbar-links__item">
+    <ul v-if="socialLinks.length" class="social-links navbar-links__item">
       <li
         class="social-item"
         v-for="(item, index) in socialLinks"
@@ -42,6 +45,7 @@ import { useSocialLinks } from './useSocialLinks.js'
 import { useNavbarConfig } from './useNavbarConfig.js'
 import { useMobile, useThemeLocaleData } from '@composables/index.js'
 import { useNavbarSelectLanguage } from './useNavbarSelectLanguage.js'
+import { computed } from 'vue'
 
 import Link from '@components/Link.vue'
 import DropdownLink from '@components/DropdownLink/index.vue'
@@ -54,4 +58,5 @@ const navbarConfig = useNavbarConfig()
 const themeLocal = useThemeLocaleData()
 const navbarSelectLanguage = useNavbarSelectLanguage()
 const { socialLinks, jumpSocialLink } = useSocialLinks()
+const showToggleDarkModeButton = computed(() => !isMobile.value && (themeLocal.colorModeSwitch ?? true))
 </script>
