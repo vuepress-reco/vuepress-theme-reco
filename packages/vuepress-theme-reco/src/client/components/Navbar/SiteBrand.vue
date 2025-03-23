@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue'
+import SafeRouterLink from '@components/SafeRouterLink.vue'
 
 const props = defineProps({
   icon: {
@@ -28,14 +29,14 @@ const { title, icon, link } = toRefs(props)
       :alt="title"
     />
 
-    <RouterLink
+    <SafeRouterLink
       v-if="title"
       :to="link"
       class="site-name"
       :class="{ 'can-hide': icon }"
     >
       {{ title }}
-    </RouterLink>
+    </SafeRouterLink>
   </div>
 </template>
 

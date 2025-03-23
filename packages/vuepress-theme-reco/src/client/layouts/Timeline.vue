@@ -10,7 +10,11 @@
           <li v-for="(subItem, subIndex) in item.data" :key="subIndex" class="item">
             <span class="date">{{subItem.date}}</span>
 
-            <RouterLink class="title" :to="subItem.path">{{ subItem.title }}</RouterLink>
+            <!-- 使用SafeRouterLink组件，它内部已包含ClientOnly处理 -->
+            <SafeRouterLink v-if="subItem && subItem.path && typeof subItem.path === 'string'" 
+                          class="title" 
+                          :to="subItem.path">{{ subItem.title }}</SafeRouterLink>
+            <span v-else class="title">{{ subItem.title }}</span>
           </li>
         </ul>
       </li>
@@ -20,6 +24,7 @@
 
 <script setup lang="ts">
 import GenericContainer from '@components/GenericContainer/index.vue'
+import SafeRouterLink from '@components/SafeRouterLink.vue'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import { formatISODate } from '@utils/other.js'

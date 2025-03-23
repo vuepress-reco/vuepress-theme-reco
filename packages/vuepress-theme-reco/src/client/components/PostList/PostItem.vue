@@ -1,10 +1,10 @@
 <template>
   <MagicCard class="post-item-container">
     <div class="title">
-      <RouterLink :to="data.path">
+      <SafeRouterLink :to="data.path">
         <Xicons v-if="data.frontmatter?.sticky" :icon="IconStar" />
         <span>{{ data.title }}</span>
-      </RouterLink>
+      </SafeRouterLink>
     </div>
     <PageInfo :page-data="data" :hide-views="solution==='valine'"> </PageInfo>
   </MagicCard>
@@ -12,6 +12,7 @@
 
 <script lang="ts" setup>
 import { toRefs } from 'vue'
+import SafeRouterLink from '@components/SafeRouterLink.vue'
 import { useComment } from '@vuepress-reco/vuepress-plugin-comments/composables'
 
 import PageInfo from '@components/PageInfo.vue'

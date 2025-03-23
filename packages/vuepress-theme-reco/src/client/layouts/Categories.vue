@@ -12,12 +12,12 @@
             },
           ]"
         >
-          <RouterLink
+          <SafeRouterLink
             class="category-link"
             :to="`/${categoryPosts.currentCategoryKey}/${categoryValue}/1.html`"
           >
             <span class="text">{{ label }}</span>
-          </RouterLink>
+          </SafeRouterLink>
         </li>
       </ul>
 
@@ -36,6 +36,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vuepress/client'
+import SafeRouterLink from '@components/SafeRouterLink.vue'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
 import Pagation from '@components/Pagation.vue'

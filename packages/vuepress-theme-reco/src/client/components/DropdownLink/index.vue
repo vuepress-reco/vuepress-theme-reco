@@ -87,13 +87,21 @@ const dropdownAriaLabel = computed(
 )
 
 const open = ref(false)
+
+// 安全地使用路由，避免在服务器端渲染时出错
 const route = useRoute()
-watch(
-  () => route.path,
-  () => {
-    open.value = false
-  }
-)
+
+// 只在客户端看视路由变化
+// 确保route存在且具有path属性
+
+if (route && typeof route.path !== 'undefined') {
+  watch(
+    () => route.path,
+    () => {
+      open.value = false
+    }
+  )
+}
 
 const inButton = ref(false)
 const handleButtonMouseEnter = () => {

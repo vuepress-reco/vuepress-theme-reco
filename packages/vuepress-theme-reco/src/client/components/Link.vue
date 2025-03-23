@@ -1,5 +1,5 @@
 <template>
-  <RouterLink
+  <SafeRouterLink
     v-if="isRouterLink"
     class="link"
     :class="{ 'router-link-active': isActiveInSubpath }"
@@ -11,7 +11,7 @@
     <slot name="before" />
     <Xicons :icon="item.icon" :text="item.text" />
     <slot name="after" />
-  </RouterLink>
+  </SafeRouterLink>
 
   <a
     v-else
@@ -34,6 +34,7 @@
 import { computed, toRefs } from 'vue'
 import { isLinkHttp, isLinkWithProtocol } from 'vuepress/shared'
 import { withBase, useSiteData, useRouteLocale, useRoute } from 'vuepress/client'
+import SafeRouterLink from '@components/SafeRouterLink.vue'
 
 import { useThemeLocaleData } from '@composables/index.js'
 
@@ -103,17 +104,34 @@ const shouldBeActiveInSubpath = computed(() => {
 
 // if this link is active in subpath
 const isActiveInSubpath = computed(() => {
-  if (!isRouterLink.value || !shouldBeActiveInSubpath.value) {
+  // 首先检查route是否存在以及route.path是否定义，这样在服务器渲染过程中不会出错
+  if (!route || typeof route.path === 'undefined' || !isRouterLink.value || !shouldBeActiveInSubpath.value) {
     return false
   }
 
+  // 确保themeLocal.value存在
+  if (!themeLocal.value) {
+    return false
+  }
+  
+  // 确保item.value.link存在且为有效字符串
+  if (!item.value || typeof item.value.link !== 'string' || !item.value.link) {
+    return false
+  }
+
+  // 获取主页路径
+  const homePath = themeLocal.value.home || '/'
+  const baseHomePath = withBase(homePath)
+  const itemLink = item.value.link
+  
   if (
-    route.path === withBase(themeLocal.value.home || '/') &&
-    item.value.link === withBase(themeLocal.value.home || '/')
+    route.path === baseHomePath &&
+    itemLink === baseHomePath
   ) {
     return true
   }
 
-  return route.path.startsWith(item.value.link as string) && !item.value.link?.endsWith('/')
+  // 安全地检查startsWith和endsWith
+  return route.path.startsWith(itemLink) && !itemLink.endsWith('/')
 })
 </script>

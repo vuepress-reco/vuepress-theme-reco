@@ -99,6 +99,11 @@ const resolveMultiSeriesItems = (
   seriesConfig: SeriesConfigObject,
   route: RouteLocationNormalizedLoaded
 ): ResolvedSeriesItem[] => {
+  // 确保route.path存在，避免在某些组件（如Timeline）中使用时出错
+  if (!route || typeof route.path === 'undefined') {
+    return []
+  }
+  
   const seriesPath = resolveLocalePath(
     seriesConfig,
     decodeURIComponent(route.path)
