@@ -6,6 +6,7 @@ import IconEdit from './IconEdit.vue';
 import IconMoon from './IconMoon.vue';
 import IconUser from './IconUser.vue';
 import IconStar from './IconStar.vue';
+import IconRobot from './IconRobot.vue';
 import IconGithub from './IconGithub.vue';
 import IconFolder from './IconFolder.vue';
 import IconLocked from './IconLocked.vue';
@@ -30,6 +31,7 @@ export {
   IconCode,
   IconEdit,
   IconMoon,
+  IconRobot,
   IconFolder,
   IconGithub,
   IconLocked,

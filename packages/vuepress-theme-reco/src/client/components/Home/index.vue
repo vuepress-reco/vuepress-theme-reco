@@ -18,6 +18,7 @@ import Comment from './Comment.vue'
 import Features from './Features.vue'
 import MdContent from './MdContent.vue'
 import BannerBrand from './BannerBrand.vue'
+import AIChat from './AIChat.vue'
 
 import { RecoThemeHomePageFrontmatter } from '../../../types'
 
@@ -32,6 +33,7 @@ export default defineComponent({
     Comment,
     Footer,
     Features,
+    AIChat,
   }
 })
 </script>
