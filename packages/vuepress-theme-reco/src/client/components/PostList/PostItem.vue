@@ -1,5 +1,6 @@
 <template>
-  <MagicCard class="post-item-container">
+  <!-- 使用v-memo来避免不必要的重新渲染 -->
+  <MagicCard class="post-item-container" v-memo="[data.path, data.title, data.frontmatter?.sticky, solution]">
     <div class="title">
       <SafeRouterLink :to="data.path">
         <Xicons v-if="data.frontmatter?.sticky" :icon="IconStar" />

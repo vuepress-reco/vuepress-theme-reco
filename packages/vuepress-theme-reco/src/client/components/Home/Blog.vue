@@ -27,7 +27,7 @@
       <ul class="category-wrapper">
         <li
           class="category-item"
-          v-for="({ label, length, categoryValue }, key, index) in categories"
+          v-for="({ label, length, categoryValue }, index) in categories"
           :key="index">
           <router-link
             class="category-link"
@@ -46,7 +46,7 @@
       <ul class="tag-wrapper">
         <li
           class="tag-item"
-          v-for="({ label, categoryValue }, key, index) in tags"
+          v-for="({ label, categoryValue }, index) in tags"
           :key="index"
           :style="{ borderColor: createOneColor() }"
         >
@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useRouteLocale, useRoute, useRouter, withBase } from 'vuepress/client'
 import { useExtendPageData } from '@vuepress-reco/vuepress-plugin-page/composables'
 
@@ -139,22 +139,27 @@ if (!__VUEPRESS_SSR__) {
     })
   })
 
-  window.addEventListener(
-    'scroll',
-    throttle(() => {
-      const card = document.querySelector('.info-wrapper')
+  // 使用远高的节流时间减少性能影响
+  const scrollHandler = throttle(() => {
+    const card = document.querySelector('.info-wrapper')
 
-      if (card) {
-        // @ts-ignore
-        card.setAttribute('data-x', card.offsetLeft)
-        // @ts-ignore
-        card.setAttribute('data-y', card.offsetTop)
-        // @ts-ignore
-        card.setAttribute('data-width', card.clientWidth)
-        // @ts-ignore
-        card.setAttribute('data-height', card.clientHeight)
-      }
-    }, 50)
-  )
+    if (card) {
+      // @ts-ignore
+      card.setAttribute('data-x', card.offsetLeft)
+      // @ts-ignore
+      card.setAttribute('data-y', card.offsetTop)
+      // @ts-ignore
+      card.setAttribute('data-width', card.clientWidth)
+      // @ts-ignore
+      card.setAttribute('data-height', card.clientHeight)
+    }
+  }, 200) // 增加到200ms减少执行频率
+  
+  window.addEventListener('scroll', scrollHandler)
+  
+  // 在组件卸载时清理事件监听器
+  onUnmounted(() => {
+    window.removeEventListener('scroll', scrollHandler)
+  })
 }
 </script>
