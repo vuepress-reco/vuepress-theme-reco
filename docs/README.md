@@ -2,9 +2,12 @@
 home: true
 modules:
   - CustomBanner
+  - AIChat
   - Features
   - MdContent
   - Footer
+aiChat:
+  apiKey: "sk-04cf95c686c0465cb3367509354aea42"
 customBanner:
   bgImage: '/bg.svg'
   title: vuepress-reco

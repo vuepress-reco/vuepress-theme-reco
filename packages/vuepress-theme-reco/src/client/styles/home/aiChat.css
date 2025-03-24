@@ -1,0 +1,147 @@
+.ai-chat {
+  @apply max-w-screen-xl mx-auto my-16 px-6;
+}
+
+.chat-container {
+  @apply rounded-2xl overflow-hidden border border-primary flex flex-col h-[600px];
+  @apply bg-white dark:bg-reco-bg-darkmode-code;
+}
+
+.chat-header {
+  @apply p-4 flex justify-center items-center;
+  @apply bg-reco-primary;
+}
+
+.chat-header h2 {
+  @apply m-0 pt-0 text-xl font-medium text-white z-10;
+  &::before {
+    @apply hidden;
+  }
+}
+
+.chat-messages {
+  @apply flex-1 overflow-y-auto p-4 flex flex-col gap-4 scroll-smooth;
+}
+
+.message {
+  @apply flex flex-col;
+}
+
+.message-content {
+  @apply flex;
+}
+
+.user-message .message-content {
+  @apply justify-end;
+}
+
+.message-text {
+  @apply px-4 py-3 rounded-2xl max-w-[80%];
+  @apply bg-reco-primary/10 dark:bg-reco-primary/20;
+}
+
+.assistant-message .message-text {
+  @apply bg-active;
+}
+
+.message-avatar {
+  @apply w-8 h-8 rounded-full flex justify-center items-center text-white font-bold text-sm flex-shrink-0;
+}
+
+.user-avatar {
+  @apply bg-reco-primary/80 ml-2;
+}
+
+.assistant-avatar {
+  @apply bg-reco-primary mr-2;
+}
+
+.typing-indicator {
+  @apply flex items-center justify-start min-h-6 min-w-10;
+}
+
+.typing-indicator span {
+  @apply h-2 w-2 rounded-full inline-block mr-1 last:mr-0;
+  @apply bg-reco-text-lightmode/50 dark:bg-reco-text-darkmode/50;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Code Styles */
+.message-text :deep(pre) {
+  @apply bg-reco-bg-lightmode-code dark:bg-reco-bg-darkmode-code rounded-lg p-4 my-2 overflow-x-auto;
+}
+
+.message-text :deep(pre code) {
+  @apply font-mono text-sm whitespace-pre text-reco-text-lightmode dark:text-reco-text-darkmode;
+}
+
+.message-text :deep(code) {
+  @apply bg-reco-bg-lightmode-code/50 dark:bg-reco-bg-darkmode-code/50 rounded px-1.5 py-0.5 font-mono;
+}
+
+/* Chat Control Area */
+.chat-input-container {
+  @apply border-t border-reco-border-lightmode dark:border-reco-border-darkmode;
+  @apply bg-white dark:bg-reco-bg-darkmode-code;
+}
+
+.chat-control-buttons {
+  @apply flex justify-end px-4 pt-2;
+}
+
+.control-button {
+  @apply py-1 px-3 text-sm cursor-pointer transition-colors;
+  @apply border-block rounded-lg bg-reco-primary/90 font-semibold text-white;
+  @apply dark:text-reco-text-darkmode;
+  @apply hover:bg-reco-primary;
+}
+
+.control-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.chat-input {
+  @apply p-4 flex;
+}
+
+.chat-input input {
+  @apply flex-1 px-4 py-3 text-base outline-none transition-colors rounded-full mr-2;
+  @apply border border-reco-border-lightmode dark:border-reco-border-darkmode;
+  @apply bg-white dark:bg-reco-bg-darkmode;
+  @apply text-reco-text-lightmode dark:text-reco-text-darkmode;
+}
+
+.chat-input input:focus {
+  @apply border-reco-primary;
+}
+
+.chat-input button {
+  @apply py-1 px-5 text-sm cursor-pointer transition-colors;
+  @apply border-block rounded-lg bg-reco-primary/90 font-semibold text-white;
+  @apply dark:text-reco-text-darkmode;
+  @apply hover:bg-reco-primary;
+}
+
+.chat-input button:disabled {
+  @apply bg-reco-primary/70 cursor-not-allowed;
+}

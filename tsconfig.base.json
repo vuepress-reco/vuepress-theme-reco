@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationMap": false,
     "lib": ["DOM", "ES2022"],
-    "module": "CommonJS",
+    "module": "ES2022",
     "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "newLine": "lf",
