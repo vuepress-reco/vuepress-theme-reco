@@ -199,7 +199,7 @@
   }
 
   /************** 滚动条 **************/
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
@@ -216,5 +216,5 @@
   ::-webkit-scrollbar-thumb:horizontal {
     width: 10px;
     @apply bg-reco-primary rounded-lg;
-  }
+  } */
 }
