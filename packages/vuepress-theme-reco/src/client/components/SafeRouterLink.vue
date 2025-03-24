@@ -66,8 +66,12 @@ if (!isServer) {
   setTimeout(() => {
     try {
       // 动态导入RouterLink
-      import('vue-router').then(module => {
-        linkComponent.value = module.RouterLink
+      // 先尝试从 vuepress/client 中导入，这样在不同包管理器下都能正常工作
+      import('vuepress/client').then(vuepress => {
+        // 检查是否存在RouterLink
+        if (vuepress.RouterLink) {
+          linkComponent.value = vuepress.RouterLink
+        }
       }).catch(e => {
         console.warn('SafeRouterLink: Failed to load RouterLink, using fallback link', e)
       })
