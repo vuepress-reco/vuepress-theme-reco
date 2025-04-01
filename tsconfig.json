@@ -10,6 +10,7 @@
     { "path": "./packages/@vuepress-reco/plugin-vue-preview/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/plugin-code-copy/tsconfig.build.json" },
     { "path": "./packages/@vuepress-reco/tailwindcss-config/tsconfig.build.json" },
+    { "path": "./packages/@vuepress-reco/plugin-ai-chat/tsconfig.build.json" },
   ],
   "files": []
 }
