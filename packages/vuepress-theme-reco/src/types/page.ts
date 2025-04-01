@@ -85,7 +85,16 @@ interface Footer {
 
 export interface RecoThemeHomePageFrontmatter extends RecoThemePageFrontmatter {
   home: true
-  modules: string[]
+  modules: Array<
+    | 'Banner'
+    | 'BannerBrand'
+    | 'Blog'
+    | 'MdContent'
+    | 'Comment'
+    | 'Footer'
+    | 'Features'
+    | 'AIChat'
+  >
   banner?: Banner
   bannerBrand?: BannerBrand
   blog?: Blog

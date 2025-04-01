@@ -35,6 +35,7 @@
   "dependencies": {
     "@vuepress-reco/shared": "workspace:*",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
+    "@vuepress-reco/vuepress-plugin-ai-chat": "workspace:*",
     "@vuepress-reco/vuepress-plugin-bulletin-popover": "workspace:*",
     "@vuepress-reco/vuepress-plugin-code-copy": "workspace:*",
     "@vuepress-reco/vuepress-plugin-comments": "workspace:*",

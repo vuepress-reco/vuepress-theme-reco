@@ -1,0 +1,53 @@
+{
+  "name": "@vuepress-reco/vuepress-plugin-ai-chat",
+  "version": "2.0.0",
+  "description": "AI聊天插件 - 为VuePress站点提供基于文档内容的智能问答功能",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "ai",
+    "chat",
+    "search"
+  ],
+  "homepage": "https://github.com/vuepress-reco/vuepress-theme-reco#readme",
+  "bugs": {
+    "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco.git"
+  },
+  "license": "MIT",
+  "author": "reco_luan",
+  "type": "module",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,js}\" lib"
+  },
+  "dependencies": {
+    "@vuepress-reco/shared": "workspace:*",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
+    "markdown-it-table": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "prismjs": "^1.25.0",
+    "vue": "^3.5.13"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-rc.20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.5"
+  }
+}

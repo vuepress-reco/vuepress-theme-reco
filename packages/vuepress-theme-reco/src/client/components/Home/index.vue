@@ -18,6 +18,7 @@ import Comment from './Comment.vue'
 import Features from './Features.vue'
 import MdContent from './MdContent.vue'
 import BannerBrand from './BannerBrand.vue'
+// AIChat已移动到独立插件
 
 import { RecoThemeHomePageFrontmatter } from '../../../types'
 

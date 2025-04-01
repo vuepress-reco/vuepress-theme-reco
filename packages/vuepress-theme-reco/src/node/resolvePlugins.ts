@@ -20,6 +20,7 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 
 // The official plugins for vuepress-reco
 import { pagePlugin } from '@vuepress-reco/vuepress-plugin-page'
+import aiChatPlugin from '@vuepress-reco/vuepress-plugin-ai-chat'
 import { commentsPlugin } from '@vuepress-reco/vuepress-plugin-comments'
 import { codeCopyPlugin } from '@vuepress-reco/vuepress-plugin-code-copy'
 import { vuePreviewPlugin } from '@vuepress-reco/vuepress-plugin-vue-preview'
@@ -46,6 +47,8 @@ export const resolveBuildInPlugins = (themeConfig): Array<Plugin> => {
     markdownTaskPlugin(),
     bulletinPopoverPlugin(themeConfig),
     externalLinkIconPlugin(),
+    // 添加AI聊天插件
+    aiChatPlugin(themeConfig.aiChat || {}),
     registerComponentsPlugin({
       componentsDir: path.join(
         process.cwd(),
