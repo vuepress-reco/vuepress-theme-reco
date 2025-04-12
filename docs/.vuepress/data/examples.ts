@@ -1,5 +1,11 @@
 export default [
    {
+      name: "邻家大龙猫",
+      link: "https://bigtotoro.cn",
+      desc: "邻家大龙猫的个人学习笔记",
+      thumbail: "https://bigtotoro.cn/doc_notes/assets/banner_keqing-BwW0pNet.png"
+   },
+   {
     thumbnail: "https://avatars.githubusercontent.com/u/87223862?v=4",
     link: "https://zzh.4everland.website/",
     avator: "https://vue3-xiao-admin.4everland.app/static/png/logo-22eeabbe.png"
