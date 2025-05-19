@@ -1,9 +1,6 @@
 <template>
-  <section class="ai-chat">
+  <section class="ai-chat-inner">
     <div class="chat-container">
-      <div class="chat-header">
-        <h2>Vuepress Reco AI Chat (Beta)</h2>
-      </div>
       <div class="chat-messages" ref="chatMessagesRef">
         <div v-for="(message, index) in messages" :key="index"
              :class="['message', message.role === 'user' ? 'user-message' : 'assistant-message']">
@@ -20,11 +17,6 @@
         <!-- 移除多余的loading效果，只使用消息中的"正在思考..."文本作为loading指示 -->
       </div>
       <div class="chat-input-container">
-        <div class="chat-control-buttons">
-          <button class="control-button" @click="clearChatHistory" :disabled="loading || typing">
-            <span>清除历史</span>
-          </button>
-        </div>
         <div class="chat-input">
           <input
             type="text"
@@ -34,15 +26,13 @@
             :disabled="loading || typing"
           />
           <button @click="sendMessage" :disabled="loading || typing || !userInput.trim()">
-            <span v-if="!loading && !typing">发送</span>
+            <svg v-if="!loading && !typing" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14L21 3"></path><path d="M21 3l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1L21 3"></path></g></svg>
             <span v-else-if="typing">回复中...</span>
             <span v-else>处理中...</span>
           </button>
         </div>
       </div>
     </div>
-
-
   </section>
 </template>
 
@@ -999,15 +989,173 @@ const scrollToBottom = () => {
 // 组件挂载时滚动到底部
 onMounted(() => {
   scrollToBottom()
+  // 将原来的欢迎消息替换为更适合弹窗的消息
+  messages.value = [
+    {
+      role: 'assistant',
+      content: '你好！我是Vuepress Reco文档智能助手，有什么可以帮到你的？',
+      displayContent: '你好！我是Vuepress Reco文档智能助手，有什么可以帮到你的？'
+    }
+  ]
 })
 
 // 消息已经在渲染时高亮，不需要额外的监听处理
 </script>
 
 <style>
+/* 为嵌入弹窗的AI聊天组件添加样式 */
+.ai-chat-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ai-chat-inner .chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ai-chat-inner .chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-chat-inner .chat-input-container {
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.ai-chat-inner .message {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-chat-inner .message-content {
+  display: flex;
+  max-width: 100%;
+}
+
+.ai-chat-inner .user-message .message-content {
+  justify-content: flex-end;
+}
+
+.ai-chat-inner .message-text {
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 85%;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ai-chat-inner .user-message .message-text {
+  background-color: var(--c-brand, #3eaf7c);
+  color: white;
+}
+
+.ai-chat-inner .assistant-message .message-text {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.ai-chat-inner .message-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.ai-chat-inner .assistant-avatar {
+  background-color: var(--c-brand, #3eaf7c);
+  color: white;
+}
+
+.ai-chat-inner .user-avatar {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* 控制按钮样式 */
+.ai-chat-inner .chat-control-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.ai-chat-inner .control-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ai-chat-inner .control-button:hover {
+  background-color: #f1f1f1;
+}
+
+/* 聊天输入框 */
+.ai-chat-inner .chat-input {
+  @apply bg-block;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.ai-chat-inner .chat-input input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.ai-chat-inner .chat-input button {
+  @apply flex items-center justify-center;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.ai-chat-inner .chat-input button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+</style>
+
+<style>
 /* 引入Prism的默认主题样式 */
 @import 'prismjs/themes/prism-tomorrow.css';
 @import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+
+.chat-messages .vuepress-markdown-body p {
+  @apply my-1;
+}
 </style>
 
 <style scoped>
@@ -1018,8 +1166,8 @@ onMounted(() => {
 }
 
 .chat-container {
-  @apply rounded-2xl overflow-hidden border border-primary flex flex-col h-[600px];
-  @apply bg-white dark:bg-reco-bg-darkmode-code;
+  @apply overflow-hidden border border-primary flex flex-col h-[600px];
+  @apply bg-basic;
 }
 
 .chat-header {
@@ -1116,8 +1264,7 @@ onMounted(() => {
 
 /* Chat Control Area */
 .chat-input-container {
-  @apply border-t border-reco-border-lightmode dark:border-reco-border-darkmode;
-  @apply bg-white dark:bg-reco-bg-darkmode-code;
+  @apply bg-basic;
 }
 
 .chat-control-buttons {
@@ -1140,7 +1287,7 @@ onMounted(() => {
 }
 
 .chat-input input {
-  @apply flex-1 px-4 py-3 text-base outline-none transition-colors rounded-full mr-2;
+  @apply flex-1 px-4 h-10 text-base outline-none transition-colors rounded-full mr-2;
   @apply border border-reco-border-lightmode dark:border-reco-border-darkmode;
   @apply bg-white dark:bg-reco-bg-darkmode;
   @apply text-reco-text-lightmode dark:text-reco-text-darkmode;
@@ -1151,7 +1298,7 @@ onMounted(() => {
 }
 
 .chat-input button {
-  @apply py-1 px-5 text-sm cursor-pointer transition-colors;
+  @apply h-9 px-4 text-sm cursor-pointer transition-colors;
   @apply border-block rounded-lg bg-reco-primary/90 font-semibold text-white;
   @apply dark:text-reco-text-darkmode;
   @apply hover:bg-reco-primary;
