@@ -40,9 +40,9 @@ export default [
   },
   {
     thumbnail:
-      'https://www.wstee.com/banner.svg',
-    link: 'https://www.wstee.com',
-    avator: 'https://www.wstee.com/head.jpg',
+      'https://oisr.top/banner.svg',
+    link: 'https://oisr.top',
+    avator: 'https://oisr.top/head.jpg',
   },
   {
     thumbnail:
