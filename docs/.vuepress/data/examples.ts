@@ -1,5 +1,11 @@
 export default [
    {
+      name: "I’m { Ying }",
+      link: "https://basilosauridae.github.io/",
+      desc: "You have to be a new person before you can solve old problems.",
+      thumbail: "https://basilosauridae.github.io/logo.png"
+   },
+   {
       name: "邻家大龙猫",
       link: "https://bigtotoro.cn",
       desc: "邻家大龙猫的个人学习笔记",
