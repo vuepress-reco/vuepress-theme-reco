@@ -1,5 +1,11 @@
 export default [
    {
+      name: "槿苏的知识铺",
+      link: "https://www.jinsulive.com/",
+      desc: "记录、分享、随笔",
+      thumbail: "https://www.jinsulive.com/home-preview.png"
+   },
+   {
       name: "邻家大龙猫",
       link: "https://bigtotoro.cn",
       desc: "邻家大龙猫的个人学习笔记",
