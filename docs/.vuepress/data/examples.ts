@@ -92,4 +92,9 @@ export default [
     link: "https://www.zhangli233.com/",
     avator: "https://www.zhangli233.com/via.jpg"
   }, 
+   {
+    thumbnail: "https://blog.shiyio.uk/bgimg1.jpg",
+    link: "https://blog.shiyio.uk",
+    avator: "https://blog.shiyio.uk/logo.jpg"
+  },
 ]
