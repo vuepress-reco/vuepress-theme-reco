@@ -1,4 +1,10 @@
 export default [
+      {
+      name: "沈故",
+      link: "https://shengu.netlify.app/",
+      desc: "生长 生发 条达 舒畅",
+      thumbail: "https://shengu.netlify.app/pfs.jpg"
+   },
    {
       name: "槿苏的知识铺",
       link: "https://www.jinsulive.com/",
