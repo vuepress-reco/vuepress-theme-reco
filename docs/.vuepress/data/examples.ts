@@ -1,4 +1,10 @@
 export default [
+      {
+      name: "沈故",
+      link: "https://shengu.netlify.app/",
+      desc: "看一千次海",
+      thumbail: "https://f.pz.al/pzal/2025/09/15/79a38f0d855ac.jpg"
+   },
    {
       name: "槿苏的知识铺",
       link: "https://www.jinsulive.com/",
