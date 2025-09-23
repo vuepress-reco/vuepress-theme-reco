@@ -68,9 +68,9 @@ export default [
     avator: "https://www.licodeao.top/avatar.jpg"
   },
   {
-    thumbnail: "https://github-production-user-asset-6210df.s3.amazonaws.com/75941562/241768717-21953f79-fe88-4dca-bfaf-306d4a8c1dac.png",
-    link: "https://www.yixiangzhilv.com/",
-    avator: "https://www.yixiangzhilv.com/head.png"
+    thumbnail: "https://github.com/user-attachments/assets/bf281015-ba42-4d43-858c-47bd9c277eb7",
+    link: "https://blog.yxzl.dev/",
+    avator: "https://blog.yxzl.dev/head.png"
   },
   {
     thumbnail: "https://blog.latteandcat.cn/bg.jpg",
