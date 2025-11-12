@@ -9,7 +9,7 @@
     }
   }
   .cyber-security {
-    @apply px-4 text-left flex items-center justify-start
+    @apply text-left flex items-center justify-start
     my-0 md:text-center md:justify-center;
     img {
       @apply mr-2 w-4 h-4 align-middle;
