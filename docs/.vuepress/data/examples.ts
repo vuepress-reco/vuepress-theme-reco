@@ -68,11 +68,6 @@ export default [
     avator: "https://www.licodeao.top/avatar.jpg"
   },
   {
-    thumbnail: "https://github-production-user-asset-6210df.s3.amazonaws.com/75941562/241768717-21953f79-fe88-4dca-bfaf-306d4a8c1dac.png",
-    link: "https://www.yixiangzhilv.com/",
-    avator: "https://www.yixiangzhilv.com/head.png"
-  },
-  {
     thumbnail: "https://blog.latteandcat.cn/bg.jpg",
     link: "https://blog.latteandcat.cn/",
     avator: "https://blog.latteandcat.cn/head.png"
@@ -92,4 +87,9 @@ export default [
     link: "https://www.zhangli233.com/",
     avator: "https://www.zhangli233.com/via.jpg"
   }, 
+   {
+    thumbnail: "https://blog.shiyio.uk/bgimg1.jpg",
+    link: "https://blog.shiyio.uk",
+    avator: "https://blog.shiyio.uk/logo.jpg"
+  },
 ]
