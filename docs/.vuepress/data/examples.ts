@@ -2,8 +2,8 @@ export default [
       {
       name: "沈故",
       link: "https://shengu.netlify.app/",
-      desc: "看一千次海",
-      thumbail: "https://f.pz.al/pzal/2025/09/15/79a38f0d855ac.jpg"
+      desc: "生长 生发 条达 舒畅",
+      thumbail: "https://shengu.netlify.app/pfs.jpg"
    },
    {
       name: "槿苏的知识铺",
