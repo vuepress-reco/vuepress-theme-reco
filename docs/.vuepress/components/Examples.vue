@@ -61,7 +61,7 @@ if (!__VUEPRESS_SSR__) {
 </script>
 
 <style scoped>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 .examples__container {
   @apply flex flex-wrap;

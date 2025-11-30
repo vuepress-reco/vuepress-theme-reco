@@ -1159,7 +1159,7 @@ onMounted(() => {
 </style>
 
 <style scoped>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 .ai-chat {
   @apply max-w-screen-xl mx-auto my-16 px-6;

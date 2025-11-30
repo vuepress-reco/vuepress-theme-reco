@@ -25,8 +25,6 @@ const { title, active } = toRefs(props)
 </script>
 
 <style>
-@import url('@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css');
-
 .tab-item {
   @apply hidden border-block border-0 border-t border-dashed p-4;
   margin-top: -1px;

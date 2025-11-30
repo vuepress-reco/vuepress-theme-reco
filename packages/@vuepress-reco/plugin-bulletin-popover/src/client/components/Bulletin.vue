@@ -23,7 +23,7 @@ const { bodyNodes } = useHandleNodes()
 </script>
 
 <style>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 .bulletin-wrapper {
   @apply fixed flex-col  top-20 right-4 z-30 flex box-border rounded-lg bg-basic border-primary;

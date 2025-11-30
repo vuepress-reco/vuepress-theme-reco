@@ -1,4 +1,4 @@
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/base.css';
 
 @import 'algolia.css';
 @import 'arrow.css';
@@ -37,7 +37,3 @@
 /* vite:css 报错，迁移至 resolveStyles.ts */
 /* @import '@vuepress/plugin-palette/style'; */
 
-/* 仅在需要在 class 属性中使用 tailwind 时才需要下面的引用 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

@@ -79,7 +79,7 @@ async function copyToClipboard(text: string) {
 </script>
 
 <style scoped>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 .md5-wrapper {
   @apply mt-4;

@@ -93,7 +93,7 @@ watch(isOpen, (val) => {
 </script>
 
 <style>
-@import '@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css';
+@import '@vuepress-reco/tailwindcss-config/lib/client/styles/components.css';
 
 /* 容器样式 */
 .ai-chat-button-container {

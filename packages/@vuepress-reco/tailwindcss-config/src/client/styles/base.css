@@ -1,3 +1,11 @@
+/* 先导入自定义组件类（必须在基础样式之前，因为基础样式使用了这些类） */
+@import './components.css';
+
+/* Tailwind 入口，仅在全局引入一次 */
+@tailwind base;
+@tailwind utilities;
+
+/* reco 主题基础样式 */
 @layer base {
   * {
     @apply m-0 p-0;

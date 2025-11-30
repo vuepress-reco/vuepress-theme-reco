@@ -52,8 +52,8 @@ ul {
 
 ## Notice
 
-If you use the base, variables and components customized by the reco theme when writing tailwindcss, you need to import `@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css` at the top of the css file:
+If you use the base, variables and components customized by the reco theme when writing tailwindcss, you need to import `@vuepress-reco/tailwindcss-config/lib/client/styles/components.css` at the top of the css file:
 
 ````css
-@import url('@vuepress-reco/tailwindcss-config/lib/client/styles/tailwindcss-base.css');
+@import url('@vuepress-reco/tailwindcss-config/lib/client/styles/components.css');
 ````

@@ -1,8 +1,7 @@
-/* 仅在需要在 class 属性中使用 tailwind 时才需要下面的引用 */
-@tailwind base;
+/* 确保 Tailwind components 层已初始化 */
 @tailwind components;
-@tailwind utilities;
 
+/* reco 主题自定义的组件类 */
 @layer components {
   .text-basic {
     @apply text-reco-text-lightmode;
