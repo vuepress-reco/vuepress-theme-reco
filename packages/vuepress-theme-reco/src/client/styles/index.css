@@ -1,4 +1,5 @@
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/base.css';
+@import '@vuepress/plugin-palette/palette';
 
 @import 'algolia.css';
 @import 'arrow.css';
@@ -33,7 +34,3 @@
 @import 'timeline.css';
 @import 'toggleDarkModeButton.css';
 @import '404.css';
-
-/* vite:css 报错，迁移至 resolveStyles.ts */
-/* @import '@vuepress/plugin-palette/style'; */
-

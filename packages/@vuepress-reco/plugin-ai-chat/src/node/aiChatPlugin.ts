@@ -1,4 +1,4 @@
-import { fs, path, globby } from 'vuepress/utils'
+import { fs, path, tinyglobby } from 'vuepress/utils'
 import matter from 'gray-matter'
 import { fileURLToPath } from 'url'
 
@@ -65,7 +65,7 @@ export const aiChatPlugin = (options: AIChatPluginOptions = {}) => {
       // 获取所有Markdown文件
       const sourceDir = app.dir.source()
       const patterns = ['**/*.md', '!.vuepress', '!node_modules']
-      const files = await globby(patterns, { cwd: sourceDir })
+      const files = await tinyglobby.glob(patterns, { cwd: sourceDir })
 
       // 存储所有页面的内容摘要
       const pagesContent: PageContent[] = []

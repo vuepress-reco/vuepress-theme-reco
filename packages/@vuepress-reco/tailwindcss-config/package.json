@@ -35,5 +35,9 @@
   },
   "bugs": {
     "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.4",
+    "typescript": "^5.9.3"
   }
 }

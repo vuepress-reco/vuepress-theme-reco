@@ -43,7 +43,14 @@ const _getViteBundlerOptions = (themeConfig: Record<string, unknown>) => {
   const userConfig =
     (themeConfig?.viteBundlerOptions as ViteBundlerOptions) || {}
   const defaultConfig = {
-    viteOptions: { css: { postcss: { ...postcssPlugins } } },
+    viteOptions: {
+      css: { postcss: { ...postcssPlugins } },
+      resolve: {
+        // All theme components must share the application's vuepress/client
+        // instance, otherwise its injection symbols are duplicated by pnpm.
+        dedupe: ['vuepress'],
+      },
+    },
   }
   viteBundlerOptions = _mergeConfig<ViteBundlerOptions>(
     userConfig,

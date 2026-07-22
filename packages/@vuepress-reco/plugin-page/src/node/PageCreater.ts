@@ -120,10 +120,14 @@ export default class PageCreater {
       page.data.path = formatPath(page.data.path)
       page.htmlFilePath = formatPath(page.htmlFilePath)
       page.chunkFilePath = formatPath(page.chunkFilePath)
-      page.componentFilePath = formatPath(page.componentFilePath)
+      if (typeof page.componentFilePath === 'string') {
+        page.componentFilePath = formatPath(page.componentFilePath)
+      }
       page.htmlFilePathRelative = formatPath(page.htmlFilePathRelative)
       page.chunkFilePathRelative = formatPath(page.chunkFilePathRelative)
-      page.componentFilePathRelative = formatPath(page.componentFilePathRelative)
+      if (typeof page.componentFilePathRelative === 'string') {
+        page.componentFilePathRelative = formatPath(page.componentFilePathRelative)
+      }
 
       return page
     })

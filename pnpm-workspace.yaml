@@ -3,3 +3,15 @@ packages:
   - example
   - packages/@vuepress-reco/*
   - packages/vuepress-theme-reco
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  fsevents: true
+  unrs-resolver: true
+  vue-demi: true
+minimumReleaseAgeExclude:
+  - postcss@8.5.22
+peerDependencyRules:
+  allowedVersions:
+    vuepress: 2.0.0-rc.30

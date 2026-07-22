@@ -9,7 +9,7 @@
     "build:copy": "pnpm -r copy",
     "build:tsc": "pnpm -r build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
-    "clean": "pnpm --parallel clean && pnpm clean:cache",
+    "clean": "pnpm -r --parallel run clean && pnpm run clean:cache",
     "clean:cache": "rm -rf **/.vuepress/.cache && rm -rf **/.vuepress/.temp",
     "clean:modules": "rm -rf **/node_modules",
     "commit": "git add . && git-cz",
@@ -52,8 +52,8 @@
     "@types/vfile": "^4.0.0",
     "@vuepress-reco/shared": "workspace:*",
     "@vuepress-reco/tailwindcss-config": "workspace:*",
-    "@vuepress/bundler-vite": "2.0.0-rc.20",
-    "@vuepress/bundler-webpack": "2.0.0-rc.20",
+    "@vuepress/bundler-vite": "2.0.0-rc.30",
+    "@vuepress/bundler-webpack": "2.0.0-rc.30",
     "commitizen": "^4.3.1",
     "concurrently": "^6.5.1",
     "conventional-changelog-cli": "^2.2.2",
@@ -74,9 +74,9 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "ts-jest": "^29.2.5",
-    "typescript": "5.2.2",
+    "typescript": "5.9.3",
     "vue": "^3.5.13",
-    "vuepress": "2.0.0-rc.20",
+    "vuepress": "2.0.0-rc.30",
     "vuepress-theme-reco": "workspace:*"
   }
 }

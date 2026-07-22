@@ -1,7 +1,97 @@
 import { colors } from './custom-colors.js'
+import plugin from 'tailwindcss/plugin.js'
 
 // 判断当前环境是否为开发环境
 const isDevelopment = process.env.NODE_ENV === 'development'
+
+const recoSemanticUtilities = plugin(({ addUtilities, theme }) => {
+  const color = (path: string) => theme(`colors.${path}`) as string
+
+  addUtilities({
+    '.text-basic': { color: color('reco.text.lightmode.DEFAULT') },
+    '.dark .text-basic': { color: color('reco.text.darkmode.DEFAULT') },
+    '.text-lighter': { color: color('reco.text.lightmode.lighter') },
+    '.dark .text-lighter': { color: color('reco.text.darkmode.lighter') },
+    '.text-heavier': { color: color('reco.text.lightmode.heavier') },
+    '.dark .text-heavier': { color: color('reco.text.darkmode.heavier') },
+    '.border-basic': {
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+    },
+    '.dark .border-basic': { borderColor: color('reco.border.darkmode') },
+    '.border-basic-top': {
+      borderWidth: '0',
+      borderTopWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+    },
+    '.dark .border-basic-top': { borderColor: color('reco.border.darkmode') },
+    '.border-basic-bottom': {
+      borderWidth: '0',
+      borderBottomWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+    },
+    '.dark .border-basic-bottom': { borderColor: color('reco.border.darkmode') },
+    '.border-basic-left': {
+      borderWidth: '0',
+      borderLeftWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+    },
+    '.dark .border-basic-left': { borderColor: color('reco.border.darkmode') },
+    '.border-basic-right': {
+      borderWidth: '0',
+      borderRightWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+    },
+    '.dark .border-basic-right': { borderColor: color('reco.border.darkmode') },
+    '.border-primary': {
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.primary'),
+    },
+    '.border-block': {
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.border.lightmode'),
+      borderRadius: '0.5rem',
+    },
+    '.dark .border-block': { borderColor: color('reco.border.darkmode') },
+    '.border-block-primary': {
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: color('reco.primary'),
+      borderRadius: '0.5rem',
+    },
+    '.bg-basic': {
+      color: color('reco.text.lightmode.DEFAULT'),
+      backgroundColor: color('reco.bg.lightmode.DEFAULT'),
+    },
+    '.dark .bg-basic': {
+      color: color('reco.text.darkmode.DEFAULT'),
+      backgroundColor: color('reco.bg.darkmode.DEFAULT'),
+    },
+    '.bg-block': {
+      color: color('reco.text.lightmode.DEFAULT'),
+      backgroundColor: color('reco.bg.lightmode.code'),
+    },
+    '.dark .bg-block': {
+      color: color('reco.text.darkmode.DEFAULT'),
+      backgroundColor: color('reco.bg.darkmode.code'),
+    },
+    '.bg-active': {
+      color: color('reco.text.lightmode.DEFAULT'),
+      backgroundColor: color('reco.bg.lightmode.active'),
+    },
+    '.dark .bg-active': {
+      color: color('reco.text.darkmode.DEFAULT'),
+      backgroundColor: color('reco.bg.darkmode.active'),
+    },
+  })
+})
 
 // 导出根据环境变量生成的配置
 export const tailwindcssConfig = {
@@ -14,24 +104,7 @@ export const tailwindcssConfig = {
     // 特定插件的关键组件
     'node_modules/**/@vuepress-reco/**/lib/client/components/**/*.(vue|html)',
   ],
-  // 开发环境优化
   safelist: [],
-  // 启用JIT模式
-  mode: 'jit',
-  // 启用裁剪模式，只生成实际使用的类
-  purge: {
-    enabled: true, // 在开发和生产环境中都启用
-    content: isDevelopment ? [
-      // 开发环境：更严格的匹配，只关注关键组件
-      'node_modules/**/vuepress-theme-reco/lib/client/components/**/*.(vue|html)',
-      'node_modules/**/vuepress-theme-reco/lib/client/layouts/**/*.(vue|html)',
-      'node_modules/**/@vuepress-reco/**/lib/client/components/**/*.(vue|html)',
-    ] : [
-      // 生产环境：包含所有可能的文件
-      'node_modules/**/vuepress-theme-reco/lib/**/*.(vue|html)',
-      'node_modules/**/@vuepress-reco/**/lib/**/*.(vue|html)',
-    ],
-  },
   // 禁用状态变体，减少生成的CSS数量
   corePlugins: isDevelopment ? {
     // 开发环境中禁用部分变体样式以提高性能
@@ -49,12 +122,7 @@ export const tailwindcssConfig = {
   } : {
     // 生产环境保持全部功能
   },
-  // 禁用不需要的功能，减少生成的CSS
-  // 根据实际需求可以添加或删除
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
+  plugins: [recoSemanticUtilities],
   theme: {
     extend: {
       backgroundOpacity: {

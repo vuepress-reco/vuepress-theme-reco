@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "newLine": "lf",
     "noEmitOnError": true,
+    "noUncheckedSideEffectImports": false,
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -17,6 +18,7 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "target": "ES2022",
+    "types": ["node"],
     "jsx": "preserve",
     "paths": {
       "@theme/*": [

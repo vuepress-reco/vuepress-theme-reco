@@ -1,4 +1,4 @@
-import { globby, path } from 'vuepress/utils'
+import { path, tinyglobby } from 'vuepress/utils'
 
 /**
  * Options for @vuepress/plugin-register-components
@@ -15,7 +15,7 @@ export interface RegisterComponentsPluginOptions {
   componentsDir?: string | null
 
   /**
-   * Patterns to match component files using [globby](https://github.com/sindresorhus/globby)
+   * Patterns to match component files using [tinyglobby](https://github.com/SuperchupuDev/tinyglobby)
    *
    * The patterns are relative to componentsDir`
    */
@@ -40,7 +40,7 @@ export const getComponentsFromDir = async ({
   }
 
   // get all matched component files
-  const componentsDirFiles = await globby(componentsPatterns, {
+  const componentsDirFiles = await tinyglobby.glob(componentsPatterns, {
     cwd: componentsDir,
   })
 
