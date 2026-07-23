@@ -216,7 +216,7 @@
           }
         }
       }
-      @media screen and(max-width:720px) {
+      @media screen and (max-width: 720px) {
         .valert {
           padding-top: 5.5em;
           .vtext {
