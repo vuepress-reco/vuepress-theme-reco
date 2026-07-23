@@ -1,5 +1,4 @@
 @import '@vuepress-reco/tailwindcss-config/lib/client/styles/base.css';
-@import '@vuepress/plugin-palette/palette';
 
 @import 'algolia.css';
 @import 'arrow.css';

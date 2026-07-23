@@ -11,6 +11,9 @@ export const CLIENT_FOLDER = ensureEndingSlash(
 )
 
 export async function prepareClientConfigFile(app: App, themeConfig): Promise<string> {
+  const hasUserPalette = await fs.pathExists(
+    app.dir.source('.vuepress/styles/palette.css')
+  )
   const layoutsDir = path.join(
     process.cwd(),
     themeConfig?.docsDir || '/',
@@ -43,6 +46,8 @@ import { defineClientConfig } from 'vuepress/client'
 
 import { applyClientSetup } from '${CLIENT_FOLDER}clientSetup.js'
 import { applyClientEnhance } from '${CLIENT_FOLDER}clientEnhance.js'
+
+${hasUserPalette ? "import '@vuepress/plugin-palette/palette'" : ''}
 
 import * as layouts from '${CLIENT_FOLDER}layouts/index.js'
 `
